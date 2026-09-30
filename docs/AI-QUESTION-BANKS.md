@@ -7,5 +7,6 @@ This repository treats model output as untrusted candidate material.
 3. The workflow generates JSON, performs an independent model review, validates structure, uploads an artifact, and opens a pull request.
 4. A human reviewer checks every item before merge.
 5. Move accepted items to `data/approved/`, set `reviewStatus` to `approved`, and reject or rewrite the rest.
+6. Run `npm run build:bank` to compile and synchronize approved questions into `app.js`, then verify with `npm test`.
 
 Never paste API keys into code, workflow files, issues, logs, or pull requests. Do not merge a generated bank merely because automated checks pass.

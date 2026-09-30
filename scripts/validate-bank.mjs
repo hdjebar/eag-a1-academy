@@ -42,20 +42,28 @@ function candidateFiles() {
   return fs.readdirSync(dir).filter(x => x.endsWith(".json") && !x.endsWith(".review.json")).map(x => path.join(dir, x));
 }
 
-const args = process.argv.slice(2);
-if (args.includes("--self-test")) {
-  const sample = [{id:"numeric-demo-001",category:"numeric",skill:"pourcentage",difficulty:1,language:"fr",prompt:"Quel est le résultat du calcul proposé ?",stimulus:"10 % de 50",options:["5","10","15","20"],correctIndex:0,explanation:"Dix pour cent de cinquante valent cinq.",sourceType:"original_ai_assisted",reviewStatus:"candidate"}];
-  const errors = validateBank(sample);
-  if (errors.length) throw new Error(errors.join("\n"));
-  console.log("Self-test passed");
-} else {
-  const files = args.length ? args : candidateFiles();
-  if (!files.length) throw new Error("Aucun fichier candidat à valider");
-  let failed = false;
-  for (const file of files) {
-    const errors = validateBank(readJson(file));
-    if (errors.length) { failed = true; console.error(`\n${file}\n- ${errors.join("\n- ")}`); }
-    else console.log(`${file}: valide`);
+import { fileURLToPath } from "node:url";
+
+const isDirectRun = Boolean(process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]));
+if (isDirectRun) {
+  const args = process.argv.slice(2);
+  if (args.includes("--self-test")) {
+    const sample = [{id:"numeric-demo-001",category:"numeric",skill:"pourcentage",difficulty:1,language:"fr",prompt:"Quel est le résultat du calcul proposé ?",stimulus:"10 % de 50",options:["5","10","15","20"],correctIndex:0,explanation:"Dix pour cent de cinquante valent cinq.",sourceType:"original_ai_assisted",reviewStatus:"candidate"}];
+    const errors = validateBank(sample);
+    if (errors.length) throw new Error(errors.join("\n"));
+    console.log("Self-test passed");
+  } else {
+    const files = args.length ? args : candidateFiles();
+    if (!files.length) {
+      console.log("Aucun fichier candidat à valider");
+    } else {
+      let failed = false;
+      for (const file of files) {
+        const errors = validateBank(readJson(file));
+        if (errors.length) { failed = true; console.error(`\n${file}\n- ${errors.join("\n- ")}`); }
+        else console.log(`${file}: valide`);
+      }
+      if (failed) process.exit(1);
+    }
   }
-  if (failed) process.exit(1);
 }

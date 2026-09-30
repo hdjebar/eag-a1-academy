@@ -1,0 +1,192 @@
+[
+  {
+    "id": "situational-serve-001",
+    "category": "situational",
+    "skill": "accueil et médiation usager",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Un usager conteste vivement une décision administrative conforme. Quelle posture professionnelle adopter ?",
+    "stimulus": "La décision prise est réglementairement inattaquable. Vous pouvez en expliciter les fondements, mais vous n'avez pas le pouvoir de la modifier.",
+    "options": [
+      "Lui opposer immédiatement le caractère définitif du dossier pour abréger l'échange.",
+      "Écouter activement sa situation, expliciter les motifs de droit et l'informer des voies de recours légales.",
+      "Promettre un réexamen exceptionnel par votre service pour apaiser la tension.",
+      "Transférer la communication vers un collègue sans explication préalable."
+    ],
+    "correctIndex": 1,
+    "explanation": "L'écoute active conjuguée à une explication pédagogique et à l'indication transparente des recours garantit un service de qualité sans fausse promesse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-advise-002",
+    "category": "situational",
+    "skill": "champ de compétence et orientation",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "On vous sollicite pour un conseil technique pointu sur un domaine hors de votre champ d'expertise. Quelle conduite adopter ?",
+    "stimulus": "Une collègue référente sur ce volet précis est disponible dans un délai de 20 minutes.",
+    "options": [
+      "Fournir une réponse intuitive rapide pour ne pas faire patienter l'usager.",
+      "Refuser net de renseigner sans formuler de solution alternative.",
+      "Exposer poliment vos limites d'expertise, recueillir les faits utiles et orienter vers la référente spécialisée.",
+      "Faire une recherche sommaire sur un forum grand public et transmettre le résultat."
+    ],
+    "correctIndex": 2,
+    "explanation": "La fiabilité du conseil public impose de circonscrire son périmètre d'action et d'orienter précisément vers la compétence adéquate.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-serve-003",
+    "category": "situational",
+    "skill": "impartialité et équité",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Un usager sollicite un traitement prioritaire de sa demande en invoquant une connaissance personnelle au sein de votre direction. Que devez-vous faire ?",
+    "stimulus": "Le règlement du service ne prévoit aucun traitement de faveur ni dérogation au protocole de dépôt.",
+    "options": [
+      "Accéder à sa demande pour préserver les relations internes de la direction.",
+      "Maintenir avec courtoisie l'ordre équitable de traitement et lui rappeler le principe d'égalité de tous devant le service public.",
+      "Interrompre votre travail pour demander immédiatement l'arbitrage de la personne citée.",
+      "Refuser de traiter sa demande et lui intimer de quitter l'accueil."
+    ],
+    "correctIndex": 1,
+    "explanation": "Le principe fondamental d'impartialité et d'égalité des usagers devant le service public proscrit tout passe-droit non fondé sur une priorité légale.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-data-004",
+    "category": "situational",
+    "skill": "confidentialité et conformité",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Un bordereau contenant des données à caractère personnel a été adressé par erreur au mauvais destinataire. Quelle est votre réaction immédiate ?",
+    "stimulus": "Le courriel interne vient d'être envoyé depuis votre messagerie professionnelle.",
+    "options": [
+      "Attendre de voir si le destinataire s'en aperçoit avant d'agir.",
+      "Supprimer l'élément envoyé de votre corbeille pour masquer l'anomalie.",
+      "Appliquer immédiatement la procédure interne de gestion des incidents de sécurité et alerter votre hiérarchie ainsi que le délégué à la protection des données.",
+      "Envoyer un message informel sur un réseau social pour demander l'effacement sans trace."
+    ],
+    "correctIndex": 2,
+    "explanation": "La protection des données requiert transparence immédiate, traçabilité et application rigoureuse de la procédure officielle de déclaration d'incident.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-serve-005",
+    "category": "situational",
+    "skill": "respect des procédures et escalade",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Un usager sollicite une dérogation immédiate pour laquelle vous n'avez pas de délégation de signature. Quelle posture retenir ?",
+    "stimulus": "Vous n'avez pas l'autorité statutaire requise pour autoriser une dispense de formalité.",
+    "options": [
+      "Accorder la dispense verbalement pour simplifier les démarches administratives.",
+      "Rejeter d'emblée la demande sans vérification des motifs invoqués.",
+      "Lui expliciter le cadre réglementaire, consigner par écrit les éléments circonstanciés et transmettre au responsable habilité pour décision.",
+      "Suggérer à l'usager d'omettre certaines pièces pour contourner le blocage."
+    ],
+    "correctIndex": 2,
+    "explanation": "L'agent public doit respecter le principe de légalité tout en accompagnant l'usager par une instruction méthodique orientée vers l'autorité compétente.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-advise-006",
+    "category": "situational",
+    "skill": "neutralité et arbitrage technique",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "En réunion de projet, deux directions partenaires soutiennent deux solutions techniques divergentes. Quelle contribution apporter en tant qu'analyste A1 ?",
+    "stimulus": "Votre rôle est d'éclairer la prise de décision par une analyse objective et factuelle.",
+    "options": [
+      "Prendre immédiatement parti pour la solution de la direction la plus influente.",
+      "Établir une matrice comparative objective évaluant coûts, risques, délais et conformité légale de chaque option.",
+      "Refuser d'intervenir pour ne froisser aucune des deux parties.",
+      "Imposer sans concertation une troisième solution sans concertation préalable."
+    ],
+    "correctIndex": 1,
+    "explanation": "Le cadre de niveau A1 conseille par une analyse neutre, méthodique et documentée, fournissant aux décideurs les éléments objectifs d'arbitrage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-advise-007",
+    "category": "situational",
+    "skill": "anticipation des risques juridiques",
+    "difficulty": 3,
+    "language": "fr",
+    "prompt": "Votre responsable vous demande d'accélérer la publication d'un cahier des charges qui comporte une clause contractuelle potentiellement ambiguë. Que préconisez-vous ?",
+    "stimulus": "Une ambiguïté non résolue risque d'engendrer des contentieux lors de la passation du marché public.",
+    "options": [
+      "Publier le document sans modification pour respecter scrupuleusement le calendrier prévisionnel.",
+      "Alerter formellement votre supérieur sur le risque juridique identifié et proposer une formulation clarifiée prête à validation.",
+      "Supprimer unilatéralement la clause litigieuse sans en avertir l'équipe.",
+      "Ignorer l'ambiguïté en considérant que la responsabilité finale incombe au signataire."
+    ],
+    "correctIndex": 1,
+    "explanation": "La fonction de conseil consiste à prévenir les risques contentieux tout en proposant des solutions constructives et rapides d'arbitrage à la hiérarchie.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-serve-008",
+    "category": "situational",
+    "skill": "accessibilité et inclusion",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Un usager en situation de fracture numérique éprouve de grandes difficultés à saisir sa démarche en ligne. Quelle attitude adopter ?",
+    "stimulus": "Un espace d'accompagnement numérique avec assistance personnalisée est disponible au sein de votre structure.",
+    "options": [
+      "Lui intimer de se faire aider par un membre de son entourage.",
+      "Lui proposer un accueil dans l'espace d'accompagnement pour le guider pas à pas dans sa démarche.",
+      "Saisir ses identifiants et mot de passe personnels à sa place sur votre ordinateur.",
+      "Lui remettre un manuel de 50 pages en lui demandant de revenir une fois la lecture terminée."
+    ],
+    "correctIndex": 1,
+    "explanation": "L'accompagnement bienveillant et structuré dans les espaces dédiés assure l'accès effectif aux droits tout en respectant l'autonomie et la sécurité de l'usager.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-advise-009",
+    "category": "situational",
+    "skill": "devoir d'alerte et loyauté",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Vous constatez une erreur récurrente dans un tableau de bord transmis chaque semaine au ministère. Comment réagissez-vous ?",
+    "stimulus": "L'anomalie fausse légèrement l'un des indicateurs sans que personne ne s'en soit aperçu jusqu'ici.",
+    "options": [
+      "Ne rien signaler afin de ne pas remettre en cause le travail des semaines précédentes.",
+      "Documenter précisément l'erreur constatée, chiffrer son impact réel et soumettre la correction à votre responsable de service.",
+      "Diffuser un message d'alerte général à tous les agents du ministère.",
+      "Attendre qu'un contrôle externe pointe la divergence."
+    ],
+    "correctIndex": 1,
+    "explanation": "Le professionnalisme et la loyauté administrative impliquent de signaler les anomalies avec rigueur et méthode par la voie hiérarchique appropriée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "situational-serve-010",
+    "category": "situational",
+    "skill": "gestion de situation conflictuelle",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Un usager s'énerve à la suite d'un retard de traitement occasionné par une panne informatique générale. Quelle est l'attitude idoine ?",
+    "stimulus": "L'incident technique est indépendant de votre volonté mais impacte directement l'usager.",
+    "options": [
+      "Adopter un ton autoritaire pour lui signifier qu'il doit cesser de se plaindre.",
+      "Reconnaître le désagrément causé avec calme, expliquer l'origine de l'indisponibilité et s'engager sur un suivi personnalisé dès le rétablissement.",
+      "Accuser publiquement le service informatique en vous désolidarisant de l'administration.",
+      "Quitter le guichet en laissant l'usager sans interlocuteur."
+    ],
+    "correctIndex": 1,
+    "explanation": "Garder son calme, faire preuve d'empathie face à la gêne occasionnée et proposer une solution concrète de suivi désamorce la tension avec dignité.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  }
+]

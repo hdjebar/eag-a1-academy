@@ -1,0 +1,192 @@
+[
+  {
+    "id": "numeric-ratio-001",
+    "category": "numeric",
+    "skill": "variation relative",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel service administratif enregistre la plus forte progression relative entre janvier et février ?",
+    "stimulus": "<table class=\"data\"><tr><th>Service</th><th>Jan.</th><th>Fév.</th></tr><tr><td>A</td><td>120</td><td>138</td></tr><tr><td>B</td><td>80</td><td>96</td></tr><tr><td>C</td><td>150</td><td>165</td></tr></table>",
+    "options": [
+      "Service A",
+      "Service B",
+      "Service C",
+      "Progression identique entre A et B"
+    ],
+    "correctIndex": 1,
+    "explanation": "Calcul des taux : Service A = (138-120)/120 = +15 % ; Service B = (96-80)/80 = +20 % ; Service C = (165-150)/150 = +10 %. Le service B a la plus forte hausse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-mean-002",
+    "category": "numeric",
+    "skill": "cadence moyenne",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Combien de dossiers sont instruits en moyenne chaque jour ouvré ?",
+    "stimulus": "Une équipe instruit 420 dossiers en 7 jours ouvrés à rythme régulier et constant.",
+    "options": [
+      "50 dossiers",
+      "55 dossiers",
+      "60 dossiers",
+      "65 dossiers"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le calcul direct de la moyenne quotidienne donne 420 divisé par 7, soit exactement 60 dossiers par jour ouvré.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-perc-003",
+    "category": "numeric",
+    "skill": "pourcentage de diminution",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quel est le nouveau temps moyen de réponse après optimisation ?",
+    "stimulus": "Un temps moyen de réponse de 40 minutes est réduit de 15 % grâce à une procédure simplifiée.",
+    "options": [
+      "34 minutes",
+      "35 minutes",
+      "36 minutes",
+      "38 minutes"
+    ],
+    "correctIndex": 0,
+    "explanation": "La réduction s'élève à 15 % de 40 = 6 minutes. Le nouveau délai est donc de 40 - 6 = 34 minutes.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-rate-004",
+    "category": "numeric",
+    "skill": "application de pourcentage",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Combien de demandes reçoivent une décision favorable ?",
+    "stimulus": "Sur un total de 250 demandes d'agrément examinées, 72 % sont approuvées.",
+    "options": [
+      "170 demandes",
+      "175 demandes",
+      "180 demandes",
+      "185 demandes"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le calcul direct donne 250 × 0,72 = 180 demandes approuvées.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-table-005",
+    "category": "numeric",
+    "skill": "taux de résolution",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel trimestre présente le taux de résolution le plus performant ?",
+    "stimulus": "<table class=\"data\"><tr><th>Trimestre</th><th>Reçues</th><th>Résolues</th></tr><tr><td>T1</td><td>200</td><td>160</td></tr><tr><td>T2</td><td>240</td><td>204</td></tr><tr><td>T3</td><td>180</td><td>144</td></tr></table>",
+    "options": [
+      "Trimestre 1",
+      "Trimestre 2",
+      "Trimestre 3",
+      "T1 et T3 ex aequo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Taux de résolution : T1 = 160/200 = 80 % ; T2 = 204/240 = 85 % ; T3 = 144/180 = 80 %. Le trimestre 2 est le plus performant.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-budget-006",
+    "category": "numeric",
+    "skill": "calcul budgétaire",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel montant résiduel reste-t-il disponible sur l'enveloppe allouée ?",
+    "stimulus": "Une enveloppe budgétaire de 80 000 euros est consommée à hauteur de 45 % au premier trimestre, puis 25 % du budget initial au second trimestre.",
+    "options": [
+      "24 000 euros",
+      "20 000 euros",
+      "28 000 euros",
+      "16 000 euros"
+    ],
+    "correctIndex": 0,
+    "explanation": "La consommation totale représente 45 % + 25 % = 70 % du montant initial. La part restante est de 30 % de 80 000 euros, soit 24 000 euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-weight-007",
+    "category": "numeric",
+    "skill": "moyenne pondérée",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle est la note moyenne pondérée obtenue par ce projet d'aménagement ?",
+    "stimulus": "Épreuve A (coeff. 3) : 14/20. Épreuve B (coeff. 2) : 16/20. Épreuve C (coeff. 5) : 11/20.",
+    "options": [
+      "12,9 / 20",
+      "13,2 / 20",
+      "13,7 / 20",
+      "12,5 / 20"
+    ],
+    "correctIndex": 0,
+    "explanation": "Calcul de la moyenne pondérée : [(14×3) + (16×2) + (11×5)] / (3+2+5) = (42 + 32 + 55) / 10 = 129 / 10 = 12,9 / 20.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-scale-008",
+    "category": "numeric",
+    "skill": "échelle et proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle est la distance réelle sur le terrain correspondant à cette mesure ?",
+    "stimulus": "Sur un plan d'urbanisme à l'échelle 1:2 500, un tracé de raccordement mesure 8 centimètres.",
+    "options": [
+      "200 mètres",
+      "20 mètres",
+      "2 000 mètres",
+      "160 mètres"
+    ],
+    "correctIndex": 0,
+    "explanation": "La distance réelle équivaut à 8 cm × 2 500 = 20 000 cm = 200 mètres.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-speed-009",
+    "category": "numeric",
+    "skill": "partage de rendement",
+    "difficulty": 3,
+    "language": "fr",
+    "prompt": "Combien de temps faut-il pour traiter les 60 dossiers restants en travaillant conjointement ?",
+    "stimulus": "L'agent X traite 6 dossiers par heure. L'agent Y traite 4 dossiers par heure.",
+    "options": [
+      "6 heures",
+      "5 heures",
+      "7 heures",
+      "8 heures"
+    ],
+    "correctIndex": 0,
+    "explanation": "Leur cadence combinée est de 6 + 4 = 10 dossiers par heure. Pour 60 dossiers, il faut 60 / 10 = 6 heures.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "numeric-delta-010",
+    "category": "numeric",
+    "skill": "variation absolue vs relative",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "De combien de points de pourcentage le taux de présence a-t-il augmenté ?",
+    "stimulus": "Le taux de participation des agents aux formations passe de 60 % à 75 % d'une année sur l'autre.",
+    "options": [
+      "15 points",
+      "25 points",
+      "15 %",
+      "20 points"
+    ],
+    "correctIndex": 0,
+    "explanation": "La différence entre deux pourcentages s'exprime en points de pourcentage : 75 - 60 = 15 points (alors que la hausse relative est de 25 %).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  }
+]

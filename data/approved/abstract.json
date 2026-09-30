@@ -1,0 +1,192 @@
+[
+  {
+    "id": "abstract-symb-001",
+    "category": "abstract",
+    "skill": "alternance de formes",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quel élément géométrique complète logiquement cette série ?",
+    "stimulus": "<div class=\"shapes\">○ ● □ ■ △ ?</div>",
+    "options": [
+      "▲",
+      "●",
+      "◆",
+      "△"
+    ],
+    "correctIndex": 0,
+    "explanation": "La série regroupe les formes géométriques par paires consécutives (cercle, carré, triangle) en alternant motif évidé puis motif plein.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-arrow-002",
+    "category": "abstract",
+    "skill": "cycle d'orientation",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quelle paire de flèches vient compléter la suite ?",
+    "stimulus": "<div class=\"shapes\">↑ → &nbsp; ↓ ← &nbsp; ↑ → &nbsp; ?</div>",
+    "options": [
+      "↓ ←",
+      "→ ↓",
+      "← ↑",
+      "↑ →"
+    ],
+    "correctIndex": 0,
+    "explanation": "La séquence alterne deux blocs de deux directions décrivant une rotation horaire complète : [↑ →], puis [↓ ←].",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-math-003",
+    "category": "abstract",
+    "skill": "relation numérique induite",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel nombre remplace logiquement le point d’interrogation ?",
+    "stimulus": "<div class=\"shapes\">2 → 6 &nbsp; 3 → 12 &nbsp; 4 → ?</div>",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "24"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque terme en entrée n correspond à la sortie n × (n + 1). Pour n = 4, le résultat est 4 × 5 = 20.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-odd-004",
+    "category": "abstract",
+    "skill": "détection d'intrus",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quel symbole constitue l'intrus parmi les quatre proposés ?",
+    "stimulus": "<div class=\"shapes\">◇ &nbsp; □ &nbsp; △ &nbsp; ○</div>",
+    "options": [
+      "◇",
+      "□",
+      "△",
+      "○"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le losange, le carré et le triangle sont des polygones constitués de segments droits, tandis que le cercle est une ligne courbe fermée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-dots-005",
+    "category": "abstract",
+    "skill": "progression arithmétique",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quel groupe de points complète la progression linéaire ?",
+    "stimulus": "<div class=\"shapes\">● &nbsp; ●● &nbsp; ●●● &nbsp; ?</div>",
+    "options": [
+      "●●",
+      "●●●●",
+      "○○○○",
+      "●●●●●"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le nombre de disques pleins s'accroît d'une unité à chaque étape : 1, 2, 3 puis 4 disques.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-rot-006",
+    "category": "abstract",
+    "skill": "rotation dans l'espace",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle position occupe le curseur après la rotation successive ?",
+    "stimulus": "<div class=\"shapes\">◰ → ◳ → ◲ → ?</div>",
+    "options": [
+      "◱",
+      "◰",
+      "◳",
+      "◲"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le coin obscurci tourne de 90° dans le sens horaire à chaque transition : haut-gauche, haut-droite, bas-droite, puis bas-gauche.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-sides-007",
+    "category": "abstract",
+    "skill": "dénombrement d'arêtes",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle figure complète la suite selon le nombre de sommets ?",
+    "stimulus": "Hexagone (6) → Pentagone (5) → Quadrilatère (4) → ?",
+    "options": [
+      "Triangle (3)",
+      "Heptagone (7)",
+      "Cercle (0)",
+      "Octogone (8)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La suite suit un décompte strictement décroissant d'un sommet par figure : 6, 5, 4, puis 3 (triangle).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-matrix-008",
+    "category": "abstract",
+    "skill": "inversion logique",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle figure correspond à la règle de transformation appliquée ?",
+    "stimulus": "▲ (noir pointant haut) → ▽ (blanc pointant bas) &nbsp;||&nbsp; ◼ (noir) → ?",
+    "options": [
+      "◻ (carré blanc)",
+      "◼ (carré noir)",
+      "▲ (triangle)",
+      "◆ (losange)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La règle inverse à la fois le remplissage (plein vers évidé) et l'orientation lorsque applicable. Pour un carré symétrique, le remplissage devient blanc.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-xor-009",
+    "category": "abstract",
+    "skill": "superposition logique",
+    "difficulty": 3,
+    "language": "fr",
+    "prompt": "Deux grilles transparentes sont superposées. Les traits présents sur les deux grilles s'annulent (OU exclusif). Quel est le motif final ?",
+    "stimulus": "Grille 1 : [barre verticale + barre horizontale] | Grille 2 : [barre verticale seule]",
+    "options": [
+      "Barre horizontale seule",
+      "Croix complète (+)",
+      "Barre verticale seule",
+      "Grille vide"
+    ],
+    "correctIndex": 0,
+    "explanation": "La barre verticale est commune aux deux grilles, elle s'annule donc par superposition exclusive. Seule subsiste la barre horizontale.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "abstract-cycle-010",
+    "category": "abstract",
+    "skill": "cycle modulaire",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel est le dixième élément généré par la séquence périodique suivante ?",
+    "stimulus": "A, B, C, D, A, B, C, D, ...",
+    "options": [
+      "B",
+      "A",
+      "C",
+      "D"
+    ],
+    "correctIndex": 0,
+    "explanation": "La période est de 4 éléments. Le dixième élément correspond au reste de la division euclidienne 10 modulo 4, soit le 2e terme : B.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  }
+]

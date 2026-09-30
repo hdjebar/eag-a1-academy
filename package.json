@@ -1,12 +1,13 @@
 {
   "name": "eag-a1-academy",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "build:bank": "node scripts/build-bank.mjs",
     "generate:bank": "node scripts/generate-bank.mjs",
     "review:bank": "node scripts/review-bank.mjs",
     "validate:bank": "node scripts/validate-bank.mjs",
-    "test": "node --check app.js && node scripts/validate-bank.mjs --self-test"
+    "test": "node --check app.js && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check"
   }
 }

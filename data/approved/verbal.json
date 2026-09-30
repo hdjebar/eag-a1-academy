@@ -1,0 +1,192 @@
+[
+  {
+    "id": "verbal-deduct-001",
+    "category": "verbal",
+    "skill": "déduction stricte",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quelle conclusion est absolument certaine à partir des seuls éléments fournis ?",
+    "stimulus": "Tous les dossiers urgents sont examinés le jour même. Le dossier L est urgent.",
+    "options": [
+      "Le dossier L est accepté.",
+      "Le dossier L est examiné le jour même.",
+      "Le dossier L est le premier examiné.",
+      "Tous les dossiers de la journée sont urgents."
+    ],
+    "correctIndex": 1,
+    "explanation": "L'énoncé affirme expressément que tout dossier urgent fait l'objet d'un examen le jour même ; aucune conclusion sur la décision finale ou l'ordre exact n'est permise.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-cond-002",
+    "category": "verbal",
+    "skill": "condition nécessaire et suffisante",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle affirmation découle rigoureusement des conditions indiquées ?",
+    "stimulus": "Le guichet ouvre à 8 h 30. Les rendez-vous avant 10 h sont réservés aux demandes déjà complètes. Nora a obtenu un rendez-vous à 9 h 15.",
+    "options": [
+      "La demande de Nora est déjà complète.",
+      "Nora sera reçue avant l'ouverture générale du guichet.",
+      "Nora n'a pas besoin de pièces justificatives supplémentaires.",
+      "La demande de Nora sera automatiquement acceptée."
+    ],
+    "correctIndex": 0,
+    "explanation": "Puisque les créneaux antérieurs à 10 h sont strictement réservés aux demandes déjà complètes, le rendez-vous de 9 h 15 garantit que le dossier est complet.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-quant-003",
+    "category": "verbal",
+    "skill": "quantificateurs logiques",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Peut-on déduire de ce texte que Malik travaille à distance ?",
+    "stimulus": "Certains analystes travaillent à distance. Malik est analyste.",
+    "options": [
+      "Oui, nécessairement.",
+      "Non, jamais.",
+      "Impossible à déterminer d'après le texte.",
+      "Oui, car la règle s'applique à l'ensemble du service."
+    ],
+    "correctIndex": 2,
+    "explanation": "L'expression « certains » indique l'existence d'au moins un analyste à distance, sans préciser si Malik en fait partie.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-order-004",
+    "category": "verbal",
+    "skill": "application de consigne",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quelle séquence respecte scrupuleusement la règle de classement ?",
+    "stimulus": "Classer les dossiers par date croissante. À date identique, placer en premier le numéro le plus petit.",
+    "options": [
+      "12/04 n° 18, puis 11/04 n° 22",
+      "11/04 n° 22, puis 11/04 n° 19",
+      "11/04 n° 19, puis 11/04 n° 22",
+      "12/04 n° 12, puis 11/04 n° 10"
+    ],
+    "correctIndex": 2,
+    "explanation": "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le numéro plus élevé (22).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-neg-005",
+    "category": "verbal",
+    "skill": "négation et exclusion",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle conclusion n'est PAS justifiée par le passage ?",
+    "stimulus": "Aucun rapport incomplet n'est transmis. Certains rapports du service B sont transmis.",
+    "options": [
+      "Certains rapports du service B sont complets.",
+      "Aucun rapport transmis n'est incomplet.",
+      "Tous les rapports du service B sont transmis.",
+      "Au moins un rapport du service B est transmis."
+    ],
+    "correctIndex": 2,
+    "explanation": "Le passage mentionne que certains rapports sont transmis, ce qui interdit d'affirmer que tous les rapports du service le sont.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-syll-006",
+    "category": "verbal",
+    "skill": "syllogisme catégorique",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle déduction s'impose logiquement à partir des deux prémisses ?",
+    "stimulus": "Tout arrêté ministériel fait l'objet d'une publication. Le document G ne fait l'objet d'aucune publication.",
+    "options": [
+      "Le document G n'est pas un arrêté ministériel.",
+      "Le document G est un projet de loi en cours.",
+      "Le document G sera publié ultérieurement.",
+      "Certains arrêtés ministériels ne sont pas publiés."
+    ],
+    "correctIndex": 0,
+    "explanation": "Par contraposition logique : si tout arrêté est publié, un document non publié ne peut en aucun cas constituer un arrêté ministériel.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-rule-007",
+    "category": "verbal",
+    "skill": "interprétation de règles",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle décision est conforme à la directive énoncée ?",
+    "stimulus": "Toute demande de subvention supérieure à 50 000 euros requiert un avis préalable de la commission financière. Le projet Alpha sollicite 45 000 euros.",
+    "options": [
+      "Le projet Alpha ne requiert pas obligatoirement l'avis préalable de la commission financière au titre de cette règle.",
+      "Le projet Alpha doit impérativement obtenir l'accord unanime de la commission financière.",
+      "Le projet Alpha sera automatiquement rejeté pour insuffisance de montant.",
+      "Le projet Alpha est dispensé de tout contrôle administratif."
+    ],
+    "correctIndex": 0,
+    "explanation": "Le seuil obligatoire est fixé strictement aux montants supérieurs à 50 000 euros ; 45 000 euros ne déclenchent pas cette obligation spécifique.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-extrap-008",
+    "category": "verbal",
+    "skill": "repérage d'extrapolations",
+    "difficulty": 3,
+    "language": "fr",
+    "prompt": "Laquelle des propositions constitue une extrapolation non démontrée par le texte ?",
+    "stimulus": "La dématérialisation des formulaires a réduit le délai moyen de traitement de 14 jours à 6 jours au premier semestre.",
+    "options": [
+      "Les usagers sont globalement plus satisfaits de la qualité de service.",
+      "Le délai moyen de traitement constaté s'est contracté de 8 jours.",
+      "Le délai moyen est passé sous la barre des dix jours au premier semestre.",
+      "Le traitement moyen était plus long avant le premier semestre concerné."
+    ],
+    "correctIndex": 0,
+    "explanation": "Le texte renseigne un indicateur temporel précis (délai en jours), mais ne fournit aucune donnée sur le niveau de satisfaction des usagers.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-equiv-009",
+    "category": "verbal",
+    "skill": "équivalence logique",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle formulation exprime exactement le même sens logique ?",
+    "stimulus": "Il est impossible d'accéder à la zone sécurisée sans badge d'identification actif.",
+    "options": [
+      "Avoir un badge actif est une condition indispensable pour accéder à la zone sécurisée.",
+      "Toute personne munie d'un badge actif a le droit d'entrer dans la zone sécurisée.",
+      "Les personnes sans badge peuvent être admises avec un accompagnateur.",
+      "Le badge actif garantit un accès permanent et sans restriction."
+    ],
+    "correctIndex": 0,
+    "explanation": "L'absence de badge empêchant l'accès, la détention d'un badge actif constitue bien une condition nécessaire (indispensable) d'accès.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verbal-fact-010",
+    "category": "verbal",
+    "skill": "distinction fait vs opinion",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle proposition relève d'un fait constatable et non d'une appréciation subjective ?",
+    "stimulus": "Le nouveau logiciel de gestion des congés est remarquable, il enregistre 1 200 connexions quotidiennes et simplifie grandement la vie du personnel.",
+    "options": [
+      "Le logiciel enregistre 1 200 connexions quotidiennes.",
+      "Le nouveau logiciel est particulièrement remarquable.",
+      "La vie du personnel est grandement simplifiée.",
+      "Ce système est la meilleure solution disponible."
+    ],
+    "correctIndex": 0,
+    "explanation": "Le comptage de 1 200 connexions est une mesure quantitative objectivement vérifiable, à la différence des appréciations qualitatives.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  }
+]

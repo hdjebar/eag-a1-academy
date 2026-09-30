@@ -8,6 +8,9 @@ on:
       - "schema/**"
       - "scripts/**"
       - "prompts/**"
+      - "app.js"
+      - "eag-a1-academy.html"
+      - "package.json"
   push:
     branches: [main]
 

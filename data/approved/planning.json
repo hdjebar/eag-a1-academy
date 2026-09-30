@@ -1,0 +1,192 @@
+[
+  {
+    "id": "planning-slot-001",
+    "category": "planning",
+    "skill": "intersection d'agendas",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel créneau permet d'organiser une réunion de 45 minutes commune aux deux participants ?",
+    "stimulus": "Léa est libre de 9:00 à 10:00 et de 14:00 à 15:00. Sam est libre de 9:30 à 11:00 et de 14:30 à 16:00.",
+    "options": [
+      "9:00 à 9:45",
+      "9:30 à 10:15",
+      "14:00 à 14:45",
+      "Aucun créneau proposé ne convient"
+    ],
+    "correctIndex": 3,
+    "explanation": "Les intersections communes sont 9:30-10:00 (30 min) et 14:30-15:00 (30 min). Aucune plage continue commune n'atteint la durée exigée de 45 minutes.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-prio-002",
+    "category": "planning",
+    "skill": "priorisation temporelle",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quelle tâche devez-vous impérativement démarrer en premier ?",
+    "stimulus": "Il est 9 h 00. Tâche A : échéance 10 h 00, durée 20 min. Tâche B : échéance demain, durée 15 min. Tâche C : échéance aujourd'hui 16 h 00, durée 60 min.",
+    "options": [
+      "Tâche A",
+      "Tâche B",
+      "Tâche C",
+      "Ordre indifférent"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tâche A a l'échéance la plus imminente (10 h 00) et peut être achevée avant sa date limite en débutant sans délai.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-order-003",
+    "category": "planning",
+    "skill": "contraintes d'antériorité",
+    "difficulty": 1,
+    "language": "fr",
+    "prompt": "Quel ordonnancement respecte l'intégralité des contraintes de préséance imposées ?",
+    "stimulus": "L'étape X doit impérativement précéder l'étape Y. L'étape Z doit être réalisée après l'étape Y.",
+    "options": [
+      "Z, puis X, puis Y",
+      "X, puis Z, puis Y",
+      "Y, puis X, puis Z",
+      "X, puis Y, puis Z"
+    ],
+    "correctIndex": 3,
+    "explanation": "Les contraintes X < Y et Y < Z imposent strictement l'enchaînement direct X, puis Y, puis Z.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-room-004",
+    "category": "planning",
+    "skill": "attribution de ressources",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel créneau faut-il réserver pour satisfaire l'ensemble des contraintes ?",
+    "stimulus": "Entretien de 30 minutes avant midi. Salle libre de 10:00 à 10:30 et de 11:00 à 12:00. Candidate indisponible de 10:15 à 11:15.",
+    "options": [
+      "10:00 à 10:30",
+      "10:15 à 10:45",
+      "11:00 à 11:30",
+      "11:15 à 11:45"
+    ],
+    "correctIndex": 3,
+    "explanation": "La candidate se libère à 11:15 et la salle est libre jusqu'à 12:00 ; le créneau 11:15-11:45 offre 30 minutes effectives sans conflit.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-delay-005",
+    "category": "planning",
+    "skill": "arbitrage d'urgence",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quel ordre de traitement minimise le risque de dépassement de délai ?",
+    "stimulus": "À 13 h 00 : dossier urgent (durée 45 min, échéance 14 h 00), appel de cadrage (durée 15 min, avant 15 h 00), note de synthèse (durée 90 min, pour le lendemain).",
+    "options": [
+      "Note de synthèse, appel, dossier urgent",
+      "Dossier urgent, appel, note de synthèse",
+      "Appel, note de synthèse, dossier urgent",
+      "Note de synthèse, dossier urgent, appel"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le dossier urgent doit se terminer à 13:45 pour respecter l'échéance de 14:00, suivi de l'appel (13:45-14:00), laissant le temps pour la note.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-crit-006",
+    "category": "planning",
+    "skill": "chemin critique",
+    "difficulty": 3,
+    "language": "fr",
+    "prompt": "Quelle est la durée minimale incompressible pour finaliser ce projet ?",
+    "stimulus": "Phase 1 (durée 3 jours). Puis en parallèle : Phase 2A (durée 4 jours) et Phase 2B (durée 6 jours). Enfin Phase 3 (durée 2 jours), démarrant dès que 2A et 2B sont terminées.",
+    "options": [
+      "11 jours",
+      "9 jours",
+      "15 jours",
+      "13 jours"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entre 2A et 2B menées en parallèle, le chemin le plus long impose 6 jours. La durée totale incompressible est donc 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-capa-007",
+    "category": "planning",
+    "skill": "dimensionnement de charge",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Combien d'agents supplémentaires faut-il mobiliser pour respecter l'échéance ?",
+    "stimulus": "Un chantier d'archivage requiert 120 heures-agent à livrer en 5 jours de 8 heures de travail. L'équipe actuelle compte 2 agents.",
+    "options": [
+      "1 agent supplémentaire",
+      "2 agents supplémentaires",
+      "3 agents supplémentaires",
+      "Aucun agent supplémentaire"
+    ],
+    "correctIndex": 0,
+    "explanation": "En 5 jours, 1 agent produit 5 × 8 = 40 heures. Pour réaliser 120 heures, il faut 120 / 40 = 3 agents au total. Deux étant déjà présents, il faut 1 agent de plus.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-overlap-008",
+    "category": "planning",
+    "skill": "gestion de rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle heure d'arrivée pour l'agent C garantit la permanence sans interruption ?",
+    "stimulus": "La permanence au guichet doit être assurée en continu de 8 h à 18 h. Agent A : 8 h à 12 h. Agent B : 11 h 30 à 15 h 30.",
+    "options": [
+      "Au plus tard à 15 h 30",
+      "Au plus tard à 16 h 00",
+      "Au plus tard à 14 h 00",
+      "Au plus tard à 17 h 00"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'agent B quitte son poste à 15 h 30. Pour éviter toute rupture de service, la relève par l'agent C doit être opérationnelle au plus tard à 15 h 30.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-buffer-009",
+    "category": "planning",
+    "skill": "marge de sécurité",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle est la marge libre disponible sur la tâche avant d'impacter la date limite globale ?",
+    "stimulus": "L'échéance de livraison est fixée à J+20. Le chemin critique cumulé des tâches restantes est estimé à 16 jours ouvrés.",
+    "options": [
+      "4 jours ouvrés",
+      "2 jours ouvrés",
+      "6 jours ouvrés",
+      "Aucune marge"
+    ],
+    "correctIndex": 0,
+    "explanation": "La marge libre correspond à l'écart entre le délai limite et la durée du chemin critique : 20 - 16 = 4 jours ouvrés.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "planning-dep-010",
+    "category": "planning",
+    "skill": "gestion des dépendances",
+    "difficulty": 2,
+    "language": "fr",
+    "prompt": "Quelle action peut démarrer immédiatement dès ce matin ?",
+    "stimulus": "Validation hiérarchique : en attente du rapport financier. Rapport financier : en cours de relecture finale. Envoi des convocations : conditionné par la validation.",
+    "options": [
+      "La relecture finale du rapport financier",
+      "La validation hiérarchique",
+      "L'envoi des convocations",
+      "L'archivage des dossiers"
+    ],
+    "correctIndex": 0,
+    "explanation": "Toutes les étapes dépendent en cascade de la finalisation du rapport financier ; c'est donc la seule action activable immédiatement.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved"
+  }
+]
