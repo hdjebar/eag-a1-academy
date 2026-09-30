@@ -1,0 +1,66 @@
+name: Generate candidate test bank
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: Test family
+        required: true
+        type: choice
+        options: [abstract, verbal, numeric, planning, situational]
+      count:
+        description: Number of candidate items (1-50)
+        required: true
+        default: "20"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-review-validate:
+    runs-on: ubuntu-latest
+    env:
+      CATEGORY: ${{ inputs.category }}
+      COUNT: ${{ inputs.count }}
+      AI_API_URL: ${{ secrets.AI_API_URL }}
+      AI_API_KEY: ${{ secrets.AI_API_KEY }}
+      AI_MODEL: ${{ vars.AI_MODEL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check configuration
+        run: |
+          test -n "$AI_API_URL" || (echo "Missing AI_API_URL secret" && exit 1)
+          test -n "$AI_API_KEY" || (echo "Missing AI_API_KEY secret" && exit 1)
+          test -n "$AI_MODEL" || (echo "Missing AI_MODEL variable" && exit 1)
+      - name: Generate candidates
+        run: node scripts/generate-bank.mjs
+      - name: Independent AI review
+        run: node scripts/review-bank.mjs
+      - name: Deterministic validation
+        run: node scripts/validate-bank.mjs "$(cat generated/latest.txt)"
+      - name: Unit checks
+        run: npm test
+      - name: Upload review package
+        uses: actions/upload-artifact@v4
+        with:
+          name: eag-${{ inputs.category }}-candidate-bank
+          path: generated/*.json
+          retention-days: 30
+      - name: Open human-review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          file="$(cat generated/latest.txt)"
+          review="${file%.json}.review.json"
+          branch="ai-bank/${CATEGORY}-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add -f "$file" "$review"
+          git commit -m "chore: add AI-assisted ${CATEGORY} candidates"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "Review AI-assisted ${CATEGORY} question bank" --body "Candidate questions generated and independently reviewed by AI. **Human approval is mandatory before merge.** Validate correctness, uniqueness, wording, fairness, and compliance with CONTRIBUTING.md."

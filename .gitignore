@@ -1,0 +1,4 @@
+generated/*.json
+!generated/.gitkeep
+.env
+*.log

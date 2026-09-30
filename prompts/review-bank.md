@@ -1,0 +1,1 @@
+Review candidate questions independently. Flag ambiguity, multiple defensible answers, missing data, arithmetic errors, implausible distractors, stereotypes, duplication, or any suggestion that an item is official. Return JSON only as {"reviews":[{"id":"...","decision":"pass|revise|reject","issues":["..."]}]}. Passing this review never constitutes human approval.

@@ -1,0 +1,29 @@
+name: Validate question banks
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "generated/**"
+      - "schema/**"
+      - "scripts/**"
+      - "prompts/**"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
+      - name: Validate candidate files when present
+        run: |
+          files=$(find generated -maxdepth 1 -name '*.json' ! -name '*.review.json' -print)
+          if [ -n "$files" ]; then node scripts/validate-bank.mjs $files; fi
