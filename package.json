@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build:bank": "node scripts/build-bank.mjs",
+    "promote:candidate": "node scripts/promote-candidate.mjs",
     "generate:bank": "node scripts/generate-bank.mjs",
     "review:bank": "node scripts/review-bank.mjs",
     "validate:bank": "node scripts/validate-bank.mjs",
