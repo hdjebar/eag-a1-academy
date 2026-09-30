@@ -6,8 +6,8 @@
   "scripts": {
     "build:bank": "node scripts/build-bank.mjs",
     "promote:candidate": "node scripts/promote-candidate.mjs",
-    "generate:bank": "node scripts/generate-bank.mjs",
-    "review:bank": "node scripts/review-bank.mjs",
+    "generate:bank": "node --env-file-if-exists=.env scripts/generate-bank.mjs",
+    "review:bank": "node --env-file-if-exists=.env scripts/review-bank.mjs",
     "validate:bank": "node scripts/validate-bank.mjs",
     "test": "node --check app.js && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check"
   }
