@@ -16,6 +16,15 @@ Tous les exercices sont originaux. Ils ne reproduisent aucun item officiel et ne
 
 Ouvrez `eag-a1-academy.html` dans un navigateur moderne. Aucun serveur, compte, paquet ni stockage local n'est requis.
 
+## Banque de questions et contribution
+
+L'application contient 50 questions originales réparties sur les 5 compétences A1 dans `data/approved/`.
+
+Pour ajouter ou enrichir des questions (via l'interface d'un **Chat LLM**, en **local avec Node.js** ou via **GitHub Actions**) :
+* Consultez le guide complet : [docs/AI-QUESTION-BANKS.md](file:///Users/hdjebar/eag/eag-a1-academy/docs/AI-QUESTION-BANKS.md)
+* Compilez et synchronisez la banque avec `npm run build:bank`
+* Vérifiez l'intégrité avec `npm test`
+
 ## Références officielles
 
 - [Description des tests EAG](https://govjobs.public.lu/fr/nous-rejoindre/epreuve-aptitude-generale/tests-eag.html)
