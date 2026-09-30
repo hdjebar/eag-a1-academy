@@ -25,6 +25,12 @@ Pour ajouter ou enrichir des questions (via l'interface d'un **Chat LLM**, en **
 * Compilez et synchronisez la banque avec `npm run build:bank`
 * Vérifiez l'intégrité avec `npm test`
 
+## Architecture et décisions de conception
+
+Le projet est conçu pour une exécution 100 % hors-ligne, sans serveur ni dépendance runtime, avec un pipeline d'ingestion Zero-Trust pour les contributions assistées par IA.
+* Documentation d'architecture complète : [docs/ARCHITECTURE.md](file:///Users/hdjebar/eag/eag-a1-academy/docs/ARCHITECTURE.md)
+* Registre des décisions d'architecture : [docs/adr/](file:///Users/hdjebar/eag/eag-a1-academy/docs/adr/README.md)
+
 ## Références officielles
 
 - [Description des tests EAG](https://govjobs.public.lu/fr/nous-rejoindre/epreuve-aptitude-generale/tests-eag.html)
