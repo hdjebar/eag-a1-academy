@@ -7,7 +7,7 @@ Application web statique, académique et **non officielle** pour se familiariser
 - Raisonnement abstrait, verbal et numérique
 - Planification
 - Jugement situationnel : « servir le client-usager » et « conseiller », chaque réaction étant notée de 1 à 4
-- Diagnostic transversal et simulation chronométrée
+- Diagnostic transversal, simulation chronométrée et examen blanc de 2 h (cinq tests successifs, chronomètre par test, bilan par test)
 - Explications pédagogiques, bilan et modes clair/sombre
 
 Tous les exercices sont originaux. Ils ne reproduisent aucun item officiel et ne prétendent pas prédire la difficulté, le contenu exact ou le score Stanine de l'épreuve.
@@ -54,6 +54,8 @@ Le projet est conçu pour une exécution 100 % hors-ligne, sans serveur ni dépe
 - [FAQ EAG](https://govjobs.public.lu/fr/faq/faq-eag.html)
 
 Les modalités ont évolué le 15 septembre 2026. Vérifiez toujours les pages officielles avant l'épreuve.
+
+GovJobs publie la durée totale (2 h), la liste des tests A1 et la notation (Stanine, moyenne d'au moins 5), mais ni l'ordre des tests, ni le temps par test, ni le nombre de questions. L'examen blanc utilise une hypothèse de travail (24 minutes par test) réglable dans la constante `EXAM` en tête de `app.js`.
 
 ## Confidentialité
 

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this project, please cite it."
 title: "EAG A1 Académie"
 type: software
-version: 1.5.0
+version: 1.6.0
 date-released: 2026-10-01
 license: MIT
 abstract: "Application non officielle de familiarisation aux familles de tests EAG A1 décrites par GovJobs Luxembourg."
