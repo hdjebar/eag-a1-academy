@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "abstract-epso261001-001",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "[●]    [○○]    [●●●]    [○○○○]    ?"
+    },
+    "options": [
+      "[●●●●●]",
+      "[●●●●]",
+      "[○○○]",
+      "[○○○○○]"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : cinq figures, pleines comme aux rangs impairs.",
+      "Le nombre augmente d'une unité : il en faut cinq.",
+      "Revient en arrière au lieu de progresser.",
+      "Bon nombre, mais le remplissage alterne : le 5e rang est plein."
+    ],
+    "explanation": "Deux règles : le nombre de disques augmente d'une unité à chaque case (1, 2, 3, 4, 5) et le remplissage alterne plein / vide. La 5e case contient donc cinq disques pleins.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-002",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "[↑ ↑]    [→ ←]    [↓ ↓]    [← →]    ?"
+    },
+    "options": [
+      "[↑ ↓]",
+      "[→ →]",
+      "[↑ ↑]",
+      "[↓ ↑]"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "La seconde flèche, qui tourne dans l'autre sens, pointe aussi vers le haut.",
+      "Ajoute un quart de tour de trop à la première flèche.",
+      "Correct : les deux flèches reviennent vers le haut.",
+      "Inverse les deux flèches."
+    ],
+    "explanation": "La flèche de gauche tourne d'un quart de tour dans le sens horaire (↑ → ↓ ←), celle de droite d'un quart de tour dans le sens antihoraire (↑ ← ↓ →). Après quatre étapes, les deux reviennent vers le haut : [↑ ↑].",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-003",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲    ▷    ▼    ◁    ?"
+    },
+    "options": [
+      "▽",
+      "▲",
+      "▶",
+      "△"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Orientation et remplissage incorrects.",
+      "Correct : pointe vers le haut et pleine.",
+      "Un quart de tour de trop.",
+      "Bonne orientation, mais le remplissage alterne : la 5e figure est pleine."
+    ],
+    "explanation": "Le triangle tourne d'un quart de tour dans le sens horaire à chaque étape (haut, droite, bas, gauche, haut) et son remplissage alterne plein / vide. La 5e figure pointe vers le haut et est pleine : ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-004",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●        ●●       ●●●\n■■       ■■■      ■\n▲▲▲      ▲        ?"
+    },
+    "options": [
+      "■■",
+      "▲",
+      "▲▲",
+      "▲▲▲"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "La forme reste le triangle sur la troisième ligne.",
+      "Le nombre 1 figure déjà sur cette ligne.",
+      "Correct : la ligne contient alors 3, 1 et 2 triangles.",
+      "Le nombre 3 figure déjà sur cette ligne."
+    ],
+    "explanation": "Chaque ligne utilise une seule forme et contient une fois 1, 2 et 3 figures. La troisième ligne a déjà 3 puis 1 triangle : il manque 2 triangles.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-005",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Quelle figure complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○  ■  ▲\n■  △  ●\n▲  ●  ?"
+    },
+    "options": [
+      "○",
+      "□",
+      "■",
+      "△"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le disque figure déjà sur la ligne et la colonne.",
+      "Correct : carré, et vide car sur la diagonale.",
+      "Bonne forme, mais les figures de la diagonale sont vides.",
+      "Le triangle figure déjà sur la ligne et la colonne."
+    ],
+    "explanation": "Deux règles : chaque ligne et chaque colonne contient une fois le disque, le carré et le triangle ; les figures de la diagonale (en haut à gauche, centre, en bas à droite) sont vides, les autres pleines. La case manquante est un carré sur la diagonale : □.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-006",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "La même transformation s'applique aux deux paires. Quel résultat obtient-on ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■  ○   →   ●  □\n▲  ◇   →   ?"
+    },
+    "options": [
+      "▲  ◇",
+      "◇  ▲",
+      "◆  △",
+      "△  ◆"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Aucune transformation appliquée.",
+      "Ordre inversé, mais remplissage conservé.",
+      "Correct : ordre inversé et remplissage inversé.",
+      "Remplissage inversé, mais ordre conservé."
+    ],
+    "explanation": "La transformation échange les deux figures et inverse leur remplissage : ■ ○ devient ○ ■ puis ● □. Appliquée à ▲ ◇ : ◇ ▲ puis ◆ △.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-007",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel élément vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■  ▲  ▲  ●  ●  ●  ■  ■  ■  ■  ?"
+    },
+    "options": [
+      "◆",
+      "▲",
+      "■",
+      "●"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le losange n'apparaît pas dans la série.",
+      "Correct : début du groupe de cinq triangles.",
+      "Le groupe de quatre carrés est complet.",
+      "Le disque vient après les triangles dans le cycle."
+    ],
+    "explanation": "Les formes suivent le cycle carré, triangle, disque, et chaque groupe compte une figure de plus que le précédent : 1 carré, 2 triangles, 3 disques, 4 carrés. Vient ensuite un groupe de 5 triangles, qui commence par ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-008",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "[↑]    [→→]    [↓↓↓]    [←←←←]    ?"
+    },
+    "options": [
+      "[→→→→→]",
+      "[←←←←←]",
+      "[↑↑↑↑↑]",
+      "[↑↑↑↑]"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Un quart de tour de trop.",
+      "L'orientation doit encore tourner.",
+      "Correct : cinq flèches orientées vers le haut.",
+      "Il faut une flèche de plus."
+    ],
+    "explanation": "À chaque case, le nombre de flèches augmente d'une unité et leur direction tourne d'un quart de tour dans le sens horaire. La 5e case contient cinq flèches vers le haut.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-009",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●        ■        ●  ■\n▲        ●        ▲  ●\n■        ▲        ?"
+    },
+    "options": [
+      "■  ▲",
+      "■  ■",
+      "▲  ●",
+      "■  ●"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la 3e colonne réunit les figures des deux premières.",
+      "Le triangle de la 2e colonne manque.",
+      "Le carré de la 1re colonne manque.",
+      "Le disque n'appartient pas à cette ligne."
+    ],
+    "explanation": "Sur chaque ligne, la troisième case réunit la figure de la première colonne puis celle de la deuxième. Troisième ligne : ■ puis ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "abstract-epso261001-010",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "La même transformation s'applique aux deux lignes. Quel résultat obtient-on ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲  ▶   →   ◀  ▼\n▼  ◀  ▲   →   ?"
+    },
+    "options": [
+      "▲  ◀  ▼",
+      "▼  ▶  ▲",
+      "▲  ▶  ▼",
+      "▼  ◀  ▲"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Ordre inversé, mais les figures n'ont pas tourné.",
+      "Correct : la ligne entière a tourné de 180°.",
+      "Chaque figure tourne, mais l'ordre doit aussi s'inverser.",
+      "Aucune transformation appliquée."
+    ],
+    "explanation": "La ligne entière tourne de 180° : l'ordre des figures s'inverse et chaque figure fait un demi-tour (▲ ▶ → ▶ ▲ → ◀ ▼). Pour ▼ ◀ ▲ : ordre inversé ▲ ◀ ▼, puis demi-tour de chaque figure : ▼ ▶ ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-001",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle commune enregistre la plus forte hausse relative du nombre de demandes entre 2024 et 2025 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes de permis de construire",
+      "headers": [
+        "Commune",
+        "2024",
+        "2025"
+      ],
+      "rows": [
+        [
+          "Aldric",
+          1250,
+          1400
+        ],
+        [
+          "Belmont",
+          980,
+          931
+        ],
+        [
+          "Corvel",
+          2100,
+          2310
+        ],
+        [
+          "Dorval",
+          640,
+          704
+        ]
+      ]
+    },
+    "options": [
+      "Dorval",
+      "Aldric",
+      "Belmont",
+      "Corvel"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "+64 / 640 = +10 %.",
+      "Correct : +150 / 1 250 = +12 %.",
+      "Baisse de 5 %.",
+      "Plus forte hausse absolue (+210), mais +10 % seulement."
+    ],
+    "explanation": "Variations relatives : Aldric (1 400 − 1 250) / 1 250 = 12 % ; Belmont −5 % ; Corvel 210 / 2 100 = 10 % ; Dorval 64 / 640 = 10 %. La plus forte hausse relative est celle d'Aldric.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-002",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle part du budget total de formation est attribuée au service Informatique ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Budget de formation par service (en euros)",
+      "headers": [
+        "Service",
+        "Budget"
+      ],
+      "rows": [
+        [
+          "Ressources humaines",
+          "48 000"
+        ],
+        [
+          "Informatique",
+          "72 000"
+        ],
+        [
+          "Juridique",
+          "30 000"
+        ],
+        [
+          "Communication",
+          "50 000"
+        ]
+      ]
+    },
+    "options": [
+      "36 %",
+      "24 %",
+      "72 %",
+      "40 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 72 000 / 200 000.",
+      "Divise par un total erroné de 300 000.",
+      "Confond le montant en milliers avec un pourcentage.",
+      "Ne correspond à aucun calcul sur ces données."
+    ],
+    "explanation": "Total : 48 000 + 72 000 + 30 000 + 50 000 = 200 000 €. Part de l'Informatique : 72 000 / 200 000 = 0,36, soit 36 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-003",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel bureau traite le plus de dossiers par agent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers traités en 2025",
+      "headers": [
+        "Bureau",
+        "Agents",
+        "Dossiers"
+      ],
+      "rows": [
+        [
+          "Nord",
+          12,
+          1560
+        ],
+        [
+          "Sud",
+          8,
+          1120
+        ],
+        [
+          "Est",
+          15,
+          1800
+        ],
+        [
+          "Ouest",
+          10,
+          1350
+        ]
+      ]
+    },
+    "options": [
+      "Est",
+      "Nord",
+      "Ouest",
+      "Sud"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Plus grand total, mais 1 800 / 15 = 120 par agent.",
+      "1 560 / 12 = 130.",
+      "1 350 / 10 = 135.",
+      "Correct : 1 120 / 8 = 140 dossiers par agent."
+    ],
+    "explanation": "Dossiers par agent : Nord 130, Sud 140, Est 120, Ouest 135. Le bureau Sud est le plus productif par agent.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-004",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Quel est le temps d'attente moyen sur la semaine, pondéré par le nombre de visiteurs ? Arrondissez au dixième.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Accueil du public",
+      "headers": [
+        "Jour",
+        "Visiteurs",
+        "Attente moyenne (min)"
+      ],
+      "rows": [
+        [
+          "Lundi",
+          100,
+          12
+        ],
+        [
+          "Mardi",
+          150,
+          18
+        ],
+        [
+          "Mercredi",
+          50,
+          9
+        ],
+        [
+          "Jeudi",
+          120,
+          15
+        ],
+        [
+          "Vendredi",
+          80,
+          21
+        ]
+      ]
+    },
+    "options": [
+      "16,2 min",
+      "15,0 min",
+      "15,7 min",
+      "17,4 min"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Erreur de calcul dans la somme pondérée.",
+      "Moyenne simple des cinq jours, sans pondération.",
+      "Correct : 7 830 / 500.",
+      "Ne pondère que les jours les plus fréquentés."
+    ],
+    "explanation": "Somme pondérée : 100 × 12 + 150 × 18 + 50 × 9 + 120 × 15 + 80 × 21 = 1 200 + 2 700 + 450 + 1 800 + 1 680 = 7 830. Visiteurs : 500. Moyenne : 7 830 / 500 = 15,66, soit 15,7 min.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-005",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Entre quelles années consécutives la hausse relative des effectifs est-elle la plus forte ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Effectifs du service (données du graphique en barres)",
+      "headers": [
+        "Année",
+        "Agents"
+      ],
+      "rows": [
+        [
+          "2021",
+          420
+        ],
+        [
+          "2022",
+          455
+        ],
+        [
+          "2023",
+          470
+        ],
+        [
+          "2024",
+          517
+        ],
+        [
+          "2025",
+          530
+        ]
+      ]
+    },
+    "options": [
+      "2023–2024",
+      "2022–2023",
+      "2024–2025",
+      "2021–2022"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : +47 / 470 = +10 %.",
+      "+15 / 455 ≈ +3,3 %.",
+      "+13 / 517 ≈ +2,5 %.",
+      "+35 / 420 ≈ +8,3 %."
+    ],
+    "explanation": "Hausses relatives : 2021–2022 ≈ 8,3 % ; 2022–2023 ≈ 3,3 % ; 2023–2024 = 47 / 470 = 10 % ; 2024–2025 ≈ 2,5 %. La plus forte est entre 2023 et 2024.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-006",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "operations-simples",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le coût annuel des impressions du service ?",
+    "stimulus": "Tarifs : 0,08 € la page en noir et blanc, 0,35 € la page en couleur.\nLe service imprime chaque mois 2 500 pages en noir et blanc et 400 pages en couleur.",
+    "options": [
+      "4 800 €",
+      "3 400 €",
+      "340 €",
+      "4 080 €"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Ne correspond à aucun calcul cohérent.",
+      "Multiplie par 10 au lieu de 12.",
+      "Coût d'un seul mois.",
+      "Correct : 340 € par mois × 12."
+    ],
+    "explanation": "Coût mensuel : 2 500 × 0,08 = 200 € ; 400 × 0,35 = 140 € ; total 340 €. Coût annuel : 340 × 12 = 4 080 €.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-007",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "De combien de pour cent le taux de satisfaction a-t-il augmenté entre 2024 et 2025 ? Arrondissez à l'unité.",
+    "stimulus": "Taux de satisfaction des usagers : 68 % en 2024, 77 % en 2025.",
+    "options": [
+      "9 %",
+      "15 %",
+      "12 %",
+      "13 %"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Écart en points de pourcentage, pas en pour cent.",
+      "Ne correspond à aucun calcul cohérent.",
+      "Divise par la valeur d'arrivée (9 / 77).",
+      "Correct : 9 / 68 ≈ 13 %."
+    ],
+    "explanation": "L'écart est de 77 − 68 = 9 points. En variation relative : 9 / 68 ≈ 0,132, soit environ 13 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-008",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Sur les trois trimestres, quelle part des demandes a été traitée en ligne ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes traitées par canal",
+      "headers": [
+        "Trimestre",
+        "En ligne",
+        "Guichet",
+        "Courrier"
+      ],
+      "rows": [
+        [
+          "T1",
+          600,
+          300,
+          100
+        ],
+        [
+          "T2",
+          700,
+          250,
+          50
+        ],
+        [
+          "T3",
+          800,
+          150,
+          50
+        ]
+      ]
+    },
+    "options": [
+      "70 %",
+      "80 %",
+      "60 %",
+      "75 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 2 100 / 3 000.",
+      "Part du seul troisième trimestre.",
+      "Part du seul premier trimestre.",
+      "Ne correspond à aucun calcul sur ces données."
+    ],
+    "explanation": "En ligne : 600 + 700 + 800 = 2 100. Total : 1 000 demandes par trimestre, soit 3 000. Part : 2 100 / 3 000 = 70 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-009",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "À rythme égal, combien de jours faut-il à 6 agents pour traiter 432 dossiers ?",
+    "stimulus": "Une équipe de 4 agents traite 240 dossiers en 5 jours, à rythme régulier.",
+    "options": [
+      "6 jours",
+      "5 jours",
+      "4 jours",
+      "9 jours"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 432 / (6 × 12).",
+      "Garde la durée initiale sans recalculer.",
+      "Surestime la capacité de l'équipe.",
+      "Ne tient pas compte des agents supplémentaires."
+    ],
+    "explanation": "Rythme : 240 / (4 × 5) = 12 dossiers par agent et par jour. Avec 6 agents : 72 dossiers par jour. Durée : 432 / 72 = 6 jours.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "numeric-epso261001-010",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le prix final du contrat ?",
+    "stimulus": "Un contrat de maintenance coûte 1 200 € par an. Son prix augmente de 10 %, puis le nouveau prix baisse de 10 %.",
+    "options": [
+      "1 320 €",
+      "1 080 €",
+      "1 188 €",
+      "1 200 €"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Applique seulement la hausse.",
+      "Applique seulement la baisse au prix initial.",
+      "Correct : 1 320 × 0,90.",
+      "Les deux variations ne s'annulent pas : elles portent sur des bases différentes."
+    ],
+    "explanation": "Après la hausse : 1 200 × 1,10 = 1 320 €. Après la baisse : 1 320 × 0,90 = 1 188 €. La baisse s'applique à une base plus élevée, d'où un prix final inférieur au prix initial.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-001",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Laquelle des affirmations suivantes est conforme au texte ?",
+    "stimulus": "Depuis janvier, l'administration de l'environnement du Grand-Comté verse aux agents une prime mensuelle de 40 € lorsqu'ils viennent au travail à vélo au moins douze jours dans le mois. Les agents à temps partiel y ont droit à partir de huit jours de trajet. La prime est versée le mois suivant, sur la base d'une déclaration validée par le supérieur hiérarchique. Le dispositif sera évalué en décembre : s'il réduit d'au moins 5 % l'occupation du parking du personnel, il pourra être étendu aux trajets à pied.",
+    "options": [
+      "Le dispositif sera étendu aux trajets à pied en décembre.",
+      "Les trajets à pied donnent déjà droit à la prime mensuelle.",
+      "Un agent à temps partiel venu à vélo dix jours dans le mois peut percevoir la prime.",
+      "La prime est versée le mois même où les trajets ont été effectués."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "L'extension est conditionnelle (« pourra »), pas décidée.",
+      "L'extension aux trajets à pied n'est qu'envisagée.",
+      "Correct : le seuil est de huit jours pour le temps partiel.",
+      "Le texte dit « le mois suivant »."
+    ],
+    "explanation": "Le texte indique : « Les agents à temps partiel y ont droit à partir de huit jours de trajet. » Dix jours dépassent ce seuil. Les autres affirmations contredisent le texte ou transforment une possibilité en décision.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-002",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les retours sont possibles tous les jours, pour tous.",
+      "La restriction ne concerne que les emprunts à la borne.",
+      "Le texte répond explicitement : « Les retours restent possibles tous les jours »."
+    ],
+    "explanation": "La condition de carte annuelle s'applique aux emprunts du dimanche, pas aux retours : « Les retours restent possibles tous les jours grâce à une boîte extérieure. »",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-003",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : la plupart des usagers ayant déposé leur dossier au guichet trouvent les délais trop longs.",
+    "stimulus": "Une enquête menée auprès de 600 usagers du service des titres de séjour de la ville fictive de Brennac montre que 72 % des répondants jugent les délais trop longs. Parmi ces répondants insatisfaits, une majorité a déposé son dossier en ligne. Le rapport ne précise pas combien de répondants ont utilisé le guichet.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte ne donne aucun chiffre sur les usagers du guichet.",
+      "Rien ne permet non plus d'affirmer le contraire.",
+      "Correct : la répartition des usagers du guichet n'est pas connue."
+    ],
+    "explanation": "Le texte indique seulement que, parmi les insatisfaits, une majorité a déposé en ligne, et précise : « Le rapport ne précise pas combien de répondants ont utilisé le guichet. » On ne peut donc pas savoir ce que pensent les usagers du guichet.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-004",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le 20 mai, un agent rentré de mission le 2 mai demande le remboursement d'un repas de 31 € avec ticket et d'un repas sans ticket. Quel montant peut-il obtenir pour ces deux repas ?",
+    "stimulus": "Règles de remboursement des frais de mission :\n1. Les repas sont remboursés sur justificatif, dans la limite de 25 € par repas.\n2. Sans justificatif, un forfait de 12 € par repas est appliqué.\n3. Les frais de taxi ne sont remboursés qu'avec l'accord préalable du chef de service.\n4. Toute demande doit être déposée dans les 30 jours suivant la fin de la mission.",
+    "options": [
+      "50 €",
+      "43 €",
+      "31 €",
+      "37 €"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Applique le plafond aux deux repas, même sans ticket.",
+      "Oublie le plafond de 25 € par repas.",
+      "Ne rembourse que le repas avec ticket, sans plafond.",
+      "Correct : 25 € (plafond) + 12 € (forfait)."
+    ],
+    "explanation": "La demande arrive dans les 30 jours (18 jours après la mission). Repas avec ticket : 31 € plafonnés à 25 € (règle 1). Repas sans ticket : forfait de 12 € (règle 2). Total : 37 €.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-005",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Une lettre adressée nominativement à Mme Weber, actuellement absente, porte la mention « Personnel ». Que faut-il en faire ?",
+    "stimulus": "Règles de traitement du courrier entrant :\n– Le courrier portant la mention « Urgent » est transmis le jour même au service concerné.\n– Le courrier adressé nominativement à un agent absent est remis à son suppléant, sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent.\n– Le courrier sans destinataire identifiable est ouvert par le secrétariat.",
+    "options": [
+      "La faire ouvrir par le secrétariat.",
+      "La conserver jusqu'au retour de Mme Weber.",
+      "La transmettre le jour même au service.",
+      "La remettre au suppléant de Mme Weber."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le destinataire est identifiable.",
+      "Correct : exception prévue pour la mention « Personnel ».",
+      "La lettre ne porte pas la mention « Urgent ».",
+      "C'est la règle générale, mais l'exception s'applique ici."
+    ],
+    "explanation": "La règle générale (remise au suppléant) comporte une exception : « sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent ». La lettre est donc conservée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-006",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle conclusion peut-on tirer du texte ?",
+    "stimulus": "Le service de l'emploi de la commune fictive de Lorvenne constate que ses ateliers de rédaction de CV organisés en soirée attirent deux fois plus de participants que ceux du matin. Pourtant, le taux de retour à l'emploi à six mois est identique dans les deux groupes. Le service envisage donc de déplacer la plupart des ateliers en soirée, tout en maintenant une session matinale pour les personnes qui ne peuvent pas se déplacer le soir.",
+    "options": [
+      "Les participants du matin sont deux fois moins motivés que les autres.",
+      "L'horaire des ateliers ne semble pas influencer le retour à l'emploi à six mois.",
+      "Les ateliers du soir permettent de retrouver un emploi plus rapidement.",
+      "Toutes les sessions du matin seront supprimées l'an prochain."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le texte parle de participation, pas de motivation.",
+      "Correct : le taux à six mois est identique pour les deux horaires.",
+      "Le texte indique un taux identique.",
+      "Une session matinale est maintenue."
+    ],
+    "explanation": "Le texte précise que « le taux de retour à l'emploi à six mois est identique dans les deux groupes » : l'horaire ne semble donc pas jouer sur ce résultat. Les autres affirmations contredisent le texte ou en tirent une interprétation non fondée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-007",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel titre résume le mieux ce texte ?",
+    "stimulus": "À partir de l'an prochain, les fournisseurs de l'administration régionale fictive du Nordal devront transmettre leurs factures par voie électronique. Le papier ne sera plus accepté, sauf pour les entreprises de moins de cinq salariés, qui disposeront d'un an de délai supplémentaire. L'objectif est de ramener le délai moyen de paiement de 45 à 30 jours. Des sessions d'information gratuites seront proposées aux fournisseurs.",
+    "options": [
+      "Facturation électronique obligatoire pour accélérer les paiements",
+      "Le délai de paiement fixé à 30 jours dès janvier",
+      "Une formation obligatoire pour tous les fournisseurs",
+      "Les petites entreprises dispensées de facture électronique"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : reprend la mesure principale et son objectif.",
+      "Trente jours est un objectif, pas une règle déjà en vigueur.",
+      "Les sessions sont gratuites et facultatives.",
+      "Elles obtiennent un délai d'un an, pas une dispense."
+    ],
+    "explanation": "Le texte annonce l'obligation de facturation électronique et son but, réduire les délais de paiement. Les autres titres déforment un détail : délai transformé en dispense, objectif transformé en règle, information transformée en obligation.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-008",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : M. Koch justifie d'au moins cinq ans d'expérience dans le domaine.",
+    "stimulus": "Pour le poste de chargé d'études, le jury retient en priorité les candidats titulaires d'un master. Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience dans le domaine. Le jury a retenu M. Koch, qui n'est pas titulaire d'un master.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : sans master, il n'a pu être retenu qu'avec cinq ans d'expérience.",
+      "Cela contredirait la règle « ne sont retenus que si ».",
+      "La condition « ne… que si » permet de conclure."
+    ],
+    "explanation": "« Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience. » M. Koch n'a pas de master et a été retenu : il remplit donc nécessairement la condition d'expérience.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-009",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Laquelle des affirmations suivantes est justifiée par le texte ?",
+    "stimulus": "En 2025, le guichet des aides au logement de la ville fictive de Sarlin a reçu 4 000 demandes, contre 3 200 en 2024, avec un effectif d'agents inchangé. Le délai moyen de traitement est passé de 20 à 26 jours. La direction attribue cet allongement à la hausse des demandes, mais relève aussi que 15 % des dossiers de 2025 étaient incomplets, contre 8 % en 2024.",
+    "options": [
+      "Le nombre de dossiers incomplets a plus que doublé entre 2024 et 2025.",
+      "La hausse des demandes est la seule cause de l'allongement des délais.",
+      "Le délai moyen de traitement a augmenté de 6 % en un an.",
+      "Le guichet a dû recruter des agents supplémentaires en 2025."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 256 dossiers incomplets en 2024, 600 en 2025.",
+      "La direction cite aussi les dossiers incomplets.",
+      "Le délai a augmenté de 6 jours, soit 30 %.",
+      "Le texte précise que l'effectif est inchangé."
+    ],
+    "explanation": "Dossiers incomplets : 8 % de 3 200 = 256 en 2024 ; 15 % de 4 000 = 600 en 2025, soit plus du double. Les autres affirmations sont contredites par le texte ou confondent jours et pourcentage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-010",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Affirmation : le parc compte dix véhicules électriques.",
+    "stimulus": "Le parc automobile du ministère fictif des Transports du Valmont compte 40 véhicules, dont un quart sont électriques. Les véhicules électriques sont réservés en priorité aux déplacements de moins de 150 km.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : un quart de 40 véhicules, soit 10.",
+      "Le calcul à partir du texte donne bien 10.",
+      "Le texte donne les deux informations nécessaires."
+    ],
+    "explanation": "Le texte indique 40 véhicules, « dont un quart sont électriques » : 40 / 4 = 10 véhicules électriques.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00"
+  }
+]
