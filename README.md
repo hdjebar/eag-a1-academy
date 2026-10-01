@@ -6,7 +6,7 @@ Application web statique, académique et **non officielle** pour se familiariser
 
 - Raisonnement abstrait, verbal et numérique
 - Planification
-- Jugement situationnel : « servir le client-usager » et « conseiller »
+- Jugement situationnel : « servir le client-usager » et « conseiller », chaque réaction étant notée de 1 à 4
 - Diagnostic transversal et simulation chronométrée
 - Explications pédagogiques, bilan et modes clair/sombre
 
@@ -14,22 +14,25 @@ Tous les exercices sont originaux. Ils ne reproduisent aucun item officiel et ne
 
 ## Utilisation
 
-Ouvrez `eag-a1-academy.html` dans un navigateur moderne. Aucun serveur, compte, paquet ni stockage local n'est requis.
+Ouvrez `eag-a1-academy.html` dans un navigateur moderne. Aucun serveur, compte, paquet, police externe ni stockage local n'est requis. Les options de réponse sont mélangées à chaque affichage.
+
+Les scripts de la banque de questions (validation, génération, promotion) nécessitent Node.js 22 et `npm ci`.
 
 ## Banque de questions et contribution
 
 L'application contient 50 questions originales réparties sur les 5 compétences A1 dans `data/approved/`.
 
 Pour ajouter ou enrichir des questions (via l'interface d'un **Chat LLM**, en **local avec Node.js** ou via **GitHub Actions**) :
-* Consultez le guide complet : [docs/AI-QUESTION-BANKS.md](file:///Users/hdjebar/eag/eag-a1-academy/docs/AI-QUESTION-BANKS.md)
+* Consultez le guide complet : [docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md)
+* Toute question approuvée passe par une validation déterministe, une revue IA aveugle et une promotion humaine explicite (`--reviewer`, `--approve`)
 * Compilez et synchronisez la banque avec `npm run build:bank`
 * Vérifiez l'intégrité avec `npm test`
 
 ## Architecture et décisions de conception
 
 Le projet est conçu pour une exécution 100 % hors-ligne, sans serveur ni dépendance runtime, avec un pipeline d'ingestion Zero-Trust pour les contributions assistées par IA.
-* Documentation d'architecture complète : [docs/ARCHITECTURE.md](file:///Users/hdjebar/eag/eag-a1-academy/docs/ARCHITECTURE.md)
-* Registre des décisions d'architecture : [docs/adr/](file:///Users/hdjebar/eag/eag-a1-academy/docs/adr/README.md)
+* Documentation d'architecture complète : [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+* Registre des décisions d'architecture : [docs/adr/](docs/adr/README.md)
 
 ## Références officielles
 

@@ -1,10 +1,13 @@
 [
   {
     "id": "verbal-deduct-001",
+    "version": 1,
     "category": "verbal",
-    "skill": "déduction stricte",
+    "itemFormat": "single_best",
+    "skill": "inference",
     "difficulty": 1,
     "language": "fr",
+    "estimatedSeconds": 45,
     "prompt": "Quelle conclusion est absolument certaine à partir des seuls éléments fournis ?",
     "stimulus": "Tous les dossiers urgents sont examinés le jour même. Le dossier L est urgent.",
     "options": [
@@ -16,52 +19,74 @@
     "correctIndex": 1,
     "explanation": "L'énoncé affirme expressément que tout dossier urgent fait l'objet d'un examen le jour même ; aucune conclusion sur la décision finale ou l'ordre exact n'est permise.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-cond-002",
+    "version": 2,
     "category": "verbal",
-    "skill": "condition nécessaire et suffisante",
+    "itemFormat": "single_best",
+    "skill": "inference",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle affirmation découle rigoureusement des conditions indiquées ?",
     "stimulus": "Le guichet ouvre à 8 h 30. Les rendez-vous avant 10 h sont réservés aux demandes déjà complètes. Nora a obtenu un rendez-vous à 9 h 15.",
     "options": [
       "La demande de Nora est déjà complète.",
       "Nora sera reçue avant l'ouverture générale du guichet.",
-      "Nora n'a pas besoin de pièces justificatives supplémentaires.",
+      "Nora sera reçue dès l'ouverture du guichet.",
       "La demande de Nora sera automatiquement acceptée."
     ],
     "correctIndex": 0,
-    "explanation": "Puisque les créneaux antérieurs à 10 h sont strictement réservés aux demandes déjà complètes, le rendez-vous de 9 h 15 garantit que le dossier est complet.",
+    "explanation": "Les créneaux avant 10 h sont réservés aux demandes déjà complètes ; un rendez-vous à 9 h 15 implique donc une demande complète. Le texte ne dit rien de l'heure exacte de passage, ni de la décision.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "verbal-quant-003",
+    "version": 2,
     "category": "verbal",
-    "skill": "quantificateurs logiques",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Peut-on déduire de ce texte que Malik travaille à distance ?",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : Malik travaille à distance.",
     "stimulus": "Certains analystes travaillent à distance. Malik est analyste.",
     "options": [
-      "Oui, nécessairement.",
-      "Non, jamais.",
-      "Impossible à déterminer d'après le texte.",
-      "Oui, car la règle s'applique à l'ensemble du service."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
     "correctIndex": 2,
+    "optionRationales": [
+      "Généralise « certains » à tous les analystes.",
+      "Le texte n'exclut pas non plus que Malik travaille à distance.",
+      "Correct : « certains » ne permet pas de savoir si Malik en fait partie."
+    ],
     "explanation": "L'expression « certains » indique l'existence d'au moins un analyste à distance, sans préciser si Malik en fait partie.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "verbal-order-004",
+    "version": 1,
     "category": "verbal",
-    "skill": "application de consigne",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
     "difficulty": 1,
     "language": "fr",
+    "estimatedSeconds": 45,
     "prompt": "Quelle séquence respecte scrupuleusement la règle de classement ?",
     "stimulus": "Classer les dossiers par date croissante. À date identique, placer en premier le numéro le plus petit.",
     "options": [
@@ -73,14 +98,20 @@
     "correctIndex": 2,
     "explanation": "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le numéro plus élevé (22).",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-neg-005",
+    "version": 1,
     "category": "verbal",
-    "skill": "négation et exclusion",
+    "itemFormat": "single_best",
+    "skill": "inference",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle conclusion n'est PAS justifiée par le passage ?",
     "stimulus": "Aucun rapport incomplet n'est transmis. Certains rapports du service B sont transmis.",
     "options": [
@@ -92,14 +123,20 @@
     "correctIndex": 2,
     "explanation": "Le passage mentionne que certains rapports sont transmis, ce qui interdit d'affirmer que tous les rapports du service le sont.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-syll-006",
+    "version": 1,
     "category": "verbal",
-    "skill": "syllogisme catégorique",
+    "itemFormat": "single_best",
+    "skill": "inference",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle déduction s'impose logiquement à partir des deux prémisses ?",
     "stimulus": "Tout arrêté ministériel fait l'objet d'une publication. Le document G ne fait l'objet d'aucune publication.",
     "options": [
@@ -111,14 +148,20 @@
     "correctIndex": 0,
     "explanation": "Par contraposition logique : si tout arrêté est publié, un document non publié ne peut en aucun cas constituer un arrêté ministériel.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-rule-007",
+    "version": 1,
     "category": "verbal",
-    "skill": "interprétation de règles",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle décision est conforme à la directive énoncée ?",
     "stimulus": "Toute demande de subvention supérieure à 50 000 euros requiert un avis préalable de la commission financière. Le projet Alpha sollicite 45 000 euros.",
     "options": [
@@ -130,14 +173,20 @@
     "correctIndex": 0,
     "explanation": "Le seuil obligatoire est fixé strictement aux montants supérieurs à 50 000 euros ; 45 000 euros ne déclenchent pas cette obligation spécifique.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-extrap-008",
+    "version": 1,
     "category": "verbal",
-    "skill": "repérage d'extrapolations",
+    "itemFormat": "single_best",
+    "skill": "inference",
     "difficulty": 3,
     "language": "fr",
+    "estimatedSeconds": 120,
     "prompt": "Laquelle des propositions constitue une extrapolation non démontrée par le texte ?",
     "stimulus": "La dématérialisation des formulaires a réduit le délai moyen de traitement de 14 jours à 6 jours au premier semestre.",
     "options": [
@@ -149,14 +198,20 @@
     "correctIndex": 0,
     "explanation": "Le texte renseigne un indicateur temporel précis (délai en jours), mais ne fournit aucune donnée sur le niveau de satisfaction des usagers.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-equiv-009",
+    "version": 1,
     "category": "verbal",
-    "skill": "équivalence logique",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle formulation exprime exactement le même sens logique ?",
     "stimulus": "Il est impossible d'accéder à la zone sécurisée sans badge d'identification actif.",
     "options": [
@@ -168,14 +223,20 @@
     "correctIndex": 0,
     "explanation": "L'absence de badge empêchant l'accès, la détention d'un badge actif constitue bien une condition nécessaire (indispensable) d'accès.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "verbal-fact-010",
+    "version": 1,
     "category": "verbal",
-    "skill": "distinction fait vs opinion",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle proposition relève d'un fait constatable et non d'une appréciation subjective ?",
     "stimulus": "Le nouveau logiciel de gestion des congés est remarquable, il enregistre 1 200 connexions quotidiennes et simplifie grandement la vie du personnel.",
     "options": [
@@ -187,6 +248,9 @@
     "correctIndex": 0,
     "explanation": "Le comptage de 1 200 connexions est une mesure quantitative objectivement vérifiable, à la différence des appréciations qualitatives.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   }
 ]

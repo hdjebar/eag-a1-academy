@@ -13,12 +13,12 @@ Or, la plupart des navigateurs modernes (Chrome, Safari, Edge) appliquent des r�
 
 Deux approches étaient envisageables :
 1. **Approche dynamique (Fetch au runtime)** : Imposer aux utilisateurs de lancer un serveur web local (ex. `npx serve .`).
-2. **Approche par compilation statique (Build step)** : Compiler les fichiers JSON de `data/approved/` et les injecter directement dans le code source de l'application cliente [`app.js`](file:///Users/hdjebar/eag/eag-a1-academy/app.js) avant déploiement.
+2. **Approche par compilation statique (Build step)** : Compiler les fichiers JSON de `data/approved/` et les injecter directement dans le code source de l'application cliente [`app.js`](../../app.js) avant déploiement.
 
 ## Décision
 Retenir l'**Approche par compilation statique** :
 - Les données sources restent stockées de façon propre, lisible et versionnée sous forme de fichiers JSON indépendants dans `data/approved/*.json`.
-- Un script de compilation Node.js ([`scripts/build-bank.mjs`](file:///Users/hdjebar/eag/eag-a1-academy/scripts/build-bank.mjs)), accessible via `npm run build:bank`, lit ces fichiers, valide leur conformité et injecte le dictionnaire de questions compilé directement dans [`app.js`](file:///Users/hdjebar/eag/eag-a1-academy/app.js) entre deux balises stables :
+- Un script de compilation Node.js ([`scripts/build-bank.mjs`](../../scripts/build-bank.mjs)), accessible via `npm run build:bank`, lit ces fichiers, valide leur conformité et injecte le dictionnaire de questions compilé directement dans [`app.js`](../../app.js) entre deux balises stables :
   ```javascript
   /* QUESTION_BANK_START */
   const q = { ... };

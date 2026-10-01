@@ -2,17 +2,9 @@ name: Validate question banks
 
 on:
   pull_request:
-    paths:
-      - "data/**"
-      - "generated/**"
-      - "schema/**"
-      - "scripts/**"
-      - "prompts/**"
-      - "app.js"
-      - "eag-a1-academy.html"
-      - "package.json"
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,8 +17,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
+      - run: npm ci
       - run: npm test
       - name: Validate candidate files when present
         run: |
           files=$(find generated -maxdepth 1 -name '*.json' ! -name '*.review.json' -print)
           if [ -n "$files" ]; then node scripts/validate-bank.mjs $files; fi
+      - name: Block merging unpromoted candidates
+        if: github.event_name == 'pull_request'
+        run: |
+          left=$(git ls-files 'generated/*.json')
+          if [ -n "$left" ]; then
+            echo "::error::Candidate files must be promoted (scripts/promote-candidate.mjs) or deleted before merge:"
+            echo "$left"
+            exit 1
+          fi

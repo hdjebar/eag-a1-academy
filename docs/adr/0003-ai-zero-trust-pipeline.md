@@ -1,7 +1,7 @@
 # ADR-0003 : Modèle Zero-Trust et garde-fous pour la production de questions assistée par IA
 
 ## Statut
-Accepté
+Accepté (révisé le 2026-10-01 : revue aveugle, promotion explicite, blocage CI)
 
 ## Date
 2026-09-30
@@ -17,17 +17,17 @@ Cependant, l'utilisation de modèles génératifs présente des risques majeurs 
 ## Décision
 Instaurer une politique stricte de **Zero-Trust** pour toute production d'items assistée par IA :
 1. **Interdiction légale stricte** : Rejet automatique de toute question contenant les termes `question officielle`, `item officiel`, `barème officiel`, `confidentiel` ou assimilés via regex déterministe.
-2. **Schéma JSON strict et contraignant** (`schema/question.schema.json`) :
-   - Exactement 4 options uniques.
-   - Longueurs minimales d'énoncés et d'explications.
-   - Index de correction strict (0..3).
-   - Format d'ID normalisé (`^[a-z]+-[a-z0-9-]+-[0-9]{3,}$`).
+2. **Schéma JSON strict et contraignant** (`schema/question.schema.json`, appliqué par Ajv) :
+   - Format d'item par catégorie (`single_best`, `tfcs`, `rating`) et compétences limitées aux descriptions GovJobs A1.
+   - Texte brut uniquement (aucun HTML) ; tableaux et figures en objets structurés.
+   - Longueurs minimales, index de correction cohérent, identifiant préfixé par la catégorie.
 3. **Double passage IA indépendant** :
-   - Étape 1 : Génération à température modérée (0.4) avec consignes déontologiques strictes (`prompts/generate-bank.md`).
-   - Étape 2 : Revue critique indépendante à température nulle (0.0) par un modèle évaluateur (`prompts/review-bank.md`).
+   - Étape 1 : génération à température modérée (0.4) avec consignes déontologiques strictes (`prompts/generate-bank.md`).
+   - Étape 2 : revue **aveugle** à température nulle (`prompts/review-bank.md`) : le relecteur ne voit pas la clé ; le script compare sa réponse à celle de l'auteur.
 4. **Approbation humaine obligatoire** :
    - Le statut initial est impérativement `candidate`.
-   - Seul un humain peut promouvoir un item au statut `approved` dans `data/approved/`.
+   - Seul un humain peut promouvoir un item au statut `approved` dans `data/approved/` : `promote-candidate.mjs` exige `--reviewer` et la liste `--approve` des identifiants, et bloque tout item dont la revue aveugle n'est pas `pass` (sauf `--ignore-ai-review`).
+   - La CI échoue tant qu'une PR contient des fichiers dans `generated/`.
    - Le passage des tests automatiques en CI n'autorise en aucun cas le merge direct d'une banque non auditée par un relecteur humain.
 
 ## Conséquences
