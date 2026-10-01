@@ -115,6 +115,31 @@ Après un enregistrement : relisez `git diff`, puis committez. La CI refuse touj
 
 ---
 
+## Importer des fichiers de questions
+
+Tout fichier JSON de questions candidates (sorties de `generate:bank` ou `regenerate:bank`, fichiers exportés par l'interface, réponses d'un chat IA enregistrées) peut être importé dans la file de relecture.
+
+| Méthode | Comment | Remarques |
+| :--- | :--- | :--- |
+| **Glisser-déposer** (hors ligne) | Ouvrez `admin.html`, puis glissez les fichiers sur « Charger des candidats » ou cliquez sur « choisissez des fichiers ». | Plusieurs fichiers à la fois. Les fichiers `*.review.json` se rattachent à leurs questions par identifiant : chargez-les en même temps que les questions ou après. |
+| **Dossier `generated/`** (local) | Copiez les fichiers dans `generated/`, puis rechargez la page de `npm run admin` (ou « Recharger depuis le disque » dans l'onglet Exporter). | Tous les fichiers `generated/*.json` sont chargés automatiquement avec leur revue. |
+| **Coller du JSON** (les deux modes) | « Générer avec l'IA… » → « Copier-coller avec un chat IA » → collez le JSON dans « Réponse JSON du chat » → « Importer ». | Le texte autour du JSON et les blocs de code sont ignorés. Les champs gérés par le pipeline sont complétés automatiquement. |
+
+Format attendu : un **tableau JSON** de questions conformes à [`schema/question.schema.json`](../schema/question.schema.json). Un fichier de revue est un objet `{"reviews": [...]}` produit par `review:bank`.
+
+Après l'import, chaque question passe par le même circuit : aperçu, résolution à l'aveugle, contrôles, édition, puis approbation ou rejet. Une question dont l'identifiant existe déjà dans la banque est signalée au chargement (hors ligne) et bloquée à l'approbation (dans les deux modes), sauf s'il s'agit d'une révision (`revisionOf`) : changez alors son identifiant dans l'éditeur. Le collage via « Générer avec l'IA… » importe toujours des questions nouvelles ; pour importer des révisions, utilisez le collage depuis « Régénérer avec l'IA » sur les questions concernées.
+
+### Limites actuelles
+
+- **Glisser-déposer et dossier `generated/`** : les fichiers sont importés tels quels. Si des questions n'ont pas les champs normalement ajoutés par le pipeline (`version`, `createdAt`, `sourceType`, `reviewStatus`), elles apparaissent avec des erreurs à corriger dans l'éditeur. Pour un import automatique de ces champs, utilisez plutôt **Coller du JSON**.
+- **Ancien format** (antérieur à la version 1.3.0 : tableaux HTML, compétences en texte libre, sans `itemFormat`, jugement situationnel à réponse unique) : les questions sont importées mais ne passent pas la validation ; chaque question doit être corrigée dans l'éditeur.
+- **Une seule question** : le fichier doit contenir un tableau, même pour une question (`[ { … } ]`).
+- **Mode local** : pas de bouton d'envoi de fichier ; copiez les fichiers dans `generated/`.
+
+Les fichiers chargés hors ligne restent dans la session du navigateur (« Reprendre la session précédente ») jusqu'à l'export ou à « Effacer la session locale ».
+
+---
+
 ## Régénérer des questions avec un LLM
 
 Quatre usages, depuis l'interface d'administration (ou la ligne de commande) :
@@ -160,5 +185,6 @@ CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." np
 | `npm run regenerate:bank` | Révise des questions approuvées (`IDS`, `INSTRUCTION`) ; résultat dans `generated/revise-*.json`. |
 | `npm run review:bank [fichier]` | Revue IA aveugle d'un lot de candidats. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Promotion humaine explicite vers `data/approved/`. |
+| Importer des fichiers | Glisser-déposer dans `admin.html`, copie dans `generated/` (mode local) ou collage du JSON : voir [Importer des fichiers de questions](#importer-des-fichiers-de-questions). |
 | `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
 | `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation. |
