@@ -46,6 +46,11 @@ export function loadAndCompileBank() {
   return categorized;
 }
 
+function readPrompts() {
+  const read = (f) => fs.readFileSync(path.join(ROOT, "prompts", f), "utf8");
+  return { generate: read("generate-bank.md"), revise: read("revise-bank.md"), review: read("review-bank.md") };
+}
+
 function replaceBlock(source, start, end, block, file) {
   const a = source.indexOf(start);
   const b = source.indexOf(end);
@@ -66,7 +71,7 @@ export function syncAppJs({ check = false } = {}) {
   const total = Object.values(bank).reduce((n, items) => n + items.length, 0);
   const targets = [
     [TARGET_FILE, START_MARKER, END_MARKER, generateBankCode(bank)],
-    [ADMIN_FILE, ADMIN_START, ADMIN_END, `${ADMIN_START}\nconst SCHEMA = ${JSON.stringify(JSON.parse(fs.readFileSync(SCHEMA_FILE, "utf8")))};\nconst APPROVED_EMBEDDED = ${JSON.stringify(bank.full)};\n${ADMIN_END}`],
+    [ADMIN_FILE, ADMIN_START, ADMIN_END, `${ADMIN_START}\nconst SCHEMA = ${JSON.stringify(JSON.parse(fs.readFileSync(SCHEMA_FILE, "utf8")))};\nconst APPROVED_EMBEDDED = ${JSON.stringify(bank.full)};\nconst PROMPTS = ${JSON.stringify(readPrompts())};\n${ADMIN_END}`],
   ];
   let inSync = true;
   for (const [file, start, end, block] of targets) {

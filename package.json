@@ -1,6 +1,6 @@
 {
   "name": "eag-a1-academy",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,8 @@
     "generate:bank": "node --env-file-if-exists=.env scripts/generate-bank.mjs",
     "review:bank": "node --env-file-if-exists=.env scripts/review-bank.mjs",
     "validate:bank": "node scripts/validate-bank.mjs",
-    "test": "node --check app.js && node --check admin.js && node --check shared/item-rules.js && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check"
+    "test": "node --check app.js && node --check admin.js && node --check shared/item-rules.js && node --check scripts/regenerate-bank.mjs && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check",
+    "regenerate:bank": "node --env-file-if-exists=.env scripts/regenerate-bank.mjs"
   },
   "devDependencies": {
     "ajv": "^8.20.0",

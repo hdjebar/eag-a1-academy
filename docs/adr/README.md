@@ -12,3 +12,4 @@ Ce répertoire consigne l'historique des décisions d'architecture structurantes
 | [ADR-0004](0004-build-bank-compilation.md) | Compilation statique de la banque de données dans `app.js` | 2026-09-30 | Accepté |
 | [ADR-0005](0005-plain-text-items-and-official-formats.md) | Items en texte brut, rendu échappé et formats alignés sur les descriptions GovJobs | 2026-10-01 | Accepté |
 | [ADR-0006](0006-admin-ui.md) | Interface d'administration à deux modes (hors ligne et serveur local) | 2026-10-01 | Accepté |
+| [ADR-0007](0007-llm-revisions.md) | Régénération par LLM sous forme de révisions relues | 2026-10-01 | Accepté |

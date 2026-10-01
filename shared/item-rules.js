@@ -131,6 +131,7 @@
     }
     if (typeof item.explanation === "string" && options[ci] && item.explanation.trim().toLowerCase() === options[ci].trim().toLowerCase()) errors.push("l'explication se contente de répéter la réponse");
     if (!item.optionRationales && item.reviewStatus !== "approved") warnings.push("optionRationales absent (recommandé)");
+    if (item.revisionOf && item.revisionOf !== item.id) errors.push("revisionOf doit être égal à l'identifiant de la question révisée");
     return { errors, warnings };
   }
 
@@ -165,5 +166,61 @@
     return `${item.prompt || ""} ${stim}`;
   }
 
-  g.EagRules = { validateSchema, semanticChecks, checkItem, similarity, itemText };
+
+  /* ---------- LLM helpers shared by admin.html and the Node scripts ---------- */
+  function fillTemplate(tpl, params) {
+    return String(tpl).replace(/\{\{(\w+)\}\}/g, (m, k) => (params[k] !== undefined ? String(params[k]) : m));
+  }
+  /** Tolerant JSON extraction from an LLM answer (code fences, text around the array). */
+  function extractJson(text) {
+    let t = String(text || "").trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+    try { return JSON.parse(t); } catch (e) {
+      const a = t.indexOf("["), b = t.lastIndexOf("]");
+      if (a !== -1 && b > a) return JSON.parse(t.slice(a, b + 1));
+      throw e;
+    }
+  }
+  const CONTROLLED = ["reviewer", "reviewedAt", "reviewNotes", "rejectionReason", "revisionOf"];
+  /**
+   * Normalises LLM output into candidate items.
+   * mode "new": fresh items. mode "revise": each item must reuse the id of an original
+   * (originals: array of approved items); category, id and creation date are kept,
+   * revisionOf is set so that approval replaces the original.
+   */
+  function prepareCandidates(items, opts) {
+    const o = opts || {};
+    const problems = [];
+    if (!Array.isArray(items)) return { items: [], problems: ["La réponse doit être un tableau JSON"] };
+    const originals = new Map((o.originals || []).map((x) => [x.id, x]));
+    const out = [];
+    items.forEach((raw, i) => {
+      if (!raw || typeof raw !== "object" || Array.isArray(raw)) { problems.push(`Élément ${i + 1} ignoré : objet attendu`); return; }
+      const item = JSON.parse(JSON.stringify(raw));
+      for (const k of CONTROLLED) delete item[k];
+      if (o.mode === "revise") {
+        const orig = originals.get(item.id);
+        if (!orig) { problems.push(`Élément ${i + 1} ignoré : identifiant « ${item.id} » absent des questions à réviser`); return; }
+        if (out.some((x) => x.id === item.id)) { problems.push(`Doublon ignoré : ${item.id}`); return; }
+        Object.assign(item, { id: orig.id, category: orig.category, version: orig.version || 1, createdAt: orig.createdAt, revisionOf: orig.id });
+        if (!item.language) item.language = orig.language;
+      } else {
+        Object.assign(item, { version: 1, createdAt: o.now || new Date().toISOString() });
+        if (o.language) item.language = o.language;
+      }
+      Object.assign(item, { sourceType: "original_ai_assisted", reviewStatus: "candidate" });
+      out.push(item);
+    });
+    if (o.mode === "revise") for (const id of originals.keys()) if (!out.some((x) => x.id === id)) problems.push(`Aucune révision reçue pour ${id}`);
+    return { items: out, problems };
+  }
+  /** Issues to send with an item being revised: validator findings and editor notes. */
+  function revisionContext(schema, item, extraIssues) {
+    const r = checkItem(schema, item);
+    const issues = [...r.errors, ...r.warnings, ...(extraIssues || [])];
+    if (item.reviewNotes) issues.push(`Note du relecteur : ${item.reviewNotes}`);
+    const { reviewer, reviewedAt, reviewStatus, ...clean } = item;
+    return { item: clean, issues };
+  }
+
+  g.EagRules = { validateSchema, semanticChecks, checkItem, similarity, itemText, fillTemplate, extractJson, prepareCandidates, revisionContext };
 })(typeof globalThis !== "undefined" ? globalThis : this);

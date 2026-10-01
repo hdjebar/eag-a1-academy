@@ -216,6 +216,11 @@
     "rejectionReason": {
       "type": "string",
       "minLength": 3
+    },
+    "revisionOf": {
+      "type": "string",
+      "pattern": "^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$",
+      "description": "Candidate only: id of the approved item this revision would replace (same id). Removed on approval."
     }
   },
   "additionalProperties": false,
@@ -530,6 +535,25 @@
           "reviewer",
           "rejectionReason"
         ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "reviewStatus": {
+            "const": "approved"
+          }
+        },
+        "required": [
+          "reviewStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "revisionOf"
+          ]
+        }
       }
     }
   ]

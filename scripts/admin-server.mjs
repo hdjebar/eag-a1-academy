@@ -118,7 +118,8 @@ function save(body) {
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
   if (dup.length) errors.push(`Identifiants dupliqués entre catégories : ${[...new Set(dup)].join(", ")}`);
   for (const [name, items] of Object.entries(candidates)) {
-    if (!CANDIDATE_NAME.test(name) || name.endsWith(".review.json") || !fs.existsSync(path.join(GENERATED, name))) errors.push(`Fichier candidat refusé : ${name}`);
+    const isNewChatFile = name.startsWith("chat-") && Array.isArray(items);
+    if (!CANDIDATE_NAME.test(name) || name.endsWith(".review.json") || (!fs.existsSync(path.join(GENERATED, name)) && !isNewChatFile)) errors.push(`Fichier candidat refusé : ${name}`);
     if (items !== null && !Array.isArray(items)) errors.push(`${name} : tableau ou null attendu`);
   }
   if (manual.length > 500 || manual.some((x) => !x || typeof x !== "object" || Array.isArray(x))) errors.push("Nouvelles questions : format invalide");
@@ -155,6 +156,20 @@ function run(cmd, args, env = {}) {
     child.on("error", (e) => { clearTimeout(timer); resolve({ code: 1, output: String(e) }); });
   });
 }
+const REBUILD_INSTRUCTION = "Lot de remplacement complet pour cette catégorie : couvrez toutes les compétences autorisées de manière équilibrée et répartissez les difficultés ; n'imitez pas les questions existantes listées.";
+function instructionOf(body) {
+  return String(body.instruction || "").replace(/[\u0000-\u001f]+/g, " ").trim().slice(0, 2000);
+}
+/** After a generation, run the blind AI review on the file it produced. */
+async function withReview(result) {
+  if (result.code !== 0) return result;
+  let file = "";
+  try { file = fs.readFileSync(path.join(GENERATED, "latest.txt"), "utf8").trim(); } catch { return result; }
+  if (!/^generated\/[A-Za-z0-9._-]+\.json$/.test(file)) return result;
+  const review = await run(process.execPath, ["scripts/review-bank.mjs", file]);
+  return { code: review.code, output: `${result.output}\n— Revue IA aveugle —\n${review.output}` };
+}
+
 async function task(body) {
   const node = process.execPath;
   switch (body.task) {
@@ -164,11 +179,20 @@ async function task(body) {
       const b = await run("git", ["diff", "--stat"]);
       return { code: a.code || b.code, output: `$ git status --short\n${a.output || "(propre)"}\n$ git diff --stat\n${b.output || "(aucune différence)"}` };
     }
-    case "generate": {
+    case "generate":
+    case "rebuild": {
       if (!CATEGORIES.includes(body.category)) throw Object.assign(new Error("Catégorie invalide"), { status: 400 });
       const count = Number(body.count);
       if (!Number.isInteger(count) || count < 1 || count > 50) throw Object.assign(new Error("Nombre d'items invalide (1 à 50)"), { status: 400 });
-      return run(node, ["scripts/generate-bank.mjs"], { CATEGORY: body.category, COUNT: String(count) });
+      const rebuild = body.task === "rebuild";
+      const instruction = [rebuild ? REBUILD_INSTRUCTION : "", instructionOf(body)].filter(Boolean).join(" ");
+      return withReview(await run(node, ["scripts/generate-bank.mjs"], { CATEGORY: body.category, COUNT: String(count), INSTRUCTION: instruction, ID_TAG: rebuild ? "rb" : "gen" }));
+    }
+    case "revise": {
+      const approvedIds = new Set(CATEGORIES.flatMap((c) => { const f = path.join(APPROVED, `${c}.json`); return fs.existsSync(f) ? readJson(f).map((x) => x.id) : []; }));
+      const ids = Array.isArray(body.ids) ? body.ids.map(String) : [];
+      if (!ids.length || ids.length > 50 || ids.some((id) => !approvedIds.has(id))) throw Object.assign(new Error("Liste de questions à réviser invalide (1 à 50 identifiants approuvés)"), { status: 400 });
+      return withReview(await run(node, ["scripts/regenerate-bank.mjs"], { IDS: ids.join(","), INSTRUCTION: instructionOf(body) }));
     }
     case "review": {
       const name = String(body.file || "");

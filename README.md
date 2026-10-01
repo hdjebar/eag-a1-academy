@@ -35,6 +35,8 @@ Une interface d'administration permet de relire, résoudre à l'aveugle, modifie
 * **Hors ligne** : ouvrez `admin.html`, chargez les fichiers `generated/*.json` (et leurs `*.review.json`), puis téléchargez l'archive produite et décompressez-la à la racine du dépôt.
 * **En local** : `npm ci && npm run admin`. Un serveur limité à votre ordinateur lit et écrit directement dans le dépôt, et permet de lancer génération, revue aveugle, `npm test` et l'état Git.
 
+Elle permet aussi de **régénérer des questions avec un LLM** : une question, une sélection ou une catégorie entière, via votre API (mode local) ou par copier-coller avec n'importe quel chat IA. Les versions proposées passent toujours par la file de relecture, avec un comparatif avant/après.
+
 Détails : [docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md#interface-dadministration).
 
 ## Architecture et décisions de conception

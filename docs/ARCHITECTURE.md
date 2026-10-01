@@ -61,7 +61,8 @@ eag-a1-academy/
 ├── scripts/
 │   ├── admin-server.mjs      # Serveur local de l'interface d'administration (127.0.0.1, jeton)
 │   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js et admin.js
-│   ├── generate-bank.mjs     # Génération via API compatible OpenAI
+│   ├── generate-bank.mjs     # Génération via API compatible OpenAI (consigne facultative)
+│   ├── regenerate-bank.mjs   # Révision de questions approuvées par LLM (sortie : révisions à relire)
 │   ├── promote-candidate.mjs # Promotion humaine explicite (relecteur nommé, identifiants listés)
 │   ├── review-bank.mjs       # Revue aveugle par LLM, comparée à la clé par le script
 │   ├── validate-bank.mjs     # Schéma (Ajv) + règles complémentaires (HTML interdit, notes, longueurs…)
@@ -69,6 +70,7 @@ eag-a1-academy/
 │
 ├── prompts/
 │   ├── generate-bank.md      # Consignes système et contraintes de génération
+│   ├── revise-bank.md        # Consignes de révision de questions existantes
 │   └── review-bank.md        # Consignes de résolution à l'aveugle
 │
 ├── docs/
@@ -141,3 +143,4 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0004 : Synchronisation des questions par compilation dans app.js](adr/0004-build-bank-compilation.md)
 * [ADR-0005 : Items en texte brut, rendu échappé et formats alignés sur GovJobs](adr/0005-plain-text-items-and-official-formats.md)
 * [ADR-0006 : Interface d'administration à deux modes (hors ligne et serveur local)](adr/0006-admin-ui.md)
+* [ADR-0007 : Régénération par LLM sous forme de révisions relues](adr/0007-llm-revisions.md)

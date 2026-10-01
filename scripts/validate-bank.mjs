@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
@@ -12,8 +11,8 @@ addFormats(ajv);
 const validateSchema = ajv.compile(schema);
 
 // Same rules file as admin.html (classic script exposing globalThis.EagRules).
-vm.runInThisContext(fs.readFileSync(path.join(ROOT, "shared/item-rules.js"), "utf8"), { filename: "shared/item-rules.js" });
-const { semanticChecks, validateSchema: miniValidate } = globalThis.EagRules;
+import { EagRules } from "./lib/rules.mjs";
+const { semanticChecks, validateSchema: miniValidate } = EagRules;
 
 /** Returns { errors, warnings } for one item: JSON Schema (Ajv, authoritative) + shared semantic rules. */
 export function checkItem(item, index = 0) {

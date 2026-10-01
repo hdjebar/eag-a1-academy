@@ -97,6 +97,17 @@ pre.cmd{background:var(--offset);border-radius:var(--r2);padding:var(--s3);overf
 details>summary{cursor:pointer;font-weight:700}
 .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:var(--s2) var(--s4);border-radius:var(--r2);font-size:var(--sm);opacity:0;transition:opacity .2s;pointer-events:none;z-index:50;max-width:calc(100vw - 32px)}
 .toast.show{opacity:1}
+.selrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--s2);align-items:start}
+.selrow input{margin-top:var(--s3);width:18px;height:18px;accent-color:var(--primary)}
+dialog{width:min(860px,calc(100vw - 32px));max-height:calc(100dvh - 32px);border:1px solid var(--border);border-radius:var(--r3);background:var(--surface);color:var(--text);padding:var(--s5)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.dlg{display:grid;gap:var(--s2)}
+button.chip{border:0;cursor:pointer;white-space:normal;text-align:left}
+table.diff{width:100%;border-collapse:collapse;font-size:var(--sm);table-layout:fixed}
+table.diff th,table.diff td{border-bottom:1px solid var(--border);padding:6px 8px;vertical-align:top;text-align:left;white-space:pre-wrap;word-break:break-word}
+table.diff thead th{font-size:var(--xs);color:var(--muted)}
+table.diff tbody th{width:8rem;font-size:var(--xs);color:var(--muted)}
+td.before{background:var(--errorbg)}td.after{background:var(--successbg)}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.list{max-height:40vh}}
 </style>
 </head>
@@ -129,6 +140,10 @@ details>summary{cursor:pointer;font-weight:700}
             <select id="newcat" aria-label="Catégorie de la nouvelle question"></select>
             <button class="btn ghost" id="restore" hidden>Reprendre la session précédente</button>
           </div>
+          <div class="actions" style="margin-top:var(--s2)">
+            <button class="btn secondary" id="aigen">Générer avec l'IA…</button>
+            <button class="btn secondary" id="airebuild">Reconstruire une catégorie…</button>
+          </div>
           <div id="loadmsgs" class="msgs" style="margin-top:var(--s3)"></div>
         </div>
         <div class="panel">
@@ -160,6 +175,7 @@ details>summary{cursor:pointer;font-weight:700}
           <select id="bdiff" aria-label="Filtrer par difficulté"><option value="">Toutes difficultés</option><option>1</option><option>2</option><option>3</option></select>
           <input type="text" id="bsearch" placeholder="Rechercher…" aria-label="Rechercher dans la banque">
         </div>
+        <div class="actions" id="bulkbar" style="margin-bottom:var(--s3)"></div>
         <div class="list" id="bank"></div>
       </div>
       <div id="bdetail" class="panel"><p class="empty">Sélectionnez une question approuvée pour la consulter ou la modifier.</p></div>
@@ -170,6 +186,7 @@ details>summary{cursor:pointer;font-weight:700}
     <div class="panel" id="exportpanel"></div>
   </section>
 </main>
+<dialog id="aidlg" aria-label="Assistant IA"></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="shared/item-rules.js"></script>
 <script src="admin.js"></script>

@@ -115,6 +115,39 @@ Après un enregistrement : relisez `git diff`, puis committez. La CI refuse touj
 
 ---
 
+## Régénérer des questions avec un LLM
+
+Quatre usages, depuis l'interface d'administration (ou la ligne de commande) :
+
+| Usage | Où | Résultat |
+| :--- | :--- | :--- |
+| **Réviser une question** | Banque approuvée → question → « Régénérer avec l'IA » | une révision dans la file de relecture |
+| **Réviser une sélection** | Banque approuvée → cases à cocher (« Tout (filtre) », « Avec alertes ») → « Régénérer avec l'IA » | une révision par question |
+| **Générer de nouvelles questions** | File de relecture → « Générer avec l'IA… » | nouveaux candidats |
+| **Reconstruire une catégorie** | File de relecture → « Reconstruire une catégorie… » | un lot complet de remplacement ; approuvez ce que vous gardez, puis retirez les anciennes questions (sélection → « Retirer ») |
+
+Chaque question à réviser est envoyée avec les problèmes détectés (erreurs, alertes, notes de relecture) et votre consigne (texte libre ou consignes prêtes à l'emploi : lever l'ambiguïté, équilibrer la longueur des options, rendre plus difficile…). Le modèle suit [`prompts/revise-bank.md`](../prompts/revise-bank.md).
+
+**Une révision ne modifie jamais la banque directement.** Elle garde l'identifiant de la question et porte `revisionOf`. Dans la file de relecture, elle est marquée « Révision », avec un tableau **Avant / Après** des champs modifiés. L'approuver remplace la question d'origine et incrémente sa version ; la rejeter laisse la banque intacte.
+
+**Mode local** (`npm run admin` avec `AI_API_URL`, `AI_API_KEY`, `AI_MODEL` dans `.env`) : bouton « Lancer avec l'IA » ; la revue IA aveugle est lancée automatiquement sur le résultat. La clé d'API reste sur votre ordinateur et n'est jamais envoyée au navigateur. Vos décisions non enregistrées sont conservées pendant les tâches.
+
+**Copier-coller** (hors ligne, ou sans API) : « Copier le prompt », collez-le dans votre chat IA (ChatGPT, Claude, Gemini, Le Chat…), puis collez sa réponse dans « Réponse JSON du chat » et importez. Le texte autour du JSON et les blocs de code sont tolérés ; les identifiants inconnus sont refusés.
+
+**Ligne de commande** :
+
+```bash
+IDS=numeric-mean-002,planning-slot-001 INSTRUCTION="Lever toute ambiguïté." npm run regenerate:bank
+npm run review:bank
+node scripts/promote-candidate.mjs generated/revise-<…>.json --reviewer "Prénom Nom" --approve all
+# Nouvelles questions avec consigne :
+CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." npm run generate:bank
+```
+
+`promote-candidate.mjs` traite les révisions comme dans l'interface : remplacement de la question d'origine et version incrémentée.
+
+---
+
 ## Commandes de référence
 
 | Commande | Rôle |
@@ -124,6 +157,7 @@ Après un enregistrement : relisez `git diff`, puis committez. La CI refuse touj
 | `npm run build:bank -- --check` | Vérifie que `app.js` est synchronisé (CI). |
 | `npm run validate:bank [fichiers]` | Valide contre le schéma et les règles complémentaires (sans argument : tous les candidats). |
 | `npm run generate:bank` | Génère un lot de candidats via l'API configurée. |
+| `npm run regenerate:bank` | Révise des questions approuvées (`IDS`, `INSTRUCTION`) ; résultat dans `generated/revise-*.json`. |
 | `npm run review:bank [fichier]` | Revue IA aveugle d'un lot de candidats. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Promotion humaine explicite vers `data/approved/`. |
 | `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
