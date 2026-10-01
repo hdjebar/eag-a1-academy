@@ -1,12 +1,40 @@
 [
   {
     "id": "numeric-ratio-001",
+    "version": 2,
     "category": "numeric",
-    "skill": "variation relative",
+    "itemFormat": "single_best",
+    "skill": "variation",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quel service administratif enregistre la plus forte progression relative entre janvier et février ?",
-    "stimulus": "<table class=\"data\"><tr><th>Service</th><th>Jan.</th><th>Fév.</th></tr><tr><td>A</td><td>120</td><td>138</td></tr><tr><td>B</td><td>80</td><td>96</td></tr><tr><td>C</td><td>150</td><td>165</td></tr></table>",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes traitées par service",
+      "headers": [
+        "Service",
+        "Janvier",
+        "Février"
+      ],
+      "rows": [
+        [
+          "A",
+          120,
+          138
+        ],
+        [
+          "B",
+          80,
+          96
+        ],
+        [
+          "C",
+          150,
+          165
+        ]
+      ]
+    },
     "options": [
       "Service A",
       "Service B",
@@ -16,14 +44,20 @@
     "correctIndex": 1,
     "explanation": "Calcul des taux : Service A = (138-120)/120 = +15 % ; Service B = (96-80)/80 = +20 % ; Service C = (165-150)/150 = +10 %. Le service B a la plus forte hausse.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "numeric-mean-002",
+    "version": 1,
     "category": "numeric",
-    "skill": "cadence moyenne",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
     "difficulty": 1,
     "language": "fr",
+    "estimatedSeconds": 45,
     "prompt": "Combien de dossiers sont instruits en moyenne chaque jour ouvré ?",
     "stimulus": "Une équipe instruit 420 dossiers en 7 jours ouvrés à rythme régulier et constant.",
     "options": [
@@ -35,14 +69,20 @@
     "correctIndex": 2,
     "explanation": "Le calcul direct de la moyenne quotidienne donne 420 divisé par 7, soit exactement 60 dossiers par jour ouvré.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-perc-003",
+    "version": 1,
     "category": "numeric",
-    "skill": "pourcentage de diminution",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
     "difficulty": 1,
     "language": "fr",
+    "estimatedSeconds": 45,
     "prompt": "Quel est le nouveau temps moyen de réponse après optimisation ?",
     "stimulus": "Un temps moyen de réponse de 40 minutes est réduit de 15 % grâce à une procédure simplifiée.",
     "options": [
@@ -54,14 +94,20 @@
     "correctIndex": 0,
     "explanation": "La réduction s'élève à 15 % de 40 = 6 minutes. Le nouveau délai est donc de 40 - 6 = 34 minutes.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-rate-004",
+    "version": 1,
     "category": "numeric",
-    "skill": "application de pourcentage",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
     "difficulty": 1,
     "language": "fr",
+    "estimatedSeconds": 45,
     "prompt": "Combien de demandes reçoivent une décision favorable ?",
     "stimulus": "Sur un total de 250 demandes d'agrément examinées, 72 % sont approuvées.",
     "options": [
@@ -73,16 +119,47 @@
     "correctIndex": 2,
     "explanation": "Le calcul direct donne 250 × 0,72 = 180 demandes approuvées.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-table-005",
+    "version": 2,
     "category": "numeric",
-    "skill": "taux de résolution",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quel trimestre présente le taux de résolution le plus performant ?",
-    "stimulus": "<table class=\"data\"><tr><th>Trimestre</th><th>Reçues</th><th>Résolues</th></tr><tr><td>T1</td><td>200</td><td>160</td></tr><tr><td>T2</td><td>240</td><td>204</td></tr><tr><td>T3</td><td>180</td><td>144</td></tr></table>",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes par trimestre",
+      "headers": [
+        "Trimestre",
+        "Reçues",
+        "Résolues"
+      ],
+      "rows": [
+        [
+          "T1",
+          200,
+          160
+        ],
+        [
+          "T2",
+          240,
+          204
+        ],
+        [
+          "T3",
+          180,
+          144
+        ]
+      ]
+    },
     "options": [
       "Trimestre 1",
       "Trimestre 2",
@@ -92,14 +169,20 @@
     "correctIndex": 1,
     "explanation": "Taux de résolution : T1 = 160/200 = 80 % ; T2 = 204/240 = 85 % ; T3 = 144/180 = 80 %. Le trimestre 2 est le plus performant.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "numeric-budget-006",
+    "version": 1,
     "category": "numeric",
-    "skill": "calcul budgétaire",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quel montant résiduel reste-t-il disponible sur l'enveloppe allouée ?",
     "stimulus": "Une enveloppe budgétaire de 80 000 euros est consommée à hauteur de 45 % au premier trimestre, puis 25 % du budget initial au second trimestre.",
     "options": [
@@ -111,16 +194,22 @@
     "correctIndex": 0,
     "explanation": "La consommation totale représente 45 % + 25 % = 70 % du montant initial. La part restante est de 30 % de 80 000 euros, soit 24 000 euros.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-weight-007",
+    "version": 2,
     "category": "numeric",
-    "skill": "moyenne pondérée",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Quelle est la note moyenne pondérée obtenue par ce projet d'aménagement ?",
-    "stimulus": "Épreuve A (coeff. 3) : 14/20. Épreuve B (coeff. 2) : 16/20. Épreuve C (coeff. 5) : 11/20.",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle est la moyenne pondérée des trois évaluations ?",
+    "stimulus": "Évaluation A (coefficient 3) : 14/20. Évaluation B (coefficient 2) : 16/20. Évaluation C (coefficient 5) : 11/20.",
     "options": [
       "12,9 / 20",
       "13,2 / 20",
@@ -130,14 +219,20 @@
     "correctIndex": 0,
     "explanation": "Calcul de la moyenne pondérée : [(14×3) + (16×2) + (11×5)] / (3+2+5) = (42 + 32 + 55) / 10 = 129 / 10 = 12,9 / 20.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "numeric-scale-008",
+    "version": 1,
     "category": "numeric",
-    "skill": "échelle et proportion",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "Quelle est la distance réelle sur le terrain correspondant à cette mesure ?",
     "stimulus": "Sur un plan d'urbanisme à l'échelle 1:2 500, un tracé de raccordement mesure 8 centimètres.",
     "options": [
@@ -149,14 +244,20 @@
     "correctIndex": 0,
     "explanation": "La distance réelle équivaut à 8 cm × 2 500 = 20 000 cm = 200 mètres.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-speed-009",
+    "version": 1,
     "category": "numeric",
-    "skill": "partage de rendement",
+    "itemFormat": "single_best",
+    "skill": "operations-simples",
     "difficulty": 3,
     "language": "fr",
+    "estimatedSeconds": 120,
     "prompt": "Combien de temps faut-il pour traiter les 60 dossiers restants en travaillant conjointement ?",
     "stimulus": "L'agent X traite 6 dossiers par heure. L'agent Y traite 4 dossiers par heure.",
     "options": [
@@ -168,14 +269,20 @@
     "correctIndex": 0,
     "explanation": "Leur cadence combinée est de 6 + 4 = 10 dossiers par heure. Pour 60 dossiers, il faut 60 / 10 = 6 heures.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   },
   {
     "id": "numeric-delta-010",
+    "version": 1,
     "category": "numeric",
-    "skill": "variation absolue vs relative",
+    "itemFormat": "single_best",
+    "skill": "variation",
     "difficulty": 2,
     "language": "fr",
+    "estimatedSeconds": 75,
     "prompt": "De combien de points de pourcentage le taux de présence a-t-il augmenté ?",
     "stimulus": "Le taux de participation des agents aux formations passe de 60 % à 75 % d'une année sur l'autre.",
     "options": [
@@ -187,6 +294,9 @@
     "correctIndex": 0,
     "explanation": "La différence entre deux pourcentages s'exprime en points de pourcentage : 75 - 60 = 15 points (alors que la hausse relative est de 25 %).",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-09-30T12:00:00+02:00"
   }
 ]

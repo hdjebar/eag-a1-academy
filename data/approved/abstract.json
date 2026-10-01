@@ -1,12 +1,18 @@
 [
   {
     "id": "abstract-symb-001",
+    "version": 2,
     "category": "abstract",
-    "skill": "alternance de formes",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Quel élément géométrique complète logiquement cette série ?",
-    "stimulus": "<div class=\"shapes\">○ ● □ ■ △ ?</div>",
+    "estimatedSeconds": 45,
+    "prompt": "Quel élément complète logiquement cette série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○  ●  □  ■  △  ?"
+    },
     "options": [
       "▲",
       "●",
@@ -14,18 +20,33 @@
       "△"
     ],
     "correctIndex": 0,
-    "explanation": "La série regroupe les formes géométriques par paires consécutives (cercle, carré, triangle) en alternant motif évidé puis motif plein.",
+    "optionRationales": [
+      "Correct : le triangle vide est suivi du triangle plein.",
+      "Le cercle a déjà été traité au début de la série.",
+      "Le losange n'appartient pas à la séquence cercle, carré, triangle.",
+      "Répète la figure vide au lieu de passer à sa version pleine."
+    ],
+    "explanation": "Chaque forme apparaît deux fois de suite, d'abord vide puis pleine : cercle, carré, puis triangle. Après △ vient donc ▲.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "abstract-arrow-002",
+    "version": 2,
     "category": "abstract",
-    "skill": "cycle d'orientation",
+    "itemFormat": "single_best",
+    "skill": "rotation",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Quelle paire de flèches vient compléter la suite ?",
-    "stimulus": "<div class=\"shapes\">↑ → &nbsp; ↓ ← &nbsp; ↑ → &nbsp; ?</div>",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle paire de flèches complète la suite ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑ →     ↓ ←     ↑ →     ?"
+    },
     "options": [
       "↓ ←",
       "→ ↓",
@@ -33,56 +54,101 @@
       "↑ →"
     ],
     "correctIndex": 0,
-    "explanation": "La séquence alterne deux blocs de deux directions décrivant une rotation horaire complète : [↑ →], puis [↓ ←].",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
-  },
-  {
-    "id": "abstract-math-003",
-    "category": "abstract",
-    "skill": "relation numérique induite",
-    "difficulty": 2,
-    "language": "fr",
-    "prompt": "Quel nombre remplace logiquement le point d’interrogation ?",
-    "stimulus": "<div class=\"shapes\">2 → 6 &nbsp; 3 → 12 &nbsp; 4 → ?</div>",
-    "options": [
-      "16",
-      "18",
-      "20",
-      "24"
+    "optionRationales": [
+      "Correct : rotation de 180° de la paire ↑ →.",
+      "Rotation de 90° seulement.",
+      "Rotation de 270° (ou 90° anti-horaire).",
+      "Répète la paire sans rotation."
     ],
-    "correctIndex": 2,
-    "explanation": "Chaque terme en entrée n correspond à la sortie n × (n + 1). Pour n = 4, le résultat est 4 × 5 = 20.",
+    "explanation": "Chaque paire est la précédente tournée de 180° : ↑ → devient ↓ ←, puis de nouveau ↑ →. La quatrième paire est donc ↓ ←.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "abstract-odd-004",
+    "id": "abstract-latin-003",
+    "version": 2,
     "category": "abstract",
-    "skill": "détection d'intrus",
+    "itemFormat": "single_best",
+    "skill": "matrice",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Quel symbole constitue l'intrus parmi les quatre proposés ?",
-    "stimulus": "<div class=\"shapes\">◇ &nbsp; □ &nbsp; △ &nbsp; ○</div>",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ■  ▲\n■  ▲  ●\n▲  ●  ?"
+    },
     "options": [
-      "◇",
-      "□",
-      "△",
-      "○"
+      "■",
+      "●",
+      "▲",
+      "□"
     ],
-    "correctIndex": 3,
-    "explanation": "Le losange, le carré et le triangle sont des polygones constitués de segments droits, tandis que le cercle est une ligne courbe fermée.",
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : seul figure absente de la ligne et de la colonne.",
+      "Le disque figure déjà dans la dernière ligne.",
+      "Le triangle figure déjà dans la dernière ligne.",
+      "Bonne forme, mais toutes les figures de la matrice sont pleines."
+    ],
+    "explanation": "Chaque ligne et chaque colonne contient une seule fois le disque, le carré et le triangle, tous pleins. La dernière ligne et la dernière colonne manquent toutes deux du carré plein ■.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
+  },
+  {
+    "id": "abstract-grid-004",
+    "version": 2,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●      ○○      ●●●\n■      □□      ■■■\n▲      △△      ?"
+    },
+    "options": [
+      "▲▲▲",
+      "△△△",
+      "▲▲",
+      "■■■"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : forme, nombre et remplissage respectés.",
+      "Le remplissage vide ne vaut que pour la colonne du milieu.",
+      "Le nombre doit être 3 dans la dernière colonne.",
+      "La forme doit rester le triangle sur la troisième ligne."
+    ],
+    "explanation": "Trois règles : la forme est fixe sur chaque ligne ; le nombre de figures vaut 1, 2 puis 3 selon la colonne ; la colonne du milieu est vide, les autres pleines. Ligne 3, colonne 3 : trois triangles pleins.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "abstract-dots-005",
+    "version": 2,
     "category": "abstract",
-    "skill": "progression arithmétique",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Quel groupe de points complète la progression linéaire ?",
-    "stimulus": "<div class=\"shapes\">● &nbsp; ●● &nbsp; ●●● &nbsp; ?</div>",
+    "estimatedSeconds": 45,
+    "prompt": "Quel groupe de points complète la progression ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ●●     ●●●     ?"
+    },
     "options": [
       "●●",
       "●●●●",
@@ -90,18 +156,33 @@
       "●●●●●"
     ],
     "correctIndex": 1,
-    "explanation": "Le nombre de disques pleins s'accroît d'une unité à chaque étape : 1, 2, 3 puis 4 disques.",
+    "optionRationales": [
+      "Revient en arrière au lieu de progresser.",
+      "Correct : quatre disques pleins.",
+      "Bon nombre, mais le remplissage change sans raison.",
+      "Augmente de deux unités au lieu d'une."
+    ],
+    "explanation": "Le nombre de disques pleins augmente d'une unité à chaque étape : 1, 2, 3, puis 4.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "abstract-rot-006",
+    "version": 2,
     "category": "abstract",
-    "skill": "rotation dans l'espace",
+    "itemFormat": "single_best",
+    "skill": "rotation",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Quelle position occupe le curseur après la rotation successive ?",
-    "stimulus": "<div class=\"shapes\">◰ → ◳ → ◲ → ?</div>",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◰  →  ◳  →  ◲  →  ?"
+    },
     "options": [
       "◱",
       "◰",
@@ -109,84 +190,153 @@
       "◲"
     ],
     "correctIndex": 0,
-    "explanation": "Le coin obscurci tourne de 90° dans le sens horaire à chaque transition : haut-gauche, haut-droite, bas-droite, puis bas-gauche.",
+    "optionRationales": [
+      "Correct : quadrant bas-gauche après bas-droite.",
+      "Revient au point de départ, une étape trop tôt.",
+      "Rotation dans le sens inverse.",
+      "Répète la dernière figure."
+    ],
+    "explanation": "Le quadrant marqué tourne d'un quart de tour dans le sens horaire : haut-gauche, haut-droite, bas-droite, puis bas-gauche (◱).",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "abstract-sides-007",
+    "id": "abstract-interleave-007",
+    "version": 2,
     "category": "abstract",
-    "skill": "dénombrement d'arêtes",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Quelle figure complète la suite selon le nombre de sommets ?",
-    "stimulus": "Hexagone (6) → Pentagone (5) → Quadrilatère (4) → ?",
+    "estimatedSeconds": 75,
+    "prompt": "Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●    ▲    ●●    ▲▲    ●●●    ?"
+    },
     "options": [
-      "Triangle (3)",
-      "Heptagone (7)",
-      "Cercle (0)",
-      "Octogone (8)"
+      "▲▲▲",
+      "●●●●",
+      "▲▲",
+      "▲▲▲▲"
     ],
     "correctIndex": 0,
-    "explanation": "La suite suit un décompte strictement décroissant d'un sommet par figure : 6, 5, 4, puis 3 (triangle).",
+    "optionRationales": [
+      "Correct : troisième terme de la suite des triangles.",
+      "Prolonge la suite des disques au mauvais rang.",
+      "Répète le terme précédent de la suite des triangles.",
+      "Saute une étape de la progression."
+    ],
+    "explanation": "Deux suites alternent : les disques (1, 2, 3) et les triangles (1, 2, …). Le sixième terme appartient à la suite des triangles, qui passe à 3.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "abstract-matrix-008",
+    "id": "abstract-flip-008",
+    "version": 2,
     "category": "abstract",
-    "skill": "inversion logique",
+    "itemFormat": "single_best",
+    "skill": "transformation",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Quelle figure correspond à la règle de transformation appliquée ?",
-    "stimulus": "▲ (noir pointant haut) → ▽ (blanc pointant bas) &nbsp;||&nbsp; ◼ (noir) → ?",
+    "estimatedSeconds": 75,
+    "prompt": "La même transformation s'applique à chaque paire. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲  →  ▽\n◀  →  ▷\n▼  →  ?"
+    },
     "options": [
-      "◻ (carré blanc)",
-      "◼ (carré noir)",
-      "▲ (triangle)",
-      "◆ (losange)"
+      "△",
+      "▽",
+      "▲",
+      "◁"
     ],
     "correctIndex": 0,
-    "explanation": "La règle inverse à la fois le remplissage (plein vers évidé) et l'orientation lorsque applicable. Pour un carré symétrique, le remplissage devient blanc.",
+    "optionRationales": [
+      "Correct : demi-tour puis remplissage inversé.",
+      "Remplissage inversé, mais sans demi-tour.",
+      "Demi-tour, mais remplissage conservé.",
+      "Mauvaise orientation : la figure ne pointe ni vers le haut ni vers le bas."
+    ],
+    "explanation": "Les deux exemples montrent la même transformation : un demi-tour (180°) et l'inversion du remplissage. Seul le demi-tour explique à la fois ▲ → ▽ et ◀ → ▷ (une symétrie selon un seul axe ne marche que pour l'un des deux). ▼ tourné de 180° donne ▲, puis vide : △.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "abstract-xor-009",
+    "id": "abstract-mirror-009",
+    "version": 2,
     "category": "abstract",
-    "skill": "superposition logique",
+    "itemFormat": "single_best",
+    "skill": "transformation",
     "difficulty": 3,
     "language": "fr",
-    "prompt": "Deux grilles transparentes sont superposées. Les traits présents sur les deux grilles s'annulent (OU exclusif). Quel est le motif final ?",
-    "stimulus": "Grille 1 : [barre verticale + barre horizontale] | Grille 2 : [barre verticale seule]",
+    "estimatedSeconds": 120,
+    "prompt": "Appliquez la même règle à la seconde ligne. Quel résultat obtient-on ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ■  ▲   →   △  □  ○\n◆  ○  ■   →   ?"
+    },
     "options": [
-      "Barre horizontale seule",
-      "Croix complète (+)",
-      "Barre verticale seule",
-      "Grille vide"
+      "□  ●  ◇",
+      "■  ○  ◆",
+      "◇  ●  □",
+      "□  ○  ◇"
     ],
     "correctIndex": 0,
-    "explanation": "La barre verticale est commune aux deux grilles, elle s'annule donc par superposition exclusive. Seule subsiste la barre horizontale.",
+    "optionRationales": [
+      "Correct : ordre inversé et remplissage inversé.",
+      "Ordre inversé, mais remplissage conservé.",
+      "Remplissage inversé, mais ordre conservé.",
+      "Le disque n'a pas été inversé."
+    ],
+    "explanation": "Deux règles combinées : l'ordre des figures est inversé, et chaque remplissage est inversé. ◆ ○ ■ inversé donne ■ ○ ◆, puis le remplissage inversé donne □ ● ◇.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "abstract-cycle-010",
+    "id": "abstract-gap-010",
+    "version": 2,
     "category": "abstract",
-    "skill": "cycle modulaire",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Quel est le dixième élément généré par la séquence périodique suivante ?",
-    "stimulus": "A, B, C, D, A, B, C, D, ...",
+    "estimatedSeconds": 75,
+    "prompt": "Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ■  ●  ■  ■  ●  ■  ■  ■  ?"
+    },
     "options": [
-      "B",
-      "A",
-      "C",
-      "D"
+      "●",
+      "■",
+      "▲",
+      "○"
     ],
     "correctIndex": 0,
-    "explanation": "La période est de 4 éléments. Le dixième élément correspond au reste de la division euclidienne 10 modulo 4, soit le 2e terme : B.",
+    "optionRationales": [
+      "Correct : le groupe de trois carrés est complet.",
+      "Un quatrième carré dépasserait le groupe de trois.",
+      "Le triangle n'apparaît pas dans la série.",
+      "Le disque est plein dans toute la série."
+    ],
+    "explanation": "Entre deux disques, le nombre de carrés augmente : 1, 2, puis 3. Après le troisième carré du groupe de trois vient donc un disque.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   }
 ]

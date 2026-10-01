@@ -1,192 +1,372 @@
 [
   {
     "id": "situational-serve-001",
+    "version": 2,
     "category": "situational",
-    "skill": "accueil et médiation usager",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Un usager conteste vivement une décision administrative conforme. Quelle posture professionnelle adopter ?",
-    "stimulus": "La décision prise est réglementairement inattaquable. Vous pouvez en expliciter les fondements, mais vous n'avez pas le pouvoir de la modifier.",
+    "estimatedSeconds": 45,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager conteste vivement une décision de refus d'allocation, prise conformément au règlement. Vous pouvez en expliquer les motifs, mais vous n'avez pas le pouvoir de la modifier.",
     "options": [
-      "Lui opposer immédiatement le caractère définitif du dossier pour abréger l'échange.",
-      "Écouter activement sa situation, expliciter les motifs de droit et l'informer des voies de recours légales.",
-      "Promettre un réexamen exceptionnel par votre service pour apaiser la tension.",
-      "Transférer la communication vers un collègue sans explication préalable."
+      "Écouter la personne, expliquer les motifs et indiquer les voies de recours et leurs délais.",
+      "Expliquer brièvement que la décision est conforme et clore l'échange pour ne pas retarder la file.",
+      "Proposer de transmettre le dossier pour réexamen, en laissant entendre qu'une révision reste possible.",
+      "Remettre la notice écrite sur les recours et inviter la personne à la lire tranquillement chez elle."
     ],
-    "correctIndex": 1,
-    "explanation": "L'écoute active conjuguée à une explication pédagogique et à l'indication transparente des recours garantit un service de qualité sans fausse promesse.",
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      2,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Écoute, explique et informe sur les recours : service complet sans fausse promesse.",
+      "Exact sur le fond, mais l'usager repart sans comprendre ni connaître ses droits.",
+      "Crée une fausse attente : vous n'avez pas le pouvoir de réviser la décision.",
+      "Informe correctement, mais sans explication ni écoute."
+    ],
+    "explanation": "La meilleure réaction combine écoute, explication des motifs et information complète sur les recours, sans promesse. La notice seule informe, mais sans accompagnement ; clore l'échange ou suggérer un réexamen fictif dégrade le service.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-advise-002",
+    "version": 2,
     "category": "situational",
-    "skill": "champ de compétence et orientation",
+    "itemFormat": "rating",
+    "skill": "conseiller",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "On vous sollicite pour un conseil technique pointu sur un domaine hors de votre champ d'expertise. Quelle conduite adopter ?",
-    "stimulus": "Une collègue référente sur ce volet précis est disponible dans un délai de 20 minutes.",
+    "estimatedSeconds": 45,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un collègue doit répondre aujourd'hui à un usager sur le traitement fiscal d'une subvention et vous demande conseil. Ce sujet ne relève pas de votre expertise. La référente fiscale du service est joignable dans l'heure.",
     "options": [
-      "Fournir une réponse intuitive rapide pour ne pas faire patienter l'usager.",
-      "Refuser net de renseigner sans formuler de solution alternative.",
-      "Exposer poliment vos limites d'expertise, recueillir les faits utiles et orienter vers la référente spécialisée.",
-      "Faire une recherche sommaire sur un forum grand public et transmettre le résultat."
+      "Donner votre meilleure estimation, en précisant qu'elle reste à confirmer par la référente.",
+      "Lui dire que ce n'est pas votre domaine et le laisser trouver lui-même le bon interlocuteur.",
+      "Reconnaître vos limites et organiser avec lui un échange rapide avec la référente.",
+      "Lui transmettre le nom et les coordonnées de la référente fiscale du service."
     ],
     "correctIndex": 2,
-    "explanation": "La fiabilité du conseil public impose de circonscrire son périmètre d'action et d'orienter précisément vers la compétence adéquate.",
+    "ratings": [
+      2,
+      1,
+      4,
+      3
+    ],
+    "optionRationales": [
+      "Une estimation hors de votre domaine risque d'être relayée comme une réponse fiable.",
+      "Respecte vos limites, mais n'aide pas votre collègue à tenir le délai.",
+      "Reconnaît vos limites et assure une réponse fiable dans le délai.",
+      "Oriente correctement, mais sans préparer l'échange ni vérifier le délai."
+    ],
+    "explanation": "Conseiller, c'est aussi reconnaître ses limites et orienter efficacement : préparer les faits et organiser le contact avec la référente garantit une réponse fiable dans le délai. Transmettre ses coordonnées aide, mais moins ; une estimation hors expertise risque de circuler comme une réponse.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-serve-003",
+    "version": 2,
     "category": "situational",
-    "skill": "impartialité et équité",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Un usager sollicite un traitement prioritaire de sa demande en invoquant une connaissance personnelle au sein de votre direction. Que devez-vous faire ?",
-    "stimulus": "Le règlement du service ne prévoit aucun traitement de faveur ni dérogation au protocole de dépôt.",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager demande que son dossier soit traité en priorité, en invoquant une connaissance personnelle au sein de votre direction. Le règlement du service ne prévoit aucun traitement prioritaire dans son cas.",
     "options": [
-      "Accéder à sa demande pour préserver les relations internes de la direction.",
-      "Maintenir avec courtoisie l'ordre équitable de traitement et lui rappeler le principe d'égalité de tous devant le service public.",
-      "Interrompre votre travail pour demander immédiatement l'arbitrage de la personne citée.",
-      "Refuser de traiter sa demande et lui intimer de quitter l'accueil."
+      "Prendre ses coordonnées et lui promettre de l'appeler dès que son dossier aura été traité.",
+      "Accepter d'examiner son dossier en premier, puisque cela ne prendra que quelques minutes.",
+      "Lui suggérer de contacter directement la personne qu'il cite pour obtenir une dérogation.",
+      "Rappeler poliment que les dossiers sont traités dans l'ordre et indiquer le délai prévu."
     ],
-    "correctIndex": 1,
-    "explanation": "Le principe fondamental d'impartialité et d'égalité des usagers devant le service public proscrit tout passe-droit non fondé sur une priorité légale.",
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Service courtois, mais la demande de priorité n'est pas traitée clairement.",
+      "Passe-droit contraire à l'égalité de traitement.",
+      "Encourage une démarche de faveur hors procédure.",
+      "Maintient l'égalité de traitement et informe sur le délai."
+    ],
+    "explanation": "L'égalité de traitement des usagers interdit tout passe-droit. La réponse la plus pertinente maintient l'ordre de traitement tout en donnant une information utile (le délai). Le rappel promis est acceptable mais n'aborde pas la demande.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
-    "id": "situational-data-004",
+    "id": "situational-serve-004",
+    "version": 2,
     "category": "situational",
-    "skill": "confidentialité et conformité",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Un bordereau contenant des données à caractère personnel a été adressé par erreur au mauvais destinataire. Quelle est votre réaction immédiate ?",
-    "stimulus": "Le courriel interne vient d'être envoyé depuis votre messagerie professionnelle.",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Une personne appelle pour connaître l'état du dossier de son père, actuellement hospitalisé. Elle n'a pas de procuration. Les informations d'un dossier ne peuvent être communiquées qu'à son titulaire ou à une personne mandatée.",
     "options": [
-      "Attendre de voir si le destinataire s'en aperçoit avant d'agir.",
-      "Supprimer l'élément envoyé de votre corbeille pour masquer l'anomalie.",
-      "Appliquer immédiatement la procédure interne de gestion des incidents de sécurité et alerter votre hiérarchie ainsi que le délégué à la protection des données.",
-      "Envoyer un message informel sur un réseau social pour demander l'effacement sans trace."
+      "Lui donner l'état du dossier, puisque le lien familial paraît évident et la situation urgente.",
+      "Refuser de communiquer toute information et mettre poliment fin à l'appel.",
+      "Expliquer que vous ne pouvez rien communiquer sans procuration et indiquer comment en obtenir une.",
+      "Proposer d'appeler son père à l'hôpital pour faire le point directement avec lui."
     ],
     "correctIndex": 2,
-    "explanation": "La protection des données requiert transparence immédiate, traçabilité et application rigoureuse de la procédure officielle de déclaration d'incident.",
+    "ratings": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "optionRationales": [
+      "Viole la confidentialité du dossier.",
+      "Respecte la règle, mais laisse la personne sans solution.",
+      "Respecte la règle et donne une solution concrète.",
+      "Respecte la confidentialité, mais l'appel à l'hôpital peut être intrusif."
+    ],
+    "explanation": "La confidentialité s'impose, mais servir l'usager suppose d'expliquer la règle et d'indiquer une solution (la procuration). Contacter le titulaire est possible mais plus lourd ; refuser sans solution respecte la règle sans aider.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-serve-005",
+    "version": 2,
     "category": "situational",
-    "skill": "respect des procédures et escalade",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Un usager sollicite une dérogation immédiate pour laquelle vous n'avez pas de délégation de signature. Quelle posture retenir ?",
-    "stimulus": "Vous n'avez pas l'autorité statutaire requise pour autoriser une dispense de formalité.",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager demande une dispense de pièce justificative pour un dossier urgent. Vous n'êtes pas habilité à accorder cette dispense ; votre responsable l'est.",
     "options": [
-      "Accorder la dispense verbalement pour simplifier les démarches administratives.",
-      "Rejeter d'emblée la demande sans vérification des motifs invoqués.",
-      "Lui expliciter le cadre réglementaire, consigner par écrit les éléments circonstanciés et transmettre au responsable habilité pour décision.",
-      "Suggérer à l'usager d'omettre certaines pièces pour contourner le blocage."
+      "L'inviter à adresser lui-même un courrier à votre responsable, en lui donnant l'adresse.",
+      "Préciser que vous n'êtes pas habilité, puis transmettre sa demande écrite au responsable.",
+      "Accorder la dispense oralement, la situation vous paraissant de bonne foi.",
+      "Lui répondre que la règle ne prévoit aucune exception et clore la demande."
     ],
-    "correctIndex": 2,
-    "explanation": "L'agent public doit respecter le principe de légalité tout en accompagnant l'usager par une instruction méthodique orientée vers l'autorité compétente.",
+    "correctIndex": 1,
+    "ratings": [
+      3,
+      4,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Oriente vers la bonne personne, mais laisse l'usager faire seul la démarche.",
+      "Respecte votre champ de compétence et fait avancer la demande.",
+      "Décision prise sans habilitation.",
+      "Affirme une règle que vous ne pouvez pas trancher, sans transmettre."
+    ],
+    "explanation": "Le respect de la légalité n'empêche pas d'accompagner l'usager : transmettre une demande documentée à l'autorité compétente est la meilleure réponse. Orienter vers un courrier est utile mais plus lent ; décider sans habilitation est exclu.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-advise-006",
+    "version": 2,
     "category": "situational",
-    "skill": "neutralité et arbitrage technique",
+    "itemFormat": "rating",
+    "skill": "conseiller",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "En réunion de projet, deux directions partenaires soutiennent deux solutions techniques divergentes. Quelle contribution apporter en tant qu'analyste A1 ?",
-    "stimulus": "Votre rôle est d'éclairer la prise de décision par une analyse objective et factuelle.",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "En réunion de projet, deux directions partenaires défendent deux solutions techniques différentes. Votre responsable vous demande une note pour éclairer sa décision.",
     "options": [
-      "Prendre immédiatement parti pour la solution de la direction la plus influente.",
-      "Établir une matrice comparative objective évaluant coûts, risques, délais et conformité légale de chaque option.",
-      "Refuser d'intervenir pour ne froisser aucune des deux parties.",
-      "Imposer sans concertation une troisième solution sans concertation préalable."
+      "Recommander la solution de la direction la plus influente, pour faciliter son adoption.",
+      "Comparer les options sur des critères objectifs et formuler une recommandation motivée.",
+      "Présenter les deux solutions telles que chaque direction les décrit, sans analyse propre.",
+      "Proposer d'abord un atelier commun aux deux directions, puis rédiger l'analyse comparative."
     ],
     "correctIndex": 1,
-    "explanation": "Le cadre de niveau A1 conseille par une analyse neutre, méthodique et documentée, fournissant aux décideurs les éléments objectifs d'arbitrage.",
+    "ratings": [
+      1,
+      4,
+      2,
+      3
+    ],
+    "optionRationales": [
+      "Critère d'influence et non de fond : conseil partial.",
+      "Analyse objective et recommandation utile au décideur.",
+      "Neutre, mais sans valeur ajoutée pour la décision.",
+      "Démarche constructive, mais qui retarde la note demandée."
+    ],
+    "explanation": "Le rôle de conseil consiste à fournir une analyse neutre, documentée et conclusive. L'atelier peut enrichir l'analyse mais retarde la note ; reprendre les positions sans analyse n'éclaire pas la décision.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-advise-007",
+    "version": 2,
     "category": "situational",
-    "skill": "anticipation des risques juridiques",
+    "itemFormat": "rating",
+    "skill": "conseiller",
     "difficulty": 3,
     "language": "fr",
-    "prompt": "Votre responsable vous demande d'accélérer la publication d'un cahier des charges qui comporte une clause contractuelle potentiellement ambiguë. Que préconisez-vous ?",
-    "stimulus": "Une ambiguïté non résolue risque d'engendrer des contentieux lors de la passation du marché public.",
+    "estimatedSeconds": 120,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Votre responsable vous demande de publier dès demain un cahier des charges. Vous y repérez une clause ambiguë qui pourrait provoquer un contentieux lors de l'attribution du marché.",
     "options": [
-      "Publier le document sans modification pour respecter scrupuleusement le calendrier prévisionnel.",
-      "Alerter formellement votre supérieur sur le risque juridique identifié et proposer une formulation clarifiée prête à validation.",
-      "Supprimer unilatéralement la clause litigieuse sans en avertir l'équipe.",
-      "Ignorer l'ambiguïté en considérant que la responsabilité finale incombe au signataire."
+      "Publier comme demandé et signaler l'ambiguïté une fois la publication effectuée.",
+      "Demander l'avis du service juridique avant toute action, quitte à décaler la publication de plusieurs semaines.",
+      "Corriger vous-même la clause et publier sans attendre de validation.",
+      "Signaler le risque par écrit à votre responsable et proposer une formulation corrigée prête à valider."
     ],
-    "correctIndex": 1,
-    "explanation": "La fonction de conseil consiste à prévenir les risques contentieux tout en proposant des solutions constructives et rapides d'arbitrage à la hiérarchie.",
+    "correctIndex": 3,
+    "ratings": [
+      2,
+      3,
+      1,
+      4
+    ],
+    "optionRationales": [
+      "Le risque est signalé trop tard pour être évité.",
+      "Prudent, mais le retard est disproportionné sans en parler au responsable.",
+      "Modification sans validation de la personne qui décide.",
+      "Alerte à temps et solution prête : le responsable peut décider vite."
+    ],
+    "explanation": "Conseiller, c'est alerter sur le risque et proposer une solution qui permet de tenir le délai. Saisir le juridique est prudent mais disproportionné ici ; publier en l'état ou corriger seul contourne la décision du responsable.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-serve-008",
+    "version": 2,
     "category": "situational",
-    "skill": "accessibilité et inclusion",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 1,
     "language": "fr",
-    "prompt": "Un usager en situation de fracture numérique éprouve de grandes difficultés à saisir sa démarche en ligne. Quelle attitude adopter ?",
-    "stimulus": "Un espace d'accompagnement numérique avec assistance personnalisée est disponible au sein de votre structure.",
+    "estimatedSeconds": 45,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager peu à l'aise avec l'informatique n'arrive pas à faire sa démarche en ligne. Un espace d'aide numérique, avec un agent disponible, se trouve dans le bâtiment.",
     "options": [
-      "Lui intimer de se faire aider par un membre de son entourage.",
-      "Lui proposer un accueil dans l'espace d'accompagnement pour le guider pas à pas dans sa démarche.",
-      "Saisir ses identifiants et mot de passe personnels à sa place sur votre ordinateur.",
-      "Lui remettre un manuel de 50 pages en lui demandant de revenir une fois la lecture terminée."
+      "L'accompagner vers l'espace d'aide numérique pour réaliser la démarche avec lui, étape par étape.",
+      "Faire la démarche à sa place en utilisant ses identifiants personnels, pour gagner du temps.",
+      "Lui remettre le guide pas à pas et l'inviter à revenir si un problème persiste.",
+      "Lui proposer un rendez-vous avec un conseiller numérique dans le courant de la semaine."
     ],
-    "correctIndex": 1,
-    "explanation": "L'accompagnement bienveillant et structuré dans les espaces dédiés assure l'accès effectif aux droits tout en respectant l'autonomie et la sécurité de l'usager.",
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "optionRationales": [
+      "Aide immédiate et adaptée, qui renforce l'autonomie.",
+      "Utiliser les identifiants d'autrui pose un problème de sécurité.",
+      "Aide minimale pour une personne déjà en difficulté.",
+      "Solution valable, mais elle retarde la démarche."
+    ],
+    "explanation": "L'accompagnement immédiat sur place permet d'aboutir tout en rendant l'usager plus autonome. Un rendez-vous est utile mais diffère la démarche ; utiliser ses identifiants pose un problème de sécurité.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-advise-009",
+    "version": 2,
     "category": "situational",
-    "skill": "devoir d'alerte et loyauté",
-    "difficulty": 2,
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
     "language": "fr",
-    "prompt": "Vous constatez une erreur récurrente dans un tableau de bord transmis chaque semaine au ministère. Comment réagissez-vous ?",
-    "stimulus": "L'anomalie fausse légèrement l'un des indicateurs sans que personne ne s'en soit aperçu jusqu'ici.",
+    "estimatedSeconds": 120,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Votre directrice vous demande quel indicateur retenir dans le rapport annuel pour illustrer la baisse des délais. L'indicateur A, plus favorable, exclut les dossiers incomplets. L'indicateur B couvre tous les dossiers mais montre une baisse plus modeste.",
     "options": [
-      "Ne rien signaler afin de ne pas remettre en cause le travail des semaines précédentes.",
-      "Documenter précisément l'erreur constatée, chiffrer son impact réel et soumettre la correction à votre responsable de service.",
-      "Diffuser un message d'alerte général à tous les agents du ministère.",
-      "Attendre qu'un contrôle externe pointe la divergence."
+      "Recommander l'indicateur A, plus favorable, sans détailler son périmètre exact.",
+      "Recommander l'indicateur B, sans mentionner l'existence de l'indicateur A.",
+      "Présenter les deux indicateurs et leurs limites, puis recommander B en justifiant ce choix.",
+      "Recommander l'indicateur A, en précisant son périmètre dans une note de bas de page."
     ],
-    "correctIndex": 1,
-    "explanation": "Le professionnalisme et la loyauté administrative impliquent de signaler les anomalies avec rigueur et méthode par la voie hiérarchique appropriée.",
+    "correctIndex": 2,
+    "ratings": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "optionRationales": [
+      "Le périmètre caché peut induire les lecteurs en erreur.",
+      "Choix défendable, mais la directrice n'a pas toutes les options.",
+      "Transparence complète et recommandation motivée.",
+      "Transparent, mais l'information essentielle reste peu visible."
+    ],
+    "explanation": "Un bon conseil éclaire complètement la décision : il présente les options, leurs limites et une recommandation motivée. Mentionner le périmètre en note rend A acceptable ; masquer une option ou un périmètre prive la directrice d'informations utiles.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T21:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   },
   {
     "id": "situational-serve-010",
+    "version": 2,
     "category": "situational",
-    "skill": "gestion de situation conflictuelle",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
     "difficulty": 2,
     "language": "fr",
-    "prompt": "Un usager s'énerve à la suite d'un retard de traitement occasionné par une panne informatique générale. Quelle est l'attitude idoine ?",
-    "stimulus": "L'incident technique est indépendant de votre volonté mais impacte directement l'usager.",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager s'énerve car son dossier ne peut pas être enregistré : le système informatique est en panne depuis une heure, pour une durée inconnue.",
     "options": [
-      "Adopter un ton autoritaire pour lui signifier qu'il doit cesser de se plaindre.",
-      "Reconnaître le désagrément causé avec calme, expliquer l'origine de l'indisponibilité et s'engager sur un suivi personnalisé dès le rétablissement.",
-      "Accuser publiquement le service informatique en vous désolidarisant de l'administration.",
-      "Quitter le guichet en laissant l'usager sans interlocuteur."
+      "Lui demander de revenir plus tard, le système étant indisponible pour une durée inconnue.",
+      "Lui expliquer que la panne relève du service informatique et que vous n'y pouvez rien.",
+      "Lui proposer de faire la démarche en ligne depuis chez lui, une fois le système rétabli.",
+      "Reconnaître la gêne, expliquer la panne et proposer de le rappeler dès le rétablissement."
     ],
-    "correctIndex": 1,
-    "explanation": "Garder son calme, faire preuve d'empathie face à la gêne occasionnée et proposer une solution concrète de suivi désamorce la tension avec dignité.",
+    "correctIndex": 3,
+    "ratings": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "optionRationales": [
+      "Exact, mais l'usager repart sans solution ni suivi.",
+      "Se désolidarise de l'administration et laisse l'usager sans solution.",
+      "Solution praticable, mais sans suivi personnalisé ni prise en compte de son énervement.",
+      "Reconnaît la gêne, informe et garantit un suivi."
+    ],
+    "explanation": "Reconnaître la gêne et garantir un suivi personnalisé apaise la situation et sécurise la démarche. Proposer la démarche en ligne est praticable mais laisse l'usager seul ; renvoyer la responsabilité au service informatique aggrave la tension.",
     "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved"
+    "reviewStatus": "approved",
+    "createdAt": "2026-09-30T12:00:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-01T21:00:00+02:00"
   }
 ]

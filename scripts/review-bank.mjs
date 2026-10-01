@@ -1,19 +1,41 @@
 import fs from "node:fs";
+import { chat, parseJson, requireAiEnv } from "./lib/ai.mjs";
 
-for (const key of ["AI_API_URL", "AI_API_KEY", "AI_MODEL"]) if (!process.env[key]) throw new Error(`${key} manquant`);
+requireAiEnv();
 const file = process.argv[2] || fs.readFileSync("generated/latest.txt", "utf8").trim();
-const bank = fs.readFileSync(file, "utf8");
+const items = JSON.parse(fs.readFileSync(file, "utf8"));
+if (!Array.isArray(items)) throw new Error("Le fichier candidat doit contenir un tableau JSON");
+
+// Blind review: the reviewer model never sees the key, the ratings or the explanations.
+const blind = items.map(({ id, category, itemFormat, language, prompt, stimulus, options }) => ({ id, category, itemFormat, language, prompt, stimulus, options }));
 const rules = fs.readFileSync("prompts/review-bank.md", "utf8");
-const response = await fetch(process.env.AI_API_URL, {method:"POST",headers:{"content-type":"application/json","authorization":`Bearer ${process.env.AI_API_KEY}`},body:JSON.stringify({model:process.env.AI_MODEL,temperature:0,messages:[{role:"system",content:rules},{role:"user",content:bank}]})});
-if (!response.ok) throw new Error(`AI API ${response.status}: ${await response.text()}`);
-const payload = await response.json();
-let content = payload.choices?.[0]?.message?.content ?? payload.output_text;
-if (!content) throw new Error("Réponse de revue vide");
-content = content.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
-const review = JSON.parse(content);
-if (!Array.isArray(review.reviews)) throw new Error("Format de revue invalide");
-const allowed = new Set(["pass","revise","reject"]);
-for (const item of review.reviews) if (!item.id || !allowed.has(item.decision) || !Array.isArray(item.issues)) throw new Error("Entrée de revue invalide");
+const answers = parseJson(await chat([{ role: "system", content: rules }, { role: "user", content: JSON.stringify(blind) }], { temperature: 0 }));
+if (!Array.isArray(answers)) throw new Error("Format de revue invalide : tableau attendu");
+
+const REJECT_FLAGS = new Set(["CLAIMS_OFFICIAL", "SENSITIVE_CONTENT"]);
+const reviews = items.map((item) => {
+  const a = answers.find((x) => x.id === item.id);
+  if (!a) return { id: item.id, decision: "revise", issues: ["Absent de la réponse du relecteur IA"] };
+  const issues = [];
+  const flags = Array.isArray(a.flags) ? a.flags : [];
+  if (item.itemFormat === "rating") {
+    const r = Array.isArray(a.ratings) ? a.ratings : [];
+    const top = r.length ? r.indexOf(Math.max(...r)) : -1;
+    if (top !== item.correctIndex) issues.push(`Meilleure réponse selon le relecteur : ${top}, clé : ${item.correctIndex}`);
+    if (r.length === item.ratings.length) {
+      const gap = r.reduce((s, v, i) => s + Math.abs(v - item.ratings[i]), 0) / r.length;
+      if (gap > 1) issues.push(`Écart moyen de notation ${gap.toFixed(2)} (> 1)`);
+    }
+  } else if (a.chosenIndex !== item.correctIndex) {
+    issues.push(`Réponse trouvée à l'aveugle : ${a.chosenIndex}, clé : ${item.correctIndex}`);
+  }
+  if (a.confidence === "low") issues.push("Confiance faible du relecteur");
+  issues.push(...flags.map((f) => `Signalement ${f}${a.note ? ` : ${a.note}` : ""}`));
+  const decision = flags.some((f) => REJECT_FLAGS.has(f)) ? "reject" : issues.length ? "revise" : "pass";
+  return { id: item.id, decision, issues, chosenIndex: a.chosenIndex ?? null, ratings: a.ratings ?? null, confidence: a.confidence ?? null };
+});
+
 const output = file.replace(/\.json$/, ".review.json");
-fs.writeFileSync(output, JSON.stringify(review, null, 2) + "\n");
-console.log(output);
+fs.writeFileSync(output, JSON.stringify({ model: process.env.AI_MODEL, reviewedAt: new Date().toISOString(), reviews }, null, 2) + "\n");
+const tally = reviews.reduce((t, r) => ({ ...t, [r.decision]: (t[r.decision] || 0) + 1 }), {});
+console.log(`${output} — ${JSON.stringify(tally)}`);

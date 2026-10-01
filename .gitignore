@@ -2,3 +2,4 @@ generated/*.json
 !generated/.gitkeep
 .env
 *.log
+node_modules/
