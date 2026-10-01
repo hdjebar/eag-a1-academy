@@ -91,6 +91,30 @@ npm test
 
 ---
 
+## Interface d'administration
+
+La même page, `admin.html`, fonctionne en deux modes.
+
+| | Hors ligne (`admin.html` ouvert depuis le disque) | Local (`npm run admin`) |
+| :--- | :--- | :--- |
+| Banque approuvée | intégrée à `admin.js` par `npm run build:bank` | lue sur le disque |
+| Candidats | glisser-déposer des fichiers `generated/*.json` et `*.review.json` | chargés automatiquement depuis `generated/` |
+| Enregistrement | archive `.zip` à décompresser à la racine du dépôt | écrit dans le dépôt, puis `app.js` et `admin.js` resynchronisés |
+| Tâches | — | génération, revue aveugle, `npm test`, état Git |
+| Session | sauvegardée dans le navigateur, reprise possible | l'état fait foi sur le disque |
+
+**File de relecture** : pour chaque candidat, aperçu tel que le voit l'apprenant, **résolution à l'aveugle** (la clé reste masquée jusqu'à votre réponse), résultat de la revue IA, contrôles automatiques (mêmes règles que `validate-bank.mjs`), questions proches déjà présentes, et éditeur complet (énoncé, tableau ou figures, options, notes, justifications).
+
+**Décisions** : *Approuver* exige un nom de relecteur et zéro erreur ; si la revue IA n'est pas `pass` (absente, `revise`, `reject` ou obsolète après modification), vous devez cocher « J'ai vérifié la réponse moi-même ». *Rejeter* exige un motif. Chaque décision est consignée dans `data/review-log/<date>.json`.
+
+**Banque approuvée** : couverture par catégorie, compétence et difficulté (les compétences absentes sont signalées), alertes, questions très proches ; modification d'une question (version incrémentée, relecteur et date mis à jour) ou retrait.
+
+**Sécurité du mode local** : le serveur n'écoute que `127.0.0.1` ; chaque appel exige le jeton affiché au démarrage ; l'hôte et l'origine sont vérifiés ; tout enregistrement est revalidé avec le validateur de référence (Ajv) avant écriture ; seuls les fichiers de `data/approved/`, `data/review-log/` et `generated/` peuvent être écrits.
+
+Après un enregistrement : relisez `git diff`, puis committez. La CI refuse toujours les PR qui laissent des fichiers dans `generated/`.
+
+---
+
 ## Commandes de référence
 
 | Commande | Rôle |
@@ -102,4 +126,5 @@ npm test
 | `npm run generate:bank` | Génère un lot de candidats via l'API configurée. |
 | `npm run review:bank [fichier]` | Revue IA aveugle d'un lot de candidats. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Promotion humaine explicite vers `data/approved/`. |
+| `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
 | `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation. |

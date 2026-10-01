@@ -40,8 +40,11 @@ eag-a1-academy/
 ├── eag-a1-academy.html       # Point d'entrée de l'application (HTML5 sémantique + styles CSS)
 ├── app.js                    # Moteur de session, rendu réactif et banque de données compilée
 ├── index.html                # Redirection d'appoint vers eag-a1-academy.html
+├── admin.html / admin.js     # Interface d'administration (hors ligne ou via npm run admin)
+├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité)
 │
 ├── data/
+│   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand)
 │   └── approved/             # Source de vérité pérenne : fichiers JSON validés par catégorie
 │       ├── abstract.json
 │       ├── numeric.json
@@ -56,7 +59,8 @@ eag-a1-academy/
 │   └── question.schema.json  # Schéma JSON Schema 2020-12, appliqué par Ajv dans validate-bank.mjs
 │
 ├── scripts/
-│   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js
+│   ├── admin-server.mjs      # Serveur local de l'interface d'administration (127.0.0.1, jeton)
+│   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js et admin.js
 │   ├── generate-bank.mjs     # Génération via API compatible OpenAI
 │   ├── promote-candidate.mjs # Promotion humaine explicite (relecteur nommé, identifiants listés)
 │   ├── review-bank.mjs       # Revue aveugle par LLM, comparée à la clé par le script
@@ -136,3 +140,4 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0003 : Pipeline Zero-Trust pour les banques de questions assistées par IA](adr/0003-ai-zero-trust-pipeline.md)
 * [ADR-0004 : Synchronisation des questions par compilation dans app.js](adr/0004-build-bank-compilation.md)
 * [ADR-0005 : Items en texte brut, rendu échappé et formats alignés sur GovJobs](adr/0005-plain-text-items-and-official-formats.md)
+* [ADR-0006 : Interface d'administration à deux modes (hors ligne et serveur local)](adr/0006-admin-ui.md)

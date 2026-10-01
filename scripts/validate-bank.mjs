@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
@@ -10,73 +11,22 @@ const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 const validateSchema = ajv.compile(schema);
 
-const FORBIDDEN_WORDING = [/question officielle/i, /item officiel/i, /bar[eè]me officiel/i, /confidentiel/i];
-const CATCH_ALL_OPTIONS = [/aucune de ces r[ée]ponses/i, /toutes les r[ée]ponses/i, /keine der antworten/i, /alle antworten/i];
-// Anything that looks like markup or an entity. Item text is rendered as text, never as HTML.
-const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
+// Same rules file as admin.html (classic script exposing globalThis.EagRules).
+vm.runInThisContext(fs.readFileSync(path.join(ROOT, "shared/item-rules.js"), "utf8"), { filename: "shared/item-rules.js" });
+const { semanticChecks, validateSchema: miniValidate } = globalThis.EagRules;
 
-function* strings(value, where) {
-  if (typeof value === "string") yield [where, value];
-  else if (Array.isArray(value)) for (let i = 0; i < value.length; i++) yield* strings(value[i], `${where}[${i}]`);
-  else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) yield* strings(v, `${where}.${k}`);
-}
-
-/** Returns { errors, warnings } for one item. */
+/** Returns { errors, warnings } for one item: JSON Schema (Ajv, authoritative) + shared semantic rules. */
 export function checkItem(item, index = 0) {
   const ref = item && typeof item === "object" && item.id ? item.id : `item ${index + 1}`;
   const errors = [];
-  const warnings = [];
-
   if (!validateSchema(item)) {
     for (const e of validateSchema.errors) {
       if (e.keyword === "if") continue; // the failing branch is reported separately
       errors.push(`${ref}: ${e.instancePath || "(racine)"} ${e.message}${e.params?.allowedValues ? ` (${e.params.allowedValues.join(", ")})` : ""}`);
     }
   }
-  if (!item || typeof item !== "object") return { errors, warnings };
-
-  for (const [where, text] of strings(item, "item")) {
-    if (HTML_LIKE.test(text)) errors.push(`${ref}: ${where} contient du HTML ou une entité (texte brut uniquement)`);
-  }
-
-  const learnerText = [...strings([item.prompt, item.stimulus, item.options, item.explanation, item.optionRationales], "x")].map(([, t]) => t).join(" ");
-  for (const pattern of FORBIDDEN_WORDING) if (pattern.test(learnerText)) errors.push(`${ref}: formulation interdite (${pattern})`);
-
-  const options = Array.isArray(item.options) ? item.options : [];
-  const ci = item.correctIndex;
-  if (Number.isInteger(ci) && (ci < 0 || ci >= options.length)) errors.push(`${ref}: correctIndex hors des options`);
-  if (new Set(options.map((o) => String(o).trim().toLowerCase())).size !== options.length) errors.push(`${ref}: options dupliquées (casse ignorée)`);
-  for (const o of options) if (CATCH_ALL_OPTIONS.some((p) => p.test(o))) errors.push(`${ref}: option fourre-tout interdite (« ${o} »)`);
-  if (Array.isArray(item.optionRationales) && item.optionRationales.length !== options.length) {
-    errors.push(`${ref}: optionRationales doit avoir une entrée par option`);
-  }
-
-  if (item.itemFormat === "rating" && Array.isArray(item.ratings) && item.ratings.length === options.length) {
-    const max = Math.max(...item.ratings);
-    if (max !== 4 || item.ratings.filter((r) => r === 4).length !== 1 || item.ratings[ci] !== 4) {
-      errors.push(`${ref}: ratings doit contenir un seul 4, placé à correctIndex`);
-    }
-    if (new Set(item.ratings).size < 3) warnings.push(`${ref}: ratings utilise moins de 3 valeurs distinctes`);
-  }
-
-  if (item.itemFormat !== "tfcs" && options.length >= 3 && Number.isInteger(ci) && options[ci]) {
-    const lengths = options.map((o) => o.length);
-    const others = lengths.filter((_, i) => i !== ci);
-    if (lengths[ci] > 1.4 * Math.max(...others) && lengths[ci] > 25) {
-      warnings.push(`${ref}: la bonne réponse est nettement la plus longue (indice involontaire)`);
-    }
-  }
-
-  if (item.language === "fr" && item.category === "numeric") {
-    const text = [...strings([item.prompt, item.stimulus, item.options], "x")].map(([, t]) => t).join(" ");
-    if (/\d\.\d/.test(text)) warnings.push(`${ref}: point décimal détecté ; en français, utilisez la virgule (12,5)`);
-    if (/\d%/.test(text)) warnings.push(`${ref}: écrivez « 12 % » avec une espace`);
-  }
-
-  if (typeof item.explanation === "string" && options[ci] && item.explanation.trim().toLowerCase() === options[ci].trim().toLowerCase()) {
-    errors.push(`${ref}: l'explication se contente de répéter la réponse`);
-  }
-  return { errors, warnings };
+  const sem = semanticChecks(item);
+  return { errors: errors.concat(sem.errors.map((m) => `${ref}: ${m}`)), warnings: sem.warnings.map((m) => `${ref}: ${m}`) };
 }
 
 /** Returns { errors, warnings } for an array of items. */
@@ -129,15 +79,29 @@ function selfTest() {
     "approuvé sans relecteur": { ...base, reviewStatus: "approved" },
     "préfixe d'id incohérent": { ...base, id: "verbal-demo-001" },
     "option fourre-tout": { ...base, options: ["5", "10", "15", "Aucune de ces réponses"] },
+    "champ inconnu": { ...base, extra: 1 },
+    "date invalide": { ...base, createdAt: "hier" },
+    "stimulus abstrait en texte": { ...base, id: "abstract-demo-001", category: "abstract", skill: "matrice", stimulus: "Série de formes à compléter" },
+    "tfcs mal formé": { ...base, id: "verbal-demo-002", category: "verbal", skill: "inference", itemFormat: "tfcs", options: ["Oui", "Non", "Peut-être"] },
   };
-  const ok = [base, rating].map((x) => JSON.parse(JSON.stringify(x)));
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const ok = [base, rating].map(clone);
   const r = checkBank(ok);
   if (r.errors.length) throw new Error(`Self-test : items valides rejetés\n${r.errors.join("\n")}`);
   for (const [name, item] of Object.entries(mustFail)) {
-    const clean = JSON.parse(JSON.stringify(item));
-    if (!checkBank([clean]).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
+    if (!checkBank([clone(item)]).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
   }
-  console.log(`Self-test passed (${Object.keys(mustFail).length} cas invalides détectés)`);
+
+  // The browser validator (admin.html) must agree with Ajv on every fixture and every approved item.
+  const approvedDir = path.join(ROOT, "data/approved");
+  const approved = fs.readdirSync(approvedDir).filter((f) => f.endsWith(".json")).flatMap((f) => JSON.parse(fs.readFileSync(path.join(approvedDir, f), "utf8")));
+  const corpus = [...ok, ...Object.values(mustFail).map(clone), ...approved];
+  for (const item of corpus) {
+    const ajvValid = validateSchema(item);
+    const miniValid = miniValidate(schema, item).length === 0;
+    if (ajvValid !== miniValid) throw new Error(`Self-test : le validateur navigateur et Ajv divergent sur ${item.id} (Ajv ${ajvValid}, navigateur ${miniValid})`);
+  }
+  console.log(`Self-test passed (${Object.keys(mustFail).length} cas invalides détectés, ${corpus.length} items : validateur navigateur = Ajv)`);
 }
 
 const isDirectRun = Boolean(process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]));

@@ -28,6 +28,15 @@ Pour ajouter ou enrichir des questions (via l'interface d'un **Chat LLM**, en **
 * Compilez et synchronisez la banque avec `npm run build:bank`
 * Vérifiez l'intégrité avec `npm test`
 
+## Administration des questions
+
+Une interface d'administration permet de relire, résoudre à l'aveugle, modifier, approuver ou rejeter les questions, et de suivre la couverture de la banque.
+
+* **Hors ligne** : ouvrez `admin.html`, chargez les fichiers `generated/*.json` (et leurs `*.review.json`), puis téléchargez l'archive produite et décompressez-la à la racine du dépôt.
+* **En local** : `npm ci && npm run admin`. Un serveur limité à votre ordinateur lit et écrit directement dans le dépôt, et permet de lancer génération, revue aveugle, `npm test` et l'état Git.
+
+Détails : [docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md#interface-dadministration).
+
 ## Architecture et décisions de conception
 
 Le projet est conçu pour une exécution 100 % hors-ligne, sans serveur ni dépendance runtime, avec un pipeline d'ingestion Zero-Trust pour les contributions assistées par IA.
