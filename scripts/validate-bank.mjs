@@ -129,6 +129,11 @@ function selfTest() {
     "approuvé sans relecteur": { ...base, reviewStatus: "approved" },
     "préfixe d'id incohérent": { ...base, id: "verbal-demo-001" },
     "option fourre-tout": { ...base, options: ["5", "10", "15", "Aucune de ces réponses"] },
+    "option fourre-tout variante (aucun de ces créneaux)": { ...base, options: ["5", "10", "15", "Aucun de ces créneaux"] },
+    "option fourre-tout allemand (keine der)": { ...base, options: ["5", "10", "15", "Keine der Optionen"] },
+    "options dupliquées": { ...base, options: ["5", "10", "15", "5"] },
+    "optionRationales nombre d'entrées inattendu": { ...base, optionRationales: ["Juste", "Faux"] },
+    "formulation interdite (question officielle)": { ...base, prompt: "Voici une question officielle de l'épreuve." },
   };
   const ok = [base, rating].map((x) => JSON.parse(JSON.stringify(x)));
   const r = checkBank(ok);
