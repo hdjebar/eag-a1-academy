@@ -1,0 +1,2003 @@
+{
+  "model": "independent blind solvers (Claude subagents, keys hidden)",
+  "reviewedAt": "2026-10-02T19:07:10.707Z",
+  "reviews": [
+    {
+      "id": "numeric-tab-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-204",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-205",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-206",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-207",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-208",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-209",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-210",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-211",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-212",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-213",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-tab-214",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-204",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-205",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-206",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-207",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-208",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-209",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-210",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-211",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-212",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-213",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-214",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-215",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-216",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-217",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-218",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-219",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-220",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-221",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-salle-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-taches-201",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-taches-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-204",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-204",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-salle-202",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-taches-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "signalé « wording » puis corrigé et revérifié"
+    },
+    {
+      "id": "planning-agenda-205",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-205",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-206",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-206",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-taches-204",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "signalé « wording » puis corrigé et revérifié"
+    },
+    {
+      "id": "planning-agenda-207",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-207",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-208",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null,
+      "note": "signalé « wording » puis corrigé et revérifié"
+    },
+    {
+      "id": "planning-taches-205",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-208",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-semaine-209",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-agenda-209",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-salle-203",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-deduct-001",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-cond-002",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-quant-003",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-order-004",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-neg-005",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-syll-006",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-rule-007",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-extrap-008",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-equiv-009",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-fact-010",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-012",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-deont-014",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-cert-015",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-contra-016",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-017",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-rule-018",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-comp-020",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-synth-021",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-022",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-syll-023",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-comp-025",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-inf-026",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-app-028",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-inf-029",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-inf-031",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-app-032",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-comp-034",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-inf-035",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-053",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-062",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-084",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-098",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-001",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-008",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-016",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        3,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-021",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-028",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-032",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-037",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-041",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        3,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-047",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-051",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-055",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-059",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-063",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-067",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-071",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        2,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-076",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-081",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-085",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        2,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-089",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        2,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-093",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-099",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        3,
+        4,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-005",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        3,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-010",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-017",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        3,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-022",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        3,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-029",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-034",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-038",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        3,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-043",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-048",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-052",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        3,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-056",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-060",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-064",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-068",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-072",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-077",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        3,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-082",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-086",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-090",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-094",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        1,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-026",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-006",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-013",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-018",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-024",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        3,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-030",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-035",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-039",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-045",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        2,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-049",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-053",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-057",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-061",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-065",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        3,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-069",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-073",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-078",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-083",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        2,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-087",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-091",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-096",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-079",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-007",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-015",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        2,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-020",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-027",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-031",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        2,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-036",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        1,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-040",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-046",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-050",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        2,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-054",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        3,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-058",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-062",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-066",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-070",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        3,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-075",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        2,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-080",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-084",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-088",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-092",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        3,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-098",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        3,
+        4,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "numeric-calc-073",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-085",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-096",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-077",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-068",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-051",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-091",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-063",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-038",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-mean-014",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-mean-019",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-weight-007",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-079",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-046",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-061",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-calc-084",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-mean-025",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "numeric-ops-022",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null,
+      "note": "Seul le stimulus passe du texte au tableau (mêmes données). Réponse recalculée depuis le tableau ; options et clé inchangées, déjà vérifiées à l'aveugle lors de l'audit."
+    },
+    {
+      "id": "planning-res-069",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null,
+      "note": "Vérifié par calcul (2 × 9 + 14 × 12 ≥ 180 ; 15 jours insuffisants)."
+    }
+  ]
+}
