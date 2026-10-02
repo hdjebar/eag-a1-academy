@@ -195,7 +195,9 @@
     return set;
   }
   function similarity(a, b) {
-    const A = trigrams(a), B = trigrams(b);
+    return jaccard(trigrams(a), trigrams(b));
+  }
+  function jaccard(A, B) {
     if (!A.size || !B.size) return 0;
     let inter = 0;
     for (const x of A) if (B.has(x)) inter++;
@@ -249,7 +251,7 @@
   function bankChecks(items) {
     const errors = [], warnings = [];
     const list = (Array.isArray(items) ? items : []).filter((x) => x && typeof x === "object");
-    const texts = list.map((x) => `${itemText(x)} ${(x.options || []).join(" ")}`);
+    const grams = list.map((x) => trigrams(`${itemText(x)} ${(x.options || []).join(" ")}`));
     for (let i = 0; i < list.length; i++) {
       for (let j = i + 1; j < list.length; j++) {
         const a = list[i], b = list[j];
@@ -259,7 +261,7 @@
           continue;
         }
         if (a.category === "abstract") continue; // trigram similarity is meaningless on short symbol strings
-        const s = similarity(texts[i], texts[j]);
+        const s = jaccard(grams[i], grams[j]);
         if (s >= DUP_ERROR) errors.push(`${a.id} et ${b.id} : quasi-doublon (similarité ${s.toFixed(2)})`);
         else if (s >= DUP_WARN) warnings.push(`${a.id} et ${b.id} : très proches (similarité ${s.toFixed(2)})`);
       }

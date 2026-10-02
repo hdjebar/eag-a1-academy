@@ -220,5 +220,6 @@ CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." np
 | Importer des fichiers | Glisser-déposer dans `admin.html`, copie dans `generated/` (mode local) ou collage du JSON : voir [Importer des fichiers de questions](#importer-des-fichiers-de-questions). |
 | `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
 | `npm run generate:abstract [fichier] [-- --target 100]` | Génère des candidats de raisonnement abstrait par règles (clés calculées, unicité vérifiée contre rotations, symétries et remplissage) dans `generated/`, pour compléter chaque compétence jusqu'à la cible. Revue aveugle et promotion humaine restent nécessaires. |
+| `npm run generate:data [fichier] [-- --numeric 35 --planning 26]` | Génère par règles des candidats numériques sur tableaux et graphiques (`lecture-tableau`, `lecture-graphique`) et des agendas de planification en tableau (disponibilités, salles, présences, tâches et prérequis). Clés calculées, une seule option valide par construction, sortie dans `generated/`. |
 | `npm run check:review-log` | Vérifie que chaque question approuvée est tracée dans `data/review-log/`. |
 | `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation, contrôle de relecture. |

@@ -92,8 +92,8 @@ for (const id of requested) {
     blocked++;
     continue;
   }
-  const nextBank = isRevision ? bank.map((x, i) => (i === existingIndex ? approved : x)) : [...bank, approved];
-  const { errors } = checkBank(nextBank);
+  // Item-level checks here; bank-level checks (duplicates, balance) run once on the final banks below.
+  const { errors } = checkBank([approved]);
   if (errors.length) {
     console.log(`- ${id} : invalide\n    ${errors.join("\n    ")}`);
     blocked++;
@@ -113,6 +113,13 @@ for (const id of requested) {
 if (!promoted.length) {
   console.log(`\nAucun item promu (${blocked} bloqué(s)).`);
   process.exit(blocked ? 1 : 0);
+}
+for (const [target, bank] of byCategory) {
+  const { errors } = checkBank(bank);
+  if (errors.length) {
+    console.error(`❌ ${target} serait invalide après promotion :\n- ${errors.join("\n- ")}\nRien n'a été écrit.`);
+    process.exit(1);
+  }
 }
 if (values["dry-run"]) {
   console.log(`\n(dry-run) ${promoted.length} item(s) seraient promus. Rien n'a été écrit.`);
