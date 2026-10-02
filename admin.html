@@ -54,6 +54,8 @@ main{padding:var(--s4)}
 .preview .qprompt{font-weight:700;font-size:var(--lg);margin:var(--s2) 0 var(--s3)}
 .stimulus{background:var(--offset);border-radius:var(--r2);padding:var(--s4);margin-bottom:var(--s3);overflow:auto}
 .stimulus.text{white-space:pre-line}
+.chart{margin:0}.chart figcaption{font-weight:700;margin-bottom:var(--s2)}.chart svg{color:var(--text)}.chart .note{font-size:.85em}
+.sr{position:absolute;left:-9999px}
 .shapes{text-align:center;font:1.8rem/1.5 var(--sym);white-space:pre}
 .data{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:var(--sm)}
 .data th,.data td{padding:6px 10px;border-bottom:1px solid var(--border);text-align:right}
@@ -189,6 +191,7 @@ td.before{background:var(--errorbg)}td.after{background:var(--successbg)}
 <dialog id="aidlg" aria-label="Assistant IA"></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="shared/item-rules.js"></script>
+<script src="shared/chart.js"></script>
 <script src="admin.js"></script>
 </body>
 </html>

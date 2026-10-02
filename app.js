@@ -24,6 +24,7 @@ function stimulusHtml(s){
     const body=s.rows.map(r=>`<tr>${r.map((c,i)=>i===0?`<th scope="row">${esc(c)}</th>`:`<td>${esc(typeof c==="number"?c.toLocaleString("fr-FR"):c)}</td>`).join("")}</tr>`).join("");
     return`<div class="stimulus"><table class="data">${s.caption?`<caption>${esc(s.caption)}</caption>`:""}<thead>${head}</thead><tbody>${body}</tbody></table>${s.note?`<p class="note">${esc(s.note)}</p>`:""}</div>`;
   }
+  if(s.type==="chart"&&globalThis.EagChart)return`<div class="stimulus">${EagChart.html(s,esc)}</div>`;
   return"";
 }
 /* Options are shuffled once per question so the answer position carries no information. */

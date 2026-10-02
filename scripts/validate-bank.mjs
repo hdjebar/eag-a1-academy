@@ -126,12 +126,15 @@ function selfTest() {
     "figure abstraite avec des lettres": { ...base, id: "abstract-demo-002", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "A  B  C  ?" }, options: ["D", "E", "F", "G"] },
     "figure abstraite avec deux « ? »": { ...base, id: "abstract-demo-003", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "●  ■  ?  ?" }, options: ["●", "■", "▲", "○"] },
     "figure abstraite avec un idéogramme": { ...base, id: "abstract-demo-004", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "回  ■  □  ?" }, options: ["●", "■", "▲", "○"] },
+    "graphique : séries et étiquettes de longueurs différentes": { ...base, id: "numeric-demo-004", skill: "lecture-graphique", stimulus: { type: "chart", kind: "bar", caption: "Demandes par mois", labels: ["Janv.", "Févr.", "Mars"], series: [{ name: "Demandes", values: [10, 20] }] } },
+    "graphique : type inconnu": { ...base, id: "numeric-demo-005", skill: "lecture-graphique", stimulus: { type: "chart", kind: "pie", caption: "Répartition", labels: ["A", "B"], series: [{ name: "Part", values: [1, 2] }] } },
     "tfcs mal formé": { ...base, id: "verbal-demo-002", category: "verbal", skill: "inference", itemFormat: "tfcs", options: ["Oui", "Non", "Peut-être"] },
   };
   const clone = (x) => JSON.parse(JSON.stringify(x));
   // Legitimate options that mention "aucun" / "toutes" must stay allowed.
   const mustPass = {
     "conclusion « aucun des agents »": { ...base, id: "verbal-demo-003", category: "verbal", skill: "inference", stimulus: "Aucun agent du service B ne travaille le samedi.", options: ["Aucun des agents du service B ne travaille le samedi.", "Tous les agents travaillent le samedi.", "Certains agents du service B travaillent le samedi.", "Le service B ferme le vendredi."] },
+    "graphique en barres": { ...base, id: "numeric-demo-003", skill: "lecture-graphique", stimulus: { type: "chart", kind: "bar", caption: "Demandes traitées par mois", unit: "dossiers", labels: ["Janv.", "Févr.", "Mars"], series: [{ name: "Demandes", values: [120, 135, 150] }] } },
     "contrainte « aucune des deux réunions »": { ...base, id: "planning-demo-001", category: "planning", skill: "conflits", stimulus: "Deux réunions fixes occupent la matinée de 9 h à 12 h.", options: ["Aucune des deux réunions ne peut être déplacée.", "La première réunion peut être avancée.", "La seconde réunion peut être reportée.", "Les deux réunions peuvent être fusionnées."] },
   };
   const ok = [base, rating, ...Object.values(mustPass)].map(clone);

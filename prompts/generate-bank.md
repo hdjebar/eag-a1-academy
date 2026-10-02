@@ -45,6 +45,9 @@ The `stimulus` field must follow one of these structural formats:
 1. **Plain text:** String with standard line breaks (`\n`). Used for verbal texts, scheduling contexts, and situational scenarios.
 2. **Figural matrix / shapes:** Object `{"type": "shapes", "text": "▲  ■  ●\n■  ●  ▲\n●  ▲  ?"}`. Used exclusively for `abstract` reasoning. Use standard unicode geometric symbols with rows separated by `\n`.
 3. **Structured table:** Object `{"type": "table", "caption": "...", "headers": ["...", "..."], "rows": [["...", 120]], "note": "..."}`. Used for `numeric` and structured `planning` items. Never embed tables as markdown or HTML.
+4. **Chart:** Object `{"type": "chart", "kind": "bar" | "line", "caption": "...", "unit": "...", "labels": ["Janv.", "Févr."], "series": [{"name": "...", "values": [120, 135]}], "note": "..."}`. The app draws the chart and prints every value. 2–12 labels, 1–3 series, one value per label, non-negative numbers. Use it for `lecture-graphique` items. Never write SVG, HTML or a table disguised as a chart.
+
+Realistic mix (checked by the validator as warnings): at least 40 % of `numeric` items use a table or a chart, and at least 15 % a chart; at least 20 % of `planning` agendas are tables (columns = time slots or days, rows = people or rooms).
 
 # Difficulty & Timing
 
@@ -139,7 +142,7 @@ The `stimulus` field must follow one of these structural formats:
 
 ---
 
-### 5. `situational` — Format: `rating`, Stimulus: `string` (40–120 words)
+### 5. `situational` — Format: `rating`, Stimulus: `string` (30–120 words)
 *Official: « évaluer leur pertinence au regard du contexte présenté... compétences "servir le client-usager" et "conseiller" ».*
 - **Candidate Persona:** State civil servant, category A1 (e.g., chargé d'études, conseiller, chef de projet).
 - **Competencies:**

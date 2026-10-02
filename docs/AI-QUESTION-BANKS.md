@@ -30,7 +30,12 @@ Le contrat complet est dans [`schema/question.schema.json`](../schema/question.s
 "stimulus": "Texte simple. Les retours à la ligne sont conservés."
 "stimulus": { "type": "shapes", "text": "●  ■  ▲\n■  ▲  ●\n▲  ●  ?" }
 "stimulus": { "type": "table", "caption": "Demandes par service", "headers": ["Service", "Janv.", "Févr."], "rows": [["A", 120, 138], ["B", 80, 96]] }
+"stimulus": { "type": "chart", "kind": "bar", "caption": "Dossiers traités par mois", "unit": "dossiers", "labels": ["Janv.", "Févr.", "Mars"], "series": [{ "name": "Service A", "values": [120, 138, 150] }] }
 ```
+
+Les graphiques (`kind` : `bar` ou `line`, 1 à 3 séries) sont dessinés en SVG par `shared/chart.js`, valeurs affichées, avec un tableau équivalent pour les lecteurs d'écran.
+
+**Réalisme (avertissements du validateur)** : textes verbaux de 40 à 200 mots, scénarios situationnels de 30 à 120 mots ; au moins 40 % des items numériques sur tableau ou graphique (dont 15 % de graphiques) ; au moins 20 % des agendas de planification en tableau.
 
 ---
 
