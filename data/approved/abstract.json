@@ -338,5 +338,175 @@
     "createdAt": "2026-10-01T21:00:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-01T21:00:00+02:00"
+  },
+  {
+    "id": "abstract-matrix-011",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète logiquement la troisième ligne de cette matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●       ■       ▲\n■■      ▲▲      ●●\n▲▲▲     ●●●     ?"
+    },
+    "options": [
+      "■■■",
+      "▲▲▲",
+      "●●●",
+      "□□□"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : forme carrée requise pour compléter le triplet (triangle, disque, carré) avec 3 éléments pleins.",
+      "Le triangle figure déjà en première case de la troisième ligne.",
+      "Le disque figure déjà en deuxième case de la troisième ligne.",
+      "Forme correcte mais vide, alors que toutes les figures de la matrice sont pleines."
+    ],
+    "explanation": "Deux règles combinées s'appliquent : d'une part, chaque ligne permute les trois formes de base (cercle, carré, triangle) ; d'autre part, le nombre de symboles augmente de 1 par ligne (1 en ligne 1, 2 en ligne 2, 3 en ligne 3). La case manquante doit donc contenir 3 carrés pleins (■■■).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "abstract-clock-012",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quelle flèche poursuit logiquement la rotation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑  →  ↗  →  →  →  ↘  →  ?"
+    },
+    "options": [
+      "↓",
+      "↙",
+      "←",
+      "↑"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : rotation horaire de 45° après le point cardinal sud-est (↘).",
+      "Rotation de 90° au lieu de 45° après le sud-est.",
+      "Rotation de 135° sautant deux étapes d'orientation.",
+      "Retour erroné au point de départ de la séquence."
+    ],
+    "explanation": "La flèche effectue une rotation continue de 45° dans le sens horaire à chaque pas : nord (↑), nord-est (↗), est (→), sud-est (↘). L'étape suivante pointe donc plein sud (↓).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "abstract-pair-013",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "La même règle s'applique à chaque couple. Quelle paire remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "● ○   →   ○ ●\n■ □   →   □ ■\n▲ △   →   ?"
+    },
+    "options": [
+      "△ ▲",
+      "▲ △",
+      "△ △",
+      "▲ ▲"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : permutation de la figure pleine et de la figure vide.",
+      "Identique à la figure initiale sans appliquer la permutation.",
+      "Deux figures vides au lieu d'une permutation.",
+      "Deux figures pleines au lieu d'une permutation."
+    ],
+    "explanation": "Chaque paire subit une permutation horizontale de ses deux composantes : le symbole plein à gauche passe à droite, et le symbole vide à droite passe à gauche. ▲ △ devient donc △ ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "abstract-step-014",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel groupe de symboles complète cette double progression ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆◆◆◆    ◇    ◆◆◆    ◇◇    ◆◆    ◇◇◇    ?"
+    },
+    "options": [
+      "◆",
+      "◇◇◇◇",
+      "◆◆",
+      "◇◇"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la suite des losanges pleins décroît (4, 3, 2, 1) au 7e terme.",
+      "Prolonge la suite des losanges vides qui n'intervient qu'au rang suivant.",
+      "Répète le terme précédent des losanges pleins sans décrémentation.",
+      "Régression injustifiée dans la suite des losanges vides."
+    ],
+    "explanation": "Deux progressions entrelacées alternent : les termes impairs présentent des losanges pleins décroissants (4, 3, 2, puis 1), tandis que les termes pairs présentent des losanges vides croissants (1, 2, 3). Le 7e terme est impair et doit donc comporter un seul losange plein (◆).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "abstract-diag-015",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète logiquement la matrice 2×2 ci-dessous ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◀   ▶\n▲   ?"
+    },
+    "options": [
+      "▼",
+      "▲",
+      "◀",
+      "▶"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : symétrie axiale inversant l'orientation (gauche/droite en ligne 1, haut/bas en ligne 2).",
+      "Répétition sans inversion d'orientation.",
+      "Réintroduction d'une orientation horizontale sur une ligne verticale.",
+      "Orientation vers la droite sans rapport avec l'axe vertical de la seconde ligne."
+    ],
+    "explanation": "La première ligne associe deux triangles horizontaux de directions opposées (◀ et ▶, soit un retournement à 180°). La seconde ligne applique la même relation d'opposition aux triangles verticaux : ▲ opposé donne ▼.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
   }
 ]

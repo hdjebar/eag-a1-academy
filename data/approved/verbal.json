@@ -306,5 +306,158 @@
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T09:15:00+02:00"
+  },
+  {
+    "id": "verbal-telework-011",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle décision est strictement conforme à la directive de service ?",
+    "stimulus": "Toute demande de télétravail occasionnel doit être déposée au moins 5 jours ouvrés à l'avance auprès de la hiérarchie. Par exception, en cas d'intempéries majeures constatées par un avis officiel, le délai est réduit à 24 heures. L'agent Laurent dépose sa demande 3 jours ouvrés avant la date souhaitée, en l'absence de tout avis officiel d'intempéries.",
+    "options": [
+      "La demande de Laurent ne respecte pas le délai réglementaire exigé.",
+      "La demande de Laurent est automatiquement validée par défaut.",
+      "Laurent peut bénéficier de la dérogation réduite à 24 heures.",
+      "Le délai de 5 jours ouvrés ne s'applique qu'au télétravail régulier."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : en l'absence d'avis officiel d'intempéries, le délai obligatoire de 5 jours ouvrés s'applique.",
+      "Le texte ne mentionne aucun mécanisme d'accord tacite ou d'approbation automatique.",
+      "L'exception de 24 heures est expressément conditionnée à un avis officiel d'intempéries.",
+      "La directive précise explicitement qu'elle régit le télétravail occasionnel."
+    ],
+    "explanation": "La directive impose un préavis de 5 jours ouvrés pour le télétravail occasionnel. L'unique dérogation (24 heures) requiert un avis officiel d'intempéries. En l'absence d'un tel avis, la demande déposée à 3 jours ouvrés viole le délai réglementaire.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "verbal-tfcs-012",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : Tous les candidats retenus pour l'épreuve orale ont validé l'évaluation écrite.",
+    "stimulus": "Seuls les candidats ayant validé l'évaluation écrite avec une note minimale de 12 sur 20 sont convoqués à l'épreuve orale. Vingt-cinq candidats participent actuellement à l'épreuve orale.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la validation de l'évaluation écrite est une condition nécessaire stricte d'accès à l'oral.",
+      "Contredit formellement la règle d'admission énoncée dans le texte.",
+      "Le texte est affirmatif et sans ambiguïté sur cette condition exclusive (« seuls les candidats... »)."
+    ],
+    "explanation": "L'emploi de la tournure restrictive « seuls les candidats ayant validé l'évaluation écrite... » établit que la validation écrite est une condition sine qua non. Tout candidat présent à l'oral l'a donc obligatoirement validée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "verbal-synth-013",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle proposition résume le plus fidèlement le champ d'application de la note ?",
+    "stimulus": "Le présent guide de gestion s'applique à l'ensemble des agents titulaires et stagiaires de l'administration centrale. Les collaborateurs externes et prestataires sont soumis exclusivement aux clauses de leur contrat spécifique, à l'exception des consignes de sécurité des bâtiments qui s'imposent à toute personne présente dans les locaux.",
+    "options": [
+      "Le guide régit titulaires et stagiaires, tandis que seules les consignes de sécurité s'imposent universellement.",
+      "Le guide de gestion s'applique intégralement aux collaborateurs externes et prestataires de services.",
+      "Les agents stagiaires bénéficient d'un régime d'exception identique à celui des prestataires.",
+      "Les consignes de sécurité des bâtiments ne concernent que les agents sous contrat de droit public."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : résume fidèlement le champ d'application interne et l'universalité de la seule sécurité.",
+      "En contradiction avec le texte qui restreint les prestataires à leur contrat.",
+      "Faux : les stagiaires sont au contraire inclus dans le champ général avec les titulaires.",
+      "Faux : le texte précise que la sécurité s'impose à toute personne présente dans les locaux."
+    ],
+    "explanation": "Le passage opère une distinction claire : les agents publics (titulaires et stagiaires) relèvent du guide, les prestataires relèvent de leur contrat, et les consignes de sécurité s'appliquent indistinctement à tous.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "verbal-deont-014",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle déduction s'impose logiquement par contraposition ?",
+    "stimulus": "Tout fonctionnaire participant à une commission de sélection doit souscrire une déclaration préalable d'absence de conflit d'intérêts. L'agent Marc n'a souscrit aucune déclaration d'absence de conflit d'intérêts.",
+    "options": [
+      "L'agent Marc ne peut pas régulièrement participer à une commission de sélection.",
+      "L'agent Marc est sous le coup d'une procédure disciplinaire pour omission.",
+      "L'agent Marc participera à la commission de sélection avec une dispense écrite.",
+      "Certains fonctionnaires sont dispensés de déclaration en commission de sélection."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : contraposition stricte (si participation alors déclaration ; or pas de déclaration donc pas de participation régulière).",
+      "Extrapolation injustifiée : le texte n'évoque aucune sanction disciplinaire.",
+      "Contredit la règle selon laquelle tout fonctionnaire participant doit déclarer.",
+      "Contredit le caractère universel de l'obligation énoncée (« tout fonctionnaire »)."
+    ],
+    "explanation": "La règle énonce une implication universelle : Participation ⇒ Déclaration. Par contraposition logique (Non Déclaration ⇒ Non Participation), Marc ne peut légalement siéger en commission de sélection.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "verbal-cert-015",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle affirmation est directement corroborée par les faits mentionnés ?",
+    "stimulus": "La nouvelle procédure de délivrance numérique a permis de délivrer 4 500 attestations au premier trimestre, contre 3 000 attestations papier au trimestre correspondant de l'année précédente.",
+    "options": [
+      "Le volume d'attestations délivrées a augmenté de 1 500 unités entre les deux trimestres comparés.",
+      "La procédure numérique a totalement supprimé les erreurs de saisie des agents.",
+      "Les usagers préfèrent unanimement le format numérique au format papier.",
+      "Toutes les attestations administratives de l'État sont désormais délivrées en ligne."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : corroboré par la différence arithmétique directe (4 500 - 3 000 = 1 500).",
+      "Extrapolation infondée : le texte ne mentionne aucun taux d'erreur.",
+      "Jugement qualitatif subjectif absent des données factuelles du texte.",
+      "Généralisation abusive à l'ensemble des attestations administratives de l'État."
+    ],
+    "explanation": "Seule la hausse factuelle de 1 500 attestations (4 500 contre 3 000) découle directement du texte. Les autres options constituent des jugements subjectifs ou des généralisations sans preuve.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
   }
 ]

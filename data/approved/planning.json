@@ -308,5 +308,160 @@
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T09:15:00+02:00"
+  },
+  {
+    "id": "planning-trio-011",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel créneau horaire permet de tenir un point de synchronisation de 30 minutes commun aux trois agents ?",
+    "stimulus": "Agent 1 est disponible de 14 h 00 à 16 h 00. Agent 2 est disponible de 14 h 30 à 17 h 00. Agent 3 est disponible de 13 h 30 à 15 h 30.",
+    "options": [
+      "14 h 30 à 15 h 00",
+      "14 h 00 à 14 h 30",
+      "15 h 30 à 16 h 00",
+      "16 h 00 à 16 h 30"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les trois agents sont simultanément disponibles sur la plage 14 h 30 à 15 h 30.",
+      "L'Agent 2 n'est pas encore disponible avant 14 h 30.",
+      "L'Agent 3 a terminé sa disponibilité à 15 h 30.",
+      "Les Agents 1 et 3 ne sont plus disponibles après 16 h 00."
+    ],
+    "explanation": "La plage commune aux trois agents correspond à l'intersection des créneaux : à partir de 14 h 30 (arrivée de l'Agent 2) et jusqu'à 15 h 30 (départ de l'Agent 3). Le créneau de 14 h 30 à 15 h 00 s'y inscrit parfaitement.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "planning-prio-012",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "priorisation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle tâche devez-vous impérativement démarrer dès 14 h 00 pour ne manquer aucune échéance ?",
+    "stimulus": "Il est 14 h 00. Tâche 1 : durée 40 min, échéance 15 h 00. Tâche 2 : durée 50 min, échéance 15 h 30. Tâche 3 : durée 30 min, échéance 17 h 00.",
+    "options": [
+      "Tâche 1",
+      "Tâche 2",
+      "Tâche 3",
+      "Tâche 2 suivie de Tâche 3"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : commencer par Tâche 1 (14 h 00 à 14 h 40) permet ensuite d'achever Tâche 2 à 15 h 30 avant son terme.",
+      "Commencer par Tâche 2 (14 h 00 à 14 h 50) repousserait Tâche 1 à 15 h 30, dépassant son échéance de 15 h 00.",
+      "La Tâche 3 a une échéance tardive (17 h 00) et n'est pas prioritaire.",
+      "Inverser l'ordre en commençant par Tâche 2 provoque un retard certain sur Tâche 1."
+    ],
+    "explanation": "En démarrant par Tâche 1, celle-ci s'achève à 14 h 40 (avant 15 h 00). Tâche 2 peut ensuite s'exécuter de 14 h 40 à 15 h 30, respectant pile son échéance. Si l'on commençait par Tâche 2, Tâche 1 ne finirait qu'à 15 h 30, soit 30 minutes après son échéance.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "planning-room-013",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "conflits",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel créneau permet de planifier une séance de formation de 45 minutes dans la salle Polyvalente ?",
+    "stimulus": "La salle Polyvalente est occupée de 9 h 00 à 10 h 30 et de 11 h 15 à 12 h 30. Le formateur est présent de 10 h 00 à 12 h 00.",
+    "options": [
+      "10 h 30 à 11 h 15",
+      "10 h 00 à 10 h 45",
+      "11 h 15 à 12 h 00",
+      "11 h 30 à 12 h 15"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la salle est libre de 10 h 30 à 11 h 15 (45 min) et le formateur y est disponible.",
+      "La salle est occupée jusqu'à 10 h 30.",
+      "La salle est réservée par une autre réunion à partir de 11 h 15.",
+      "Conflit direct d'occupation de la salle qui est prise dès 11 h 15."
+    ],
+    "explanation": "La seule fenêtre de disponibilité conjointe de la salle (libre entre 10 h 30 et 11 h 15) et du formateur (présent de 10 h 00 à 12 h 00) est exactement la plage 10 h 30 à 11 h 15, d'une durée de 45 minutes.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "planning-chain-014",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la date d'achèvement au plus tôt de l'ensemble des travaux ?",
+    "stimulus": "Le projet débute le lundi matin (jour 1). Étape A (3 jours ouvrés). Puis en parallèle, Étape B (2 jours ouvrés) et Étape C (4 jours ouvrés). Étape D (1 jour ouvré) ne démarre que lorsque B et C sont toutes deux achevées. L'équipe ne travaille que les jours ouvrés (du lundi au vendredi).",
+    "options": [
+      "Jour ouvré 8 (mercredi de la 2e semaine)",
+      "Jour ouvré 10 (vendredi de la 2e semaine)",
+      "Jour ouvré 6 (lundi de la 2e semaine)",
+      "Jour ouvré 7 (mardi de la 2e semaine)"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : chemin critique = Étape A (3 j) + max(Étape B: 2 j, Étape C: 4 j) + Étape D (1 j) = 3 + 4 + 1 = 8 jours ouvrés.",
+      "Résultat obtenu en sommant toutes les étapes sans tenir compte du parallélisme de B et C (3 + 2 + 4 + 1 = 10).",
+      "Calcul erroné ignorant la durée de l'étape la plus longue en parallèle.",
+      "Omet la durée de l'étape finale D."
+    ],
+    "explanation": "L'étape A prend les jours 1, 2 et 3. Les étapes B et C se déroulent en parallèle du jour 4 au jour 7 (l'étape critique C imposant 4 jours). L'étape D intervient ensuite sur le jour 8. Le projet s'achève donc au jour ouvré 8.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "planning-buffer-015",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "À quelle heure au plus tard l'instruction du dossier doit-elle débuter pour respecter l'échéance ?",
+    "stimulus": "Un dossier d'agrément requiert 2 h 30 de travail continu. Il doit impérativement être transmis par courriel avant 17 h 00. Une coupure réseau obligatoire et planifiée de 30 minutes a lieu de 15 h 00 à 15 h 30, interdisant toute instruction.",
+    "options": [
+      "14 h 00",
+      "14 h 30",
+      "13 h 30",
+      "15 h 00"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 2 h 30 de travail + 30 min d'interruption = 3 h de temps total requis. 17 h 00 - 3 h = 14 h 00.",
+      "Ne prend pas en compte la coupure réseau de 30 minutes, ce qui ferait finir à 17 h 30.",
+      "Avance inutilement le démarrage de 30 minutes par rapport à l'heure limite.",
+      "Démarrage impossible : la coupure réseau débute précisément à 15 h 00."
+    ],
+    "explanation": "Le travail effectif demande 2 h 30. Comme la plage d'instruction chevauche nécessairement la coupure réseau de 15 h 00 à 15 h 30 (30 min), le temps global nécessaire est de 2 h 30 + 30 min = 3 h 00. Pour finir à 17 h 00, le travail doit débuter au plus tard à 14 h 00 (14 h 00 – 15 h 00 : 1 h ; 15 h 30 – 17 h 00 : 1 h 30).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
   }
 ]

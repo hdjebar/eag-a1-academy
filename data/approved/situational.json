@@ -368,5 +368,190 @@
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-01T21:00:00+02:00"
+  },
+  {
+    "id": "situational-serve-011",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Une personne âgée se présente au guichet, désemparée car elle ne parvient pas à utiliser l'application mobile obligatoire pour renouveler son allocation de chauffage. Le guichet dispose d'un poste informatique d'accompagnement.",
+    "options": [
+      "L'inviter à s'installer au poste d'accompagnement et l'assister pas à pas pour saisir sa demande en ligne.",
+      "Lui indiquer qu'elle doit demander à un proche de faire la démarche sur smartphone à son domicile.",
+      "Prendre ses identifiants personnels et compléter intégralement la démarche à sa place pour gagner du temps.",
+      "Lui imprimer un formulaire papier non officiel qu'elle remplira sur place et qui sera saisi ultérieurement."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      2,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Très approprié (4) : inclusion numérique bienveillante favorisant l'autonomie de l'usager dans un cadre sécurisé.",
+      "Inapproprié (2) : renvoi vers des tiers sans solution interne alors qu'un accompagnement sur place est possible.",
+      "Très inapproprié (1) : manipulation des identifiants personnels d'un usager enfreignant les règles de sécurité.",
+      "Inapproprié (2) : utilisation d'une procédure non homologuée risquant d'invalider la demande de l'usager."
+    ],
+    "explanation": "La posture optimale du service public (note 4) consiste à accompagner les usagers vulnérables vers l'autonomie numérique grâce aux moyens dédiés (poste d'accompagnement), sans enfreindre la sécurité des données (ne jamais utiliser les identifiants d'autrui) ni créer de démarches parallèles non réglementaires.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "situational-advise-012",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un jeune collègue chargé d'études doit animer une réunion avec des représentants syndicaux sur un projet de refonte des horaires. Il craint des tensions et vous demande comment structurer son intervention.",
+    "options": [
+      "Lui conseiller de présenter d'abord les constats factuels et objectifs, puis d'ouvrir un échange structuré sur les besoins exprimés.",
+      "Lui recommander d'imposer fermement le calendrier ministériel dès le début pour couper court à toute discussion.",
+      "Lui suggérer d'annuler la réunion et de communiquer la décision unilatéralement par note de service écrite.",
+      "Lui proposer de faire une intervention informelle sans ordre du jour pour éviter de formaliser les désaccords."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Très approprié (4) : démarche constructive et objective favorisant le dialogue social tout en gardant un cadre professionnel.",
+      "Très inapproprié (1) : posture autoritaire qui envenime le conflit et rompt la confiance avec les partenaires sociaux.",
+      "Très inapproprié (1) : déni de concertation contraire aux principes d'administration moderne et participative.",
+      "Inapproprié (2) : absence de cadre qui décrédibilise l'administration et risque de rendre les échanges stériles."
+    ],
+    "explanation": "Le conseil professionnel (note 4) encourage une méthode rigoureuse : baser l'échange sur des éléments factuels partagés, donner la parole de manière cadrée et écouter les observations pour coconstruire la mise en œuvre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "situational-serve-013",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un journaliste demande par téléphone la communication immédiate du projet de rapport d'audit interne sur la gestion d'un établissement public, document non encore validé par la commission de tutelle.",
+    "options": [
+      "Lui expliquer courtoisement que le rapport est un document préparatoire non communicable et l'orienter vers le service de presse ministériel.",
+      "Lui envoyer immédiatement une copie par courriel sous couvert d'anonymat pour favoriser la transparence publique.",
+      "Refuser sèchement de lui répondre et raccrocher sans lui donner la moindre explication.",
+      "Lui promettre une transmission exclusive dès le lendemain sans en référer à votre hiérarchie."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Très approprié (4) : respect du secret professionnel et des règles de communicabilité des actes préparatoires avec orientation adaptée.",
+      "Très inapproprié (1) : fuite délibérée d'un document non officiel constituant une faute professionnelle grave.",
+      "Très inapproprié (1) : incivilité et manquement au devoir élémentaire de courtoisie du fonctionnaire.",
+      "Inapproprié (2) : promesse illégale et violation des prérogatives de la hiérarchie et du service de communication."
+    ],
+    "explanation": "Les documents préparatoires ne sont pas communicables tant que la décision définitive n'est pas adoptée. L'attitude correcte (note 4) consiste à faire preuve de pédagogie sur l'état juridique du document et à réorienter vers le service officiel habilité.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "situational-advise-014",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 100,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Votre chef de service souhaite accélérer l'octroi d'un marché public avant la fin de l'exercice budgétaire pour éviter la perte de crédits, en omettant l'avis obligatoire de la commission des marchés.",
+    "options": [
+      "Alerter le chef de service par écrit sur le risque d'illégalité et de nullité du marché, et proposer un calendrier de passation accéléré mais légal.",
+      "Valider la procédure sans réserve pour obéir aux instructions hiérarchiques et préserver les crédits budgétaires.",
+      "Dénoncer immédiatement votre supérieur hiérarchique au parquet sans lui faire part au préalable de l'irrégularité.",
+      "Refuser d'exécuter la tâche oralement en menaçant de vous mettre en grève."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Très approprié (4) : devoir de conseil vigilant protégeant l'administration contre l'illégalité tout en proposant une solution constructive.",
+      "Très inapproprié (1) : complicité d'une irrégularité juridique majeure contraire au devoir de probité.",
+      "Très inapproprié (1) : rupture disproportionnée de la voie hiérarchique sans démarche préalable de clarification interne.",
+      "Inapproprié (2) : réaction émotionnelle conflictuelle non conforme à la déontologie administrative."
+    ],
+    "explanation": "L'agent public de catégorie A1 a un devoir de conseil technique : il doit formuler par écrit une mise en garde loyale sur les risques juridiques (nullité du marché, engagement de responsabilité) tout en étant force de proposition pour rechercher une issue légale dans les délais.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "situational-serve-015",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager affirme avec véhémence au guichet qu'il a déposé une pièce justificative essentielle il y a trois jours, mais celle-ci n'apparaît nulle part dans son dossier informatique.",
+    "options": [
+      "Vérifier le bac des courriers en cours de numérisation et l'aider à réimprimer la pièce si possible.",
+      "Lui soutenir qu'il se trompe et refuser formellement tout examen de son dossier sans la pièce originale.",
+      "Valider immédiatement sa demande sans la pièce requise pour désamorcer son mécontentement au guichet.",
+      "L'orienter vers le commissariat de police pour signaler la perte de sa pièce justificative déposée."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      2,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Très approprié (4) : posture de recherche active de solution sans accusation mutuelle, conciliant bienveillance et rigueur.",
+      "Inapproprié (2) : mise en cause agressive de la bonne foi de l'usager bloquant la relation de service.",
+      "Très inapproprié (1) : dispense de justificatif légal sans fondement exposant le service à une décision illégale.",
+      "Inapproprié (2) : démarche absurde et disproportionnée qui ne règle pas le problème de dossier."
+    ],
+    "explanation": "Face à un litige de transmission, l'agent doit faire preuve d'empathie sans présumer de la faute de l'usager, vérifier les points d'attente internes (numérisation) et lui faciliter la fourniture immédiate d'une copie de substitution pour débloquer son dossier.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
   }
 ]

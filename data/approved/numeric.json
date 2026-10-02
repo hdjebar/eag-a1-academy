@@ -358,5 +358,186 @@
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T09:15:00+02:00"
+  },
+  {
+    "id": "numeric-table-011",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le montant total des dépenses engagées pour la Direction B sur l'ensemble de l'exercice ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dépenses trimestrielles par direction (en milliers d'euros)",
+      "headers": [
+        "Direction",
+        "Semestre 1",
+        "Semestre 2"
+      ],
+      "rows": [
+        [
+          "Direction A",
+          320,
+          380
+        ],
+        [
+          "Direction B",
+          240,
+          260
+        ],
+        [
+          "Direction C",
+          180,
+          220
+        ]
+      ],
+      "note": "Crédits consommés arrêtés au 31 décembre."
+    },
+    "options": [
+      "500 milliers d'euros",
+      "480 milliers d'euros",
+      "520 milliers d'euros",
+      "700 milliers d'euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : addition des deux semestres de la Direction B : 240 + 260 = 500 milliers d'euros.",
+      "Correspondrait à la somme de Direction C (180 + 220 = 400) plus une erreur de calcul.",
+      "Erreur d'addition sur le deuxième semestre.",
+      "Correspond au total de la Direction A (320 + 380 = 700 milliers d'euros)."
+    ],
+    "explanation": "La Direction B a consommé 240 milliers d'euros au premier semestre et 260 milliers d'euros au second semestre. La somme annuelle totale est de 240 + 260 = 500 milliers d'euros (soit 500 000 euros).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "numeric-ratio-012",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel montant revient au Projet Sud selon la clé de répartition convenue ?",
+    "stimulus": "Une dotation régionale de 90 000 euros est partagée entre le Projet Nord et le Projet Sud selon un ratio de 2 pour 3 (2 parts pour Nord, 3 parts pour Sud).",
+    "options": [
+      "54 000 euros",
+      "36 000 euros",
+      "45 000 euros",
+      "60 000 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 3 parts sur 5 au total : 90 000 × (3 / 5) = 54 000 euros.",
+      "Correspond à la part du Projet Nord (2 parts sur 5 : 90 000 × 2 / 5 = 36 000 euros).",
+      "Correspondrait à un partage égalitaire 1 pour 1 (90 000 / 2).",
+      "Calcul erroné basé sur les deux tiers directs de l'enveloppe globale."
+    ],
+    "explanation": "Le nombre total de parts est de 2 + 3 = 5 parts. La valeur d'une part s'élève à 90 000 / 5 = 18 000 euros. Le Projet Sud disposant de 3 parts, il reçoit 3 × 18 000 = 54 000 euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "numeric-perc-013",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel est le montant final de la subvention après ces deux évolutions successives ?",
+    "stimulus": "Une subvention initiale de 50 000 euros augmente de 10 % la première année, puis diminue de 10 % l'année suivante.",
+    "options": [
+      "49 500 euros",
+      "50 000 euros",
+      "49 000 euros",
+      "51 000 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 50 000 × 1,10 = 55 000 €, puis 55 000 × 0,90 = 49 500 euros.",
+      "Erreur classique consistant à croire qu'une hausse de 10 % annule une baisse de 10 %.",
+      "Soustraction forfaitaire erronée de 1 000 euros.",
+      "Application inversée des pourcentages conduisant à une surévaluation."
+    ],
+    "explanation": "La première année, la subvention atteint 50 000 × 1,10 = 55 000 euros. La seconde année, la baisse de 10 % s'applique à cette nouvelle base : 55 000 × 0,90 = 49 500 euros (perte nette de 1 % par rapport au montant de départ).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "numeric-mean-014",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le coût moyen de traitement par dossier sur l'ensemble des dossiers instruits ?",
+    "stimulus": "Le bureau 1 traite 100 dossiers pour un coût moyen de 20 euros par dossier. Le bureau 2 traite 300 dossiers pour un coût moyen de 40 euros par dossier.",
+    "options": [
+      "35 euros",
+      "30 euros",
+      "32 euros",
+      "38 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : coût global = (100 × 20) + (300 × 40) = 2 000 + 12 000 = 14 000 € ; 14 000 / 400 = 35 euros.",
+      "Moyenne arithmétique simple erronée sans pondération : (20 + 40) / 2 = 30 euros.",
+      "Sous-pondération arbitraire du bureau 2.",
+      "Surpondération excessive du bureau 2."
+    ],
+    "explanation": "Le coût total est de (100 × 20 €) + (300 × 40 €) = 2 000 € + 12 000 € = 14 000 €. Le nombre total de dossiers étant de 100 + 300 = 400, le coût moyen pondéré est de 14 000 / 400 = 35 euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "numeric-var-015",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le pourcentage de variation du nombre de visites entre le premier et le second semestre ?",
+    "stimulus": "Le portail administratif enregistre 8 000 visites au premier semestre et 10 000 visites au second semestre.",
+    "options": [
+      "+25,0 %",
+      "+20,0 %",
+      "+2 000 %",
+      "+15,0 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : variation relative = (10 000 - 8 000) / 8 000 = 2 000 / 8 000 = +25,0 %.",
+      "Erreur de dénominateur : division par la valeur finale 10 000 au lieu de la base 8 000.",
+      "Confusion entre la valeur absolue de l'augmentation (+2 000) et le pourcentage.",
+      "Sous-estimation arbitraire du ratio de croissance."
+    ],
+    "explanation": "Le taux d'évolution se calcule selon la formule (Valeur finale - Valeur initiale) / Valeur initiale : (10 000 - 8 000) / 8 000 = 2 000 / 8 000 = 0,25, soit une progression de +25,0 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T14:55:00+02:00"
   }
 ]
