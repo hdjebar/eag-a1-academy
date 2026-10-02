@@ -3072,5 +3072,307 @@
     "createdAt": "2026-10-02T19:30:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "verbal-epso261001-001",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Laquelle des affirmations suivantes est conforme au texte ?",
+    "stimulus": "Depuis janvier, l'administration de l'environnement du Grand-Comté verse aux agents une prime mensuelle de 40 € lorsqu'ils viennent au travail à vélo au moins douze jours dans le mois. Les agents à temps partiel y ont droit à partir de huit jours de trajet. La prime est versée le mois suivant, sur la base d'une déclaration validée par le supérieur hiérarchique. Le dispositif sera évalué en décembre : s'il réduit d'au moins 5 % l'occupation du parking du personnel, il pourra être étendu aux trajets à pied.",
+    "options": [
+      "Le dispositif sera étendu aux trajets à pied en décembre.",
+      "Les trajets à pied donnent déjà droit à la prime mensuelle.",
+      "Un agent à temps partiel venu à vélo dix jours dans le mois peut percevoir la prime.",
+      "La prime est versée le mois même où les trajets ont été effectués."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "L'extension est conditionnelle (« pourra »), pas décidée.",
+      "L'extension aux trajets à pied n'est qu'envisagée.",
+      "Correct : le seuil est de huit jours pour le temps partiel.",
+      "Le texte dit « le mois suivant »."
+    ],
+    "explanation": "Le texte indique : « Les agents à temps partiel y ont droit à partir de huit jours de trajet. » Dix jours dépassent ce seuil. Les autres affirmations contredisent le texte ou transforment une possibilité en décision.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-002",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les retours sont possibles tous les jours, pour tous.",
+      "La restriction ne concerne que les emprunts à la borne.",
+      "Le texte répond explicitement : « Les retours restent possibles tous les jours »."
+    ],
+    "explanation": "La condition de carte annuelle s'applique aux emprunts du dimanche, pas aux retours : « Les retours restent possibles tous les jours grâce à une boîte extérieure. »",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-003",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : la plupart des usagers ayant déposé leur dossier au guichet trouvent les délais trop longs.",
+    "stimulus": "Une enquête menée auprès de 600 usagers du service des titres de séjour de la ville fictive de Brennac montre que 72 % des répondants jugent les délais trop longs. Parmi ces répondants insatisfaits, une majorité a déposé son dossier en ligne. Le rapport ne précise pas combien de répondants ont utilisé le guichet.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte ne donne aucun chiffre sur les usagers du guichet.",
+      "Rien ne permet non plus d'affirmer le contraire.",
+      "Correct : la répartition des usagers du guichet n'est pas connue."
+    ],
+    "explanation": "Le texte indique seulement que, parmi les insatisfaits, une majorité a déposé en ligne, et précise : « Le rapport ne précise pas combien de répondants ont utilisé le guichet. » On ne peut donc pas savoir ce que pensent les usagers du guichet.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-004",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le 20 mai, un agent rentré de mission le 2 mai demande le remboursement d'un repas de 31 € avec ticket et d'un repas sans ticket. Quel montant peut-il obtenir pour ces deux repas ?",
+    "stimulus": "Règles de remboursement des frais de mission :\n1. Les repas sont remboursés sur justificatif, dans la limite de 25 € par repas.\n2. Sans justificatif, un forfait de 12 € par repas est appliqué.\n3. Les frais de taxi ne sont remboursés qu'avec l'accord préalable du chef de service.\n4. Toute demande doit être déposée dans les 30 jours suivant la fin de la mission.",
+    "options": [
+      "50 €",
+      "43 €",
+      "31 €",
+      "37 €"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Applique le plafond aux deux repas, même sans ticket.",
+      "Oublie le plafond de 25 € par repas.",
+      "Ne rembourse que le repas avec ticket, sans plafond.",
+      "Correct : 25 € (plafond) + 12 € (forfait)."
+    ],
+    "explanation": "La demande arrive dans les 30 jours (18 jours après la mission). Repas avec ticket : 31 € plafonnés à 25 € (règle 1). Repas sans ticket : forfait de 12 € (règle 2). Total : 37 €.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-005",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Une lettre adressée nominativement à Mme Weber, actuellement absente, porte la mention « Personnel ». Que faut-il en faire ?",
+    "stimulus": "Règles de traitement du courrier entrant :\n– Le courrier portant la mention « Urgent » est transmis le jour même au service concerné.\n– Le courrier adressé nominativement à un agent absent est remis à son suppléant, sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent.\n– Le courrier sans destinataire identifiable est ouvert par le secrétariat.",
+    "options": [
+      "La faire ouvrir par le secrétariat.",
+      "La conserver jusqu'au retour de Mme Weber.",
+      "La transmettre le jour même au service.",
+      "La remettre au suppléant de Mme Weber."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le destinataire est identifiable.",
+      "Correct : exception prévue pour la mention « Personnel ».",
+      "La lettre ne porte pas la mention « Urgent ».",
+      "C'est la règle générale, mais l'exception s'applique ici."
+    ],
+    "explanation": "La règle générale (remise au suppléant) comporte une exception : « sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent ». La lettre est donc conservée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-006",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle conclusion peut-on tirer du texte ?",
+    "stimulus": "Le service de l'emploi de la commune fictive de Lorvenne constate que ses ateliers de rédaction de CV organisés en soirée attirent deux fois plus de participants que ceux du matin. Pourtant, le taux de retour à l'emploi à six mois est identique dans les deux groupes. Le service envisage donc de déplacer la plupart des ateliers en soirée, tout en maintenant une session matinale pour les personnes qui ne peuvent pas se déplacer le soir.",
+    "options": [
+      "Les participants du matin sont deux fois moins motivés que les autres.",
+      "L'horaire des ateliers ne semble pas influencer le retour à l'emploi à six mois.",
+      "Les ateliers du soir permettent de retrouver un emploi plus rapidement.",
+      "Toutes les sessions du matin seront supprimées l'an prochain."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le texte parle de participation, pas de motivation.",
+      "Correct : le taux à six mois est identique pour les deux horaires.",
+      "Le texte indique un taux identique.",
+      "Une session matinale est maintenue."
+    ],
+    "explanation": "Le texte précise que « le taux de retour à l'emploi à six mois est identique dans les deux groupes » : l'horaire ne semble donc pas jouer sur ce résultat. Les autres affirmations contredisent le texte ou en tirent une interprétation non fondée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-007",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel titre résume le mieux ce texte ?",
+    "stimulus": "À partir de l'an prochain, les fournisseurs de l'administration régionale fictive du Nordal devront transmettre leurs factures par voie électronique. Le papier ne sera plus accepté, sauf pour les entreprises de moins de cinq salariés, qui disposeront d'un an de délai supplémentaire. L'objectif est de ramener le délai moyen de paiement de 45 à 30 jours. Des sessions d'information gratuites seront proposées aux fournisseurs.",
+    "options": [
+      "Facturation électronique obligatoire pour accélérer les paiements",
+      "Le délai de paiement fixé à 30 jours dès janvier",
+      "Une formation obligatoire pour tous les fournisseurs",
+      "Les petites entreprises dispensées de facture électronique"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : reprend la mesure principale et son objectif.",
+      "Trente jours est un objectif, pas une règle déjà en vigueur.",
+      "Les sessions sont gratuites et facultatives.",
+      "Elles obtiennent un délai d'un an, pas une dispense."
+    ],
+    "explanation": "Le texte annonce l'obligation de facturation électronique et son but, réduire les délais de paiement. Les autres titres déforment un détail : délai transformé en dispense, objectif transformé en règle, information transformée en obligation.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-008",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : M. Koch justifie d'au moins cinq ans d'expérience dans le domaine.",
+    "stimulus": "Pour le poste de chargé d'études, le jury retient en priorité les candidats titulaires d'un master. Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience dans le domaine. Le jury a retenu M. Koch, qui n'est pas titulaire d'un master.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : sans master, il n'a pu être retenu qu'avec cinq ans d'expérience.",
+      "Cela contredirait la règle « ne sont retenus que si ».",
+      "La condition « ne… que si » permet de conclure."
+    ],
+    "explanation": "« Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience. » M. Koch n'a pas de master et a été retenu : il remplit donc nécessairement la condition d'expérience.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-009",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Laquelle des affirmations suivantes est justifiée par le texte ?",
+    "stimulus": "En 2025, le guichet des aides au logement de la ville fictive de Sarlin a reçu 4 000 demandes, contre 3 200 en 2024, avec un effectif d'agents inchangé. Le délai moyen de traitement est passé de 20 à 26 jours. La direction attribue cet allongement à la hausse des demandes, mais relève aussi que 15 % des dossiers de 2025 étaient incomplets, contre 8 % en 2024.",
+    "options": [
+      "Le nombre de dossiers incomplets a plus que doublé entre 2024 et 2025.",
+      "La hausse des demandes est la seule cause de l'allongement des délais.",
+      "Le délai moyen de traitement a augmenté de 6 % en un an.",
+      "Le guichet a dû recruter des agents supplémentaires en 2025."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 256 dossiers incomplets en 2024, 600 en 2025.",
+      "La direction cite aussi les dossiers incomplets.",
+      "Le délai a augmenté de 6 jours, soit 30 %.",
+      "Le texte précise que l'effectif est inchangé."
+    ],
+    "explanation": "Dossiers incomplets : 8 % de 3 200 = 256 en 2024 ; 15 % de 4 000 = 600 en 2025, soit plus du double. Les autres affirmations sont contredites par le texte ou confondent jours et pourcentage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-010",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Affirmation : le parc compte dix véhicules électriques.",
+    "stimulus": "Le parc automobile du ministère fictif des Transports du Valmont compte 40 véhicules, dont un quart sont électriques. Les véhicules électriques sont réservés en priorité aux déplacements de moins de 150 km. Les réservations se font sur l'intranet, au moins 48 heures à l'avance, et chaque véhicule fait l'objet d'un contrôle technique annuel.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : un quart de 40 véhicules, soit 10.",
+      "Le calcul à partir du texte donne bien 10.",
+      "Le texte donne les deux informations nécessaires."
+    ],
+    "explanation": "Le texte indique 40 véhicules, « dont un quart sont électriques » : 40 / 4 = 10 véhicules électriques.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
   }
 ]
