@@ -43,7 +43,9 @@
         parts.push(`<polyline fill="none" stroke="${COLORS[k % 3]}" stroke-width="2.5" points="${pts.map((p) => p.join(",")).join(" ")}"/>`);
         pts.forEach(([px, py], i) => {
           parts.push(`<circle cx="${px}" cy="${py}" r="4" fill="${COLORS[k % 3]}"/>`);
-          parts.push(`<text x="${px}" y="${k % 2 ? py + 18 : py - 9}" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">${esc(fmt(ser.values[i]))}</text>`);
+          // The highest point at this position gets its label above, the others below, so labels never collide.
+          const top = series.every((o, m) => m === k || (o.values[i] ?? -Infinity) < ser.values[i] || ((o.values[i] === ser.values[i]) && m > k));
+          parts.push(`<text x="${px}" y="${top ? py - 9 : py + 18}" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">${esc(fmt(ser.values[i]))}</text>`);
         });
       });
     } else {
