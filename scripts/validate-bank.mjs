@@ -15,13 +15,36 @@ const CATCH_ALL_OPTIONS = [/aucun(?:e)?\s+(?:de\s+ces|des)/i, /toutes?\s+les\s+(
 // Anything that looks like markup or an entity. Item text is rendered as text, never as HTML.
 const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
 
+/**
+ * Recursively yields all strings contained within an object or array.
+ * @param {*} value - The value to inspect.
+ * @param {string} where - Path context (for informative error reporting).
+ * @returns {Generator<[string, string]>} Tuples of [property path, text value].
+ */
 function* strings(value, where) {
   if (typeof value === "string") yield [where, value];
   else if (Array.isArray(value)) for (let i = 0; i < value.length; i++) yield* strings(value[i], `${where}[${i}]`);
   else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) yield* strings(v, `${where}.${k}`);
 }
 
-/** Returns { errors, warnings } for one item. */
+/**
+ * Validates a single test item against JSON Schema 2020-12 and deterministic psychometric quality rules.
+ *
+ * Rules enforced:
+ * - Structural schema conformity via Ajv 2020 (types, required fields, enums).
+ * - Complete absence of HTML tags, scripts, and entities (plain text only).
+ * - Absence of forbidden wording ("question officielle", "confidentiel", etc.).
+ * - Correct index bounds and uniqueness of options.
+ * - Prohibition of catch-all options ("aucun de ces créneaux", "toutes les options").
+ * - Parity of optionRationales with options count.
+ * - Situational rating rules (exact single 4 placed at correctIndex, 1-4 scale).
+ * - Length disproportion heuristic (alerts if target is >1.4x longer than all distractors).
+ * - Typographic conventions for French numbers (comma decimal, spaced percentage).
+ *
+ * @param {object} item - Question item object to validate.
+ * @param {number} [index=0] - Item index in batch (used if item.id is missing).
+ * @returns {{ errors: string[], warnings: string[] }} Validation diagnostics.
+ */
 export function checkItem(item, index = 0) {
   const ref = item && typeof item === "object" && item.id ? item.id : `item ${index + 1}`;
   const errors = [];
@@ -79,7 +102,11 @@ export function checkItem(item, index = 0) {
   return { errors, warnings };
 }
 
-/** Returns { errors, warnings } for an array of items. */
+/**
+ * Validates a collection of question items and checks for dataset-level invariants (such as ID uniqueness).
+ * @param {object[]} bank - Array of item objects.
+ * @returns {{ errors: string[], warnings: string[] }} Aggregated validation errors and warnings.
+ */
 export function checkBank(bank) {
   if (!Array.isArray(bank)) return { errors: ["La banque doit être un tableau JSON"], warnings: [] };
   const errors = [];
@@ -95,17 +122,30 @@ export function checkBank(bank) {
   return { errors, warnings };
 }
 
-/** Backwards-compatible helper: errors only. */
+/**
+ * Backwards-compatible helper returning only the list of validation errors.
+ * @param {object[]} bank - Array of item objects.
+ * @returns {string[]} List of fatal validation error messages.
+ */
 export function validateBank(bank) {
   return checkBank(bank).errors;
 }
 
+/**
+ * Discovers candidate question files in the generated/ directory, excluding reviews.
+ * @returns {string[]} Array of absolute file paths to candidate JSON files.
+ */
 function candidateFiles() {
   const dir = path.join(ROOT, "generated");
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((x) => x.endsWith(".json") && !x.endsWith(".review.json")).map((x) => path.join(dir, x));
 }
 
+/**
+ * Runs internal self-tests against both valid baselines and 13 intentional mutation cases
+ * to guarantee that the validator detects all required anti-patterns.
+ * @throws {Error} If valid items fail or any of the 13 invalid cases fails to be caught.
+ */
 function selfTest() {
   const base = {
     id: "numeric-demo-001", version: 1, category: "numeric", itemFormat: "single_best", skill: "pourcentage",

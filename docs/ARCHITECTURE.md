@@ -101,10 +101,13 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Contenu = données** : `app.js` échappe tout le texte des items ; les tableaux et figures sont décrits en JSON structuré et construits par l'application. Un item ne peut pas injecter de balisage.
-* **Ordre des options aléatoire** : les options sont mélangées à chaque affichage (sauf Vrai/Faux/On ne peut pas savoir), si bien que la position de la bonne réponse ne donne aucun indice.
-* **Jugement situationnel noté** : chaque réaction est notée de 1 à 4 ; le score est la concordance avec les notes de référence (convention du projet, pas un barème officiel).
-* **Aucune ressource externe** : polices système uniquement, aucun appel réseau à l'exécution.
+* **Contenu = données** : `app.js` échappe tout le texte des items via `esc()` ; les tableaux (`type: "table"`) et les figures (`type: "shapes"`) sont décrits en JSON structuré et construits sémantiquement par l'application. Un item ne peut injecter aucun balisage ni code arbitraire.
+* **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
+* **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :
+  $$\text{score} = \max\left(0, 1 - \frac{\sum_{i=1}^n |k_i - u_i|}{3 \cdot n}\right)$$
+  où $u_i$ est la note attribuée par le candidat, $k_i$ la note de référence et $n=4$ le nombre d'options. L'item est considéré comme réussi si $\text{score} \ge 0{,}75$.
+* **Explications et justifications unitaires (`optionRationales`)** : 100 % des questions validées fournissent un distractor argumenté pour chaque option expliquant précisément le piège évité ou la règle cognitive appliquée.
+* **Aucune ressource externe** : polices système exclusivement (`system-ui`), aucun appel réseau à l'exécution.
 
 ---
 
@@ -115,19 +118,19 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 ```mermaid
 stateDiagram-v2
     [*] --> Candidate: Génération (Chat LLM / API)
-    Candidate --> ValidatedCandidate: Validation syntaxique & structurelle
-    ValidatedCandidate --> ReviewAI: Analyse par revue IA
-    ReviewAI --> Approved: Revue humaine & promote-candidate
+    Candidate --> ValidatedCandidate: Validation syntaxique (schema/question.schema.json)
+    ValidatedCandidate --> ReviewAI: Résolution à l'aveugle (scripts/review-bank.mjs)
+    ReviewAI --> Approved: Approbation humaine explicite (scripts/promote-candidate.mjs)
     ReviewAI --> Rejected: Rejet (faute, incohérence, ambiguïté)
-    Approved --> Compiled: npm run build:bank
-    Compiled --> LiveRuntime: Disponible dans eag-a1-academy.html
+    Approved --> Compiled: Compilation statique (scripts/build-bank.mjs)
+    Compiled --> LiveRuntime: Disponible hors-ligne dans eag-a1-academy.html
     Rejected --> [*]
     LiveRuntime --> [*]
 ```
 
 ---
 
-## 5. Décisions d'architecture (ADR)
+## 5. Décisions d'architecture (ADR) et Recherche Psychométrique
 
 Les décisions structurantes du projet sont consignées sous forme d'**Architecture Decision Records** dans le dossier [`docs/adr/`](adr) :
 
@@ -136,3 +139,7 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0003 : Pipeline Zero-Trust pour les banques de questions assistées par IA](adr/0003-ai-zero-trust-pipeline.md)
 * [ADR-0004 : Synchronisation des questions par compilation dans app.js](adr/0004-build-bank-compilation.md)
 * [ADR-0005 : Items en texte brut, rendu échappé et formats alignés sur GovJobs](adr/0005-plain-text-items-and-official-formats.md)
+
+L'étude comparative et le cadre de référence psychométrique sont documentés dans :
+* [docs/research/eag-2026-benchmark.md](research/eag-2026-benchmark.md) : Benchmark approfondi des épreuves psychotechniques internationales (EPSO, SHL Direct, GovJobs, psychotechnique.lu, Travaillerpour.be).
+

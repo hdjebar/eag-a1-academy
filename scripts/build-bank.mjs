@@ -10,7 +10,14 @@ const START_MARKER = "/* QUESTION_BANK_START */";
 const END_MARKER = "/* QUESTION_BANK_END */";
 const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
 
-/** Reads data/approved, validates every file and returns the compact bank used by app.js. */
+/**
+ * Reads all category files in data/approved/, executes deterministic validation via checkBank,
+ * verifies that all items are in approved status and extracts the minified question representation
+ * used for zero-latency in-memory runtime execution by app.js.
+ *
+ * @returns {Record<string, object[]>} Object mapping each category key to its array of compact question objects.
+ * @throws {Error} If any validation error, duplicate ID, or unapproved item is detected.
+ */
 export function loadAndCompileBank() {
   if (!fs.existsSync(APPROVED_DIR)) throw new Error(`Le dossier ${APPROVED_DIR} est introuvable`);
   const files = fs.readdirSync(APPROVED_DIR).filter((f) => f.endsWith(".json")).sort();
@@ -39,13 +46,24 @@ export function loadAndCompileBank() {
   return categorized;
 }
 
+/**
+ * Wraps the categorized question data in delimiting markers for static embedding.
+ * @param {Record<string, object[]>} categorized - Compact bank object.
+ * @returns {string} JavaScript code snippet with delimiters.
+ */
 export function generateBankCode(categorized) {
   return `${START_MARKER}\nconst q = ${JSON.stringify(categorized)};\n${END_MARKER}`;
 }
 
 /**
- * Rewrites the bank block in app.js (or only compares when check = true).
- * Returns { total, inSync }.
+ * Synchronizes the question bank block inside app.js.
+ *
+ * In check mode (--check), it validates that app.js is strictly identical to data/approved/
+ * without writing to disk (used during CI validation).
+ *
+ * @param {object} [options]
+ * @param {boolean} [options.check=false] - If true, only checks synchronization without modifying app.js.
+ * @returns {{ total: number, inSync: boolean, bank: Record<string, object[]> }} Synchronization diagnostics and compiled bank.
  */
 export function syncAppJs({ check = false } = {}) {
   const bank = loadAndCompileBank();
