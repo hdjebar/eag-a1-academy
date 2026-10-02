@@ -21,13 +21,13 @@ const reviews = items.map((item) => {
   if (item.itemFormat === "rating") {
     const r = Array.isArray(a.ratings) ? a.ratings : [];
     const top = r.length ? r.indexOf(Math.max(...r)) : -1;
-    if (top !== item.correctIndex) issues.push(`Meilleure réponse selon le relecteur : ${top}, clé : ${item.correctIndex}`);
+    if (top !== item.correctIndex) issues.push(`Meilleure réponse selon le relecteur : option ${top + 1}, clé : option ${item.correctIndex + 1}`);
     if (r.length === item.ratings.length) {
       const gap = r.reduce((s, v, i) => s + Math.abs(v - item.ratings[i]), 0) / r.length;
       if (gap > 1) issues.push(`Écart moyen de notation ${gap.toFixed(2)} (> 1)`);
     }
   } else if (a.chosenIndex !== item.correctIndex) {
-    issues.push(`Réponse trouvée à l'aveugle : ${a.chosenIndex}, clé : ${item.correctIndex}`);
+    issues.push(`Réponse trouvée à l'aveugle : option ${Number(a.chosenIndex) + 1}, clé : option ${item.correctIndex + 1}`);
   }
   if (a.confidence === "low") issues.push("Confiance faible du relecteur");
   issues.push(...flags.map((f) => `Signalement ${f}${a.note ? ` : ${a.note}` : ""}`));

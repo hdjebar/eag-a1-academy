@@ -1,7 +1,7 @@
 [
   {
     "id": "planning-slot-001",
-    "version": 3,
+    "version": 4,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "disponibilites",
@@ -23,43 +23,43 @@
       "Sam n'est pas disponible avant 14 h 30.",
       "Léa n'est plus disponible après 15 h 00 (la réunion se terminerait à 15 h 15)."
     ],
-    "explanation": "Le créneau commun le matin s'étend de 9 h 30 à 10 h 30 (durée 60 min). La réunion de 45 minutes peut donc se tenir de 9 h 30 à 10 h 15. Les autres créneaux empiètent sur l'indisponibilité de l'un des participants (Sam avant 9 h 30 ou après 14 h 30 ; Léa après 15 h 00).",
+    "explanation": "Le créneau commun le matin s'étend de 9 h 30 à 10 h 30 (durée 60 min). La réunion de 45 minutes peut donc se tenir de 9 h 30 à 10 h 15. Les autres créneaux empiètent sur l'indisponibilité de l'un des participants (Sam avant 9 h 30 le matin ou avant 14 h 30 l'après-midi ; Léa après 15 h 00).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T10:40:00+02:00"
   },
   {
     "id": "planning-prio-002",
-    "version": 2,
+    "version": 3,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "priorisation",
-    "difficulty": 1,
+    "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 45,
+    "estimatedSeconds": 75,
     "prompt": "Quelle tâche devez-vous impérativement démarrer en premier ?",
-    "stimulus": "Il est 9 h 00. Tâche A : échéance 10 h 00, durée 20 min. Tâche B : échéance demain, durée 15 min. Tâche C : échéance aujourd'hui 16 h 00, durée 60 min.",
+    "stimulus": "Il est 9 h 00. Tâche A : échéance 10 h 00, durée 20 min. Tâche B : échéance demain, durée 15 min. Tâche C : échéance aujourd'hui 16 h 00, durée 60 min. Tâche D : échéance 11 h 30, durée 90 min.",
     "options": [
       "Tâche A",
       "Tâche B",
       "Tâche C",
-      "Tâche B puis C"
+      "Tâche D"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : son échéance (10 h 00) est la plus imminente et impose un démarrage sans attendre.",
       "Échéance fixée au lendemain, donc bien moins urgente que la tâche A.",
       "Échéance fixée à 16 h 00, laissant une marge temporelle suffisante après réalisation de A.",
-      "Ces deux tâches ont des échéances plus lointaines que la tâche A."
+      "Commencer par D (90 min) mènerait à 10 h 30 : A finirait à 10 h 50, après son échéance de 10 h 00."
     ],
-    "explanation": "La tâche A a l'échéance la plus imminente (10 h 00) et peut être achevée avant sa date limite en débutant sans délai.",
+    "explanation": "Commencer par A (9 h 00 – 9 h 20) respecte son échéance de 10 h 00 et laisse D se terminer à 10 h 50, avant 11 h 30. Commencer par D ferait manquer l'échéance de A. B et C ont des échéances plus lointaines.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T10:40:00+02:00"
   },
   {
     "id": "planning-order-003",

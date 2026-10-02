@@ -68,9 +68,9 @@ Official specifications retrieved and verified live in October 2026 from the [Go
 ### 2. Raisonnement verbal (Verbal Reasoning)
 
 - **Official GovJobs Definition:** *"Le test de raisonnement verbal est composé de textes, d'informations ou de consignes écrites. Le candidat doit répondre à des questions ou appliquer les consignes fournies en se basant uniquement sur les éléments présentés, sans faire appel à des connaissances extérieures."*
-- **Key Characteristics:**
-  - Information organised in administrative tabs or procedural notes.
-  - Three-tier truth value: **Vrai (True) / Faux (False) / Indéterminé (Cannot Say)**.
+- **Characteristics observed in third-party prep material (not stated by GovJobs):**
+  - Information organised in administrative tabs or procedural notes (described by psychotechnique.lu and Aon/cut-e-style tests).
+  - Three-tier truth value: **Vrai (True) / Faux (False) / Indéterminé (Cannot Say)**. The official description only says candidates answer questions or apply instructions from the information given; the response format is not published.
   - Focus on formal logic: contrapositives, quantifiers (*« tous »*, *« certains »*, *« aucun »*, *« exclusivement »*), possibility vs necessity.
   - Application of administrative procedures and circulars without external bias.
 - **Top Psychometric Analogues:**

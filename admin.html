@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Administration · EAG A1 Académie</title>
+<style>
+:root,[data-theme="light"]{--body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--sym:"Segoe UI Symbol","Noto Sans Symbols 2","Apple Symbols",var(--body);--xs:.78rem;--sm:.875rem;--base:.95rem;--lg:1.15rem;--xl:1.5rem;--s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;--s8:2rem;--bg:#f6f5f1;--surface:#fbfaf7;--surface2:#fffefa;--offset:#eeece6;--text:#292720;--muted:#65635c;--faint:#807e77;--inverse:#fffefa;--primary:#006b64;--hover:#00564f;--highlight:#d3e4df;--success:#3f7726;--successbg:#dce9d5;--warn:#8a5a00;--warnbg:#f3e6c8;--error:#9b3158;--errorbg:#edd8e0;--border:rgba(41,39,32,.14);--r1:.4rem;--r2:.6rem;--r3:.85rem}
+[data-theme="dark"]{--bg:#171816;--surface:#1d1f1c;--surface2:#222521;--offset:#2b2e29;--text:#e2e2dc;--muted:#b3b4ad;--faint:#92958d;--inverse:#10201d;--primary:#63b4aa;--hover:#82c8bf;--highlight:#263e39;--success:#8fc477;--successbg:#293b25;--warn:#e0b45c;--warnbg:#3d321c;--error:#e68bb0;--errorbg:#462b36;--border:rgba(226,226,220,.15)}
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;background:var(--bg);color:var(--text);font:var(--base)/1.5 var(--body)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+h1{font-size:var(--lg)}h2{font-size:var(--base)}h3{font-size:var(--sm)}
+.top{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between;padding:var(--s3) var(--s4);background:var(--surface);border-bottom:1px solid var(--border)}
+.top .brand{display:flex;flex-direction:column}.top small{color:var(--muted);font-size:var(--xs)}
+.tabs{display:flex;gap:var(--s1);flex-wrap:wrap}
+.tabs button{padding:var(--s2) var(--s3);border:0;border-radius:var(--r1);background:transparent;color:var(--muted);font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--highlight);color:var(--text)}
+.who{display:flex;gap:var(--s2);align-items:center;font-size:var(--sm)}
+.who input{width:12rem;max-width:40vw}
+input[type=text],input[type=number],select,textarea{padding:var(--s2);border:1px solid var(--border);border-radius:var(--r1);background:var(--surface2)}
+textarea{width:100%;min-height:4.5rem;resize:vertical}
+.btn{min-height:36px;padding:var(--s2) var(--s4);border:1px solid transparent;border-radius:var(--r1);background:var(--primary);color:var(--inverse);font-size:var(--sm);font-weight:700}
+.btn:hover{background:var(--hover)}
+.btn.secondary{background:var(--surface2);color:var(--text);border-color:var(--border)}
+.btn.danger{background:var(--error);color:var(--inverse)}
+.btn.ghost{background:transparent;color:var(--primary);border-color:transparent}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.icon{width:36px;height:36px;border:1px solid var(--border);border-radius:var(--r1);background:var(--surface2)}
+main{padding:var(--s4)}
+.view{display:none}.view.active{display:block}
+.layout{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:var(--s4);align-items:start}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:var(--s4)}
+.panel+.panel{margin-top:var(--s4)}
+.drop{display:grid;gap:var(--s2);padding:var(--s4);border:2px dashed var(--border);border-radius:var(--r2);text-align:center;color:var(--muted);font-size:var(--sm)}
+.drop.over{border-color:var(--primary);background:var(--highlight)}
+.drop label{color:var(--primary);font-weight:700;cursor:pointer;text-decoration:underline}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s2);margin:var(--s3) 0}
+.filters select,.filters input{font-size:var(--sm);padding:var(--s1) var(--s2)}
+.list{display:grid;gap:var(--s2);max-height:70vh;overflow:auto}
+.row{display:grid;gap:4px;text-align:left;padding:var(--s3);border:1px solid var(--border);border-radius:var(--r2);background:var(--surface2)}
+.row[aria-current="true"]{border-color:var(--primary);box-shadow:inset 3px 0 0 var(--primary)}
+.row .id{font:600 var(--xs) ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);word-break:break-all}
+.row .p{font-size:var(--sm);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{display:inline-flex;align-items:center;padding:1px 8px;border-radius:99px;font-size:var(--xs);font-weight:700;background:var(--offset);color:var(--muted);white-space:nowrap}
+.chip.ok{background:var(--successbg);color:var(--success)}.chip.ko{background:var(--errorbg);color:var(--error)}.chip.warn{background:var(--warnbg);color:var(--warn)}.chip.info{background:var(--highlight);color:var(--primary)}
+.empty{color:var(--muted);font-size:var(--sm);padding:var(--s4);text-align:center}
+.detailhead{display:flex;flex-wrap:wrap;gap:var(--s3);justify-content:space-between;align-items:flex-start}
+.actions{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.section-title{font-size:var(--xs);text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-weight:700;margin-bottom:var(--s2)}
+.preview .qprompt{font-weight:700;font-size:var(--lg);margin:var(--s2) 0 var(--s3)}
+.stimulus{background:var(--offset);border-radius:var(--r2);padding:var(--s4);margin-bottom:var(--s3);overflow:auto}
+.stimulus.text{white-space:pre-line}
+.shapes{text-align:center;font:1.8rem/1.5 var(--sym);white-space:pre}
+.data{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:var(--sm)}
+.data th,.data td{padding:6px 10px;border-bottom:1px solid var(--border);text-align:right}
+.data th:first-child,.data td:first-child{text-align:left}
+.data caption{text-align:left;font-weight:700;padding-bottom:var(--s2)}
+.opts{display:grid;gap:var(--s2)}
+.opt{display:flex;gap:var(--s3);align-items:flex-start;padding:var(--s3);border:1px solid var(--border);border-radius:var(--r2);background:var(--surface2)}
+.opt.figs span.t{font:1.4rem/1.2 var(--sym);white-space:pre}
+.opt.key{border-color:var(--success);background:var(--successbg)}
+.opt.mine{box-shadow:inset 3px 0 0 var(--primary)}
+.opt .meta{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.opt small{display:block;color:var(--muted);font-size:var(--xs)}
+.scale{display:inline-flex;gap:4px}
+.scale label{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--border);border-radius:var(--r1);cursor:pointer;font-weight:700;font-size:var(--sm)}
+.scale label:has(input:checked){background:var(--highlight);border-color:var(--primary)}
+.scale input{position:absolute;opacity:0;pointer-events:none}
+.msgs{display:grid;gap:4px;font-size:var(--sm)}
+.msg{padding:6px 10px;border-radius:var(--r1)}
+.msg.error{background:var(--errorbg);color:var(--error)}.msg.warning{background:var(--warnbg);color:var(--warn)}.msg.good{background:var(--successbg);color:var(--success)}.msg.note{background:var(--offset);color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--s3)}
+.field{display:grid;gap:4px;font-size:var(--sm)}
+.field>span{font-weight:700}
+.field small{color:var(--muted);font-size:var(--xs)}
+.editopt{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--s2);align-items:start;padding:var(--s2);border:1px solid var(--border);border-radius:var(--r2);margin-bottom:var(--s2)}
+.editopt .stack{display:grid;gap:4px}
+.editopt input[type=text]{width:100%}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--s3)}
+.stat{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:var(--s3)}
+.stat strong{display:block;font-size:var(--xl)}
+.stat span{font-size:var(--xs);color:var(--muted)}
+.bars{display:grid;gap:4px;font-size:var(--xs)}
+.bar{display:grid;grid-template-columns:9rem 1fr 2.2rem;gap:var(--s2);align-items:center}
+.bar i{display:block;height:8px;border-radius:99px;background:var(--primary)}
+.bar.zero span{color:var(--error);font-weight:700}
+.files{display:grid;gap:var(--s2)}
+.file{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;justify-content:space-between;padding:var(--s3);border:1px solid var(--border);border-radius:var(--r2);background:var(--surface2);font-size:var(--sm)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--xs)}
+pre.cmd{background:var(--offset);border-radius:var(--r2);padding:var(--s3);overflow:auto;font-size:var(--xs)}
+.notice{padding:var(--s3) var(--s4);border-radius:var(--r2);background:var(--highlight);font-size:var(--sm);margin-bottom:var(--s4)}
+.sr{position:absolute;left:-9999px}
+details>summary{cursor:pointer;font-weight:700}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:var(--s2) var(--s4);border-radius:var(--r2);font-size:var(--sm);opacity:0;transition:opacity .2s;pointer-events:none;z-index:50;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1}
+.selrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--s2);align-items:start}
+.selrow input{margin-top:var(--s3);width:18px;height:18px;accent-color:var(--primary)}
+dialog{width:min(860px,calc(100vw - 32px));max-height:calc(100dvh - 32px);border:1px solid var(--border);border-radius:var(--r3);background:var(--surface);color:var(--text);padding:var(--s5)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.dlg{display:grid;gap:var(--s2)}
+button.chip{border:0;cursor:pointer;white-space:normal;text-align:left}
+table.diff{width:100%;border-collapse:collapse;font-size:var(--sm);table-layout:fixed}
+table.diff th,table.diff td{border-bottom:1px solid var(--border);padding:6px 8px;vertical-align:top;text-align:left;white-space:pre-wrap;word-break:break-word}
+table.diff thead th{font-size:var(--xs);color:var(--muted)}
+table.diff tbody th{width:8rem;font-size:var(--xs);color:var(--muted)}
+td.before{background:var(--errorbg)}td.after{background:var(--successbg)}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.list{max-height:40vh}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><h1>Administration des questions</h1><small>EAG A1 Académie · hors ligne, aucune donnée envoyée</small></div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="queue" aria-selected="true">File de relecture <span class="chip" id="queuecount">0</span></button>
+    <button role="tab" data-tab="bank" aria-selected="false">Banque approuvée <span class="chip" id="bankcount">0</span></button>
+    <button role="tab" data-tab="export" aria-selected="false">Exporter <span class="chip" id="changecount">0</span></button>
+  </nav>
+  <div class="who">
+    <label for="reviewer">Relecteur</label><input type="text" id="reviewer" placeholder="Prénom Nom" autocomplete="name">
+    <button class="icon" id="theme" aria-label="Changer de thème">◐</button>
+  </div>
+</header>
+
+<main>
+  <section class="view active" id="v-queue" role="tabpanel">
+    <div class="layout">
+      <div>
+        <div class="panel">
+          <div class="drop" id="drop">
+            <strong>Charger des candidats</strong>
+            <span>Glissez ici les fichiers <code>generated/*.json</code> et leurs <code>*.review.json</code>, ou <label for="files">choisissez des fichiers</label>.</span>
+            <input type="file" id="files" accept=".json,application/json" multiple class="sr">
+          </div>
+          <div class="actions" style="margin-top:var(--s3)">
+            <button class="btn secondary" id="newitem">Nouvelle question</button>
+            <select id="newcat" aria-label="Catégorie de la nouvelle question"></select>
+            <button class="btn ghost" id="restore" hidden>Reprendre la session précédente</button>
+          </div>
+          <div class="actions" style="margin-top:var(--s2)">
+            <button class="btn secondary" id="aigen">Générer avec l'IA…</button>
+            <button class="btn secondary" id="airebuild">Reconstruire une catégorie…</button>
+          </div>
+          <div id="loadmsgs" class="msgs" style="margin-top:var(--s3)"></div>
+        </div>
+        <div class="panel">
+          <div class="filters">
+            <select id="qcat" aria-label="Filtrer par catégorie"><option value="">Toutes catégories</option></select>
+            <select id="qstate" aria-label="Filtrer par état">
+              <option value="">Tous états</option><option value="todo">À traiter</option><option value="approved">Approuvés</option><option value="rejected">Rejetés</option><option value="errors">Avec erreurs</option>
+            </select>
+            <select id="qai" aria-label="Filtrer par revue IA">
+              <option value="">Toute revue IA</option><option value="pass">pass</option><option value="revise">revise</option><option value="reject">reject</option><option value="none">absente ou obsolète</option>
+            </select>
+          </div>
+          <div class="list" id="queue"></div>
+        </div>
+      </div>
+      <div id="detail" class="panel"><p class="empty">Chargez un fichier de candidats ou créez une question, puis sélectionnez un item.</p></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-bank" role="tabpanel">
+    <div class="panel">
+      <div class="section-title">Couverture de la banque</div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="layout" style="margin-top:var(--s4)">
+      <div class="panel">
+        <div class="filters">
+          <select id="bcat" aria-label="Filtrer par catégorie"><option value="">Toutes catégories</option></select>
+          <select id="bdiff" aria-label="Filtrer par difficulté"><option value="">Toutes difficultés</option><option>1</option><option>2</option><option>3</option></select>
+          <input type="text" id="bsearch" placeholder="Rechercher…" aria-label="Rechercher dans la banque">
+        </div>
+        <div class="actions" id="bulkbar" style="margin-bottom:var(--s3)"></div>
+        <div class="list" id="bank"></div>
+      </div>
+      <div id="bdetail" class="panel"><p class="empty">Sélectionnez une question approuvée pour la consulter ou la modifier.</p></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-export" role="tabpanel">
+    <div class="panel" id="exportpanel"></div>
+  </section>
+</main>
+<dialog id="aidlg" aria-label="Assistant IA"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="shared/item-rules.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
