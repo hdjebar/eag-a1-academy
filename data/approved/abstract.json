@@ -14,17 +14,17 @@
       "text": "○  ●  □  ■  △  ?"
     },
     "options": [
+      "△",
       "▲",
-      "●",
       "◆",
-      "△"
+      "●"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Répète la figure vide au lieu de passer à sa version pleine.",
       "Correct : le triangle vide est suivi du triangle plein.",
-      "Le cercle a déjà été traité au début de la série.",
       "Le losange n'appartient pas à la séquence cercle, carré, triangle.",
-      "Répète la figure vide au lieu de passer à sa version pleine."
+      "Le cercle a déjà été traité au début de la série."
     ],
     "explanation": "Chaque forme apparaît deux fois de suite, d'abord vide puis pleine : cercle, carré, puis triangle. Après △ vient donc ▲.",
     "sourceType": "original_ai_assisted",
@@ -48,17 +48,17 @@
       "text": "↑ →     ↓ ←     ↑ →     ?"
     },
     "options": [
-      "↓ ←",
-      "→ ↓",
       "← ↑",
-      "↑ →"
+      "↑ →",
+      "→ ↓",
+      "↓ ←"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : rotation de 180° de la paire ↑ →.",
-      "Rotation de 90° seulement.",
       "Rotation de 270° (ou 90° anti-horaire).",
-      "Répète la paire sans rotation."
+      "Répète la paire sans rotation.",
+      "Rotation de 90° seulement.",
+      "Correct : rotation de 180° de la paire ↑ →."
     ],
     "explanation": "Chaque paire est la précédente tournée de 180° : ↑ → devient ↓ ←, puis de nouveau ↑ →. La quatrième paire est donc ↓ ←.",
     "sourceType": "original_ai_assisted",
@@ -116,17 +116,17 @@
       "text": "●      ○○      ●●●\n■      □□      ■■■\n▲      △△      ?"
     },
     "options": [
-      "▲▲▲",
+      "■■■",
       "△△△",
-      "▲▲",
-      "■■■"
+      "▲▲▲",
+      "▲▲"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : forme, nombre et remplissage respectés.",
+      "La forme doit rester le triangle sur la troisième ligne.",
       "Le remplissage vide ne vaut que pour la colonne du milieu.",
-      "Le nombre doit être 3 dans la dernière colonne.",
-      "La forme doit rester le triangle sur la troisième ligne."
+      "Correct : forme, nombre et remplissage respectés.",
+      "Le nombre doit être 3 dans la dernière colonne."
     ],
     "explanation": "Trois règles : la forme est fixe sur chaque ligne ; le nombre de figures vaut 1, 2 puis 3 selon la colonne ; la colonne du milieu est vide, les autres pleines. Ligne 3, colonne 3 : trois triangles pleins.",
     "sourceType": "original_ai_assisted",
@@ -150,16 +150,16 @@
       "text": "●     ●●     ●●●     ?"
     },
     "options": [
-      "●●",
       "●●●●",
       "○○○○",
+      "●●",
       "●●●●●"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "optionRationales": [
-      "Revient en arrière au lieu de progresser.",
       "Correct : quatre disques pleins.",
       "Bon nombre, mais le remplissage change sans raison.",
+      "Revient en arrière au lieu de progresser.",
       "Augmente de deux unités au lieu d'une."
     ],
     "explanation": "Le nombre de disques pleins augmente d'une unité à chaque étape : 1, 2, 3, puis 4.",
@@ -184,17 +184,17 @@
       "text": "◰  →  ◳  →  ◲  →  ?"
     },
     "options": [
-      "◱",
-      "◰",
       "◳",
-      "◲"
+      "◱",
+      "◲",
+      "◰"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : quadrant bas-gauche après bas-droite.",
-      "Revient au point de départ, une étape trop tôt.",
       "Rotation dans le sens inverse.",
-      "Répète la dernière figure."
+      "Correct : quadrant bas-gauche après bas-droite.",
+      "Répète la dernière figure.",
+      "Revient au point de départ, une étape trop tôt."
     ],
     "explanation": "Le quadrant marqué tourne d'un quart de tour dans le sens horaire : haut-gauche, haut-droite, bas-droite, puis bas-gauche (◱).",
     "sourceType": "original_ai_assisted",
@@ -218,17 +218,17 @@
       "text": "●    ▲    ●●    ▲▲    ●●●    ?"
     },
     "options": [
-      "▲▲▲",
-      "●●●●",
+      "▲▲▲▲",
       "▲▲",
-      "▲▲▲▲"
+      "●●●●",
+      "▲▲▲"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : troisième terme de la suite des triangles.",
-      "Prolonge la suite des disques au mauvais rang.",
+      "Saute une étape de la progression.",
       "Répète le terme précédent de la suite des triangles.",
-      "Saute une étape de la progression."
+      "Prolonge la suite des disques au mauvais rang.",
+      "Correct : troisième terme de la suite des triangles."
     ],
     "explanation": "Deux suites alternent : les disques (1, 2, 3) et les triangles (1, 2, …). Le sixième terme appartient à la suite des triangles, qui passe à 3.",
     "sourceType": "original_ai_assisted",
@@ -253,16 +253,16 @@
     },
     "options": [
       "△",
+      "◁",
       "▽",
-      "▲",
-      "◁"
+      "▲"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : demi-tour puis remplissage inversé.",
+      "Mauvaise orientation : la figure ne pointe ni vers le haut ni vers le bas.",
       "Remplissage inversé, mais sans demi-tour.",
-      "Demi-tour, mais remplissage conservé.",
-      "Mauvaise orientation : la figure ne pointe ni vers le haut ni vers le bas."
+      "Demi-tour, mais remplissage conservé."
     ],
     "explanation": "Les deux exemples montrent la même transformation : un demi-tour (180°) et l'inversion du remplissage. Seul le demi-tour explique à la fois ▲ → ▽ et ◀ → ▷ (une symétrie selon un seul axe ne marche que pour l'un des deux). ▼ tourné de 180° donne ▲, puis vide : △.",
     "sourceType": "original_ai_assisted",
@@ -286,17 +286,17 @@
       "text": "●  ■  ▲   →   △  □  ○\n◆  ○  ■   →   ?"
     },
     "options": [
+      "□  ○  ◇",
       "□  ●  ◇",
-      "■  ○  ◆",
       "◇  ●  □",
-      "□  ○  ◇"
+      "■  ○  ◆"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le disque n'a pas été inversé.",
       "Correct : ordre inversé et remplissage inversé.",
-      "Ordre inversé, mais remplissage conservé.",
       "Remplissage inversé, mais ordre conservé.",
-      "Le disque n'a pas été inversé."
+      "Ordre inversé, mais remplissage conservé."
     ],
     "explanation": "Deux règles combinées : l'ordre des figures est inversé, et chaque remplissage est inversé. ◆ ○ ■ inversé donne ■ ○ ◆, puis le remplissage inversé donne □ ● ◇.",
     "sourceType": "original_ai_assisted",
@@ -354,53 +354,19 @@
       "text": "●       ■       ▲\n■■      ▲▲      ●●\n▲▲▲     ●●●     ?"
     },
     "options": [
-      "■■■",
-      "▲▲▲",
       "●●●",
-      "□□□"
+      "▲▲▲",
+      "□□□",
+      "■■■"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : forme carrée requise pour compléter le triplet (triangle, disque, carré) avec 3 éléments pleins.",
-      "Le triangle figure déjà en première case de la troisième ligne.",
       "Le disque figure déjà en deuxième case de la troisième ligne.",
-      "Forme correcte mais vide, alors que toutes les figures de la matrice sont pleines."
+      "Le triangle figure déjà en première case de la troisième ligne.",
+      "Forme correcte mais vide, alors que toutes les figures de la matrice sont pleines.",
+      "Correct : forme carrée requise pour compléter le triplet (triangle, disque, carré) avec 3 éléments pleins."
     ],
     "explanation": "Deux règles combinées s'appliquent : d'une part, chaque ligne permute les trois formes de base (cercle, carré, triangle) ; d'autre part, le nombre de symboles augmente de 1 par ligne (1 en ligne 1, 2 en ligne 2, 3 en ligne 3). La case manquante doit donc contenir 3 carrés pleins (■■■).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T14:55:00+02:00",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
-  },
-  {
-    "id": "abstract-clock-012",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle flèche poursuit logiquement la rotation ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "↑  →  ↗  →  →  →  ↘  →  ?"
-    },
-    "options": [
-      "↓",
-      "↙",
-      "←",
-      "↑"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : rotation horaire de 45° après le point cardinal sud-est (↘).",
-      "Rotation de 90° au lieu de 45° après le sud-est.",
-      "Rotation de 135° sautant deux étapes d'orientation.",
-      "Retour erroné au point de départ de la séquence."
-    ],
-    "explanation": "La flèche effectue une rotation continue de 45° dans le sens horaire à chaque pas : nord (↑), nord-est (↗), est (→), sud-est (↘). L'étape suivante pointe donc plein sud (↓).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
@@ -422,16 +388,16 @@
       "text": "● ○   →   ○ ●\n■ □   →   □ ■\n▲ △   →   ?"
     },
     "options": [
-      "△ ▲",
-      "▲ △",
       "△ △",
+      "▲ △",
+      "△ ▲",
       "▲ ▲"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : permutation de la figure pleine et de la figure vide.",
-      "Identique à la figure initiale sans appliquer la permutation.",
       "Deux figures vides au lieu d'une permutation.",
+      "Identique à la figure initiale sans appliquer la permutation.",
+      "Correct : permutation de la figure pleine et de la figure vide.",
       "Deux figures pleines au lieu d'une permutation."
     ],
     "explanation": "Chaque paire subit une permutation horizontale de ses deux composantes : le symbole plein à gauche passe à droite, et le symbole vide à droite passe à gauche. ▲ △ devient donc △ ▲.",
@@ -456,16 +422,16 @@
       "text": "◆◆◆◆    ◇    ◆◆◆    ◇◇    ◆◆    ◇◇◇    ?"
     },
     "options": [
-      "◆",
       "◇◇◇◇",
       "◆◆",
+      "◆",
       "◇◇"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la suite des losanges pleins décroît (4, 3, 2, 1) au 7e terme.",
       "Prolonge la suite des losanges vides qui n'intervient qu'au rang suivant.",
       "Répète le terme précédent des losanges pleins sans décrémentation.",
+      "Correct : la suite des losanges pleins décroît (4, 3, 2, 1) au 7e terme.",
       "Régression injustifiée dans la suite des losanges vides."
     ],
     "explanation": "Deux progressions entrelacées alternent : les termes impairs présentent des losanges pleins décroissants (4, 3, 2, puis 1), tandis que les termes pairs présentent des losanges vides croissants (1, 2, 3). Le 7e terme est impair et doit donc comporter un seul losange plein (◆).",
@@ -524,53 +490,19 @@
       "text": "●  ▲  ■  ●  ▲  ▲  ■  ■  ●  ▲  ▲  ▲  ?"
     },
     "options": [
-      "■■■",
       "▲▲▲",
-      "●●",
-      "■■"
+      "■■■",
+      "■■",
+      "●●"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : les triangles et carrés augmentent de 1 à chaque cycle (1▲ 1■, 2▲ 2■, 3▲ 3■).",
       "Le groupe de 3 triangles vient d'être achevé, c'est au tour des carrés.",
-      "Le disque reste un séparateur isolé unique à chaque cycle.",
-      "Deux carrés correspondent au cycle précédent, le cycle actuel en exige 3."
+      "Correct : les triangles et carrés augmentent de 1 à chaque cycle (1▲ 1■, 2▲ 2■, 3▲ 3■).",
+      "Deux carrés correspondent au cycle précédent, le cycle actuel en exige 3.",
+      "Le disque reste un séparateur isolé unique à chaque cycle."
     ],
     "explanation": "La série est rythmée par un disque isolateur ● suivi de triangles puis de carrés en nombre croissant : d'abord 1▲ et 1■, puis 2▲ et 2■, enfin 3▲ et donc 3■.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-matrix-017",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle case complète la dernière ligne de la matrice 3×3 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "○   △   □\n●   ▲   ■\n◎   ◬   ?"
-    },
-    "options": [
-      "回",
-      "■",
-      "□",
-      "◇"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : cercle concentrique, triangle imbriqué, puis carré avec cadre concentrique (figure double).",
-      "Le carré plein figure déjà sur la deuxième ligne.",
-      "Le carré simple vide figure déjà sur la première ligne.",
-      "Le losange n'appartient pas à la famille cercle-triangle-carré de la matrice."
-    ],
-    "explanation": "Chaque colonne conserve une forme géométrique : colonne 1 = cercle, colonne 2 = triangle, colonne 3 = carré. Chaque ligne applique un traitement : ligne 1 = forme simple vide, ligne 2 = forme pleine, ligne 3 = forme concentrique imbriquée.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -593,52 +525,18 @@
     },
     "options": [
       "◀",
+      "▼",
       "▲",
-      "▶",
-      "▼"
+      "▶"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : rotation horaire de 90° faisant pointer le sommet vers la gauche.",
+      "Répétition de l'étape précédente.",
       "Retour en arrière de 270° au lieu d'une rotation de 90°.",
-      "Répétition de la deuxième étape sans progression.",
-      "Répétition de l'étape précédente."
+      "Répétition de la deuxième étape sans progression."
     ],
     "explanation": "Le triangle tourne de 90° dans le sens horaire à chaque pas : haut (▲), droite (▶), bas (▼), puis gauche (◀).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-trans-019",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle figure remplace le point d'interrogation selon la même relation ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "◐  →  ◑\n◓  →  ?"
-    },
-    "options": [
-      "◒",
-      "◓",
-      "◐",
-      "◑"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : demi-disque haut plein devenant demi-disque bas plein par symétrie axiale.",
-      "Figure identique sans transformation.",
-      "Passe arbitrairement à une division verticale.",
-      "Confusion avec la transformation de la première ligne."
-    ],
-    "explanation": "La première ligne effectue une symétrie inversant le côté plein (gauche devient droite). La seconde ligne applique la même inversion à la division horizontale : le demi-disque haut plein (◓) devient le demi-disque bas plein (◒).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -660,17 +558,17 @@
       "text": "◆   ◇\n●   ?"
     },
     "options": [
-      "○",
-      "●",
       "◆",
-      "◇"
+      "○",
+      "◇",
+      "●"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : la forme pleine devient vide (◆ donne ◇, donc ● donne ○).",
-      "Conserve le remplissage plein sans appliquer la règle de la première ligne.",
       "Réintroduit le losange sur la ligne des disques.",
-      "Réintroduit le losange vide déjà présent en ligne 1."
+      "Correct : la forme pleine devient vide (◆ donne ◇, donc ● donne ○).",
+      "Réintroduit le losange vide déjà présent en ligne 1.",
+      "Conserve le remplissage plein sans appliquer la règle de la première ligne."
     ],
     "explanation": "Chaque ligne conserve sa forme propre (losange en ligne 1, disque en ligne 2) et passe de la version pleine à la version vide de gauche à droite. ● donne donc ○.",
     "sourceType": "original_ai_assisted",
@@ -694,17 +592,17 @@
       "text": "★     ★★     ★★★     ?"
     },
     "options": [
-      "★★★★",
       "★★★",
-      "★★★★★",
-      "☆☆☆☆"
+      "☆☆☆☆",
+      "★★★★",
+      "★★★★★"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : progression de +1 étoile pleine à chaque étape (1, 2, 3, 4).",
       "Répète le terme précédent sans incrémenter.",
-      "Saute une étape en passant directement à 5 étoiles.",
-      "Bonne quantité mais altère arbitrairement le remplissage en étoiles vides."
+      "Bonne quantité mais altère arbitrairement le remplissage en étoiles vides.",
+      "Correct : progression de +1 étoile pleine à chaque étape (1, 2, 3, 4).",
+      "Saute une étape en passant directement à 5 étoiles."
     ],
     "explanation": "La règle est une incrémentation constante d'une étoile pleine par étape. Après 3 étoiles pleines viennent 4 étoiles pleines (★★★★).",
     "sourceType": "original_ai_assisted",
@@ -728,16 +626,16 @@
       "text": "◳  →  ◰  →  ◱  →  ?"
     },
     "options": [
+      "◰",
       "◲",
       "◳",
-      "◰",
       "◱"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Rotation dans le sens inverse (horaire).",
       "Correct : le quadrant plein passe de bas-gauche (◱) à bas-droite (◲) en sens anti-horaire.",
       "Retour erroné au point initial avant d'avoir bouclé le cycle.",
-      "Rotation dans le sens inverse (horaire).",
       "Répétition de la figure précédente."
     ],
     "explanation": "Le quadrant plein effectue une rotation de 90° dans le sens anti-horaire : haut-droite (◳), haut-gauche (◰), bas-gauche (◱), puis bas-droite (◲).",
@@ -762,17 +660,17 @@
       "text": "◁  →  ▷\n▲  →  ▲\n◀  →  ?"
     },
     "options": [
-      "▶",
       "◀",
       "▲",
-      "▼"
+      "▼",
+      "▶"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : triangle plein orienté vers la gauche tourné en triangle plein orienté vers la droite.",
       "Figure identique sans symétrie.",
       "Orientation verticale sans rapport avec la symétrie horizontale.",
-      "Orientation vers le bas sans rapport avec la règle gauche/droite."
+      "Orientation vers le bas sans rapport avec la règle gauche/droite.",
+      "Correct : triangle plein orienté vers la gauche tourné en triangle plein orienté vers la droite."
     ],
     "explanation": "La transformation est un retournement horizontal (miroir vertical). Le triangle plein orienté vers la gauche (◀) devient un triangle plein orienté vers la droite (▶).",
     "sourceType": "original_ai_assisted",
@@ -797,16 +695,16 @@
     },
     "options": [
       "●",
+      "○",
       "■",
-      "▲",
-      "○"
+      "▲"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : chaque ligne et chaque colonne comporte exactement un cercle, un carré et un triangle pleins.",
+      "La forme circulaire est correcte mais elle doit être pleine comme le reste de la matrice.",
       "Le carré est déjà présent en première colonne de la troisième ligne.",
-      "Le triangle est déjà présent en deuxième colonne de la troisième ligne.",
-      "La forme circulaire est correcte mais elle doit être pleine comme le reste de la matrice."
+      "Le triangle est déjà présent en deuxième colonne de la troisième ligne."
     ],
     "explanation": "Il s'agit d'un carré latin de formes : chaque ligne et colonne permute le cercle, le carré et le triangle. La troisième ligne (■, ▲, ?) et la troisième colonne (▲, ■, ?) manquent toutes deux du cercle plein ●.",
     "sourceType": "original_ai_assisted",
@@ -830,53 +728,19 @@
       "text": "○ ●     ○○ ●●     ○○○ ●●●     ?"
     },
     "options": [
-      "○○○○ ●●●●",
       "○○○○ ●●●",
+      "○○○○ ●●●●",
       "○○○ ●●●●",
       "●●●● ○○○○"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : les cercles vides et les cercles pleins progressent simultanément de 1 à chaque pas (4 de chaque).",
       "Sous-estime le nombre de disques pleins qui doit égaler 4.",
+      "Correct : les cercles vides et les cercles pleins progressent simultanément de 1 à chaque pas (4 de chaque).",
       "Omet d'incrémenter le groupe des disques vides.",
       "Inverse l'ordre d'apparition en plaçant les disques pleins avant les vides."
     ],
     "explanation": "Chaque groupe contient un nombre égal de cercles vides puis pleins, avec un incrément d'une unité à chaque étape : 1, 2, 3, puis 4. Le terme suivant comporte 4 disques vides suivis de 4 disques pleins.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-rot-026",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle flèche complète la rotation continue de 90° anti-horaire ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "↑  →  ←  →  ↓  →  ?"
-    },
-    "options": [
-      "→",
-      "↑",
-      "←",
-      "↓"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : après sud (↓), la rotation anti-horaire de 90° pointe vers l'est (→).",
-      "Rotation de 180° au lieu de 90°.",
-      "Retour en arrière vers l'ouest.",
-      "Répétition de l'orientation sud précédente."
-    ],
-    "explanation": "La flèche tourne de 90° dans le sens anti-horaire (trigonométrique) : nord (↑), ouest (←), sud (↓), puis est (→).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -898,87 +762,19 @@
       "text": "◆      ◆◆      ◆◆◆\n◇      ◇◇      ?"
     },
     "options": [
+      "◇◇◇◇",
       "◇◇◇",
-      "◇◇",
       "◆◆◆",
-      "◇◇◇◇"
+      "◇◇"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Progresse de 2 unités au lieu d'une.",
       "Correct : 3 losanges vides, prolongeant la progression 1, 2, 3 en ligne 2.",
-      "Répète la case précédente sans progression.",
       "Introduit des losanges pleins réservés à la première ligne.",
-      "Progresse de 2 unités au lieu d'une."
+      "Répète la case précédente sans progression."
     ],
     "explanation": "Chaque ligne conserve sa forme propre (losanges pleins en ligne 1, vides en ligne 2). Chaque colonne augmente la quantité d'une unité : 1 en colonne 1, 2 en colonne 2, 3 en colonne 3. Ligne 2, colonne 3 requiert donc 3 losanges vides (◇◇◇).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-trans-028",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 85,
-    "prompt": "Quelle figure résulte de la combinaison des deux transformations ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "■ ▲   →   ▲ ■ (inversion position)\n▲ △   →   △ ▲ (inversion position)\n● ○   →   ?"
-    },
-    "options": [
-      "○ ●",
-      "● ○",
-      "● ●",
-      "○ ○"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : permutation horizontale inversant la place du disque plein et du disque vide.",
-      "Identique sans permutation.",
-      "Deux figures pleines au lieu d'une inversion de position.",
-      "Deux figures vides au lieu d'une inversion de position."
-    ],
-    "explanation": "La transformation permute strictement la figure de gauche et la figure de droite : ● ○ devient donc ○ ●.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-symb-029",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quel terme complète cette suite alternée à double pas ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "●  ■  ■  ●  ■  ■  ■  ●  ■  ■  ■  ■  ?"
-    },
-    "options": [
-      "●",
-      "■",
-      "▲",
-      "○"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le bloc de 4 carrés est terminé, un disque délimiteur s'impose.",
-      "Ajouterait un cinquième carré rompant le cycle de 4.",
-      "Forme triangulaire étrangère à la suite.",
-      "Cercle vide alors que tous les cercles de la série sont pleins."
-    ],
-    "explanation": "Entre deux disques pleins ●, le nombre de carrés pleins ■ augmente d'un à chaque intervalle : 2 carrés, puis 3 carrés, puis 4 carrés. Le groupe de 4 étant achevé, le terme suivant est un disque ●.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -1001,16 +797,16 @@
     },
     "options": [
       "↗",
-      "→",
       "↓",
-      "↘"
+      "↘",
+      "→"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : rotation de 45° horaire après le nord (↑) amenant la flèche au nord-est (↗).",
-      "Rotation de 90° au lieu de 45° après le nord.",
       "Rotation de 180° opposée au nord.",
-      "Rotation de 135° sautant une orientation."
+      "Rotation de 135° sautant une orientation.",
+      "Rotation de 90° au lieu de 45° après le nord."
     ],
     "explanation": "La flèche tourne régulièrement de 45° dans le sens horaire : ouest (←), nord-ouest (↖), nord (↑). L'orientation suivante pointe au nord-est (↗).",
     "sourceType": "original_ai_assisted",
@@ -1034,17 +830,17 @@
       "text": "△  △  △\n□  □  □\n○  ○  ?"
     },
     "options": [
-      "○",
-      "●",
       "□",
-      "△"
+      "△",
+      "●",
+      "○"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : chaque ligne conserve une forme identique sur ses trois cases (cercles vides en ligne 3).",
-      "Cercle plein alors que toutes les figures de la matrice sont vides.",
       "Le carré appartient exclusivement à la deuxième ligne.",
-      "Le triangle appartient exclusivement à la première ligne."
+      "Le triangle appartient exclusivement à la première ligne.",
+      "Cercle plein alors que toutes les figures de la matrice sont vides.",
+      "Correct : chaque ligne conserve une forme identique sur ses trois cases (cercles vides en ligne 3)."
     ],
     "explanation": "La règle horizontale impose l'invariance stricte de forme et de remplissage sur chaque ligne : ligne 1 = triangles vides, ligne 2 = carrés vides, ligne 3 = cercles vides. La case manquante est donc un cercle vide (○).",
     "sourceType": "original_ai_assisted",
@@ -1069,16 +865,16 @@
     },
     "options": [
       "◇",
+      "○",
       "◆",
-      "□",
-      "○"
+      "□"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : inversion de remplissage transformant le losange plein en losange vide.",
+      "Remplace arbitrairement la forme par un cercle.",
       "Conserve le remplissage plein sans transformation.",
-      "Remplace arbitrairement la forme par un carré.",
-      "Remplace arbitrairement la forme par un cercle."
+      "Remplace arbitrairement la forme par un carré."
     ],
     "explanation": "Chaque forme pleine devient sa contrepartie vide correspondante : le losange plein ◆ devient un losange vide ◇.",
     "sourceType": "original_ai_assisted",
@@ -1104,85 +900,17 @@
     "options": [
       "■",
       "□",
-      "■■■",
-      "●"
+      "●",
+      "■■■"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : décrémentation constante de 1 carré plein (5, 4, 3, 2, 1).",
       "Carré vide alors que tous les éléments de la suite sont pleins.",
-      "Remonte à 3 carrés au lieu de poursuivre la décrémentation.",
-      "Changement injustifié de forme géométrique."
+      "Changement injustifié de forme géométrique.",
+      "Remonte à 3 carrés au lieu de poursuivre la décrémentation."
     ],
     "explanation": "Le nombre de carrés pleins décroît d'une unité à chaque étape : 5, 4, 3, 2, puis 1 carré plein (■).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-rot-034",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle figure complète la demi-rotation (180°) ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "▲  →  ▼\n◀  →  ▷\n↑  →  ?"
-    },
-    "options": [
-      "↓",
-      "↑",
-      "→",
-      "←"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : rotation de 180° inversant la direction du nord (↑) vers le sud (↓).",
-      "Figure identique sans rotation.",
-      "Rotation de 90° horaire au lieu de 180°.",
-      "Rotation de 90° anti-horaire au lieu de 180°."
-    ],
-    "explanation": "Chaque terme subit un demi-tour complet (180°) : haut devient bas, gauche devient droite. La flèche pointant vers le haut (↑) pointe donc vers le bas (↓).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "abstract-matrix-035",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète logiquement la matrice 2×2 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "●   ▲\n■   ?"
-    },
-    "options": [
-      "◆",
-      "●",
-      "▲",
-      "■"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : quatrième figure géométrique distincte complétant l'ensemble (cercle, triangle, carré, losange).",
-      "Répète le cercle figurant déjà en première case.",
-      "Répète le triangle figurant déjà en deuxième case.",
-      "Répète le carré figurant déjà en troisième case."
-    ],
-    "explanation": "La matrice associe 4 polygones de complexité ou forme différente sans répétition (cercle, triangle, carré, losange). La case manquante est le losange plein ◆.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -1204,16 +932,16 @@
       "text": "■ ○ ■■ ○○ ■■■ ○○○ ?"
     },
     "options": [
-      "■■■■",
       "○○○○",
       "■■■",
+      "■■■■",
       "○○○"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la série alterne carrés et ronds avec incrément unitaire (1, 2, 3 puis 4 carrés).",
       "Les cercles viendront après les 4 carrés.",
       "Trois carrés correspondent au groupe précédent.",
+      "Correct : la série alterne carrés et ronds avec incrément unitaire (1, 2, 3 puis 4 carrés).",
       "Trois cercles viennent de se terminer."
     ],
     "explanation": "La série alterne des séquences de carrés noirs et de cercles blancs, dont le nombre croît de un à chaque apparition : 1 carré, 1 cercle, 2 carrés, 2 cercles, 3 carrés, 3 cercles, donc 4 carrés.",
@@ -1239,16 +967,16 @@
     },
     "options": [
       "■■■",
-      "■■■■",
+      "▲▲▲",
       "●●●",
-      "▲▲▲"
+      "■■■■"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : chaque ligne conserve la même figure et incrémente le compte de 1 par colonne.",
-      "Quatre carrés sauteraient l'étape de 3 carrés.",
+      "Le triangle appartient à la première ligne.",
       "Le disque appartient à la deuxième ligne.",
-      "Le triangle appartient à la première ligne."
+      "Quatre carrés sauteraient l'étape de 3 carrés."
     ],
     "explanation": "Dans cette matrice, la forme est constante sur chaque ligne (triangles, disques, carrés) et le nombre d'éléments augmente d'une unité à chaque colonne (1, 2, 3). La case manquante comporte donc 3 carrés.",
     "sourceType": "original_ai_assisted",
@@ -1272,461 +1000,19 @@
       "text": "↖  ↗  ↘  ↙  ?"
     },
     "options": [
+      "↓",
       "↖",
       "↗",
-      "↘",
-      "↓"
+      "↘"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La flèche verticale Sud ne suit pas les diagonales de la série.",
       "Correct : rotation horaire de 90° revenant à la position initiale Nord-Ouest.",
       "Une flèche vers le Nord-Est correspondrait à une rotation de 180°.",
-      "Une flèche vers le Sud-Est correspondrait à un saut de 270°.",
-      "La flèche verticale Sud ne suit pas les diagonales de la série."
+      "Une flèche vers le Sud-Est correspondrait à un saut de 270°."
     ],
     "explanation": "La flèche tourne de 90° dans le sens horaire à chaque étape : Nord-Ouest, Nord-Est, Sud-Est, Sud-Ouest, et revient donc à Nord-Ouest (↖).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-039",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Identifiez la figure correspondant au point d'interrogation dans l'analogie.",
-    "stimulus": {
-      "type": "shapes",
-      "text": "○ est à ● ce que △ est à ?"
-    },
-    "options": [
-      "▲",
-      "△",
-      "■",
-      "□"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la forme passe d'évidée à pleine tout en conservant sa géométrie triangulaire.",
-      "Le triangle reste vide, ce qui n'applique pas la transformation de remplissage.",
-      "Le carré plein modifie la forme au lieu de conserver le triangle.",
-      "Le carré vide modifie à la fois la forme et le remplissage."
-    ],
-    "explanation": "La relation transforme une forme blanche (vide) en son équivalent noir (plein). Le triangle blanc devient donc un triangle noir plein (▲).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-cnt-040",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure suit logiquement la progression du nombre de côtés ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Triangle  →  Quadrilatère  →  Pentagone  →  Hexagone  →  ?"
-    },
-    "options": [
-      "Heptagone",
-      "Octogone",
-      "Carré",
-      "Cercle"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : polygone à 7 côtés faisant suite au polygone à 6 côtés.",
-      "L'octogone compte 8 côtés et saute le polygone à 7 côtés.",
-      "Le carré compte 4 côtés et correspond à un retour en arrière.",
-      "Le cercle n'a aucun segment rectiligne."
-    ],
-    "explanation": "La progression ajoute exactement un côté à chaque étape : 3 (triangle), 4 (quadrilatère), 5 (pentagone), 6 (hexagone), la figure suivante est un heptagone (7 côtés).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-grid-041",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Un point se déplace dans une grille 3×3 de gauche à droite puis revient au début de la ligne suivante. S'il est en case (2, 3), où sera-t-il après 2 déplacements ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position actuelle : Ligne 2, Colonne 3 (fin de ligne)."
-    },
-    "options": [
-      "Ligne 3, Colonne 2",
-      "Ligne 3, Colonne 1",
-      "Ligne 2, Colonne 1",
-      "Ligne 1, Colonne 3"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 1er déplacement vers (3, 1), 2e déplacement vers (3, 2).",
-      "La position (3, 1) correspond à 1 seul déplacement.",
-      "La position (2, 1) correspondrait à une boucle sur la même ligne.",
-      "La position (1, 3) correspondrait à un déplacement inverse."
-    ],
-    "explanation": "Depuis (2, 3), un premier déplacement passe à la case suivante selon l'ordre de lecture, soit (3, 1). Le second déplacement avance d'une case vers la droite, soit (3, 2).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-seq-042",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quel symbole vient clore la séquence d'alternance haut/bas ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "↑  ↓  ↑↑  ↓↓  ↑↑↑  ???"
-    },
-    "options": [
-      "↓↓↓",
-      "↑↑↑",
-      "↓↓↓↓",
-      "↑↑↑↑"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 3 flèches vers le bas pour équilibrer les 3 flèches vers le haut.",
-      "Répéter les flèches vers le haut briserait l'alternance haut/bas.",
-      "Quatre flèches vers le bas sauteraient l'incrément régulier de 3.",
-      "Quatre flèches vers le haut inverseraient la direction et le décompte."
-    ],
-    "explanation": "La série alterne flèches vers le haut et flèches vers le bas en incrémentant leur nombre : 1 haut, 1 bas, 2 haut, 2 bas, 3 haut, donc 3 bas (↓↓↓).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-mat-043",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle combinaison de points complète la matrice 3×3 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "1 pt    2 pts   3 pts\n2 pts   4 pts   6 pts\n3 pts   6 pts   ?"
-    },
-    "options": [
-      "9 pts",
-      "8 pts",
-      "12 pts",
-      "7 pts"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la ligne 3 correspond à la table de 3 (3 × 1, 3 × 2, 3 × 3 = 9).",
-      "Huit points ne respectent pas le pas multiplicatif de 3.",
-      "Douze points correspondraient à 3 × 4 au lieu de la 3e colonne.",
-      "Sept points ne respectent ni l'addition ni la multiplication matricielle."
-    ],
-    "explanation": "La matrice suit la table de multiplication : cellule(i, j) = i × j. En ligne 3 et colonne 3, la valeur est 3 × 3 = 9 points.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-rot-044",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle position prend le curseur après une rotation de 45° dans le sens anti-horaire ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position initiale : Nord (12h00)"
-    },
-    "options": [
-      "Nord-Ouest (10h30)",
-      "Nord-Est (01h30)",
-      "Est (03h00)",
-      "Ouest (09h00)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le sens anti-horaire (trigonométrique) déplace 12h00 vers 10h30 de 45°.",
-      "Nord-Est correspond à une rotation horaire de 45°.",
-      "Est correspond à une rotation horaire de 90°.",
-      "Ouest correspond à une rotation anti-horaire de 90°."
-    ],
-    "explanation": "Une rotation de 45° dans le sens anti-horaire fait tourner l'aiguille de midi vers la gauche, atteignant la direction intermédiaire Nord-Ouest (10h30).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-045",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quel élément complète la suite logique de symboles imbriqués ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "⊞  ⊟  ⊠  ?"
-    },
-    "options": [
-      "⊡",
-      "⊞",
-      "○",
-      "▲"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : carré encadrant un point central, complétant la série d'opérateurs géométriques encadrés.",
-      "Répétition du premier opérateur sans suite logique.",
-      "Cercle simple hors de la famille des carrés encadrés.",
-      "Triangle hors du cadre géométrique établi."
-    ],
-    "explanation": "Tous les symboles sont des carrés contenant un motif intérieur distinct (croix, trait horizontal, croix de saint André, point central ⊡).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-mat-046",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle figure remplit la dernière case selon la règle de superposition ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Ligne 1 : — et | donnent +\nLigne 2 : / et \\ donnent X\nLigne 3 : ○ et + donnent ?"
-    },
-    "options": [
-      "⊕",
-      "⊗",
-      "○",
-      "+"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : superposition directe du cercle et de la croix centrale (+).",
-      "Le symbole ⊗ superpose une croix diagonale (X) et non une croix droite.",
-      "Le cercle seul omet la seconde composante.",
-      "La croix seule omet le contour circulaire."
-    ],
-    "explanation": "La règle horizontale est la fusion (superposition) des deux premières figures pour former la troisième : le cercle ○ fusionné avec la croix + produit le cercle barré d'une croix ⊕.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-cnt-047",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle lettre de l'alphabet latin compte exactement 3 segments de droite ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Série de lettres formées de traits droits : L (2 traits), H (3 traits), M (4 traits)."
-    },
-    "options": [
-      "N",
-      "E",
-      "T",
-      "X"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la lettre N est composée de 2 montants verticaux et d'une diagonale (3 segments).",
-      "La lettre E compte 4 segments droits (1 vertical et 3 horizontaux).",
-      "La lettre T ne compte que 2 segments droits (1 horizontal et 1 vertical).",
-      "La lettre X ne compte que 2 segments diagonaux."
-    ],
-    "explanation": "La lettre N se trace au moyen de 3 segments rectilignes distincts (| / |). E en a 4, T et X en ont 2.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-seq-048",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quel motif complète la série basée sur la taille décroissante ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "███  ██  █  ?"
-    },
-    "options": [
-      "· (point)",
-      "████",
-      "███",
-      "— (tiret long)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : réduction d'un bloc à chaque étape, aboutissant au point minimal.",
-      "Quatre blocs correspondent à une progression croissante inverse.",
-      "Trois blocs répètent le début de la séquence.",
-      "Le tiret modifie la morphologie du symbole au lieu de sa taille."
-    ],
-    "explanation": "Chaque étape retire exactement un pavé carré de la série : 3, puis 2, puis 1, la suite logique aboutit à la dimension minimale (point unique).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-grid-049",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Dans un damier 4×4, une pièce avance de 2 cases vers le Sud puis de 1 case vers l'Est. Si elle part de (1, 1), quelle est sa position finale ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Coordonnées de départ : Ligne 1, Colonne 1 (coin supérieur gauche)."
-    },
-    "options": [
-      "Ligne 3, Colonne 2",
-      "Ligne 2, Colonne 3",
-      "Ligne 3, Colonne 1",
-      "Ligne 2, Colonne 2"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : départ (1,1) + 2 lignes vers le bas = ligne 3, + 1 colonne vers la droite = colonne 2.",
-      "Inversion des axes lignes et colonnes.",
-      "Le déplacement vers l'Est (+1 colonne) a été omis.",
-      "Une seule case vers le Sud a été comptabilisée au lieu de deux."
-    ],
-    "explanation": "Le déplacement vers le Sud incrémente l'indice de ligne de 2 (1 + 2 = 3). Le déplacement vers l'Est incrémente l'indice de colonne de 1 (1 + 1 = 2). La position résultante est donc Ligne 3, Colonne 2.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-rot-050",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle lettre majuscule conserve son apparence après une rotation de 180° autour de son centre ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Ensemble de lettres candidates : A, H, T, P."
-    },
-    "options": [
-      "H",
-      "A",
-      "T",
-      "P"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la lettre H possède une symétrie centrale d'ordre 2 (invariante à 180°).",
-      "La lettre A tournée de 180° a sa pointe orientée vers le bas (∀).",
-      "La lettre T tournée de 180° a sa barre horizontale en bas (⊥).",
-      "La lettre P tournée de 180° a sa boucle en bas à gauche (d)."
-    ],
-    "explanation": "Une figure invariante par rotation de 180° possède un centre de symétrie. Seule la lettre H reste identique après un demi-tour.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-051",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel symbole complète la suite de fractions visuelles ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "◔ (1/4)  ◑ (2/4)  ◕ (3/4)  ?"
-    },
-    "options": [
-      "● (4/4 plein)",
-      "○ (0/4 vide)",
-      "◐ (autre moitié)",
-      "◔ (quart initial)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le disque se remplit d'un quart supplémentaire à chaque pas pour devenir entièrement plein.",
-      "Le disque vide marquerait une réinitialisation sans achever le cycle.",
-      "L'autre moitié inverserait la direction de progression du noircissement.",
-      "Le premier quart correspond au début de la série."
-    ],
-    "explanation": "Le disque noirci progresse de 90° (un quart) à chaque étape dans le sens horaire : 1/4 plein, 2/4 plein (moitié), 3/4 plein, et finalement 4/4 plein (disque entièrement noir ●).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
@@ -1748,17 +1034,17 @@
       "text": "■   □\n□   ?"
     },
     "options": [
-      "■",
-      "□",
       "●",
-      "▲"
+      "■",
+      "▲",
+      "□"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : symétrie diagonale parfaite avec carrés pleins sur la diagonale principale.",
-      "Un carré blanc créerait un déséquilibre asymétrique par rapport à la diagonale.",
       "Le rond n'appartient pas à l'alphabet de formes de la matrice.",
-      "Le triangle n'est pas utilisé dans cette matrice binaire."
+      "Correct : symétrie diagonale parfaite avec carrés pleins sur la diagonale principale.",
+      "Le triangle n'est pas utilisé dans cette matrice binaire.",
+      "Un carré blanc créerait un déséquilibre asymétrique par rapport à la diagonale."
     ],
     "explanation": "La matrice suit une logique de symétrie centrale et diagonale : la diagonale principale est composée de carrés noirs (■) et la diagonale secondaire de carrés blancs (□).",
     "sourceType": "original_ai_assisted",
@@ -1766,754 +1052,6 @@
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-cnt-053",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Combien d'angles droits possède un trapèze rectangle ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Figure géométrique fermée à 4 côtés dont deux côtés opposés sont parallèles et un côté perpendiculaire aux bases."
-    },
-    "options": [
-      "2 angles droits",
-      "1 angle droit",
-      "3 angles droits",
-      "4 angles droits"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le côté perpendiculaire aux bases forme un angle droit avec chacune d'elles (2 angles droits).",
-      "Un seul angle droit rendrait impossible le parallélisme des bases horizontales.",
-      "Trois angles droits imposeraient nécessairement que le 4e angle soit également droit (rectangle).",
-      "Quatre angles droits caractérisent un rectangle ou un carré, non un trapèze au sens strict."
-    ],
-    "explanation": "Par définition, un trapèze rectangle possède un côté perpendiculaire aux deux bases parallèles, formant ainsi 2 angles droits consécutifs.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-seq-054",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel nombre de barres verticales suit logiquement la suite ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "|   |||   |||||   |||||||   ?"
-    },
-    "options": [
-      "||||||||| (9 barres)",
-      "|||||||| (8 barres)",
-      "|||||||||| (10 barres)",
-      "||||||| (7 barres)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : suite des nombres impairs consécutifs (1, 3, 5, 7, puis 9 barres).",
-      "Huit barres correspondrait à un incrément pair au lieu de la suite impaire.",
-      "Dix barres saute l'étape de 9 barres.",
-      "Sept barres répète l'étape précédente."
-    ],
-    "explanation": "Le nombre de barres verticales forme la suite arithmétique de raison +2 débutant à 1 : 1, 3, 5, 7, donc 9 barres.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-rot-055",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle position prend l'aiguille après 3 rotations successives de 90° dans le sens horaire depuis Midi ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position initiale : 12h00 (Haut)."
-    },
-    "options": [
-      "9h00 (Gauche)",
-      "3h00 (Droite)",
-      "6h00 (Bas)",
-      "12h00 (Haut)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 3 × 90° = 270° horaires, soit l'équivalent de 90° anti-horaire (position 9h00).",
-      "La position 3h00 correspond à 1 seule rotation de 90°.",
-      "La position 6h00 correspond à 2 rotations de 90° (180°).",
-      "La position 12h00 correspondrait à un tour complet de 360° (4 rotations)."
-    ],
-    "explanation": "Depuis le haut (12h00) : 1re rotation → 3h00, 2e rotation → 6h00, 3e rotation → 9h00 (Ouest / Gauche).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-mat-056",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle case complète la dernière colonne de la matrice 3×3 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "1 triangle   1 carré   1 pentagone\n2 triangles  2 carrés  2 pentagones\n3 triangles  3 carrés  ?"
-    },
-    "options": [
-      "3 pentagones",
-      "4 pentagones",
-      "3 hexagones",
-      "2 pentagones"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 3e ligne (compte de 3) et 3e colonne (forme de pentagone).",
-      "Quatre pentagones dépasseraient le compte de 3 imposé par la troisième ligne.",
-      "L'hexagone modifierait la forme constante de la troisième colonne.",
-      "Deux pentagones figurent déjà sur la deuxième ligne."
-    ],
-    "explanation": "Chaque colonne est caractérisée par une forme (colonne 1 = triangles, colonne 2 = carrés, colonne 3 = pentagones) et chaque ligne par une quantité (1, 2, 3). En bas à droite, il faut donc 3 pentagones.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-057",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quel symbole continue la suite d'alternance binaire inversée ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "+  -  ++  --  +++  ---  ????"
-    },
-    "options": [
-      "++++",
-      "----",
-      "+++",
-      "---"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : après le bloc de 3 signes moins, la série repart sur un bloc de 4 signes plus.",
-      "Quatre signes moins feraient abstraction de l'alternance avec le signe plus.",
-      "Trois signes plus répètent le groupe déjà achevé.",
-      "Trois signes moins viennent d'être terminés."
-    ],
-    "explanation": "La série alterne blocs de '+' et blocs de '-' dont la taille augmente de 1 à chaque alternance : 1+, 1-, 2+, 2-, 3+, 3-, le bloc suivant comporte donc 4+ (++++).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-grid-058",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Sur un cercle divisé en 8 secteurs numérotés de 1 à 8 dans le sens horaire, un pion part de 1 et avance de 3 secteurs à chaque pas. Où sera-t-il après 3 sauts ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Cercle à 8 positions (1 à 8). Départ à 1. Déplacement de +3 à chaque saut."
-    },
-    "options": [
-      "Secteur 2",
-      "Secteur 1",
-      "Secteur 4",
-      "Secteur 7"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 1 + (3 × 3) = 10 ; modulo 8, 10 équivaut au secteur 2 (10 - 8 = 2).",
-      "Le secteur 1 marquerait un retour complet sans déplacement net.",
-      "Le secteur 4 correspond à 1 seul saut (1 + 3 = 4).",
-      "Le secteur 7 correspond à 2 sauts (1 + 3 + 3 = 7)."
-    ],
-    "explanation": "Départ en 1. Saut 1 : 1 + 3 = 4. Saut 2 : 4 + 3 = 7. Saut 3 : 7 + 3 = 10. Sur un cadran à 8 positions, la position 10 correspond au secteur 2 (10 - 8 = 2).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-cnt-059",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Combien de diagonales intérieures possède un pentagone régulier convexe ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Polygone régulier convexe à 5 sommets."
-    },
-    "options": [
-      "5 diagonales",
-      "10 diagonales",
-      "4 diagonales",
-      "3 diagonales"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : formule n(n-3)/2 pour n=5 donne 5(2)/2 = 5 diagonales formant une étoile.",
-      "Dix correspond au nombre total de paires de sommets n(n-1)/2, incluant les 5 côtés extérieurs.",
-      "Quatre diagonales omet une liaison diagonale.",
-      "Trois diagonales correspond au nombre de triangles de triangulation, non au total des diagonales."
-    ],
-    "explanation": "Le nombre de diagonales d'un polygone convexe à n sommets est donné par n(n-3)/2. Pour n = 5, on obtient 5 × 2 / 2 = 5 diagonales (qui tracent une étoile à 5 branches).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-rot-060",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle figure correspond au reflet miroir vertical (inversion gauche/droite) de la lettre 'E' ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Lettre majuscule standard : E"
-    },
-    "options": [
-      "ヨ",
-      "E",
-      "Ǝ",
-      "Ш"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la barre verticale passe à droite et les trois barres horizontales pointent vers la gauche.",
-      "La lettre E non modifiée ne subit aucun effet miroir.",
-      "Le symbole Ǝ inversé correspond souvent à une rotation ou miroir avec empattement différent.",
-      "La lettre cyrillique Ш correspond à une rotation de 90° vers le haut."
-    ],
-    "explanation": "Une réflexion miroir selon un axe vertical échange la gauche et la droite : la barre dorsale de 'E' passe de gauche à droite, et les branches pointent vers la gauche (forme ヨ).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-mat-061",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne selon l'opération logique d'exclusion mutuelle (XOR) ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Règle : les éléments communs aux deux premières cases disparaissent, les éléments uniques sont conservés.\nCase 1 : rond et carré\nCase 2 : rond et triangle\nCase 3 : ?"
-    },
-    "options": [
-      "carré et triangle",
-      "rond, carré et triangle",
-      "rond seul",
-      "carré seul"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le rond commun est éliminé (XOR) ; le carré et le triangle uniques sont conservés.",
-      "Conserver les trois formes correspondrait à une union logique (OU) et non à une exclusion mutuelle.",
-      "Le rond est précisément l'élément partagé qui doit disparaître selon la règle XOR.",
-      "Le carré seul omet le triangle qui était également exclusif à la deuxième case."
-    ],
-    "explanation": "L'opération XOR (ou exclusif) élimine tout symbole présent simultanément dans les cases 1 et 2 (ici le rond). Les symboles présents dans une seule case (le carré et le triangle) sont conservés.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-062",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quel symbole succède logiquement dans la séquence d'imbrication croissante ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "□  →  回  →  回 dans un grand cadre  →  ?"
-    },
-    "options": [
-      "4 carrés concentriques",
-      "2 carrés séparés",
-      "3 triangles imbriqués",
-      "1 cercle plein"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : chaque étape ajoute un carré concentrique englobant supplémentaire (1, 2, 3 puis 4 carrés).",
-      "Deux carrés séparés brisent la règle d'emboîtement concentrique.",
-      "Les triangles modifient la forme de base de la série.",
-      "Le cercle plein rompt la logique géométrique des carrés."
-    ],
-    "explanation": "La série empile des carrés concentriques de taille croissante : 1 carré simple, 2 carrés emboîtés, 3 carrés emboîtés ; l'étape suivante consiste donc en 4 carrés concentriques.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-grid-063",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Sur une grille 5×5, un point situé au centre (3, 3) se déplace d'une case vers le Nord, puis de deux cases vers l'Ouest. Quelles sont ses nouvelles coordonnées ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Grille 5×5 (lignes 1 à 5 de haut en bas, colonnes 1 à 5 de gauche à droite). Départ : (3, 3)."
-    },
-    "options": [
-      "Ligne 2, Colonne 1",
-      "Ligne 4, Colonne 1",
-      "Ligne 2, Colonne 5",
-      "Ligne 1, Colonne 2"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : Nord soustrait 1 à la ligne (3 - 1 = 2) ; Ouest soustrait 2 à la colonne (3 - 2 = 1).",
-      "Ligne 4 correspondrait à un déplacement vers le Sud au lieu du Nord.",
-      "Colonne 5 correspondrait à un déplacement vers l'Est au lieu de l'Ouest.",
-      "Ligne 1, Colonne 2 inverse les valeurs de déplacement."
-    ],
-    "explanation": "Vers le Nord : l'indice de ligne diminue de 1 (3 - 1 = 2). Vers l'Ouest : l'indice de colonne diminue de 2 (3 - 2 = 1). Le point arrive en case (2, 1).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-rot-064",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle position prend l'aiguille après 5 rotations consécutives de 90° dans le sens horaire depuis Midi ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position de départ : 12h00."
-    },
-    "options": [
-      "3h00 (Droite)",
-      "6h00 (Bas)",
-      "9h00 (Gauche)",
-      "12h00 (Haut)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 5 × 90° = 450° = 360° + 90°, équivalent à une seule rotation de 90° (position 3h00).",
-      "Six heures correspondrait à 6 rotations de 90° (ou 2 modulo 4).",
-      "Neuf heures correspondrait à 7 rotations de 90° (ou 3 modulo 4).",
-      "Midi correspondrait à 4 ou 8 rotations (multiple complet de 360°)."
-    ],
-    "explanation": "Quatre rotations de 90° constituent un tour complet (360°) et ramènent à la position initiale (12h00). La 5e rotation de 90° amène l'aiguille à 3h00 (Est).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-cnt-065",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Combien d'arêtes possède un prisme droit dont la base est un hexagone ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Solide géométrique régulier : prisme droit à base hexagonale (6 côtés par base)."
-    },
-    "options": [
-      "18 arêtes",
-      "12 arêtes",
-      "8 arêtes",
-      "24 arêtes"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 6 arêtes sur la base inférieure, 6 sur la base supérieure, et 6 arêtes latérales verticales (3 × 6 = 18).",
-      "Douze correspond au nombre de sommets (2 × 6), non au nombre d'arêtes.",
-      "Huit correspond au nombre de faces totales (2 bases + 6 faces latérales).",
-      "Vingt-quatre arêtes correspondrait à un solide à base à 8 côtés ou un empilement."
-    ],
-    "explanation": "Un prisme à base à n côtés possède 3n arêtes : n arêtes pour la base inférieure, n arêtes pour la base supérieure et n arêtes reliant les deux bases. Pour n = 6, 3 × 6 = 18 arêtes.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "abstract-symb-066",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quel symbole complète logiquement cette suite croissante de disques ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "○  ●  ○○  ●●  ○○○  ●●●  ????"
-    },
-    "options": [
-      "○○○○",
-      "●●●●",
-      "○○○",
-      "●●●"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : alternance de blancs et noirs avec incrément d'un élément à chaque cycle (1, 2, 3 puis 4 cercles blancs).",
-      "Quatre disques noirs suivront le groupe de 4 cercles blancs.",
-      "Trois cercles blancs répètent le cycle précédent.",
-      "Trois disques noirs viennent de s'achever."
-    ],
-    "explanation": "La séquence alterne cercles blancs et disques noirs en augmentant leur quantité de 1 à chaque passage : 1 blanc, 1 noir, 2 blancs, 2 noirs, 3 blancs, 3 noirs, donc 4 blancs (○○○○).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-067",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle figure complète la case manquante de la matrice 3×3 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "△   ▲   ◬\n□   ■   回\n○   ●   ?"
-    },
-    "options": [
-      "◎",
-      "○",
-      "●",
-      "◈"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : chaque ligne associe une forme vide, une forme pleine et une forme concentrique.",
-      "Le cercle simple vide est déjà présent en première colonne.",
-      "Le disque plein est déjà présent en deuxième colonne.",
-      "Le losange n'appartient pas à la famille des cercles de cette troisième ligne."
-    ],
-    "explanation": "Chaque ligne suit la même transformation : figure vide (colonne 1), figure pleine (colonne 2), figure concentrique (colonne 3). En ligne 3, le cercle concentrique est ◎.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-068",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle orientation prend la flèche après une rotation de 135° dans le sens horaire depuis le Nord ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position initiale : Nord (↑)."
-    },
-    "options": [
-      "Sud-Est (↘)",
-      "Est (→)",
-      "Sud (↓)",
-      "Nord-Est (↗)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : Nord (0°) + 135° horaires = Sud-Est (135°).",
-      "Est correspond à une rotation de 90°.",
-      "Sud correspond à une rotation de 180°.",
-      "Nord-Est correspond à une rotation de 45°."
-    ],
-    "explanation": "Une rotation de 135° horaires déplace la flèche de 90° (vers l'Est) puis de 45° supplémentaires, atteignant le Sud-Est (↘).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-069",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle figure résulte de la combinaison logique des deux motifs ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Motif 1 : Carré extérieur\nMotif 2 : Croix inscrite (+)\nRésultat combiné : ?"
-    },
-    "options": [
-      "⊞",
-      "⊡",
-      "⊠",
-      "⊟"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : un carré contenant une croix droite régulière (+).",
-      "Le symbole ⊡ contient un point central et non une croix.",
-      "Le symbole ⊠ contient une croix de saint André diagonale (X).",
-      "Le symbole ⊟ ne contient qu'une seule barre horizontale."
-    ],
-    "explanation": "La combinaison superpose le contour carré et la croix droite inscrite, formant le glyphe ⊞.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-070",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quel nombre de sommets correspond à la figure complétant la suite ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Triangle (3)  →  Carré (4)  →  Hexagone (6)  →  Ennéagone (9)  →  ?"
-    },
-    "options": [
-      "13 sommets",
-      "12 sommets",
-      "11 sommets",
-      "10 sommets"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : progression des écarts (+1, +2, +3, +4). 9 + 4 = 13 sommets.",
-      "12 sommets correspondrait à une progression arithmétique de pas +3.",
-      "11 sommets correspondrait à une suite impaire.",
-      "10 sommets n'ajoute que 1 sommet au lieu de 4."
-    ],
-    "explanation": "Les différences successives entre les nombres de sommets augmentent de 1 à chaque pas : 4 - 3 = 1 ; 6 - 4 = 2 ; 9 - 6 = 3 ; la suite exige donc 9 + 4 = 13 sommets.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-071",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne selon la règle de soustraction géométrique ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Case 1 : Carré avec disque inscrit (回)\nCase 2 : Disque seul (●)\nCase 3 (Case 1 privée de Case 2) : ?"
-    },
-    "options": [
-      "□ (Carré évidé)",
-      "● (Disque plein)",
-      "■ (Carré plein)",
-      "○ (Cercle évidé)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : en retirant le disque central de la figure composite, il ne reste que le carré extérieur.",
-      "Le disque correspond à l'élément soustrait.",
-      "Le carré plein n'est pas le contour original.",
-      "Le cercle évidé n'est pas le contour extérieur de la case 1."
-    ],
-    "explanation": "La règle horizontale est la soustraction géométrique : Motif composite - Motif central = Motif extérieur résiduel (carré évidé □).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-072",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle figure correspond à une rotation de 90° dans le sens anti-horaire du symbole 'T' ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Symbole de départ : T (barre horizontale en haut, barre verticale vers le bas)."
-    },
-    "options": [
-      "⊣ (barre à droite)",
-      "⊢ (barre à gauche)",
-      "⊥ (barre en bas)",
-      "T (barre en haut)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : en tournant de 90° vers la gauche (anti-horaire), la barre supérieure devient verticale à droite et la jambe pointe vers la gauche.",
-      "Le symbole ⊢ correspond à une rotation horaire de 90°.",
-      "Le symbole ⊥ correspond à une rotation de 180°.",
-      "Le symbole T correspond à une rotation de 360° (invariable)."
-    ],
-    "explanation": "Une rotation de 90° dans le sens anti-horaire bascule le chapeau du 'T' de l'horizontale haute à la verticale droite (glyphe ⊣).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-073",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle figure conserve son invariance par réflexion selon un axe horizontal central ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Lettres majuscules candidates : B, C, H, K."
-    },
-    "options": [
-      "H",
-      "A",
-      "M",
-      "V"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : la lettre H possède un axe de symétrie horizontal parfait passant par sa barre centrale.",
-      "La lettre A possède un axe vertical, mais pas d'axe horizontal.",
-      "La lettre M possède un axe de symétrie vertical.",
-      "La lettre V possède un axe de symétrie vertical."
-    ],
-    "explanation": "La réflexion selon un axe horizontal échange le haut et le bas. Seule la lettre H est strictement identique à son reflet horizontal.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-074",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel symbole continue la série d'angles d'ouverture croissants ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Tiret horizontal (-)  →  Angle aigu (<)  →  Angle droit (∟)  →  Angle obtus  →  ?"
-    },
-    "options": [
-      "Angle plat (180°)",
-      "Angle nul (0°)",
-      "Angle droit (90°)",
-      "Angle aigu (<90°)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : progression de 0° à 180° (aigu, droit 90°, obtus >90°, plat 180°).",
-      "L'angle nul correspondrait à un retour au point de départ.",
-      "L'angle droit inversé répète l'étape de 90°.",
-      "L'angle aigu fermé correspond à une régression."
-    ],
-    "explanation": "La série décrit l'ouverture géométrique d'un angle : 0° (segment confondu), aigu (<90°), droit (90°), obtus (entre 90° et 180°), puis angle plat (180° formant une ligne droite).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
   },
   {
     "id": "abstract-mat-075",
@@ -2530,87 +1068,19 @@
       "text": "●○○   ○●○   ○○●\n■□□   □■□   □□■\n▲△△   △▲△   ?"
     },
     "options": [
-      "△△▲",
       "▲▲△",
       "△▲△",
-      "▲△△"
+      "▲△△",
+      "△△▲"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : l'élément plein se déplace de la position 1 à 2 puis à 3 sur chaque ligne.",
       "Deux triangles pleins brisent la règle du symbole plein unique.",
       "Répète la position centrale déjà vue en deuxième colonne.",
-      "Répète la première position de la première colonne."
+      "Répète la première position de la première colonne.",
+      "Correct : l'élément plein se déplace de la position 1 à 2 puis à 3 sur chaque ligne."
     ],
     "explanation": "Sur chaque ligne, le motif plein glisse d'une case vers la droite : position 1 (gauche), position 2 (centre), position 3 (droite). En bas à droite, le triangle plein est en 3e position (△△▲).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-076",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Après avoir tourné de 270° dans le sens anti-horaire, quelle position prend un curseur parti du Nord ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position initiale : Nord (12h00). Rotation : 270° anti-horaire."
-    },
-    "options": [
-      "Est (03h00)",
-      "Ouest (09h00)",
-      "Sud (06h00)",
-      "Nord (12h00)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : tourner de 270° dans le sens anti-horaire équivaut exactement à tourner de 90° dans le sens horaire (Est / 03h00).",
-      "Ouest correspond à 90° anti-horaire.",
-      "Sud correspond à 180°.",
-      "Nord marquerait un tour complet de 360°."
-    ],
-    "explanation": "Une rotation anti-horaire de 270° est équivalente à 360° - 270° = 90° dans le sens horaire. Depuis le Nord, l'aiguille pointe vers l'Est (3h00).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-077",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Sur une grille 3×3, un point noir situé au coin supérieur gauche (1, 1) avance de 2 cases en diagonale vers le Sud-Est. Où arrive-t-il ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Grille 3×3 : Lignes 1 à 3 (haut vers bas), Colonnes 1 à 3 (gauche vers droite). Départ : (1, 1)."
-    },
-    "options": [
-      "Ligne 3, Colonne 3",
-      "Ligne 2, Colonne 2",
-      "Ligne 3, Colonne 1",
-      "Ligne 1, Colonne 3"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : départ (1, 1) + 2 lignes vers le bas = 3, + 2 colonnes vers la droite = 3.",
-      "La position (2, 2) correspond à un saut d'une seule case.",
-      "La position (3, 1) correspond à un déplacement vertical pur vers le Sud.",
-      "La position (1, 3) correspond à un déplacement horizontal pur vers l'Est."
-    ],
-    "explanation": "La diagonale Sud-Est incrémente simultanément la ligne et la colonne : (1 + 2, 1 + 2) = (3, 3), soit le coin inférieur droit.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.867Z",
@@ -2632,291 +1102,19 @@
       "text": "▲  ▼  ▲  ▼  ▲  ▼  ?"
     },
     "options": [
-      "▲",
-      "▼",
       "◀",
-      "▶"
+      "▶",
+      "▲",
+      "▼"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : alternance stricte pointe haute / pointe basse ; le cycle repart sur pointe haute (▲).",
-      "La pointe basse vient d'être achevée.",
       "La pointe gauche brise l'axe vertical de la série.",
-      "La pointe droite brise l'axe vertical de la série."
+      "La pointe droite brise l'axe vertical de la série.",
+      "Correct : alternance stricte pointe haute / pointe basse ; le cycle repart sur pointe haute (▲).",
+      "La pointe basse vient d'être achevée."
     ],
     "explanation": "Il s'agit d'une alternance binaire stricte entre triangle vers le haut et triangle vers le bas. Après le 6e terme (▼), le 7e terme est un triangle vers le haut (▲).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-079",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne de la matrice ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "1 trait vertical (|)    2 traits verticaux (||)    3 traits verticaux (|||)\n1 trait horizontal (-)  2 traits horizontaux (--)  3 traits horizontaux (---)\n1 croix (+)             2 croix (++)               ?"
-    },
-    "options": [
-      "3 croix (+++)",
-      "4 croix (++++)",
-      "2 croix (++)",
-      "1 croix (+)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : chaque ligne maintient son motif de base et compte 1, 2 puis 3 éléments par colonne.",
-      "Quatre croix dépasserait la dimension de la matrice 3×3.",
-      "Deux croix figure déjà en deuxième colonne.",
-      "Une croix figure en première colonne."
-    ],
-    "explanation": "La matrice suit une règle de multiplication de quantité par colonne : colonne 1 = 1 motif, colonne 2 = 2 motifs, colonne 3 = 3 motifs. En ligne 3, il faut donc 3 croix (+++).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-080",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle position prend l'aiguille après 6 rotations consécutives de 90° dans le sens horaire depuis Midi ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Départ à 12h00. 6 rotations de 90° horaires consécutives."
-    },
-    "options": [
-      "6h00 (Sud / Bas)",
-      "12h00 (Nord / Haut)",
-      "3h00 (Est / Droite)",
-      "9h00 (Ouest / Gauche)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 6 × 90° = 540° = 360° (1 tour complet) + 180°, soit la position opposée à midi (6h00).",
-      "Midi correspondrait à 4 ou 8 rotations (multiple de 360°).",
-      "Trois heures correspondrait à 1 ou 5 rotations.",
-      "Neuf heures correspondrait à 3 ou 7 rotations."
-    ],
-    "explanation": "Six rotations de 90° totalisent 540°. En retirant un tour complet (360°), il reste 180°, ce qui place l'aiguille à l'opposé de sa position initiale, soit en bas à 6h00.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-081",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Combien d'arêtes possède un tétraèdre régulier (pyramide à base triangulaire) ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Solide platonicien régulier : tétraèdre (4 faces triangulaires, 4 sommets)."
-    },
-    "options": [
-      "6 arêtes",
-      "4 arêtes",
-      "8 arêtes",
-      "12 arêtes"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : formule d'Euler Sommets (4) - Arêtes (A) + Faces (4) = 2 => A = 6 arêtes (3 à la base, 3 rejoignant le sommet).",
-      "Quatre correspond au nombre de faces ou de sommets.",
-      "Huit correspond au nombre d'arêtes d'une pyramide à base carrée.",
-      "Douze correspond aux arêtes d'un cube ou d'un octaèdre."
-    ],
-    "explanation": "Un tétraèdre régulier compte 3 arêtes formant le triangle de base et 3 arêtes reliant chaque sommet de base à l'apex supérieur, soit 6 arêtes au total.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-082",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quel symbole complète la suite de barres inclinées alternées ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "/  \\  //  \\\\  ///  \\\\\\  ????"
-    },
-    "options": [
-      "////",
-      "\\\\\\\\",
-      "///",
-      "\\\\\\"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : alternance de barres montantes (/) et descendantes (\\) avec incrément unitaire (1, 2, 3 puis 4 montantes).",
-      "Quatre barres descendantes suivront le groupe de 4 barres montantes.",
-      "Trois barres montantes répètent le cycle précédent.",
-      "Trois barres descendantes viennent de se terminer."
-    ],
-    "explanation": "La série alterne barres diagonales de droite à gauche et de gauche à droite en augmentant leur nombre à chaque alternance : 1, 2, 3, donc 4 barres montantes (////).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-083",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne selon la règle d'intersection géométrique ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Ligne 1 : Cercle et Carré -> superposition\nLigne 2 : Triangle et Cercle -> superposition\nLigne 3 : Deux disques identiques superposés exactement -> ?"
-    },
-    "options": [
-      "Un disque unique confondu",
-      "Deux disques séparés",
-      "Un cercle vide",
-      "Un carré"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : l'intersection ou superposition exacte de deux figures identiques produit la figure elle-même.",
-      "Deux disques séparés briserait la règle de superposition.",
-      "Un cercle vide modifierait le remplissage plein.",
-      "Le carré modifierait la géométrie circulaire."
-    ],
-    "explanation": "La superposition exacte de deux figures identiques dans le même repère est idempotente : elle donne la figure unique d'origine.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-084",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle figure correspond à la lettre 'C' après une rotation de 180° ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Lettre de départ : C (ouverture orientée vers la droite)."
-    },
-    "options": [
-      "Ↄ (ouverture vers la gauche)",
-      "C (invariable)",
-      "U (ouverture vers le haut)",
-      "∩ (ouverture vers le bas)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : un demi-tour (180°) inverse la direction de l'ouverture, qui passe de droite à gauche.",
-      "La lettre C non modifiée correspond à une rotation de 0° ou 360°.",
-      "Le symbole U correspond à une rotation de 90° anti-horaire.",
-      "Le symbole ∩ correspond à une rotation de 90° horaire."
-    ],
-    "explanation": "Une rotation de 180° effectue une symétrie centrale : l'ouverture du 'C' située à droite pivote pour se retrouver à gauche (forme Ↄ).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-085",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle figure plane régulière possède exactement 8 axes de symétrie ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Polygones réguliers convexes usuels."
-    },
-    "options": [
-      "Octogone régulier",
-      "Hexagone régulier",
-      "Décagone régulier",
-      "Carré"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : tout polygone régulier à n côtés possède exactement n axes de symétrie (n = 8 pour l'octogone).",
-      "L'hexagone régulier possède 6 axes de symétrie.",
-      "Le décagone régulier possède 10 axes de symétrie.",
-      "Le carré possède 4 axes de symétrie."
-    ],
-    "explanation": "Par propriété géométrique fondamentale, un polygone régulier à n côtés admet exactement n axes de symétrie axiale. Pour n = 8 (octogone), il en admet 8.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-086",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel symbole succède logiquement dans la séquence de points cardinaux ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "N  →  E  →  S  →  O  →  ?"
-    },
-    "options": [
-      "N",
-      "E",
-      "S",
-      "O"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : parcours régulier des quatre points cardinaux dans le sens des aiguilles d'une montre (Nord, Est, Sud, Ouest, puis retour au Nord).",
-      "Est correspondrait à un saut direct sans repasser par le Nord.",
-      "Sud correspondrait à une inversion de 180°.",
-      "Ouest répète le point précédent."
-    ],
-    "explanation": "La série égrène les 4 points cardinaux dans le sens horaire : Nord, Est, Sud, Ouest, et boucle naturellement sur le Nord (N).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.867Z",
@@ -2938,461 +1136,19 @@
       "text": "●▲■   ■●▲   ▲■●\n▲■●   ●▲■   ■●▲\n■●▲   ▲■●   ?"
     },
     "options": [
-      "●▲■",
       "▲■●",
-      "■●▲",
-      "●●●"
+      "●●●",
+      "●▲■",
+      "■●▲"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : permutation circulaire garantissant que chaque ligne et colonne présente les trois arrangements distincts (carré latin).",
       "Répète le deuxième arrangement de la troisième ligne.",
-      "Répète le premier arrangement de la troisième ligne.",
-      "Trois disques brise la règle des trois formes distinctes."
+      "Trois disques brise la règle des trois formes distinctes.",
+      "Correct : permutation circulaire garantissant que chaque ligne et colonne présente les trois arrangements distincts (carré latin).",
+      "Répète le premier arrangement de la troisième ligne."
     ],
     "explanation": "La matrice forme un carré latin où les 3 permutations des 3 symboles (●▲■, ■●▲, ▲■●) apparaissent exactement une fois par ligne et par colonne. La case manquante est ●▲■.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-088",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Quelle figure résulte d'une rotation de 90° dans le sens horaire de la lettre majuscule 'V' ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Figure de départ : V (pointe orientée vers le bas)."
-    },
-    "options": [
-      "< (pointe vers la gauche)",
-      "> (pointe vers la droite)",
-      "^ (pointe vers le haut)",
-      "V (pointe vers le bas)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : en tournant de 90° dans le sens horaire, la pointe basse tourne vers la gauche (forme <).",
-      "La pointe vers la droite (>) résulterait d'une rotation anti-horaire de 90°.",
-      "La pointe vers le haut (^) résulte d'une rotation de 180°.",
-      "La figure non modifiée correspond à une rotation de 360°."
-    ],
-    "explanation": "Le bas du 'V' pivote d'un quart de tour vers la droite (sens horaire), orientant la pointe du sommet vers la gauche (<).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-089",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Combien de faces triangulaires possède un octaèdre régulier ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Polyèdre régulier convexe composé de deux pyramides à base carrée accolées par leur base."
-    },
-    "options": [
-      "8 faces",
-      "6 faces",
-      "12 faces",
-      "4 faces"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : un octaèdre régulier est composé de 8 faces triangulaires équilatérales (4 en haut, 4 en bas).",
-      "Six correspond au nombre de sommets d'un octaèdre ou aux faces d'un cube.",
-      "Douze correspond au nombre d'arêtes de l'octaèdre.",
-      "Quatre faces correspond au tétraèdre régulier."
-    ],
-    "explanation": "Par définition étymologique et géométrique, l'octaèdre (du grec octa = huit) régulier compte 8 faces qui sont des triangles équilatéraux.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-090",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quel symbole poursuit la séquence selon la règle des puissances de 2 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "● (1)  →  ●● (2)  →  ●●●● (4)  →  ●●●●●●●● (8)  →  ?"
-    },
-    "options": [
-      "16 disques",
-      "12 disques",
-      "10 disques",
-      "14 disques"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : doublement à chaque étape (1, 2, 4, 8, puis 16 disques).",
-      "12 disques correspondrait à une progression arithmétique de pas +4.",
-      "10 disques correspondrait à un incrément arithmétique de pas +2.",
-      "14 disques résulte d'une erreur de calcul multiplicatif."
-    ],
-    "explanation": "Chaque terme double le nombre de disques du terme précédent : 1 × 2 = 2 ; 2 × 2 = 4 ; 4 × 2 = 8 ; 8 × 2 = 16 disques.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-091",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne de la matrice binaire ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Ligne 1 : ○ et ○ donnent ○\nLigne 2 : ○ et ● donnent ●\nLigne 3 : ● et ● donnent ?"
-    },
-    "options": [
-      "○ (Blanc)",
-      "● (Noir)",
-      "◎ (Concentrique)",
-      "▲ (Triangle)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : opération d'addition modulo 2 (XOR) : deux éléments identiques s'annulent et donnent blanc (○).",
-      "Noir résulterait d'une opération OU logique (OR) et non XOR.",
-      "Concentrique n'appartient pas à l'alphabet binaire noir/blanc.",
-      "Triangle n'appartient pas à l'ensemble des formes de la matrice."
-    ],
-    "explanation": "La matrice applique l'opération XOR (ou exclusif binaire) où ○ = 0 et ● = 1 : 0+0=0 (○), 0+1=1 (●), 1+1=0 (○). Deux noirs donnent donc un blanc.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-092",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle position prend une flèche partie de l'Est (→) après une rotation de 180° ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Position initiale : Est (→)."
-    },
-    "options": [
-      "Ouest (←)",
-      "Est (→)",
-      "Nord (↑)",
-      "Sud (↓)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : une rotation de 180° inverse diamétralement la direction, passant de l'Est à l'Ouest.",
-      "Est correspondrait à une absence de rotation ou un tour complet de 360°.",
-      "Nord correspondrait à une rotation anti-horaire de 90°.",
-      "Sud correspondrait à une rotation horaire de 90°."
-    ],
-    "explanation": "Un demi-tour (180°) inverse la direction horizontale : l'Est (droite) devient l'Ouest (gauche ←).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-093",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Combien d'axes de symétrie axiale possède un triangle équilatéral ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Triangle à 3 côtés égaux et 3 angles de 60°."
-    },
-    "options": [
-      "3 axes de symétrie",
-      "1 axe de symétrie",
-      "6 axes de symétrie",
-      "0 axe de symétrie"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : chaque médiatrice issue d'un sommet vers le milieu du côté opposé forme un axe de symétrie (3 axes).",
-      "Un seul axe caractérise le triangle isocèle non équilatéral.",
-      "Six axes confond le nombre d'angles ou de demi-plans.",
-      "Zéro axe caractérise le triangle scalène quelconque."
-    ],
-    "explanation": "Un triangle équilatéral possède 3 axes de symétrie, qui coïncident avec ses 3 hauteurs, médianes, médiatrices et bissectrices.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-094",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel symbole continue la série d'encadrements imbriqués ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "·  →  [·]  →  [[·]]  →  [[[·]]]  →  ?"
-    },
-    "options": [
-      "[[[[·]]]] (4 crochets)",
-      "[[[·]]] (3 crochets)",
-      "[[···]] (2 crochets)",
-      "[·] (1 seul crochet)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : chaque étape ajoute une paire de crochets concentriques encadrant le point central.",
-      "Trois paires de crochets répète le terme précédent.",
-      "Trois points brise la règle du point unique.",
-      "Une paire correspond au début de la série."
-    ],
-    "explanation": "La série ajoute exactement une couche d'encadrement (paire de crochets) à chaque étape : 0, 1, 2, 3, donc 4 paires de crochets entourant le point central.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-095",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle figure complète la matrice 2×2 ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "▲   △\n▼   ?"
-    },
-    "options": [
-      "▽ (Triangle blanc vers le bas)",
-      "▲ (Triangle noir haut)",
-      "△ (Triangle blanc haut)",
-      "▼ (Triangle noir bas)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : colonne 1 = formes noires pleines, colonne 2 = formes blanches évidées. Ligne 2 = pointes vers le bas.",
-      "Triangle noir haut appartient à la ligne 1 colonne 1.",
-      "Triangle blanc haut appartient à la ligne 1 colonne 2.",
-      "Triangle noir bas appartient à la ligne 2 colonne 1."
-    ],
-    "explanation": "La colonne 2 inverse le remplissage de la colonne 1 (noir devient blanc) tout en conservant l'orientation : le triangle noir vers le bas (▼) devient un triangle blanc vers le bas (▽).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-096",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle position prend l'aiguille après une rotation de 450° dans le sens anti-horaire depuis Midi ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Départ : 12h00. Rotation : 450° anti-horaire."
-    },
-    "options": [
-      "9h00 (Ouest / Gauche)",
-      "3h00 (Est / Droite)",
-      "6h00 (Sud / Bas)",
-      "12h00 (Nord / Haut)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 450° = 360° + 90°. Un tour complet plus 90° anti-horaire amène l'aiguille de 12h00 à 9h00.",
-      "Trois heures correspondrait à une rotation horaire de 90°.",
-      "Six heures correspondrait à une rotation de 180°.",
-      "Midi correspondrait à un multiple de 360° sans reliquat."
-    ],
-    "explanation": "450° équivaut à un tour complet (360°) plus 90°. Dans le sens anti-horaire, 90° depuis midi déplace l'aiguille vers l'Ouest (9h00).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-trf-097",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "transformation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Combien de sommets possède un parallélépipède rectangle (pavé droit) ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Solide géométrique régulier usuel à 6 faces rectangulaires."
-    },
-    "options": [
-      "8 sommets",
-      "6 sommets",
-      "12 sommets",
-      "10 sommets"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 4 sommets sur la face inférieure et 4 sommets sur la face supérieure (total = 8 sommets).",
-      "Six correspond au nombre de faces rectangulaires.",
-      "Douze correspond au nombre d'arêtes.",
-      "Dix sommets ne correspond pas à un parallélépipède régulier."
-    ],
-    "explanation": "Un pavé droit ou parallélépipède compte 8 sommets, 12 arêtes et 6 faces.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-seq-098",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "suite-logique",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quel symbole continue la suite logique de cercles partagés ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "○ (0 trait)  →  ⦶ (1 trait diamétral)  →  ⊕ (2 traits en croix)  →  ?"
-    },
-    "options": [
-      "3 diamètres (6 secteurs)",
-      "1 diamètre (2 secteurs)",
-      "0 diamètre (cercle nu)",
-      "2 diamètres (4 secteurs)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : progression du nombre de segments intérieurs de division : 0, 1, 2 puis 3 traits.",
-      "Un trait correspond au deuxième terme de la série.",
-      "Zéro trait correspond au terme initial.",
-      "Quatre cercles modifie la structure unique du glyphe."
-    ],
-    "explanation": "La série incrémente de 1 le nombre de diamètres de découpe intérieure du cercle : 0 trait (cercle simple), 1 trait (cercle barré), 2 traits (croix inscrite), donc 3 traits (cercle divisé en 6 secteurs).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-mat-099",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "matrice",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle figure complète la 3e colonne de la matrice géométrique ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Ligne 1 : Grand carré    Moyen carré    Petit carré\nLigne 2 : Grand cercle   Moyen cercle   Petit cercle\nLigne 3 : Grand triangle Moyen triangle ?"
-    },
-    "options": [
-      "Petit triangle",
-      "Grand triangle",
-      "Moyen triangle",
-      "Petit carré"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : colonne 3 conserve la taille 'Petit' et la ligne 3 conserve la forme 'Triangle'.",
-      "Grand triangle figure déjà en première colonne.",
-      "Moyen triangle figure déjà en deuxième colonne.",
-      "Petit carré modifierait la forme triangulaire de la ligne."
-    ],
-    "explanation": "Chaque ligne conserve une forme géométrique (carrés, cercles, triangles) et chaque colonne applique une échelle de taille (grand, moyen, petit). En bas à droite, il faut donc un petit triangle.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.867Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.867Z"
-  },
-  {
-    "id": "abstract-rot-100",
-    "version": 1,
-    "category": "abstract",
-    "itemFormat": "single_best",
-    "skill": "rotation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle position prend l'aiguille après 8 rotations successives de 45° dans le sens horaire depuis Midi ?",
-    "stimulus": {
-      "type": "shapes",
-      "text": "Départ à 12h00. 8 rotations successives de 45° dans le sens horaire."
-    },
-    "options": [
-      "12h00 (Nord / Retour initial)",
-      "6h00 (Sud / Bas)",
-      "3h00 (Est / Droite)",
-      "9h00 (Ouest / Gauche)"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 8 × 45° = 360°, soit exactement un tour complet revenant à la position de départ (12h00).",
-      "Six heures correspondrait à 4 rotations de 45° (180°).",
-      "Trois heures correspondrait à 2 rotations de 45° (90°).",
-      "Neuf heures correspondrait à 6 rotations de 45° (270°)."
-    ],
-    "explanation": "Huit rotations de 45° donnent un angle total de 8 × 45° = 360°, soit un tour complet ramenant l'aiguille à sa position exacte d'origine à 12h00.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.867Z",

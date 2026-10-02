@@ -15,8 +15,11 @@ Ce projet traite toute sortie générée par IA comme du matériel candidat **no
    - **planification** : gérer un agenda sous contraintes (délais, disponibilités, priorités, dépendances) ;
    - **jugement situationnel** : **noter chaque réaction** de 1 à 4 (format `rating`), compétences « servir le client-usager » et « conseiller » uniquement.
 4. **Exigences psychométriques du validateur** :
-   - **Équilibre des longueurs** : pour les questions `single_best`, le ratio entre la longueur de l'option la plus longue et celle de la plus courte ne doit pas dépasser **$1{,}35$** ($\text{longueur max} \le 1{,}35 \times \text{longueur min}$), éliminant le biais de l'option « trop détaillée » ;
-   - **Règles du format `rating`** : `correctIndex` fixé à `0`, `ratings[0] === 4` (exactement une note maximale), aucune autre option notée `4`, et au moins 3 notes distinctes parmi $\{1, 2, 3, 4\}$ ;
+   - **Longueur des options** : avertissement si la bonne réponse dépasse 1,4 fois la plus longue des autres options ; avertissement de banque si elle est l'option la plus longue dans plus de 40 % des items d'une catégorie ;
+   - **Position de la bonne réponse** (règle de banque, erreur) : dès 20 items hors `tfcs`, aucune position ne doit porter plus de 40 % des bonnes réponses. L'application mélange aussi les options à l'affichage ;
+   - **Règles du format `rating`** : exactement une note 4, placée à `correctIndex` (position libre), et au moins 3 notes distinctes parmi 1 à 4 (avertissement sinon) ;
+   - **Raisonnement abstrait** : figures uniquement (flèches, formes géométriques ; ni lettres, ni chiffres, ni mots, ni idéogrammes) et exactement un « ? » dans le stimulus ;
+   - **Doublons** (règle de banque) : même figure abstraite, ou similarité textuelle ≥ 0,9 dans une catégorie = erreur ; ≥ 0,75 = avertissement ;
    - **Rationales obligatoires à 100 %** : une explication générale et une justification détaillée par option (`optionRationales`) expliquant l'erreur cognitive ou la règle appliquée.
 
 Le contrat complet est dans [`schema/question.schema.json`](../schema/question.schema.json) ; les consignes de rédaction sont dans [`prompts/generate-bank.md`](../prompts/generate-bank.md).
@@ -81,6 +84,8 @@ npm test
 **Revue aveugle** : `review-bank.mjs` n'envoie au modèle relecteur ni la clé, ni les notes, ni les explications. Le script compare ensuite sa réponse à la clé : décision `pass` seulement si les deux concordent (et, pour le jugement situationnel, si les notes sont proches), sans signalement ni confiance faible.
 
 **Promotion** : `promote-candidate.mjs` exige un relecteur nommé (`--reviewer`) et la liste des identifiants retenus (`--approve`, ou `--approve all` comme choix explicite). Un item dont la revue n'est pas `pass` reste bloqué, sauf `--ignore-ai-review`. Les items promus reçoivent `reviewStatus: "approved"`, `reviewer` et `reviewedAt`, sont retirés du fichier candidat, et `app.js` est resynchronisé. `--dry-run` montre l'effet sans rien écrire.
+
+**Contrôle de relecture (CI)** : `npm test` lance `scripts/check-review-log.mjs`. Chaque question de `data/approved/` doit correspondre à une décision humaine de `data/review-log/` (identifiant, version, relecteur et empreinte du contenu approuvé, `EagRules.contentHash`). `promote-candidate.mjs` et la page d'administration écrivent ces décisions. Une question ajoutée par un script ou modifiée à la main fait échouer la CI tant qu'elle n'a pas été relue et approuvée par l'une de ces deux voies. Les questions présentes lors de la mise en place du contrôle sont inventoriées dans `data/review-log/2026-10-02-legacy-baseline.json` (décision `legacy`, sans nouvelle approbation).
 
 ---
 
@@ -189,4 +194,5 @@ CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." np
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Promotion humaine explicite vers `data/approved/`. |
 | Importer des fichiers | Glisser-déposer dans `admin.html`, copie dans `generated/` (mode local) ou collage du JSON : voir [Importer des fichiers de questions](#importer-des-fichiers-de-questions). |
 | `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
-| `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation. |
+| `npm run check:review-log` | Vérifie que chaque question approuvée est tracée dans `data/review-log/`. |
+| `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation, contrôle de relecture. |

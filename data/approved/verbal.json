@@ -11,16 +11,16 @@
     "prompt": "Quelle conclusion est absolument certaine à partir des seuls éléments fournis ?",
     "stimulus": "Tous les dossiers urgents sont examinés le jour même. Le dossier L est urgent.",
     "options": [
-      "Le dossier L est accepté.",
       "Le dossier L est examiné le jour même.",
       "Le dossier L est le premier examiné.",
+      "Le dossier L est accepté.",
       "Tous les dossiers de la journée sont urgents."
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "optionRationales": [
-      "L'examen ne préjuge en rien de la décision finale (acceptation ou rejet).",
       "Correct : tout dossier urgent étant examiné le jour même, le dossier L l'est obligatoirement.",
       "L'énoncé ne précise aucun ordre de passage parmi les dossiers examinés.",
+      "L'examen ne préjuge en rien de la décision finale (acceptation ou rejet).",
       "Généralise abusivement la propriété d'un sous-ensemble à l'ensemble des dossiers."
     ],
     "explanation": "L'énoncé affirme expressément que tout dossier urgent fait l'objet d'un examen le jour même ; aucune conclusion sur la décision finale ou l'ordre exact n'est permise.",
@@ -42,16 +42,16 @@
     "prompt": "Quelle affirmation découle rigoureusement des conditions indiquées ?",
     "stimulus": "Le guichet ouvre à 8 h 30. Les rendez-vous avant 10 h sont réservés aux demandes déjà complètes. Nora a obtenu un rendez-vous à 9 h 15.",
     "options": [
-      "La demande de Nora est déjà complète.",
       "Nora sera reçue avant l'ouverture générale du guichet.",
       "Nora sera reçue dès l'ouverture du guichet.",
+      "La demande de Nora est déjà complète.",
       "La demande de Nora sera automatiquement acceptée."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : les créneaux avant 10 h étant réservés aux dossiers complets, un créneau à 9 h 15 implique un dossier complet.",
       "Le guichet ouvrant à 8 h 30, un rendez-vous à 9 h 15 a lieu après l'ouverture.",
       "L'ouverture a lieu à 8 h 30, tandis que le rendez-vous de Nora est calé à 9 h 15.",
+      "Correct : les créneaux avant 10 h étant réservés aux dossiers complets, un créneau à 9 h 15 implique un dossier complet.",
       "L'obtention d'un rendez-vous ne préjuge aucunement de l'acceptation de la demande."
     ],
     "explanation": "Les créneaux avant 10 h sont réservés aux demandes déjà complètes ; un rendez-vous à 9 h 15 implique donc une demande complète. Le texte ne dit rien de l'heure exacte de passage, ni de la décision.",
@@ -104,15 +104,15 @@
     "options": [
       "12/04 n° 18, puis 11/04 n° 22",
       "11/04 n° 22, puis 11/04 n° 19",
-      "11/04 n° 19, puis 11/04 n° 22",
-      "12/04 n° 12, puis 11/04 n° 10"
+      "12/04 n° 12, puis 11/04 n° 10",
+      "11/04 n° 19, puis 11/04 n° 22"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "optionRationales": [
       "Viole la préséance de date croissante (le 12/04 est placé avant le 11/04).",
       "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le 22.",
-      "Correct : date identique (11/04) et ordre croissant strict des numéros (19 avant 22).",
-      "Viole l'ordre chronologique croissant des dates."
+      "Viole l'ordre chronologique croissant des dates.",
+      "Correct : date identique (11/04) et ordre croissant strict des numéros (19 avant 22)."
     ],
     "explanation": "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le numéro plus élevé (22).",
     "sourceType": "original_ai_assisted",
@@ -133,17 +133,17 @@
     "prompt": "Quelle conclusion n'est PAS justifiée par le passage ?",
     "stimulus": "Aucun rapport incomplet n'est transmis. Certains rapports du service B sont transmis.",
     "options": [
-      "Certains rapports du service B sont complets.",
       "Aucun rapport transmis n'est incomplet.",
       "Tous les rapports du service B sont transmis.",
-      "Au moins un rapport du service B est transmis."
+      "Au moins un rapport du service B est transmis.",
+      "Certains rapports du service B sont complets."
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "optionRationales": [
-      "Justifié : les rapports transmis étant nécessairement complets, ceux de B qui sont transmis sont complets.",
       "Justifié : découle directement de la prémisse interdisant la transmission de rapports incomplets.",
       "Correct : le fait que certains rapports soient transmis n'autorise pas à affirmer que tous le sont.",
-      "Justifié : l'emploi de « certains » implique l'existence d'au moins un élément."
+      "Justifié : l'emploi de « certains » implique l'existence d'au moins un élément.",
+      "Justifié : les rapports transmis étant nécessairement complets, ceux de B qui sont transmis sont complets."
     ],
     "explanation": "Le passage mentionne que certains rapports sont transmis, ce qui interdit d'affirmer que tous les rapports du service le sont.",
     "sourceType": "original_ai_assisted",
@@ -164,17 +164,17 @@
     "prompt": "Quelle déduction s'impose logiquement à partir des deux prémisses ?",
     "stimulus": "Tout arrêté ministériel fait l'objet d'une publication. Le document G ne fait l'objet d'aucune publication.",
     "options": [
-      "Le document G n'est pas un arrêté ministériel.",
       "Le document G est un projet de loi en cours.",
-      "Le document G sera publié ultérieurement.",
-      "Certains arrêtés ministériels ne sont pas publiés."
+      "Certains arrêtés ministériels ne sont pas publiés.",
+      "Le document G n'est pas un arrêté ministériel.",
+      "Le document G sera publié ultérieurement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : par contraposition (si arrêté alors publié ; non publié donc pas un arrêté).",
       "Spéculation sans fondement dans les prémisses fournies.",
-      "Supposition temporelle non étayée par le texte.",
-      "Contredit formellement la règle selon laquelle tout arrêté est publié."
+      "Contredit formellement la règle selon laquelle tout arrêté est publié.",
+      "Correct : par contraposition (si arrêté alors publié ; non publié donc pas un arrêté).",
+      "Supposition temporelle non étayée par le texte."
     ],
     "explanation": "Par contraposition logique : si tout arrêté est publié, un document non publié ne peut en aucun cas constituer un arrêté ministériel.",
     "sourceType": "original_ai_assisted",
@@ -195,16 +195,16 @@
     "prompt": "Quelle décision est conforme à la directive énoncée ?",
     "stimulus": "Toute demande de subvention supérieure à 50 000 euros requiert un avis préalable de la commission financière. Le projet Alpha sollicite 45 000 euros.",
     "options": [
-      "Le projet Alpha ne requiert pas obligatoirement l'avis préalable de la commission financière au titre de cette règle.",
       "Le projet Alpha doit impérativement obtenir l'accord unanime de la commission financière.",
       "Le projet Alpha sera automatiquement rejeté pour insuffisance de montant.",
+      "Le projet Alpha ne requiert pas obligatoirement l'avis préalable de la commission financière au titre de cette règle.",
       "Le projet Alpha est dispensé de tout contrôle administratif."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le seuil d'exigence étant strictement supérieur à 50 000 euros, 45 000 euros n'activent pas cette obligation.",
       "La règle n'évoque aucun accord unanime requis.",
       "Confusion : la directive n'impose aucun seuil minimal pour solliciter une subvention.",
+      "Correct : le seuil d'exigence étant strictement supérieur à 50 000 euros, 45 000 euros n'activent pas cette obligation.",
       "Généralisation abusive : le projet n'est exempté que de cette formalité spécifique."
     ],
     "explanation": "Le seuil obligatoire est fixé strictement aux montants supérieurs à 50 000 euros ; 45 000 euros ne déclenchent pas cette obligation spécifique.",
@@ -226,17 +226,17 @@
     "prompt": "Laquelle des propositions constitue une extrapolation non démontrée par le texte ?",
     "stimulus": "La dématérialisation des formulaires a réduit le délai moyen de traitement de 14 jours à 6 jours au premier semestre.",
     "options": [
-      "Les usagers sont globalement plus satisfaits de la qualité de service.",
+      "Le traitement moyen était plus long avant le premier semestre concerné.",
       "Le délai moyen de traitement constaté s'est contracté de 8 jours.",
       "Le délai moyen est passé sous la barre des dix jours au premier semestre.",
-      "Le traitement moyen était plus long avant le premier semestre concerné."
+      "Les usagers sont globalement plus satisfaits de la qualité de service."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le texte n'apporte aucune donnée sur la satisfaction des usagers, seulement un indicateur de délai.",
+      "Démontré par la comparaison avec la durée préalable de 14 jours.",
       "Parfaitement démontré par la différence arithmétique (14 - 6 = 8 jours).",
       "Démontré par l'observation directe du chiffre de 6 jours.",
-      "Démontré par la comparaison avec la durée préalable de 14 jours."
+      "Correct : le texte n'apporte aucune donnée sur la satisfaction des usagers, seulement un indicateur de délai."
     ],
     "explanation": "Le texte renseigne un indicateur temporel précis (délai en jours), mais ne fournit aucune donnée sur le niveau de satisfaction des usagers.",
     "sourceType": "original_ai_assisted",
@@ -258,16 +258,16 @@
     "stimulus": "Il est impossible d'accéder à la zone sécurisée sans badge d'identification actif.",
     "options": [
       "Avoir un badge actif est une condition indispensable pour accéder à la zone sécurisée.",
+      "Le badge actif garantit un accès permanent et sans restriction.",
       "Toute personne munie d'un badge actif a le droit d'entrer dans la zone sécurisée.",
-      "Les personnes sans badge peuvent être admises avec un accompagnateur.",
-      "Le badge actif garantit un accès permanent et sans restriction."
+      "Les personnes sans badge peuvent être admises avec un accompagnateur."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : l'impossibilité d'accéder sans badge fait de sa détention une condition nécessaire (indispensable).",
+      "Le badge est requis, mais il ne confère aucun accès permanent ou sans restriction.",
       "Confond condition nécessaire et condition suffisante (le badge est requis, mais d'autres conditions peuvent s'appliquer).",
-      "Extrapole une exception d'accompagnement non stipulée dans la règle.",
-      "Le badge est requis, mais il ne confère aucun accès permanent ou sans restriction."
+      "Extrapole une exception d'accompagnement non stipulée dans la règle."
     ],
     "explanation": "L'absence de badge empêchant l'accès, la détention d'un badge actif constitue bien une condition nécessaire (indispensable) d'accès.",
     "sourceType": "original_ai_assisted",
@@ -288,16 +288,16 @@
     "prompt": "Quelle proposition relève d'un fait constatable et non d'une appréciation subjective ?",
     "stimulus": "Le nouveau logiciel de gestion des congés est remarquable, il enregistre 1 200 connexions quotidiennes et simplifie grandement la vie du personnel.",
     "options": [
-      "Le logiciel enregistre 1 200 connexions quotidiennes.",
       "Le nouveau logiciel est particulièrement remarquable.",
       "La vie du personnel est grandement simplifiée.",
+      "Le logiciel enregistre 1 200 connexions quotidiennes.",
       "Ce système est la meilleure solution disponible."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le comptage de 1 200 connexions est une donnée objective et quantifiable.",
       "Appréciation qualitative subjective.",
       "Jugement de valeur subjectif quant au bien-être du personnel.",
+      "Correct : le comptage de 1 200 connexions est une donnée objective et quantifiable.",
       "Jugement subjectif sans fondement factuel quantifié."
     ],
     "explanation": "Le comptage de 1 200 connexions est une mesure quantitative objectivement vérifiable, à la différence des appréciations qualitatives.",
@@ -319,17 +319,17 @@
     "prompt": "Quelle décision est strictement conforme à la directive de service ?",
     "stimulus": "Toute demande de télétravail occasionnel doit être déposée au moins 5 jours ouvrés à l'avance auprès de la hiérarchie. Par exception, en cas d'intempéries majeures constatées par un avis officiel, le délai est réduit à 24 heures. L'agent Laurent dépose sa demande 3 jours ouvrés avant la date souhaitée, en l'absence de tout avis officiel d'intempéries.",
     "options": [
+      "Le délai de 5 jours ouvrés ne s'applique qu'au télétravail régulier.",
       "La demande de Laurent ne respecte pas le délai réglementaire exigé.",
       "La demande de Laurent est automatiquement validée par défaut.",
-      "Laurent peut bénéficier de la dérogation réduite à 24 heures.",
-      "Le délai de 5 jours ouvrés ne s'applique qu'au télétravail régulier."
+      "Laurent peut bénéficier de la dérogation réduite à 24 heures."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La directive précise explicitement qu'elle régit le télétravail occasionnel.",
       "Correct : en l'absence d'avis officiel d'intempéries, le délai obligatoire de 5 jours ouvrés s'applique.",
       "Le texte ne mentionne aucun mécanisme d'accord tacite ou d'approbation automatique.",
-      "L'exception de 24 heures est expressément conditionnée à un avis officiel d'intempéries.",
-      "La directive précise explicitement qu'elle régit le télétravail occasionnel."
+      "L'exception de 24 heures est expressément conditionnée à un avis officiel d'intempéries."
     ],
     "explanation": "La directive impose un préavis de 5 jours ouvrés pour le télétravail occasionnel. L'unique dérogation (24 heures) requiert un avis officiel d'intempéries. En l'absence d'un tel avis, la demande déposée à 3 jours ouvrés viole le délai réglementaire.",
     "sourceType": "original_ai_assisted",
@@ -379,17 +379,17 @@
     "prompt": "Quelle proposition résume le plus fidèlement le champ d'application de la note ?",
     "stimulus": "Le présent guide de gestion s'applique à l'ensemble des agents titulaires et stagiaires de l'administration centrale. Les collaborateurs externes et prestataires sont soumis exclusivement aux clauses de leur contrat spécifique, à l'exception des consignes de sécurité des bâtiments qui s'imposent à toute personne présente dans les locaux.",
     "options": [
-      "Le guide régit titulaires et stagiaires, tandis que seules les consignes de sécurité s'imposent universellement.",
-      "Le guide de gestion s'applique intégralement aux collaborateurs externes et prestataires de services.",
       "Les agents stagiaires bénéficient d'un régime d'exception identique à celui des prestataires.",
-      "Les consignes de sécurité des bâtiments ne concernent que les agents sous contrat de droit public."
+      "Le guide régit titulaires et stagiaires, tandis que seules les consignes de sécurité s'imposent universellement.",
+      "Les consignes de sécurité des bâtiments ne concernent que les agents sous contrat de droit public.",
+      "Le guide de gestion s'applique intégralement aux collaborateurs externes et prestataires de services."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : résume fidèlement le champ d'application interne et l'universalité de la seule sécurité.",
-      "En contradiction avec le texte qui restreint les prestataires à leur contrat.",
       "Faux : les stagiaires sont au contraire inclus dans le champ général avec les titulaires.",
-      "Faux : le texte précise que la sécurité s'impose à toute personne présente dans les locaux."
+      "Correct : résume fidèlement le champ d'application interne et l'universalité de la seule sécurité.",
+      "Faux : le texte précise que la sécurité s'impose à toute personne présente dans les locaux.",
+      "En contradiction avec le texte qui restreint les prestataires à leur contrat."
     ],
     "explanation": "Le passage opère une distinction claire : les agents publics (titulaires et stagiaires) relèvent du guide, les prestataires relèvent de leur contrat, et les consignes de sécurité s'appliquent indistinctement à tous.",
     "sourceType": "original_ai_assisted",
@@ -410,17 +410,17 @@
     "prompt": "Quelle déduction s'impose logiquement par contraposition ?",
     "stimulus": "Tout fonctionnaire participant à une commission de sélection doit souscrire une déclaration préalable d'absence de conflit d'intérêts. L'agent Marc n'a souscrit aucune déclaration d'absence de conflit d'intérêts.",
     "options": [
+      "Certains fonctionnaires sont dispensés de déclaration en commission de sélection.",
       "L'agent Marc ne peut pas régulièrement participer à une commission de sélection.",
       "L'agent Marc est sous le coup d'une procédure disciplinaire pour omission.",
-      "L'agent Marc participera à la commission de sélection avec une dispense écrite.",
-      "Certains fonctionnaires sont dispensés de déclaration en commission de sélection."
+      "L'agent Marc participera à la commission de sélection avec une dispense écrite."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Contredit le caractère universel de l'obligation énoncée (« tout fonctionnaire »).",
       "Correct : contraposition stricte (si participation alors déclaration ; or pas de déclaration donc pas de participation régulière).",
       "Extrapolation injustifiée : le texte n'évoque aucune sanction disciplinaire.",
-      "Contredit la règle selon laquelle tout fonctionnaire participant doit déclarer.",
-      "Contredit le caractère universel de l'obligation énoncée (« tout fonctionnaire »)."
+      "Contredit la règle selon laquelle tout fonctionnaire participant doit déclarer."
     ],
     "explanation": "La règle énonce une implication universelle : Participation ⇒ Déclaration. Par contraposition logique (Non Déclaration ⇒ Non Participation), Marc ne peut légalement siéger en commission de sélection.",
     "sourceType": "original_ai_assisted",
@@ -441,17 +441,17 @@
     "prompt": "Quelle affirmation est directement corroborée par les faits mentionnés ?",
     "stimulus": "La nouvelle procédure de délivrance numérique a permis de délivrer 4 500 attestations au premier trimestre, contre 3 000 attestations papier au trimestre correspondant de l'année précédente.",
     "options": [
-      "Le volume d'attestations délivrées a augmenté de 1 500 unités entre les deux trimestres comparés.",
       "La procédure numérique a totalement supprimé les erreurs de saisie des agents.",
+      "Toutes les attestations administratives de l'État sont désormais délivrées en ligne.",
       "Les usagers préfèrent unanimement le format numérique au format papier.",
-      "Toutes les attestations administratives de l'État sont désormais délivrées en ligne."
+      "Le volume d'attestations délivrées a augmenté de 1 500 unités entre les deux trimestres comparés."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : corroboré par la différence arithmétique directe (4 500 - 3 000 = 1 500).",
       "Extrapolation infondée : le texte ne mentionne aucun taux d'erreur.",
+      "Généralisation abusive à l'ensemble des attestations administratives de l'État.",
       "Jugement qualitatif subjectif absent des données factuelles du texte.",
-      "Généralisation abusive à l'ensemble des attestations administratives de l'État."
+      "Correct : corroboré par la différence arithmétique directe (4 500 - 3 000 = 1 500)."
     ],
     "explanation": "Seule la hausse factuelle de 1 500 attestations (4 500 contre 3 000) découle directement du texte. Les autres options constituent des jugements subjectifs ou des généralisations sans preuve.",
     "sourceType": "original_ai_assisted",
@@ -472,17 +472,17 @@
     "prompt": "Quelle conclusion s'impose avec une certitude absolue à partir des prémisses fournies ?",
     "stimulus": "Tout marché public d'un montant supérieur à 100 000 euros requiert un avis préalable du contrôleur financier. L'acquisition de matériel X n'a reçu aucun avis du contrôleur financier.",
     "options": [
-      "Le montant du marché X n'est pas supérieur à 100 000 euros.",
-      "Le marché X est entaché d'une nullité administrative définitive.",
       "Le contrôleur financier a refusé de valider le marché X.",
-      "Le marché X sera examiné lors de la prochaine session financière."
+      "Le marché X sera examiné lors de la prochaine session financière.",
+      "Le montant du marché X n'est pas supérieur à 100 000 euros.",
+      "Le marché X est entaché d'une nullité administrative définitive."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : par contraposition stricte (si montant > 100 000 € alors avis obligatoire ; or pas d'avis, donc montant ≤ 100 000 € pour être régulier).",
-      "Extrapolation infondée : le texte ne statue sur aucune nullité prononcée.",
       "Affirmation non étayée : l'absence d'avis ne prouve pas un refus d'examen.",
-      "Pure supposition temporelle sans ancrage dans le texte fourni."
+      "Pure supposition temporelle sans ancrage dans le texte fourni.",
+      "Correct : par contraposition stricte (si montant > 100 000 € alors avis obligatoire ; or pas d'avis, donc montant ≤ 100 000 € pour être régulier).",
+      "Extrapolation infondée : le texte ne statue sur aucune nullité prononcée."
     ],
     "explanation": "Par application directe de la contraposée logique : si la règle impose « Marché > 100 000 € ⇒ Avis », alors l'absence d'avis implique nécessairement que le marché ne dépasse pas ce seuil réglementaire sous réserve de conformité.",
     "sourceType": "original_ai_assisted",
@@ -532,17 +532,17 @@
     "prompt": "Quelle décision applique rigoureusement la consigne de conservation ?",
     "stimulus": "Les procès-verbaux de séance sont versés aux archives définitives après un délai de 5 ans en archives courantes. Les brouillons préparatoires doivent être détruits immédiatement après adoption du texte définitif.",
     "options": [
-      "Détruire les brouillons préparatoires dès l'adoption du texte définitif.",
       "Conserver les brouillons préparatoires pendant une durée minimale de 5 ans.",
-      "Verser les brouillons préparatoires aux archives définitives avec le procès-verbal.",
-      "Transférer les procès-verbaux aux archives définitives dès leur adoption."
+      "Détruire les brouillons préparatoires dès l'adoption du texte définitif.",
+      "Transférer les procès-verbaux aux archives définitives dès leur adoption.",
+      "Verser les brouillons préparatoires aux archives définitives avec le procès-verbal."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : respecte scrupuleusement l'obligation de destruction immédiate des brouillons.",
       "Confond la règle des brouillons avec le délai de conservation des procès-verbaux.",
-      "Viole l'obligation de destruction en conservant des documents préparatoires.",
-      "Viole le délai intermédiaire de 5 ans imposé pour les procès-verbaux."
+      "Correct : respecte scrupuleusement l'obligation de destruction immédiate des brouillons.",
+      "Viole le délai intermédiaire de 5 ans imposé pour les procès-verbaux.",
+      "Viole l'obligation de destruction en conservant des documents préparatoires."
     ],
     "explanation": "La consigne distingue formellement les procès-verbaux (conservés 5 ans en archives courantes avant versement) et les brouillons préparatoires (destruction immédiate obligatoire dès adoption).",
     "sourceType": "original_ai_assisted",
@@ -563,17 +563,17 @@
     "prompt": "Quelle déduction logique est nécessairement vraie ?",
     "stimulus": "Aucun document non signé n'est exécutoire. Certains documents de la division R sont exécutoires.",
     "options": [
-      "Certains documents de la division R sont signés.",
-      "Tous les documents de la division R sont signés.",
       "Aucun document de la division R n'est signé.",
-      "Tous les documents signés sont exécutoires."
+      "Certains documents de la division R sont signés.",
+      "Tous les documents signés sont exécutoires.",
+      "Tous les documents de la division R sont signés."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : les documents exécutoires étant obligatoirement signés, ceux de la division R qui sont exécutoires sont signés.",
-      "Généralisation abusive : seuls certains documents de R sont exécutoires.",
       "Contredit directement la prémisse affirmant que certains documents de R sont exécutoires.",
-      "Confond condition nécessaire (signature requise) et condition suffisante."
+      "Correct : les documents exécutoires étant obligatoirement signés, ceux de la division R qui sont exécutoires sont signés.",
+      "Confond condition nécessaire (signature requise) et condition suffisante.",
+      "Généralisation abusive : seuls certains documents de R sont exécutoires."
     ],
     "explanation": "Si aucun document non signé n'est exécutoire, tout document exécutoire est obligatoirement signé. Comme certains documents de la division R sont exécutoires, ils sont donc nécessairement signés.",
     "sourceType": "original_ai_assisted",
@@ -594,17 +594,17 @@
     "prompt": "Quelle proposition énonce un fait objectif et non une appréciation qualitative ?",
     "stimulus": "La refonte du portail citoyen a permis de diviser par deux le délai de délivrance des extraits de casier judiciaire, passant de 6 jours à 3 jours ouvrés, pour le plus grand confort des administrés.",
     "options": [
-      "Le délai de délivrance est passé de 6 jours à 3 jours ouvrés.",
-      "Le confort des administrés est grandement amélioré par la réforme.",
       "La nouvelle procédure est la plus efficace de l'administration.",
-      "Le portail citoyen offre une ergonomie particulièrement réussie."
+      "Le portail citoyen offre une ergonomie particulièrement réussie.",
+      "Le délai de délivrance est passé de 6 jours à 3 jours ouvrés.",
+      "Le confort des administrés est grandement amélioré par la réforme."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : mesure chiffrée factuelle, vérifiable et exempte de jugement de valeur.",
-      "Appréciation qualitative subjective sur le ressenti des usagers.",
       "Jugement de valeur comparatif sans base quantitative fournie.",
-      "Opinion esthétique et ergonomique subjective."
+      "Opinion esthétique et ergonomique subjective.",
+      "Correct : mesure chiffrée factuelle, vérifiable et exempte de jugement de valeur.",
+      "Appréciation qualitative subjective sur le ressenti des usagers."
     ],
     "explanation": "Le passage de 6 à 3 jours ouvrés est une donnée temporelle chiffrée, mesurable et vérifiable, contrairement aux mentions sur le confort ou la qualité ergonomique.",
     "sourceType": "original_ai_assisted",
@@ -625,17 +625,17 @@
     "prompt": "Quelle proposition résume le plus fidèlement le dispositif décrit ?",
     "stimulus": "Les demandes de subvention sont recevables du 1er janvier au 31 mars. Toute demande déposée hors délai est déclarée irrecevable sans examen au fond, sauf cas de force majeure dûment attesté par une autorité publique compétente.",
     "options": [
-      "Les demandes hors délai sont irrecevables, sauf force majeure attestée par une autorité.",
       "Toute demande déposée après le 31 mars est définitivement rejetée sans exception possible.",
+      "Une attestation sur l'honneur suffit pour justifier un dépôt de dossier tardif.",
       "Les demandes déposées entre janvier et mars font l'objet d'une acceptation automatique.",
-      "Une attestation sur l'honneur suffit pour justifier un dépôt de dossier tardif."
+      "Les demandes hors délai sont irrecevables, sauf force majeure attestée par une autorité."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : reprend fidèlement le principe d'irrecevabilité et l'unique exception d'autorité.",
       "Ignore l'exception expresse de force majeure prévue par le texte.",
+      "Contredit l'exigence d'une attestation délivrée par une autorité publique compétente.",
       "Confond la recevabilité de la demande avec son acceptation au fond.",
-      "Contredit l'exigence d'une attestation délivrée par une autorité publique compétente."
+      "Correct : reprend fidèlement le principe d'irrecevabilité et l'unique exception d'autorité."
     ],
     "explanation": "La synthèse exacte préserve la règle générale (irrecevabilité des dossiers tardifs) ainsi que sa condition dérogatoire stricte (force majeure établie par une autorité publique).",
     "sourceType": "original_ai_assisted",
@@ -687,15 +687,15 @@
     "options": [
       "Certaines personnes ayant un droit d'accès ne sont pas stagiaires.",
       "Tous les stagiaires sont interdits d'accès aux locaux professionnels.",
-      "Tous les inspecteurs assermentés sont d'anciens stagiaires.",
-      "L'assermentation est accordée à tout agent après deux ans de service."
+      "L'assermentation est accordée à tout agent après deux ans de service.",
+      "Tous les inspecteurs assermentés sont d'anciens stagiaires."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : les inspecteurs assermentés disposent du droit d'accès et, n'étant pas stagiaires, constituent des personnes autorisées non-stagiaires.",
       "Le texte ne dit pas que les stagiaires ne peuvent pas avoir accès pour un autre motif.",
-      "Spéculation sur l'historique de carrière absente du texte.",
-      "Règle temporelle totalement inexistante dans les prémisses."
+      "Règle temporelle totalement inexistante dans les prémisses.",
+      "Spéculation sur l'historique de carrière absente du texte."
     ],
     "explanation": "Les inspecteurs assermentés ont un droit d'accès et aucun stagiaire n'est assermenté. Par conséquent, les inspecteurs assermentés représentent au moins une catégorie de personnes dotées d'un droit d'accès qui ne sont pas des stagiaires.",
     "sourceType": "original_ai_assisted",
@@ -716,17 +716,17 @@
     "prompt": "Quel dossier remplit scrupuleusement toutes les conditions d'éligibilité ?",
     "stimulus": "Pour être éligible au fonds d'innovation, un projet doit réunir trois critères cumulatifs : être porté par au moins deux services distincts, avoir une durée d'exécution inférieure à 12 mois, et ne pas dépasser un budget total de 50 000 euros.",
     "options": [
-      "Projet A : 2 services, durée de 9 mois, budget de 45 000 euros.",
       "Projet B : 1 service, durée de 6 mois, budget de 30 000 euros.",
-      "Projet C : 3 services, durée de 14 mois, budget de 48 000 euros.",
-      "Projet D : 2 services, durée de 10 mois, budget de 55 000 euros."
+      "Projet D : 2 services, durée de 10 mois, budget de 55 000 euros.",
+      "Projet A : 2 services, durée de 9 mois, budget de 45 000 euros.",
+      "Projet C : 3 services, durée de 14 mois, budget de 48 000 euros."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 2 services (≥ 2), 9 mois (< 12) et 45 000 € (≤ 50 000 €) valident les 3 critères cumulatifs.",
       "Échoue sur le nombre de services (1 seul service au lieu de deux au minimum).",
-      "Échoue sur la durée d'exécution (14 mois dépasse la limite stricte de 12 mois).",
-      "Échoue sur le budget prévisionnel (55 000 € dépasse le plafond de 50 000 €)."
+      "Échoue sur le budget prévisionnel (55 000 € dépasse le plafond de 50 000 €).",
+      "Correct : 2 services (≥ 2), 9 mois (< 12) et 45 000 € (≤ 50 000 €) valident les 3 critères cumulatifs.",
+      "Échoue sur la durée d'exécution (14 mois dépasse la limite stricte de 12 mois)."
     ],
     "explanation": "Seul le projet A remplit simultanément les trois conditions cumulatives imposées par le texte : au moins deux services (2), durée inférieure à 12 mois (9 mois), et budget n'excédant pas 50 000 euros (45 000 euros).",
     "sourceType": "original_ai_assisted",
@@ -747,17 +747,17 @@
     "prompt": "Quelle proposition reformule le texte sans altérer son sens logique ?",
     "stimulus": "Le renouvellement d'une autorisation d'exploitation n'est accordé que si l'exploitant a transmis son bilan environnemental annuel avant le 1er décembre.",
     "options": [
+      "Le renouvellement de l'autorisation d'exploitation dispense du bilan environnemental.",
       "La transmission du bilan avant le 1er décembre est une condition nécessaire au renouvellement.",
       "La transmission du bilan avant le 1er décembre garantit automatiquement le renouvellement.",
-      "L'exploitant qui transmet son bilan le 5 décembre obtiendra une dérogation de plein droit.",
-      "Le renouvellement de l'autorisation d'exploitation dispense du bilan environnemental."
+      "L'exploitant qui transmet son bilan le 5 décembre obtiendra une dérogation de plein droit."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Contredit l'obligation légale de transmission du bilan.",
       "Correct : la locution « n'est accordé que si » définit strictement une condition nécessaire.",
       "Confond condition nécessaire et condition suffisante d'approbation.",
-      "Contredit formellement l'échéance impérative du 1er décembre.",
-      "Contredit l'obligation légale de transmission du bilan."
+      "Contredit formellement l'échéance impérative du 1er décembre."
     ],
     "explanation": "La formulation « n'est accordé que si » signifie que sans ce dépôt préalable avant le 1er décembre, le renouvellement est impossible. Cela en fait une condition sine qua non (nécessaire), mais pas forcément suffisante.",
     "sourceType": "original_ai_assisted",
@@ -778,48 +778,19 @@
     "prompt": "Quelle conclusion est absolument certaine ?",
     "stimulus": "Toutes les réunions de crise ont lieu dans la salle rouge. La réunion de ce matin a lieu dans la salle bleue.",
     "options": [
-      "La réunion de ce matin n'est pas une réunion de crise.",
       "La réunion de ce matin est un simple point d'information interne.",
+      "La réunion de ce matin n'est pas une réunion de crise.",
       "La salle rouge était indisponible ce matin pour travaux.",
       "Aucune réunion n'a eu lieu dans la salle rouge ce matin."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : par contraposition (si réunion de crise alors salle rouge ; or salle bleue, donc pas de crise).",
       "Spéculation sur la nature exacte de la réunion non étayée par le texte.",
+      "Correct : par contraposition (si réunion de crise alors salle rouge ; or salle bleue, donc pas de crise).",
       "Hypothèse matérielle non mentionnée dans les prémisses.",
       "Rien ne permet d'affirmer que la salle rouge est restée inoccupée."
     ],
     "explanation": "Si toute réunion de crise se déroule obligatoirement dans la salle rouge, une réunion tenue dans la salle bleue ne peut en aucun cas être une réunion de crise (contraposition formelle).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "verbal-tfcs-027",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "tfcs",
-    "skill": "vrai-faux-indetermine",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Affirmation : L'ensemble des fonctionnaires du ministère a suivi la session de sensibilisation à la cybersécurité.",
-    "stimulus": "La participation à la session de sensibilisation à la cybersécurité était obligatoire pour les agents du service informatique. Certains agents d'autres services y ont également assisté de manière volontaire.",
-    "options": [
-      "Vrai",
-      "Faux",
-      "On ne peut pas savoir"
-    ],
-    "correctIndex": 1,
-    "optionRationales": [
-      "Affirmer que tous ont suivi la session contredit le périmètre restreint d'obligation du texte.",
-      "Correct : l'obligation ne visait que le service informatique et seuls certains agents des autres services ont participé, ce qui exclut une participation universelle.",
-      "Le texte permet d'affirmer avec certitude que la totalité n'y a pas participé."
-    ],
-    "explanation": "Le texte stipule que la session n'était obligatoire que pour le service informatique et que seuls certains agents des autres départements étaient présents. L'affirmation selon laquelle « l'ensemble » des fonctionnaires y a assisté est donc fausse.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -838,17 +809,17 @@
     "prompt": "Quelle modalité de transmission est strictement conforme à la directive ?",
     "stimulus": "Les réclamations relatives à la taxe foncière doivent être transmises exclusivement par pli recommandé avec avis de réception ou déposées contre récépissé au secrétariat communal.",
     "options": [
-      "Envoi postal par lettre recommandée avec avis de réception.",
+      "Appel téléphonique enregistré auprès de l'agent de permanence.",
       "Transmission par courrier électronique avec confirmation de lecture.",
-      "Dépôt d'une lettre simple dans la boîte aux lettres de la commune.",
-      "Appel téléphonique enregistré auprès de l'agent de permanence."
+      "Envoi postal par lettre recommandée avec avis de réception.",
+      "Dépôt d'une lettre simple dans la boîte aux lettres de la commune."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : mode d'envoi expressément prévu et autorisé par la directive.",
+      "La voie orale par téléphone est dépourvue de toute valeur probante au regard de la règle.",
       "L'envoi électronique n'est pas autorisé par l'adverbe d'exclusivité « exclusivement ».",
-      "Le dépôt sans récépissé ne remplit pas l'exigence formelle requise.",
-      "La voie orale par téléphone est dépourvue de toute valeur probante au regard de la règle."
+      "Correct : mode d'envoi expressément prévu et autorisé par la directive.",
+      "Le dépôt sans récépissé ne remplit pas l'exigence formelle requise."
     ],
     "explanation": "La consigne restreint les voies de recours admissibles à deux modalités exclusives : le pli recommandé avec accusé de réception ou le dépôt physique contre récépissé. L'envoi en recommandé AR est donc conforme.",
     "sourceType": "original_ai_assisted",
@@ -870,16 +841,16 @@
     "stimulus": "Au cours de l'année écoulée, l'introduction d'un outil d'indexation automatisé a permis aux agents d'instruire 1 800 requêtes contre 1 200 l'année précédente, sans augmentation d'effectif.",
     "options": [
       "Les agents éprouvent une plus grande satisfaction dans leur quotidien professionnel.",
-      "Le nombre total de requêtes instruites a progressé de 50 % par rapport à l'année précédente.",
       "L'effectif du service est demeuré stable sur les deux années comparées.",
-      "La productivité moyenne par agent a augmenté au cours de l'année écoulée."
+      "La productivité moyenne par agent a augmenté au cours de l'année écoulée.",
+      "Le nombre total de requêtes instruites a progressé de 50 % par rapport à l'année précédente."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le passage renseigne des données d'activité et d'effectif, mais aucune indication sur la satisfaction des agents.",
-      "Démontré mathématiquement : (1 800 - 1 200) / 1 200 = 600 / 1 200 = +50 %.",
       "Démontré textuellement par la mention « sans augmentation d'effectif ».",
-      "Démontré par la hausse de volume à effectif inchangé."
+      "Démontré par la hausse de volume à effectif inchangé.",
+      "Démontré mathématiquement : (1 800 - 1 200) / 1 200 = 600 / 1 200 = +50 %."
     ],
     "explanation": "Le texte ne fournit que des indicateurs quantitatifs objectifs (volume de dossiers et stabilité des ressources humaines). Prêter aux agents une satisfaction accrue relève d'une extrapolation subjective non garantie.",
     "sourceType": "original_ai_assisted",
@@ -901,16 +872,16 @@
     "stimulus": "Tout fonctionnaire est tenu au secret professionnel pour les faits dont il a connaissance dans l'exercice de ses fonctions. Il ne peut en être délié que par une décision expresse du ministre de tutelle ou dans les cas expressément prescrits par la loi pénale.",
     "options": [
       "Le secret s'impose à tout fonctionnaire, avec pour seules dérogations la décision ministérielle ou la loi pénale.",
+      "Le secret professionnel ne s'applique plus dès lors que l'agent quitte définitivement son service.",
       "Le fonctionnaire peut librement divulguer des informations réservées à ses collègues proches.",
-      "La levée du secret professionnel est accordée de plein droit sur simple demande d'un citoyen.",
-      "Le secret professionnel ne s'applique plus dès lors que l'agent quitte définitivement son service."
+      "La levée du secret professionnel est accordée de plein droit sur simple demande d'un citoyen."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : résume fidèlement le champ universel de l'obligation et les deux seules exceptions limitatives.",
+      "Extrapolation injustifiée : l'obligation demeure attachée aux faits connus en exercice.",
       "Viole l'obligation de secret qui ne tolère aucun partage informel entre collègues.",
-      "Contredit le principe d'interdiction et les conditions strictes de levée.",
-      "Extrapolation injustifiée : l'obligation demeure attachée aux faits connus en exercice."
+      "Contredit le principe d'interdiction et les conditions strictes de levée."
     ],
     "explanation": "La synthèse restitue fidèlement les deux composantes du texte : le caractère général de l'obligation de secret professionnel et les deux seuls cas d'exception limitativement énumérés (décision du ministre ou prescription de la loi pénale).",
     "sourceType": "original_ai_assisted",
@@ -931,17 +902,17 @@
     "prompt": "Quelle déduction logique est incontestable ?",
     "stimulus": "Tous les lauréats de l'épreuve A1 possèdent un diplôme de niveau master ou équivalent. Marc est lauréat de l'épreuve A1.",
     "options": [
-      "Marc possède un diplôme de niveau master ou équivalent.",
-      "Marc est déjà titularisé dans son grade de recrutement.",
       "Marc a obtenu la note maximale lors de l'épreuve écrite.",
-      "Tous les titulaires d'un master réussissent l'épreuve A1."
+      "Marc possède un diplôme de niveau master ou équivalent.",
+      "Tous les titulaires d'un master réussissent l'épreuve A1.",
+      "Marc est déjà titularisé dans son grade de recrutement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : déduction directe par syllogisme (Tout A est B ; Marc est A ; donc Marc est B).",
-      "Confusion entre le statut de lauréat et la titularisation ultérieure.",
       "Spéculation sur la note obtenue sans base dans l'énoncé.",
-      "Réciproque erronée (affirmer que tout master réussit inverse l'implication logique)."
+      "Correct : déduction directe par syllogisme (Tout A est B ; Marc est A ; donc Marc est B).",
+      "Réciproque erronée (affirmer que tout master réussit inverse l'implication logique).",
+      "Confusion entre le statut de lauréat et la titularisation ultérieure."
     ],
     "explanation": "Puisque l'ensemble des lauréats possède un diplôme de niveau master ou équivalent et que Marc appartient à cet ensemble, Marc détient nécessairement ce niveau de qualification.",
     "sourceType": "original_ai_assisted",
@@ -962,48 +933,19 @@
     "prompt": "Quelle suite convient de donner selon la directive interne ?",
     "stimulus": "En cas d'absence imprévue pour raison de santé, l'agent doit en informer sa hiérarchie dans un délai de 2 heures suivant sa prise de service théorique, et transmettre un certificat médical sous 48 heures ouvrables.",
     "options": [
-      "Prévenir sa hiérarchie sous 2 heures et envoyer le certificat médical sous 48 heures ouvrables.",
       "Attendre 48 heures ouvrables avant d'établir le premier contact avec son service.",
+      "Prévenir sa hiérarchie uniquement après avoir obtenu son certificat médical.",
       "Déposer un certificat médical sans obligation préalable d'information hiérarchique.",
-      "Prévenir sa hiérarchie uniquement après avoir obtenu son certificat médical."
+      "Prévenir sa hiérarchie sous 2 heures et envoyer le certificat médical sous 48 heures ouvrables."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : respecte scrupuleusement les deux démarches et leurs délais respectifs distincts.",
       "Omet l'obligation de premier signalement dans les 2 heures.",
+      "Inverse la chronologie des obligations fixée par la directive.",
       "Viole l'exigence d'information immédiate sous 2 heures.",
-      "Inverse la chronologie des obligations fixée par la directive."
+      "Correct : respecte scrupuleusement les deux démarches et leurs délais respectifs distincts."
     ],
     "explanation": "La règle cumule deux obligations temporelles précises : un avertissement hiérarchique rapide (sous 2 heures) puis la formalisation justificative par certificat (sous 48 heures ouvrables).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "verbal-tfcs-033",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "tfcs",
-    "skill": "vrai-faux-indetermine",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Affirmation : Le dossier de subvention n° 404 sera automatiquement rejeté.",
-    "stimulus": "Les dossiers de subvention incomplets sont retournés au demandeur avec un délai de régularisation de 15 jours calendaires. Le dossier n° 404 déposé par l'association E est incomplet.",
-    "options": [
-      "Vrai",
-      "Faux",
-      "On ne peut pas savoir"
-    ],
-    "correctIndex": 1,
-    "optionRationales": [
-      "Le texte ne prévoit pas de rejet automatique, mais un retour pour régularisation sous 15 jours.",
-      "Correct : le dossier incomplet n'est pas rejeté d'emblée, il bénéficie d'une procédure de régularisation.",
-      "La règle de traitement des dossiers incomplets est clairement et explicitement définie dans le texte."
-    ],
-    "explanation": "Le texte stipule expressément que les dossiers incomplets ne sont pas rejetés directement, mais renvoyés pour régularisation sous 15 jours. L'affirmation d'un rejet automatique est donc fausse.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -1023,15 +965,15 @@
     "stimulus": "Seuls les agents titulaires d'une habilitation de sécurité spéciale peuvent consulter les documents classifiés de niveau 3.",
     "options": [
       "L'habilitation de sécurité spéciale est indispensable pour consulter ces documents.",
-      "Tout agent titulaire de l'habilitation spéciale a obligation de consulter ces documents.",
       "Les agents stagiaires peuvent consulter ces documents s'ils sont accompagnés d'un tuteur.",
+      "Tout agent titulaire de l'habilitation spéciale a obligation de consulter ces documents.",
       "L'habilitation de sécurité spéciale dispense de tout contrôle de sécurité ultérieur."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : la restriction « seuls les agents titulaires » fait de l'habilitation une condition sine qua non.",
-      "Confond autorisation d'accès avec obligation professionnelle de consultation.",
       "Extrapole une exception de tutorat non prévue par le texte.",
+      "Confond autorisation d'accès avec obligation professionnelle de consultation.",
       "Rien n'indique que l'habilitation dispense de respecter les règles de sécurité."
     ],
     "explanation": "La locution restrictive « seuls les agents... peuvent » établit que détenir l'habilitation constitue une condition nécessaire et incontournable (indispensable) pour consulter les documents classifiés.",
@@ -1053,15 +995,15 @@
     "prompt": "Quelle conclusion découle avec certitude des éléments fournis ?",
     "stimulus": "Certains membres de la commission d'évaluation sont experts-comptables. Tous les experts-comptables sont soumis à un code de déontologie financière.",
     "options": [
-      "Certains membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
       "Tous les membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
+      "Certains membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
       "Aucun membre de la commission d'évaluation n'est expert-comptable.",
       "La commission d'évaluation est composée exclusivement d'experts-comptables."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : les membres qui sont experts-comptables étant tous soumis au code, certains membres le sont obligatoirement.",
       "Généralisation abusive à l'ensemble des membres de la commission.",
+      "Correct : les membres qui sont experts-comptables étant tous soumis au code, certains membres le sont obligatoirement.",
       "Contredit formellement la première prémisse.",
       "L'adjectif « certains » interdit d'affirmer l'exclusivité de la composition."
     ],
@@ -1071,37 +1013,6 @@
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "verbal-text-036",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "comprehension",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Selon l'extrait de cette circulaire, quelle condition ouvre droit à l'indemnité forfaitaire de déplacement ?",
-    "stimulus": "Circulaire relative aux frais professionnels : Les agents se déplaçant pour les besoins du service hors de leur résidence administrative sur une distance supérieure à vingt kilomètres bénéficient d'une indemnité forfaitaire de repas, à la condition expresse que la mission englobe l'intégralité du créneau compris entre midi et quatorze heures.",
-    "options": [
-      "Parcourir plus de vingt kilomètres et couvrir le créneau méridien.",
-      "Effectuer un trajet supérieur à dix kilomètres hors du bureau usuel.",
-      "Justifier d'une absence professionnelle supérieure à quatre heures.",
-      "Présenter les factures réelles acquittées auprès des restaurants."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le texte exige cumulativement plus de 20 km et la couverture de 12h00 à 14h00.",
-      "Le seuil de dix kilomètres est inférieur aux vingt kilomètres prescrits.",
-      "La durée brute de quatre heures n'est pas mentionnée dans la circulaire.",
-      "L'indemnité est forfaitaire et ne requiert pas de factures réelles de repas."
-    ],
-    "explanation": "Le texte pose deux conditions cumulatives expresses : une distance supérieure à 20 km hors de la résidence administrative et une mission couvrant la totalité du créneau de 12h00 à 14h00.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
   },
   {
     "id": "verbal-text-037",
@@ -1115,17 +1026,17 @@
     "prompt": "Que peut-on déduire avec certitude au sujet des demandes de subvention déposées après le 31 octobre ?",
     "stimulus": "Règlement des aides aux communes : Tout dossier de subvention d'infrastructure doit être réceptionné avant le 31 octobre de l'année civile en cours. Les dossiers parvenus postérieurement sont automatiquement reportés à l'exercice budgétaire suivant, sans qu'un nouvel enregistrement ne soit exigé des autorités communales requérantes.",
     "options": [
+      "Elles bénéficient d'un traitement dérogatoire prioritaire immédiat.",
       "Elles sont examinées au titre du budget de l'exercice ultérieur.",
-      "Elles sont définitivement rejetées pour forclusion administrative.",
       "Elles nécessitent le dépôt d'un formulaire modificatif complet.",
-      "Elles bénéficient d'un traitement dérogatoire prioritaire immédiat."
+      "Elles sont définitivement rejetées pour forclusion administrative."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte ne prévoit aucun traitement prioritaire dérogatoire.",
       "Correct : le texte stipule le report automatique à l'exercice budgétaire suivant sans réenregistrement.",
-      "Le texte écarte le rejet définitif en prévoyant un report automatique.",
       "Aucun nouvel enregistrement ni formulaire n'est exigé.",
-      "Le texte ne prévoit aucun traitement prioritaire dérogatoire."
+      "Le texte écarte le rejet définitif en prévoyant un report automatique."
     ],
     "explanation": "Le règlement indique clairement que les dossiers reçus après le 31 octobre sont automatiquement reportés à l'exercice suivant sans formalité supplémentaire.",
     "sourceType": "original_ai_assisted",
@@ -1146,17 +1057,17 @@
     "prompt": "Sur quel argument repose la recommandation du comité d'audit dans ce rapport ?",
     "stimulus": "Rapport d'évaluation de la politique numérique : Bien que l'adoption des outils collaboratifs ait progressé de 40 % chez les cadres, le taux d'incident lié au partage inapproprié de données a doublé. Dès lors, le comité recommande d'instaurer des contrôles d'accès stricts avant toute nouvelle extension des licences logicielles.",
     "options": [
+      "Les agents refusent d'utiliser les nouvelles applications informatiques.",
       "L'augmentation des incidents de partage commande des verrous préalables.",
       "Le coût financier des licences logicielles est jugé excessif par l'audit.",
-      "Le déploiement des outils collaboratifs a échoué auprès de l'encadrement.",
-      "Les agents refusent d'utiliser les nouvelles applications informatiques."
+      "Le déploiement des outils collaboratifs a échoué auprès de l'encadrement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le rapport atteste d'une progression d'usage et non d'un refus des agents.",
       "Correct : le comité justifie la limitation par le doublement des incidents de partage.",
       "Le texte ne mentionne aucun argument relatif au coût financier des licences.",
-      "L'adoption a au contraire progressé de 40 %, ce n'est donc pas un échec d'adhésion.",
-      "Le rapport atteste d'une progression d'usage et non d'un refus des agents."
+      "L'adoption a au contraire progressé de 40 %, ce n'est donc pas un échec d'adhésion."
     ],
     "explanation": "Le comité motive sa recommandation par le fait que les incidents de sécurité ont doublé parallèlement à l'usage, nécessitant un encadrement préalable.",
     "sourceType": "original_ai_assisted",
@@ -1177,17 +1088,17 @@
     "prompt": "Quel énoncé résume fidèlement le principe général exprimé dans cette note d'orientation ?",
     "stimulus": "Note ministérielle sur l'accueil des usagers : La modernisation des services publics repose sur une double exigence d'accessibilité numérique et de maintien d'un guichet physique de proximité. L'objectif est d'éviter l'exclusion des populations non connectées tout en fluidifiant les démarches courantes pour la majorité des citoyens.",
     "options": [
-      "Conjuguer le numérique et le guichet physique pour prévenir la fracture.",
-      "Supprimer progressivement tous les accueils physiques au profit du web.",
       "Réserver les guichets physiques aux seules personnes âgées de la cité.",
-      "Accroître les démarches numériques sans considération des populations."
+      "Conjuguer le numérique et le guichet physique pour prévenir la fracture.",
+      "Accroître les démarches numériques sans considération des populations.",
+      "Supprimer progressivement tous les accueils physiques au profit du web."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : le texte insiste sur la complémentarité numérique/physique pour éviter l'exclusion.",
-      "Le texte prône le maintien du guichet physique, non sa suppression progressive.",
       "Le texte ne limite pas l'accès aux seules personnes âgées mais à tout public non connecté.",
-      "L'orientation vise explicitement à éviter l'exclusion des usagers."
+      "Correct : le texte insiste sur la complémentarité numérique/physique pour éviter l'exclusion.",
+      "L'orientation vise explicitement à éviter l'exclusion des usagers.",
+      "Le texte prône le maintien du guichet physique, non sa suppression progressive."
     ],
     "explanation": "L'extrait synthétise l'équilibre entre transition numérique et préservation de l'accueil physique afin d'assurer l'universalité d'accès aux services.",
     "sourceType": "original_ai_assisted",
@@ -1208,17 +1119,17 @@
     "prompt": "Quelle proposition complète logiquement le paragraphe tout en respectant l'argumentation ?",
     "stimulus": "Guide de passation des marchés publics : La définition préalable des besoins par le pouvoir adjudicateur constitue la clé de voûte de toute consultation réussie. Une description imprécise des prestations induit des offres disparates et difficilement comparables. Par conséquent, [...]",
     "options": [
-      "un cahier des charges rigoureux limite les risques de litiges ultérieurs.",
+      "les soumissionnaires doivent définir eux-mêmes les attendus du marché.",
       "le choix du prix le plus bas dispense de formaliser les attentes de fond.",
-      "la phase d'analyse des offres peut corriger tout défaut de cadrage amont.",
-      "les soumissionnaires doivent définir eux-mêmes les attendus du marché."
+      "un cahier des charges rigoureux limite les risques de litiges ultérieurs.",
+      "la phase d'analyse des offres peut corriger tout défaut de cadrage amont."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : conclut logiquement sur la nécessité d'un cahier des charges précis.",
+      "Il appartient au pouvoir adjudicateur et non aux candidats de définir le besoin.",
       "Le prix bas ne compense pas l'absence de définition claire des prestations.",
-      "Le texte indique que l'imprécision initiale rend la comparaison très difficile.",
-      "Il appartient au pouvoir adjudicateur et non aux candidats de définir le besoin."
+      "Correct : conclut logiquement sur la nécessité d'un cahier des charges précis.",
+      "Le texte indique que l'imprécision initiale rend la comparaison très difficile."
     ],
     "explanation": "La logique du paragraphe montre que le manque de précision nuit à la passation ; la conclusion naturelle est qu'une rédaction rigoureuse du cahier des charges prévient ces écueils.",
     "sourceType": "original_ai_assisted",
@@ -1239,17 +1150,17 @@
     "prompt": "D'après les dispositions du texte, que se passe-t-il si un fonctionnaire stagiaire ne valide pas son examen de fin de stage ?",
     "stimulus": "Statut des fonctionnaires : Le fonctionnaire stagiaire ayant accompli une année de service accompli subit un examen pratique d'aptitude. En cas d'échec constaté par le jury, le stage peut être exceptionnellement prorogé pour une période maximale de six mois. Si l'insuffisance persiste au terme de cette prorogation, le licenciement est prononcé de plein droit.",
     "options": [
-      "Le stage peut faire l'objet d'une prorogation maximale de six mois.",
       "La titularisation immédiate est accordée avec retenue indiciaire.",
       "Le licenciement intervient sans aucune possibilité de seconde chance.",
-      "L'agent est reclassé d'office dans un corps d'emploi subalterne."
+      "L'agent est reclassé d'office dans un corps d'emploi subalterne.",
+      "Le stage peut faire l'objet d'une prorogation maximale de six mois."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le statut prévoit une prorogation exceptionnelle pouvant atteindre six mois.",
       "L'échec exclut formellement la titularisation immédiate.",
       "Le licenciement n'intervient qu'au terme de la période de prorogation si l'échec persiste.",
-      "Le texte ne prévoit pas de reclassement d'office en cas de premier échec."
+      "Le texte ne prévoit pas de reclassement d'office en cas de premier échec.",
+      "Correct : le statut prévoit une prorogation exceptionnelle pouvant atteindre six mois."
     ],
     "explanation": "Le texte précise qu'en cas d'échec initial, une prorogation maximale de six mois peut être accordée avant tout licenciement pour insuffisance.",
     "sourceType": "original_ai_assisted",
@@ -1270,17 +1181,17 @@
     "prompt": "Quelle déduction relative à la conservation des archives découle directement de ce protocole ?",
     "stimulus": "Protocole d'archivage administratif : Les dossiers de recours contentieux sont conservés au greffe durant dix ans à compter de la décision définitive. À l'issue de cette période d'utilité administrative, seuls les dossiers présentant un intérêt jurisprudentiel remarquable sont versés aux archives nationales, les autres faisant l'objet d'une élimination réglementée.",
     "options": [
+      "Aucun recours contentieux ne peut être éliminé avant un demi-siècle.",
       "Les dossiers ordinaires sont détruits au terme du délai de dix ans.",
       "L'ensemble des dossiers contentieux est préservé aux archives nationales.",
-      "Les pièces de procédure sont éliminées dès le prononcé du jugement.",
-      "Aucun recours contentieux ne peut être éliminé avant un demi-siècle."
+      "Les pièces de procédure sont éliminées dès le prononcé du jugement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte fixe la durée d'utilité à dix ans, non à cinquante ans.",
       "Correct : seuls les dossiers remarquables sont versés aux archives, les autres étant éliminés.",
       "Le versement aux archives nationales est restreint aux dossiers présentant un intérêt remarquable.",
-      "Les dossiers sont conservés 10 ans au greffe avant toute décision de destruction.",
-      "Le texte fixe la durée d'utilité à dix ans, non à cinquante ans."
+      "Les dossiers sont conservés 10 ans au greffe avant toute décision de destruction."
     ],
     "explanation": "Après 10 ans, le texte opère un tri : les dossiers sans intérêt remarquable font l'objet d'une élimination réglementée.",
     "sourceType": "original_ai_assisted",
@@ -1333,16 +1244,16 @@
     "stimulus": "Directive sur le temps de travail : Le recours aux heures supplémentaires présente un caractère exceptionnel dicté par la continuité du service public. Aucune heure supplémentaire ne peut ouvrir droit à rémunération ou repos compensateur sans l'accord écrit préalable du chef de département, sollicité au moins quarante-huit heures avant l'intervention programmée.",
     "options": [
       "Une autorisation écrite préalable obtenue au moins 48 heures avant.",
+      "Une concertation syndicale organisée dans le mois civil précédent.",
       "Une validation orale du délégué du personnel intervenue la veille.",
-      "Une simple déclaration a posteriori lors de la saisie des présences.",
-      "Une concertation syndicale organisée dans le mois civil précédent."
+      "Une simple déclaration a posteriori lors de la saisie des présences."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le texte stipule l'accord écrit préalable sollicité au moins 48h en amont.",
+      "Le texte ne fait pas mention d'une concertation syndicale mensuelle.",
       "L'accord doit être écrit et émaner du chef de département, non oral d'un délégué.",
-      "La déclaration a posteriori est expressément écartée par l'exigence préalable.",
-      "Le texte ne fait pas mention d'une concertation syndicale mensuelle."
+      "La déclaration a posteriori est expressément écartée par l'exigence préalable."
     ],
     "explanation": "La condition formelle impérative est l'accord écrit préalable du chef de département avec un préavis d'au moins 48 heures.",
     "sourceType": "original_ai_assisted",
@@ -1363,17 +1274,17 @@
     "prompt": "Quel est l'objet principal du dispositif décrit dans cet avis ?",
     "stimulus": "Avis relatif au guichet d'écoute interne : Afin de préserver la santé psychologique au travail, une cellule d'écoute pluridisciplinaire externe a été mise en place. Elle offre à chaque agent qui en ressent le besoin un accompagnement neutre et protégé en dehors de toute voie hiérarchique.",
     "options": [
+      "Sanctionner les manquements managériaux constatés dans les services.",
       "Offrir un soutien psychologique neutre et extérieur à la hiérarchie.",
-      "Remplacer les procédures disciplinaires par une médiation amiable.",
       "Évaluer annuellement l'état de santé physique de tous les fonctionnaires.",
-      "Sanctionner les manquements managériaux constatés dans les services."
+      "Remplacer les procédures disciplinaires par une médiation amiable."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La cellule n'a aucun pouvoir disciplinaire ni de sanction managériale.",
       "Correct : le but est un soutien psychologique neutre, réservé et externe.",
-      "Le dispositif concerne la santé psychologique et non les sanctions disciplinaires.",
       "Il s'agit d'un accompagnement volontaire et non d'une évaluation médicale obligatoire.",
-      "La cellule n'a aucun pouvoir disciplinaire ni de sanction managériale."
+      "Le dispositif concerne la santé psychologique et non les sanctions disciplinaires."
     ],
     "explanation": "Le texte résume le rôle de la cellule : fournir un espace d'écoute et d'accompagnement psychologique indépendant de la ligne hiérarchique.",
     "sourceType": "original_ai_assisted",
@@ -1394,16 +1305,16 @@
     "prompt": "Selon le texte, quand prend effet une délégation de signature accordée par arrêté ministériel ?",
     "stimulus": "Organisation administrative : Les délégations de signature consenties par le ministre à des directeurs d'administration prennent effet dès leur publication au Mémorial. Elles cessent de plein droit de produire leurs effets dès la cessation des fonctions du délégant ou du délégataire, sans qu'un acte de révocation spécifique ne soit requis.",
     "options": [
-      "Dès la publication officielle de l'arrêté ministériel au Mémorial.",
-      "Dès la signature formelle du document en cabinet par le ministre.",
       "Au premier jour ouvré du mois suivant la décision de nomination.",
+      "Dès la signature formelle du document en cabinet par le ministre.",
+      "Dès la publication officielle de l'arrêté ministériel au Mémorial.",
       "Après approbation explicite du Conseil d'État réuni en séance."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le texte dispose qu'elles prennent effet dès leur publication au Mémorial.",
-      "La signature seule ne suffit pas, la publication au Mémorial est nécessaire.",
       "Le premier jour du mois suivant n'est mentionné nulle part dans l'extrait.",
+      "La signature seule ne suffit pas, la publication au Mémorial est nécessaire.",
+      "Correct : le texte dispose qu'elles prennent effet dès leur publication au Mémorial.",
       "Le texte ne requiert pas l'avis du Conseil d'État pour l'entrée en vigueur."
     ],
     "explanation": "Le texte énonce clairement que l'entrée en vigueur de la délégation est subordonnée à sa publication au Mémorial.",
@@ -1425,17 +1336,17 @@
     "prompt": "Que peut-on inférer quant à la validité d'une décision prise sous délégation après le départ du ministre ?",
     "stimulus": "Organisation administrative : Les délégations de signature consenties par le ministre à des directeurs d'administration prennent effet dès leur publication au Mémorial. Elles cessent de plein droit de produire leurs effets dès la cessation des fonctions du délégant ou du délégataire, sans qu'un acte de révocation spécifique ne soit requis.",
     "options": [
-      "La délégation étant caduque, toute décision signée serait entachée d'incompétence.",
-      "La délégation reste valable pendant une période transitoire de trois mois pleins.",
       "Le directeur peut continuer à signer tant qu'un successeur n'est pas installé.",
-      "La décision reste juridiquement couverte par le principe de continuité de l'État."
+      "La délégation reste valable pendant une période transitoire de trois mois pleins.",
+      "La décision reste juridiquement couverte par le principe de continuité de l'État.",
+      "La délégation étant caduque, toute décision signée serait entachée d'incompétence."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : cessant de plein droit au départ du délégant, le signataire perd sa compétence.",
-      "Le texte ne prévoit aucun délai de grâce ou période transitoire de trois mois.",
       "La cessation est immédiate de plein droit au départ du ministre.",
-      "Le texte précise l'extinction de plein droit, ce qui prive le délégataire de signature valide."
+      "Le texte ne prévoit aucun délai de grâce ou période transitoire de trois mois.",
+      "Le texte précise l'extinction de plein droit, ce qui prive le délégataire de signature valide.",
+      "Correct : cessant de plein droit au départ du délégant, le signataire perd sa compétence."
     ],
     "explanation": "La délégation de signature étant attachée à la personne du délégant, la cessation de ses fonctions rend caduque la délégation immédiatement et de plein droit.",
     "sourceType": "original_ai_assisted",
@@ -1458,15 +1369,15 @@
     "options": [
       "La conciliation entre transparence publique et accessibilité des PME aux marchés.",
       "Le choix entre la dématérialisation totale et le retour aux offres sous pli papier.",
-      "Le conflit entre la réduction budgétaire globale et le maintien des investissements.",
-      "La rivalité entre prestataires régionaux et entreprises internationales du secteur."
+      "La rivalité entre prestataires régionaux et entreprises internationales du secteur.",
+      "Le conflit entre la réduction budgétaire globale et le maintien des investissements."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le texte oppose la recherche de transparence aux contraintes administratives qui freinent les TPE.",
       "Le texte ne préconise nullement un retour aux offres sous pli papier.",
-      "La tension décrite porte sur les formalités et la concurrence, non sur l'austérité budgétaire.",
-      "Le texte traite du fardeau administratif local et non d'une rivalité internationale."
+      "Le texte traite du fardeau administratif local et non d'une rivalité internationale.",
+      "La tension décrite porte sur les formalités et la concurrence, non sur l'austérité budgétaire."
     ],
     "explanation": "L'extrait montre que si la transparence s'accroît, la lourdeur des procédures écarte involontairement les petites entreprises artisanales ou locales.",
     "sourceType": "original_ai_assisted",
@@ -1488,15 +1399,15 @@
     "stimulus": "Transparence administrative : Toute décision refusant l'accès à un document administratif doit être motivée en droit et en fait. Elle est notifiée au demandeur dans un délai maximal de trente jours à compter de la réception de sa requête initiale. Le silence gardé par l'autorité compétente au-delà de ce terme vaut décision implicite de rejet.",
     "options": [
       "Trente jours au plus tard après la réception du dossier initial.",
-      "Quinze jours ouvrables suivant l'examen préalable en commission.",
       "Deux mois civils à compter de la décision formelle de rejet.",
+      "Quinze jours ouvrables suivant l'examen préalable en commission.",
       "Soixante jours après avis conforme du collège des médiateurs."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le texte fixe expressément le délai maximal de notification à trente jours.",
-      "Le délai de quinze jours ne figure pas dans le texte.",
       "Le délai de deux mois contredit le délai légal explicite de trente jours.",
+      "Le délai de quinze jours ne figure pas dans le texte.",
       "Aucun collège de médiateurs n'est mentionné dans ce passage."
     ],
     "explanation": "Le texte précise que la notification du refus doit intervenir dans un délai maximal de trente jours suivant la réception de la demande.",
@@ -1518,17 +1429,17 @@
     "prompt": "Que peut déduire le citoyen dont la demande n'a reçu aucune réponse après quarante jours ?",
     "stimulus": "Transparence administrative : Toute décision refusant l'accès à un document administratif doit être motivée en droit et en fait. Elle est notifiée au demandeur dans un délai maximal de trente jours à compter de la réception de sa requête initiale. Le silence gardé par l'autorité compétente au-delà de ce terme vaut décision implicite de rejet.",
     "options": [
-      "Sa demande fait l'objet d'une décision implicite de refus opposable.",
-      "Sa requête est considérée comme tacitement accordée par l'administration.",
+      "L'administration est déchue de son droit d'examiner le dossier soumis.",
       "Le délai de traitement est automatiquement prolongé d'un trimestre.",
-      "L'administration est déchue de son droit d'examiner le dossier soumis."
+      "Sa demande fait l'objet d'une décision implicite de refus opposable.",
+      "Sa requête est considérée comme tacitement accordée par l'administration."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : au-delà de 30 jours, le silence vaut légalement décision implicite de rejet.",
-      "Le silence vaut refus et non accord tacite.",
+      "L'administration n'est pas déchue, le rejet implicite ouvre simplement la voie aux recours.",
       "Aucune prorogation trimestrielle automatique n'est prévue.",
-      "L'administration n'est pas déchue, le rejet implicite ouvre simplement la voie aux recours."
+      "Correct : au-delà de 30 jours, le silence vaut légalement décision implicite de rejet.",
+      "Le silence vaut refus et non accord tacite."
     ],
     "explanation": "Le terme de 30 jours étant dépassé, la règle du texte stipule explicitement que le silence vaut décision implicite de rejet.",
     "sourceType": "original_ai_assisted",
@@ -1549,17 +1460,17 @@
     "prompt": "Quelle est la finalité première de l'inventaire annuel selon cette consigne budgétaire ?",
     "stimulus": "Gestion du patrimoine mobilier : L'inventaire physique annuel a pour fonction première de rapprocher l'état matériel réel des immobilisations avec les inscriptions figurant au grand livre des comptes. Cette confrontation permet de constater les dépréciations, de réformer les matériels obsolètes et d'ajuster les écritures comptables avant la clôture annuelle.",
     "options": [
-      "Assurer la concordance entre les biens réels et les données comptables.",
-      "Vendre aux enchères la totalité des matériels âgés de plus de cinq ans.",
       "Sanctionner pécuniairement les agents ayant égaré du matériel de bureau.",
-      "Établir le budget prévisionnel des achats de l'exercice quinquennal."
+      "Établir le budget prévisionnel des achats de l'exercice quinquennal.",
+      "Vendre aux enchères la totalité des matériels âgés de plus de cinq ans.",
+      "Assurer la concordance entre les biens réels et les données comptables."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : rapprocher l'état matériel des inscriptions comptables est la mission première indiquée.",
-      "Le texte parle de réformer les matériels obsolètes, non d'une vente totale systématique.",
       "Le texte ne mentionne aucune sanction financière individuelle des agents.",
-      "L'inventaire vise la régularité de la clôture annuelle, non la prospective quinquennale."
+      "L'inventaire vise la régularité de la clôture annuelle, non la prospective quinquennale.",
+      "Le texte parle de réformer les matériels obsolètes, non d'une vente totale systématique.",
+      "Correct : rapprocher l'état matériel des inscriptions comptables est la mission première indiquée."
     ],
     "explanation": "La fonction première explicitement donnée est le rapprochement entre la réalité physique des biens et les registres de la comptabilité générale.",
     "sourceType": "original_ai_assisted",
@@ -1580,17 +1491,17 @@
     "prompt": "Selon ce protocole d'hygiène et de sécurité, qui doit consigner tout incident sur le registre de sécurité ?",
     "stimulus": "Santé et sécurité : Tout agent témoin d'une défaillance matérielle susceptible de compromettre l'intégrité physique du personnel ou des usagers est tenu d'en aviser sans délai le délégué à la sécurité du bâtiment. Ce dernier procède à l'inscription circonstanciée de l'événement dans le registre de sécurité dans les deux heures.",
     "options": [
-      "Le délégué à la sécurité du bâtiment après avoir reçu le signalement.",
-      "L'agent témoin lui-même directement sur le registre informatisé du siège.",
+      "Le médecin du travail au cours de la commission paritaire de prévention.",
       "Le directeur d'administration générale lors de son inspection mensuelle.",
-      "Le médecin du travail au cours de la commission paritaire de prévention."
+      "Le délégué à la sécurité du bâtiment après avoir reçu le signalement.",
+      "L'agent témoin lui-même directement sur le registre informatisé du siège."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : c'est le délégué à la sécurité qui inscrit l'événement dans le registre.",
-      "L'agent témoin alerte le délégué, mais n'inscrit pas lui-même l'incident au registre.",
+      "Le médecin du travail n'est pas désigné pour tenir le registre d'incident immédiat.",
       "Le directeur d'administration n'intervient pas dans cette inscription opérationnelle.",
-      "Le médecin du travail n'est pas désigné pour tenir le registre d'incident immédiat."
+      "Correct : c'est le délégué à la sécurité qui inscrit l'événement dans le registre.",
+      "L'agent témoin alerte le délégué, mais n'inscrit pas lui-même l'incident au registre."
     ],
     "explanation": "Le texte distingue les rôles : l'agent signale, puis le délégué à la sécurité consigne l'événement dans le registre sous deux heures.",
     "sourceType": "original_ai_assisted",
@@ -1612,16 +1523,16 @@
     "stimulus": "Transition énergétique des bâtiments publics : La rénovation thermique globale des cités administratives engendre des coûts initiaux d'investissement très substantiels. Toutefois, en réduisant la facture d'exploitation de près de 35 % dès la cinquième année, [...]",
     "options": [
       "ces opérations s'avèrent hautement rentables sur l'ensemble de leur cycle.",
-      "les pouvoirs publics envisagent l'abandon pur et simple des programmes verts.",
+      "le confort thermique des usagers se trouve irrémédiablement dégradé en hiver.",
       "les dépenses énergétiques continuent d'augmenter inexorablement chaque saison.",
-      "le confort thermique des usagers se trouve irrémédiablement dégradé en hiver."
+      "les pouvoirs publics envisagent l'abandon pur et simple des programmes verts."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : cohérent avec l'opposition 'Toutefois' introduisant la rentabilité à terme du projet.",
-      "Incohérent : l'économie de 35 % ne justifie en rien un abandon du programme.",
+      "Incohérent : la rénovation thermique vise à améliorer le confort et non à le dégrader.",
       "Incohérent : une baisse de 35 % contredit l'idée d'une augmentation inexorable.",
-      "Incohérent : la rénovation thermique vise à améliorer le confort et non à le dégrader."
+      "Incohérent : l'économie de 35 % ne justifie en rien un abandon du programme."
     ],
     "explanation": "Le connecteur d'opposition 'Toutefois' annonce que l'économie substantielle d'exploitation (35 %) compense l'investissement initial à long terme.",
     "sourceType": "original_ai_assisted",
@@ -1644,15 +1555,15 @@
     "options": [
       "Le canal numérique exclusif a créé un biais d'échantillonnage démographique.",
       "Le nombre total de répondants était statistiquement insuffisant pour conclure.",
-      "Les questions posées orientaient ouvertement le vote vers les transports lourds.",
-      "Les participants ont formulé des réponses contradictoires lors des entretiens."
+      "Les participants ont formulé des réponses contradictoires lors des entretiens.",
+      "Les questions posées orientaient ouvertement le vote vers les transports lourds."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : la diffusion web exclusive a exclu les aînés et les ruraux (biais de sélection).",
       "Dix mille contributions forment un volume élevé, l'insuffisance ne vient pas du nombre brut.",
-      "Le texte ne mentionne aucune orientation artificielle dans le libellé des questions.",
-      "L'enquête était un questionnaire en ligne et non des entretiens contradictoires."
+      "L'enquête était un questionnaire en ligne et non des entretiens contradictoires.",
+      "Le texte ne mentionne aucune orientation artificielle dans le libellé des questions."
     ],
     "explanation": "Le texte souligne le biais de représentativité induit par le mode exclusif de collecte numérique qui a marginalisé certaines tranches de population.",
     "sourceType": "original_ai_assisted",
@@ -1673,17 +1584,17 @@
     "prompt": "D'après les prescriptions de ce guide, quel document doit impérativement accompagner une commande de fournitures ?",
     "stimulus": "Exécution des dépenses publiques : Tout bon de commande adressé à un fournisseur tiers doit être obligatoirement assorti de l'engagement comptable préalable validé par le contrôleur financier. Tout bon expédié sans ce visa d'engagement préalable est frappé de nullité juridique et n'engage pas les deniers de l'État.",
     "options": [
-      "Le visa de l'engagement comptable validé par le contrôleur financier.",
-      "Le récépissé de livraison contresigné par le magasinier du ministère.",
       "La décision d'attribution publiée au Journal officiel des marchés.",
-      "L'attestation de conformité fiscale émise par le receveur communal."
+      "Le récépissé de livraison contresigné par le magasinier du ministère.",
+      "L'attestation de conformité fiscale émise par le receveur communal.",
+      "Le visa de l'engagement comptable validé par le contrôleur financier."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : l'engagement comptable visé par le contrôleur est obligatoire sous peine de nullité.",
-      "Le récépissé de livraison n'intervient qu'après la commande, lors de la réception.",
       "La publication au Journal officiel ne concerne pas chaque bon de commande unitaire.",
-      "L'attestation fiscale n'est pas le document de visa prescrit pour valider la commande."
+      "Le récépissé de livraison n'intervient qu'après la commande, lors de la réception.",
+      "L'attestation fiscale n'est pas le document de visa prescrit pour valider la commande.",
+      "Correct : l'engagement comptable visé par le contrôleur est obligatoire sous peine de nullité."
     ],
     "explanation": "Le texte pose comme condition d'opposabilité et de validité du bon de commande la présence du visa préalable d'engagement comptable.",
     "sourceType": "original_ai_assisted",
@@ -1705,16 +1616,16 @@
     "stimulus": "Exécution des dépenses publiques : Tout bon de commande adressé à un fournisseur tiers doit être obligatoirement assorti de l'engagement comptable préalable validé par le contrôleur financier. Tout bon expédié sans ce visa d'engagement préalable est frappé de nullité juridique et n'engage pas les deniers de l'État.",
     "options": [
       "L'État n'est pas juridiquement tenu d'honorer le paiement de la facture.",
-      "Le fournisseur est automatiquement indemnisé par un fonds d'assurance.",
       "Le paiement est liquidé en urgence avec application d'intérêts moratoires.",
-      "Le contrôleur financier valide rétroactivement la facture présentée."
+      "Le contrôleur financier valide rétroactivement la facture présentée.",
+      "Le fournisseur est automatiquement indemnisé par un fonds d'assurance."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : la commande étant juridiquement nulle, elle n'engage pas les deniers publics.",
-      "Aucun fonds de garantie ou d'indemnisation automatique n'est prévu par la règle.",
       "Le paiement ne peut pas être ordonnancé d'urgence pour un bon nul.",
-      "Le texte n'autorise pas de validation rétroactive d'office."
+      "Le texte n'autorise pas de validation rétroactive d'office.",
+      "Aucun fonds de garantie ou d'indemnisation automatique n'est prévu par la règle."
     ],
     "explanation": "La nullité juridique de la commande délie la collectivité publique de son engagement financier légal envers le cocontractant.",
     "sourceType": "original_ai_assisted",
@@ -1735,17 +1646,17 @@
     "prompt": "Quelle est l'idée directrice exprimée dans cette note sur le télétravail ?",
     "stimulus": "Charte du travail hybride : Le travail à distance ne saurait être conçu comme une simple juxtaposition de journées solitaires, mais comme une modalité d'organisation exigeant une redéfinition concertée des temps collectifs. La préservation de la cohésion d'équipe requiert d'instaurer des rituels partagés et des journées de présence commune obligatoires.",
     "options": [
+      "La cohésion d'équipe est spontanément garantie sans régulation formelle.",
       "Le travail hybride nécessite des moments collectifs pour maintenir le lien.",
       "Le télétravail intégral à domicile constitue l'unique avenir des services.",
-      "Les agents en télétravail doivent rester connectés en continu sans pause.",
-      "La cohésion d'équipe est spontanément garantie sans régulation formelle."
+      "Les agents en télétravail doivent rester connectés en continu sans pause."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte soutient l'inverse : la régulation et les rituels formels sont indispensables.",
       "Correct : le texte affirme la nécessité de moments collectifs et de rituels partagés.",
       "Le texte préconise des journées communes et s'oppose à l'isolement complet.",
-      "La note traite de la cohésion d'équipe et non d'une surveillance continue sans pause.",
-      "Le texte soutient l'inverse : la régulation et les rituels formels sont indispensables."
+      "La note traite de la cohésion d'équipe et non d'une surveillance continue sans pause."
     ],
     "explanation": "La note défend l'idée qu'une organisation hybride réussie doit organiser délibérément la présence collective pour éviter l'effritement de l'esprit d'équipe.",
     "sourceType": "original_ai_assisted",
@@ -1766,17 +1677,17 @@
     "prompt": "Selon ce règlement de concours, quelle note à une épreuve éliminatoire exclut le candidat de la suite des épreuves ?",
     "stimulus": "Organisation des épreuves d'accès : Les candidats subissent trois épreuves écrites d'admissibilité notées de 0 à 20. Toute note strictement inférieure à 8 sur 20 à l'une quelconque de ces épreuves est éliminatoire, quand bien même la moyenne générale des trois notes atteindrait ou dépasserait le seuil d'admissibilité de 10 sur 20.",
     "options": [
-      "Une note de 7 sur 20 à une des épreuves écrites.",
-      "Une note de 8 sur 20 obtenue lors de la première épreuve.",
       "Une moyenne arithmétique globale égale à 11 sur 20 points.",
-      "Une note de 9 sur 20 attribuée par un correcteur sévère."
+      "Une note de 9 sur 20 attribuée par un correcteur sévère.",
+      "Une note de 8 sur 20 obtenue lors de la première épreuve.",
+      "Une note de 7 sur 20 à une des épreuves écrites."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 7 est strictement inférieur à 8 sur 20, ce qui entraîne l'élimination directe.",
-      "La note 8 n'est pas strictement inférieure à 8, elle n'est donc pas éliminatoire.",
       "Une moyenne de 11 dépasse le seuil requis de 10 sur 20.",
-      "La note 9 est supérieure au plancher éliminatoire de 8."
+      "La note 9 est supérieure au plancher éliminatoire de 8.",
+      "La note 8 n'est pas strictement inférieure à 8, elle n'est donc pas éliminatoire.",
+      "Correct : 7 est strictement inférieur à 8 sur 20, ce qui entraîne l'élimination directe."
     ],
     "explanation": "La condition éliminatoire est définie par 'strictement inférieure à 8 sur 20'. Une note de 7 entre directement dans ce cas d'élimination.",
     "sourceType": "original_ai_assisted",
@@ -1798,15 +1709,15 @@
     "stimulus": "Organisation des épreuves d'accès : Les candidats subissent trois épreuves écrites d'admissibilité notées de 0 à 20. Toute note strictement inférieure à 8 sur 20 à l'une quelconque de ces épreuves est éliminatoire, quand bien même la moyenne générale des trois notes atteindrait ou dépasserait le seuil d'admissibilité de 10 sur 20.",
     "options": [
       "Il est admissible car sa moyenne est de 10 et aucune note n'est éliminatoire.",
-      "Il est éliminé d'office car deux de ses notes se situent sous la moyenne.",
       "Il doit repasser obligatoirement les deux épreuves où il a obtenu 8 sur 20.",
+      "Il est éliminé d'office car deux de ses notes se situent sous la moyenne.",
       "Son admission dépend d'un entretien de rattrapage fixé par le jury."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : moyenne (8+8+14)/3 = 30/3 = 10,0/20 ; aucune note n'étant < 8, il est admissible.",
-      "Avoir une note sous 10 n'est pas éliminatoire tant qu'elle n'est pas strictement < 8.",
       "Le règlement ne prévoit pas d'épreuve de repêchage écrite.",
+      "Avoir une note sous 10 n'est pas éliminatoire tant qu'elle n'est pas strictement < 8.",
       "L'admissibilité est automatique dès lors que la moyenne est atteinte sans note éliminatoire."
     ],
     "explanation": "La moyenne arithmétique est de (8 + 8 + 14) / 3 = 10/20, atteignant le seuil. Aucune note n'étant strictement inférieure à 8, le candidat franchit l'admissibilité.",
@@ -1828,17 +1739,17 @@
     "prompt": "Sur quel constat s'appuie la critique formulée à l'égard de la gestion prévisionnelle des effectifs ?",
     "stimulus": "Rapport d'orientation sur la gestion des ressources humaines : Les plans prévisionnels de recrutement se concentrent quasi exclusivement sur le remplacement numérique des départs à la retraite. Cette focalisation quantitative occulte l'évolution qualitative rapide des compétences induite par l'intelligence artificielle et la dématérialisation.",
     "options": [
-      "La priorité aux départs quantitatifs néglige les besoins qualitatifs futurs.",
       "Le nombre d'agents partant à la retraite a été largement sous-estimé.",
       "L'intelligence artificielle rend obsolète tout recrutement de fonctionnaires.",
-      "Les budgets alloués à la masse salariale ont augmenté de façon excessive."
+      "Les budgets alloués à la masse salariale ont augmenté de façon excessive.",
+      "La priorité aux départs quantitatifs néglige les besoins qualitatifs futurs."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le rapport reproche une approche purement volumétrique au détriment des compétences.",
       "Le rapport ne conteste pas le décompte des départs, mais l'angle d'analyse retenu.",
       "Le texte n'affirme nullement que les recrutements doivent cesser avec l'IA.",
-      "La critique porte sur la typologie des compétences, non sur la masse salariale."
+      "La critique porte sur la typologie des compétences, non sur la masse salariale.",
+      "Correct : le rapport reproche une approche purement volumétrique au détriment des compétences."
     ],
     "explanation": "La critique centrale de l'audit réside dans le décalage entre une logique de remplacement poste pour poste et l'émergence de nouveaux métiers requérant d'autres profils.",
     "sourceType": "original_ai_assisted",
@@ -1859,16 +1770,16 @@
     "prompt": "Selon le texte, quelle est la sanction encourue par un agent qui enfreint l'obligation de discrétion professionnelle ?",
     "stimulus": "Devoir de réserve et de discrétion : Les agents publics sont tenus au secret sur les faits et informations dont ils ont connaissance dans l'exercice de leurs fonctions. Toute divulgation non autorisée d'actes protégés expose son auteur à des sanctions disciplinaires pouvant aller jusqu'à la révocation, sans préjudice de poursuites pénales.",
     "options": [
+      "Une suspension temporaire de solde limitée à un mois sans autre sanction.",
       "Des peines disciplinaires pouvant s'étendre jusqu'à la révocation de l'emploi.",
       "Une mutation d'office systématique dans un service situé hors de la capitale.",
-      "Une suspension temporaire de solde limitée à un mois sans autre sanction.",
       "Le versement automatique de dommages et intérêts au bénéfice de l'État."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La suspension d'un mois ne constitue pas le plafond de sanction prévu.",
       "Correct : le texte mentionne expressément des sanctions disciplinaires allant jusqu'à la révocation.",
       "La mutation d'office n'est pas présentée comme la sanction systématique exclusive.",
-      "La suspension d'un mois ne constitue pas le plafond de sanction prévu.",
       "Le texte évoque des poursuites pénales mais pas de versement automatique direct à l'État."
     ],
     "explanation": "L'extrait précise explicitement l'échelle maximale encourue : sanctions disciplinaires pouvant aller jusqu'à la révocation, avec poursuites pénales éventuelles.",
@@ -1892,15 +1803,15 @@
     "options": [
       "l'adoption exclusive de standards ouverts garantit l'accès aux données futures.",
       "il est vivement recommandé d'imprimer tous les fichiers sur support papier.",
-      "l'acquisition de logiciels propriétaires fermés doit être généralisée à l'État.",
-      "les archives historiques n'ont plus vocation à être conservées au-delà d'un an."
+      "les archives historiques n'ont plus vocation à être conservées au-delà d'un an.",
+      "l'acquisition de logiciels propriétaires fermés doit être généralisée à l'État."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : s'inscrit en continuité directe de la mise en garde contre l'obsolescence des formats propriétaires.",
       "La solution préconisée n'est pas le tout-papier mais l'usage de formats ouverts pérennes.",
-      "Contredit formellement la mise en garde contre les formats propriétaires.",
-      "Contredit le principe même de pérennité des archives administratives."
+      "Contredit le principe même de pérennité des archives administratives.",
+      "Contredit formellement la mise en garde contre les formats propriétaires."
     ],
     "explanation": "La logique argumentative oppose formats propriétaires (risqués) et formats ouverts ; la conclusion logique est de préconiser les standards ouverts.",
     "sourceType": "original_ai_assisted",
@@ -1921,17 +1832,17 @@
     "prompt": "Quel est le but central de la démarche d'éco-responsabilité exposée dans cette circulaire ?",
     "stimulus": "Plan d'action pour des administrations durables : La politique d'éco-responsabilité vise à intégrer systématiquement des critères environnementaux stricts dans l'ensemble des marchés de fournitures, de travaux et de restauration collective. Elle entend réduire l'empreinte carbone globale du secteur public tout en stimulant la filière économique verte régionale.",
     "options": [
-      "Diminuer l'empreinte carbone publique tout en stimulant l'économie verte.",
       "Réduire unilatéralement les rations de repas dans les cantines scolaires.",
+      "Résilier l'ensemble des contrats passés avec les fournisseurs régionaux.",
       "Interdire tout achat de matériel informatique neuf au sein de l'État.",
-      "Résilier l'ensemble des contrats passés avec les fournisseurs régionaux."
+      "Diminuer l'empreinte carbone publique tout en stimulant l'économie verte."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : synthétise le double objectif explicite (réduction de l'empreinte carbone et soutien à la filière verte).",
       "Le texte ne préconise pas de réduire les portions de repas mais d'intégrer des critères verts.",
+      "Le texte veut stimuler la filière régionale, non rompre les liens avec elle.",
       "Le texte n'interdit pas l'achat d'ordinateurs neufs.",
-      "Le texte veut stimuler la filière régionale, non rompre les liens avec elle."
+      "Correct : synthétise le double objectif explicite (réduction de l'empreinte carbone et soutien à la filière verte)."
     ],
     "explanation": "Le texte pose un double objectif clair : exemplarité écologique par la réduction de l'empreinte carbone et effet d'entraînement de la commande publique sur les circuits régionaux vertueux.",
     "sourceType": "original_ai_assisted",
@@ -1953,16 +1864,16 @@
     "stimulus": "Sécurité des systèmes d'information : Tout intervenant extérieur chargé d'une mission d'audit informatique ne peut accéder aux serveurs hébergeant des données administratives sensibles qu'après signature d'un engagement formel de réserve et sous la surveillance permanente d'un responsable habilité du ministère.",
     "options": [
       "La signature d'un engagement de réserve et la présence continue d'un agent habilité.",
-      "Une simple demande verbale validée par le technicien de permanence en régie.",
       "La présentation d'une carte d'identité professionnelle délivrée par l'entreprise.",
-      "L'obtention d'une dérogation spéciale votée à l'unanimité par le Parlement."
+      "L'obtention d'une dérogation spéciale votée à l'unanimité par le Parlement.",
+      "Une simple demande verbale validée par le technicien de permanence en régie."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : les deux conditions cumulatives prévues sont l'engagement de réserve et la surveillance continue.",
-      "Une autorisation verbale informelle est expressément prohibée par le protocole.",
       "La carte professionnelle est insuffisante pour déroger à la procédure sécurisée.",
-      "Aucun vote parlementaire n'est requis pour une mission d'audit opérationnelle."
+      "Aucun vote parlementaire n'est requis pour une mission d'audit opérationnelle.",
+      "Une autorisation verbale informelle est expressément prohibée par le protocole."
     ],
     "explanation": "Le texte impose deux conditions cumulatives strictes : un engagement écrit formel de réserve et la présence ininterrompue d'un agent ministériel habilité.",
     "sourceType": "original_ai_assisted",
@@ -1983,17 +1894,17 @@
     "prompt": "Que peut-on conclure sur un auditeur qui refuserait de signer l'engagement de réserve ?",
     "stimulus": "Sécurité des systèmes d'information : Tout intervenant extérieur chargé d'une mission d'audit informatique ne peut accéder aux serveurs hébergeant des données administratives sensibles qu'après signature d'un engagement formel de réserve et sous la surveillance permanente d'un responsable habilité du ministère.",
     "options": [
+      "L'audit est reporté d'un an sans conséquence pour l'entreprise mandataire.",
       "L'accès aux serveurs hébergeant les données sensibles lui est interdit.",
-      "Il peut effectuer son audit à distance sans aucune restriction d'accès.",
       "Un responsable ministériel signe la décharge de sécurité à sa place.",
-      "L'audit est reporté d'un an sans conséquence pour l'entreprise mandataire."
+      "Il peut effectuer son audit à distance sans aucune restriction d'accès."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte ne prévoit pas de report automatique d'un an sans conséquence contractuelle.",
       "Correct : l'accès n'étant autorisé 'qu'après signature', le refus entraîne le blocage immédiat de l'accès.",
-      "L'accès distant sans restriction violerait plus gravement encore la sécurité.",
       "Un tiers ne peut pas signer un engagement de responsabilité personnelle à sa place.",
-      "Le texte ne prévoit pas de report automatique d'un an sans conséquence contractuelle."
+      "L'accès distant sans restriction violerait plus gravement encore la sécurité."
     ],
     "explanation": "La formulation 'ne peut accéder (...) qu'après signature' subordonne strictement tout accès à cette formalité obligatoire. Sans elle, l'accès est refusé.",
     "sourceType": "original_ai_assisted",
@@ -2014,17 +1925,17 @@
     "prompt": "Selon le texte, quelle obligation s'impose à l'administration en cas de demande incomplète ?",
     "stimulus": "Procédure d'instruction des demandes : Lorsque le dossier déposé par un usager ne comporte pas l'ensemble des pièces exigées, le service instructeur lui adresse un avis de pièces manquantes dans un délai de quinze jours. Ce courrier fixe un terme de trente jours pour régulariser l'envoi, faute de quoi la demande est réputée caduque.",
     "options": [
-      "Notifier un avis de pièces manquantes sous quinze jours en accordant un mois pour régulariser.",
+      "Accorder tacitement l'autorisation sollicitée dès lors qu'une pièce principale est fournie.",
       "Rejeter immédiatement la demande sans offrir la moindre possibilité de régularisation future.",
-      "Transmettre d'office le dossier au tribunal administratif pour arbitrage contentieux rapide.",
-      "Accorder tacitement l'autorisation sollicitée dès lors qu'une pièce principale est fournie."
+      "Notifier un avis de pièces manquantes sous quinze jours en accordant un mois pour régulariser.",
+      "Transmettre d'office le dossier au tribunal administratif pour arbitrage contentieux rapide."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le texte prévoit l'envoi d'un avis sous 15 jours avec un délai de 30 jours pour compléter.",
+      "Le texte ne prévoit aucune autorisation tacite en cas d'incomplétude du dossier.",
       "Le rejet n'intervient qu'en cas de non-régularisation au terme des 30 jours.",
-      "Aucune saisine du tribunal n'est prévue pour une simple demande incomplète.",
-      "Le texte ne prévoit aucune autorisation tacite en cas d'incomplétude du dossier."
+      "Correct : le texte prévoit l'envoi d'un avis sous 15 jours avec un délai de 30 jours pour compléter.",
+      "Aucune saisine du tribunal n'est prévue pour une simple demande incomplète."
     ],
     "explanation": "Le texte dispose expressément que l'autorité doit inviter l'usager sous 15 jours à compléter son dossier dans un délai imparti de 30 jours.",
     "sourceType": "original_ai_assisted",
@@ -2045,16 +1956,16 @@
     "prompt": "Que peut-on inférer sur un dossier resté incomplet quarante jours après réception de l'avis ?",
     "stimulus": "Procédure d'instruction des demandes : Lorsque le dossier déposé par un usager ne comporte pas l'ensemble des pièces exigées, le service instructeur lui adresse un avis de pièces manquantes dans un délai de quinze jours. Ce courrier fixe un terme de trente jours pour régulariser l'envoi, faute de quoi la demande est réputée caduque.",
     "options": [
+      "L'administration est obligée de relancer l'usager par courrier recommandé avec accusé.",
       "Le dossier est juridiquement réputé caduc en raison du dépassement du délai imparti.",
       "Le délai de régularisation est automatiquement reconduit pour une durée équivalente.",
-      "L'administration est obligée de relancer l'usager par courrier recommandé avec accusé.",
       "La demande est transférée d'office à une commission arbitrale pour réexamen complet."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte ne prévoit pas de seconde relance recommandée obligatoire.",
       "Correct : le délai de 30 jours étant dépassé, la sanction prévue est la caducité de plein droit.",
       "Aucune prorogation automatique n'est stipulée dans le texte.",
-      "Le texte ne prévoit pas de seconde relance recommandée obligatoire.",
       "Aucun transfert vers une commission arbitrale n'est prévu par la procédure."
     ],
     "explanation": "Le délai légal de régularisation étant fixé à 30 jours, un silence de 40 jours entraîne la caducité juridique de la demande.",
@@ -2076,17 +1987,17 @@
     "prompt": "Quel énoncé résume le principe d'action exposé dans cette note de cadrage ?",
     "stimulus": "Simplification des formalités publiques : L'allègement des démarches repose sur le principe 'Dites-le nous une fois'. Dès lors qu'une administration détient déjà une donnée certifiée relative à un usager, aucune autre entité publique ne peut exiger la réémission de cette même pièce, sous réserve du consentement exprès de l'intéressé.",
     "options": [
-      "Interdire la redemande de justificatifs déjà détenus par une collectivité publique.",
       "Supprimer l'obligation de consentement préalable de l'usager pour tout échange.",
-      "Obliger chaque citoyen à déposer annuellement l'intégralité de ses pièces d'identité.",
-      "Interdire formellement tout partage de bases de données entre ministères de l'État."
+      "Interdire formellement tout partage de bases de données entre ministères de l'État.",
+      "Interdire la redemande de justificatifs déjà détenus par une collectivité publique.",
+      "Obliger chaque citoyen à déposer annuellement l'intégralité de ses pièces d'identité."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : synthétise le principe 'Dites-le nous une fois' évitant la redondance des justificatifs.",
       "Le texte subordonne expressément l'échange au consentement de l'usager.",
-      "Le texte vise précisément l'inverse : éviter le dépôt récurrent de pièces déjà connues.",
-      "Le dispositif repose au contraire sur l'échange fluide de données publiques certifiées."
+      "Le dispositif repose au contraire sur l'échange fluide de données publiques certifiées.",
+      "Correct : synthétise le principe 'Dites-le nous une fois' évitant la redondance des justificatifs.",
+      "Le texte vise précisément l'inverse : éviter le dépôt récurrent de pièces déjà connues."
     ],
     "explanation": "Le principe 'Dites-le nous une fois' vise à décharger l'usager en faisant communiquer les administrations entre elles pour les données certifiées déjà existantes.",
     "sourceType": "original_ai_assisted",
@@ -2109,15 +2020,15 @@
     "options": [
       "Présenter une pièce d'identité, porter un badge et être accompagnée en permanence.",
       "Disposer d'une autorisation verbale préalable du responsable de la communication.",
-      "Fournir une attestation d'assurance professionnelle lors du contrôle de sécurité.",
-      "Effectuer une déclaration sur l'honneur signée au moins trois jours à l'avance."
+      "Effectuer une déclaration sur l'honneur signée au moins trois jours à l'avance.",
+      "Fournir une attestation d'assurance professionnelle lors du contrôle de sécurité."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : les conditions cumulatives du texte sont la pièce d'identité, le badge et l'accompagnement continu.",
       "Une autorisation verbale ne dispense pas des formalités physiques de sécurité.",
-      "L'attestation d'assurance n'est pas requise pour l'accès physique au bâtiment.",
-      "Le texte ne mentionne aucun délai de préavis de trois jours pour une visite."
+      "Le texte ne mentionne aucun délai de préavis de trois jours pour une visite.",
+      "L'attestation d'assurance n'est pas requise pour l'accès physique au bâtiment."
     ],
     "explanation": "Le texte pose trois obligations expresses cumulatives : pièce d'identité à l'accueil, port du badge temporaire et accompagnement continu par un agent habilité.",
     "sourceType": "original_ai_assisted",
@@ -2138,17 +2049,17 @@
     "prompt": "Que peut-on déduire sur un visiteur circulant seul dans les zones protégées ?",
     "stimulus": "Sûreté des bâtiments publics : Toute personne extérieure au service doit être munie d'un badge temporaire délivré à l'accueil sur présentation d'une pièce d'identité officielle. Elle est obligatoirement accompagnée par un agent habilité durant l'ensemble de ses déplacements au sein des zones techniques protégées.",
     "options": [
-      "Sa présence est non conforme aux exigences réglementaires de sécurité du site.",
+      "La direction générale lui a accordé une dispense tacite d'accompagnateur.",
       "Il dispose automatiquement d'une habilitation de sécurité de niveau supérieur.",
       "Il peut poursuivre sa visite librement dès lors qu'il porte son badge au cou.",
-      "La direction générale lui a accordé une dispense tacite d'accompagnateur."
+      "Sa présence est non conforme aux exigences réglementaires de sécurité du site."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : l'accompagnement étant obligatoire pour tout visiteur extérieur, circuler seul constitue une infraction au protocole.",
+      "Le texte n'envisage aucune dispense tacite d'accompagnement.",
       "Le texte n'établit aucune présomption d'habilitation supérieure pour les personnes seules.",
       "Le port du badge ne dispense en aucun cas de l'accompagnement continu obligatoire.",
-      "Le texte n'envisage aucune dispense tacite d'accompagnement."
+      "Correct : l'accompagnement étant obligatoire pour tout visiteur extérieur, circuler seul constitue une infraction au protocole."
     ],
     "explanation": "L'obligation d'accompagnement étant générale et continue dans les zones techniques protégées, une circulation isolée viole directement la consigne.",
     "sourceType": "original_ai_assisted",
@@ -2169,17 +2080,17 @@
     "prompt": "Quelle mesure immédiate un responsable doit-il appliquer en cas de perte de badge d'accès ?",
     "stimulus": "Gestion des accès électroniques : En cas de perte ou de vol d'un badge nominatif, son titulaire doit le signaler sans délai au bureau de sûreté. Ce dernier procède à la désactivation informatique immédiate du support et délivre un badge de substitution valable pour une durée maximale de sept jours ouvrés.",
     "options": [
-      "Désactiver immédiatement le support dans le système et délivrer un badge temporaire.",
-      "Facturer d'office une pénalité financière forfaitaire sur le traitement indiciaire.",
+      "Exiger un dépôt de plainte formel auprès du commissariat avant toute désactivation.",
       "Attendre quarante-huit heures ouvrées avant d'engager toute action informatique.",
-      "Exiger un dépôt de plainte formel auprès du commissariat avant toute désactivation."
+      "Désactiver immédiatement le support dans le système et délivrer un badge temporaire.",
+      "Facturer d'office une pénalité financière forfaitaire sur le traitement indiciaire."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le protocole impose la désactivation informatique immédiate et la remise d'un badge temporaire de 7 jours.",
-      "Aucune sanction financière automatique n'est stipulée dans le protocole.",
+      "Le dépôt de plainte n'est pas posé comme condition préalable à la neutralisation technique.",
       "L'attente de 48 heures contredit formellement la consigne de désactivation immédiate.",
-      "Le dépôt de plainte n'est pas posé comme condition préalable à la neutralisation technique."
+      "Correct : le protocole impose la désactivation informatique immédiate et la remise d'un badge temporaire de 7 jours.",
+      "Aucune sanction financière automatique n'est stipulée dans le protocole."
     ],
     "explanation": "La réaction prescrite combine la neutralisation informatique immédiate des droits pour protéger les locaux et la fourniture d'un accès provisoire.",
     "sourceType": "original_ai_assisted",
@@ -2200,17 +2111,17 @@
     "prompt": "Selon cet extrait, quelle dérogation permet de recruter un agent sous contrat à durée déterminée ?",
     "stimulus": "Règles d'emploi dans le secteur public : Le recrutement de contractuels à durée déterminée est réservé aux nécessités de remplacement temporaire de fonctionnaires indisponibles ou pour faire face à un accroissement temporaire d'activité ne pouvant excéder douze mois consécutifs sur une période de deux ans.",
     "options": [
-      "Remplacer temporairement un agent absent ou faire face à un surcroît d'activité.",
       "Pourvoir définitivement un emploi permanent vacant au sein de l'organigramme.",
       "Remplacer les postes d'encadrement supérieur lors des départs en retraite.",
-      "Permettre l'apprentissage linguistique des candidats non ressortissants de l'Union."
+      "Permettre l'apprentissage linguistique des candidats non ressortissants de l'Union.",
+      "Remplacer temporairement un agent absent ou faire face à un surcroît d'activité."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le texte cite expressément le remplacement temporaire et l'accroissement temporaire d'activité.",
       "Le texte réserve les postes permanents au statut et exclut le CDD pour vacance pérenne.",
       "Le départ en retraite crée une vacance définitive et non temporaire.",
-      "L'apprentissage linguistique n'est pas une condition de recours légal au CDD."
+      "L'apprentissage linguistique n'est pas une condition de recours légal au CDD.",
+      "Correct : le texte cite expressément le remplacement temporaire et l'accroissement temporaire d'activité."
     ],
     "explanation": "Le texte énumère deux motifs légaux limitatifs : le remplacement temporaire d'un agent ou la hausse conjoncturelle d'activité plafonnée à 12 mois.",
     "sourceType": "original_ai_assisted",
@@ -2231,17 +2142,17 @@
     "prompt": "Quelle conséquence entraîne un accroissement d'activité d'une durée ininterrompue de dix-huit mois ?",
     "stimulus": "Règles d'emploi dans le secteur public : Le recrutement de contractuels à durée déterminée est réservé aux nécessités de remplacement temporaire de fonctionnaires indisponibles ou pour faire face à un accroissement temporaire d'activité ne pouvant excéder douze mois consécutifs sur une période de deux ans.",
     "options": [
-      "Il excède le plafond légal et ne peut être couvert par un contrat temporaire.",
       "Il autorise de plein droit la titularisation immédiate de l'agent recruté.",
+      "Il permet la conclusion d'un contrat à durée indéterminée par tacite reconduction.",
       "Il ouvre droit au versement d'une prime exceptionnelle de fin de contrat.",
-      "Il permet la conclusion d'un contrat à durée indéterminée par tacite reconduction."
+      "Il excède le plafond légal et ne peut être couvert par un contrat temporaire."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le texte plafonne l'accroissement temporaire à douze mois consécutifs ; dix-huit mois dépassent ce cadre légal.",
       "Le dépassement n'entraîne pas de titularisation automatique dans la fonction publique.",
+      "Aucune reconduction tacite en CDI n'est mentionnée dans ces dispositions.",
       "Le texte ne prévoit pas de prime de fin de contrat pour cause de prolongation.",
-      "Aucune reconduction tacite en CDI n'est mentionnée dans ces dispositions."
+      "Correct : le texte plafonne l'accroissement temporaire à douze mois consécutifs ; dix-huit mois dépassent ce cadre légal."
     ],
     "explanation": "Le plafond strict de 12 mois consécutifs interdit de recourir au CDD pour un besoin temporaire s'étalant sur 18 mois continus.",
     "sourceType": "original_ai_assisted",
@@ -2262,16 +2173,16 @@
     "prompt": "Quelle orientation fondamentale ce rapport assigne-t-il à la politique de gestion des âges ?",
     "stimulus": "Gestion prévisionnelle des compétences : L'allongement de la vie professionnelle impose de repenser l'ergonomie des postes de travail et de diversifier les parcours de reconversion interne. L'enjeu est de maintenir l'employabilité et la motivation des seniors tout en assurant un transfert structuré des savoir-faire critiques vers les nouveaux entrants.",
     "options": [
+      "Réserver les actions de formation continue aux seuls agents âgés de moins de quarante ans.",
       "Adapter le travail et les compétences pour valoriser les seniors et transmettre le savoir.",
       "Anticiper systématiquement les départs anticipés pour libérer des postes budgétaires.",
-      "Réserver les actions de formation continue aux seuls agents âgés de moins de quarante ans.",
       "Interdire le tutorat formel entre générations pour préserver l'autonomie des nouvelles recrues."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte insiste au contraire sur l'employabilité des seniors par la diversification des parcours.",
       "Correct : synthétise l'adaptation ergonomique, le maintien de l'employabilité et la transmission intergénérationnelle.",
       "Le texte ne préconise pas des départs anticipés mais le maintien en activité dans de bonnes conditions.",
-      "Le texte insiste au contraire sur l'employabilité des seniors par la diversification des parcours.",
       "Le texte encourage expressément le transfert structuré des savoirs vers les arrivants."
     ],
     "explanation": "La note pose les deux piliers d'une gestion des âges réussie : la soutenabilité des conditions de travail pour les seniors et la transmission des savoirs clés aux jeunes collègues.",
@@ -2294,49 +2205,18 @@
     "stimulus": "Régime des congés de maladie : Tout agent dans l'impossibilité d'exercer ses fonctions pour raison médicale doit en avertir sa hiérarchie le premier jour ouvrable de son absence. Le certificat médical justificatif délivré par le médecin traitant doit parvenir au bureau du personnel dans un délai impératif de quarante-huit heures.",
     "options": [
       "Au plus tard dans les quarante-huit heures suivant le début de l'arrêt médical.",
-      "Dans un délai d'une semaine ouvrée à compter de la visite chez le médecin traitant.",
       "Au premier jour ouvré du mois suivant lors de la transmission des états de présence.",
+      "Dans un délai d'une semaine ouvrée à compter de la visite chez le médecin traitant.",
       "Uniquement si l'interruption de service dépasse une durée de sept jours consécutifs."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le certificat médical doit impérativement parvenir sous quarante-huit heures.",
-      "Le délai d'une semaine est supérieur au terme impératif de 48 heures.",
       "Attendre le premier jour du mois suivant mettrait l'agent en situation d'absence injustifiée.",
+      "Le délai d'une semaine est supérieur au terme impératif de 48 heures.",
       "Le certificat est requis dès le début de l'arrêt, quelle qu'en soit la durée."
     ],
     "explanation": "Le texte fixe deux règles temporelles strictes : avertissement le 1er jour et acheminement du certificat médical justificatif sous 48 heures au plus tard.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "verbal-text-076",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Que risque un fonctionnaire qui n'envoie son certificat médical qu'au cinquième jour d'absence ?",
-    "stimulus": "Régime des congés de maladie : Tout agent dans l'impossibilité d'exercer ses fonctions pour raison médicale doit en avertir sa hiérarchie le premier jour ouvrable de son absence. Le certificat médical justificatif délivré par le médecin traitant doit parvenir au bureau du personnel dans un délai impératif de quarante-huit heures.",
-    "options": [
-      "Une mise en demeure ou retenue sur traitement pour absence non justifiée à temps.",
-      "La résiliation automatique et irrévocable de son contrat de fonctionnaire d'État.",
-      "Le remboursement intégral des frais de santé engagés auprès de la caisse maladie.",
-      "L'obligation de reprendre ses fonctions le jour même sans examen médical complémentaire."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le non-respect du délai impératif place l'agent en situation d'absence irrégulière pouvant justifier une retenue.",
-      "La rupture automatique du statut n'intervient pas pour un simple retard de transmission initial.",
-      "L'administration employeur ne gère pas le remboursement des soins de santé de la caisse.",
-      "L'état de santé prévaut, la reprise forcée sans avis médical est exclue."
-    ],
-    "explanation": "La transmission tardive au-delà du délai impératif de 48 heures expose l'agent à une qualification d'absence injustifiée pour la période non couverte à temps.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2355,17 +2235,17 @@
     "prompt": "Selon cette note, quelle condition régit la communication de documents administratifs préparatoires ?",
     "stimulus": "Accès aux documents publics : Le droit d'accès aux documents administratifs s'applique aux actes achevés. Les documents préparatoires à une décision en cours d'élaboration ne sont communicables qu'après que la décision finale a été formellement adoptée et signée par l'autorité compétente.",
     "options": [
-      "Ils deviennent communicables seulement après l'adoption formelle de la décision finale.",
       "Ils sont librement accessibles à tout citoyen dès leur première version de travail.",
-      "Ils ne peuvent jamais être communiqués au public, même après adoption finale.",
-      "Leur communication exige impérativement une autorisation du médiateur de l'État."
+      "Ils deviennent communicables seulement après l'adoption formelle de la décision finale.",
+      "Leur communication exige impérativement une autorisation du médiateur de l'État.",
+      "Ils ne peuvent jamais être communiqués au public, même après adoption finale."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : le texte subordonne la communicabilité des documents préparatoires à l'adoption formelle de la décision.",
       "Les documents de travail préparatoires ne sont pas communicables pendant la phase d'élaboration.",
-      "Ils deviennent communicables une fois la décision prise, ils ne sont donc pas exclus à jamais.",
-      "L'autorisation du médiateur n'est pas posée comme condition dans le texte."
+      "Correct : le texte subordonne la communicabilité des documents préparatoires à l'adoption formelle de la décision.",
+      "L'autorisation du médiateur n'est pas posée comme condition dans le texte.",
+      "Ils deviennent communicables une fois la décision prise, ils ne sont donc pas exclus à jamais."
     ],
     "explanation": "Le texte pose une règle claire de protection de la délibération publique : un document préparatoire ne devient communicable qu'une fois l'acte définitif officiellement adopté.",
     "sourceType": "original_ai_assisted",
@@ -2386,17 +2266,17 @@
     "prompt": "Que peut répondre l'administration à un usager sollicitant un rapport préparatoire avant que le ministre n'ait tranché ?",
     "stimulus": "Accès aux documents publics : Le droit d'accès aux documents administratifs s'applique aux actes achevés. Les documents préparatoires à une décision en cours d'élaboration ne sont communicables qu'après que la décision finale a été formellement adoptée et signée par l'autorité compétente.",
     "options": [
-      "Opposer un refus légal motivé par le caractère inachevé et préparatoire du document.",
       "Transmettre immédiatement le projet en caviardant le nom des fonctionnaires rédacteurs.",
-      "Exiger le versement d'une redevance financière avant de communiquer la pièce provisoire.",
-      "Détruire le document préparatoire pour éteindre définitivement la demande de l'usager."
+      "Détruire le document préparatoire pour éteindre définitivement la demande de l'usager.",
+      "Opposer un refus légal motivé par le caractère inachevé et préparatoire du document.",
+      "Exiger le versement d'une redevance financière avant de communiquer la pièce provisoire."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la décision n'étant pas adoptée, le caractère préparatoire fonde légalement le refus de communication.",
       "Le texte refuse la communicabilité globale du document préparatoire, même caviardé.",
-      "La redevance ne permet pas de déroger à l'incommunicabilité des actes inachevés.",
-      "La destruction d'une pièce administrative constituerait une faute professionnelle grave."
+      "La destruction d'une pièce administrative constituerait une faute professionnelle grave.",
+      "Correct : la décision n'étant pas adoptée, le caractère préparatoire fonde légalement le refus de communication.",
+      "La redevance ne permet pas de déroger à l'incommunicabilité des actes inachevés."
     ],
     "explanation": "Tant que la décision n'a pas été arrêtée, l'administration est juridiquement fondée à refuser la communication au motif de son statut d'acte préparatoire inachevé.",
     "sourceType": "original_ai_assisted",
@@ -2417,17 +2297,17 @@
     "prompt": "Quelle est l'idée directrice exprimée dans cette recommandation sur la gestion documentaire ?",
     "stimulus": "Conservation des pièces comptables : L'archivage électronique des pièces justificatives de dépenses publiques doit garantir leur authenticité, leur intégrité et leur lisibilité pendant une durée minimale de dix ans. Le recours à une signature électronique qualifiée et à un horodatage certifié constitue la garantie probatoire exigée par la Cour des comptes.",
     "options": [
-      "Garantir l'authenticité et la pérennité des archives comptables numériques sur dix ans.",
-      "Obliger l'impression et la reliure papier annuelle de l'ensemble des mandats de paiement.",
       "Réduire la durée de conservation des dépenses à un an pour libérer de l'espace serveur.",
-      "Supprimer l'horodatage électronique des factures pour accélérer le traitement comptable."
+      "Supprimer l'horodatage électronique des factures pour accélérer le traitement comptable.",
+      "Garantir l'authenticité et la pérennité des archives comptables numériques sur dix ans.",
+      "Obliger l'impression et la reliure papier annuelle de l'ensemble des mandats de paiement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : synthétise les exigences de fiabilité probatoire (intégrité, signature, horodatage) sur dix ans.",
-      "Le texte traite de l'archivage électronique pérenne et non du retour au support papier.",
       "Le délai de dix ans est impératif pour la Cour des comptes, non réductible à un an.",
-      "L'horodatage certifié est expressément exigé comme garantie de valeur probante."
+      "L'horodatage certifié est expressément exigé comme garantie de valeur probante.",
+      "Correct : synthétise les exigences de fiabilité probatoire (intégrité, signature, horodatage) sur dix ans.",
+      "Le texte traite de l'archivage électronique pérenne et non du retour au support papier."
     ],
     "explanation": "L'extrait synthétise les conditions de validité probatoire de l'archivage numérique des dépenses de l'État : intégrité technique et conservation sur 10 ans.",
     "sourceType": "original_ai_assisted",
@@ -2448,16 +2328,16 @@
     "prompt": "Selon ce protocole, quelle condition permet d'engager une procédure de passation de gré à gré sans publicité ?",
     "stimulus": "Règlement grand-ducal sur les marchés publics : La passation de marchés négociés sans publicité préalable demeure strictement exceptionnelle. Elle n'est admise qu'en cas d'urgence impérieuse résultant d'événements imprévisibles pour le pouvoir adjudicateur, ou lorsque des raisons techniques imposent de confier l'exécution à un opérateur unique.",
     "options": [
-      "Une urgence impérieuse imprévisible ou l'existence d'un opérateur technique exclusif.",
       "La volonté du pouvoir adjudicateur de privilégier une entreprise locale reconnue.",
       "Le dépassement des délais habituels de consultation dû à un retard des services internes.",
+      "Une urgence impérieuse imprévisible ou l'existence d'un opérateur technique exclusif.",
       "Une offre financière attractive formulée spontanément par un fournisseur extérieur."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le texte pose les deux seuls cas admis : urgence impérieuse imprévisible ou monopole technique.",
       "La préférence locale est formellement proscrite par le droit de la commande publique.",
       "Le retard interne de l'administration ne constitue pas un événement imprévisible ouvrant droit à l'urgence.",
+      "Correct : le texte pose les deux seuls cas admis : urgence impérieuse imprévisible ou monopole technique.",
       "Une offre spontanée avantageuse ne dispense pas des obligations légales de publicité."
     ],
     "explanation": "Le texte réserve strictement le gré à gré à deux hypothèses : événement imprévisible créant une urgence absolue ou exclusivité technique avérée.",
@@ -2479,17 +2359,17 @@
     "prompt": "Que peut-on conclure sur une administration qui utilise le gré à gré pour pallier une mauvaise planification de ses achats ?",
     "stimulus": "Règlement grand-ducal sur les marchés publics : La passation de marchés négociés sans publicité préalable demeure strictement exceptionnelle. Elle n'est admise qu'en cas d'urgence impérieuse résultant d'événements imprévisibles pour le pouvoir adjudicateur, ou lorsque des raisons techniques imposent de confier l'exécution à un opérateur unique.",
     "options": [
-      "Le marché est juridiquement irrégulier car le retard interne n'est pas un motif imprévisible.",
-      "Le marché est pleinement valide dès lors que la commande porte sur des fournitures urgentes.",
       "L'administration bénéficie d'une régularisation rétroactive automatique en fin d'exercice.",
-      "Le contrôleur financier peut dispenser l'acheteur de toute motivation écrite au dossier."
+      "Le marché est juridiquement irrégulier car le retard interne n'est pas un motif imprévisible.",
+      "Le contrôleur financier peut dispenser l'acheteur de toute motivation écrite au dossier.",
+      "Le marché est pleinement valide dès lors que la commande porte sur des fournitures urgentes."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : l'urgence créée par la carence de l'acheteur n'est pas imprévisible et vicie la passation.",
-      "L'urgence ne doit pas résulter du fait de l'acheteur, la simple urgence temporelle ne suffit pas.",
       "Aucune régularisation d'office n'est admise pour une entorse aux règles fondamentales de mise en concurrence.",
-      "La motivation écrite est une formalité de fond impérative pour tout marché sans publicité."
+      "Correct : l'urgence créée par la carence de l'acheteur n'est pas imprévisible et vicie la passation.",
+      "La motivation écrite est une formalité de fond impérative pour tout marché sans publicité.",
+      "L'urgence ne doit pas résulter du fait de l'acheteur, la simple urgence temporelle ne suffit pas."
     ],
     "explanation": "Selon la jurisprudence constante des marchés publics, l'imprévisibilité doit être extérieure à l'administration ; une négligence de calendrier ne permet pas d'échapper à la concurrence.",
     "sourceType": "original_ai_assisted",
@@ -2512,48 +2392,17 @@
     "options": [
       "Permettre aux usagers en situation de handicap d'utiliser les services web en autonomie.",
       "Remplacer l'ensemble des sites publics par des applications mobiles payantes dédiées.",
-      "Interdire tout élément visuel complexe ou interactif sur les portails administratifs.",
-      "Réserver les démarches en ligne aux seuls internautes disposant d'un matériel adapté."
+      "Réserver les démarches en ligne aux seuls internautes disposant d'un matériel adapté.",
+      "Interdire tout élément visuel complexe ou interactif sur les portails administratifs."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : synthétise l'objectif d'accessibilité universelle et d'autonomie pour tout type de handicap.",
       "Le texte préconise des normes sur les sites existants, non le passage au tout-mobile payant.",
-      "L'accessibilité vise à rendre compatibles les éléments riches, non à interdire l'interactivité.",
-      "L'objectif est précisément d'élargir l'accès et d'éviter toute exclusion technologique."
+      "L'objectif est précisément d'élargir l'accès et d'éviter toute exclusion technologique.",
+      "L'accessibilité vise à rendre compatibles les éléments riches, non à interdire l'interactivité."
     ],
     "explanation": "La directive vise l'inclusion numérique en adaptant la conception des portails pour garantir l'autonomie d'usage aux personnes en situation de handicap.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "verbal-text-083",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "comprehension",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Selon ce texte, quelle formalité conditionne le versement de l'allocation pour mission exceptionnelle ?",
-    "stimulus": "Indemnités de mission à l'étranger : Le versement des indemnités forfaitaires journalières pour mission officielle hors des frontières est subordonné au dépôt d'un rapport de fin de mission visé par le chef de délégation, accompagné des titres originaux de transport, dans les quinze jours suivant le retour.",
-    "options": [
-      "Déposer un rapport de mission visé et les titres de transport sous quinze jours.",
-      "Obtenir une décharge écrite contresignée par l'ambassadeur du pays visité lors du séjour.",
-      "Effectuer une déclaration orale auprès du contrôleur financier dès le lendemain du voyage.",
-      "Fournir les reçus de tous les repas pris au restaurant durant le séjour officiel."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : les conditions énoncées sont le rapport visé, les titres de transport et le respect du délai de 15 jours.",
-      "Aucune décharge d'ambassadeur n'est mentionnée dans le texte.",
-      "La déclaration orale est exclue par l'exigence d'un rapport écrit visé.",
-      "L'indemnité étant forfaitaire, le texte n'exige pas les reçus réels de chaque repas."
-    ],
-    "explanation": "Le texte subordonne expressément la liquidation de l'indemnité au respect des formalités documentaires (rapport visé et billets) dans le délai de 15 jours.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2573,16 +2422,16 @@
     "stimulus": "Indemnités de mission à l'étranger : Le versement des indemnités forfaitaires journalières pour mission officielle hors des frontières est subordonné au dépôt d'un rapport de fin de mission visé par le chef de délégation, accompagné des titres originaux de transport, dans les quinze jours suivant le retour.",
     "options": [
       "Le paiement de l'indemnité peut être légalement suspendu ou différé par le gestionnaire.",
-      "L'agent est automatiquement traduit devant la commission de discipline ministérielle.",
       "L'indemnité est versée d'office avec une retenue financière forfaitaire de 50 %.",
-      "Le chef de délégation est personnellement tenu de rembourser les frais engagés."
+      "Le chef de délégation est personnellement tenu de rembourser les frais engagés.",
+      "L'agent est automatiquement traduit devant la commission de discipline ministérielle."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le versement étant expressément subordonné au dépôt dans les 15 jours, l'omission bloque la mise en paiement.",
-      "Le retard dans la remise d'un rapport de frais ne relève pas de prime abord du conseil de discipline.",
       "Aucune minoration de 50 % n'est prévue par la réglementation.",
-      "La responsabilité financière personnelle du chef de délégation n'est pas engagée pour le retard d'un pair."
+      "La responsabilité financière personnelle du chef de délégation n'est pas engagée pour le retard d'un pair.",
+      "Le retard dans la remise d'un rapport de frais ne relève pas de prime abord du conseil de discipline."
     ],
     "explanation": "La règle posant une condition suspensive au versement ('subordonné au dépôt (...) dans les quinze jours'), le non-respect du délai fait obstacle au paiement.",
     "sourceType": "original_ai_assisted",
@@ -2603,17 +2452,17 @@
     "prompt": "Quelle est l'orientation principale exprimée dans cette note sur la formation continue des agents publics ?",
     "stimulus": "Développement des compétences professionnelles : La formation continue ne doit pas se limiter à une mise à niveau réglementaire ponctuelle, mais s'inscrire dans une démarche proactive d'adaptation aux transitions écologique et numérique. Elle constitue un investissement stratégique garantissant la qualité pérenne du service public rendu aux citoyens.",
     "options": [
-      "Concevoir la formation comme un investissement stratégique continu pour l'avenir du service.",
-      "Réduire les heures de formation pour maximiser la présence des agents à leur poste de travail.",
       "Limiter les sessions d'apprentissage aux seuls rappels juridiques obligatoires annuels.",
-      "Externaliser l'intégralité des modules de formation auprès d'organismes privés internationaux."
+      "Externaliser l'intégralité des modules de formation auprès d'organismes privés internationaux.",
+      "Réduire les heures de formation pour maximiser la présence des agents à leur poste de travail.",
+      "Concevoir la formation comme un investissement stratégique continu pour l'avenir du service."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : synthétise la vision de la formation comme levier stratégique continu face aux transitions écologique et numérique.",
-      "Le texte prône l'investissement dans les compétences et non la réduction des formations.",
       "Le texte affirme explicitement que la formation ne doit pas se limiter au cadre réglementaire.",
-      "Le texte ne préconise pas l'externalisation exclusive des sessions de formation."
+      "Le texte ne préconise pas l'externalisation exclusive des sessions de formation.",
+      "Le texte prône l'investissement dans les compétences et non la réduction des formations.",
+      "Correct : synthétise la vision de la formation comme levier stratégique continu face aux transitions écologique et numérique."
     ],
     "explanation": "L'extrait valorise la formation continue comme un investissement d'avenir indispensable pour adapter les services publics aux mutations numériques et écologiques.",
     "sourceType": "original_ai_assisted",
@@ -2634,50 +2483,19 @@
     "prompt": "Selon ce texte, quelle règle s'applique aux cumuls d'activités pour les fonctionnaires à temps plein ?",
     "stimulus": "Statut général des fonctionnaires de l'État : L'exercice d'une activité lucrative accessoire par un agent à temps plein est soumis à l'autorisation préalable écrite du ministre de tutelle. Cette activité ne doit porter aucune atteinte à l'indépendance, à l'impartialité ou à la neutralité du service public, ni concurrencer les missions de son administration.",
     "options": [
-      "Une autorisation écrite préalable du ministre vérifiant la neutralité et l'indépendance.",
-      "Une simple déclaration informelle formulée oralement auprès du collègue de bureau.",
       "La cessation définitive et immédiate de toute activité culturelle, bénévole ou associative.",
-      "Une autorisation tacite accordée automatiquement en l'absence de réponse sous huitaine."
+      "Une autorisation tacite accordée automatiquement en l'absence de réponse sous huitaine.",
+      "Une autorisation écrite préalable du ministre vérifiant la neutralité et l'indépendance.",
+      "Une simple déclaration informelle formulée oralement auprès du collègue de bureau."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le statut exige cumulativement l'accord écrit préalable du ministre et le respect de la neutralité.",
-      "Une déclaration orale informelle est totalement dépourvue de valeur statutaire.",
       "Le texte traite des activités lucratives et n'interdit pas le bénévolat associatif.",
-      "Le texte exige une autorisation écrite expresse, excluant l'accord tacite sans décision."
+      "Le texte exige une autorisation écrite expresse, excluant l'accord tacite sans décision.",
+      "Correct : le statut exige cumulativement l'accord écrit préalable du ministre et le respect de la neutralité.",
+      "Une déclaration orale informelle est totalement dépourvue de valeur statutaire."
     ],
     "explanation": "Le texte pose expressément l'exigence d'un accord écrit préalable de l'autorité ministérielle pour toute activité accessoire rémunérée.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "verbal-text-087",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 85,
-    "prompt": "Que risque un fonctionnaire exerçant une activité rémunérée sans autorisation ministérielle ?",
-    "stimulus": "Statut général des fonctionnaires de l'État : L'exercice d'une activité lucrative accessoire par un agent à temps plein est soumis à l'autorisation préalable écrite du ministre de tutelle. Cette activité ne doit porter aucune atteinte à l'indépendance, à l'impartialité ou à la neutralité du service public, ni concurrencer les missions de son administration.",
-    "options": [
-      "Des poursuites disciplinaires pouvant donner lieu au reversement des sommes indûment perçues.",
-      "L'obligation de transformer immédiatement son emploi public en contrat privé commercial.",
-      "Une exonération fiscale accordée au titre de la double compétence technique démontrée.",
-      "La prise en charge automatique de ses cotisations par son administration de rattachement."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le non-respect du régime statutaire des cumuls constitue une faute disciplinaire majeure.",
-      "L'administration ne transforme pas un statut public en contrat commercial privé.",
-      "Aucune exonération fiscale n'est accordée pour une activité illégale.",
-      "L'administration ne prend pas en charge les charges d'une activité non autorisée."
-    ],
-    "explanation": "L'exercice clandestin d'une activité lucrative en infraction avec le statut de la fonction publique expose l'agent à des sanctions disciplinaires et au reversement des gains.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2696,15 +2514,15 @@
     "prompt": "Quel principe gouverne l'évaluation environnementale des plans d'aménagement selon cet extrait ?",
     "stimulus": "Protection de la biodiversité : Tout plan directeur d'urbanisme susceptible d'affecter notablement un site Natura 2000 doit faire l'objet d'une évaluation environnementale préalable approfondie. Si les conclusions font apparaître un risque de dégradation irréversible de l'habitat naturel protégé, le projet ne peut être autorisé qu'en l'absence de toute solution alternative.",
     "options": [
-      "Subordonner l'autorisation d'urbanisme à l'absence de risque écologique ou d'alternative viable.",
       "Autoriser systématiquement les travaux de construction dès lors qu'ils créent des emplois locaux.",
+      "Subordonner l'autorisation d'urbanisme à l'absence de risque écologique ou d'alternative viable.",
       "Supprimer les zones protégées Natura 2000 qui ralentissent le développement économique urbain.",
       "Dispenser d'évaluation écologique les projets d'aménagement validés par un vote communal."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : synthétise l'obligation d'évaluation et l'interdiction d'atteinte écologique sans alternative.",
       "L'argument de l'emploi local ne dispense pas des exigences de préservation des sites protégés.",
+      "Correct : synthétise l'obligation d'évaluation et l'interdiction d'atteinte écologique sans alternative.",
       "Le texte vise à préserver les habitats protégés et non à déclasser les zones Natura 2000.",
       "Un vote communal ne peut déroger aux exigences légales de protection de l'environnement."
     ],
@@ -2728,16 +2546,16 @@
     "stimulus": "Organisation des carrières et promotions : Toute tentative de fraude avérée lors d'une épreuve écrite de promotion interne entraîne l'exclusion immédiate du candidat de la session en cours. Cette décision est assortie d'une interdiction de se présenter à tout examen professionnel d'avancement pour une durée de trois années consécutives.",
     "options": [
       "L'exclusion immédiate de la session et trois ans d'interdiction de concourir.",
-      "Une simple mention d'avertissement inscrite sur la copie sans autre sanction.",
       "La rétrogradation indiciaire d'office dans le corps hiérarchique inférieur.",
-      "L'obligation de repasser uniquement l'épreuve litigieuse lors de la session suivante."
+      "L'obligation de repasser uniquement l'épreuve litigieuse lors de la session suivante.",
+      "Une simple mention d'avertissement inscrite sur la copie sans autre sanction."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : les deux sanctions cumulatives sont l'exclusion directe et l'interdiction de 3 ans.",
-      "Le texte prévoit une exclusion ferme et non un simple avertissement formel.",
       "La rétrogradation de corps n'est pas la mesure prévue pour la fraude à un examen de promotion.",
-      "Le texte interdit de concourir pendant trois ans et exclut tout repêchage immédiat."
+      "Le texte interdit de concourir pendant trois ans et exclut tout repêchage immédiat.",
+      "Le texte prévoit une exclusion ferme et non un simple avertissement formel."
     ],
     "explanation": "Le texte fixe avec précision la sanction disciplinaire applicable : exclusion de la session actuelle et interdiction de participer aux examens durant 3 ans.",
     "sourceType": "original_ai_assisted",
@@ -2758,16 +2576,16 @@
     "prompt": "Que peut-on inférer quant aux perspectives de promotion d'un candidat sanctionné pour fraude l'année passée ?",
     "stimulus": "Organisation des carrières et promotions : Toute tentative de fraude avérée lors d'une épreuve écrite de promotion interne entraîne l'exclusion immédiate du candidat de la session en cours. Cette décision est assortie d'une interdiction de se présenter à tout examen professionnel d'avancement pour une durée de trois années consécutives.",
     "options": [
+      "Sa candidature est examinée par dérogation spéciale accordée par le président du jury d'examen.",
       "Il ne peut pas s'inscrire à l'examen de cette année en raison de la période d'interdiction en cours.",
       "Il peut concourir normalement dès lors qu'il change de spécialité administrative ou de ministère.",
-      "Sa candidature est examinée par dérogation spéciale accordée par le président du jury d'examen.",
       "Il est autorisé à concourir sous réserve de subir une surveillance renforcée en salle d'épreuve."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte n'octroie aucun pouvoir de dérogation discrétionnaire au président du jury.",
       "Correct : la sanction portant sur trois années consécutives, l'interdiction demeure active l'année suivante.",
       "L'interdiction vise tout examen professionnel d'avancement sans distinction de spécialité.",
-      "Le texte n'octroie aucun pouvoir de dérogation discrétionnaire au président du jury.",
       "Le texte proscrit l'inscription elle-même et ne propose pas de surveillance d'appoint."
     ],
     "explanation": "La durée de l'interdiction étant fixée à trois années entières, un agent exclu l'année précédente est frappé d'inéligibilité légale pour la session suivante.",
@@ -2789,17 +2607,17 @@
     "prompt": "Quel objectif principal poursuit la politique d'ouverture des données publiques (Open Data) ?",
     "stimulus": "Circulaire sur les données ouvertes : La mise à disposition des jeux de données publiques sur la plateforme nationale répond à un impératif de transparence démocratique et de stimulation de l'écosystème d'innovation. Les administrations doivent publier leurs bases brutes sous licence libre, à l'exception des données protégées par la vie privée ou la sécurité de l'État.",
     "options": [
-      "Favoriser la transparence et l'innovation en ouvrant les données non protégées.",
-      "Commercialiser les fichiers administratifs pour financer les services de l'État.",
+      "Restreindre l'accès aux données publiques aux seuls instituts de recherche universitaires.",
       "Diffuser l'intégralité des données individuelles nominatives des administrés en ligne.",
-      "Restreindre l'accès aux données publiques aux seuls instituts de recherche universitaires."
+      "Commercialiser les fichiers administratifs pour financer les services de l'État.",
+      "Favoriser la transparence et l'innovation en ouvrant les données non protégées."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : synthétise le double objectif (transparence et innovation) sous réserve de protection de la vie privée.",
-      "Le texte impose une diffusion sous licence libre, non une commercialisation payante.",
+      "L'Open Data est ouvert à l'ensemble des citoyens et de la société civile, sans restriction d'usage.",
       "Le texte exclut formellement les données relevant de la vie privée et de la sécurité.",
-      "L'Open Data est ouvert à l'ensemble des citoyens et de la société civile, sans restriction d'usage."
+      "Le texte impose une diffusion sous licence libre, non une commercialisation payante.",
+      "Correct : synthétise le double objectif (transparence et innovation) sous réserve de protection de la vie privée."
     ],
     "explanation": "La démarche Open Data vise la diffusion large et gratuite des données publiques non sensibles afin de renforcer la transparence et encourager les initiatives citoyennes et économiques.",
     "sourceType": "original_ai_assisted",
@@ -2821,49 +2639,18 @@
     "stimulus": "Règles d'utilisation du parc automobile : Les véhicules de service sont strictement affectés aux déplacements nécessités par les missions professionnelles. Aucun usage privé n'est toléré, sauf autorisation expresse délivrée par le secrétaire général pour des nécessités exceptionnelles de continuité ou d'astreinte opérationnelle d'urgence.",
     "options": [
       "Une autorisation formelle expresse délivrée par le secrétaire général pour astreinte.",
-      "Un accord verbal informel conclu entre l'agent conducteur et son chef de division directe.",
       "Le paiement préalable des frais d'essence par l'agent auprès de la régie ministérielle.",
+      "Un accord verbal informel conclu entre l'agent conducteur et son chef de division directe.",
       "Une utilisation limitée exclusivement au créneau méridien de pause déjeuner entre collègues."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : seule l'autorisation expresse du secrétaire général pour motif d'astreinte ou d'urgence est admise.",
-      "Un accord verbal est insuffisant face à la rigueur de la réglementation.",
       "Payer le carburant ne confère aucun droit d'usage privé sur les biens de l'État.",
+      "Un accord verbal est insuffisant face à la rigueur de la réglementation.",
       "La pause méridienne relève de la vie privée et ne constitue pas une astreinte opérationnelle."
     ],
     "explanation": "Le texte pose l'interdiction de principe absolue de tout usage privé, tempérée par une seule exception : l'autorisation écrite formelle du secrétaire général pour continuité de service.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "verbal-text-093",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Que risque un fonctionnaire utilisant un véhicule public pour ses courses de week-end sans autorisation écrite ?",
-    "stimulus": "Règles d'utilisation du parc automobile : Les véhicules de service sont strictement affectés aux déplacements nécessités par les missions professionnelles. Aucun usage privé n'est toléré, sauf autorisation expresse délivrée par le secrétaire général pour des nécessités exceptionnelles de continuité ou d'astreinte opérationnelle d'urgence.",
-    "options": [
-      "Une sanction disciplinaire pour détournement de biens publics et défaut de couverture d'assurance.",
-      "Une simple remarque amicale sans conséquence sur son dossier administratif individuel.",
-      "Le remboursement de l'équivalent d'un ticket de transport en commun auprès de la régie centrale.",
-      "La cession automatique du véhicule de service à titre privé contre une retenue salariale."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : l'utilisation non autorisée constitue un détournement de moyen public et un risque assurantiel majeur.",
-      "Le manquement aux règles de gestion du parc engage formellement la responsabilité disciplinaire.",
-      "La sanction ne se réduit pas à une compensation tarifaire de transport en commun.",
-      "L'administration ne cède pas ses biens publics aux fonctionnaires ayant enfreint le règlement."
-    ],
-    "explanation": "L'usage indu d'un véhicule de l'État à des fins personnelles caractérise un manquement statutaire grave et expose le conducteur à une absence d'assurance en cas de sinistre.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2882,17 +2669,17 @@
     "prompt": "Quelle idée maîtresse se dégage de cette directive sur les marchés d'alimentation collective ?",
     "stimulus": "Restauration collective publique : Les cahiers des charges des cantines administratives et scolaires doivent intégrer au moins 50 % de produits issus de l'agriculture biologique ou de filières sous signes officiels de qualité, dont au moins 20 % en circuits courts régionaux. Cette obligation conjugue santé publique et soutien durable à l'agriculture locale.",
     "options": [
-      "Favoriser l'alimentation biologique et locale dans les cantines publiques pour la santé et le terroir.",
-      "Interdire totalement l'approvisionnement en viandes au profit d'un régime strictement végétal.",
       "Augmenter de 50 % le tarif des repas facturés aux familles d'usagers dès le prochain trimestre.",
-      "Privilégier exclusivement les fournisseurs industriels internationaux à bas coût de revient."
+      "Interdire totalement l'approvisionnement en viandes au profit d'un régime strictement végétal.",
+      "Privilégier exclusivement les fournisseurs industriels internationaux à bas coût de revient.",
+      "Favoriser l'alimentation biologique et locale dans les cantines publiques pour la santé et le terroir."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : résume les deux axes (qualité bio et circuits courts) au service de la santé et des filières locales.",
-      "Le texte ne pose aucune interdiction sur les viandes mais encadre les modes de production.",
       "Le texte traite de la composition des achats, non d'une hausse tarifaire imposée aux familles.",
-      "L'orientation privilégie précisément les circuits courts et la qualité, à l'opposé du bas coût industriel."
+      "Le texte ne pose aucune interdiction sur les viandes mais encadre les modes de production.",
+      "L'orientation privilégie précisément les circuits courts et la qualité, à l'opposé du bas coût industriel.",
+      "Correct : résume les deux axes (qualité bio et circuits courts) au service de la santé et des filières locales."
     ],
     "explanation": "La mesure vise une restauration publique exemplaire combinant des exigences diététiques et environnementales (bio) avec le développement des circuits courts agricoles.",
     "sourceType": "original_ai_assisted",
@@ -2913,17 +2700,17 @@
     "prompt": "Selon le texte, dans quel délai une administration doit-elle accuser réception d'une requête transmise par voie postale ?",
     "stimulus": "Relations avec les usagers : Dès réception d'une demande écrite adressée par un citoyen, l'administration est tenue de lui expédier un accusé de réception dans un délai maximal de huit jours ouvrables. Ce récépissé mentionne obligatoirement le nom et les coordonnées du service instructeur ainsi que les voies et délais de recours.",
     "options": [
+      "Quarante-huit heures après validation formelle de la requête par le directeur de division.",
       "Huit jours ouvrables au plus tard à compter de la réception de la demande écrite.",
       "Quinze jours calendaires suivant le traitement effectif du dossier par l'instructeur.",
-      "Trente jours ouvrés après inscription de la lettre au registre central du courrier.",
-      "Quarante-huit heures après validation formelle de la requête par le directeur de division."
+      "Trente jours ouvrés après inscription de la lettre au registre central du courrier."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le texte n'exige pas de visa préalable du directeur pour envoyer l'accusé de réception.",
       "Correct : le texte fixe expressément le terme maximal à huit jours ouvrables dès réception.",
       "Le délai de quinze jours n'est pas celui prescrit pour l'accusé de réception initial.",
-      "Le délai de trente jours concerne fréquemment la décision de fond, non le récépissé.",
-      "Le texte n'exige pas de visa préalable du directeur pour envoyer l'accusé de réception."
+      "Le délai de trente jours concerne fréquemment la décision de fond, non le récépissé."
     ],
     "explanation": "L'obligation légale de délivrance de l'accusé de réception est assortie d'un délai strict de huit jours ouvrables à compter de l'arrivée du courrier.",
     "sourceType": "original_ai_assisted",
@@ -2944,16 +2731,16 @@
     "prompt": "Que permet à l'usager la mention du service instructeur et des délais sur l'accusé de réception ?",
     "stimulus": "Relations avec les usagers : Dès réception d'une demande écrite adressée par un citoyen, l'administration est tenue de lui expédier un accusé de réception dans un délai maximal de huit jours ouvrables. Ce récépissé mentionne obligatoirement le nom et les coordonnées du service instructeur ainsi que les voies et délais de recours.",
     "options": [
-      "Identifier son interlocuteur direct et faire valoir ses droits de recours en temps utile.",
-      "Considérer que sa requête administrative est d'ores et déjà définitivement acceptée par l'État.",
       "Engager immédiatement une action indemnitaire devant les tribunaux pour lenteur des services.",
+      "Considérer que sa requête administrative est d'ores et déjà définitivement acceptée par l'État.",
+      "Identifier son interlocuteur direct et faire valoir ses droits de recours en temps utile.",
       "Exiger un entretien téléphonique quotidien avec le chef du département ministériel concerné."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : ces mentions obligatoires assurent la traçabilité de l'instruction et sécurisent l'exercice des droits de recours.",
-      "L'accusé de réception atteste de l'arrivée du pli, non de l'acceptation sur le fond.",
       "Un recours contentieux immédiat serait irrecevable en l'absence de décision née.",
+      "L'accusé de réception atteste de l'arrivée du pli, non de l'acceptation sur le fond.",
+      "Correct : ces mentions obligatoires assurent la traçabilité de l'instruction et sécurisent l'exercice des droits de recours.",
       "L'usager ne dispose pas d'un droit à des entretiens téléphoniques quotidiens."
     ],
     "explanation": "Les mentions obligatoires sur le récépissé garantissent la sécurité juridique de l'administré en lui indiquant à qui s'adresser et comment contester une éventuelle décision future.",
@@ -2975,17 +2762,17 @@
     "prompt": "Quel est l'objectif premier du contrôle interne de gestion décrit dans ce document ?",
     "stimulus": "Maîtrise des risques organisationnels : Le contrôle interne a pour finalité d'assurer la conformité des opérations administratives aux lois et règlements, la fiabilité des états financiers et la protection du patrimoine public. Il ne constitue pas un mécanisme d'inspection punitive mais un outil préventif de sécurisation des processus opérationnels.",
     "options": [
-      "Sécuriser préventivement les processus publics pour garantir la régularité et la probité.",
-      "Sanctionner systématiquement les erreurs de saisie commises par les agents opérationnels.",
       "Supprimer les procédures d'audit pour alléger la charge de travail des directeurs de pôle.",
-      "Externaliser le contrôle de légalité auprès de cabinets d'audit privés étrangers."
+      "Sanctionner systématiquement les erreurs de saisie commises par les agents opérationnels.",
+      "Externaliser le contrôle de légalité auprès de cabinets d'audit privés étrangers.",
+      "Sécuriser préventivement les processus publics pour garantir la régularité et la probité."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : synthétise la vocation préventive de conformité, de fiabilité financière et de sécurité des opérations.",
-      "Le texte précise explicitement qu'il ne s'agit pas d'un outil d'inspection punitive.",
       "Le texte prône la consolidation du contrôle interne, non sa suppression.",
-      "Le contrôle interne relève de la responsabilité propre des administrations de l'État."
+      "Le texte précise explicitement qu'il ne s'agit pas d'un outil d'inspection punitive.",
+      "Le contrôle interne relève de la responsabilité propre des administrations de l'État.",
+      "Correct : synthétise la vocation préventive de conformité, de fiabilité financière et de sécurité des opérations."
     ],
     "explanation": "Le document définit le contrôle interne comme un levier préventif et d'assurance qualité visant à fiabiliser les processus et prévenir les dérives de gestion.",
     "sourceType": "original_ai_assisted",
@@ -3007,49 +2794,18 @@
     "stimulus": "Passation des marchés : Toute modification substantielle apportée aux documents de consultation en cours de procédure impose la publication d'un avis rectificatif dans les mêmes formes que l'avis initial. Ce rectificatif doit prolonger le délai de réception des offres d'une durée proportionnée permettant aux candidats d'adapter leur proposition.",
     "options": [
       "Publier un avis identique et prolonger le délai de remise pour adapter les offres.",
+      "Exiger des soumissionnaires qu'ils déposent leur offre sans tenir compte des changements.",
       "Modifier discrètement le cahier des charges sans en aviser les entreprises candidates.",
-      "Annuler d'office la totalité de la consultation et recommencer la procédure à zéro.",
-      "Exiger des soumissionnaires qu'ils déposent leur offre sans tenir compte des changements."
+      "Annuler d'office la totalité de la consultation et recommencer la procédure à zéro."
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : publication selon les mêmes formes et report proportionné du délai de dépôt des offres.",
+      "Les soumissionnaires doivent impérativement pouvoir intégrer les nouvelles prescriptions.",
       "Toute modification occulte violerait le principe fondamental de transparence et d'égalité.",
-      "L'annulation n'est pas requise si l'avis rectificatif et le report de délai suffisent à rétablir l'égalité.",
-      "Les soumissionnaires doivent impérativement pouvoir intégrer les nouvelles prescriptions."
+      "L'annulation n'est pas requise si l'avis rectificatif et le report de délai suffisent à rétablir l'égalité."
     ],
     "explanation": "La modification des pièces en cours de consultation impose une publicité rectificative identique et une prolongation équitable du calendrier de réponse.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "verbal-text-099",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
-    "difficulty": 3,
-    "language": "fr",
-    "estimatedSeconds": 85,
-    "prompt": "Que risquerait l'acheteur public s'il modifiait substantiellement son besoin sans reporter la date limite de remise ?",
-    "stimulus": "Passation des marchés : Toute modification substantielle apportée aux documents de consultation en cours de procédure impose la publication d'un avis rectificatif dans les mêmes formes que l'avis initial. Ce rectificatif doit prolonger le délai de réception des offres d'une durée proportionnée permettant aux candidats d'adapter leur proposition.",
-    "options": [
-      "Un recours en annulation pour rupture de l'égalité de traitement et entrave à la concurrence.",
-      "L'obligation de verser une indemnité forfaitaire immédiate à tous les soumissionnaires.",
-      "Une homologation tacite du contrat par la commission de surveillance des marchés publics.",
-      "La transformation automatique du marché de travaux en simple accord-cadre de fournitures."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : ne pas reporter le délai empêche les candidats de concourir à armes égales, viciant la procédure.",
-      "Une indemnité n'est pas versée automatiquement sans action en responsabilité formelle.",
-      "Une irrégularité grave ne fait l'objet d'aucune homologation tacite par les autorités.",
-      "La nature du contrat ne change pas automatiquement pour un vice de procédure."
-    ],
-    "explanation": "Le défaut de prolongation du délai lors d'une modification majeure lèse les soumissionnaires et expose l'acheteur à l'annulation du marché devant le juge administratif.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -3068,17 +2824,17 @@
     "prompt": "Quelle conclusion générale résume l'esprit de ce code de conduite administrative ?",
     "stimulus": "Éthique et déontologie du fonctionnaire : Le service de l'intérêt général constitue le fondement et la noblesse de la fonction publique. Chaque agent incarne la continuité, l'équité et la probité de l'État dans ses relations avec les usagers, ses collègues et les institutions démocratiques. L'exemplarité personnelle assure la confiance citoyenne dans les services publics.",
     "options": [
-      "L'exemplarité, l'équité et le service de l'intérêt général fondent la confiance publique.",
-      "L'action de l'agent public vise en priorité l'optimisation des rentrées financières fiscales.",
+      "La neutralité de l'administration est secondaire face aux impératifs d'efficacité économique.",
       "Le fonctionnaire doit faire prévaloir ses convictions personnelles sur les textes légaux votés.",
-      "La neutralité de l'administration est secondaire face aux impératifs d'efficacité économique."
+      "L'exemplarité, l'équité et le service de l'intérêt général fondent la confiance publique.",
+      "L'action de l'agent public vise en priorité l'optimisation des rentrées financières fiscales."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : résume les principes directeurs d'intégrité, d'équité et d'exemplarité au bénéfice de la confiance démocratique.",
-      "L'intérêt général dépasse la simple préoccupation de perception fiscale.",
+      "La neutralité et la continuité sont des fondements réaffirmés de la fonction publique.",
       "Le texte pose la primauté absolue de l'équité et de la probité de l'État sur les opinions privées.",
-      "La neutralité et la continuité sont des fondements réaffirmés de la fonction publique."
+      "Correct : résume les principes directeurs d'intégrité, d'équité et d'exemplarité au bénéfice de la confiance démocratique.",
+      "L'intérêt général dépasse la simple préoccupation de perception fiscale."
     ],
     "explanation": "Le code réaffirme les valeurs cardinales de la fonction publique : dévouement à l'intérêt général, impartialité, droiture et garantie de la confiance démocratique.",
     "sourceType": "original_ai_assisted",

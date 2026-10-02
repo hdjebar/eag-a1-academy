@@ -1,0 +1,3290 @@
+{
+  "mode": "legacy-baseline",
+  "savedAt": "2026-10-02T19:00:00+02:00",
+  "note": "Inventaire des questions déjà présentes dans data/approved/ lors de la mise en place du contrôle de relecture (PR audit 2026-10-02). Ces décisions reprennent le relecteur et la date inscrits dans chaque question ; elles ne constituent pas une nouvelle approbation. Les lots ajoutés par les scripts generate-batch*/batch*-*.mjs n ont pas reçu de revue IA aveugle. Ordre des options mélangé (contenu inchangé) avant l inventaire.",
+  "reviewers": [
+    "hdjebar"
+  ],
+  "decisions": [
+    {
+      "id": "abstract-symb-001",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "4bfd4421890b80cd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-arrow-002",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "790c3651979956b3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-latin-003",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "a954075eaf881252",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-grid-004",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "82c64a8217cf69d5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-dots-005",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "9a29e9739262666b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-rot-006",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "8b761c143523cad0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-interleave-007",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "750be2341e89ee11",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-flip-008",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "1496ff7d3a697e8f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-mirror-009",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "fa91e11f4c7d2c70",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-gap-010",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "bb507dc8a2a89961",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "abstract-matrix-011",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5aad01f269282598",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "abstract-pair-013",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7d082fddb4213617",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "abstract-step-014",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bb243d6055e2dce1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "abstract-diag-015",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4f85013dcca95d89",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "abstract-symb-016",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2cb2b8d31b020e94",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-rot-018",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fbd112ac6b5dce8d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-matrix-020",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3eb985fdccc9ed8a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-step-021",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8905c115e45b9e98",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-rot-022",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a5b5989bd738386f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-trans-023",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "eb038bbc41634116",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-matrix-024",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "789674b7d430615d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-symb-025",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "80ae5015f51393a2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-matrix-027",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b4be5cd04320a75a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-rot-030",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6fd14cc9b8fe5e39",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-matrix-031",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "684ce7f4e4b0007b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-trans-032",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "73341022e017d884",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-symb-033",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0f87447a32715577",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "abstract-symb-036",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "46253f8279a72e03",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "abstract-mat-037",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "898c056a474e48ee",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "abstract-rot-038",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "843bcb40e18a0385",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "abstract-mat-052",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3d41b9def6f1bdbb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "abstract-mat-075",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e0980180f6447080",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.867Z"
+    },
+    {
+      "id": "abstract-seq-078",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6ab090e68339121a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.867Z"
+    },
+    {
+      "id": "abstract-mat-087",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "633da87bf1bd44e6",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.867Z"
+    },
+    {
+      "id": "numeric-ratio-001",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "c837390d4076cfca",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-mean-002",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "fc711883ee7ff1bb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-perc-003",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "593ef5f6f335bf5b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-rate-004",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "0536b6bcad0973e7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-table-005",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "1bcb4696909dccc1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-budget-006",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "92525a7aaaeb4555",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-weight-007",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "c61da77a406d864b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-scale-008",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "c61166e41c6c75fa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-speed-009",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "91fb55b159e72866",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-delta-010",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "bc7096889481db59",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "numeric-table-011",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "be41a65c4eeb554a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "numeric-ratio-012",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "452d6ff9e3171fca",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "numeric-perc-013",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "aa10280753257116",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "numeric-mean-014",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5f03a799171298f4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "numeric-var-015",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fd62d59480bed766",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "numeric-calc-016",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a3d2ecacf6d0e8ef",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-table-017",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "50a77ac2293e2a50",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-var-018",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8976b3a2f78b46c8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-mean-019",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "babb909ee071d92e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-ratio-020",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bcd5cf92dee53953",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-perc-021",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e72a358f658800ad",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-ops-022",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6309bbc39c67c4f4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-table-023",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c4ac6d2e6bef4b03",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-var-024",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "57c6a88990cf7252",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-mean-025",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1c01a886beee02fb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-scale-026",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "9c55f0bb302832cd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-perc-027",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "990c5c1b0d3327e6",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-var-028",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1081ea8eab93bab7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-mean-029",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d97a0e4c80d22280",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-ratio-030",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a5fdd5fcd3411383",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-ops-031",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d1f24a3b4d766982",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-perc-032",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8e4945b0ce2a868c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-table-033",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f10f020fbeeb5028",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-var-034",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b7c5e7c5295549ad",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-mean-035",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "254f1e7a2d4c6637",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "numeric-calc-036",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8592f12f2d5981ce",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-037",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a1bf755287597d34",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-038",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "64839d7fc775d49f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-039",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "971697179e974a98",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-040",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d4f4e57608610e20",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-041",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "007082478810ccdf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-042",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d09cf256ca3179aa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-043",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "abec3a4974a75582",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-044",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "aa99d44a5031714c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-045",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "01c2a2edea7463bd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-046",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6c7158757eed4103",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-047",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "12aeb750c5c802a9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-048",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7d27926bfa9cb165",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-049",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1d7240a6f8b7c33e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-050",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2965d8944a33e33b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-051",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "19b910b0dd76b591",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-052",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "404eca621a5ba4bd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-053",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e4b25182a87681e2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-054",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dde78f9bf0ef1cd3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-055",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ab6102775277c6d8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-056",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b3455c4f2d1fe2f1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-057",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e051c83e5271880f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-058",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f626807f8878afeb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-059",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "40ffd62b7e0cddee",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-060",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "31385eb9e946be83",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-061",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "997e22a4a67d3394",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-062",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8467686ebfee61d3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-063",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7d3e8cb9e20dcd51",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-064",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a41c0b6c788fdc5f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-065",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e2b89b915d05aa0e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "numeric-calc-066",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c920dc3698bee521",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-067",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "54ed30d1d9074386",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-068",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "df5e345a06e774eb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-069",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "387f9dd6732a1b2d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-070",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bf744822ff7c57dd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-071",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2881a3819a1c78c8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-072",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2b606f70147d5adc",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-073",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "79378104e661540e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-074",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "561229bc0428adf0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-075",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "04ac5ef0e3f388b2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-076",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e9880518673bba70",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-077",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "78856770e23be3c3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-078",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "11c1f4cf2c2e41b0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-079",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "350761beb68dc7c7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-080",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d4f18e280ca0681a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-081",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "382df381a7aeb351",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-082",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f0c78825f9fe7a10",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-083",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a6f34c27bf323e19",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-084",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a2a399569fea2344",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-085",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fcc01bc725272745",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-086",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6597c8a352e223a0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-087",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e76c9fd02a23ab3e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-088",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "16c0152c6fd53b22",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-089",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "677c37d2f2945f43",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-090",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6025f091bf819c94",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-091",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d455b57a5b9a194c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-092",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "154c6a0866bfd748",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-093",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b7d26150163cb0c1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-094",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7f442496646e587a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-095",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0e743a082841a9fc",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-096",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4f31c96001a397df",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-097",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d79ef4135844f9c0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-098",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "34e5bf331335cce1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-099",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8279b04227eb762c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "numeric-calc-100",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "057e2e332d943556",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-slot-001",
+      "decision": "legacy",
+      "version": 4,
+      "hash": "695675569d848b77",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T10:40:00+02:00"
+    },
+    {
+      "id": "planning-prio-002",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "5d364ea18b31340b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T10:40:00+02:00"
+    },
+    {
+      "id": "planning-order-003",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "20e0547a45e0b516",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-room-004",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "28faddf42f4ea07e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-delay-005",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "5d4e6bd1d1a71350",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-crit-006",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "9628afd6b92c31d1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-capa-007",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "78b35c30d0bfd88c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-overlap-008",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "d32efcf7c97c4eec",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-buffer-009",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "434ca4d831c1b6b3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-dep-010",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "34567cd9481ef5f3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "planning-trio-011",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a8c8c3d299d1fc40",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "planning-prio-012",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "485440c2e47c5d6c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "planning-room-013",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "600ef7b3bba3f1db",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "planning-chain-014",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "610f30b54d939837",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "planning-meet-016",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d019ae82fb79bd93",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-prio-017",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "9fe8f432d6804122",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-room-018",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ada9383af91bbb7e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-dep-019",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "87aea9a38dae298b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-buffer-020",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a91de5f7152bbd08",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-meet-021",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "120cfeb28c196446",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-prio-022",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "814c6aab714b1970",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-conflit-023",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6faa4564adaa95bf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-crit-024",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e3e0c4c5a81c2721",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-agenda-025",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0c419dd0de3c0549",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-meet-026",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "93da7fad1730466b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-prio-027",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7083e97655fe777b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-conflit-028",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "30cb548615ee2854",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-dep-029",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fbada4de1b8402f7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-agenda-030",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "005666e2072f3854",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-meet-031",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "70a8e4057fdc6966",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-conflit-033",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3811345b4f2d358c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-agenda-035",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5929f78a39a12afa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "planning-sched-036",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1abe8325bfd4c8bf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-crit-037",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "339b954a77f6bf2b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-prio-038",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4a187c83a33d29c0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-039",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c1e8e14c4de92944",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-gantt-040",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f10a718a288c9a9c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-conf-041",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "966883ee9cef87ac",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-ord-042",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c8c4f6fce9c087ec",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-043",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e1b8a6664b9ea992",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-prio-044",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ab533e237be2b5cb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-crit-045",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "71153cf057f7be61",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-sched-046",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0812b501eb6cee1f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-047",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8e5f2738ffb40678",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-prio-048",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d64e74fdda14827f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-ord-049",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "82a9c7b3f42428e8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-sched-050",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "38c33376e77e1a6f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-crit-051",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e6a8d810a5f57dd6",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-052",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e552e192ed0fac9b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-prio-053",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "eb46eb33a58bbef1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-gantt-054",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5c1190cd8da0b356",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-056",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "25d1774a520142ec",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-conf-057",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a5875f29eb11c741",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-ord-058",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5a7fe4d8f6aebfb8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-crit-059",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cfb177d58de5a148",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-060",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5e5681b73d602b02",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-prio-061",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4fb84114667cd569",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-sched-062",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ab7996675f53c10e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-ord-063",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "45a49df4b9fe3d82",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-crit-064",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3151d9e28cae8760",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-res-065",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cc4f85255475c5e9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "planning-sched-066",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "da9373b50dd1c853",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-067",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ea9b391910ddae3b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-068",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ebcc1d5ce472033e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-069",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f83c35679aac8e0f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-070",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "09932ba51c1d3fbb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-071",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "56d162e2df37ea62",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-sched-072",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cb5966dfd9b51b6d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-073",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "05a17d23cad49ace",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-074",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "698f1c2e286197b3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-075",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6caea56372c63d01",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-076",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "638a02219c03578f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-077",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ce11002b1abb9bbb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-078",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4692dd930686f0ba",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-080",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c86eea09b7388166",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-081",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c417c8ea5c4b7f19",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-082",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "104dfa0097666bdd",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-083",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1bda8d699824a23f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-sched-084",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0973b00c625e7272",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-085",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d97015ba0d275125",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-086",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f80fd324e03eb9f2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-087",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "9da3f38dca814b96",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-088",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "73c4a622c485daad",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-sched-089",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4dbcf3c8ca9b6978",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-090",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2f1972d3c646fab5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-091",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cdfbc28f379365ae",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-092",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b1ea8957acebc327",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-093",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5e5fcaa0d4b24baf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-095",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8f854a8b629ca2df",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-crit-096",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "33ff42f5570e61c9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-prio-097",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dcf476a606b127b8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-res-098",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "38d17654cfe5bfda",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-sched-099",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ea0d0a0622697691",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "planning-conf-100",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fc269480f32d9f93",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-serve-001",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "15883b4b90ec90cf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-advise-002",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "995a568f4616bcc2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-003",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "d4b1a8841b1b9cd4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-004",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "6e9d1fcaf71faa6a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-005",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "4dbaf4f08a195d8f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-advise-006",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "b39e7ba3dd0c2280",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-advise-007",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "2740a50d3b3d37ad",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-008",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "71825a99e834b70a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-advise-009",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "b8fd31df119651be",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-010",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "6e8f63855fab2766",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "situational-serve-011",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "81bb89815e9cf178",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "situational-advise-012",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "33c29abdc4b2a9c4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "situational-serve-013",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6501c2bacc8f4a6c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "situational-advise-014",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8e41c2849d043169",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "situational-serve-015",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bef7d8701df3dad4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "situational-serve-016",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dce97c749fa1c481",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-017",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4dfb48b68cbfc2d8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-018",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "9571846c633dd90f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-019",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4b3bc636614a3bb1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-020",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fa3f2a3d7edbcf63",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-021",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "85b2a81c85b29de4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-022",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "de553dfbd1cb4159",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-024",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4a39749c2260621c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-027",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6459f7b228cb77da",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-028",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cea055cb918f3350",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-029",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "24e713adc04e3809",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-030",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ece0c2a85eb7169c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-031",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "acad3e7706305458",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-032",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "45bc3c9ac5c9e83e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-serve-034",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3ca0244bb9672e82",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-advise-035",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8e6dd2933bca15ea",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "situational-scen-036",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "22f1250178953bf6",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-037",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b9477132533da9cb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-038",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0d1971ee5bc72419",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-039",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "95482206e35b8a63",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-040",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c1c84cfd0bbdc316",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-041",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "60d6fd0bac41205c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-042",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "588e67285a731b2a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-043",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c7d490b18001c771",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-045",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cb78e5e81cdd4984",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-046",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "312b276405c70ebc",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-047",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7130d287de23b543",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-048",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dec62326c50498ab",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-049",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "204f2d343a4f470b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-050",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "687ace4ae4700ce2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-051",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c1275d7cfba8b65e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-052",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c580a1453789e97b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-053",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "acaa81609b0f35e1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-054",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7d2a8e0fc75cf779",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-055",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f7ae1de390893c35",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-056",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e0fdd8349578e6f1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-057",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ba5ce905cebc82bb",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-058",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "20c24caa1e2f2ff9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-059",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4dea120f63bcb25b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-060",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "30a6b0cf41d290f4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-061",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4f7895a054be2b21",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-062",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6a9f69f144e9b39f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-063",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "406a45668a0799d2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-064",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dc90a2c5a2e9f98d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-065",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "618d5338607477e7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "situational-scen-066",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "aeab2c32f158cbe0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-067",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "96a83a5fb62ac4c0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-068",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "06047ba98878344a",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-069",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3af5bf6bfdd92bcf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-070",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "43e47cf81d2f4d2e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-071",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2bfc20d8241741a1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-072",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a295be4396347374",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-073",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "545c29f5694a6b49",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-075",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3d80c8a88e6492ba",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-076",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2646dc8cb5300201",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-077",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "62d8ef3152b952d5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-078",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "494cc35419e5d43c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-080",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a71fea40452f4905",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-081",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7270875a116a2736",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-082",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0f0d492cc0967c7d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-083",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "890f93e3ff229ab3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-084",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e82e6b940af430aa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-085",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "737c91c4de0a5351",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-086",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a861c2df581aea83",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-087",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "616dad4401b521c7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-088",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1603e89862f21808",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-089",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3dc75c1c477ca0a9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-090",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4edc27349dce4569",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-091",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "cf882f9d54df6c9f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-092",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "121aad2a31534b92",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-093",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1a75555ddcaa8df5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-094",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1891f82f6c1bfdc9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-096",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0e6bcdba2f940407",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-098",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8c2aee8bae44349e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "situational-scen-099",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "88c532f57bc53062",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-deduct-001",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "4f79aa18862a4f06",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-cond-002",
+      "decision": "legacy",
+      "version": 3,
+      "hash": "7c850776770eeaaf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-quant-003",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "e627e6e8950ce469",
+      "reviewer": "hdjebar",
+      "at": "2026-10-01T21:00:00+02:00"
+    },
+    {
+      "id": "verbal-order-004",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "15469e654b14779f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-neg-005",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "5e2ae3c16ae5c7bf",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-syll-006",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "751fe1d2747f33b7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-rule-007",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "ceb56dba303c0506",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-extrap-008",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "4886cc1aa193d21c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-equiv-009",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "01cd1fddd288d9b9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-fact-010",
+      "decision": "legacy",
+      "version": 2,
+      "hash": "a4f9684ef45364e5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T09:15:00+02:00"
+    },
+    {
+      "id": "verbal-telework-011",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6a52c4bc7118eff9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "verbal-tfcs-012",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4c2468b2490dca60",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "verbal-synth-013",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c007d8436f877cc4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "verbal-deont-014",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e20b58c64c2f9597",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "verbal-cert-015",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7ed7d1fe1a7b6b71",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T14:55:00+02:00"
+    },
+    {
+      "id": "verbal-contra-016",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7704f07dc0914228",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-tfcs-017",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8547bbf744d717a7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-rule-018",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7e19fbbc45fc613b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-quant-019",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c45f990d67de0632",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-comp-020",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d57ba8503b45258c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-synth-021",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e60a7faefc5c526f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-tfcs-022",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c465241d9eee9567",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-syll-023",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "71e550d634981fe4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-app-024",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dbe9ebdc92f23aa3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-comp-025",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "08017188049f33fa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-inf-026",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "73cd7ddf705e75d8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-app-028",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fc58abfaf3756bc3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-inf-029",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f42971227d1a31f9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-synth-030",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "faee8c9a41429fe8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-inf-031",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d44bb270aee96b06",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-app-032",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "7efe1c5396f40a34",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-comp-034",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0fe7b0e628b2be30",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-inf-035",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1afe210dc219670b",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:28:18.714Z"
+    },
+    {
+      "id": "verbal-text-037",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a1ddb1194adcf999",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-038",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "77d1281449c937b9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-039",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "505fff4fb745cfac",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-040",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a91929fd00f9cd0e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-041",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8b8c0e0c6157d644",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-042",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "e57a2830f41f5b15",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-043",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "373704721fa4fd79",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-044",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f51e9b47e0919b9d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-045",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "8b971f2b7c80a7b1",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-046",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bc145bb9d62faee4",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-047",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6a49773deac3404f",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-048",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "3ada506a88cbf38d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-049",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f4fa26fd22bc2451",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-050",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "1b93828e239a50c8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-051",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a870cdae4b31ad6e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-052",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f8088af7382b8d74",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-053",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "fd76ccdff836d08e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-054",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5291594f8035fb11",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-055",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "42518c6c9acc7dd3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-056",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0533fce3d46a13ff",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-057",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ce6df585e2d5f488",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-058",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "dfaadc1fa55a40c0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-059",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b80e13e0372f6082",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-060",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2e523ff07f1d4398",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-061",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d1a589cebf5b01e5",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-062",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d0cb2447a6c4784d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-063",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "034b7943cba15bc8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-064",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "f8ad354186a0d04c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-065",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "d1c11b63f6c05df9",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:36:51.069Z"
+    },
+    {
+      "id": "verbal-text-066",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b359b34bd5d9e414",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-067",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ef64937df1ba636c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-068",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "16b2b77db2c1e9e3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-069",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2e786069d91e5318",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-070",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "24e5e9cd91afd763",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-071",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2ce1be72ceecaf24",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-072",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "57fdb8eec59bd9b2",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-073",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "a3e78f6b00d7edb7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-074",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "28ccc99d9f4f88b0",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-075",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4c7b0bcbad594882",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-077",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "6a583af02292296c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-078",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "bc8e81aa74c643fa",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-079",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c3de346b4dd3c9db",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-080",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ba402e2934718d0c",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-081",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "2067e92df84ca1b6",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-082",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "88ab5ea45fa58c2e",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-084",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0898f01bfc46cc90",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-085",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "ae79875715432650",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-086",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0db6383d391a5272",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-088",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "5460220291819751",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-089",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "818f0f8b7fce812d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-090",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "537a0baf6f687b49",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-091",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0fa163d82c6110d7",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-092",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "b7a391b41c8e532d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-094",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "42d1fa5f453b4b42",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-095",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "307428661693ec50",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-096",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "c731a672923912b3",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-097",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "90251263db35235d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-098",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "4d1600203b2a92bc",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    },
+    {
+      "id": "verbal-text-100",
+      "decision": "legacy",
+      "version": 1,
+      "hash": "0d8600f196f8dd6d",
+      "reviewer": "hdjebar",
+      "at": "2026-10-02T13:42:39.868Z"
+    }
+  ]
+}

@@ -44,7 +44,7 @@ eag-a1-academy/
 ├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité)
 │
 ├── data/
-│   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand)
+│   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand, empreinte) ; contrôlé en CI
 │   └── approved/             # Source de vérité pérenne : fichiers JSON validés par catégorie
 │       ├── abstract.json
 │       ├── numeric.json
@@ -107,7 +107,7 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les **100 questions calibrées** de la catégorie (soit **500 questions au total** dans la banque).
+* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les questions approuvées de la catégorie (410 au 2 octobre 2026, objectif 100 par catégorie).
 * **Raisonnement abstrait (Test géométrique)** : le stimulus de type `{ type: "shapes", text: "..." }` permet la représentation structurée et accessible de matrices 3×3 et de suites de figures (rotations, symétries, grilles d'éléments géométriques purs), sans dépendance d'image externe ni risque d'injection.
 * **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
 * **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :

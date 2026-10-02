@@ -98,6 +98,16 @@
     /\balle\s+(?:antworten|optionen|aussagen)\b/i,
   ];
   const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
+  /** Characters allowed in abstract figures: whitespace, « ? », arrows, geometric shapes and related symbol blocks. */
+  function isFigureChar(c) {
+    const cp = c.codePointAt(0);
+    return /\s/.test(c) || c === "?" || c === "·"
+      || (cp >= 0x2190 && cp <= 0x21ff)  // arrows
+      || (cp >= 0x2500 && cp <= 0x25ff)  // box drawing, block elements, geometric shapes
+      || (cp >= 0x2605 && cp <= 0x2606)  // ★ ☆
+      || (cp >= 0x27f0 && cp <= 0x27ff)  // supplemental arrows
+      || (cp >= 0x2b00 && cp <= 0x2bff); // misc. symbols and arrows (⬟ ⬢ …)
+  }
 
   function strings(value, where, out) {
     if (typeof value === "string") out.push([where, value]);
@@ -130,6 +140,15 @@
       const lengths = options.map((o) => o.length);
       const others = lengths.filter((_, i) => i !== ci);
       if (lengths[ci] > 1.4 * Math.max(...others) && lengths[ci] > 25) warnings.push("la bonne réponse est nettement la plus longue (indice involontaire)");
+    }
+    if (item.category === "abstract" && item.stimulus && typeof item.stimulus.text === "string") {
+      // Official description: « séries de formes ou de matrices géométriques ». Figures only:
+      // no letters, digits, words, ideograms or punctuation that carries meaning.
+      const bad = [...new Set([...item.stimulus.text, ...options.join("")].filter((c) => !isFigureChar(c)))];
+      if (bad.length) errors.push(`figure abstraite : symboles géométriques uniquement (caractères interdits : ${bad.join(" ")})`);
+      const marks = (item.stimulus.text.match(/\?/g) || []).length;
+      if (marks !== 1) errors.push(`figure abstraite : exactement un « ? » attendu dans le stimulus (trouvé : ${marks})`);
+      if (options.some((o) => o.includes("?"))) errors.push("figure abstraite : une option ne peut pas contenir « ? »");
     }
     if (item.language === "fr" && item.category === "numeric") {
       const text = strings([item.prompt, item.stimulus, item.options], "x", []).map((s) => s[1]).join(" ");
@@ -173,6 +192,78 @@
     return `${item.prompt || ""} ${stim}`;
   }
 
+
+  /* ---------- Content fingerprint (review log) ---------- */
+  const REVIEW_FIELDS = ["reviewer", "reviewedAt", "reviewNotes", "reviewStatus", "rejectionReason", "revisionOf"];
+  function canonical(v) {
+    if (Array.isArray(v)) return `[${v.map(canonical).join(",")}]`;
+    if (v && typeof v === "object") return `{${Object.keys(v).sort().map((k) => `${JSON.stringify(k)}:${canonical(v[k])}`).join(",")}}`;
+    return JSON.stringify(v);
+  }
+  /**
+   * Fingerprint of what a reviewer approved: every field except the review metadata.
+   * FNV-1a 64-bit (synchronous, identical in the browser and in Node). Not a security hash:
+   * it detects edits made to an approved item without a new review-log entry.
+   * @param {object} item
+   * @returns {string} 16 hex characters.
+   */
+  function contentHash(item) {
+    const clean = {};
+    for (const k of Object.keys(item || {})) if (!REVIEW_FIELDS.includes(k)) clean[k] = item[k];
+    const s = canonical(clean);
+    let h = 0xcbf29ce484222325n;
+    const prime = 0x100000001b3n, mask = 0xffffffffffffffffn;
+    for (const byte of new TextEncoder().encode(s)) h = ((h ^ BigInt(byte)) * prime) & mask;
+    return h.toString(16).padStart(16, "0");
+  }
+
+  /* ---------- Bank-level rules (a whole file or category) ---------- */
+  const figureKey = (item) => String(item.stimulus && item.stimulus.text || "").replace(/\s+/g, " ").trim();
+  const DUP_ERROR = 0.9, DUP_WARN = 0.75;
+  const BALANCE_MIN_ITEMS = 20, MAX_POSITION_SHARE = 0.4, MAX_LONGEST_SHARE = 0.4;
+
+  /**
+   * Checks that only make sense across items: near-duplicates, the spread of the correct
+   * answer's position, and how often the correct answer is the longest option.
+   * Position and length checks apply to non-tfcs items once a set has at least 20 of them.
+   * @param {object[]} items - Items of one file or one category.
+   * @returns {{ errors: string[], warnings: string[] }}
+   */
+  function bankChecks(items) {
+    const errors = [], warnings = [];
+    const list = (Array.isArray(items) ? items : []).filter((x) => x && typeof x === "object");
+    const texts = list.map((x) => `${itemText(x)} ${(x.options || []).join(" ")}`);
+    for (let i = 0; i < list.length; i++) {
+      for (let j = i + 1; j < list.length; j++) {
+        const a = list[i], b = list[j];
+        if (a.category !== b.category) continue;
+        if (a.category === "abstract" && figureKey(a) && figureKey(a) === figureKey(b)) {
+          errors.push(`${a.id} et ${b.id} : même figure (doublon)`);
+          continue;
+        }
+        if (a.category === "abstract") continue; // trigram similarity is meaningless on short symbol strings
+        const s = similarity(texts[i], texts[j]);
+        if (s >= DUP_ERROR) errors.push(`${a.id} et ${b.id} : quasi-doublon (similarité ${s.toFixed(2)})`);
+        else if (s >= DUP_WARN) warnings.push(`${a.id} et ${b.id} : très proches (similarité ${s.toFixed(2)})`);
+      }
+    }
+    const byCat = {};
+    for (const x of list) if (x.itemFormat !== "tfcs" && Array.isArray(x.options) && Number.isInteger(x.correctIndex)) (byCat[x.category] = byCat[x.category] || []).push(x);
+    for (const [cat, xs] of Object.entries(byCat)) {
+      if (xs.length < BALANCE_MIN_ITEMS) continue;
+      const counts = [0, 0, 0, 0, 0];
+      let longest = 0;
+      for (const x of xs) {
+        counts[x.correctIndex]++;
+        const len = x.options.map((o) => String(o).length);
+        if (len.every((l, k) => k === x.correctIndex || l < len[x.correctIndex])) longest++;
+      }
+      const top = Math.max(...counts);
+      if (top / xs.length > MAX_POSITION_SHARE) errors.push(`${cat} : la bonne réponse est en position ${counts.indexOf(top) + 1} dans ${top}/${xs.length} items (max ${MAX_POSITION_SHARE * 100} %) ; mélangez l'ordre des options`);
+      if (longest / xs.length > MAX_LONGEST_SHARE) warnings.push(`${cat} : la bonne réponse est l'option la plus longue dans ${longest}/${xs.length} items (indice exploitable)`);
+    }
+    return { errors, warnings };
+  }
 
   /* ---------- LLM helpers shared by admin.html and the Node scripts ---------- */
   function fillTemplate(tpl, params) {
@@ -229,5 +320,5 @@
     return { item: clean, issues };
   }
 
-  g.EagRules = { validateSchema, semanticChecks, checkItem, similarity, itemText, fillTemplate, extractJson, prepareCandidates, revisionContext };
+  g.EagRules = { validateSchema, semanticChecks, checkItem, bankChecks, isFigureChar, contentHash, similarity, itemText, fillTemplate, extractJson, prepareCandidates, revisionContext };
 })(typeof globalThis !== "undefined" ? globalThis : this);

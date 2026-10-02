@@ -12,7 +12,7 @@ const validateSchema = ajv.compile(schema);
 
 // Same rules file as admin.html (classic script exposing globalThis.EagRules).
 import { EagRules } from "./lib/rules.mjs";
-const { semanticChecks, validateSchema: miniValidate } = EagRules;
+const { semanticChecks, bankChecks, validateSchema: miniValidate } = EagRules;
 
 /**
  * Validates a single test item: JSON Schema 2020-12 via Ajv (authoritative), then the shared
@@ -63,7 +63,8 @@ export function checkBank(bank) {
   const ids = bank.map((x) => x?.id).filter(Boolean);
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
   if (dup.length) errors.push(`Identifiants dupliqués : ${[...new Set(dup)].join(", ")}`);
-  return { errors, warnings };
+  const b = bankChecks(bank);
+  return { errors: errors.concat(b.errors), warnings: warnings.concat(b.warnings) };
 }
 
 /**
@@ -122,6 +123,9 @@ function selfTest() {
     "champ inconnu": { ...base, extra: 1 },
     "date invalide": { ...base, createdAt: "hier" },
     "stimulus abstrait en texte": { ...base, id: "abstract-demo-001", category: "abstract", skill: "matrice", stimulus: "Série de formes à compléter" },
+    "figure abstraite avec des lettres": { ...base, id: "abstract-demo-002", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "A  B  C  ?" }, options: ["D", "E", "F", "G"] },
+    "figure abstraite avec deux « ? »": { ...base, id: "abstract-demo-003", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "●  ■  ?  ?" }, options: ["●", "■", "▲", "○"] },
+    "figure abstraite avec un idéogramme": { ...base, id: "abstract-demo-004", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "回  ■  □  ?" }, options: ["●", "■", "▲", "○"] },
     "tfcs mal formé": { ...base, id: "verbal-demo-002", category: "verbal", skill: "inference", itemFormat: "tfcs", options: ["Oui", "Non", "Peut-être"] },
   };
   const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -136,6 +140,16 @@ function selfTest() {
   for (const [name, item] of Object.entries(mustFail)) {
     if (!checkBank([clone(item)]).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
   }
+  // Bank-level rules.
+  const fig = { ...base, id: "abstract-demo-010", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "●  ■  ●  ?" }, options: ["■", "●", "▲", "○"] };
+  const bankFail = {
+    "même figure abstraite": [fig, { ...fig, id: "abstract-demo-011", prompt: "Autre consigne pour la même figure ?" }],
+    "quasi-doublon textuel": [base, { ...base, id: "numeric-demo-002" }],
+    "bonne réponse toujours en position 1": Array.from({ length: 20 }, (_, i) => ({ ...base, id: `numeric-demo-${String(i + 10).padStart(3, "0")}`, stimulus: `Calculez ${i + 10} % de ${i * 37 + 50} unités pour le service ${i}.` })),
+  };
+  for (const [name, items] of Object.entries(bankFail)) {
+    if (!checkBank(items.map(clone)).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
+  }
 
   // The browser validator (admin.html) must agree with Ajv on every fixture and every approved item.
   const approvedDir = path.join(ROOT, "data/approved");
@@ -146,7 +160,7 @@ function selfTest() {
     const miniValid = miniValidate(schema, item).length === 0;
     if (ajvValid !== miniValid) throw new Error(`Self-test : le validateur navigateur et Ajv divergent sur ${item.id} (Ajv ${ajvValid}, navigateur ${miniValid})`);
   }
-  console.log(`Self-test passed (${Object.keys(mustFail).length} cas invalides détectés, ${corpus.length} items : validateur navigateur = Ajv)`);
+  console.log(`Self-test passed (${Object.keys(mustFail).length + Object.keys(bankFail).length} cas invalides détectés, ${corpus.length} items : validateur navigateur = Ajv)`);
 }
 
 const isDirectRun = Boolean(process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]));

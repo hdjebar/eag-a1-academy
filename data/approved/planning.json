@@ -13,15 +13,15 @@
     "options": [
       "9 h 00 à 9 h 45",
       "9 h 30 à 10 h 15",
-      "14 h 00 à 14 h 45",
-      "14 h 30 à 15 h 15"
+      "14 h 30 à 15 h 15",
+      "14 h 00 à 14 h 45"
     ],
     "correctIndex": 1,
     "optionRationales": [
       "Sam n'est pas disponible avant 9 h 30.",
       "Correct : les deux participants sont disponibles simultanément de 9 h 30 à 10 h 30.",
-      "Sam n'est pas disponible avant 14 h 30.",
-      "Léa n'est plus disponible après 15 h 00 (la réunion se terminerait à 15 h 15)."
+      "Léa n'est plus disponible après 15 h 00 (la réunion se terminerait à 15 h 15).",
+      "Sam n'est pas disponible avant 14 h 30."
     ],
     "explanation": "Le créneau commun le matin s'étend de 9 h 30 à 10 h 30 (durée 60 min). La réunion de 45 minutes peut donc se tenir de 9 h 30 à 10 h 15. Les autres créneaux empiètent sur l'indisponibilité de l'un des participants (Sam avant 9 h 30 le matin ou avant 14 h 30 l'après-midi ; Léa après 15 h 00).",
     "sourceType": "original_ai_assisted",
@@ -42,15 +42,15 @@
     "prompt": "Quelle tâche devez-vous impérativement démarrer en premier ?",
     "stimulus": "Il est 9 h 00. Tâche A : échéance 10 h 00, durée 20 min. Tâche B : échéance demain, durée 15 min. Tâche C : échéance aujourd'hui 16 h 00, durée 60 min. Tâche D : échéance 11 h 30, durée 90 min.",
     "options": [
-      "Tâche A",
       "Tâche B",
+      "Tâche A",
       "Tâche C",
       "Tâche D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : son échéance (10 h 00) est la plus imminente et impose un démarrage sans attendre.",
       "Échéance fixée au lendemain, donc bien moins urgente que la tâche A.",
+      "Correct : son échéance (10 h 00) est la plus imminente et impose un démarrage sans attendre.",
       "Échéance fixée à 16 h 00, laissant une marge temporelle suffisante après réalisation de A.",
       "Commencer par D (90 min) mènerait à 10 h 30 : A finirait à 10 h 50, après son échéance de 10 h 00."
     ],
@@ -73,16 +73,16 @@
     "prompt": "Quel ordonnancement respecte l'intégralité des contraintes de préséance imposées ?",
     "stimulus": "L'étape X doit impérativement précéder l'étape Y. L'étape Z doit être réalisée après l'étape Y.",
     "options": [
+      "Y, puis X, puis Z",
       "Z, puis X, puis Y",
       "X, puis Z, puis Y",
-      "Y, puis X, puis Z",
       "X, puis Y, puis Z"
     ],
     "correctIndex": 3,
     "optionRationales": [
+      "Viole la préséance stricte de X sur Y.",
       "Viole les deux contraintes : Z est placé avant Y, et Y est placé après Z.",
       "Viole la contrainte imposant que Z soit réalisé après Y.",
-      "Viole la préséance stricte de X sur Y.",
       "Correct : respecte successivement X avant Y, puis Y avant Z."
     ],
     "explanation": "Les contraintes X < Y et Y < Z imposent strictement l'enchaînement direct X, puis Y, puis Z.",
@@ -104,17 +104,17 @@
     "prompt": "Quel créneau faut-il réserver pour satisfaire l'ensemble des contraintes ?",
     "stimulus": "Entretien de 30 minutes avant midi. Salle libre de 10:00 à 10:30 et de 11:00 à 12:00. Candidate indisponible de 10:15 à 11:15.",
     "options": [
-      "10:00 à 10:30",
-      "10:15 à 10:45",
+      "11:15 à 11:45",
       "11:00 à 11:30",
-      "11:15 à 11:45"
+      "10:00 à 10:30",
+      "10:15 à 10:45"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "optionRationales": [
-      "Conflit avec la candidate dès 10:15, ne laissant que 15 minutes utiles.",
-      "La candidate est en indisponibilité sur l'ensemble de cette plage horaire.",
+      "Correct : la salle est libre jusqu'à midi et la candidate est disponible dès 11:15 pour 30 minutes.",
       "La candidate n'est pas encore disponible entre 11:00 et 11:15.",
-      "Correct : la salle est libre jusqu'à midi et la candidate est disponible dès 11:15 pour 30 minutes."
+      "Conflit avec la candidate dès 10:15, ne laissant que 15 minutes utiles.",
+      "La candidate est en indisponibilité sur l'ensemble de cette plage horaire."
     ],
     "explanation": "La candidate se libère à 11:15 et la salle est libre jusqu'à 12:00 ; le créneau 11:15-11:45 offre 30 minutes effectives sans conflit.",
     "sourceType": "original_ai_assisted",
@@ -135,16 +135,16 @@
     "prompt": "Quel ordre de traitement minimise le risque de dépassement de délai ?",
     "stimulus": "À 13 h 00 : dossier urgent (durée 45 min, échéance 14 h 00), appel de cadrage (durée 15 min, avant 15 h 00), note de synthèse (durée 90 min, pour le lendemain).",
     "options": [
-      "Note de synthèse, appel, dossier urgent",
-      "Dossier urgent, appel, note de synthèse",
       "Appel, note de synthèse, dossier urgent",
+      "Dossier urgent, appel, note de synthèse",
+      "Note de synthèse, appel, dossier urgent",
       "Note de synthèse, dossier urgent, appel"
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "La note de 90 min repousse l'urgence à 14:30, provoquant un dépassement de délai.",
-      "Correct : dossier urgent terminé à 13:45 (avant 14:00), appel à 14:00, puis note de synthèse.",
       "Placer la note à 13:15 repousse le dossier urgent à 14:45, après son échéance.",
+      "Correct : dossier urgent terminé à 13:45 (avant 14:00), appel à 14:00, puis note de synthèse.",
+      "La note de 90 min repousse l'urgence à 14:30, provoquant un dépassement de délai.",
       "Prioriser la note de 90 min fait manquer l'échéance de 14:00 du dossier urgent."
     ],
     "explanation": "Le dossier urgent doit se terminer à 13:45 pour respecter l'échéance de 14:00, suivi de l'appel (13:45-14:00), laissant le temps pour la note.",
@@ -166,17 +166,17 @@
     "prompt": "Quelle est la durée minimale incompressible pour finaliser ce projet ?",
     "stimulus": "Phase 1 (durée 3 jours). Puis en parallèle : Phase 2A (durée 4 jours) et Phase 2B (durée 6 jours). Enfin Phase 3 (durée 2 jours), démarrant dès que 2A et 2B sont terminées.",
     "options": [
-      "11 jours",
-      "9 jours",
+      "13 jours",
       "15 jours",
-      "13 jours"
+      "9 jours",
+      "11 jours"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : chemin critique déterminé par 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours.",
-      "Calcule à tort sur la branche parallèle la plus rapide 2A (3 + 4 + 2 = 9).",
+      "Surévaluation arbitraire de deux jours par rapport au chemin critique réel.",
       "Additionne toutes les phases en série sans exploiter la parallélisation (3 + 4 + 6 + 2 = 15).",
-      "Surévaluation arbitraire de deux jours par rapport au chemin critique réel."
+      "Calcule à tort sur la branche parallèle la plus rapide 2A (3 + 4 + 2 = 9).",
+      "Correct : chemin critique déterminé par 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours."
     ],
     "explanation": "Entre 2A et 2B menées en parallèle, le chemin le plus long impose 6 jours. La durée totale incompressible est donc 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours.",
     "sourceType": "original_ai_assisted",
@@ -197,16 +197,16 @@
     "prompt": "Combien d'agents supplémentaires faut-il mobiliser pour respecter l'échéance ?",
     "stimulus": "Un chantier d'archivage requiert 120 heures-agent à livrer en 5 jours de 8 heures de travail. L'équipe actuelle compte 2 agents.",
     "options": [
-      "1 agent supplémentaire",
       "2 agents supplémentaires",
       "3 agents supplémentaires",
+      "1 agent supplémentaire",
       "4 agents supplémentaires"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : besoin total de 3 agents (120 h / 40 h), 2 étant déjà affectés, 1 agent suffit en renfort.",
       "Confond le nombre d'agents déjà en poste avec le besoin de renfort additionnel.",
       "Indique l'effectif global nécessaire sans soustraire les 2 agents déjà en place.",
+      "Correct : besoin total de 3 agents (120 h / 40 h), 2 étant déjà affectés, 1 agent suffit en renfort.",
       "Surdimensionne l'équipe à 6 agents au total, soit le double de la charge requise."
     ],
     "explanation": "En 5 jours, 1 agent produit 5 × 8 = 40 heures. Pour réaliser 120 heures, il faut 120 / 40 = 3 agents au total. Deux étant déjà présents, il faut 1 agent de plus.",
@@ -228,17 +228,17 @@
     "prompt": "Quelle est l'heure d'arrivée la plus tardive possible pour l'agent C, qui reste ensuite jusqu'à 18 h ?",
     "stimulus": "La permanence au guichet doit être assurée sans interruption de 8 h à 18 h. Agent A : 8 h à 12 h. Agent B : 11 h 30 à 15 h 30. L'agent C assure la fin de journée.",
     "options": [
-      "15 h 30",
-      "16 h 00",
       "12 h 00",
-      "17 h 00"
+      "15 h 30",
+      "17 h 00",
+      "16 h 00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : l'agent B quittant son poste à 15 h 30, c'est l'heure limite exacte pour éviter une rupture de permanence.",
-      "Une arrivée à 16 h 00 entraînerait 30 minutes de fermeture non autorisée du guichet.",
       "Une arrivée à 12 h 00 assure la continuité mais ne constitue pas l'horaire le plus tardif possible.",
-      "Une arrivée à 17 h 00 créerait une interruption de service prolongée de 1 h 30."
+      "Correct : l'agent B quittant son poste à 15 h 30, c'est l'heure limite exacte pour éviter une rupture de permanence.",
+      "Une arrivée à 17 h 00 créerait une interruption de service prolongée de 1 h 30.",
+      "Une arrivée à 16 h 00 entraînerait 30 minutes de fermeture non autorisée du guichet."
     ],
     "explanation": "Le guichet est couvert par A puis B jusqu'à 15 h 30. L'agent C doit être présent au plus tard à ce moment ; 12 h fonctionne aussi, mais ce n'est pas l'heure la plus tardive possible.",
     "sourceType": "original_ai_assisted",
@@ -260,16 +260,16 @@
     "stimulus": "L'échéance de livraison tombe dans 20 jours ouvrés. Les tâches restantes du chemin critique totalisent 16 jours ouvrés.",
     "options": [
       "4 jours ouvrés",
+      "8 jours ouvrés",
       "2 jours ouvrés",
-      "6 jours ouvrés",
-      "8 jours ouvrés"
+      "6 jours ouvrés"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : la marge de battement s'élève exactement à 20 - 16 = 4 jours ouvrés.",
+      "Surestimation excessive qui provoquerait un dépassement d'échéance certain de 4 jours.",
       "Sous-estime de 2 jours la marge réelle disponible.",
-      "Surestime la marge de 2 jours, ce qui risquerait d'entraîner un retard effectif.",
-      "Surestimation excessive qui provoquerait un dépassement d'échéance certain de 4 jours."
+      "Surestime la marge de 2 jours, ce qui risquerait d'entraîner un retard effectif."
     ],
     "explanation": "Les deux durées sont exprimées dans la même unité (jours ouvrés). La marge totale vaut 20 − 16 = 4 jours ouvrés.",
     "sourceType": "original_ai_assisted",
@@ -290,15 +290,15 @@
     "prompt": "Sur quelle action pouvez-vous avancer dès ce matin ?",
     "stimulus": "Validation hiérarchique : en attente du rapport financier. Rapport financier : en cours de relecture finale. Envoi des convocations : après la validation. Diffusion du compte rendu : après l'envoi des convocations.",
     "options": [
-      "Terminer la relecture du rapport",
       "Obtenir la validation hiérarchique",
+      "Terminer la relecture du rapport",
       "Envoyer les convocations",
       "Diffuser le compte rendu"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : c'est la seule tâche immédiatement actionnable dont toutes les dépendances sont levées.",
       "Bloquée tant que le rapport financier n'a pas été finalisé.",
+      "Correct : c'est la seule tâche immédiatement actionnable dont toutes les dépendances sont levées.",
       "Bloquée par la dépendance envers la validation hiérarchique.",
       "Bloquée par les étapes préalables de convocation et de déroulement de la réunion."
     ],
@@ -322,15 +322,15 @@
     "stimulus": "Agent 1 est disponible de 14 h 00 à 16 h 00. Agent 2 est disponible de 14 h 30 à 17 h 00. Agent 3 est disponible de 13 h 30 à 15 h 30.",
     "options": [
       "14 h 30 à 15 h 00",
-      "14 h 00 à 14 h 30",
       "15 h 30 à 16 h 00",
+      "14 h 00 à 14 h 30",
       "16 h 00 à 16 h 30"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : les trois agents sont simultanément disponibles sur la plage 14 h 30 à 15 h 30.",
-      "L'Agent 2 n'est pas encore disponible avant 14 h 30.",
       "L'Agent 3 a terminé sa disponibilité à 15 h 30.",
+      "L'Agent 2 n'est pas encore disponible avant 14 h 30.",
       "Les Agents 1 et 3 ne sont plus disponibles après 16 h 00."
     ],
     "explanation": "La plage commune aux trois agents correspond à l'intersection des créneaux : à partir de 14 h 30 (arrivée de l'Agent 2) et jusqu'à 15 h 30 (départ de l'Agent 3). Le créneau de 14 h 30 à 15 h 00 s'y inscrit parfaitement.",
@@ -352,17 +352,17 @@
     "prompt": "Quelle tâche devez-vous impérativement démarrer dès 14 h 00 pour ne manquer aucune échéance ?",
     "stimulus": "Il est 14 h 00. Tâche 1 : durée 40 min, échéance 15 h 00. Tâche 2 : durée 50 min, échéance 15 h 30. Tâche 3 : durée 30 min, échéance 17 h 00.",
     "options": [
+      "Tâche 2 suivie de Tâche 3",
       "Tâche 1",
       "Tâche 2",
-      "Tâche 3",
-      "Tâche 2 suivie de Tâche 3"
+      "Tâche 3"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Inverser l'ordre en commençant par Tâche 2 provoque un retard certain sur Tâche 1.",
       "Correct : commencer par Tâche 1 (14 h 00 à 14 h 40) permet ensuite d'achever Tâche 2 à 15 h 30 avant son terme.",
       "Commencer par Tâche 2 (14 h 00 à 14 h 50) repousserait Tâche 1 à 15 h 30, dépassant son échéance de 15 h 00.",
-      "La Tâche 3 a une échéance tardive (17 h 00) et n'est pas prioritaire.",
-      "Inverser l'ordre en commençant par Tâche 2 provoque un retard certain sur Tâche 1."
+      "La Tâche 3 a une échéance tardive (17 h 00) et n'est pas prioritaire."
     ],
     "explanation": "En démarrant par Tâche 1, celle-ci s'achève à 14 h 40 (avant 15 h 00). Tâche 2 peut ensuite s'exécuter de 14 h 40 à 15 h 30, respectant pile son échéance. Si l'on commençait par Tâche 2, Tâche 1 ne finirait qu'à 15 h 30, soit 30 minutes après son échéance.",
     "sourceType": "original_ai_assisted",
@@ -384,16 +384,16 @@
     "stimulus": "La salle Polyvalente est occupée de 9 h 00 à 10 h 30 et de 11 h 15 à 12 h 30. Le formateur est présent de 10 h 00 à 12 h 00.",
     "options": [
       "10 h 30 à 11 h 15",
+      "11 h 30 à 12 h 15",
       "10 h 00 à 10 h 45",
-      "11 h 15 à 12 h 00",
-      "11 h 30 à 12 h 15"
+      "11 h 15 à 12 h 00"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : la salle est libre de 10 h 30 à 11 h 15 (45 min) et le formateur y est disponible.",
+      "Conflit direct d'occupation de la salle qui est prise dès 11 h 15.",
       "La salle est occupée jusqu'à 10 h 30.",
-      "La salle est réservée par une autre réunion à partir de 11 h 15.",
-      "Conflit direct d'occupation de la salle qui est prise dès 11 h 15."
+      "La salle est réservée par une autre réunion à partir de 11 h 15."
     ],
     "explanation": "La seule fenêtre de disponibilité conjointe de la salle (libre entre 10 h 30 et 11 h 15) et du formateur (présent de 10 h 00 à 12 h 00) est exactement la plage 10 h 30 à 11 h 15, d'une durée de 45 minutes.",
     "sourceType": "original_ai_assisted",
@@ -414,50 +414,19 @@
     "prompt": "Quelle est la date d'achèvement au plus tôt de l'ensemble des travaux ?",
     "stimulus": "Le projet débute le lundi matin (jour 1). Étape A (3 jours ouvrés). Puis en parallèle, Étape B (2 jours ouvrés) et Étape C (4 jours ouvrés). Étape D (1 jour ouvré) ne démarre que lorsque B et C sont toutes deux achevées. L'équipe ne travaille que les jours ouvrés (du lundi au vendredi).",
     "options": [
-      "Jour ouvré 8 (mercredi de la 2e semaine)",
       "Jour ouvré 10 (vendredi de la 2e semaine)",
+      "Jour ouvré 8 (mercredi de la 2e semaine)",
       "Jour ouvré 6 (lundi de la 2e semaine)",
       "Jour ouvré 7 (mardi de la 2e semaine)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : chemin critique = Étape A (3 j) + max(Étape B: 2 j, Étape C: 4 j) + Étape D (1 j) = 3 + 4 + 1 = 8 jours ouvrés.",
       "Résultat obtenu en sommant toutes les étapes sans tenir compte du parallélisme de B et C (3 + 2 + 4 + 1 = 10).",
+      "Correct : chemin critique = Étape A (3 j) + max(Étape B: 2 j, Étape C: 4 j) + Étape D (1 j) = 3 + 4 + 1 = 8 jours ouvrés.",
       "Calcul erroné ignorant la durée de l'étape la plus longue en parallèle.",
       "Omet la durée de l'étape finale D."
     ],
     "explanation": "L'étape A prend les jours 1, 2 et 3. Les étapes B et C se déroulent en parallèle du jour 4 au jour 7 (l'étape critique C imposant 4 jours). L'étape D intervient ensuite sur le jour 8. Le projet s'achève donc au jour ouvré 8.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T14:55:00+02:00",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
-  },
-  {
-    "id": "planning-buffer-015",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "agenda-contraintes",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "À quelle heure au plus tard l'instruction du dossier doit-elle débuter pour respecter l'échéance ?",
-    "stimulus": "Un dossier d'agrément requiert 2 h 30 de travail continu. Il doit impérativement être transmis par courriel avant 17 h 00. Une coupure réseau obligatoire et planifiée de 30 minutes a lieu de 15 h 00 à 15 h 30, interdisant toute instruction.",
-    "options": [
-      "14 h 00",
-      "14 h 30",
-      "13 h 30",
-      "15 h 00"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : 2 h 30 de travail + 30 min d'interruption = 3 h de temps total requis. 17 h 00 - 3 h = 14 h 00.",
-      "Ne prend pas en compte la coupure réseau de 30 minutes, ce qui ferait finir à 17 h 30.",
-      "Avance inutilement le démarrage de 30 minutes par rapport à l'heure limite.",
-      "Démarrage impossible : la coupure réseau débute précisément à 15 h 00."
-    ],
-    "explanation": "Le travail effectif demande 2 h 30. Comme la plage d'instruction chevauche nécessairement la coupure réseau de 15 h 00 à 15 h 30 (30 min), le temps global nécessaire est de 2 h 30 + 30 min = 3 h 00. Pour finir à 17 h 00, le travail doit débuter au plus tard à 14 h 00 (14 h 00 – 15 h 00 : 1 h ; 15 h 30 – 17 h 00 : 1 h 30).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
@@ -476,17 +445,17 @@
     "prompt": "Quel créneau de 45 minutes permet de réunir les deux chefs de service ce matin ?",
     "stimulus": "Chef de service A : libre de 8 h 30 à 10 h 00 et de 11 h 00 à 12 h 30. Chef de service B : libre de 9 h 15 à 11 h 30.",
     "options": [
-      "9 h 15 à 10 h 00",
-      "8 h 30 à 9 h 15",
       "10 h 00 à 10 h 45",
-      "11 h 30 à 12 h 15"
+      "11 h 30 à 12 h 15",
+      "9 h 15 à 10 h 00",
+      "8 h 30 à 9 h 15"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : intersection matinale commune de 9 h 15 à 10 h 00 (45 minutes effectives).",
-      "Le chef de service B n'est pas disponible avant 9 h 15.",
       "Le chef de service A est indisponible de 10 h 00 à 11 h 00.",
-      "Le chef de service B n'est plus disponible après 11 h 30."
+      "Le chef de service B n'est plus disponible après 11 h 30.",
+      "Correct : intersection matinale commune de 9 h 15 à 10 h 00 (45 minutes effectives).",
+      "Le chef de service B n'est pas disponible avant 9 h 15."
     ],
     "explanation": "La première plage commune se situe entre 9 h 15 et 10 h 00 (durée 45 minutes). La seconde plage commune s'étend de 11 h 00 à 11 h 30 (30 minutes seulement, insuffisant). Le seul créneau possible de 45 minutes est 9 h 15 à 10 h 00.",
     "sourceType": "original_ai_assisted",
@@ -508,16 +477,16 @@
     "stimulus": "Il est 8 h 30. Tâche 1 : transmission bordereau (durée 30 min, échéance 9 h 30). Tâche 2 : préparation séance (durée 60 min, échéance 11 h 30). Tâche 3 : synthèse mensuelle (durée 45 min, échéance 16 h 00).",
     "options": [
       "Tâche 1",
-      "Tâche 2",
+      "Tâche 2 ou Tâche 3 indifféremment",
       "Tâche 3",
-      "Tâche 2 ou Tâche 3 indifféremment"
+      "Tâche 2"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : échéance à 9 h 30, ne laissant qu'une heure de marge pour 30 minutes de travail.",
-      "Son échéance à 11 h 30 permet une exécution sereine après achèvement de la Tâche 1.",
+      "L'imminence de la Tâche 1 interdit toute substitution.",
       "Échéance fixée à 16 h 00, non prioritaire ce matin.",
-      "L'imminence de la Tâche 1 interdit toute substitution."
+      "Son échéance à 11 h 30 permet une exécution sereine après achèvement de la Tâche 1."
     ],
     "explanation": "La Tâche 1 a l'échéance la plus rapprochée (9 h 30). La commencer dès 8 h 30 permet de la clore à 9 h 00, laissant tout le temps nécessaire pour enchaîner la Tâche 2 (9 h 00 – 10 h 00) bien avant son échéance de 11 h 30.",
     "sourceType": "original_ai_assisted",
@@ -539,16 +508,16 @@
     "stimulus": "Salle Athéna : occupée de 14 h 00 à 15 h 15. Salle Mercure : libre de 14 h 30 à 15 h 45. Salle Minerve : occupée de 14 h 45 à 16 h 00.",
     "options": [
       "Salle Mercure",
-      "Salle Athéna",
       "Salle Minerve",
-      "Aucune des trois salles"
+      "Aucune des trois salles",
+      "Salle Athéna"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : Mercure est libre de 14 h 30 à 15 h 45 (plage disponible de 75 minutes, suffisant pour 60 minutes).",
-      "Athéna ne laisse que 45 minutes utiles (15 h 15 à 16 h 00).",
       "Minerve ne laisse que 45 minutes utiles (14 h 00 à 14 h 45).",
-      "La salle Mercure offre un créneau continu suffisant."
+      "La salle Mercure offre un créneau continu suffisant.",
+      "Athéna ne laisse que 45 minutes utiles (15 h 15 à 16 h 00)."
     ],
     "explanation": "La séance requiert 60 minutes consécutives. La salle Mercure est disponible pendant 1 h 15 (de 14 h 30 à 15 h 45), ce qui permet d'y caler la réunion d'une heure (ex. de 14 h 30 à 15 h 30). Les autres salles n'offrent que 45 minutes libres.",
     "sourceType": "original_ai_assisted",
@@ -569,17 +538,17 @@
     "prompt": "Quelle séquence d'étapes respecte strictement l'ensemble des contraintes de dépendance ?",
     "stimulus": "L'étape 1 doit précéder l'étape 2. L'étape 3 ne peut démarrer qu'après la fin conjointe des étapes 1 et 2. L'étape 4 conclut le processus après l'étape 3.",
     "options": [
-      "Étape 1, puis Étape 2, puis Étape 3, puis Étape 4",
-      "Étape 2, puis Étape 1, puis Étape 3, puis Étape 4",
       "Étape 3, puis Étape 1, puis Étape 2, puis Étape 4",
-      "Étape 1, puis Étape 3, puis Étape 2, puis Étape 4"
+      "Étape 1, puis Étape 2, puis Étape 3, puis Étape 4",
+      "Étape 1, puis Étape 3, puis Étape 2, puis Étape 4",
+      "Étape 2, puis Étape 1, puis Étape 3, puis Étape 4"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : respecte successivement 1 avant 2, 2 avant 3, puis 4 en clôture.",
-      "Viole la dépendance initiale imposant que l'étape 1 précède l'étape 2.",
       "Viole la condition imposant que l'étape 3 démarre après les étapes 1 et 2.",
-      "Place l'étape 3 avant l'étape 2 alors que l'étape 2 conditionne l'étape 3."
+      "Correct : respecte successivement 1 avant 2, 2 avant 3, puis 4 en clôture.",
+      "Place l'étape 3 avant l'étape 2 alors que l'étape 2 conditionne l'étape 3.",
+      "Viole la dépendance initiale imposant que l'étape 1 précède l'étape 2."
     ],
     "explanation": "Les contraintes (1 avant 2), (2 avant 3) et (3 avant 4) imposent un ordre séquentiel unique : Étape 1 → Étape 2 → Étape 3 → Étape 4.",
     "sourceType": "original_ai_assisted",
@@ -600,17 +569,17 @@
     "prompt": "De combien de minutes de marge de sécurité disposez-vous avant l'échéance de 17 h 00 ?",
     "stimulus": "Il est 14 h 00. Vous devez réaliser trois tâches successives : Révision de dossier (durée 60 min), Appel de cadrage (durée 30 min), et Rédaction d'avis (durée 60 min). L'échéance finale est fixée à 17 h 00.",
     "options": [
-      "30 minutes",
       "15 minutes",
-      "45 minutes",
-      "0 minute"
+      "0 minute",
+      "30 minutes",
+      "45 minutes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : temps de travail = 60 + 30 + 60 = 150 min (2 h 30) ; 14 h 00 + 2 h 30 = 16 h 30 ; marge = 30 minutes jusqu'à 17 h 00.",
       "Sous-estime la marge de sécurité disponible.",
-      "Surestimation minorant la durée des tâches.",
-      "Considère à tort que l'ensemble de la plage horaire est consommé."
+      "Considère à tort que l'ensemble de la plage horaire est consommé.",
+      "Correct : temps de travail = 60 + 30 + 60 = 150 min (2 h 30) ; 14 h 00 + 2 h 30 = 16 h 30 ; marge = 30 minutes jusqu'à 17 h 00.",
+      "Surestimation minorant la durée des tâches."
     ],
     "explanation": "Le cumul des durées de travail est de 60 + 30 + 60 = 150 minutes, soit 2 heures et 30 minutes. Démarrées à 14 h 00, les tâches s'achèvent à 16 h 30. La marge de sécurité avant 17 h 00 est donc de 30 minutes.",
     "sourceType": "original_ai_assisted",
@@ -631,17 +600,17 @@
     "prompt": "Quel créneau permet de tenir un point de 30 minutes réunissant les trois collaborateurs ?",
     "stimulus": "Collaborateur X : disponible de 10 h 00 à 12 h 00. Collaborateur Y : disponible de 9 h 30 à 11 h 15. Collaborateur Z : disponible de 10 h 45 à 12 h 30.",
     "options": [
-      "10 h 45 à 11 h 15",
+      "10 h 30 à 11 h 00",
       "10 h 00 à 10 h 30",
-      "11 h 15 à 11 h 45",
-      "10 h 30 à 11 h 00"
+      "10 h 45 à 11 h 15",
+      "11 h 15 à 11 h 45"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : intersection des trois disponibilités : X (jusqu'à 12h), Y (jusqu'à 11h15), Z (dès 10h45). Plage commune = 10 h 45 à 11 h 15.",
+      "Z n'est pas encore disponible entre 10 h 30 et 10 h 45.",
       "Z n'est pas encore disponible avant 10 h 45.",
-      "Y n'est plus disponible après 11 h 15.",
-      "Z n'est pas encore disponible entre 10 h 30 et 10 h 45."
+      "Correct : intersection des trois disponibilités : X (jusqu'à 12h), Y (jusqu'à 11h15), Z (dès 10h45). Plage commune = 10 h 45 à 11 h 15.",
+      "Y n'est plus disponible après 11 h 15."
     ],
     "explanation": "Collaborateur X est libre de 10 h 00 à 12 h 00, Y de 9 h 30 à 11 h 15, et Z de 10 h 45 à 12 h 30. L'unique créneau où tous les trois sont simultanément disponibles est 10 h 45 – 11 h 15 (exactement 30 minutes).",
     "sourceType": "original_ai_assisted",
@@ -662,17 +631,17 @@
     "prompt": "Quel ordonnancement permet de respecter toutes les échéances ?",
     "stimulus": "À 9 h 00 : Tâche Alpha (durée 45 min, échéance 10 h 00). Tâche Bêta (durée 30 min, échéance 11 h 00). Tâche Gamma (durée 60 min, échéance 12 h 30).",
     "options": [
-      "Alpha (9h00-9h45), puis Bêta (9h45-10h15), puis Gamma (10h15-11h15)",
-      "Bêta (9h00-9h30), puis Alpha (9h30-10h15), puis Gamma (10h15-11h15)",
+      "Alpha (9h00-9h45), puis Gamma (9h45-10h45), puis Bêta (10h45-11h15)",
       "Gamma (9h00-10h00), puis Alpha (10h00-10h45), puis Bêta (10h45-11h15)",
-      "Alpha (9h00-9h45), puis Gamma (9h45-10h45), puis Bêta (10h45-11h15)"
+      "Alpha (9h00-9h45), puis Bêta (9h45-10h15), puis Gamma (10h15-11h15)",
+      "Bêta (9h00-9h30), puis Alpha (9h30-10h15), puis Gamma (10h15-11h15)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : Alpha s'achève à 9 h 45 (< 10h), Bêta à 10 h 15 (< 11h), Gamma à 11 h 15 (< 12h30).",
-      "Commencer par Bêta fait finir Alpha à 10 h 15, dépassant son échéance de 10 h 00.",
+      "Placer Gamma avant Bêta repousse la fin de Bêta à 11 h 15, dépassant son échéance de 11 h 00.",
       "Commencer par Gamma fait manquer l'échéance d'Alpha et compromet Bêta.",
-      "Placer Gamma avant Bêta repousse la fin de Bêta à 11 h 15, dépassant son échéance de 11 h 00."
+      "Correct : Alpha s'achève à 9 h 45 (< 10h), Bêta à 10 h 15 (< 11h), Gamma à 11 h 15 (< 12h30).",
+      "Commencer par Bêta fait finir Alpha à 10 h 15, dépassant son échéance de 10 h 00."
     ],
     "explanation": "Seule la séquence Alpha → Bêta → Gamma respecte les échéances de chacun : Alpha est livrée à 9 h 45 (avant 10 h 00), Bêta à 10 h 15 (avant 11 h 00) et Gamma à 11 h 15 (bien avant 12 h 30).",
     "sourceType": "original_ai_assisted",
@@ -693,16 +662,16 @@
     "prompt": "Quelle modification minimale résout le conflit d'agenda ?",
     "stimulus": "Deux entretiens individuels de 45 minutes sont calés en Salle 1 : Entretien A de 10 h 00 à 10 h 45 et Entretien B de 10 h 30 à 11 h 15. La Salle 2 est entièrement libre de 10 h 00 à 12 h 00.",
     "options": [
+      "Reporter les deux entretiens au lendemain matin.",
       "Déplacer l'Entretien B en Salle 2 sur son créneau initial de 10 h 30 à 11 h 15.",
       "Raccourcir l'Entretien A à 30 minutes sans changer de salle.",
-      "Reporter les deux entretiens au lendemain matin.",
       "Fusionner les deux entretiens en une seule séance collective."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Mesure disproportionnée qui reporte inutilement deux activités programmées.",
       "Correct : résout immédiatement le chevauchement sans impacter les horaires des participants.",
       "Dégrade la durée requise de l'entretien alors qu'une salle alternative est vacante.",
-      "Mesure disproportionnée qui reporte inutilement deux activités programmées.",
       "Non conforme à la nature individuelle et réservée des entretiens."
     ],
     "explanation": "Le conflit réside dans le chevauchement de 15 minutes en Salle 1 (de 10 h 30 à 10 h 45). Comme la Salle 2 est libre sur toute la matinée, déplacer l'Entretien B en Salle 2 résout le conflit sans modifier les horaires des candidats.",
@@ -725,16 +694,16 @@
     "stimulus": "Tâche Initiale : 2 jours. Ensuite, deux démarches parallèles : Démarche A (durée 5 jours) et Démarche B (durée 3 jours). Enfin, Tâche de Clôture (durée 1 jour), qui ne démarre qu'une fois A et B achevées.",
     "options": [
       "8 jours",
-      "6 jours",
+      "10 jours",
       "11 jours",
-      "10 jours"
+      "6 jours"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : chemin critique = 2 + max(5, 3) + 1 = 2 + 5 + 1 = 8 jours.",
-      "Calcule à tort sur la branche la plus courte B (2 + 3 + 1 = 6 jours).",
+      "Surévaluation arbitraire de deux jours.",
       "Somme linéaire erronée sans parallélisation (2 + 5 + 3 + 1 = 11 jours).",
-      "Surévaluation arbitraire de deux jours."
+      "Calcule à tort sur la branche la plus courte B (2 + 3 + 1 = 6 jours)."
     ],
     "explanation": "Les démarches A et B étant menées en parallèle, le délai de la phase intermédiaire est déterminé par la démarche la plus longue (A, soit 5 jours). La durée totale incompressible est donc 2 + 5 + 1 = 8 jours.",
     "sourceType": "original_ai_assisted",
@@ -755,17 +724,17 @@
     "prompt": "À quelle heure au plus tard l'agent doit-il partir pour respecter le début de sa réunion ?",
     "stimulus": "Une réunion officielle débute à 14 h 30 au Kirchberg. Le trajet en tramway dure 35 minutes. Une marge obligatoire de sécurité de 10 minutes est exigée avant le début de séance.",
     "options": [
-      "13 h 45",
       "13 h 55",
       "13 h 30",
-      "14 h 00"
+      "14 h 00",
+      "13 h 45"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : arrivée requise à 14 h 20 (14h30 - 10 min) ; départ à 14 h 20 - 35 min = 13 h 45.",
       "Omet les 10 minutes de marge de sécurité (départ à 14h30 - 35 min = 13 h 55).",
       "Départ prématuré de 15 minutes par rapport au besoin réel.",
-      "Arriverait en retard à 14 h 35."
+      "Arriverait en retard à 14 h 35.",
+      "Correct : arrivée requise à 14 h 20 (14h30 - 10 min) ; départ à 14 h 20 - 35 min = 13 h 45."
     ],
     "explanation": "Avec la marge de sécurité de 10 minutes, l'agent doit être sur place à 14 h 20. En retranchant les 35 minutes de transport, l'heure limite de départ est 14 h 20 − 35 min = 13 h 45.",
     "sourceType": "original_ai_assisted",
@@ -786,17 +755,17 @@
     "prompt": "Quel créneau horaire permet d'organiser un entretien de 30 minutes l'après-midi ?",
     "stimulus": "Candidat : disponible de 13 h 30 à 15 h 00. Recruteur : disponible de 14 h 15 à 16 h 30.",
     "options": [
+      "15 h 00 à 15 h 30",
       "14 h 15 à 14 h 45",
       "13 h 30 à 14 h 00",
-      "14 h 45 à 15 h 15",
-      "15 h 00 à 15 h 30"
+      "14 h 45 à 15 h 15"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le candidat est absent à partir de 15 h 00.",
       "Correct : plage commune de 14 h 15 à 15 h 00 (45 minutes utiles, suffisant pour 30 min).",
       "Le recruteur n'est pas encore disponible avant 14 h 15.",
-      "Le candidat n'est plus disponible après 15 h 00 (la séance déborderait de 15 minutes).",
-      "Le candidat est absent à partir de 15 h 00."
+      "Le candidat n'est plus disponible après 15 h 00 (la séance déborderait de 15 minutes)."
     ],
     "explanation": "La période de disponibilité commune s'étend de 14 h 15 (arrivée du recruteur) à 15 h 00 (départ du candidat). L'entretien de 30 minutes peut donc se tenir de 14 h 15 à 14 h 45.",
     "sourceType": "original_ai_assisted",
@@ -817,17 +786,17 @@
     "prompt": "Quelle action est prioritaire selon la matrice urgence/importance administrative ?",
     "stimulus": "Action A : Répondre à une demande parlementaire à échéance ce soir (urgent et important). Action B : Archiver des courriels administratifs anciens (non urgent, non important). Action C : Préparer la commande de papeterie semestrielle (important, non urgent). Action D : Répondre à un appel d'un démarcheur (urgent, non important).",
     "options": [
-      "Action A",
+      "Action B",
       "Action C",
       "Action D",
-      "Action B"
+      "Action A"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : tâche à la fois urgente et institutionnellement importante avec échéance impérative le jour même.",
+      "Tâche de fond à traiter en temps masqué.",
       "Importante mais non urgente, planifiable ultérieurement.",
       "Urgence apparente sans portée institutionnelle, à déléguer ou écourter.",
-      "Tâche de fond à traiter en temps masqué."
+      "Correct : tâche à la fois urgente et institutionnellement importante avec échéance impérative le jour même."
     ],
     "explanation": "Selon les principes d'efficacité administrative et la matrice d'Eisenhower, les tâches à la fois urgentes et hautement importantes (comme une question parlementaire sous astreinte légale) doivent être traitées immédiatement en priorité absolue.",
     "sourceType": "original_ai_assisted",
@@ -848,17 +817,17 @@
     "prompt": "Quel créneau permet d'intercaler une réunion de conciliation de 45 minutes sans collision ?",
     "stimulus": "La matinée de l'arbitre est occupée de 8 h 30 à 9 h 45 (Audience 1) et de 10 h 45 à 12 h 00 (Audience 2).",
     "options": [
-      "9 h 45 à 10 h 30",
       "9 h 30 à 10 h 15",
-      "10 h 15 à 11 h 00",
-      "10 h 30 à 11 h 15"
+      "10 h 30 à 11 h 15",
+      "9 h 45 à 10 h 30",
+      "10 h 15 à 11 h 00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : intervalle libre de 9 h 45 à 10 h 45 (60 minutes disponibles, suffisant pour 45 minutes).",
       "Conflit avec l'Audience 1 qui ne s'achève qu'à 9 h 45.",
-      "Conflit avec l'Audience 2 qui démarre à 10 h 45.",
-      "Conflit direct avec l'Audience 2 dès 10 h 45."
+      "Conflit direct avec l'Audience 2 dès 10 h 45.",
+      "Correct : intervalle libre de 9 h 45 à 10 h 45 (60 minutes disponibles, suffisant pour 45 minutes).",
+      "Conflit avec l'Audience 2 qui démarre à 10 h 45."
     ],
     "explanation": "L'arbitre dispose d'un temps libre exact de 9 h 45 à 10 h 45 (durée 1 heure). Une réunion de 45 minutes s'y insère parfaitement, par exemple de 9 h 45 à 10 h 30, sans empiéter sur aucune audience.",
     "sourceType": "original_ai_assisted",
@@ -879,17 +848,17 @@
     "prompt": "Quelle tâche peut débuter dès le matin sans attendre les autres livrables ?",
     "stimulus": "Tâche 1 (Rapport financier) : en attente des chiffres comptables. Tâche 2 (Revue de presse) : aucune dépendance préalable requise. Tâche 3 (Validation budgétaire) : dépend de la fin du Rapport financier. Tâche 4 (Diffusion du PV) : dépend de la Validation budgétaire.",
     "options": [
-      "Tâche 2",
-      "Tâche 1",
       "Tâche 3",
-      "Tâche 4"
+      "Tâche 1",
+      "Tâche 4",
+      "Tâche 2"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : c'est la seule tâche autonome dont l'exécution n'est soumise à aucun prérequis bloquant.",
-      "Bloquée par l'attente des chiffres comptables.",
       "Bloquée en cascade par la Tâche 1.",
-      "Bloquée en cascade par la Tâche 3."
+      "Bloquée par l'attente des chiffres comptables.",
+      "Bloquée en cascade par la Tâche 3.",
+      "Correct : c'est la seule tâche autonome dont l'exécution n'est soumise à aucun prérequis bloquant."
     ],
     "explanation": "Toutes les tâches font partie d'une chaîne séquentielle dépendante du rapport financier, à l'exception de la Tâche 2 (Revue de presse), qui est autonome et peut être traitée immédiatement dès le matin.",
     "sourceType": "original_ai_assisted",
@@ -910,17 +879,17 @@
     "prompt": "Combien d'agents supplémentaires faut-il mobiliser pour achever la saisie dans le délai imparti ?",
     "stimulus": "Volume total de travail : 160 heures-agent. Le délai de livraison est fixé à 5 jours ouvrés, à raison de 8 heures de travail par agent et par jour. L'équipe actuelle comprend 2 agents.",
     "options": [
-      "2 agents supplémentaires",
-      "1 agent supplémentaire",
+      "4 agents supplémentaires",
       "3 agents supplémentaires",
-      "4 agents supplémentaires"
+      "1 agent supplémentaire",
+      "2 agents supplémentaires"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 1 agent produit 5 × 8 = 40 h ; besoin total = 160 / 40 = 4 agents ; 4 - 2 = 2 agents en renfort.",
-      "1 agent de renfort ne fournirait que 120 heures au total (3 × 40 h), laissant 40 h non traitées.",
+      "Surestimation surdimensionnant l'équipe à 6 agents.",
       "3 agents supplémentaires porteraient l'équipe à 5 agents (200 h), excédant le besoin.",
-      "Surestimation surdimensionnant l'équipe à 6 agents."
+      "1 agent de renfort ne fournirait que 120 heures au total (3 × 40 h), laissant 40 h non traitées.",
+      "Correct : 1 agent produit 5 × 8 = 40 h ; besoin total = 160 / 40 = 4 agents ; 4 - 2 = 2 agents en renfort."
     ],
     "explanation": "En 5 jours de 8 heures, un agent effectue 40 heures. Pour accomplir 160 heures, il faut 160 / 40 = 4 agents. Deux agents étant déjà en place, il convient d'en ajouter 4 − 2 = 2 supplémentaires.",
     "sourceType": "original_ai_assisted",
@@ -942,49 +911,18 @@
     "stimulus": "Directrice : disponible de 11 h 00 à 12 h 30. Conseiller : disponible de 10 h 30 à 11 h 45.",
     "options": [
       "11 h 00 à 11 h 30",
-      "10 h 30 à 11 h 00",
       "11 h 45 à 12 h 15",
-      "11 h 30 à 12 h 00"
+      "11 h 30 à 12 h 00",
+      "10 h 30 à 11 h 00"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : intersection commune de 11 h 00 à 11 h 45, permettant une réunion de 11 h 00 à 11 h 30.",
-      "La directrice n'est pas disponible avant 11 h 00.",
       "Le conseiller n'est plus disponible après 11 h 45.",
-      "Le créneau déborderait sur l'indisponibilité du conseiller dès 11 h 45."
+      "Le créneau déborderait sur l'indisponibilité du conseiller dès 11 h 45.",
+      "La directrice n'est pas disponible avant 11 h 00."
     ],
     "explanation": "La directrice et le conseiller partagent une plage commune de 11 h 00 à 11 h 45 (45 minutes disponibles). Le créneau 11 h 00 – 11 h 30 permet de réaliser la réunion de 30 minutes sans aucun conflit.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "planning-prio-032",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "priorisation",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle séquence d'exécution minimise le risque de rupture de service ?",
-    "stimulus": "À 10 h 00 : Tâche X (durée 20 min, échéance 10 h 30). Tâche Y (durée 40 min, échéance 11 h 45). Tâche Z (durée 30 min, échéance 12 h 30).",
-    "options": [
-      "Tâche X, puis Tâche Y, puis Tâche Z",
-      "Tâche Y, puis Tâche X, puis Tâche Z",
-      "Tâche Z, puis Tâche X, puis Tâche Y",
-      "Tâche X, puis Tâche Z, puis Tâche Y"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : X finie à 10 h 20 (< 10h30), Y finie à 11 h 00 (< 11h45), Z finie à 11 h 30 (< 12h30).",
-      "Commencer par Y repousse la fin de X à 11 h 00, provoquant un retard de 30 minutes.",
-      "Commencer par Z fait manquer l'échéance de X dès 10 h 30.",
-      "Bien que possible, intercaler Z avant Y réduit la marge de sécurité de Y sans nécessité."
-    ],
-    "explanation": "La tâche X a l'échéance la plus critique (10 h 30). Démarrée à 10 h 00, elle se termine à 10 h 20. Enchaîner par Y (10 h 20 – 11 h 00) respecte son échéance de 11 h 45, et Z conclut à 11 h 30 avant son terme de 12 h 30.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -1003,50 +941,19 @@
     "prompt": "Quel horaire d'ouverture du guichet évite toute rupture d'accueil des usagers ?",
     "stimulus": "Agent 1 assure la permanence de 8 h 30 à 12 h 30. L'Agent 2 prend le relais pour l'après-midi. Une passation de consignes de 15 minutes est obligatoire entre les deux agents.",
     "options": [
-      "L'Agent 2 doit arriver au plus tard à 12 h 15.",
       "L'Agent 2 peut arriver à 12 h 30 sans risque de rupture.",
       "L'Agent 2 peut arriver à 12 h 45 si les usagers patientent.",
-      "L'Agent 1 doit quitter son poste à 12 h 15 pour préparer ses dossiers."
+      "L'Agent 1 doit quitter son poste à 12 h 15 pour préparer ses dossiers.",
+      "L'Agent 2 doit arriver au plus tard à 12 h 15."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 15 minutes de passation avant le départ d'Agent 1 à 12 h 30 imposent une arrivée à 12 h 15.",
       "Arriver à 12 h 30 repousserait la fin de la passation à 12 h 45, laissant le guichet sans permanence.",
       "Engendrerait une fermeture non autorisée du guichet de 15 minutes.",
-      "Quitter le poste à 12 h 15 interromprait prématurément le service."
+      "Quitter le poste à 12 h 15 interromprait prématurément le service.",
+      "Correct : 15 minutes de passation avant le départ d'Agent 1 à 12 h 30 imposent une arrivée à 12 h 15."
     ],
     "explanation": "Pour assurer la continuité sans interruption de service, la passation de 15 minutes doit s'effectuer avant le départ de l'Agent 1 fixé à 12 h 30. L'Agent 2 doit donc impérativement être en poste dès 12 h 15.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "planning-dep-034",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "dependances",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quel est le premier jour ouvré auquel le rapport final peut être soumis ?",
-    "stimulus": "La collecte de données prend 2 jours ouvrés (lundi et mardi). Le traitement statistique requiert 1 jour ouvré dès la collecte terminée. La relecture juridique requiert 1 jour ouvré dès le traitement achevé.",
-    "options": [
-      "Vendredi",
-      "Jeudi",
-      "Mercredi",
-      "Lundi suivant"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : Lundi-Mardi (Collecte), Mercredi (Traitement), Jeudi (Relecture) ; soumission possible le Vendredi.",
-      "Le jeudi est consacré à la relecture juridique, la soumission n'a lieu que le lendemain.",
-      "Le mercredi correspond seulement à l'étape intermédiaire de traitement statistique.",
-      "Délai inutilement allongé sautant le vendredi."
-    ],
-    "explanation": "Collecte : jours 1 et 2 (lundi et mardi). Traitement : jour 3 (mercredi). Relecture : jour 4 (jeudi). Le rapport final est donc prêt et peut être formellement soumis dès le jour 5 (vendredi).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
@@ -1065,17 +972,17 @@
     "prompt": "Quelle est la durée totale cumulée des temps de pause autorisés sur la journée ?",
     "stimulus": "La journée de travail s'étend de 8 h 30 à 17 h 00. Les activités productives planifiées totalisent 7 heures et 15 minutes de travail effectif.",
     "options": [
-      "1 heure et 15 minutes",
-      "45 minutes",
       "1 heure",
-      "1 heure et 30 minutes"
+      "45 minutes",
+      "1 heure et 30 minutes",
+      "1 heure et 15 minutes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : amplitude globale de 8 h 30 à 17 h 00 = 8 h 30 ; 8 h 30 - 7 h 15 = 1 h 15 de pause.",
-      "Sous-estime le temps résiduel disponible.",
       "Calcul erroné omettant le quart d'heure.",
-      "Surestimation excédant l'amplitude totale."
+      "Sous-estime le temps résiduel disponible.",
+      "Surestimation excédant l'amplitude totale.",
+      "Correct : amplitude globale de 8 h 30 à 17 h 00 = 8 h 30 ; 8 h 30 - 7 h 15 = 1 h 15 de pause."
     ],
     "explanation": "L'amplitude totale entre 8 h 30 et 17 h 00 représente 8 heures et 30 minutes. Le temps productif étant de 7 heures et 15 minutes, le reliquat consacré aux pauses s'élève à 8 h 30 − 7 h 15 = 1 heure et 15 minutes.",
     "sourceType": "original_ai_assisted",
@@ -1096,16 +1003,16 @@
     "prompt": "Quel créneau horaire permet de réunir simultanément les 3 directeurs sans conflit d'agenda ?",
     "stimulus": "Agendas du mardi après-midi :\nDirecteur A : libre de 14h00 à 16h30.\nDirecteur B : libre de 15h00 à 17h00.\nDirecteur C : libre de 14h30 à 16h00.\nDurée requise : 1 heure.",
     "options": [
-      "De 15h00 à 16h00",
-      "De 14h00 à 15h00",
       "De 15h30 à 16h30",
+      "De 14h00 à 15h00",
+      "De 15h00 à 16h00",
       "De 16h00 à 17h00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 15h00 à 16h00 est la seule plage où les directeurs A, B et C sont simultanément disponibles.",
-      "De 14h00 à 15h00, le directeur B n'est pas encore disponible (libre dès 15h00).",
       "De 15h30 à 16h30, le directeur C n'est plus libre après 16h00.",
+      "De 14h00 à 15h00, le directeur B n'est pas encore disponible (libre dès 15h00).",
+      "Correct : 15h00 à 16h00 est la seule plage où les directeurs A, B et C sont simultanément disponibles.",
       "De 16h00 à 17h00, les directeurs A et C ne sont plus disponibles."
     ],
     "explanation": "L'intersection des disponibilités est : A [14h00-16h30] ∩ B [15h00-17h00] ∩ C [14h30-16h00] = [15h00-16h00], soit exactement 1 heure commune.",
@@ -1127,17 +1034,17 @@
     "prompt": "Quelle est la durée minimale totale requise pour mener ce projet de rénovation à son terme ?",
     "stimulus": "Tâches du projet :\nTâche 1 (Diagnostic amiante) : 3 jours.\nTâche 2 (Démolition intérieure) : 5 jours, consécutive à la tâche 1.\nTâche 3 (Commande matériaux) : 4 jours, menée en parallèle de la tâche 2 dès la fin de la tâche 1.\nTâche 4 (Reconstruction) : 6 jours, démarrant après l'achèvement complet des tâches 2 et 3.",
     "options": [
-      "14 jours",
-      "12 jours",
       "18 jours",
-      "15 jours"
+      "15 jours",
+      "12 jours",
+      "14 jours"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : Tâche 1 (3 j) + max(Tâche 2 [5 j], Tâche 3 [4 j]) + Tâche 4 (6 j) = 3 + 5 + 6 = 14 jours.",
-      "12 jours sous-estime la durée du chemin critique.",
       "18 jours additionne toutes les durées sans tenir compte du parallélisme des tâches 2 et 3.",
-      "15 jours résulte d'une erreur de calcul d'ordonnancement."
+      "15 jours résulte d'une erreur de calcul d'ordonnancement.",
+      "12 jours sous-estime la durée du chemin critique.",
+      "Correct : Tâche 1 (3 j) + max(Tâche 2 [5 j], Tâche 3 [4 j]) + Tâche 4 (6 j) = 3 + 5 + 6 = 14 jours."
     ],
     "explanation": "Chemin critique : Tâche 1 (3 jours) + Tâche 2 (5 jours, qui est plus longue que la tâche 3 de 4 jours) + Tâche 4 (6 jours) = 14 jours.",
     "sourceType": "original_ai_assisted",
@@ -1158,17 +1065,17 @@
     "prompt": "Selon la matrice d'Eisenhower (urgence / importance), quel dossier le chef de service doit-il traiter en toute priorité ce matin ?",
     "stimulus": "Dossiers sur le bureau à 08h30 :\nDossier 1 : Note d'information pour la réunion de fin de mois (faible urgence, importance moyenne).\nDossier 2 : Question parlementaire urgente à déposer avant 11h30 (haute urgence, haute importance).\nDossier 3 : Appel d'offres pour fournitures de bureau du prochain trimestre (faible urgence, importance moyenne).\nDossier 4 : Demande de congé pour les vacances d'été (urgence moyenne, faible importance).",
     "options": [
-      "Le dossier 2 (Question parlementaire urgente)",
-      "Le dossier 1 (Note de fin de mois)",
+      "Le dossier 4 (Demande de congé d'été)",
       "Le dossier 3 (Fournitures de bureau)",
-      "Le dossier 4 (Demande de congé d'été)"
+      "Le dossier 1 (Note de fin de mois)",
+      "Le dossier 2 (Question parlementaire urgente)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : dossier à la fois hautement urgent (délai 11h30) et hautement stratégique pour le ministère.",
-      "Le dossier 1 relève de la planification non urgente.",
+      "Le dossier 4 relève de la gestion courante sans criticité immédiate.",
       "Le dossier 3 relève d'une échéance trimestrielle lointaine.",
-      "Le dossier 4 relève de la gestion courante sans criticité immédiate."
+      "Le dossier 1 relève de la planification non urgente.",
+      "Correct : dossier à la fois hautement urgent (délai 11h30) et hautement stratégique pour le ministère."
     ],
     "explanation": "Le dossier 2 réunit une urgence maximale (échéance à 11h30) et une importance institutionnelle majeure (question parlementaire au ministre). Il doit être traité en premier.",
     "sourceType": "original_ai_assisted",
@@ -1189,16 +1096,16 @@
     "prompt": "Combien d'agents au minimum doivent être mobilisés pour instruire 120 dossiers en 5 jours ouvrés à raison de 3 dossiers traités par jour et par agent ?",
     "stimulus": "Campagne de régularisation des demandes d'aides :\nVolume total : 120 dossiers.\nDélai imparti : 5 jours ouvrés.\nProductivité moyenne : 3 dossiers traités par agent et par jour.",
     "options": [
-      "8 agents",
       "6 agents",
       "10 agents",
+      "8 agents",
       "12 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : un agent traite 3 × 5 = 15 dossiers en 5 jours. 120 / 15 = 8 agents nécessaires.",
       "6 agents ne traiteraient que 6 × 15 = 90 dossiers (insuffisant).",
       "10 agents correspondrait à un besoin de 150 dossiers.",
+      "Correct : un agent traite 3 × 5 = 15 dossiers en 5 jours. 120 / 15 = 8 agents nécessaires.",
       "12 agents correspondrait à un besoin de 180 dossiers."
     ],
     "explanation": "Capacité individuelle sur 5 jours = 3 dossiers/jour × 5 jours = 15 dossiers. Nombre d'agents = 120 / 15 = 8 agents.",
@@ -1220,17 +1127,17 @@
     "prompt": "Si la tâche B subit un retard imprévu de 2 jours, quel est l'impact direct sur la date d'achèvement global du projet ?",
     "stimulus": "Ordonnancement du déploiement informatique :\nTâche A (Paramétrage réseau) : Jours 1 à 4.\nTâche B (Recette fonctionnelle) : Jours 5 à 7 (dépend de A).\nTâche C (Documentation utilisateur) : Jours 5 à 10 (dépend de A).\nTâche D (Mise en production finale) : Jours 11 à 12 (dépend de B et de C).",
     "options": [
-      "Aucun retard global, la tâche C restant le chemin critique jusqu'à J10.",
-      "Un retard global de 2 jours sur la livraison finale.",
       "Un retard global de 1 jour sur la livraison finale.",
-      "Le projet doit être entièrement suspendu et replanifié."
+      "Le projet doit être entièrement suspendu et replanifié.",
+      "Aucun retard global, la tâche C restant le chemin critique jusqu'à J10.",
+      "Un retard global de 2 jours sur la livraison finale."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : B dure initialement 3 jours (J5 à J7). Avec +2 jours, B se termine à J9, ce qui reste avant l'achèvement de C (J10).",
-      "Il n'y a pas de retard car B possède une marge libre de 3 jours par rapport à la tâche critique C.",
       "Un décalage de 1 jour est inexact, la fin reste fixée par C à J10.",
-      "Une suspension totale est injustifiée pour un retard absorbé par la marge."
+      "Une suspension totale est injustifiée pour un retard absorbé par la marge.",
+      "Correct : B dure initialement 3 jours (J5 à J7). Avec +2 jours, B se termine à J9, ce qui reste avant l'achèvement de C (J10).",
+      "Il n'y a pas de retard car B possède une marge libre de 3 jours par rapport à la tâche critique C."
     ],
     "explanation": "La tâche C se termine à J10. Si la tâche B s'allonge de 2 jours (se terminant à J9 au lieu de J7), elle s'achève toujours avant la tâche C (J10). La tâche D peut donc démarrer normalement à J11, sans aucun retard final.",
     "sourceType": "original_ai_assisted",
@@ -1251,17 +1158,17 @@
     "prompt": "Quelle salle peut accueillir la réunion de coordination de 14h00 à 15h30 réunissant 15 participants ?",
     "stimulus": "Disponibilités des salles de réunion de la direction :\nSalle Mozart (10 places) : libre toute la journée.\nSalle Schuman (25 places) : réservée de 13h00 à 14h30, libre ensuite.\nSalle Luxembourg (30 places) : libre de 13h30 à 16h00.\nSalle Europe (12 places) : libre de 14h00 à 18h00.",
     "options": [
-      "La salle Luxembourg",
       "La salle Schuman",
-      "La salle Mozart",
-      "La salle Europe"
+      "La salle Luxembourg",
+      "La salle Europe",
+      "La salle Mozart"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : capacité de 30 places (≥ 15) et plage libre de 13h30 à 16h00 couvrant 14h00-15h30.",
       "La salle Schuman est occupée jusqu'à 14h30, ce qui entre en conflit avec le début à 14h00.",
-      "La salle Mozart ne dispose que de 10 places, insuffisant pour 15 personnes.",
-      "La salle Europe ne dispose que de 12 places, insuffisant pour 15 personnes."
+      "Correct : capacité de 30 places (≥ 15) et plage libre de 13h30 à 16h00 couvrant 14h00-15h30.",
+      "La salle Europe ne dispose que de 12 places, insuffisant pour 15 personnes.",
+      "La salle Mozart ne dispose que de 10 places, insuffisant pour 15 personnes."
     ],
     "explanation": "Seule la salle Luxembourg réunit les deux conditions : une capacité suffisante (30 places pour 15 attendus) et une disponibilité continue sur le créneau 14h00-15h30.",
     "sourceType": "original_ai_assisted",
@@ -1282,17 +1189,17 @@
     "prompt": "Dans quel ordre séquentiel ces étapes administratives obligatoires doivent-elles se succéder ?",
     "stimulus": "Étapes de passation d'un marché public :\n1. Notification formelle de l'attribution du marché au lauréat.\n2. Publication de l'avis de marché et du cahier des charges.\n3. Analyse comparative des offres par la commission.\n4. Réception et ouverture sécurisée des plis des soumissionnaires.",
     "options": [
+      "2 → 4 → 1 → 3",
       "2 → 4 → 3 → 1",
       "2 → 3 → 4 → 1",
-      "4 → 2 → 3 → 1",
-      "2 → 4 → 1 → 3"
+      "4 → 2 → 3 → 1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "On ne peut pas notifier l'attribution avant d'avoir analysé les offres.",
       "Correct : Publication de l'avis (2), Réception et ouverture (4), Analyse (3), puis Notification (1).",
       "On ne peut pas analyser les offres avant d'avoir réceptionné et ouvert les plis.",
-      "On ne peut pas recevoir des plis sans publication préalable du marché.",
-      "On ne peut pas notifier l'attribution avant d'avoir analysé les offres."
+      "On ne peut pas recevoir des plis sans publication préalable du marché."
     ],
     "explanation": "La chronologie réglementaire impose : 1° Publication de l'avis (2), 2° Réception/ouverture des offres (4), 3° Examen par la commission (3), 4° Notification du marché au retenu (1).",
     "sourceType": "original_ai_assisted",
@@ -1313,17 +1220,17 @@
     "prompt": "Combien d'heures de vacation supplémentaires doivent être ouvertes pour achever le travail dans les délais ?",
     "stimulus": "Numérisation des archives du tribunal :\nVolume de travail restant : 360 heures de saisie.\nÉquipe permanente disponible : 3 agents à plein temps sur 2 semaines (35 h/semaine/agent).\nDélai impératif d'achèvement : 2 semaines.",
     "options": [
-      "150 heures de vacation",
+      "90 heures de vacation",
       "120 heures de vacation",
-      "180 heures de vacation",
-      "90 heures de vacation"
+      "150 heures de vacation",
+      "180 heures de vacation"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : capacité permanente = 3 × 35 × 2 = 210 heures. Déficit = 360 - 210 = 150 heures.",
+      "90 heures correspondrait à un volume disponible erroné.",
       "120 heures sous-estime le besoin résiduel.",
-      "180 heures correspondrait à un déficit pour 2 agents seulement.",
-      "90 heures correspondrait à un volume disponible erroné."
+      "Correct : capacité permanente = 3 × 35 × 2 = 210 heures. Déficit = 360 - 210 = 150 heures.",
+      "180 heures correspondrait à un déficit pour 2 agents seulement."
     ],
     "explanation": "Capacité fournie par l'équipe en 2 semaines = 3 agents × 35 h × 2 semaines = 210 heures. Heures manquantes à pourvoir = 360 - 210 = 150 heures.",
     "sourceType": "original_ai_assisted",
@@ -1344,17 +1251,17 @@
     "prompt": "Face à une panne majeure de la messagerie à 09h00 bloquant les services, quelle action doit être menée immédiatement ?",
     "stimulus": "Contexte opérationnel du lundi matin :\n- 09h00 : Panne générale des serveurs de messagerie de la direction.\n- 09h15 : Réunion d'équipe hebdomadaire de routine programmée.\n- 10h00 : Revue des devis pour commande de mobilier.\n- 11h00 : Point d'avancement d'un stage étudiant.",
     "options": [
-      "Alerter la régie technique et activer le canal de communication de crise.",
-      "Maintenir la réunion de routine sans modifier l'ordre du jour.",
+      "Suspendre l'ensemble de l'activité des agents pour toute la journée.",
       "Procéder immédiatement au classement physique des devis de mobilier.",
-      "Suspendre l'ensemble de l'activité des agents pour toute la journée."
+      "Alerter la régie technique et activer le canal de communication de crise.",
+      "Maintenir la réunion de routine sans modifier l'ordre du jour."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la continuité d'activité exige d'alerter sans délai les techniciens et de basculer sur un canal de secours.",
-      "Poursuivre la routine sans réagir ignore l'impact critique du blocage général.",
+      "Une suspension totale d'activité est disproportionnée et prématurée.",
       "Classer du mobilier est une tâche secondaire non urgente sans lien avec l'incident.",
-      "Une suspension totale d'activité est disproportionnée et prématurée."
+      "Correct : la continuité d'activité exige d'alerter sans délai les techniciens et de basculer sur un canal de secours.",
+      "Poursuivre la routine sans réagir ignore l'impact critique du blocage général."
     ],
     "explanation": "Face à un blocage technique majeur paralysant le service, la priorité absolue est d'enclencher la résolution technique et le canal de communication alternatif pour préserver la continuité.",
     "sourceType": "original_ai_assisted",
@@ -1375,17 +1282,17 @@
     "prompt": "Quelle est la durée du chemin critique de ce projet d'aménagement urbain ?",
     "stimulus": "Séquence des opérations :\nPhase A (Enquête publique) : 4 semaines.\nPhase B (Acquisitions foncières) : 6 semaines, démarre après A.\nPhase C (Études d'impact environnemental) : 8 semaines, démarre après A.\nPhase D (Travaux de terrassement) : 5 semaines, démarre dès que B et C sont toutes deux achevées.",
     "options": [
-      "17 semaines",
-      "15 semaines",
       "23 semaines",
-      "19 semaines"
+      "17 semaines",
+      "19 semaines",
+      "15 semaines"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : Phase A (4 sem) + max(Phase B [6 sem], Phase C [8 sem]) + Phase D (5 sem) = 4 + 8 + 5 = 17 semaines.",
-      "15 semaines prendrait par erreur la branche B (4 + 6 + 5) au lieu de la branche critique C.",
       "23 semaines additionne bêtement les durées en ignorant la simultanéité des phases B et C.",
-      "19 semaines résulte d'un mauvais calcul de jalon."
+      "Correct : Phase A (4 sem) + max(Phase B [6 sem], Phase C [8 sem]) + Phase D (5 sem) = 4 + 8 + 5 = 17 semaines.",
+      "19 semaines résulte d'un mauvais calcul de jalon.",
+      "15 semaines prendrait par erreur la branche B (4 + 6 + 5) au lieu de la branche critique C."
     ],
     "explanation": "Les phases B et C se déroulent en parallèle après A. La plus longue est C (8 semaines). Le chemin critique est donc A (4) + C (8) + D (5) = 17 semaines.",
     "sourceType": "original_ai_assisted",
@@ -1406,17 +1313,17 @@
     "prompt": "Sur quel créneau un entretien d'embauche de 45 minutes peut-il être planifié sans empiéter sur les autres engagements du jury ?",
     "stimulus": "Agenda du responsable RH sur la matinée (08h30 - 12h30) :\n- 08h30 - 09h30 : Accueil des nouveaux arrivants.\n- 09h30 - 10h45 : Libre.\n- 10h45 - 11h45 : Commission paritaire.\n- 11h45 - 12h30 : Libre.",
     "options": [
-      "De 09h45 à 10h30",
-      "De 08h45 à 09h30",
+      "De 11h45 à 12h45",
       "De 10h30 à 11h15",
-      "De 11h45 à 12h45"
+      "De 09h45 à 10h30",
+      "De 08h45 à 09h30"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la plage 09h30 à 10h45 offre 1h15 de disponibilité, permettant d'insérer 45 minutes (09h45 à 10h30).",
-      "De 08h45 à 09h30, le responsable est occupé par l'accueil des nouveaux arrivants.",
+      "De 11h45 à 12h45, le créneau dépasse la matinée et ne dispose que de 45 min jusqu'à 12h30.",
       "De 10h30 à 11h15, le créneau empiète sur la commission paritaire débutant à 10h45.",
-      "De 11h45 à 12h45, le créneau dépasse la matinée et ne dispose que de 45 min jusqu'à 12h30."
+      "Correct : la plage 09h30 à 10h45 offre 1h15 de disponibilité, permettant d'insérer 45 minutes (09h45 à 10h30).",
+      "De 08h45 à 09h30, le responsable est occupé par l'accueil des nouveaux arrivants."
     ],
     "explanation": "Le créneau libre du matin va de 09h30 à 10h45 (durée 75 min). L'horaire 09h45-10h30 (45 min) s'y insère parfaitement sans aucun chevauchement.",
     "sourceType": "original_ai_assisted",
@@ -1437,17 +1344,17 @@
     "prompt": "Une flotte de 24 véhicules doit subir le contrôle technique. Si un centre agréé peut contrôler 4 véhicules par demi-journée, combien de demi-journées sont requises ?",
     "stimulus": "Maintenance du parc automobile de l'État :\nNombre de véhicules : 24.\nCadence d'inspection : 4 véhicules par demi-journée.",
     "options": [
-      "6 demi-journées",
-      "4 demi-journées",
       "8 demi-journées",
-      "5 demi-journées"
+      "5 demi-journées",
+      "4 demi-journées",
+      "6 demi-journées"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 24 / 4 = 6 demi-journées de travail.",
-      "4 demi-journées ne permettrait d'inspecter que 16 véhicules.",
       "8 demi-journées correspondrait à 32 véhicules inspectés.",
-      "5 demi-journées laisserait 4 véhicules non contrôlés."
+      "5 demi-journées laisserait 4 véhicules non contrôlés.",
+      "4 demi-journées ne permettrait d'inspecter que 16 véhicules.",
+      "Correct : 24 / 4 = 6 demi-journées de travail."
     ],
     "explanation": "Le nombre de demi-journées nécessaires est égal au parc total divisé par la cadence unitaire : 24 / 4 = 6 demi-journées (soit 3 jours pleins).",
     "sourceType": "original_ai_assisted",
@@ -1468,17 +1375,17 @@
     "prompt": "Quatre demandes parviennent simultanément au pôle logistique. Laquelle doit être satisfaite en priorité immédiate ?",
     "stimulus": "Demandes reçues à 14h00 :\nDemande A : Remplacement d'une ampoule d'appoint dans un bureau individuel.\nDemande B : Défaillance de l'alarme incendie du bâtiment central.\nDemande C : Montage de trois étagères pour les archives générales.\nDemande D : Réapprovisionnement en ramettes de papier pour les copieurs.",
     "options": [
+      "La demande D (Papier pour les copieurs)",
       "La demande B (Défaillance de l'alarme incendie)",
-      "La demande A (Ampoule d'appoint individuelle)",
       "La demande C (Montage d'étagères d'archives)",
-      "La demande D (Papier pour les copieurs)"
+      "La demande A (Ampoule d'appoint individuelle)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le réapprovisionnement en papier est une tâche logistique standard non critique.",
       "Correct : la sécurité physique des personnes et la conformité incendie priment absolument sur le confort matériel.",
-      "L'éclairage d'appoint ne présente aucun risque immédiat pour la collectivité.",
       "Le montage d'étagères relève de l'intendance courante différable.",
-      "Le réapprovisionnement en papier est une tâche logistique standard non critique."
+      "L'éclairage d'appoint ne présente aucun risque immédiat pour la collectivité."
     ],
     "explanation": "En gestion des risques et priorités publiques, la sécurité des occupants (système d'alarme incendie) prime de façon absolue sur toute intervention de confort matériel.",
     "sourceType": "original_ai_assisted",
@@ -1499,17 +1406,17 @@
     "prompt": "Quelle contrainte d'antériorité empêche de lancer le vote électronique avant la validation juridique du règlement ?",
     "stimulus": "Organisation des élections professionnelles :\n- Étape 1 : Rédaction du protocole électoral préélectoral.\n- Étape 2 : Validation juridique et signature par les partenaires sociaux.\n- Étape 3 : Paramétrage et homologation de la plateforme de vote.\n- Étape 4 : Période effective de vote des électeurs.",
     "options": [
+      "L'étape 2 est facultative si la plateforme informatique est déjà prête.",
       "L'étape 4 dépend directement de la sécurité juridique issue de l'étape 2.",
       "L'étape 4 peut démarrer dès l'étape 1 sans attendre les partenaires.",
-      "L'étape 3 n'a aucun lien avec la signature des partenaires sociaux.",
-      "L'étape 2 est facultative si la plateforme informatique est déjà prête."
+      "L'étape 3 n'a aucun lien avec la signature des partenaires sociaux."
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La validation par les partenaires sociaux est une condition réglementaire impérative.",
       "Correct : le scrutin (4) ne peut être ouvert sans que le protocole soit juridiquement validé (2) sous peine d'annulation.",
       "Ouvrir le vote sans accord signé exposerait le scrutin à une nullité juridique immédiate.",
-      "Le paramétrage technique découle précisément des règles définies dans le protocole.",
-      "La validation par les partenaires sociaux est une condition réglementaire impérative."
+      "Le paramétrage technique découle précisément des règles définies dans le protocole."
     ],
     "explanation": "Dans le déroulement légal d'un scrutin professionnel, la base juridique et conventionnelle (étape 2) est un prérequis obligatoire conditionnant la validité des votes (étape 4).",
     "sourceType": "original_ai_assisted",
@@ -1531,16 +1438,16 @@
     "stimulus": "Indisponibilités récurrentes des chefs de division :\n- Division 1 : absent le lundi matin et le vendredi toute la journée.\n- Division 2 : absent le mercredi toute la journée.\n- Division 3 : absent le jeudi après-midi.\n- Division 4 : libre du lundi au jeudi inclus, absent le vendredi.",
     "options": [
       "Le mardi",
+      "Le vendredi",
       "Le mercredi",
-      "Le jeudi",
-      "Le vendredi"
+      "Le jeudi"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : le mardi est le seul jour de la semaine où les 4 chefs de division sont libres toute la journée.",
+      "Le vendredi, les chefs des divisions 1 et 4 sont tous deux absents.",
       "Le mercredi, le chef de la division 2 est absent toute la journée.",
-      "Le jeudi, le chef de la division 3 est absent l'après-midi (journée incomplète).",
-      "Le vendredi, les chefs des divisions 1 et 4 sont tous deux absents."
+      "Le jeudi, le chef de la division 3 est absent l'après-midi (journée incomplète)."
     ],
     "explanation": "En examinant chaque jour : Lundi exclu (matin D1 indisponible), Mercredi exclu (D2 absent), Jeudi exclu (après-midi D3 indisponible), Vendredi exclu (D1 et D4 absents). Seul le Mardi est totalement disponible pour les 4 cadres.",
     "sourceType": "original_ai_assisted",
@@ -1561,17 +1468,17 @@
     "prompt": "Quel est le délai total incompressible pour publier le rapport annuel selon ce calendrier ?",
     "stimulus": "Phases d'édition du rapport d'activité annuel :\n- Phase 1 (Collecte des données brutes) : 10 jours.\n- Phase 2 (Rédaction des chapitres) : 15 jours (démarre après la phase 1).\n- Phase 3 (Création des infographies) : 8 jours (démarre après la phase 1, en parallèle de la phase 2).\n- Phase 4 (Relecture et maquettage) : 7 jours (démarre après la fin des phases 2 et 3).\n- Phase 5 (Impression et diffusion web) : 3 jours (démarre après la phase 4).",
     "options": [
-      "35 jours",
-      "32 jours",
       "43 jours",
-      "38 jours"
+      "32 jours",
+      "38 jours",
+      "35 jours"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : Phase 1 (10) + max(Phase 2 [15], Phase 3 [8]) + Phase 4 (7) + Phase 5 (3) = 10 + 15 + 7 + 3 = 35 jours.",
-      "32 jours omettrait la marge de la rédaction des chapitres (prenant 8 au lieu de 15).",
       "43 jours additionne toutes les phases sans tenir compte du travail parallèle en phases 2 et 3.",
-      "38 jours résulte d'une double comptabilisation partielle."
+      "32 jours omettrait la marge de la rédaction des chapitres (prenant 8 au lieu de 15).",
+      "38 jours résulte d'une double comptabilisation partielle.",
+      "Correct : Phase 1 (10) + max(Phase 2 [15], Phase 3 [8]) + Phase 4 (7) + Phase 5 (3) = 10 + 15 + 7 + 3 = 35 jours."
     ],
     "explanation": "Entre les phases parallèles 2 et 3, c'est la phase 2 (15 jours) qui conditionne le délai. Le chemin critique cumule : 10 + 15 + 7 + 3 = 35 jours ouvrés.",
     "sourceType": "original_ai_assisted",
@@ -1593,16 +1500,16 @@
     "stimulus": "Plan de traitement fiscal communal :\nVolume : 600 déclarations.\nDélai imparti : 10 jours ouvrés.\nRendement moyen : 6 déclarations par agent et par jour.",
     "options": [
       "10 agents",
+      "15 agents",
       "8 agents",
-      "12 agents",
-      "15 agents"
+      "12 agents"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 1 agent traite 6 × 10 = 60 dossiers en 10 jours. Pour 600 dossiers, il faut 600 / 60 = 10 agents.",
+      "15 agents correspondrait à un besoin de 900 dossiers.",
       "8 agents ne traiteraient que 8 × 60 = 480 dossiers.",
-      "12 agents correspondrait à un besoin de 720 dossiers.",
-      "15 agents correspondrait à un besoin de 900 dossiers."
+      "12 agents correspondrait à un besoin de 720 dossiers."
     ],
     "explanation": "Chaque agent traite 60 dossiers au cours de la période (6 × 10). Pour couvrir 600 dossiers, l'équipe doit être de 600 / 60 = 10 agents.",
     "sourceType": "original_ai_assisted",
@@ -1624,15 +1531,15 @@
     "stimulus": "Projets sous revue :\n- Projet W : Refonte du portail web avec date cible indicative dans 14 mois.\n- Projet X : Déploiement d'un progiciel métier sous astreinte légale au 1er novembre avec 5 jours de marge.\n- Projet Y : Organisation du forum des métiers prévu au printemps prochain.\n- Projet Z : Rénovation de la cafétéria du personnel programmée sur deux ans.",
     "options": [
       "Le projet X (Déploiement sous astreinte légale avec marge étroite)",
-      "Le projet W (Refonte du portail à 14 mois)",
       "Le projet Y (Forum des métiers au printemps)",
+      "Le projet W (Refonte du portail à 14 mois)",
       "Le projet Z (Rénovation de la cafétéria sur deux ans)"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : obligation légale impérative assortie d'une marge quasi nulle (5 jours) imposant un pilotage serré.",
-      "Le projet W bénéficie d'une échéance lointaine et d'une date purement indicative.",
       "Le projet Y ne fait l'objet d'aucune contrainte légale pénalisante.",
+      "Le projet W bénéficie d'une échéance lointaine et d'une date purement indicative.",
       "Le projet Z est un chantier interne étalé sans criticité opérationnelle immédiate."
     ],
     "explanation": "La conjonction d'une astreinte légale contraignante et d'une marge de sécurité extrêmement réduite (5 jours) confère au projet X une priorité opérationnelle quotidienne absolue.",
@@ -1655,49 +1562,18 @@
     "stimulus": "Calendrier d'un événement officiel :\n- Tâche 'Préparation de la salle' : Jours 1 à 10.\n- Tâche 'Validation sécurité' : durée de 4 jours (doit être achevée avant le jour 18).\n- Tâche 'Répétition protocolaire' : Jours 18 à 19.\n- Événement (Inauguration) : Jour 20.",
     "options": [
       "Jour 14 au matin",
+      "Jour 16 au matin",
       "Jour 12 au matin",
-      "Jour 15 au matin",
-      "Jour 16 au matin"
+      "Jour 15 au matin"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : pour se terminer au jour 18 au soir, une tâche de 4 jours doit démarrer au plus tard au matin du jour 15 (ou jour 14 selon convention 14, 15, 16, 17 pour finir le 17 au soir).",
+      "Le jour 16 provoquerait un retard direct sur la répétition du jour 18.",
       "Le jour 12 est plus précoce que le démarrage au plus tard.",
-      "Le jour 15 au matin ne laisserait que 3 jours pleins si la fin est requise avant le jour 18.",
-      "Le jour 16 provoquerait un retard direct sur la répétition du jour 18."
+      "Le jour 15 au matin ne laisserait que 3 jours pleins si la fin est requise avant le jour 18."
     ],
     "explanation": "La tâche 'Validation sécurité' durant 4 jours et devant s'achever avant le début de la répétition (jour 18), elle doit être menée sur les jours 14, 15, 16 et 17. Elle doit donc commencer au plus tard au jour 14.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:36:51.069Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
-  },
-  {
-    "id": "planning-sched-055",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "agenda-contraintes",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel créneau horaire convient pour une visioconférence de 2 heures réunissant Luxembourg (UTC+1) et Tokyo (UTC+9) pendant les heures ouvrées usuelles des deux sites ?",
-    "stimulus": "Plages d'ouverture des bureaux locaux :\n- Luxembourg : 08h30 à 17h30 (heure locale).\n- Tokyo : 09h00 à 18h00 (heure locale).\nDécalage horaire : Tokyo a 8 heures d'avance sur Luxembourg.",
-    "options": [
-      "08h30 à 10h30 heure de Luxembourg (16h30 à 18h30 à Tokyo).",
-      "14h00 à 16h00 heure de Luxembourg (22h00 à 00h00 à Tokyo).",
-      "16h00 à 18h00 heure de Luxembourg (00h00 à 02h00 à Tokyo).",
-      "11h30 à 13h30 heure de Luxembourg (19h30 à 21h30 à Tokyo)."
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : le créneau matinal à Luxembourg correspond à la fin d'après-midi ouvrée à Tokyo (chevauchement optimal).",
-      "L'après-midi à Luxembourg correspond à la nuit profonde à Tokyo (22h00-00h00).",
-      "La fin de journée à Luxembourg correspond au milieu de la nuit à Tokyo.",
-      "Le créneau de mi-journée à Luxembourg déborde sur la soirée fermée à Tokyo."
-    ],
-    "explanation": "Avec 8 heures d'avance pour Tokyo, la seule plage commune compatible avec les horaires de bureau se situe le matin à Luxembourg (ex. début à 08h30/09h00, soit 16h30/17h00 à Tokyo).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
@@ -1717,16 +1593,16 @@
     "stimulus": "Organisation du guichet d'accueil :\n- Amplitude horaire d'ouverture : 10 heures continues (08h00 à 18h00).\n- Présence requise : 2 agents présents simultanément en permanence.\n- Plafond individuel : maximum 5 heures de guichet par jour et par agent.",
     "options": [
       "4 agents",
-      "3 agents",
       "5 agents",
-      "2 agents"
+      "2 agents",
+      "3 agents"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : charge totale = 10 h × 2 agents = 20 heures-agent de présence requises. 20 h / 5 h max = 4 agents nécessaires.",
-      "3 agents ne fourniraient que 3 × 5 = 15 heures, laissant 5 heures de guichet découvertes.",
       "5 agents dépasse le dimensionnement minimal requis.",
-      "2 agents ne fourniraient que 10 heures au total, soit la moitié du besoin."
+      "2 agents ne fourniraient que 10 heures au total, soit la moitié du besoin.",
+      "3 agents ne fourniraient que 3 × 5 = 15 heures, laissant 5 heures de guichet découvertes."
     ],
     "explanation": "Besoin total en heures de présence = 10 heures d'ouverture × 2 guichetiers simultanés = 20 heures de présence. Chaque agent pouvant effectuer au maximum 5 heures, il faut au minimum 20 / 5 = 4 agents.",
     "sourceType": "original_ai_assisted",
@@ -1747,16 +1623,16 @@
     "prompt": "À quelle heure le technicien peut-il intervenir sur le poste informatique de la directrice sans interrompre ses séances de travail ?",
     "stimulus": "Agenda de la directrice le jeudi :\n- 09h00 - 11h00 : Comité de direction.\n- 11h00 - 12h30 : Réception d'une délégation étrangère.\n- 12h30 - 14h00 : Déjeuner officiel.\n- 14h00 - 15h00 : Travail de bureau / Relecture de parapheur (libre d'audience).\n- 15h00 - 17h00 : Séance plénière extérieure.",
     "options": [
-      "Entre 15h00 et 17h00 pendant son absence en séance plénière extérieure.",
-      "Entre 09h30 et 10h30 au cours du comité de direction.",
       "Entre 11h15 et 12h00 lors de la réception de la délégation.",
+      "Entre 09h30 et 10h30 au cours du comité de direction.",
+      "Entre 15h00 et 17h00 pendant son absence en séance plénière extérieure.",
       "Entre 12h30 et 13h30 pendant le déjeuner officiel sur place."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la directrice étant en déplacement extérieur, le technicien peut intervenir sans gêner aucune audience ni réunion sur place.",
-      "Intervenir pendant le comité de direction perturberait la réunion.",
       "Intervenir pendant l'audience protocolaire de la délégation étrangère est proscrit.",
+      "Intervenir pendant le comité de direction perturberait la réunion.",
+      "Correct : la directrice étant en déplacement extérieur, le technicien peut intervenir sans gêner aucune audience ni réunion sur place.",
       "Le déjeuner officiel peut requérir la confidentialité ou l'accès aux lieux."
     ],
     "explanation": "La plage 15h00-17h00 constitue le créneau idéal : la directrice est en déplacement extérieur, son bureau est libre et l'intervention n'interrompt aucune activité.",
@@ -1778,17 +1654,17 @@
     "prompt": "Quelle tâche doit être impérativement réalisée avant le lancement de la campagne de recrutement ?",
     "stimulus": "Processus de recrutement public :\n- Action A : Élaboration de la fiche de poste et définition du profil de compétences.\n- Action B : Publication de l'avis de vacance de poste au Journal officiel.\n- Action C : Convocation des candidats retenus pour les entretiens oraux.\n- Action D : Réunion du jury de sélection pour délibération finale.",
     "options": [
-      "L'action A (Fiche de poste et profil de compétences)",
       "L'action C (Convocation des candidats)",
-      "L'action D (Réunion du jury de sélection)",
-      "L'action B et C de manière simultanée"
+      "L'action B et C de manière simultanée",
+      "L'action A (Fiche de poste et profil de compétences)",
+      "L'action D (Réunion du jury de sélection)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : on ne peut publier un avis de poste sans avoir préalablement défini la fiche de poste et les compétences requises.",
       "La convocation ne peut avoir lieu qu'après réception des candidatures consécutives à la publication.",
-      "La délibération finale est l'ultime étape du processus.",
-      "Publier et convoquer simultanément est matériellement impossible sans candidatures déposées."
+      "Publier et convoquer simultanément est matériellement impossible sans candidatures déposées.",
+      "Correct : on ne peut publier un avis de poste sans avoir préalablement défini la fiche de poste et les compétences requises.",
+      "La délibération finale est l'ultime étape du processus."
     ],
     "explanation": "La phase initiale incontournable de tout recrutement public est la définition préalable et formelle de la fiche de poste et des critères de sélection (Action A).",
     "sourceType": "original_ai_assisted",
@@ -1809,17 +1685,17 @@
     "prompt": "Si la tâche de développement (durée 12 jours) et la tâche de rédaction du manuel (durée 5 jours) démarrent en même temps, de combien de jours de marge libre bénéficie la tâche de rédaction ?",
     "stimulus": "Projet logiciel interne :\n- Tâche Développements : 12 jours.\n- Tâche Manuel utilisateur : 5 jours.\n- Les deux tâches démarrent à J0 et conditionnent ensemble le démarrage de la Recette globale à J12.",
     "options": [
-      "7 jours de marge",
-      "5 jours de marge",
+      "0 jour de marge",
       "12 jours de marge",
-      "0 jour de marge"
+      "7 jours de marge",
+      "5 jours de marge"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : marge = 12 jours - 5 jours = 7 jours de battement avant d'impacter le démarrage de la recette.",
-      "5 jours correspond à la durée de la tâche elle-même.",
+      "0 jour signifierait que la tâche est sur le chemin critique, ce qui n'est pas le cas.",
       "12 jours correspond à la durée totale du chemin critique.",
-      "0 jour signifierait que la tâche est sur le chemin critique, ce qui n'est pas le cas."
+      "Correct : marge = 12 jours - 5 jours = 7 jours de battement avant d'impacter le démarrage de la recette.",
+      "5 jours correspond à la durée de la tâche elle-même."
     ],
     "explanation": "La recette ne pouvant débuter qu'à J12 (fin du développement), la rédaction du manuel (5 jours) dispose de 12 - 5 = 7 jours de flottement sans retarder le projet.",
     "sourceType": "original_ai_assisted",
@@ -1840,17 +1716,17 @@
     "prompt": "Combien d'ordinateurs portables de prêt restent disponibles dans le stock de réserve ?",
     "stimulus": "Gestion du parc informatique nomade :\n- Dotation totale du pôle : 50 ordinateurs portables.\n- Attribués à des agents en mission longue : 32 appareils.\n- En cours de maintenance technique en atelier : 6 appareils.\n- Prêtés pour une formation ponctuelle ce jour : 4 appareils.",
     "options": [
-      "8 ordinateurs",
-      "10 ordinateurs",
       "12 ordinateurs",
-      "6 ordinateurs"
+      "6 ordinateurs",
+      "8 ordinateurs",
+      "10 ordinateurs"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 50 - (32 + 6 + 4) = 50 - 42 = 8 ordinateurs portables disponibles.",
-      "10 ordinateurs omettrait une partie des appareils immobilisés.",
       "12 ordinateurs correspondrait à 38 appareils mobilisés au lieu de 42.",
-      "6 ordinateurs sous-estime le solde restant."
+      "6 ordinateurs sous-estime le solde restant.",
+      "Correct : 50 - (32 + 6 + 4) = 50 - 42 = 8 ordinateurs portables disponibles.",
+      "10 ordinateurs omettrait une partie des appareils immobilisés."
     ],
     "explanation": "Appareils mobilisés ou indisponibles = 32 + 6 + 4 = 42. Stock résiduel disponible en réserve = 50 - 42 = 8 appareils.",
     "sourceType": "original_ai_assisted",
@@ -1871,17 +1747,17 @@
     "prompt": "En arrivant à son poste à 08h00, quel courriel l'administrateur de permanence doit-il traiter avant tous les autres ?",
     "stimulus": "Boîte de réception générique à 08h00 :\n- Message 1 : Invitation à un webinaire de présentation le mois prochain.\n- Message 2 : Signalement d'une fuite d'eau active au sous-sol risquant d'inonder les serveurs informatiques.\n- Message 3 : Candidature spontanée pour un stage d'observation d'été.\n- Message 4 : Bulletin d'information syndical hebdomadaire.",
     "options": [
-      "Le message 2 (Fuite d'eau active menaçant la salle des serveurs)",
-      "Le message 1 (Webinaire du mois prochain)",
       "Le message 3 (Candidature spontanée pour l'été)",
-      "Le message 4 (Bulletin syndical hebdomadaire)"
+      "Le message 1 (Webinaire du mois prochain)",
+      "Le message 4 (Bulletin syndical hebdomadaire)",
+      "Le message 2 (Fuite d'eau active menaçant la salle des serveurs)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : danger physique imminent pouvant entraîner la destruction d'infrastructures critiques de l'État.",
-      "Le webinaire peut être traité ultérieurement sans urgence.",
       "La candidature de stage relève de la gestion ordinaire sans criticité temporelle.",
-      "Le bulletin d'information est purement consultatif."
+      "Le webinaire peut être traité ultérieurement sans urgence.",
+      "Le bulletin d'information est purement consultatif.",
+      "Correct : danger physique imminent pouvant entraîner la destruction d'infrastructures critiques de l'État."
     ],
     "explanation": "Une fuite d'eau menaçant directement l'outil informatique et les serveurs constitue une urgence matérielle absolue nécessitant une intervention immédiate des services techniques.",
     "sourceType": "original_ai_assisted",
@@ -1902,16 +1778,16 @@
     "prompt": "Quel aménagement d'horaire permet d'insérer une réunion bilatérale urgente de 30 minutes dans l'agenda de ce cadre ?",
     "stimulus": "Agenda chargé d'un chef de division :\n- 10h00 - 11h30 : Réunion de cadrage budgétaire (obligatoire, présence requise).\n- 11h30 - 12h00 : Temps tampon / relecture de dossiers.\n- 12h00 - 13h30 : Déjeuner de travail avec des homologues européens.\n- 13h30 - 15h00 : Entretien annuel d'évaluation d'un collaborateur.",
     "options": [
-      "Sur le temps tampon de 11h30 à 12h00 sans modifier les autres réunions.",
       "En écourtant de moitié la réunion budgétaire obligatoire de 10h00.",
       "En annulant l'entretien d'évaluation annuel prévu à 13h30.",
+      "Sur le temps tampon de 11h30 à 12h00 sans modifier les autres réunions.",
       "En déplaçant le déjeuner européen en soirée à 20h00."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : le créneau tampon de 11h30 à 12h00 (30 minutes) est précisément dédié à absorber ce type d'aléa sans bouleverser l'agenda.",
       "La réunion budgétaire est indiquée comme obligatoire et ne doit pas être tronquée.",
       "Annuler un entretien RH formel dégrade la relation managériale sans nécessité.",
+      "Correct : le créneau tampon de 11h30 à 12h00 (30 minutes) est précisément dédié à absorber ce type d'aléa sans bouleverser l'agenda.",
       "Déplacer un déjeuner avec des homologues internationaux est diplomatiquement lourd et évitable."
     ],
     "explanation": "Le créneau tampon de 11h30 à 12h00 offre exactement les 30 minutes requises sans aucun impact sur les engagements institutionnels extérieurs ou hiérarchiques.",
@@ -1933,17 +1809,17 @@
     "prompt": "Dans quel ordre logique ces opérations de déménagement d'un service doivent-elles se dérouler ?",
     "stimulus": "Déménagement vers un nouveau bâtiment :\n1. Câblage et raccordement informatique des postes de travail.\n2. Mise en cartons et étiquetage par les agents.\n3. Transport physique du mobilier par les déménageurs.\n4. Attribution préalable du plan des bureaux aux équipes.",
     "options": [
+      "4 → 1 → 2 → 3",
       "4 → 2 → 3 → 1",
       "2 → 3 → 4 → 1",
-      "3 → 4 → 2 → 1",
-      "4 → 1 → 2 → 3"
+      "3 → 4 → 2 → 1"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Raccorder les postes avant le déménagement des meubles n'a pas de sens physique.",
       "Correct : Attribution du plan des bureaux (4), Mise en cartons (2), Transport (3), puis Raccordement informatique final (1).",
       "Mettre en carton avant d'attribuer les bureaux empêche un étiquetage cohérent des destinations.",
-      "Transporter le mobilier avant d'emballer les cartons inverserait le flux logistique.",
-      "Raccorder les postes avant le déménagement des meubles n'a pas de sens physique."
+      "Transporter le mobilier avant d'emballer les cartons inverserait le flux logistique."
     ],
     "explanation": "L'ordre méthodique impose : 1° fixer le plan d'implantation (4), 2° emballer et étiqueter les affaires (2), 3° transporter le mobilier et les cartons (3), 4° connecter le matériel informatique dans les nouveaux locaux (1).",
     "sourceType": "original_ai_assisted",
@@ -1964,16 +1840,16 @@
     "prompt": "Sur ce réseau de tâches, quelle opération appartient obligatoirement au chemin critique ?",
     "stimulus": "Lancement d'un portail citoyen :\n- Tâche A (Architecture réseau) : 4 jours.\n- Tâche B (Développement API) : 10 jours (démarre après A).\n- Tâche C (Rédaction contenus éditoriaux) : 3 jours (démarre après A).\n- Tâche D (Tests de charge) : 4 jours (démarre après B et C).",
     "options": [
+      "La tâche C seule sans la tâche A",
       "La tâche B (Développement API)",
       "La tâche C (Rédaction des contenus)",
-      "La tâche C seule sans la tâche A",
       "Aucune tâche n'est critique sur ce schéma"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La tâche A précède toutes les branches, elle est critique tout comme B et D.",
       "Correct : entre B (10 j) et C (3 j), c'est la tâche B qui détermine la date au plus tôt de la tâche D.",
       "La tâche C dure seulement 3 jours et dispose d'une marge libre de 7 jours par rapport à B.",
-      "La tâche A précède toutes les branches, elle est critique tout comme B et D.",
       "Tout projet avec antériorités possède au moins un chemin critique."
     ],
     "explanation": "La branche la plus longue passant par A (4 j) + B (10 j) + D (4 j) totalise 18 jours. La tâche B est donc sur le chemin critique, contrairement à la tâche C qui possède une marge de 7 jours.",
@@ -1996,15 +1872,15 @@
     "stimulus": "Atelier central d'impression de l'État :\n- Volume à imprimer : 6 000 dossiers de 2 pages (soit 12 000 pages).\n- Parc matériel : 2 copieurs fonctionnant simultanément à pleine cadence.\n- Vitesse unitaire : 60 pages par minute par copieur.",
     "options": [
       "100 minutes (1h40)",
-      "120 minutes (2h00)",
       "80 minutes (1h20)",
+      "120 minutes (2h00)",
       "60 minutes (1h00)"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : total pages = 12 000. Cadence combinée = 2 × 60 = 120 pages/min. 12 000 / 120 = 100 minutes (1h40).",
-      "120 minutes correspondrait à l'utilisation d'un seul copieur à 100 pages/min.",
       "80 minutes sous-estime le temps nécessaire.",
+      "120 minutes correspondrait à l'utilisation d'un seul copieur à 100 pages/min.",
       "60 minutes supposerait un débit combiné de 200 pages par minute."
     ],
     "explanation": "Nombre total de pages = 6 000 × 2 = 12 000 pages. Débit des 2 machines = 2 × 60 = 120 pages par minute. Durée = 12 000 / 120 = 100 minutes, soit 1 heure et 40 minutes.",
@@ -2026,17 +1902,17 @@
     "prompt": "Quel créneau horaire permet d'organiser une réunion commune de 45 minutes entre ces deux chefs de bureau ?",
     "stimulus": "Agendas du mardi après-midi :\nChef de bureau A : libre de 14h00 à 15h30.\nChef de bureau B : libre de 14h45 à 16h30.",
     "options": [
-      "De 14h45 à 15h30",
-      "De 14h00 à 14h45",
+      "De 14h15 à 15h00",
       "De 15h30 à 16h15",
-      "De 14h15 à 15h00"
+      "De 14h00 à 14h45",
+      "De 14h45 à 15h30"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : l'intersection des plages libres est de 14h45 à 15h30 (exactement 45 minutes communes).",
-      "De 14h00 à 14h45, le chef B n'est pas encore disponible.",
+      "De 14h15 à 15h00, le chef B n'est pas disponible entre 14h15 et 14h45.",
       "De 15h30 à 16h15, le chef A n'est plus disponible.",
-      "De 14h15 à 15h00, le chef B n'est pas disponible entre 14h15 et 14h45."
+      "De 14h00 à 14h45, le chef B n'est pas encore disponible.",
+      "Correct : l'intersection des plages libres est de 14h45 à 15h30 (exactement 45 minutes communes)."
     ],
     "explanation": "Le créneau commun aux deux agents est [14h45, 15h30], soit une durée de 45 minutes permettant la tenue de la réunion.",
     "sourceType": "original_ai_assisted",
@@ -2057,17 +1933,17 @@
     "prompt": "Quelle est la durée totale incompressible de ce projet de déploiement de réseau ?",
     "stimulus": "Séquence des interventions techniques :\nTâche 1 (Audit d'infrastructure) : 2 jours.\nTâche 2 (Tirage des câbles) : 4 jours (démarre après la fin de la tâche 1).\nTâche 3 (Configuration routeurs) : 3 jours (démarre après la fin de la tâche 1 en parallèle de la tâche 2).\nTâche 4 (Recette globale) : 2 jours (démarre après l'achèvement complet des tâches 2 et 3).",
     "options": [
-      "8 jours ouvrés",
       "7 jours ouvrés",
-      "11 jours ouvrés",
-      "9 jours ouvrés"
+      "9 jours ouvrés",
+      "8 jours ouvrés",
+      "11 jours ouvrés"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : Tâche 1 (2 j) + max(Tâche 2 [4 j], Tâche 3 [3 j]) + Tâche 4 (2 j) = 2 + 4 + 2 = 8 jours.",
       "7 jours prendrait par erreur la branche la plus courte Tâche 3 (2 + 3 + 2).",
-      "11 jours additionne toutes les tâches sans tenir compte du parallélisme des tâches 2 et 3.",
-      "9 jours résulte d'une erreur de calcul."
+      "9 jours résulte d'une erreur de calcul.",
+      "Correct : Tâche 1 (2 j) + max(Tâche 2 [4 j], Tâche 3 [3 j]) + Tâche 4 (2 j) = 2 + 4 + 2 = 8 jours.",
+      "11 jours additionne toutes les tâches sans tenir compte du parallélisme des tâches 2 et 3."
     ],
     "explanation": "Le chemin critique passe par la tâche 1 (2 j), la tâche 2 (4 j, plus longue que la tâche 3 de 3 j) et la tâche 4 (2 j), totalisant 8 jours ouvrés.",
     "sourceType": "original_ai_assisted",
@@ -2119,17 +1995,17 @@
     "prompt": "Combien d'agents au minimum doivent être mobilisés pour instruire 180 dossiers en 6 jours ouvrés à raison de 3 dossiers traités par jour et par agent ?",
     "stimulus": "Campagne de régularisation des demandes d'aides exceptionnelles :\nVolume global : 180 dossiers à traiter.\nDélai imparti : 6 jours ouvrés.\nProductivité moyenne constatée : 3 dossiers traités par jour et par agent.",
     "options": [
-      "10 agents",
-      "8 agents",
       "12 agents",
-      "15 agents"
+      "15 agents",
+      "8 agents",
+      "10 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : un agent traite 3 × 6 = 18 dossiers en 6 jours. Pour 180 dossiers, il faut 180 / 18 = 10 agents.",
-      "8 agents ne traiteraient que 8 × 18 = 144 dossiers.",
       "12 agents correspondrait à un besoin de 216 dossiers.",
-      "15 agents correspondrait à un besoin de 270 dossiers."
+      "15 agents correspondrait à un besoin de 270 dossiers.",
+      "8 agents ne traiteraient que 8 × 18 = 144 dossiers.",
+      "Correct : un agent traite 3 × 6 = 18 dossiers en 6 jours. Pour 180 dossiers, il faut 180 / 18 = 10 agents."
     ],
     "explanation": "Capacité individuelle = 3 dossiers/jour × 6 jours = 18 dossiers. Nombre d'agents nécessaires = 180 / 18 = 10 agents.",
     "sourceType": "original_ai_assisted",
@@ -2150,16 +2026,16 @@
     "prompt": "Quelle salle peut accueillir une réunion de coordination de 10h00 à 11h30 réunissant 18 personnes ?",
     "stimulus": "Disponibilités des salles de réunion de l'administration :\nSalle Europe (15 places) : libre toute la matinée.\nSalle Luxembourg (25 places) : réservée de 09h00 à 10h00, puis libre ensuite.\nSalle Schuman (40 places) : réservée de 10h30 à 12h00.\nSalle Gutenberg (12 places) : libre toute la matinée.",
     "options": [
-      "La salle Luxembourg",
-      "La salle Europe",
       "La salle Schuman",
+      "La salle Europe",
+      "La salle Luxembourg",
       "La salle Gutenberg"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : capacité de 25 places (≥ 18) et disponibilité continue de 10h00 à 11h30.",
-      "La salle Europe ne dispose que de 15 places, insuffisant pour 18 personnes.",
       "La salle Schuman est occupée dès 10h30, ce qui entre en conflit direct avec la réunion.",
+      "La salle Europe ne dispose que de 15 places, insuffisant pour 18 personnes.",
+      "Correct : capacité de 25 places (≥ 18) et disponibilité continue de 10h00 à 11h30.",
       "La salle Gutenberg ne dispose que de 12 places, insuffisant pour 18 personnes."
     ],
     "explanation": "Seule la salle Luxembourg réunit une jauge suffisante (25 places pour 18 participants) et une disponibilité ininterrompue de 10h00 à 11h30.",
@@ -2181,17 +2057,17 @@
     "prompt": "Si la tâche B subit un retard imprévu de 3 jours, quel sera le retard répercuté sur la fin du projet ?",
     "stimulus": "Ordonnancement d'un marché public de rénovation :\nTâche A : Jours 1 à 5.\nTâche B : Jours 6 à 8 (dépend de A, durée 3 jours).\nTâche C : Jours 6 à 12 (dépend de A, durée 7 jours).\nTâche D : Jours 13 à 15 (dépend de la fin de B et de C).",
     "options": [
-      "Aucun retard global car B s'achève au jour 11, soit avant la fin de C au jour 12.",
-      "Un retard global de 3 jours sur la livraison finale du chantier.",
       "Un retard global de 1 jour sur la livraison finale du chantier.",
-      "Le projet doit être immédiatement arrêté et réattribué."
+      "Le projet doit être immédiatement arrêté et réattribué.",
+      "Un retard global de 3 jours sur la livraison finale du chantier.",
+      "Aucun retard global car B s'achève au jour 11, soit avant la fin de C au jour 12."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : la fin initiale de B est à J8. Avec +3 jours, B se termine à J11. La tâche C finissant à J12, la tâche D peut commencer normalement à J13.",
-      "B n'est pas sur le chemin critique ; ses 3 jours de retard sont absorbés par sa marge libre.",
       "Un retard de 1 jour est faux car C conditionne la fin jusqu'à J12 sans impact.",
-      "L'arrêt du projet est une mesure totalement injustifiée face à une marge non consommée."
+      "L'arrêt du projet est une mesure totalement injustifiée face à une marge non consommée.",
+      "B n'est pas sur le chemin critique ; ses 3 jours de retard sont absorbés par sa marge libre.",
+      "Correct : la fin initiale de B est à J8. Avec +3 jours, B se termine à J11. La tâche C finissant à J12, la tâche D peut commencer normalement à J13."
     ],
     "explanation": "La tâche C dure jusqu'au jour 12. La tâche B avec 3 jours de retard s'achève au jour 11 (8 + 3 = 11). Elle se termine donc toujours avant C, ce qui ne décale pas la tâche D à J13.",
     "sourceType": "original_ai_assisted",
@@ -2212,17 +2088,17 @@
     "prompt": "Quel jour de la semaine les trois membres du jury de recrutement sont-ils tous disponibles sur une demi-journée ?",
     "stimulus": "Disponibilités hebdomadaires des trois jurés :\nMembre 1 : libre le lundi matin, le mercredi toute la journée et le vendredi après-midi.\nMembre 2 : libre le mercredi matin, le jeudi toute la journée et le vendredi matin.\nMembre 3 : libre le mardi après-midi, le mercredi matin et le jeudi matin.",
     "options": [
+      "Le vendredi matin",
       "Le mercredi matin",
       "Le lundi matin",
-      "Le jeudi matin",
-      "Le vendredi matin"
+      "Le jeudi matin"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Le vendredi matin, les membres 1 et 3 ne sont pas disponibles.",
       "Correct : le mercredi matin est le seul créneau où les trois membres sont simultanément libres.",
       "Le lundi matin, les membres 2 et 3 ne sont pas disponibles.",
-      "Le jeudi matin, le membre 1 n'est pas disponible.",
-      "Le vendredi matin, les membres 1 et 3 ne sont pas disponibles."
+      "Le jeudi matin, le membre 1 n'est pas disponible."
     ],
     "explanation": "En recoupant les agendas : Membre 1 (libre mercredi matin), Membre 2 (libre mercredi matin), Membre 3 (libre mercredi matin). Le mercredi matin convient aux trois jurés.",
     "sourceType": "original_ai_assisted",
@@ -2243,17 +2119,17 @@
     "prompt": "Face à une alerte météo rouge pour tempête imminente à 14h00, quelle consigne d'exploitation doit être diffusée en priorité ?",
     "stimulus": "Cellule de crise communale à 11h30 :\nAlerte : rafales de vent destructrices attendues dès 14h00 sur la commune.\nActions envisagées : fermeture des parcs et cimetières, report d'une réunion budgétaire interne, commande de fournitures scolaires, archivage de dossiers papiers.",
     "options": [
-      "Ordonner la fermeture immédiate et l'évacuation des parcs, forêts et cimetières communaux.",
-      "Reporter la réunion budgétaire interne prévue le lendemain matin au siège.",
+      "Procéder à l'archivage physique des dossiers d'urbanisme au sous-sol de la mairie.",
       "Accélérer la commande des fournitures scolaires du prochain trimestre d'automne.",
-      "Procéder à l'archivage physique des dossiers d'urbanisme au sous-sol de la mairie."
+      "Ordonner la fermeture immédiate et l'évacuation des parcs, forêts et cimetières communaux.",
+      "Reporter la réunion budgétaire interne prévue le lendemain matin au siège."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : sécurité physique immédiate des personnes face aux chutes prévisibles d'arbres et de branches.",
-      "La réunion interne est secondaire et n'a pas d'impact vital immédiat.",
+      "L'archivage n'est pas une mesure d'urgence face au danger extérieur de tempête.",
       "La commande de fournitures relève de l'intendance courante sans lien avec la crise météo.",
-      "L'archivage n'est pas une mesure d'urgence face au danger extérieur de tempête."
+      "Correct : sécurité physique immédiate des personnes face aux chutes prévisibles d'arbres et de branches.",
+      "La réunion interne est secondaire et n'a pas d'impact vital immédiat."
     ],
     "explanation": "En gestion de crise communale, la préservation de la vie humaine et la prévention des accidents dans les espaces arborés priment toute autre considération logistique.",
     "sourceType": "original_ai_assisted",
@@ -2275,16 +2151,16 @@
     "stimulus": "Campagne d'impression ministérielle :\nNombre de livrets : 4 800 livrets.\nNombre de pages par livret : 10 pages (total : 48 000 pages).\nCadence du copieur : 80 pages par minute.",
     "options": [
       "600 minutes (10 heures)",
-      "480 minutes (8 heures)",
       "720 minutes (12 heures)",
-      "540 minutes (9 heures)"
+      "540 minutes (9 heures)",
+      "480 minutes (8 heures)"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 48 000 pages / 80 pages/min = 600 minutes = 10 heures.",
-      "480 minutes correspondrait à une cadence de 100 pages par minute.",
       "720 minutes correspondrait à 57 600 pages.",
-      "540 minutes sous-estime le temps requis."
+      "540 minutes sous-estime le temps requis.",
+      "480 minutes correspondrait à une cadence de 100 pages par minute."
     ],
     "explanation": "Volume total = 4 800 × 10 = 48 000 pages. Durée machine = 48 000 / 80 = 600 minutes, soit exactement 10 heures de fonctionnement.",
     "sourceType": "original_ai_assisted",
@@ -2305,17 +2181,17 @@
     "prompt": "Sur quel créneau un entretien bilatéral de 30 minutes peut-il être inséré sans décaler les autres rendez-vous ?",
     "stimulus": "Agenda d'un cadre supérieur le vendredi matin :\n- 08h30 - 10h00 : Comité de direction hebdomadaire.\n- 10h00 - 10h30 : Pause et relecture de parapheur.\n- 10h30 - 11h45 : Entretien préalable d'embauche d'un cadre.\n- 11h45 - 12h30 : Point téléphonique avec le ministère.",
     "options": [
+      "De 11h15 à 11h45",
       "De 10h00 à 10h30",
-      "De 09h30 à 10h00",
       "De 10h30 à 11h00",
-      "De 11h15 à 11h45"
+      "De 09h30 à 10h00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "De 11h15 à 11h45, le cadre est toujours en entretien d'embauche.",
       "Correct : la plage de 10h00 à 10h30 est libre de réunion externe et dure exactement 30 minutes.",
-      "De 09h30 à 10h00, le cadre est en plein comité de direction.",
       "De 10h30 à 11h00, le créneau empiète sur l'entretien d'embauche.",
-      "De 11h15 à 11h45, le cadre est toujours en entretien d'embauche."
+      "De 09h30 à 10h00, le cadre est en plein comité de direction."
     ],
     "explanation": "Le seul créneau non bloqué par un rendez-vous fixe d'audience ou de comité se situe entre 10h00 et 10h30.",
     "sourceType": "original_ai_assisted",
@@ -2336,17 +2212,17 @@
     "prompt": "Quelle est la durée du chemin critique pour organiser cette conférence internationale ?",
     "stimulus": "Phases préparatoires de la conférence :\nPhase A (Réservation du centre des congrès) : 3 semaines.\nPhase B (Invitations des conférenciers d'honneur) : 5 semaines (démarre après A).\nPhase C (Création du site web et inscriptions) : 4 semaines (démarre après A, en parallèle de B).\nPhase D (Impression des programmes et badges) : 2 semaines (démarre après achèvement complet de B et C).",
     "options": [
-      "10 semaines",
-      "9 semaines",
       "14 semaines",
-      "11 semaines"
+      "9 semaines",
+      "11 semaines",
+      "10 semaines"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : Phase A (3 sem) + max(Phase B [5 sem], Phase C [4 sem]) + Phase D (2 sem) = 3 + 5 + 2 = 10 semaines.",
-      "9 semaines prendrait par erreur la branche la plus courte C (3 + 4 + 2).",
       "14 semaines additionne toutes les durées sans tenir compte du déroulement simultané de B et C.",
-      "11 semaines résulte d'une erreur d'addition."
+      "9 semaines prendrait par erreur la branche la plus courte C (3 + 4 + 2).",
+      "11 semaines résulte d'une erreur d'addition.",
+      "Correct : Phase A (3 sem) + max(Phase B [5 sem], Phase C [4 sem]) + Phase D (2 sem) = 3 + 5 + 2 = 10 semaines."
     ],
     "explanation": "Les phases B et C se déroulent en parallèle après A. La branche critique est la plus longue : A (3) + B (5) + D (2) = 10 semaines.",
     "sourceType": "original_ai_assisted",
@@ -2367,17 +2243,17 @@
     "prompt": "Quelle intervention technique doit être planifiée en priorité le matin pour éviter une paralysie des services ?",
     "stimulus": "Demandes de maintenance en attente à l'ouverture :\nIntervention A : Réparation du serveur d'authentification bloquant l'accès informatique de tout le ministère.\nIntervention B : Réglage de la climatisation dans la salle de pause du deuxième étage.\nIntervention C : Remplacement d'une chaise de bureau défectueuse dans un bureau individuel.\nIntervention D : Pose d'un tableau blanc dans une salle de réunion secondaire.",
     "options": [
-      "L'intervention A (Serveur d'authentification bloquant tout le ministère)",
-      "L'intervention B (Climatisation de la salle de pause)",
       "L'intervention C (Chaise de bureau défectueuse)",
-      "L'intervention D (Tableau blanc en salle secondaire)"
+      "L'intervention B (Climatisation de la salle de pause)",
+      "L'intervention D (Tableau blanc en salle secondaire)",
+      "L'intervention A (Serveur d'authentification bloquant tout le ministère)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : blocage systémique empêchant l'intégralité du personnel de se connecter et d'assurer le service public.",
-      "Le confort de la salle de pause est secondaire face à une paralysie logicielle générale.",
       "Le mobilier individuel n'empêche pas la continuité globale du travail.",
-      "L'équipement d'une salle secondaire est différable sans préjudice immédiat."
+      "Le confort de la salle de pause est secondaire face à une paralysie logicielle générale.",
+      "L'équipement d'une salle secondaire est différable sans préjudice immédiat.",
+      "Correct : blocage systémique empêchant l'intégralité du personnel de se connecter et d'assurer le service public."
     ],
     "explanation": "La panne du serveur d'authentification paralyse l'ensemble de l'appareil administratif ; sa résolution prime de façon absolue sur toute intervention de confort matériel.",
     "sourceType": "original_ai_assisted",
@@ -2398,50 +2274,19 @@
     "prompt": "Combien d'agents au minimum doivent être affectés pour assurer la surveillance continue de 3 salles d'examen simultanément pendant 6 heures, chaque agent effectuant au maximum 3 heures de surveillance consécutives ?",
     "stimulus": "Organisation matérielle des épreuves de concours administratif :\n- 3 salles d'examen fonctionnant en même temps.\n- Présence requise : 2 surveillants par salle en permanence.\n- Durée totale des épreuves : 6 heures continues.\n- Plafond individuel : maximum 3 heures de surveillance par agent.",
     "options": [
+      "9 agents",
       "12 agents",
       "6 agents",
-      "9 agents",
       "18 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "9 agents laisserait des salles sous-encadrées lors de la relève.",
       "Correct : besoin simultané = 3 salles × 2 surveillants = 6 agents présents. Durée totale = 6 h, soit 2 créneaux de 3 h. Total = 6 agents × 2 créneaux = 12 agents.",
       "6 agents ne couvrirait que 3 heures d'épreuves (première moitié).",
-      "9 agents laisserait des salles sous-encadrées lors de la relève.",
       "18 agents correspondrait à un dimensionnement surévalué pour 3 créneaux."
     ],
     "explanation": "Il faut 6 surveillants présents en permanence (3 salles × 2). Comme chaque agent ne peut surveiller que 3 heures sur les 6 heures d'épreuve, il faut deux équipes distinctes de 6 agents, soit 12 agents au total.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "planning-sched-079",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "agenda-contraintes",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Dans quel ordre chronologique ces formalités administratives de départ en retraite doivent-elles être accomplies ?",
-    "stimulus": "Procédure de liquidation des droits à pension de retraite :\n1. Notification formelle de l'arrêté ministériel accordant la pension.\n2. Dépôt de la demande d'admission à la retraite par l'agent auprès de sa DRH.\n3. Contrôle de la carrière et calcul des droits par la caisse nationale de pension.\n4. Avis conforme de la commission médicale en cas de départ pour invalidité.",
-    "options": [
-      "2 → 3 → 4 → 1",
-      "2 → 4 → 3 → 1",
-      "3 → 2 → 1 → 4",
-      "1 → 2 → 3 → 4"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : Dépôt de la demande (2), Examen de carrière par la caisse (3), Avis médical si requis (4), puis Notification de l'arrêté définitif (1).",
-      "L'arrêté ne peut être notifié avant l'instruction du dossier par la caisse.",
-      "La caisse ne peut pas instruire un dossier avant que l'agent n'ait déposé sa demande.",
-      "La notification finale ne peut pas intervenir au commencement de la procédure."
-    ],
-    "explanation": "L'instruction débute obligatoirement par la demande de l'agent (2), suivie de l'instruction technique des droits (3), des éventuels avis complémentaires (4) et enfin de la notification officielle de l'arrêté (1).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2460,17 +2305,17 @@
     "prompt": "Sur quel créneau un contrôle de sécurité de 1 heure peut-il être planifié dans la salle des serveurs informatiques sans interrompre les sauvegardes automatiques ?",
     "stimulus": "Plages d'activité de la salle des serveurs :\n- 08h00 - 11h00 : Sauvegardes incrémentales du matin (accès restreint strict).\n- 11h00 - 14h00 : Plage d'exploitation standard (accessible aux audits matériels).\n- 14h00 - 16h30 : Réplication distante vers le site de secours.\n- 16h30 - 18h00 : Libre.",
     "options": [
+      "De 10h00 à 11h00",
       "De 11h30 à 12h30",
-      "De 09h00 à 10h00",
       "De 14h30 à 15h30",
-      "De 10h00 à 11h00"
+      "De 09h00 à 10h00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "De 10h00 à 11h00, la sauvegarde du matin n'est pas encore terminée.",
       "Correct : la plage de 11h00 à 14h00 est explicitement ouverte aux audits matériels (créneau 11h30 à 12h30).",
-      "De 09h00 à 10h00, la salle est sous restrictions strictes de sauvegarde.",
       "De 14h30 à 15h30, la réplication distante est en cours d'exécution.",
-      "De 10h00 à 11h00, la sauvegarde du matin n'est pas encore terminée."
+      "De 09h00 à 10h00, la salle est sous restrictions strictes de sauvegarde."
     ],
     "explanation": "Le créneau 11h30-12h30 s'insère parfaitement dans la plage de disponibilité d'exploitation de 11h00 à 14h00 sans empiéter sur les flux de sauvegarde ou de réplication.",
     "sourceType": "original_ai_assisted",
@@ -2491,17 +2336,17 @@
     "prompt": "Quelle marge libre possède la tâche 'Création des supports de communication' dans ce calendrier ?",
     "stimulus": "Organisation du salon des carrières publiques :\n- Tâche A (Cadrage stratégique) : Jours 1 à 4.\n- Tâche B (Création des supports) : Jours 5 à 7 (dépend de A, durée 3 jours).\n- Tâche C (Aménagement des stands) : Jours 5 à 11 (dépend de A, durée 7 jours).\n- Tâche D (Inauguration) : Jour 12 (dépend de l'achèvement de B et de C).",
     "options": [
-      "4 jours de marge",
-      "3 jours de marge",
       "7 jours de marge",
-      "0 jour de marge"
+      "0 jour de marge",
+      "3 jours de marge",
+      "4 jours de marge"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : B s'achève à J7 alors que la tâche suivante D ne commence qu'à J12 (fin de C à J11) ; marge = 11 - 7 = 4 jours.",
-      "3 jours correspond à la durée propre de la tâche B.",
       "7 jours correspond à la durée de la tâche concurrente C.",
-      "0 jour signifierait que la tâche B est critique, ce qui n'est pas le cas."
+      "0 jour signifierait que la tâche B est critique, ce qui n'est pas le cas.",
+      "3 jours correspond à la durée propre de la tâche B.",
+      "Correct : B s'achève à J7 alors que la tâche suivante D ne commence qu'à J12 (fin de C à J11) ; marge = 11 - 7 = 4 jours."
     ],
     "explanation": "La tâche suivante D ne démarre qu'au jour 12 du fait de la tâche C qui s'achève au jour 11. La tâche B s'achevant au jour 7 dispose donc d'une marge de flottement de 11 - 7 = 4 jours sans impacter le projet.",
     "sourceType": "original_ai_assisted",
@@ -2522,17 +2367,17 @@
     "prompt": "Quel incident matériel survenu à l'hôtel de ville doit être réparé en extrême urgence ce matin ?",
     "stimulus": "Signalements techniques parvenus au service d'astreinte communale :\nIncident 1 : Panne complète de la chaudière du groupe scolaire par une température de -5°C.\nIncident 2 : Volet roulant bloqué à mi-hauteur dans le bureau du directeur des finances.\nIncident 3 : Distributeur de boissons en dérangement dans la cafétéria du personnel.\nIncident 4 : Horloge murale arrêtée dans la salle des délibérations du conseil.",
     "options": [
-      "L'incident 1 (Panne de chaudière du groupe scolaire à -5°C)",
-      "L'incident 2 (Volet roulant bloqué chez le directeur)",
+      "L'incident 4 (Horloge murale arrêtée en salle de conseil)",
       "L'incident 3 (Distributeur de boissons en panne)",
-      "L'incident 4 (Horloge murale arrêtée en salle de conseil)"
+      "L'incident 2 (Volet roulant bloqué chez le directeur)",
+      "L'incident 1 (Panne de chaudière du groupe scolaire à -5°C)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : santé et protection des enfants en milieu scolaire face à des températures négatives extrêmes.",
-      "Le volet roulant est un inconfort matériel différable.",
+      "L'horloge murale ne présente aucun caractère d'urgence opérationnelle.",
       "Le distributeur de boissons relève de la simple convivialité non vitale.",
-      "L'horloge murale ne présente aucun caractère d'urgence opérationnelle."
+      "Le volet roulant est un inconfort matériel différable.",
+      "Correct : santé et protection des enfants en milieu scolaire face à des températures négatives extrêmes."
     ],
     "explanation": "Une panne de chauffage dans une école par grand froid constitue une urgence immédiate menaçant la santé des élèves et le maintien de l'accueil public.",
     "sourceType": "original_ai_assisted",
@@ -2553,17 +2398,17 @@
     "prompt": "Un service de numérisation doit traiter 1 500 dossiers en 10 jours ouvrés. Chaque opérateur numérisant 30 dossiers par jour, quel effectif d'opérateurs est requis ?",
     "stimulus": "Projet de dématérialisation des dossiers de permis de construire :\nVolume global : 1 500 dossiers.\nDélai imparti : 10 jours ouvrés.\nRendement moyen par opérateur : 30 dossiers numérisés par jour.",
     "options": [
-      "5 opérateurs",
       "4 opérateurs",
-      "6 opérateurs",
-      "8 opérateurs"
+      "8 opérateurs",
+      "5 opérateurs",
+      "6 opérateurs"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : un opérateur traite 30 × 10 = 300 dossiers en 10 jours. 1 500 / 300 = 5 opérateurs.",
       "4 opérateurs ne traiteraient que 4 × 300 = 1 200 dossiers.",
-      "6 opérateurs correspondrait à un besoin de 1 800 dossiers.",
-      "8 opérateurs correspondrait à un besoin de 2 400 dossiers."
+      "8 opérateurs correspondrait à un besoin de 2 400 dossiers.",
+      "Correct : un opérateur traite 30 × 10 = 300 dossiers en 10 jours. 1 500 / 300 = 5 opérateurs.",
+      "6 opérateurs correspondrait à un besoin de 1 800 dossiers."
     ],
     "explanation": "Chaque opérateur traite 300 dossiers au cours des 10 jours (30 × 10). Pour couvrir 1 500 dossiers, il faut 1 500 / 300 = 5 opérateurs.",
     "sourceType": "original_ai_assisted",
@@ -2584,17 +2429,17 @@
     "prompt": "Sur quel créneau une session de formation de 2 heures peut-elle être organisée pour cette équipe sans rogner sur les permanences obligatoires ?",
     "stimulus": "Contraintes de fonctionnement du service d'accueil des usagers :\n- Permanence obligatoire auprès des usagers : de 08h30 à 12h00 et de 14h00 à 17h00.\n- Fermeture au public / travail interne : de 12h00 à 14h00.\n- Amplitude d'ouverture du bâtiment : 08h00 à 18h00.",
     "options": [
-      "De 12h00 à 14h00",
       "De 09h00 à 11h00",
       "De 14h30 à 16h30",
-      "De 10h00 à 12h00"
+      "De 10h00 à 12h00",
+      "De 12h00 à 14h00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : le créneau de 12h00 à 14h00 correspond à la fermeture au public permettant la formation continue sans fermer le guichet.",
       "De 09h00 à 11h00, la permanence obligatoire est en cours d'exécution.",
       "De 14h30 à 16h30, l'accueil au public est ouvert et prioritaire.",
-      "De 10h00 à 12h00, le guichet doit être tenu pour les usagers."
+      "De 10h00 à 12h00, le guichet doit être tenu pour les usagers.",
+      "Correct : le créneau de 12h00 à 14h00 correspond à la fermeture au public permettant la formation continue sans fermer le guichet."
     ],
     "explanation": "La seule plage de travail interne sans accueil du public d'une durée continue de 2 heures se situe entre 12h00 et 14h00.",
     "sourceType": "original_ai_assisted",
@@ -2615,17 +2460,17 @@
     "prompt": "Comment résoudre le chevauchement d'agenda entre l'évaluation d'un agent et la réunion de cadrage ministérielle ?",
     "stimulus": "Agenda du vendredi matin d'un chef de service :\n- 09h30 - 11h00 : Entretien annuel d'évaluation individuel (fixé depuis un mois).\n- 10h00 - 11h30 : Convocation impérative au cabinet du ministre pour une question parlementaire urgente.",
     "options": [
-      "Prévenir l'agent pour reporter son entretien annuel et honorer la convocation ministérielle prioritaire.",
-      "Ignorer la convocation ministérielle pour maintenir l'entretien d'évaluation annuel fixé un mois plus tôt.",
       "Déléguer un stagiaire sans statut pour représenter le chef de service auprès du cabinet du ministre.",
-      "Faire passer l'entretien d'évaluation à l'agent au téléphone depuis le cabinet ministériel."
+      "Faire passer l'entretien d'évaluation à l'agent au téléphone depuis le cabinet ministériel.",
+      "Prévenir l'agent pour reporter son entretien annuel et honorer la convocation ministérielle prioritaire.",
+      "Ignorer la convocation ministérielle pour maintenir l'entretien d'évaluation annuel fixé un mois plus tôt."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la demande du ministre sur une question parlementaire est une priorité institutionnelle absolue imposant le report concerté de l'entretien.",
-      "Ignorer une convocation ministérielle impérative est une faute professionnelle grave.",
       "Un stagiaire n'a pas compétence ni légitimité statutaire pour représenter le service devant le ministre.",
-      "Mener un entretien d'évaluation au téléphone pendant une réunion de crise est totalement inadapté."
+      "Mener un entretien d'évaluation au téléphone pendant une réunion de crise est totalement inadapté.",
+      "Correct : la demande du ministre sur une question parlementaire est une priorité institutionnelle absolue imposant le report concerté de l'entretien.",
+      "Ignorer une convocation ministérielle impérative est une faute professionnelle grave."
     ],
     "explanation": "La hiérarchie des obligations publiques place la convocation impérative du ministre au premier rang. Le chef de service doit reporter avec tact l'entretien de son collaborateur.",
     "sourceType": "original_ai_assisted",
@@ -2677,17 +2522,17 @@
     "prompt": "Quel dossier de marchés publics doit être signé en premier pour éviter une forclusion des offres ?",
     "stimulus": "Dossiers de marchés en attente de visa le vendredi à 16h00 :\nDossier A : Marché de travaux dont le délai de validité des offres expire ce vendredi à minuit.\nDossier B : Marché de fournitures dont le délai de validité expire dans trois semaines.\nDossier C : Accord-cadre de maintenance dont le délai de validité expire dans deux mois.\nDossier D : Consultation préliminaire sans engagement financier ni échéance proche.",
     "options": [
-      "Le dossier A (Expiration du délai des offres ce vendredi à minuit)",
-      "Le dossier B (Expiration du délai dans trois semaines)",
+      "Le dossier D (Consultation préliminaire sans engagement)",
       "Le dossier C (Expiration du délai dans deux mois)",
-      "Le dossier D (Consultation préliminaire sans engagement)"
+      "Le dossier A (Expiration du délai des offres ce vendredi à minuit)",
+      "Le dossier B (Expiration du délai dans trois semaines)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : forclusion imminente à minuit qui rendrait caduques les offres des soumissionnaires et annulerait le marché.",
-      "Le dossier B dispose de trois semaines de marge.",
+      "Le dossier D ne présente aucune contrainte d'échéance.",
       "Le dossier C dispose de deux mois de marge.",
-      "Le dossier D ne présente aucune contrainte d'échéance."
+      "Correct : forclusion imminente à minuit qui rendrait caduques les offres des soumissionnaires et annulerait le marché.",
+      "Le dossier B dispose de trois semaines de marge."
     ],
     "explanation": "L'expiration du délai de validité des offres à minuit crée un péril juridique immédiat d'infructuosité du marché si le visa n'est pas apposé le jour même.",
     "sourceType": "original_ai_assisted",
@@ -2708,17 +2553,17 @@
     "prompt": "Une flotte de 36 bus scolaires doit être désinfectée en 3 heures. Si une équipe de 2 agents désinfecte 4 bus par heure, combien d'équipes de 2 agents sont nécessaires ?",
     "stimulus": "Protocole de désinfection du parc de bus scolaires :\n- Total à désinfecter : 36 bus.\n- Délai maximal disponible : 3 heures.\n- Rendement unitaire : 4 bus traités par heure et par équipe de 2 agents.",
     "options": [
-      "3 équipes (6 agents)",
-      "2 équipes (4 agents)",
       "4 équipes (8 agents)",
-      "5 équipes (10 agents)"
+      "3 équipes (6 agents)",
+      "5 équipes (10 agents)",
+      "2 équipes (4 agents)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 1 équipe traite 4 × 3 = 12 bus en 3 heures. Pour 36 bus, il faut 36 / 12 = 3 équipes (soit 6 agents).",
-      "2 équipes ne traiteraient que 24 bus en 3 heures.",
       "4 équipes correspondrait à 48 bus traités.",
-      "5 équipes dépasserait largement le dimensionnement nécessaire."
+      "Correct : 1 équipe traite 4 × 3 = 12 bus en 3 heures. Pour 36 bus, il faut 36 / 12 = 3 équipes (soit 6 agents).",
+      "5 équipes dépasserait largement le dimensionnement nécessaire.",
+      "2 équipes ne traiteraient que 24 bus en 3 heures."
     ],
     "explanation": "Une équipe traite 12 bus sur la plage de 3 heures (4 bus/heure × 3 heures). Pour traiter 36 bus, il faut 36 / 12 = 3 équipes de deux personnes.",
     "sourceType": "original_ai_assisted",
@@ -2739,17 +2584,17 @@
     "prompt": "Quel créneau horaire convient pour un briefing d'équipe de 30 minutes réunissant tous les collaborateurs du pôle ?",
     "stimulus": "Agendas des 4 collaborateurs le jeudi matin :\n- Collaborateur 1 : libre de 08h30 à 11h00.\n- Collaborateur 2 : libre de 09h00 à 10h30 et de 11h30 à 12h30.\n- Collaborateur 3 : libre de 09h30 à 12h00.\n- Collaborateur 4 : libre de 08h00 à 10h15.",
     "options": [
-      "De 09h30 à 10h00",
       "De 08h30 à 09h00",
-      "De 10h30 à 11h00",
-      "De 11h30 à 12h00"
+      "De 09h30 à 10h00",
+      "De 11h30 à 12h00",
+      "De 10h30 à 11h00"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : de 09h30 à 10h00, les quatre collaborateurs sont simultanément libres.",
       "De 08h30 à 09h00, les collaborateurs 2 et 3 ne sont pas encore disponibles.",
-      "De 10h30 à 11h00, le collaborateur 4 n'est plus libre après 10h15.",
-      "De 11h30 à 12h00, le collaborateur 1 n'est plus libre après 11h00."
+      "Correct : de 09h30 à 10h00, les quatre collaborateurs sont simultanément libres.",
+      "De 11h30 à 12h00, le collaborateur 1 n'est plus libre après 11h00.",
+      "De 10h30 à 11h00, le collaborateur 4 n'est plus libre après 10h15."
     ],
     "explanation": "L'intersection des disponibilités est : C1 [08h30-11h00] ∩ C2 [09h00-10h30] ∩ C3 [09h30-12h00] ∩ C4 [08h00-10h15] = [09h30, 10h15]. Le créneau de 09h30 à 10h00 convient à tous.",
     "sourceType": "original_ai_assisted",
@@ -2770,17 +2615,17 @@
     "prompt": "Quelle salle d'audience convient pour une séance publique de 14h00 à 16h00 nécessitant au moins 50 places assises ?",
     "stimulus": "Salles disponibles au tribunal administratif :\n- Salle A (30 places) : libre toute la journée.\n- Salle B (60 places) : réservée de 11h00 à 13h30, libre ensuite.\n- Salle C (80 places) : réservée de 15h00 à 17h00.\n- Salle D (45 places) : libre toute la journée.",
     "options": [
+      "La salle D",
       "La salle B",
-      "La salle A",
       "La salle C",
-      "La salle D"
+      "La salle A"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "La salle D ne dispose que de 45 places, insuffisant pour 50 personnes.",
       "Correct : capacité de 60 places (≥ 50) et libre à partir de 13h30, couvrant intégralement le créneau 14h00-16h00.",
-      "La salle A ne dispose que de 30 places, insuffisant pour 50 personnes.",
       "La salle C est occupée dès 15h00, ce qui coupe la séance en deux.",
-      "La salle D ne dispose que de 45 places, insuffisant pour 50 personnes."
+      "La salle A ne dispose que de 30 places, insuffisant pour 50 personnes."
     ],
     "explanation": "Seule la salle B réunit la capacité exigée (60 places pour 50 attendus) et la plage de disponibilité continue sur l'horaire de 14h00 à 16h00.",
     "sourceType": "original_ai_assisted",
@@ -2801,17 +2646,17 @@
     "prompt": "Quelle est la durée totale d'un projet informatique dont les tâches A (3 jours) et B (5 jours) se font en parallèle après le cadrage initial C (2 jours), suivies du déploiement D (4 jours) ?",
     "stimulus": "Réseau PERT du projet applicatif :\n- Cadrage initial C : 2 jours.\n- Tâche A : 3 jours (démarre après C).\n- Tâche B : 5 jours (démarre après C, en parallèle de A).\n- Déploiement final D : 4 jours (démarre dès que A et B sont toutes deux terminées).",
     "options": [
-      "11 jours ouvrés",
       "9 jours ouvrés",
-      "14 jours ouvrés",
-      "12 jours ouvrés"
+      "11 jours ouvrés",
+      "12 jours ouvrés",
+      "14 jours ouvrés"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : C (2 j) + max(A [3 j], B [5 j]) + D (4 j) = 2 + 5 + 4 = 11 jours.",
       "9 jours prendrait la branche la plus courte A (2 + 3 + 4).",
-      "14 jours additionne toutes les durées en ignorant la simultanéité de A et B.",
-      "12 jours résulte d'une erreur de calcul."
+      "Correct : C (2 j) + max(A [3 j], B [5 j]) + D (4 j) = 2 + 5 + 4 = 11 jours.",
+      "12 jours résulte d'une erreur de calcul.",
+      "14 jours additionne toutes les durées en ignorant la simultanéité de A et B."
     ],
     "explanation": "Le chemin critique cumule le cadrage C (2 j), la plus longue des tâches parallèles B (5 j) et le déploiement D (4 j) : 2 + 5 + 4 = 11 jours ouvrés.",
     "sourceType": "original_ai_assisted",
@@ -2832,17 +2677,17 @@
     "prompt": "Face à une rupture imminente de stock de réactifs médicaux dans un laboratoire public d'analyses, quelle démarche d'urgence s'impose ?",
     "stimulus": "Situation d'approvisionnement hospitalier :\nConstat : le stock de réactifs pour dépistage d'urgence ne couvre plus que 6 heures d'analyses.\nOptions logistiques : commande d'urgence par procédure dérogatoire, mise en concurrence trimestrielle standard, attente de la livraison ordinaire dans 10 jours, suspension des dépistages.",
     "options": [
-      "Déclencher immédiatement une commande d'urgence par procédure dérogatoire de continuité.",
-      "Lancer une procédure de consultation concurrentielle de 30 jours au Journal officiel.",
+      "Suspendre l'ensemble des dépistages médicaux d'urgence de l'établissement public.",
       "Attendre la livraison ordinaire programmée dans dix jours ouvrés par le fournisseur titulaire.",
-      "Suspendre l'ensemble des dépistages médicaux d'urgence de l'établissement public."
+      "Lancer une procédure de consultation concurrentielle de 30 jours au Journal officiel.",
+      "Déclencher immédiatement une commande d'urgence par procédure dérogatoire de continuité."
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : impératif de santé publique autorisant l'achat d'urgence pour assurer la continuité des soins vitaux.",
-      "Une consultation de 30 jours conduirait à l'épuisement total du stock en 6 heures.",
+      "Suspendre les analyses mettrait en danger immédiat la vie des patients hospitalisés.",
       "Attendre 10 jours paralyserait les analyses vitales pendant plus d'une semaine.",
-      "Suspendre les analyses mettrait en danger immédiat la vie des patients hospitalisés."
+      "Une consultation de 30 jours conduirait à l'épuisement total du stock en 6 heures.",
+      "Correct : impératif de santé publique autorisant l'achat d'urgence pour assurer la continuité des soins vitaux."
     ],
     "explanation": "L'urgence médicale impérieuse justifie le recours immédiat à la procédure dérogatoire d'approvisionnement pour garantir la continuité des soins sans interruption.",
     "sourceType": "original_ai_assisted",
@@ -2864,49 +2709,18 @@
     "stimulus": "Organisation des jurys de concours de recrutement public :\nVivier total d'examinateurs mobilisables : 24 personnes.\nComposition réglementaire d'un jury : 3 personnes par commission.",
     "options": [
       "8 jurys distincts",
-      "6 jurys distincts",
+      "7 jurys distincts",
       "10 jurys distincts",
-      "7 jurys distincts"
+      "6 jurys distincts"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 24 / 3 = 8 jurys complets.",
-      "6 jurys ne mobiliserait que 18 examinateurs.",
+      "7 jurys laisserait 3 examinateurs inemployés (21 personnes).",
       "10 jurys exigerait 30 examinateurs au total.",
-      "7 jurys laisserait 3 examinateurs inemployés (21 personnes)."
+      "6 jurys ne mobiliserait que 18 examinateurs."
     ],
     "explanation": "Division directe : 24 examinateurs / 3 membres par jury = 8 jurys complets.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:42:39.868Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
-  },
-  {
-    "id": "planning-sched-094",
-    "version": 1,
-    "category": "planning",
-    "itemFormat": "single_best",
-    "skill": "disponibilites",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quel horaire permet d'organiser une conférence de presse de 45 minutes sans chevaucher les séances parlementaires du ministre ?",
-    "stimulus": "Agenda ministériel le mercredi après-midi :\n- 14h00 - 16h00 : Séance de questions d'actualité à la Chambre des députés.\n- 16h00 - 17h30 : Libre d'engagements officiels.\n- 17h30 - 19h00 : Réception officielle d'une délégation diplomatique.",
-    "options": [
-      "De 16h15 à 17h00",
-      "De 14h30 à 15h15",
-      "De 15h30 à 16h15",
-      "De 17h15 à 18h00"
-    ],
-    "correctIndex": 0,
-    "optionRationales": [
-      "Correct : s'insère parfaitement dans la plage libre de 16h00 à 17h30.",
-      "De 14h30 à 15h15, le ministre est à la tribune de la Chambre des députés.",
-      "De 15h30 à 16h15, la séance parlementaire n'est pas achevée.",
-      "De 17h15 à 18h00, le créneau empiète sur la réception diplomatique à 17h30."
-    ],
-    "explanation": "La seule plage disponible sans séance parlementaire ni audience protocolaire se situe entre 16h00 et 17h30. Le créneau 16h15-17h00 convient parfaitement.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
@@ -2925,15 +2739,15 @@
     "prompt": "Un auditeur externe doit examiner des dossiers originaux conservés dans un coffre dont l'accès n'est autorisé qu'en présence conjointe de deux régisseurs. Quand l'audit peut-il se tenir ?",
     "stimulus": "Horaires de présence des deux régisseurs habilités le jeudi :\n- Régisseur 1 : présent de 08h30 à 11h30 et de 14h00 à 16h00.\n- Régisseur 2 : présent de 10h00 à 13h00 et de 15h00 à 17h30.\nDurée nécessaire pour la consultation des pièces : 1 heure.",
     "options": [
-      "De 10h15 à 11h15 le matin",
       "De 08h45 à 09h45 le matin",
+      "De 10h15 à 11h15 le matin",
       "De 13h00 à 14h00 le midi",
       "De 16h00 à 17h00 l'après-midi"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : le matin, les deux régisseurs sont simultanément présents de 10h00 à 11h30 (créneau 10h15 à 11h15).",
       "De 08h45 à 09h45, le régisseur 2 n'est pas encore arrivé.",
+      "Correct : le matin, les deux régisseurs sont simultanément présents de 10h00 à 11h30 (créneau 10h15 à 11h15).",
       "De 13h00 à 14h00, aucun des deux régisseurs n'est présent.",
       "De 16h00 à 17h00, le régisseur 1 est déjà parti."
     ],
@@ -2956,17 +2770,17 @@
     "prompt": "Quelle tâche constitue un goulet d'étranglement ralentissant tout le cycle de production du bulletin municipal ?",
     "stimulus": "Étapes de publication du bulletin communal trimestriel :\n- Tâche 1 : Collecte des articles (5 jours, marge 3 jours).\n- Tâche 2 : Maquettage graphique (8 jours, marge 0 jour).\n- Tâche 3 : Relecture orthographique (2 jours, marge 6 jours).\n- Tâche 4 : Impression rotative (3 jours, marge 0 jour).",
     "options": [
-      "Les tâches 2 et 4 qui possèdent une marge nulle (chemin critique).",
+      "Aucune tâche car toutes les étapes disposent d'un délai suffisant.",
       "La tâche 3 qui possède la marge libre la plus importante de 6 jours.",
-      "La tâche 1 qui débute le processus avec 3 jours de battement.",
-      "Aucune tâche car toutes les étapes disposent d'un délai suffisant."
+      "Les tâches 2 et 4 qui possèdent une marge nulle (chemin critique).",
+      "La tâche 1 qui débute le processus avec 3 jours de battement."
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : les tâches à marge nulle (2 et 4) forment le chemin critique où le moindre retard retarde l'ensemble du projet.",
+      "Le projet comporte des tâches critiques sans marge de sécurité.",
       "La tâche 3 a 6 jours de marge et n'est pas un goulet d'étranglement.",
-      "La tâche 1 dispose de 3 jours de flottement.",
-      "Le projet comporte des tâches critiques sans marge de sécurité."
+      "Correct : les tâches à marge nulle (2 et 4) forment le chemin critique où le moindre retard retarde l'ensemble du projet.",
+      "La tâche 1 dispose de 3 jours de flottement."
     ],
     "explanation": "Par définition en gestion de projet, les tâches à marge totale nulle (ici le maquettage et l'impression) constituent les verrous stricts du calendrier.",
     "sourceType": "original_ai_assisted",
@@ -2987,17 +2801,17 @@
     "prompt": "En arrivant le matin au service informatique, quel ticket d'assistance l'administrateur système doit-il traiter en premier ?",
     "stimulus": "File d'attente des incidents à 08h00 :\nTicket 1 : La passerelle de télédéclaration d'impôts en ligne est inaccessible le dernier jour légal de dépôt.\nTicket 2 : Un agent ne parvient pas à modifier sa photo de profil sur l'intranet.\nTicket 3 : La souris d'un poste administratif annexe présente un faux contact intermittent.\nTicket 4 : Une demande de devis pour un second écran est en attente d'approbation.",
     "options": [
-      "Le ticket 1 (Passerelle de télédéclaration fiscale bloquée)",
-      "Le ticket 2 (Photo de profil d'un utilisateur sur l'intranet)",
       "Le ticket 3 (Souris d'ordinateur présentant un faux contact)",
-      "Le ticket 4 (Devis de second écran bureautique pour un agent)"
+      "Le ticket 4 (Devis de second écran bureautique pour un agent)",
+      "Le ticket 2 (Photo de profil d'un utilisateur sur l'intranet)",
+      "Le ticket 1 (Passerelle de télédéclaration fiscale bloquée)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : impact massif immédiat sur des milliers de contribuables avec risque légal et forclusion financière.",
-      "La photo intranet relève de la convenance personnelle sans impact métier.",
       "La souris individuelle n'affecte qu'un seul poste pour un incident mineur.",
-      "Le devis de matériel relève de l'achat courant différable."
+      "Le devis de matériel relève de l'achat courant différable.",
+      "La photo intranet relève de la convenance personnelle sans impact métier.",
+      "Correct : impact massif immédiat sur des milliers de contribuables avec risque légal et forclusion financière."
     ],
     "explanation": "La panne bloquant la télédéclaration fiscale le jour même de l'échéance légale paralyse le service aux contribuables et commande une mobilisation immédiate absolue.",
     "sourceType": "original_ai_assisted",
@@ -3018,15 +2832,15 @@
     "prompt": "Un pôle d'archivage doit classer 900 boîtes d'archives en 5 jours ouvrés. Si chaque archiviste classe 30 boîtes par jour, combien d'archivistes sont requis ?",
     "stimulus": "Opération de reclassement des archives historiques du tribunal :\nVolume à traiter : 900 boîtes d'archives.\nDélai imparti : 5 jours ouvrés.\nProductivité moyenne : 30 boîtes classées par archiviste et par jour.",
     "options": [
-      "6 archivistes",
       "5 archivistes",
+      "6 archivistes",
       "8 archivistes",
       "4 archivistes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 1 archiviste traite 30 × 5 = 150 boîtes en 5 jours. Pour 900 boîtes, il faut 900 / 150 = 6 archivistes.",
       "5 archivistes ne traiteraient que 5 × 150 = 750 boîtes.",
+      "Correct : 1 archiviste traite 30 × 5 = 150 boîtes en 5 jours. Pour 900 boîtes, il faut 900 / 150 = 6 archivistes.",
       "8 archivistes correspondrait à un besoin de 1 200 boîtes.",
       "4 archivistes ne traiteraient que 600 boîtes."
     ],
@@ -3049,17 +2863,17 @@
     "prompt": "Quel créneau convient pour réunir les deux négociateurs syndicaux et le directeur des ressources humaines pendant 1 heure ?",
     "stimulus": "Agendas du mardi matin :\n- Directeur RH : libre de 09h00 à 11h30.\n- Négociateur syndical A : libre de 08h30 à 10h30.\n- Négociateur syndical B : libre de 09h30 à 12h00.",
     "options": [
-      "De 09h30 à 10h30",
       "De 09h00 à 10h00",
-      "De 10h30 à 11h30",
-      "De 08h30 à 09h30"
+      "De 09h30 à 10h30",
+      "De 08h30 à 09h30",
+      "De 10h30 à 11h30"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : l'intersection des trois disponibilités est exactement [09h30, 10h30] (1 heure commune).",
       "De 09h00 à 10h00, le négociateur B n'est pas encore disponible.",
-      "De 10h30 à 11h30, le négociateur A n'est plus libre.",
-      "De 08h30 à 09h30, le directeur RH et le négociateur B ne sont pas disponibles."
+      "Correct : l'intersection des trois disponibilités est exactement [09h30, 10h30] (1 heure commune).",
+      "De 08h30 à 09h30, le directeur RH et le négociateur B ne sont pas disponibles.",
+      "De 10h30 à 11h30, le négociateur A n'est plus libre."
     ],
     "explanation": "L'intersection des trois plages est : RH [09h00-11h30] ∩ Syndicat A [08h30-10h30] ∩ Syndicat B [09h30-12h00] = [09h30, 10h30], soit exactement l'heure nécessaire.",
     "sourceType": "original_ai_assisted",
@@ -3080,17 +2894,17 @@
     "prompt": "Quelle salle peut accueillir la réunion publique du plan d'aménagement réunissant 120 citoyens de 18h30 à 20h30 ?",
     "stimulus": "Équipements municipaux de grande capacité :\n- Salle des Fêtes (150 places) : libre de 18h00 à 22h00.\n- Salle du Conseil (80 places) : libre toute la soirée.\n- Gymnase municipal (300 places) : réservé pour un match officiel dès 19h00.\n- Salle polyvalente (100 places) : libre toute la soirée.",
     "options": [
-      "La Salle des Fêtes",
+      "La Salle polyvalente",
       "La Salle du Conseil",
       "Le Gymnase municipal",
-      "La Salle polyvalente"
+      "La Salle des Fêtes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : capacité de 150 places (≥ 120) et disponibilité ininterrompue de 18h00 à 22h00 couvrant 18h30-20h30.",
+      "La salle polyvalente ne dispose que de 100 places, insuffisant pour 120 personnes.",
       "La Salle du Conseil ne dispose que de 80 places, insuffisant pour 120 personnes.",
       "Le gymnase est occupé dès 19h00 pour un match officiel.",
-      "La salle polyvalente ne dispose que de 100 places, insuffisant pour 120 personnes."
+      "Correct : capacité de 150 places (≥ 120) et disponibilité ininterrompue de 18h00 à 22h00 couvrant 18h30-20h30."
     ],
     "explanation": "Seule la Salle des Fêtes réunit une capacité suffisante (150 places pour 120 participants attendus) et une disponibilité continue sur la plage 18h30-20h30.",
     "sourceType": "original_ai_assisted",
