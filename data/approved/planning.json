@@ -2912,5 +2912,191 @@
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T13:42:39.868Z"
+  },
+  {
+    "id": "planning-buffer-015",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "À quelle heure au plus tard l'instruction du dossier doit-elle commencer pour respecter l'échéance ?",
+    "stimulus": "Un dossier d'agrément demande 2 h 30 de travail. Le travail peut être interrompu puis repris sans perte de temps. Le dossier doit être transmis par courriel au plus tard à 17 h 00. Une coupure réseau planifiée empêche tout travail de 15 h 00 à 15 h 30.",
+    "options": [
+      "13 h 30",
+      "14 h 30",
+      "14 h 00",
+      "14 h 15"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Respecte l'échéance, mais ce n'est pas l'heure la plus tardive possible.",
+      "Oublie la coupure : il ne reste que 2 h de travail avant 17 h 00.",
+      "Correct : exactement 2 h 30 de travail disponible avant 17 h 00.",
+      "Il ne reste que 2 h 15 de travail avant 17 h 00."
+    ],
+    "explanation": "De 14 h 00 à 17 h 00, il y a 3 h, dont 30 minutes de coupure : il reste 2 h 30 de travail (14 h 00 – 15 h 00, puis 15 h 30 – 17 h 00). Commencer plus tard laisse moins de 2 h 30.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-prio-032",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "priorisation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel ordre permet de respecter toutes les échéances ?",
+    "stimulus": "Il est 10 h 00. Vous devez réaliser trois tâches, l'une après l'autre et sans interruption :\n- Tâche X : 20 min, à terminer au plus tard à 10 h 30.\n- Tâche Y : 40 min, à terminer au plus tard à 11 h 00.\n- Tâche Z : 30 min, à terminer au plus tard à 12 h 00.",
+    "options": [
+      "Tâche Y, puis X, puis Z",
+      "Tâche X, puis Z, puis Y",
+      "Tâche Z, puis X, puis Y",
+      "Tâche X, puis Y, puis Z"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "X finirait à 11 h 00, après son échéance de 10 h 30.",
+      "Y finirait à 11 h 30, après son échéance de 11 h 00.",
+      "X finirait à 10 h 50, après son échéance de 10 h 30.",
+      "Correct : les trois échéances sont respectées."
+    ],
+    "explanation": "X, Y, Z : X finit à 10 h 20 (≤ 10 h 30), Y à 11 h 00 (≤ 11 h 00), Z à 11 h 30 (≤ 12 h 00). Toute autre séquence retarde X ou Y au-delà de leur échéance.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-dep-034",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel jour le rapport est-il soumis ?",
+    "stimulus": "Un rapport passe par trois étapes successives. Chaque étape commence le jour ouvré qui suit la fin de la précédente :\n- collecte des données : 2 jours ouvrés, à partir du lundi 5 octobre ;\n- traitement statistique : 1 jour ouvré ;\n- relecture juridique : 1 jour ouvré.\nLe rapport est soumis le jour ouvré qui suit la fin de la relecture.",
+    "options": [
+      "Jeudi 8 octobre",
+      "Lundi 12 octobre",
+      "Vendredi 9 octobre",
+      "Mercredi 7 octobre"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "C'est le jour de la relecture ; la soumission a lieu le jour ouvré suivant.",
+      "Ajoute un jour de trop (ou saute le vendredi).",
+      "Correct : jour ouvré qui suit la relecture du jeudi.",
+      "C'est le jour du traitement statistique."
+    ],
+    "explanation": "Collecte lundi 5 et mardi 6, traitement mercredi 7, relecture jeudi 8, soumission le jour ouvré suivant : vendredi 9 octobre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-sched-055",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quel créneau (heure de Luxembourg) permet une visioconférence de 2 heures pendant les heures d'ouverture des deux bureaux ?",
+    "stimulus": "Heures d'ouverture des bureaux (heure locale) :\n- Luxembourg : 8 h 00 à 17 h 30.\n- Tokyo : 9 h 00 à 18 h 00.\nÀ cette période de l'année, Tokyo a 7 heures d'avance sur Luxembourg.",
+    "options": [
+      "De 9 h 30 à 11 h 30",
+      "De 8 h 30 à 10 h 30",
+      "De 7 h 30 à 9 h 30",
+      "De 11 h 00 à 13 h 00"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Finit à 18 h 30 à Tokyo, après la fermeture.",
+      "Correct : de 15 h 30 à 17 h 30 à Tokyo, dans les heures des deux bureaux.",
+      "Commence avant l'ouverture du bureau de Luxembourg.",
+      "Correspond à 18 h 00 – 20 h 00 à Tokyo, après la fermeture."
+    ],
+    "explanation": "Tokyo est ouvert de 9 h 00 à 18 h 00, soit de 2 h 00 à 11 h 00 heure de Luxembourg. La plage commune est donc 8 h 00 – 11 h 00. Seul le créneau 8 h 30 – 10 h 30 (15 h 30 – 17 h 30 à Tokyo) y tient entièrement.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-sched-079",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Dans quel ordre ces formalités s'enchaînent-elles ?",
+    "stimulus": "Départ à la retraite pour invalidité – quatre formalités :\n1. Notification de l'arrêté accordant la pension.\n2. Dépôt de la demande par l'agent auprès de son service du personnel.\n3. Contrôle de la carrière et calcul des droits par la caisse de pension.\n4. Avis de la commission médicale.\nRègles : la commission médicale se prononce après le dépôt de la demande ; la caisse de pension calcule les droits après avoir reçu l'avis de la commission ; l'arrêté est notifié après le calcul des droits.",
+    "options": [
+      "2 → 3 → 4 → 1",
+      "4 → 2 → 3 → 1",
+      "2 → 3 → 1 → 4",
+      "2 → 4 → 3 → 1"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Place le calcul des droits avant l'avis de la commission, contrairement à la deuxième règle.",
+      "Place l'avis de la commission avant le dépôt de la demande.",
+      "Notifie l'arrêté avant l'avis de la commission.",
+      "Correct : respecte les trois règles."
+    ],
+    "explanation": "Le dépôt (2) déclenche l'avis de la commission (4), qui précède le calcul des droits (3), lequel précède la notification de l'arrêté (1) : 2 → 4 → 3 → 1.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-sched-094",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quel horaire permet de tenir une conférence de presse de 45 minutes au ministère ?",
+    "stimulus": "Agenda du ministre, mercredi après-midi :\n- 14 h 00 – 16 h 00 : séance à la Chambre des députés.\n- 16 h 00 – 17 h 30 : libre.\n- 17 h 30 – 19 h 00 : réception d'une délégation.\nLe trajet de la Chambre au ministère dure 15 minutes, comme celui du ministère au lieu de la réception.",
+    "options": [
+      "De 16 h 00 à 16 h 45",
+      "De 16 h 45 à 17 h 30",
+      "De 16 h 15 à 17 h 00",
+      "De 15 h 30 à 16 h 15"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Oublie le trajet de 15 minutes depuis la Chambre.",
+      "Le ministre arriverait à 17 h 45 à la réception.",
+      "Correct : respecte les deux trajets et les deux engagements.",
+      "Chevauche la séance à la Chambre."
+    ],
+    "explanation": "Le ministre peut être au ministère à 16 h 15 au plus tôt et doit en partir à 17 h 15 au plus tard pour la réception. Seul le créneau 16 h 15 – 17 h 00 tient dans cette plage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   }
 ]

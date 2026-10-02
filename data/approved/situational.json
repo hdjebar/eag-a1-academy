@@ -408,7 +408,7 @@
   },
   {
     "id": "situational-advise-012",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "conseiller",
@@ -418,30 +418,30 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Un jeune collègue chargé d'études doit animer une réunion avec des représentants syndicaux sur un projet de refonte des horaires. Il craint des tensions et vous demande comment structurer son intervention.",
     "options": [
-      "Lui recommander d'imposer fermement le calendrier ministériel dès le début pour couper court à toute discussion.",
-      "Lui conseiller de présenter d'abord les constats factuels et objectifs, puis d'ouvrir un échange structuré sur les besoins exprimés.",
-      "Lui suggérer d'annuler la réunion et de communiquer la décision unilatéralement par note de service écrite.",
-      "Lui proposer de faire une intervention informelle sans ordre du jour pour éviter de formaliser les désaccords."
+      "Lui recommander de présenter le calendrier ministériel comme définitif et de limiter l'échange aux aspects pratiques.",
+      "Lui conseiller de présenter les constats et le cadre, puis d'organiser un échange structuré sur les besoins.",
+      "Lui suggérer de reporter la réunion et d'annoncer le projet par une note de service adressée à tous.",
+      "Lui proposer une rencontre informelle sans ordre du jour, pour laisser chacun exprimer ses craintes."
     ],
     "correctIndex": 1,
     "ratings": [
-      1,
+      2,
       4,
       1,
       2
     ],
     "optionRationales": [
-      "Très inapproprié (1) : posture autoritaire qui envenime le conflit et rompt la confiance avec les partenaires sociaux.",
-      "Très approprié (4) : démarche constructive et objective favorisant le dialogue social tout en gardant un cadre professionnel.",
-      "Très inapproprié (1) : déni de concertation contraire aux principes d'administration moderne et participative.",
-      "Inapproprié (2) : absence de cadre qui décrédibilise l'administration et risque de rendre les échanges stériles."
+      "Ferme la discussion sur le fond et risque d'accroître les tensions.",
+      "Correct : base factuelle partagée et échange cadré.",
+      "Évite le dialogue social au lieu de le préparer.",
+      "Écoute, mais sans cadre ni objectif, ce qui expose à des débats confus."
     ],
     "explanation": "Le conseil professionnel (note 4) encourage une méthode rigoureuse : baser l'échange sur des éléments factuels partagés, donner la parole de manière cadrée et écouter les observations pour coconstruire la mise en œuvre.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-serve-013",
@@ -482,7 +482,7 @@
   },
   {
     "id": "situational-advise-014",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "conseiller",
@@ -492,30 +492,30 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Votre chef de service souhaite accélérer l'octroi d'un marché public avant la fin de l'exercice budgétaire pour éviter la perte de crédits, en omettant l'avis obligatoire de la commission des marchés.",
     "options": [
-      "Alerter le chef de service par écrit sur le risque d'illégalité et de nullité du marché, et proposer un calendrier de passation accéléré mais légal.",
-      "Valider la procédure sans réserve pour obéir aux instructions hiérarchiques et préserver les crédits budgétaires.",
-      "Refuser d'exécuter la tâche oralement en menaçant de vous mettre en grève.",
-      "Dénoncer immédiatement votre supérieur hiérarchique au parquet sans lui faire part au préalable de l'irrégularité."
+      "Alerter par écrit le chef de service sur le risque d'illégalité et proposer un calendrier accéléré mais conforme.",
+      "Préparer le marché sans l'avis de la commission, comme demandé, pour éviter la perte des crédits de l'exercice.",
+      "Exprimer oralement votre désaccord au chef de service, puis exécuter sa demande sans laisser de trace écrite.",
+      "Signaler directement la situation au contrôleur financier, sans en parler d'abord à votre chef de service."
     ],
     "correctIndex": 0,
     "ratings": [
       4,
       1,
-      2,
-      1
+      1,
+      2
     ],
     "optionRationales": [
-      "Très approprié (4) : devoir de conseil vigilant protégeant l'administration contre l'illégalité tout en proposant une solution constructive.",
-      "Très inapproprié (1) : complicité d'une irrégularité juridique majeure contraire au devoir de probité.",
-      "Inapproprié (2) : réaction émotionnelle conflictuelle non conforme à la déontologie administrative.",
-      "Très inapproprié (1) : rupture disproportionnée de la voie hiérarchique sans démarche préalable de clarification interne."
+      "Correct : mise en garde loyale et écrite, avec une solution légale.",
+      "Exécute une procédure irrégulière.",
+      "Le désaccord oral ne protège ni l'administration ni l'agent, et la procédure reste irrégulière.",
+      "Contourne la hiérarchie sans lui avoir d'abord exposé le risque."
     ],
     "explanation": "L'agent public de catégorie A1 a un devoir de conseil technique : il doit formuler par écrit une mise en garde loyale sur les risques juridiques (nullité du marché, engagement de responsabilité) tout en étant force de proposition pour rechercher une issue légale dans les délais.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-serve-015",
@@ -667,7 +667,7 @@
   },
   {
     "id": "situational-advise-019",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "conseiller",
@@ -677,34 +677,34 @@
     "prompt": "Évaluez la pertinence de chaque modalité de conseil face à une incertitude réglementaire.",
     "stimulus": "Une entreprise vous sollicite pour savoir si son nouveau procédé industriel entre dans le champ d'application d'une taxe environnementale récemment votée mais dont le règlement d'application n'est pas encore publié.",
     "options": [
-      "Rejeter d'office la demande de l'entreprise en lui demandant de ne pas importuner les services ministériels.",
-      "Lui garantir par écrit une exonération totale définitive pour rassurer immédiatement l'investisseur.",
-      "Lui exposer l'état actuel des textes officiels, réserver votre réponse sur les points en suspens et solliciter une note de cadrage ministérielle.",
-      "Lui indiquer les critères probables issus des débats parlementaires tout en précisant expressément leur caractère non opposable."
+      "Lui répondre que la question ne pourra être traitée qu'après la publication du règlement d'application.",
+      "Lui confirmer par écrit que son procédé sera exonéré, au vu des objectifs affichés par la loi.",
+      "Lui exposer les textes en vigueur, réserver les points en suspens et saisir la direction compétente.",
+      "Lui indiquer les critères évoqués lors des débats parlementaires, en précisant qu'ils ne l'engagent pas."
     ],
     "correctIndex": 2,
     "ratings": [
-      1,
+      2,
       1,
       4,
       3
     ],
     "optionRationales": [
-      "Très inapproprié : mépris du monde économique contraire aux missions de conseil et d'accueil de l'administration.",
-      "Très inapproprié : engagement illégal engageant la responsabilité financière de l'État sans texte d'application.",
-      "Très approprié : démarche rigoureuse préservant la sécurité juridique de l'administration et de l'usager.",
-      "Plutôt approprié : information contextuelle utile assortie de la réserve juridique indispensable sur la non-opposabilité."
+      "Prudent, mais n'apporte aucune information utile à l'entreprise.",
+      "Engagement prématuré que l'administration ne peut pas garantir.",
+      "Correct : information sur l'existant, réserve et saisine de la direction compétente.",
+      "Utile et prudent, mais sans démarche pour obtenir une position officielle."
     ],
     "explanation": "En cas de vide ou d'attente d'un décret d'application, le conseiller public doit faire preuve d'une prudence juridique stricte. Il informe sur les bases existantes, réserve l'interprétation officielle auprès de la direction compétente et s'abstient de tout engagement prématuré.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-serve-020",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -714,30 +714,30 @@
     "prompt": "Évaluez chaque comportement d'accueil face à une situation de tension au guichet.",
     "stimulus": "Un administré hausse le ton et accuse nominativement un de vos collègues d'avoir égaré son dossier d'aide au logement il y a deux semaines.",
     "options": [
-      "Lui expliquer le processus de reconstitution rapide de dossier si la perte est confirmée et lui remettre un accusé de réception horodaté.",
-      "Donner immédiatement raison à l'usager devant tout le monde en dénigrant ouvertement les compétences de votre collègue.",
-      "Prendre immédiatement la défense agressive de votre collègue en haussant le ton à votre tour contre l'usager.",
-      "L'inviter calmement à s'asseoir dans un espace discret, écouter sa réclamation sans accuser le collègue et vérifier immédiatement l'historique informatique du dossier."
+      "Lui expliquer comment le dossier serait reconstitué si la perte était confirmée et lui remettre un accusé de réception.",
+      "Lui donner raison devant les autres usagers en reconnaissant que votre collègue est souvent négligent.",
+      "Défendre fermement votre collègue en lui expliquant qu'une telle erreur est impossible dans le service.",
+      "L'inviter au calme dans un espace discret, écouter sa réclamation et vérifier l'historique du dossier."
     ],
     "correctIndex": 3,
     "ratings": [
       3,
       1,
-      1,
+      2,
       4
     ],
     "optionRationales": [
-      "Plutôt approprié : orientation constructive vers la résolution matérielle du problème avec formalisation administrative.",
-      "Très inapproprié : manquement grave au devoir de confraternité et décrédibilisation publique du service.",
-      "Très inapproprié : escalade de l'agressivité violant les principes d'accueil professionnel et de retenue.",
-      "Très approprié : désamorce le conflit, isole la tension, protège l'esprit d'équipe et engage la vérification objective."
+      "Utile, mais anticipe une perte avant toute vérification.",
+      "Dénigre un collègue en public sans aucune vérification.",
+      "Prend parti sans vérifier et nie une possibilité réelle.",
+      "Correct : désescalade, écoute et vérification impartiale."
     ],
     "explanation": "Face à une accusation visant un collègue, l'agent doit concilier écoute empathique de l'usager, désescalade relationnelle dans un cadre calme, loyauté envers ses pairs et vérification factuelle impartiale dans les systèmes de gestion.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-advise-021",
@@ -815,7 +815,7 @@
   },
   {
     "id": "situational-serve-024",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -825,30 +825,30 @@
     "prompt": "Évaluez chaque réaction face à une erreur administrative avérée.",
     "stimulus": "Vous découvrez qu'en raison d'un bogue informatique temporaire, un courrier erroné réclamant indûment une pièce justificative déjà fournie a été envoyé à 50 usagers.",
     "options": [
-      "Rassurer au téléphone les usagers qui appellent en enregistrant la régularisation immédiate sur leur dossier informatique.",
-      "Informer immédiatement la hiérarchie, adresser un rectificatif explicatif d'excuse aux 50 usagers et valider leurs dossiers sans délai supplémentaire.",
-      "Ignorer l'incident en espérant que la majorité des usagers renverra une seconde fois la pièce sans protester.",
-      "Attendre que chaque usager se manifeste individuellement au guichet pour rectifier au cas par cas."
+      "Rassurer les usagers qui appellent et noter sur leur dossier que la pièce a bien été reçue.",
+      "Informer la hiérarchie et envoyer aux 50 usagers un rectificatif indiquant qu'ils n'ont rien à fournir.",
+      "Laisser les usagers renvoyer la pièce, puisque cela ne retarde pas le traitement de leur dossier.",
+      "Traiter au cas par cas les usagers qui se manifestent, au guichet ou par téléphone."
     ],
     "correctIndex": 1,
     "ratings": [
       3,
       4,
       1,
-      1
+      2
     ],
     "optionRationales": [
-      "Plutôt approprié : réaction positive et aidante au contact individuel, mais insuffisante à l'échelle du groupe impacté.",
-      "Très approprié : proactivité, transparence, assomption de l'erreur administrative et respect de la confiance du public.",
-      "Très inapproprié : passivité coupable surchargeant indûment les administrés pour masquer une défaillance interne.",
-      "Très inapproprié : gestion passive et inéquitable pénalisant les usagers qui n'osent pas réclamer."
+      "Correct pour ceux qui appellent, mais les autres usagers restent mal informés.",
+      "Correct : correction proactive et transparente auprès de tous.",
+      "Laisse les usagers accomplir une démarche inutile sans les informer.",
+      "Réactif seulement, et sans information de la hiérarchie."
     ],
-    "explanation": "Le service à l'usager commande une transparence proactive en cas d'erreur de l'administration : un message rectificatif global avec excuses professionnelles et validation automatique des droits rétablit la confiance légitime des administrés.",
+    "explanation": "L'erreur vient de l'administration : elle doit la corriger elle-même, auprès de tous les usagers concernés, en informant la hiérarchie. Répondre seulement à ceux qui appellent laisse les autres dans l'erreur.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-advise-027",
@@ -963,7 +963,7 @@
   },
   {
     "id": "situational-serve-030",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -973,30 +973,30 @@
     "prompt": "Évaluez chaque modalité de traitement d'une réclamation d'usager.",
     "stimulus": "Un usager vous transmet une réclamation écrite affirmant qu'un agent d'accueil lui a manqué de respect la veille au guichet.",
     "options": [
-      "Déchirer la lettre de réclamation pour protéger la réputation du service et étouffer l'incident.",
-      "Entendre avec bienveillance l'usager par téléphone pour consigner sa version détaillée tout en préservant la présomption de régularité du service.",
-      "Répondre avec agressivité à l'usager en lui interdisant désormais l'accès aux locaux administratifs.",
-      "Accuser réception de sa réclamation par écrit, transmettre les faits à la hiérarchie pour examen contradictoire et lui garantir une réponse motivée sous 15 jours."
+      "Classer la réclamation sans suite, l'agent concerné ayant toujours donné satisfaction jusqu'ici.",
+      "Appeler l'usager pour recueillir sa version détaillée des faits avant de décider de la suite à donner.",
+      "Répondre à l'usager que les agents d'accueil subissent une forte pression et l'inviter à l'indulgence.",
+      "Accuser réception par écrit, transmettre les faits à la hiérarchie et informer l'usager de la suite."
     ],
     "correctIndex": 3,
     "ratings": [
       1,
       3,
-      1,
+      2,
       4
     ],
     "optionRationales": [
-      "Très inapproprié : destruction illégale d'un document administratif et opacité contraire aux normes de transparence.",
-      "Plutôt approprié : démarche d'écoute attentive permettant d'éclairer l'instruction administrative de la réclamation.",
-      "Très inapproprié : abus d'autorité intolérable bafouant les droits fondamentaux des usagers.",
-      "Très approprié : traitement procédural exemplaire alliant écoute citoyenne, respect du contradictoire et engagement formel."
+      "Écarte la réclamation sans l'examiner.",
+      "Utile, mais la réclamation n'est ni enregistrée ni transmise.",
+      "Justifie le comportement au lieu d'examiner les faits.",
+      "Correct : réclamation tracée, examinée et suivie."
     ],
-    "explanation": "Toute réclamation d'usager doit faire l'objet d'un accusé de réception formel, d'une instruction équitable et contradictoire par l'autorité hiérarchique, et d'une réponse motivée dans un délai prévisible.",
+    "explanation": "Une réclamation appelle un accusé de réception, un examen par la hiérarchie et une information de l'usager sur la suite. Recueillir sa version est utile mais ne suffit pas ; excuser l'agent ou classer sans examen ne traite pas la réclamation.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-advise-031",
@@ -2369,7 +2369,7 @@
   },
   {
     "id": "situational-scen-070",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -2379,30 +2379,30 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Un citoyen malentendant se présente au guichet pour une démarche complexe d'état civil. La communication verbale usuelle s'avère particulièrement difficile.",
     "options": [
-      "Hausser la voix avec force en répétant les mêmes phrases devant tous les autres usagers en attente.",
-      "Utiliser des supports écrits clairs, faire preuve de patience et proposer un canal adapté ou un interprète.",
-      "Lui proposer de convenir d'un rendez-vous dédié avec un interprète en langue des signes.",
-      "Demander à l'usager de revenir obligatoirement accompagné d'un proche pour la démarche."
+      "Parler plus lentement et plus fort, en répétant les explications jusqu'à ce qu'il comprenne.",
+      "Passer à l'écrit avec des phrases simples et vérifier pas à pas qu'il a compris chaque étape.",
+      "Reporter toute la démarche à un rendez-vous ultérieur avec un interprète en langue des signes.",
+      "Lui demander de revenir accompagné d'un proche qui pourra faire la démarche à sa place."
     ],
     "correctIndex": 1,
     "ratings": [
-      1,
+      2,
       4,
       3,
-      2
+      1
     ],
     "optionRationales": [
-      "Efficacité 1/4 : attitude inefficace et humiliante témoignant d'une méconnaissance du handicap auditif.",
-      "Efficacité 4/4 : adaptabilité humaine, respect de la dignité et égalité effective d'accès aux démarches publiques.",
-      "Efficacité 3/4 : solution d'accueil spécialisée mais différant la prise en charge immédiate.",
-      "Efficacité 2/4 : contrainte excessive privant temporairement l'usager de son autonomie."
+      "Insuffisant et peu adapté à une démarche complexe.",
+      "Correct : adaptation immédiate du mode de communication.",
+      "Adapté, mais retarde une démarche qui peut être menée par écrit dès maintenant.",
+      "Prive l'usager de son autonomie et lui impose une condition."
     ],
     "explanation": "L'accessibilité des services publics impose d'adapter le mode d'échange (écrit, reformulation, outils spécialisés) pour garantir l'accueil égalitaire des usagers en situation de handicap.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-scen-071",
@@ -3035,7 +3035,7 @@
   },
   {
     "id": "situational-scen-090",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -3045,34 +3045,34 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Une panne générale du système informatique bloque la délivrance des certificats au guichet pendant plus de deux heures devant une file de trente personnes.",
     "options": [
-      "Laisser les usagers patienter debout en silence sans leur fournir la moindre information sur l'incident.",
-      "Enregistrer manuellement les demandes urgentes pour saisie informatique dès retour du réseau.",
-      "Informer avec transparence la salle d'attente, estimer le délai de rétablissement et proposer des solutions différées.",
-      "Distribuer des tickets d'ordre de passage et inviter les usagers à revenir dès rétablissement."
+      "Faire patienter les usagers sans annonce, la panne pouvant être réparée à tout moment.",
+      "Enregistrer à la main les demandes urgentes pour les saisir dès le retour du système.",
+      "Informer la salle de la panne et de sa durée estimée, et proposer un traitement différé.",
+      "Distribuer des tickets de passage et demander aux usagers de revenir après la réparation."
     ],
     "correctIndex": 2,
     "ratings": [
       1,
-      2,
+      3,
       4,
-      3
+      2
     ],
     "optionRationales": [
-      "Efficacité 1/4 : mépris des usagers générant une anxiété et une exaspération légitimes dans la salle d'attente.",
-      "Efficacité 2/4 : solution de secours pragmatique mais exigeant une vigilance extrême sur la saisie.",
-      "Efficacité 4/4 : communication proactive de crise, respect du public et gestion pragmatique des alternatives.",
-      "Efficacité 3/4 : organisation rationnelle évitant l'attente inutile tout en préservant l'ordre d'arrivée."
+      "Laisse les usagers sans information.",
+      "Utile pour les urgences, mais la salle reste sans information.",
+      "Correct : information transparente et solution pour tous.",
+      "Organise le retour, mais sans information sur la durée de la panne."
     ],
     "explanation": "Lors d'une panne technique prolongée, une communication claire, honnête et régulière permet de désamorcer les tensions et d'orienter les usagers vers des modalités de traitement différé.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-scen-091",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "conseiller",
@@ -3080,36 +3080,36 @@
     "language": "fr",
     "estimatedSeconds": 85,
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
-    "stimulus": "Un agent nouvellement promu chef d'équipe se montre excessivement autoritaire et méprisant envers ses anciens pairs, ce qui provoque une vague de démissions potentielles.",
+    "stimulus": "Vous êtes le supérieur d'un agent récemment promu chef d'équipe. Il se montre autoritaire et méprisant envers ses anciens collègues ; deux d'entre eux envisagent de demander leur mutation.",
     "options": [
-      "Organiser une réunion d'équipe de régulation pour clarifier collectivement les modes de travail.",
-      "Féliciter le chef d'équipe pour sa poigne en affirmant que les agents ont besoin d'être tenus fermement.",
-      "Avoir un entretien franc de recadrage managérial pour lui rappeler les principes de respect et lui proposer un coaching.",
-      "Proposer la mise en place d'un bilan d'étape managérial régulier pour accompagner son nouveau rôle."
+      "Réunir toute l'équipe pour clarifier collectivement les règles de fonctionnement et le rôle de chacun.",
+      "Laisser faire, le nouveau chef d'équipe ayant besoin d'asseoir son autorité au début de sa prise de fonction.",
+      "Le recevoir en entretien pour lui rappeler les attentes en matière de respect et proposer un accompagnement.",
+      "Prévoir des points d'étape réguliers sur sa prise de fonction, sans aborder directement le problème."
     ],
     "correctIndex": 2,
     "ratings": [
       2,
       1,
       4,
-      3
+      2
     ],
     "optionRationales": [
-      "Efficacité 2/4 : temps d'échange collectif nécessaire mais nécessitant un cadrage préalable du cadre.",
-      "Efficacité 1/4 : cautionnement managérial toxique détruisant le climat social et la motivation des équipes.",
-      "Efficacité 4/4 : régulation managériale courageuse, protection de la santé au travail et accompagnement ciblé.",
-      "Efficacité 3/4 : dispositif d'appui individuel cadrant la transition de posture professionnelle."
+      "Expose le problème collectivement sans traiter le comportement individuel.",
+      "Laisse se dégrader la situation de l'équipe.",
+      "Correct : recadrage direct et accompagnement.",
+      "Évite le sujet alors que la situation est urgente."
     ],
     "explanation": "L'apprentissage du management chez un nouveau responsable requiert un accompagnement rigoureux de la hiérarchie. L'autoritarisme toxique doit être corrigé fermement dès les premiers signaux.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-scen-092",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -3119,10 +3119,10 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Un administré demande à consulter le dossier complet d'un projet d'infrastructure routière qui traversera sa propriété foncière.",
     "options": [
-      "Lui refuser tout accès aux plans sous prétexte que le tracé final n'est pas encore totalement figé.",
-      "Lui donner immédiatement accès aux pièces communicables en lui expliquant la démarche et les délais d'enquête.",
-      "Fixer un rendez-vous avec le technicien du projet pour une présentation détaillée des plans.",
-      "Lui remettre la notice de synthèse publique résumant les impacts et le calendrier des travaux."
+      "Refuser l'accès aux plans tant que le tracé définitif n'a pas été arrêté par le ministre.",
+      "Lui donner accès aux pièces communicables et lui expliquer la procédure et les délais d'enquête.",
+      "Lui fixer un rendez-vous avec le technicien du projet pour une présentation détaillée des plans.",
+      "Lui remettre la notice publique résumant les impacts et le calendrier prévisionnel des travaux."
     ],
     "correctIndex": 1,
     "ratings": [
@@ -3132,17 +3132,17 @@
       2
     ],
     "optionRationales": [
-      "Efficacité 1/4 : refus illégal d'accès à des pièces d'enquête publique ouvertes de plein droit aux citoyens.",
-      "Efficacité 4/4 : respect scrupuleux du droit d'accès aux documents publics d'urbanisme et pédagogie explicative.",
-      "Efficacité 3/4 : accompagnement explicatif de qualité facilitant la compréhension technique.",
-      "Efficacité 2/4 : information documentaire utile mais moins complète qu'une consultation des pièces."
+      "Refuse un accès auquel l'usager a droit pour les pièces communicables.",
+      "Correct : accès effectif et information sur la procédure.",
+      "Utile, mais diffère l'accès aux pièces.",
+      "Information partielle, sans accès au dossier."
     ],
     "explanation": "Les projets d'aménagement public font l'objet d'un droit d'accès et d'information garanti aux citoyens. L'administration doit faciliter la consultation des pièces communicables en toute transparence.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-scen-093",
@@ -3183,7 +3183,7 @@
   },
   {
     "id": "situational-scen-094",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -3193,30 +3193,30 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Un citoyen très mécontent menace de saisir le médiateur de l'État suite au rejet réitéré de sa demande d'aide financière communale.",
     "options": [
-      "Expliquer calmement les critères d'attribution ayant conduit à la décision de rejet motivée.",
-      "Proposer un réexamen contradictoire du dossier par un autre instructeur pour lever tout doute.",
-      "Accueillir sereinement sa démarche, lui remettre les coordonnées officielles du médiateur et réexpliquer la règle.",
-      "Lui affirmer avec dédain que le médiateur n'a aucun pouvoir et qu'il perdra son temps et son énergie inutilement."
+      "Lui réexpliquer calmement les critères d'attribution qui ont motivé le rejet de sa demande.",
+      "Lui proposer de faire réexaminer le dossier par un autre agent, en espérant éviter la saisine.",
+      "Prendre acte de sa démarche, lui donner les coordonnées du médiateur et lui réexpliquer la décision.",
+      "Lui expliquer que la saisine du médiateur ne pourra pas modifier une décision déjà prise."
     ],
     "correctIndex": 2,
     "ratings": [
-      2,
       3,
+      2,
       4,
       1
     ],
     "optionRationales": [
-      "Efficacité 2/4 : réitération des motifs légitimes mais n'ouvrant pas de dialogue sur les voies de recours.",
-      "Efficacité 3/4 : garantie d'impartialité assurant à l'usager une seconde analyse neutre de ses droits.",
-      "Efficacité 4/4 : respect exemplaire des institutions démocratiques de contrôle citoyen et pédagogie de la décision.",
-      "Efficacité 1/4 : dénigrement fautif d'une autorité indépendante protectrice des droits des administrés."
+      "Utile, mais n'informe pas l'usager sur la voie qu'il envisage.",
+      "Réexamen informel destiné à dissuader une démarche légitime.",
+      "Correct : respect du droit de saisine et explication de la décision.",
+      "Décourage une démarche légitime par une affirmation inexacte."
     ],
     "explanation": "Le médiateur de l'État (Ombudsman) est une institution indépendante garantissant les droits citoyens. L'administration doit informer les usagers de cette faculté sans aucune hostilité.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   },
   {
     "id": "situational-scen-096",
@@ -3294,7 +3294,7 @@
   },
   {
     "id": "situational-scen-099",
-    "version": 1,
+    "version": 2,
     "category": "situational",
     "itemFormat": "rating",
     "skill": "servir-client-usager",
@@ -3304,29 +3304,399 @@
     "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
     "stimulus": "Un citoyen formule une suggestion particulièrement judicieuse pour améliorer la signalétique et fluidifier l'orientation des usagers dans le hall principal.",
     "options": [
-      "Transmettre la proposition au responsable de la logistique du bâtiment pour étude de faisabilité.",
-      "Remercier chaleureusement l'usager, consigner sa remarque sur le registre de qualité et la porter à la direction.",
-      "Lui rétorquer avec condescendance que les fonctionnaires n'ont pas besoin des leçons des citoyens ordinaires.",
-      "Tester temporairement un fléchage provisoire pour mesurer l'impact réel sur l'orientation."
+      "Transmettre la suggestion au responsable de la logistique du bâtiment pour qu'il en étudie la faisabilité.",
+      "Remercier l'usager, consigner sa suggestion au registre qualité et la transmettre au service compétent.",
+      "Le remercier en lui expliquant que la signalétique vient d'être refaite et ne sera pas modifiée.",
+      "Installer vous-même dès aujourd'hui un fléchage provisoire, sans en parler au service logistique."
     ],
     "correctIndex": 1,
     "ratings": [
       3,
       4,
-      1,
-      2
+      2,
+      1
     ],
     "optionRationales": [
-      "Efficacité 3/4 : transmission à l'autorité compétente pour inscription dans le plan d'investissement.",
-      "Efficacité 4/4 : valorisation de la participation citoyenne, écoute de l'usager et démarche d'amélioration continue.",
-      "Efficacité 1/4 : mépris de la parole citoyenne fermant l'administration à toute perspective d'amélioration externe.",
-      "Efficacité 2/4 : initiative de test pragmatique mais devant être validée par les responsables du site."
+      "Utile, mais l'usager n'est pas remercié et la suggestion n'est pas tracée.",
+      "Correct : reconnaissance, traçabilité et transmission.",
+      "Courtois, mais écarte d'emblée une suggestion utile.",
+      "Initiative hors de vos attributions, sans coordination."
     ],
     "explanation": "L'amélioration de la qualité de service repose sur l'écoute active des remarques des administrés. Une suggestion pertinente doit être accueillie avec gratitude et transmise aux décideurs.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-advise-023",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Une collègue vous demande conseil : le dirigeant d'une entreprise dont elle vient d'instruire favorablement le dossier lui a fait déposer au bureau un panier gastronomique d'environ 150 euros. Le règlement interne interdit d'accepter tout cadeau lié aux fonctions.",
+    "options": [
+      "Lui conseiller de refuser le panier par téléphone auprès de l'entreprise, sans en parler à sa hiérarchie.",
+      "Lui conseiller d'informer sa hiérarchie par écrit et de faire restituer le panier avec un courrier poli.",
+      "Lui conseiller de partager le panier avec l'équipe et d'en parler lors de la prochaine réunion de service.",
+      "Lui conseiller de garder le panier cette fois, en prévenant l'entreprise qu'elle refusera les prochains."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "optionRationales": [
+      "Refus correct, mais sans trace ni information de la hiérarchie.",
+      "Correct : restitution et transparence envers la hiérarchie.",
+      "Revient à accepter le cadeau, même si le geste est rendu public.",
+      "Accepte un cadeau interdit par le règlement."
+    ],
+    "explanation": "Le règlement interdit tout cadeau lié aux fonctions. Le meilleur conseil combine la restitution et l'information écrite de la hiérarchie, qui laisse une trace et protège la collègue. Refuser sans informer est correct mais moins sûr ; partager ou garder le cadeau revient à l'accepter.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-advise-025",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager en grande difficulté financière demande une aide d'urgence. Après vérification, il ne remplit pas l'une des conditions légales d'attribution. Il insiste en expliquant qu'il ne peut plus payer son loyer.",
+    "options": [
+      "Lui remettre la liste des organismes d'aide au logement en lui conseillant de les contacter dès aujourd'hui.",
+      "Enregistrer la demande comme complète afin qu'elle soit acceptée, puisque sa situation est réellement urgente.",
+      "Lui expliquer que la demande sera refusée et l'inviter à revenir si sa situation personnelle évolue.",
+      "Lui expliquer la condition manquante et, avec son accord, le mettre en relation avec l'office social."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Utile, mais laisse l'usager faire seul les démarches.",
+      "Fausse déclaration contraire à la loi, même pour une bonne cause.",
+      "Exact sur le fond, mais n'offre aucune solution.",
+      "Correct : explication de la décision et relais actif vers l'aide adaptée."
+    ],
+    "explanation": "L'agent applique la règle (l'aide ne peut pas être accordée) tout en servant l'usager : il explique pourquoi et organise un relais concret vers l'office social. Une simple liste aide moins ; un refus sec n'oriente pas ; contourner la règle est illégal.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-serve-026",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager vous appelle, très mécontent : sa demande de prime n'est pas traitée après six semaines, alors que le délai indicatif annoncé est de quatre semaines.",
+    "options": [
+      "Lui promettre que sa prime sera versée cette semaine, pour mettre fin à son mécontentement.",
+      "Noter sa réclamation, vérifier le dossier après l'appel et le rappeler dans la journée.",
+      "Lui rappeler que le délai de quatre semaines n'est qu'indicatif et l'inviter à patienter.",
+      "Consulter le dossier pendant l'appel, lui expliquer la cause du retard et l'étape suivante."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      1,
+      3,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Promesse que l'agent ne peut pas garantir.",
+      "Sérieux, mais diffère l'information alors qu'elle est accessible.",
+      "Exact, mais n'apporte aucune information sur le dossier.",
+      "Correct : information immédiate, transparente et sans promesse."
+    ],
+    "explanation": "L'usager a besoin d'une information fiable : consulter le dossier pendant l'appel permet d'expliquer le retard et la suite sans promettre ce que l'agent ne maîtrise pas. Rappeler plus tard est acceptable ; se retrancher derrière le caractère indicatif du délai ou promettre un versement ne l'est pas.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-advise-033",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Une connaissance personnelle vous demande de faire examiner en priorité le dossier de permis de construire de son fils, déposé il y a deux semaines, avant la commission de demain.",
+    "options": [
+      "Refuser poliment en rappelant l'égalité de traitement, et signaler à votre hiérarchie le lien avec le demandeur.",
+      "Accepter d'avancer discrètement le dossier, puisqu'il est complet et qu'aucun autre demandeur n'en serait lésé.",
+      "Transmettre la demande au chef de service en le laissant décider s'il convient d'avancer l'examen du dossier.",
+      "Refuser poliment en rappelant que tous les dossiers sont examinés dans leur ordre d'arrivée, sans exception."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "optionRationales": [
+      "Correct : refus motivé et prévention du conflit d'intérêts.",
+      "Passe-droit contraire à l'égalité de traitement.",
+      "Fait remonter une demande illégitime au lieu de la refuser.",
+      "Refus correct, mais le conflit d'intérêts n'est pas signalé."
+    ],
+    "explanation": "Un passe-droit est contraire à l'égalité de traitement. Le refus doit être expliqué, et le lien personnel avec le demandeur signalé à la hiérarchie pour prévenir tout conflit d'intérêts. Transmettre la demande la légitime ; l'accepter est une faute.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-044",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Votre cheffe de service vous demande votre avis sur un projet de courrier informant 2 000 familles d'une hausse du tarif de la cantine scolaire. Le courrier ne mentionne ni la date d'effet de la hausse, ni les voies de recours.",
+    "options": [
+      "Lui conseiller d'envoyer le courrier tel quel, puis de publier une foire aux questions sur le site internet.",
+      "Lui conseiller d'ajouter la date d'effet, le motif de la hausse et les voies de recours avant l'envoi.",
+      "Lui conseiller de reporter l'envoi après l'entrée en vigueur, pour éviter des contestations anticipées.",
+      "Lui conseiller d'ajouter la date d'effet et un numéro de contact, les recours pouvant être précisés sur demande."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      2,
+      4,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Laisse partir un courrier incomplet.",
+      "Correct : le courrier devient complet et contestable en connaissance de cause.",
+      "Retarde l'information pour empêcher les recours : contraire à la transparence.",
+      "Amélioration partielle : les voies de recours restent absentes."
+    ],
+    "explanation": "Un courrier qui annonce une décision défavorable doit permettre aux usagers de la comprendre et de la contester : date d'effet, motif et voies de recours. Ajouter seulement la date et un contact améliore le courrier sans le compléter ; envoyer tel quel ou retarder l'information pour éviter les recours n'est pas acceptable.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-074",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Vous animez une réunion de projet. Deux agents d'un autre service s'invectivent à propos d'une erreur d'aiguillage d'un dossier ; le ton monte et les autres participants sont mal à l'aise.",
+    "options": [
+      "Poursuivre l'ordre du jour sans commenter l'incident, pour ne pas donner plus d'importance à la dispute.",
+      "Suspendre la réunion quelques minutes, puis la reprendre en passant au point suivant de l'ordre du jour.",
+      "Désigner devant les participants l'agent responsable de l'erreur, afin de clore rapidement le débat.",
+      "Interrompre l'échange, rappeler les règles de courtoisie et proposer de traiter l'erreur après la réunion."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      2,
+      3,
+      1,
+      4
+    ],
+    "optionRationales": [
+      "Laisse le conflit sans réponse.",
+      "Apaise, mais ne rappelle pas le cadre et ne traite pas le fond.",
+      "Met en cause publiquement un agent et aggrave le conflit.",
+      "Correct : arrêt de l'altercation, rappel du cadre, fond traité à part."
+    ],
+    "explanation": "L'animateur doit faire cesser l'altercation, rappeler le cadre et renvoyer le fond à un échange dédié. Une simple pause apaise sans traiter le problème ; ignorer l'incident le laisse s'envenimer ; désigner un coupable en public aggrave la tension.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-079",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Au guichet, un usager glisse une enveloppe contenant de l'argent liquide dans son dossier de permis de construire, « pour accélérer le traitement ». Plusieurs personnes attendent derrière lui.",
+    "options": [
+      "Lui rendre l'enveloppe en refusant clairement, rappeler que le délai est le même pour tous et signaler l'incident.",
+      "Lui rendre l'enveloppe discrètement et sans commentaire, pour éviter de l'humilier devant les autres usagers.",
+      "Accepter l'enveloppe pour la verser ensuite à la caisse du service, en la considérant comme un don volontaire.",
+      "Refuser l'enveloppe en rappelant que le délai est le même pour tous, sans donner d'autre suite à l'incident."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      2,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Correct : refus explicite, égalité de traitement rappelée, incident signalé.",
+      "Refus sans explication ni signalement.",
+      "Accepter une somme liée à un dossier est interdit, quelle qu'en soit l'affectation.",
+      "Refus correct, mais l'incident n'est pas signalé."
+    ],
+    "explanation": "Une tentative de corruption doit être refusée clairement et signalée à la hiérarchie. Refuser sans signaler est insuffisant ; rendre l'enveloppe sans un mot laisse l'usager sans message clair ; l'accepter, même pour le service, est interdit.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-095",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager ne parvient pas à remplir le formulaire en ligne de demande d'allocation : il n'a ni ordinateur ni accès à internet. Un formulaire papier existe aussi, et le guichet peut enregistrer les demandes papier. Le délai de dépôt expire dans trois jours.",
+    "options": [
+      "Lui remettre le formulaire papier en l'invitant à le renvoyer par la poste avant l'échéance.",
+      "Lui conseiller de demander à un proche de faire la démarche en ligne à sa place d'ici trois jours.",
+      "Lui indiquer que la démarche se fait en ligne et l'orienter vers un espace public numérique.",
+      "Remplir avec lui le formulaire papier au guichet et l'enregistrer immédiatement, avant l'échéance."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      2,
+      1,
+      4
+    ],
+    "optionRationales": [
+      "Utile, mais l'envoi postal risque de ne pas arriver dans les trois jours.",
+      "Reporte la démarche sur un tiers alors qu'une solution existe au guichet.",
+      "Information inexacte : un formulaire papier existe.",
+      "Correct : la demande est déposée dans les délais."
+    ],
+    "explanation": "Le formulaire papier existe et le délai est court : l'aider à le remplir et l'enregistrer tout de suite garantit le dépôt. Lui remettre le formulaire est utile mais laisse un risque ; s'en remettre à un proche ou affirmer que seule la voie en ligne existe ne le sert pas.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-097",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Au bureau de la population, une usagère arrive paniquée : elle a perdu son portefeuille avec sa carte d'identité. La procédure prévoit de déclarer la perte à la police, puis de demander une nouvelle carte au bureau de la population, sur présentation de la déclaration de perte.",
+    "options": [
+      "L'orienter vers le commissariat le plus proche pour déclarer la perte, en l'invitant à revenir ensuite.",
+      "Commencer tout de suite la demande de nouvelle carte, la déclaration de perte pouvant être ajoutée plus tard.",
+      "La rassurer, lui expliquer les deux étapes et lui remettre la liste des pièces à fournir pour la nouvelle carte.",
+      "Lui conseiller d'attendre quelques jours, le portefeuille pouvant être retrouvé ou rapporté par un passant."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      3,
+      1,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Juste, mais l'usagère ne sait pas quoi apporter ensuite.",
+      "Contraire à la procédure, qui exige la déclaration de perte.",
+      "Correct : accueil, explication complète et préparation de la suite.",
+      "Retarde une démarche nécessaire sans raison."
+    ],
+    "explanation": "L'agent rassure et rend l'usagère autonome : il explique les deux étapes prévues et prépare la seconde. L'orienter vers la police est juste mais incomplet ; attendre retarde inutilement ; inverser les étapes contrevient à la procédure.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "situational-scen-100",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Un stagiaire de votre équipe vous demande conseil : son tuteur lui a confié la rédaction d'une note de synthèse, mais il ne comprend pas bien ce qu'on attend de lui et n'ose pas le dire.",
+    "options": [
+      "Lui expliquer vous-même ce qu'on attend en général d'une note de synthèse et lui montrer un exemple.",
+      "Lui proposer de rédiger la note à sa place, pour lui éviter de se mettre en difficulté devant son tuteur.",
+      "Lui conseiller de reformuler la demande par écrit et de la faire valider par son tuteur avant de commencer.",
+      "Lui conseiller de rédiger une première version et d'attendre les corrections de son tuteur pour comprendre."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      3,
+      1,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Utile, mais ne lève pas le doute sur cette demande précise.",
+      "Ne l'aide pas à progresser et masque la difficulté.",
+      "Correct : clarification de la demande auprès du tuteur.",
+      "Fait perdre du temps et repousse la clarification."
+    ],
+    "explanation": "Le meilleur conseil aide le stagiaire à clarifier la demande avec la personne qui l'a formulée. Un exemple général aide mais ne garantit pas de répondre à la demande précise ; rédiger à l'aveugle fait perdre du temps ; rédiger à sa place ne l'aide pas à apprendre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   }
 ]
