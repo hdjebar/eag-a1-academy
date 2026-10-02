@@ -26,7 +26,7 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 
 ## Fonctionnalités
 
-- **Banque étalonnée de 500 questions originales** : 100 items par catégorie avec tirage aléatoire dynamique sans remise pour une rejouabilité maximale.
+- **Banque de questions originales relues** : 410 questions approuvées après l'audit du 2 octobre 2026 (objectif : 100 par catégorie ; un lot de remplacement attend la relecture humaine), tirage aléatoire sans remise.
 - **5 familles de tests A1** : Raisonnement abstrait (*Test géométrique* : matrices 3×3 et séries de figures), verbal, numérique, planification et jugement situationnel.
 - **Formats officiels 2026** :
   - Matrices et suites géométriques pures pour l'abstrait.
@@ -50,16 +50,17 @@ Conformément aux directives officielles GovJobs pour le **Groupe de traitement 
 
 | Code | Famille de test | Compétences couvertes | Format d'item | Questions validées |
 | :---: | :--- | :--- | :--- | :---: |
-| **RA** | **Raisonnement abstrait** *(Test géométrique)* | Suite logique, matrice 3×3, rotation, transformation géométrique | `single_best` (formes pures) | 100 |
-| **RV** | **Raisonnement verbal** | Compréhension, inférence, application de consigne, vrai/faux/indéterminé, synthèse | `single_best`, `tfcs` | 100 |
+| **RA** | **Raisonnement abstrait** *(Test géométrique)* | Suite logique, matrice 3×3, rotation, transformation géométrique | `single_best` (formes pures) | 34 |
+| **RV** | **Raisonnement verbal** | Compréhension, inférence, application de consigne, vrai/faux/indéterminé, synthèse | `single_best`, `tfcs` | 92 |
 | **RN** | **Raisonnement numérique** | Pourcentage, variation, ratio & proportion, moyenne, lecture de tableau, opérations simples | `single_best` (calculatrice de base) | 100 |
-| **PL** | **Planification** | Agenda & contraintes, priorisation, dépendances, disponibilités, conflits | `single_best` (gestion d'agenda) | 100 |
-| **JS** | **Jugement situationnel** | Servir le client-usager, Conseiller | `rating` (notes 1 à 4) | 100 |
-| **Total** | *Banque étalonnée complète* | *5 épreuves A1 conformes à la réforme GovJobs 2026* | — | **500** |
+| **PL** | **Planification** | Agenda & contraintes, priorisation, dépendances, disponibilités, conflits | `single_best` (gestion d'agenda) | 94 |
+| **JS** | **Jugement situationnel** | Servir le client-usager, Conseiller | `rating` (notes 1 à 4) | 90 |
+| **Total** | *Banque étalonnée complète* | *5 épreuves A1 conformes à la réforme GovJobs 2026* | — | **410** |
 
 > **Notes importantes** :
-> - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). La banque propose 100 items géométriques calibrés.
-> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les 100 items disponibles par catégorie, garantissant une forte rejouabilité.
+> - **Audit du 2 octobre 2026** : 90 questions retirées (66 items abstraits contenant des lettres, chiffres ou mots, 1 clé erronée, des questions ambiguës, sans réponse valable ou faisant appel à des connaissances extérieures, des doublons). Leurs remplacements sont proposés comme candidats et n'entrent dans la banque qu'après approbation humaine (`npm run promote:candidate`).
+> - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). Les items sont composés uniquement de formes et de flèches (règle vérifiée par le validateur).
+> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les items disponibles dans chaque catégorie.
 > - **Test de contrôle/précision** : Ce test ne concerne pas le groupe A1 (réservé aux groupes B1 et C1) et n'est donc pas inclus dans cette application.
 
 ---

@@ -36,17 +36,17 @@
       ]
     },
     "options": [
-      "Service A",
-      "Service B",
       "Service C",
-      "Service A et Service B à égalité"
+      "Service A et Service B à égalité",
+      "Service A",
+      "Service B"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "optionRationales": [
-      "Le service A progresse de (138 - 120) / 120 = +15 %.",
-      "Correct : le service B progresse de (96 - 80) / 80 = +20 %, soit la hausse relative la plus forte.",
       "Le service C progresse de (165 - 150) / 150 = +10 %.",
-      "Les progressions relatives sont différentes : 15 % pour A et 20 % pour B."
+      "Les progressions relatives sont différentes : 15 % pour A et 20 % pour B.",
+      "Le service A progresse de (138 - 120) / 120 = +15 %.",
+      "Correct : le service B progresse de (96 - 80) / 80 = +20 %, soit la hausse relative la plus forte."
     ],
     "explanation": "Calcul des taux : Service A = (138-120)/120 = +15 % ; Service B = (96-80)/80 = +20 % ; Service C = (165-150)/150 = +10 %. Le service B a la plus forte hausse.",
     "sourceType": "original_ai_assisted",
@@ -67,17 +67,17 @@
     "prompt": "Combien de dossiers sont instruits en moyenne chaque jour ouvré ?",
     "stimulus": "Une équipe instruit 420 dossiers en 7 jours ouvrés à rythme régulier et constant.",
     "options": [
+      "65 dossiers",
       "50 dossiers",
-      "55 dossiers",
       "60 dossiers",
-      "65 dossiers"
+      "55 dossiers"
     ],
     "correctIndex": 2,
     "optionRationales": [
+      "Surestime la cadence quotidienne (65 × 7 = 455 dossiers).",
       "Sous-estime la cadence quotidienne (50 × 7 = 350 dossiers au lieu de 420).",
-      "Erreur de division arithmétique (55 × 7 = 385 dossiers).",
       "Correct : 420 dossiers divisés par 7 jours ouvrés donnent 60 dossiers par jour.",
-      "Surestime la cadence quotidienne (65 × 7 = 455 dossiers)."
+      "Erreur de division arithmétique (55 × 7 = 385 dossiers)."
     ],
     "explanation": "Le calcul direct de la moyenne quotidienne donne 420 divisé par 7, soit exactement 60 dossiers par jour ouvré.",
     "sourceType": "original_ai_assisted",
@@ -98,17 +98,17 @@
     "prompt": "Quel est le nouveau temps moyen de réponse après optimisation ?",
     "stimulus": "Un temps moyen de réponse de 40 minutes est réduit de 15 % grâce à une procédure simplifiée.",
     "options": [
-      "34 minutes",
-      "35 minutes",
       "36 minutes",
-      "38 minutes"
+      "34 minutes",
+      "38 minutes",
+      "35 minutes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : réduction de 15 % de 40 min = 6 min ; 40 - 6 = 34 minutes.",
-      "Soustraction erronée de 5 minutes au lieu de 6 minutes.",
       "Correspondrait à une réduction de 10 % seulement (4 minutes retranchées).",
-      "Correspondrait à une réduction de 5 % seulement (2 minutes retranchées)."
+      "Correct : réduction de 15 % de 40 min = 6 min ; 40 - 6 = 34 minutes.",
+      "Correspondrait à une réduction de 5 % seulement (2 minutes retranchées).",
+      "Soustraction erronée de 5 minutes au lieu de 6 minutes."
     ],
     "explanation": "La réduction s'élève à 15 % de 40 = 6 minutes. Le nouveau délai est donc de 40 - 6 = 34 minutes.",
     "sourceType": "original_ai_assisted",
@@ -129,15 +129,15 @@
     "prompt": "Combien de demandes reçoivent une décision favorable ?",
     "stimulus": "Sur un total de 250 demandes d'agrément examinées, 72 % sont approuvées.",
     "options": [
-      "170 demandes",
       "175 demandes",
+      "170 demandes",
       "180 demandes",
       "185 demandes"
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Correspondrait à 68 % de 250 demandes.",
       "Correspondrait à 70 % de 250 demandes.",
+      "Correspondrait à 68 % de 250 demandes.",
       "Correct : 250 × 0,72 = 180 demandes approuvées.",
       "Correspondrait à 74 % de 250 demandes."
     ],
@@ -186,16 +186,16 @@
     },
     "options": [
       "Trimestre 1",
+      "Trimestre 1 et Trimestre 3 à égalité",
       "Trimestre 2",
-      "Trimestre 3",
-      "Trimestre 1 et Trimestre 3 à égalité"
+      "Trimestre 3"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "optionRationales": [
       "T1 affiche un taux de 160 / 200 = 80 %.",
+      "T1 et T3 atteignent tous deux 80 %, mais restent inférieurs aux 85 % de T2.",
       "Correct : T2 affiche un taux de 204 / 240 = 85 %, le plus performant.",
-      "T3 affiche un taux de 144 / 180 = 80 %.",
-      "T1 et T3 atteignent tous deux 80 %, mais restent inférieurs aux 85 % de T2."
+      "T3 affiche un taux de 144 / 180 = 80 %."
     ],
     "explanation": "Taux de résolution : T1 = 160/200 = 80 % ; T2 = 204/240 = 85 % ; T3 = 144/180 = 80 %. Le trimestre 2 est le plus performant.",
     "sourceType": "original_ai_assisted",
@@ -216,17 +216,17 @@
     "prompt": "Quel montant résiduel reste-t-il disponible sur l'enveloppe allouée ?",
     "stimulus": "Une enveloppe budgétaire de 80 000 euros est consommée à hauteur de 45 % au premier trimestre, puis 25 % du budget initial au second trimestre.",
     "options": [
-      "24 000 euros",
-      "20 000 euros",
       "28 000 euros",
-      "16 000 euros"
+      "20 000 euros",
+      "16 000 euros",
+      "24 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : consommation cumulée de 70 % ; reste 30 % de 80 000 € = 24 000 euros.",
-      "Correspondrait à 25 % de reliquat (75 % de consommation supposée).",
       "Sous-estimerait la consommation globale à 65 % au lieu de 70 %.",
-      "Calculerait seulement 20 % de budget résiduel."
+      "Correspondrait à 25 % de reliquat (75 % de consommation supposée).",
+      "Calculerait seulement 20 % de budget résiduel.",
+      "Correct : consommation cumulée de 70 % ; reste 30 % de 80 000 € = 24 000 euros."
     ],
     "explanation": "La consommation totale représente 45 % + 25 % = 70 % du montant initial. La part restante est de 30 % de 80 000 euros, soit 24 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -247,17 +247,17 @@
     "prompt": "Quelle est la moyenne pondérée des trois évaluations ?",
     "stimulus": "Évaluation A (coefficient 3) : 14/20. Évaluation B (coefficient 2) : 16/20. Évaluation C (coefficient 5) : 11/20.",
     "options": [
+      "12,5 / 20",
       "12,9 / 20",
       "13,2 / 20",
-      "13,7 / 20",
-      "12,5 / 20"
+      "13,7 / 20"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Sous-évaluation globale résultant d'une erreur de sommation des coefficients.",
       "Correct : [(14×3) + (16×2) + (11×5)] / 10 = (42 + 32 + 55) / 10 = 129 / 10 = 12,9.",
       "Erreur d'application sur la pondération du coefficient 5.",
-      "Correspondrait à la moyenne simple non pondérée : (14 + 16 + 11) / 3 = 13,67.",
-      "Sous-évaluation globale résultant d'une erreur de sommation des coefficients."
+      "Correspondrait à la moyenne simple non pondérée : (14 + 16 + 11) / 3 = 13,67."
     ],
     "explanation": "Calcul de la moyenne pondérée : [(14×3) + (16×2) + (11×5)] / (3+2+5) = (42 + 32 + 55) / 10 = 129 / 10 = 12,9 / 20.",
     "sourceType": "original_ai_assisted",
@@ -278,17 +278,17 @@
     "prompt": "Quelle est la distance réelle sur le terrain correspondant à cette mesure ?",
     "stimulus": "Sur un plan d'urbanisme à l'échelle 1:2 500, un tracé de raccordement mesure 8 centimètres.",
     "options": [
-      "200 mètres",
-      "20 mètres",
       "2 000 mètres",
-      "160 mètres"
+      "200 mètres",
+      "160 mètres",
+      "20 mètres"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 8 cm × 2 500 = 20 000 cm = 200 mètres.",
-      "Erreur d'un facteur 10 dans la conversion des centimètres en mètres.",
       "Erreur d'un facteur 10 par excès dans la conversion d'unités.",
-      "Confusion dans le calcul (8 × 2 000 au lieu de 8 × 2 500)."
+      "Correct : 8 cm × 2 500 = 20 000 cm = 200 mètres.",
+      "Confusion dans le calcul (8 × 2 000 au lieu de 8 × 2 500).",
+      "Erreur d'un facteur 10 dans la conversion des centimètres en mètres."
     ],
     "explanation": "La distance réelle équivaut à 8 cm × 2 500 = 20 000 cm = 200 mètres.",
     "sourceType": "original_ai_assisted",
@@ -310,16 +310,16 @@
     "stimulus": "L'agent X traite 6 dossiers par heure. L'agent Y traite 4 dossiers par heure.",
     "options": [
       "6 heures",
-      "5 heures",
+      "8 heures",
       "7 heures",
-      "8 heures"
+      "5 heures"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : cadence cumulée de 6 + 4 = 10 dossiers/h ; 60 / 10 = 6 heures.",
-      "Sous-estime le temps nécessaire (à 10 dossiers/h, 5 h ne produiraient que 50 dossiers).",
+      "Correspondrait au travail d'un seul agent sans mise en commun des cadences.",
       "Surestimerait la durée nécessaire en minorant le débit conjoint.",
-      "Correspondrait au travail d'un seul agent sans mise en commun des cadences."
+      "Sous-estime le temps nécessaire (à 10 dossiers/h, 5 h ne produiraient que 50 dossiers)."
     ],
     "explanation": "Leur cadence combinée est de 6 + 4 = 10 dossiers par heure. Pour 60 dossiers, il faut 60 / 10 = 6 heures.",
     "sourceType": "original_ai_assisted",
@@ -340,17 +340,17 @@
     "prompt": "De combien de points de pourcentage le taux de présence a-t-il augmenté ?",
     "stimulus": "Le taux de participation des agents aux formations passe de 60 % à 75 % d'une année sur l'autre.",
     "options": [
-      "15 points",
+      "20 points",
       "25 points",
-      "15 %",
-      "20 points"
+      "15 points",
+      "15 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : l'écart arithmétique absolu entre 75 % et 60 % est de 15 points de pourcentage.",
+      "Erreur arithmétique dans la soustraction 75 - 60.",
       "Confond la progression relative (+25 %) avec l'écart absolu en points.",
-      "Emploie le symbole % réservé aux variations relatives, et non aux points d'écart.",
-      "Erreur arithmétique dans la soustraction 75 - 60."
+      "Correct : l'écart arithmétique absolu entre 75 % et 60 % est de 15 points de pourcentage.",
+      "Emploie le symbole % réservé aux variations relatives, et non aux points d'écart."
     ],
     "explanation": "La différence entre deux pourcentages s'exprime en points de pourcentage : 75 - 60 = 15 points (alors que la hausse relative est de 25 %).",
     "sourceType": "original_ai_assisted",
@@ -397,17 +397,17 @@
       "note": "Crédits consommés arrêtés au 31 décembre."
     },
     "options": [
-      "500 milliers d'euros",
       "480 milliers d'euros",
       "520 milliers d'euros",
-      "700 milliers d'euros"
+      "700 milliers d'euros",
+      "500 milliers d'euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : addition des deux semestres de la Direction B : 240 + 260 = 500 milliers d'euros.",
       "Correspondrait à la somme de Direction C (180 + 220 = 400) plus une erreur de calcul.",
       "Erreur d'addition sur le deuxième semestre.",
-      "Correspond au total de la Direction A (320 + 380 = 700 milliers d'euros)."
+      "Correspond au total de la Direction A (320 + 380 = 700 milliers d'euros).",
+      "Correct : addition des deux semestres de la Direction B : 240 + 260 = 500 milliers d'euros."
     ],
     "explanation": "La Direction B a consommé 240 milliers d'euros au premier semestre et 260 milliers d'euros au second semestre. La somme annuelle totale est de 240 + 260 = 500 milliers d'euros (soit 500 000 euros).",
     "sourceType": "original_ai_assisted",
@@ -428,17 +428,17 @@
     "prompt": "Quel montant revient au Projet Sud selon la clé de répartition convenue ?",
     "stimulus": "Une dotation régionale de 90 000 euros est partagée entre le Projet Nord et le Projet Sud selon un ratio de 2 pour 3 (2 parts pour Nord, 3 parts pour Sud).",
     "options": [
-      "54 000 euros",
-      "36 000 euros",
+      "60 000 euros",
       "45 000 euros",
-      "60 000 euros"
+      "36 000 euros",
+      "54 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 3 parts sur 5 au total : 90 000 × (3 / 5) = 54 000 euros.",
-      "Correspond à la part du Projet Nord (2 parts sur 5 : 90 000 × 2 / 5 = 36 000 euros).",
+      "Calcul erroné basé sur les deux tiers directs de l'enveloppe globale.",
       "Correspondrait à un partage égalitaire 1 pour 1 (90 000 / 2).",
-      "Calcul erroné basé sur les deux tiers directs de l'enveloppe globale."
+      "Correspond à la part du Projet Nord (2 parts sur 5 : 90 000 × 2 / 5 = 36 000 euros).",
+      "Correct : 3 parts sur 5 au total : 90 000 × (3 / 5) = 54 000 euros."
     ],
     "explanation": "Le nombre total de parts est de 2 + 3 = 5 parts. La valeur d'une part s'élève à 90 000 / 5 = 18 000 euros. Le Projet Sud disposant de 3 parts, il reçoit 3 × 18 000 = 54 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -459,17 +459,17 @@
     "prompt": "Quel est le montant final de la subvention après ces deux évolutions successives ?",
     "stimulus": "Une subvention initiale de 50 000 euros augmente de 10 % la première année, puis diminue de 10 % l'année suivante.",
     "options": [
-      "49 500 euros",
       "50 000 euros",
-      "49 000 euros",
-      "51 000 euros"
+      "51 000 euros",
+      "49 500 euros",
+      "49 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 50 000 × 1,10 = 55 000 €, puis 55 000 × 0,90 = 49 500 euros.",
       "Erreur classique consistant à croire qu'une hausse de 10 % annule une baisse de 10 %.",
-      "Soustraction forfaitaire erronée de 1 000 euros.",
-      "Application inversée des pourcentages conduisant à une surévaluation."
+      "Application inversée des pourcentages conduisant à une surévaluation.",
+      "Correct : 50 000 × 1,10 = 55 000 €, puis 55 000 × 0,90 = 49 500 euros.",
+      "Soustraction forfaitaire erronée de 1 000 euros."
     ],
     "explanation": "La première année, la subvention atteint 50 000 × 1,10 = 55 000 euros. La seconde année, la baisse de 10 % s'applique à cette nouvelle base : 55 000 × 0,90 = 49 500 euros (perte nette de 1 % par rapport au montant de départ).",
     "sourceType": "original_ai_assisted",
@@ -490,17 +490,17 @@
     "prompt": "Quel est le coût moyen de traitement par dossier sur l'ensemble des dossiers instruits ?",
     "stimulus": "Le bureau 1 traite 100 dossiers pour un coût moyen de 20 euros par dossier. Le bureau 2 traite 300 dossiers pour un coût moyen de 40 euros par dossier.",
     "options": [
-      "35 euros",
-      "30 euros",
+      "38 euros",
       "32 euros",
-      "38 euros"
+      "30 euros",
+      "35 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : coût global = (100 × 20) + (300 × 40) = 2 000 + 12 000 = 14 000 € ; 14 000 / 400 = 35 euros.",
-      "Moyenne arithmétique simple erronée sans pondération : (20 + 40) / 2 = 30 euros.",
+      "Surpondération excessive du bureau 2.",
       "Sous-pondération arbitraire du bureau 2.",
-      "Surpondération excessive du bureau 2."
+      "Moyenne arithmétique simple erronée sans pondération : (20 + 40) / 2 = 30 euros.",
+      "Correct : coût global = (100 × 20) + (300 × 40) = 2 000 + 12 000 = 14 000 € ; 14 000 / 400 = 35 euros."
     ],
     "explanation": "Le coût total est de (100 × 20 €) + (300 × 40 €) = 2 000 € + 12 000 € = 14 000 €. Le nombre total de dossiers étant de 100 + 300 = 400, le coût moyen pondéré est de 14 000 / 400 = 35 euros.",
     "sourceType": "original_ai_assisted",
@@ -521,16 +521,16 @@
     "prompt": "Quel est le pourcentage de variation du nombre de visites entre le premier et le second semestre ?",
     "stimulus": "Le portail administratif enregistre 8 000 visites au premier semestre et 10 000 visites au second semestre.",
     "options": [
-      "+25,0 %",
       "+20,0 %",
       "+2 000 %",
+      "+25,0 %",
       "+15,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : variation relative = (10 000 - 8 000) / 8 000 = 2 000 / 8 000 = +25,0 %.",
       "Erreur de dénominateur : division par la valeur finale 10 000 au lieu de la base 8 000.",
       "Confusion entre la valeur absolue de l'augmentation (+2 000) et le pourcentage.",
+      "Correct : variation relative = (10 000 - 8 000) / 8 000 = 2 000 / 8 000 = +25,0 %.",
       "Sous-estimation arbitraire du ratio de croissance."
     ],
     "explanation": "Le taux d'évolution se calcule selon la formule (Valeur finale - Valeur initiale) / Valeur initiale : (10 000 - 8 000) / 8 000 = 2 000 / 8 000 = 0,25, soit une progression de +25,0 %.",
@@ -552,17 +552,17 @@
     "prompt": "Quel est le montant de la remise totale accordée sur cette commande de fournitures ?",
     "stimulus": "Un marché de fournitures administratives d'un montant brut de 12 000 euros bénéficie d'une remise commerciale de 8 %.",
     "options": [
-      "960 euros",
-      "800 euros",
       "1 040 euros",
-      "1 200 euros"
+      "1 200 euros",
+      "800 euros",
+      "960 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 12 000 × 0,08 = 960 euros.",
-      "Calcul basé sur un taux erroné de 6,67 %.",
       "Surestimation correspondant à un taux de 8,67 %.",
-      "Correspondrait à une remise de 10 % au lieu de 8 %."
+      "Correspondrait à une remise de 10 % au lieu de 8 %.",
+      "Calcul basé sur un taux erroné de 6,67 %.",
+      "Correct : 12 000 × 0,08 = 960 euros."
     ],
     "explanation": "Le montant de la remise se calcule directement : 12 000 € × (8 / 100) = 960 euros.",
     "sourceType": "original_ai_assisted",
@@ -608,16 +608,16 @@
       ]
     },
     "options": [
-      "Département Sud",
-      "Département Nord",
       "Département Centre",
+      "Département Nord",
+      "Département Sud",
       "Département Nord et Centre à égalité"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 220 / 250 = 88,0 %, taux le plus élevé du tableau.",
-      "Département Nord : 170 / 200 = 85,0 %.",
       "Département Centre : 126 / 150 = 84,0 %.",
+      "Département Nord : 170 / 200 = 85,0 %.",
+      "Correct : 220 / 250 = 88,0 %, taux le plus élevé du tableau.",
       "Les taux de Nord (85 %) et Centre (84 %) sont distincts et inférieurs à Sud."
     ],
     "explanation": "Taux de conformité respectifs : Nord = 170 / 200 = 85,0 % ; Sud = 220 / 250 = 88,0 % ; Centre = 126 / 150 = 84,0 %. Le Département Sud présente le taux le plus élevé.",
@@ -639,17 +639,17 @@
     "prompt": "Quelle est la variation relative des inscriptions entre 2024 et 2025 ?",
     "stimulus": "Le nombre d'inscriptions à l'examen professionnel est passé de 400 candidats en 2024 à 460 candidats en 2025.",
     "options": [
-      "+15,0 %",
       "+12,0 %",
-      "+60,0 %",
-      "+13,0 %"
+      "+15,0 %",
+      "+13,0 %",
+      "+60,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : (460 - 400) / 400 = 60 / 400 = +15,0 %.",
       "Division erronée par la valeur finale (60 / 460 ≈ 13 %).",
-      "Confusion entre l'augmentation en valeur absolue (+60) et le pourcentage.",
-      "Erreur d'arrondi sur la valeur finale."
+      "Correct : (460 - 400) / 400 = 60 / 400 = +15,0 %.",
+      "Erreur d'arrondi sur la valeur finale.",
+      "Confusion entre l'augmentation en valeur absolue (+60) et le pourcentage."
     ],
     "explanation": "La variation relative est donnée par (Valeur finale - Valeur initiale) / Valeur initiale : (460 - 400) / 400 = 60 / 400 = 0,15, soit une progression de +15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -670,17 +670,17 @@
     "prompt": "Quelle est la durée moyenne de traitement par dossier sur l'ensemble de la journée ?",
     "stimulus": "Matin : 10 dossiers traités en 20 minutes chacun. Après-midi : 20 dossiers traités en 35 minutes chacun.",
     "options": [
-      "30 minutes",
       "27,5 minutes",
-      "25 minutes",
-      "32,5 minutes"
+      "32,5 minutes",
+      "30 minutes",
+      "25 minutes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : [(10 × 20) + (20 × 35)] / 30 = (200 + 700) / 30 = 900 / 30 = 30 minutes.",
       "Moyenne arithmétique simple non pondérée : (20 + 35) / 2 = 27,5 minutes.",
-      "Sous-pondération arbitraire des dossiers de l'après-midi.",
-      "Surpondération excessive de l'après-midi."
+      "Surpondération excessive de l'après-midi.",
+      "Correct : [(10 × 20) + (20 × 35)] / 30 = (200 + 700) / 30 = 900 / 30 = 30 minutes.",
+      "Sous-pondération arbitraire des dossiers de l'après-midi."
     ],
     "explanation": "Calcul de la moyenne pondérée : temps total = (10 × 20) + (20 × 35) = 200 + 700 = 900 minutes. Divisé par 30 dossiers (10 + 20), on obtient 30 minutes par dossier.",
     "sourceType": "original_ai_assisted",
@@ -701,16 +701,16 @@
     "prompt": "Combien d'agents seront affectés au Pôle Accueil selon ce ratio ?",
     "stimulus": "Une enveloppe de 35 nouveaux agents est répartie entre le Pôle Accueil et le Pôle Instruction selon un ratio de 3 pour 4 (3 parts pour l'Accueil, 4 parts pour l'Instruction).",
     "options": [
+      "12 agents",
       "15 agents",
       "20 agents",
-      "12 agents",
       "18 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Sous-évaluation résultant d'une erreur de calcul.",
       "Correct : total de 3 + 4 = 7 parts ; 1 part = 35 / 7 = 5 agents ; Accueil = 3 × 5 = 15 agents.",
       "Correspond à la part du Pôle Instruction (4 × 5 = 20 agents).",
-      "Sous-évaluation résultant d'une erreur de calcul.",
       "Répartition erronée sans respect du dénominateur 7."
     ],
     "explanation": "Le ratio 3:4 totalise 7 parts égales. Une part vaut 35 / 7 = 5 agents. Le Pôle Accueil recevant 3 parts, il accueille 3 × 5 = 15 agents.",
@@ -732,17 +732,17 @@
     "prompt": "Quel est le prix final du logiciel après l'application de ces deux remises successives ?",
     "stimulus": "Une licence logicielle d'une valeur de 2 000 euros bénéficie d'une remise initiale de 20 %, puis d'une remise additionnelle de 10 % sur le montant résiduel.",
     "options": [
-      "1 440 euros",
-      "1 400 euros",
+      "1 380 euros",
       "1 500 euros",
-      "1 380 euros"
+      "1 400 euros",
+      "1 440 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 2 000 × 0,80 = 1 600 €, puis 1 600 × 0,90 = 1 440 euros.",
-      "Additionne à tort les deux taux (20 % + 10 % = 30 % de 2 000 € = 1 400 €).",
+      "Erreur de calcul dans la cascade des pourcentages.",
       "Sous-estime la remise cumulée.",
-      "Erreur de calcul dans la cascade des pourcentages."
+      "Additionne à tort les deux taux (20 % + 10 % = 30 % de 2 000 € = 1 400 €).",
+      "Correct : 2 000 × 0,80 = 1 600 €, puis 1 600 × 0,90 = 1 440 euros."
     ],
     "explanation": "Après la première remise de 20 %, le prix devient 2 000 € × 0,80 = 1 600 €. La seconde remise de 10 % s'applique sur cette base : 1 600 € × 0,90 = 1 440 euros.",
     "sourceType": "original_ai_assisted",
@@ -763,15 +763,15 @@
     "prompt": "Combien d'heures sont nécessaires pour instruire les 90 dossiers restants avec l'équipe réunie ?",
     "stimulus": "L'agent A instruit 5 dossiers par heure. L'agent B instruit 7 dossiers par heure. L'agent C instruit 3 dossiers par heure. Ils travaillent conjointement.",
     "options": [
-      "6 heures",
       "5 heures",
+      "6 heures",
       "7 heures",
       "8 heures"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : cadence cumulée = 5 + 7 + 3 = 15 dossiers/h ; 90 / 15 = 6 heures.",
       "À 15 dossiers/h, 5 heures ne produiraient que 75 dossiers.",
+      "Correct : cadence cumulée = 5 + 7 + 3 = 15 dossiers/h ; 90 / 15 = 6 heures.",
       "Surestimation de la durée requise.",
       "Correspondrait au travail sans l'agent B."
     ],
@@ -819,17 +819,17 @@
       ]
     },
     "options": [
+      "140 milliers d'euros",
       "150 milliers d'euros",
-      "130 milliers d'euros",
       "170 milliers d'euros",
-      "140 milliers d'euros"
+      "130 milliers d'euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Omet une partie des reliquats budgétaires.",
       "Correct : écarts respectifs = (500 - 420) + (300 - 270) + (200 - 160) = 80 + 30 + 40 = 150 milliers d'euros.",
-      "Sous-estime le reliquat du Programme 1.",
       "Erreur d'addition sur les crédits résiduels.",
-      "Omet une partie des reliquats budgétaires."
+      "Sous-estime le reliquat du Programme 1."
     ],
     "explanation": "Les reliquats non consommés s'élèvent à : Programme 1 = 80 k€, Programme 2 = 30 k€, Programme 3 = 40 k€. La somme totale est de 80 + 30 + 40 = 150 milliers d'euros.",
     "sourceType": "original_ai_assisted",
@@ -851,16 +851,16 @@
     "stimulus": "Le taux de réussite à l'examen passe de 45 % lors de la session de printemps à 58 % lors de la session d'automne.",
     "options": [
       "+13 points",
-      "+28,9 %",
       "+13 %",
-      "+10 points"
+      "+10 points",
+      "+28,9 %"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 58 - 45 = 13 points de pourcentage d'écart absolu.",
-      "Progression relative : (58 - 45) / 45 ≈ +28,9 %, et non écart en points.",
       "Confusion d'unité : l'écart entre deux taux s'exprime en points et non en pour cent.",
-      "Erreur arithmétique de soustraction."
+      "Erreur arithmétique de soustraction.",
+      "Progression relative : (58 - 45) / 45 ≈ +28,9 %, et non écart en points."
     ],
     "explanation": "La différence arithmétique directe entre deux pourcentages s'exprime en points de pourcentage : 58 − 45 = 13 points de pourcentage.",
     "sourceType": "original_ai_assisted",
@@ -881,17 +881,17 @@
     "prompt": "Quelle est la moyenne arithmétique simple des cinq notes obtenues ?",
     "stimulus": "Notes obtenues aux cinq épreuves du concours : 12/20, 14/20, 15/20, 11/20, 18/20.",
     "options": [
-      "14,0 / 20",
-      "13,5 / 20",
+      "15,0 / 20",
       "14,5 / 20",
-      "15,0 / 20"
+      "14,0 / 20",
+      "13,5 / 20"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : (12 + 14 + 15 + 11 + 18) / 5 = 70 / 5 = 14,0 / 20.",
-      "Sous-estime la somme des notes de 2,5 points.",
+      "Arrondi excessif sans justification mathématique.",
       "Surestimation résultant d'une erreur d'addition.",
-      "Arrondi excessif sans justification mathématique."
+      "Correct : (12 + 14 + 15 + 11 + 18) / 5 = 70 / 5 = 14,0 / 20.",
+      "Sous-estime la somme des notes de 2,5 points."
     ],
     "explanation": "La somme des notes est 12 + 14 + 15 + 11 + 18 = 70. Divisée par 5 épreuves, la moyenne simple est de 70 / 5 = 14,0 / 20.",
     "sourceType": "original_ai_assisted",
@@ -912,16 +912,16 @@
     "prompt": "Quelle est la distance réelle sur le terrain correspondant à ce tracé ?",
     "stimulus": "Sur un plan cadastral à l'échelle 1:5 000, une voie d'accès mesure 6 centimètres.",
     "options": [
-      "300 mètres",
-      "30 mètres",
       "3 000 mètres",
+      "30 mètres",
+      "300 mètres",
       "600 mètres"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 6 cm × 5 000 = 30 000 cm = 300 mètres.",
-      "Erreur d'un facteur 10 dans la conversion d'unités (30 m).",
       "Erreur par excès d'un facteur 10 (3 000 m).",
+      "Erreur d'un facteur 10 dans la conversion d'unités (30 m).",
+      "Correct : 6 cm × 5 000 = 30 000 cm = 300 mètres.",
       "Confusion dans la multiplication (6 × 10 000 au lieu de 6 × 5 000)."
     ],
     "explanation": "Distance réelle = 6 cm × 5 000 = 30 000 cm. Converti en mètres (1 m = 100 cm), cela équivaut à 30 000 / 100 = 300 mètres.",
@@ -943,17 +943,17 @@
     "prompt": "Combien d'agents participent régulièrement au télétravail ?",
     "stimulus": "Sur un effectif total de 450 agents, 40 % bénéficient d'une convention de télétravail régulière.",
     "options": [
-      "180 agents",
-      "175 agents",
       "190 agents",
-      "200 agents"
+      "175 agents",
+      "200 agents",
+      "180 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 450 × 0,40 = 180 agents.",
-      "Calcul erroné basé sur 38,9 %.",
       "Surestimation correspondant à 42,2 %.",
-      "Calcul correspondant à 44,4 % de l'effectif."
+      "Calcul erroné basé sur 38,9 %.",
+      "Calcul correspondant à 44,4 % de l'effectif.",
+      "Correct : 450 × 0,40 = 180 agents."
     ],
     "explanation": "Le calcul est direct : 450 × (40 / 100) = 45 × 4 = 180 agents.",
     "sourceType": "original_ai_assisted",
@@ -974,16 +974,16 @@
     "prompt": "Quel est le pourcentage de baisse de la consommation de papier ?",
     "stimulus": "La consommation annuelle de rames de papier passe de 5 000 rames à 3 500 rames grâce à la dématérialisation.",
     "options": [
+      "-1 500 %",
       "-30,0 %",
       "-25,0 %",
-      "-1 500 %",
       "-35,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Confusion entre volume absolu (-1 500 rames) et pourcentage.",
       "Correct : (3 500 - 5 000) / 5 000 = -1 500 / 5 000 = -30,0 %.",
       "Sous-estime la réduction en divisant par une base erronée.",
-      "Confusion entre volume absolu (-1 500 rames) et pourcentage.",
       "Division par la valeur finale au lieu de la valeur initiale (-1 500 / 3 500 ≈ -42,8 %)."
     ],
     "explanation": "La variation relative est (3 500 - 5 000) / 5 000 = -1 500 / 5 000 = -0,30, soit une diminution de 30,0 %.",
@@ -1005,15 +1005,15 @@
     "prompt": "Quelle est la note globale pondérée du candidat ?",
     "stimulus": "Épreuve écrite (coefficient 4) : 15/20. Épreuve orale (coefficient 6) : 12/20.",
     "options": [
-      "13,2 / 20",
       "13,5 / 20",
+      "13,2 / 20",
       "13,0 / 20",
       "13,8 / 20"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : [(15 × 4) + (12 × 6)] / (4 + 6) = (60 + 72) / 10 = 132 / 10 = 13,2 / 20.",
       "Moyenne arithmétique simple non pondérée : (15 + 12) / 2 = 13,5 / 20.",
+      "Correct : [(15 × 4) + (12 × 6)] / (4 + 6) = (60 + 72) / 10 = 132 / 10 = 13,2 / 20.",
       "Sous-évaluation sans respect des coefficients.",
       "Inversion des coefficients en faveur de l'écrit [(15 × 6) + (12 × 4)] / 10 = 13,8."
     ],
@@ -1037,16 +1037,16 @@
     "stimulus": "Sur un fonds total de 1 200 cartons, le rapport entre cartons traités et cartons non traités est de 3 pour 1.",
     "options": [
       "300 cartons",
+      "250 cartons",
       "400 cartons",
-      "900 cartons",
-      "250 cartons"
+      "900 cartons"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 3 + 1 = 4 parts ; 1 part (non traités) = 1 200 / 4 = 300 cartons.",
+      "Sous-évaluation du reliquat d'archivage.",
       "Calcul erroné divisant par 3 au lieu de 4.",
-      "Correspond aux cartons déjà traités (3 parts = 900 cartons).",
-      "Sous-évaluation du reliquat d'archivage."
+      "Correspond aux cartons déjà traités (3 parts = 900 cartons)."
     ],
     "explanation": "Le ratio 3:1 correspond à 4 parts au total. Chaque part représente 1 200 / 4 = 300 cartons. La part restante non traitée étant de 1, il reste 300 cartons.",
     "sourceType": "original_ai_assisted",
@@ -1067,16 +1067,16 @@
     "prompt": "Quel est le coût moyen de repas par agent lors de ce séminaire ?",
     "stimulus": "La facture de restauration s'élève à 1 800 euros pour un groupe de 75 participants.",
     "options": [
+      "25 euros",
       "24 euros",
       "22 euros",
-      "25 euros",
       "26 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Arrondi arbitraire à 25 euros.",
       "Correct : 1 800 / 75 = 24 euros par participant.",
       "Sous-estime le coût unitaire réel.",
-      "Arrondi arbitraire à 25 euros.",
       "Surestimation arithmétique."
     ],
     "explanation": "Division simple : 1 800 € / 75 = 24 euros par participant.",
@@ -1098,16 +1098,16 @@
     "prompt": "Combien d'agents ont formulé une demande de mobilité interne ?",
     "stimulus": "Au sein d'un ministère comptant 800 agents, 15 % ont déposé une demande de mobilité cette année.",
     "options": [
-      "120 agents",
       "110 agents",
       "130 agents",
+      "120 agents",
       "125 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 800 × 0,15 = 120 agents.",
       "Correspondrait à un taux de 13,75 %.",
       "Correspondrait à un taux de 16,25 %.",
+      "Correct : 800 × 0,15 = 120 agents.",
       "Erreur d'arrondi sur le calcul direct."
     ],
     "explanation": "Calcul direct : 800 × (15 / 100) = 8 × 15 = 120 agents.",
@@ -1154,17 +1154,17 @@
       ]
     },
     "options": [
-      "Trimestre 2",
-      "Trimestre 3",
+      "Trimestre 2 et Trimestre 3 à égalité",
       "Trimestre 4",
-      "Trimestre 2 et Trimestre 3 à égalité"
+      "Trimestre 2",
+      "Trimestre 3"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : T2 gagne +80 dossiers (380 - 300), contre +60 en T3 et +50 en T4.",
-      "T3 gagne 440 - 380 = 60 dossiers, soit moins que T2.",
+      "Les progressions trimestrielles sont distinctes (80 vs 60 dossiers).",
       "T4 gagne 490 - 440 = 50 dossiers, soit moins que T2.",
-      "Les progressions trimestrielles sont distinctes (80 vs 60 dossiers)."
+      "Correct : T2 gagne +80 dossiers (380 - 300), contre +60 en T3 et +50 en T4.",
+      "T3 gagne 440 - 380 = 60 dossiers, soit moins que T2."
     ],
     "explanation": "Écarts absolus successifs : T2 - T1 = 380 - 300 = +80 ; T3 - T2 = 440 - 380 = +60 ; T4 - T3 = 490 - 440 = +50. La plus forte hausse en valeur absolue a lieu au Trimestre 2 (+80 dossiers).",
     "sourceType": "original_ai_assisted",
@@ -1185,17 +1185,17 @@
     "prompt": "Quel est le budget final après ces deux variations annuelles consécutives ?",
     "stimulus": "Un budget de fonctionnement de 100 000 euros diminue de 20 % en année 1, puis augmente de 20 % en année 2 sur la base du montant réduit.",
     "options": [
-      "96 000 euros",
       "100 000 euros",
-      "98 000 euros",
-      "94 000 euros"
+      "94 000 euros",
+      "96 000 euros",
+      "98 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 100 000 × 0,80 = 80 000 €, puis 80 000 × 1,20 = 96 000 euros.",
       "Erreur classique consistant à croire qu'une hausse de 20 % compense une baisse de 20 %.",
-      "Calcul erroné minorant la perte globale.",
-      "Sous-estimation excessive du budget reconstitué."
+      "Sous-estimation excessive du budget reconstitué.",
+      "Correct : 100 000 × 0,80 = 80 000 €, puis 80 000 × 1,20 = 96 000 euros.",
+      "Calcul erroné minorant la perte globale."
     ],
     "explanation": "Année 1 : 100 000 € × 0,80 = 80 000 €. Année 2 : 80 000 € × 1,20 = 96 000 €. Le montant final accuse une baisse nette de 4 % par rapport au budget initial.",
     "sourceType": "original_ai_assisted",
@@ -1216,17 +1216,17 @@
     "prompt": "Combien d'appels le centre de contact traite-t-il en moyenne par heure ?",
     "stimulus": "Le centre d'appel a réceptionné 540 communications téléphoniques au cours d'une journée continue de 9 heures d'ouverture.",
     "options": [
+      "50 appels",
       "60 appels",
       "55 appels",
-      "65 appels",
-      "50 appels"
+      "65 appels"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "Sous-évaluation excessive (50 × 9 = 450).",
       "Correct : 540 / 9 = 60 appels par heure.",
       "Sous-estime le flux horaire moyen (55 × 9 = 495).",
-      "Surestimation du flux horaire (65 × 9 = 585).",
-      "Sous-évaluation excessive (50 × 9 = 450)."
+      "Surestimation du flux horaire (65 × 9 = 585)."
     ],
     "explanation": "La moyenne horaire s'obtient en divisant le total des appels par le nombre d'heures d'ouverture : 540 / 9 = 60 appels par heure.",
     "sourceType": "original_ai_assisted",
@@ -1247,16 +1247,16 @@
     "prompt": "Quel est le montant de l'aide accordée pour un projet d'énergie renouvelable de 150 000 euros subventionné à 30 % ?",
     "stimulus": "Projet d'installation photovoltaïque communale.\nCoût total éligible : 150 000 euros.\nTaux d'intervention de l'État : 30 %.",
     "options": [
-      "45 000 euros",
       "30 000 euros",
       "50 000 euros",
+      "45 000 euros",
       "40 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 150 000 × 0,30 = 45 000 euros.",
       "30 000 euros correspondrait à un taux de 20 %.",
       "50 000 euros correspondrait à un tiers (33,3 %).",
+      "Correct : 150 000 × 0,30 = 45 000 euros.",
       "40 000 euros résulte d'une erreur d'évaluation."
     ],
     "explanation": "Le montant de la subvention s'obtient en multipliant le montant éligible par le taux : 150 000 × 0,30 = 45 000 euros.",
@@ -1278,17 +1278,17 @@
     "prompt": "Quel est le taux de variation des dépenses de personnel entre 2024 et 2025 ?",
     "stimulus": "Budget de fonctionnement d'un établissement public :\nDépenses de personnel 2024 : 800 000 euros.\nDépenses de personnel 2025 : 880 000 euros.",
     "options": [
-      "+10,0 %",
-      "+8,0 %",
       "+12,5 %",
-      "+9,1 %"
+      "+10,0 %",
+      "+9,1 %",
+      "+8,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : (880 000 - 800 000) / 800 000 = 80 000 / 800 000 = +10,0 %.",
-      "+8,0 % correspond à une confusion avec l'écart brut de 80 000.",
       "+12,5 % correspond au calcul inversé 100/80.",
-      "+9,1 % correspondrait au calcul rapporté à la valeur finale (80/880)."
+      "Correct : (880 000 - 800 000) / 800 000 = 80 000 / 800 000 = +10,0 %.",
+      "+9,1 % correspondrait au calcul rapporté à la valeur finale (80/880).",
+      "+8,0 % correspond à une confusion avec l'écart brut de 80 000."
     ],
     "explanation": "La variation relative est égale à (Valeur finale - Valeur initiale) / Valeur initiale = (880 000 - 800 000) / 800 000 = +10,0 %.",
     "sourceType": "original_ai_assisted",
@@ -1309,16 +1309,16 @@
     "prompt": "Quel est le coût moyen pondéré d'une journée de formation par stagiaire ?",
     "stimulus": "Session A : 20 participants à 100 euros par jour.\nSession B : 30 participants à 150 euros par jour.",
     "options": [
+      "120 euros",
       "130 euros",
       "125 euros",
-      "120 euros",
       "135 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "120 euros sous-estime le poids de la session B.",
       "Correct : ((20 × 100) + (30 × 150)) / 50 = (2 000 + 4 500) / 50 = 6 500 / 50 = 130 euros.",
       "125 euros est la simple moyenne arithmétique non pondérée de 100 et 150.",
-      "120 euros sous-estime le poids de la session B.",
       "135 euros surestime le coût moyen."
     ],
     "explanation": "Coût total = (20 × 100) + (30 × 150) = 2 000 + 4 500 = 6 500 euros. Nombre total de stagiaires = 50. Moyenne pondérée = 6 500 / 50 = 130 euros.",
@@ -1341,16 +1341,16 @@
     "stimulus": "Crédits de relance informatique : 120 000 euros à ventiler.\nRatio d'attribution Direction A : Direction B = 3 : 2.",
     "options": [
       "72 000 euros",
-      "48 000 euros",
       "60 000 euros",
-      "80 000 euros"
+      "80 000 euros",
+      "48 000 euros"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : total des parts = 3 + 2 = 5 parts. Valeur d'une part = 120 000 / 5 = 24 000 euros. Direction A = 3 × 24 000 = 72 000 euros.",
-      "48 000 euros correspond à la part de la direction B (2 parts).",
       "60 000 euros correspondrait à un partage égalitaire 1:1.",
-      "80 000 euros correspondrait à un ratio 2:1."
+      "80 000 euros correspondrait à un ratio 2:1.",
+      "48 000 euros correspond à la part de la direction B (2 parts)."
     ],
     "explanation": "Le ratio 3:2 comporte 5 parts au total (3 + 2). Chaque part vaut 120 000 / 5 = 24 000 euros. La direction A reçoit 3 parts, soit 72 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -1371,17 +1371,17 @@
     "prompt": "Une commune compte 10 000 habitants en 2023. Sa population augmente de 5,0 % en 2024, puis de 4,0 % en 2025. Quelle est sa population au terme de 2025 ?",
     "stimulus": "Recensement communal :\nPopulation 2023 : 10 000 habitants.\nCroissance en 2024 : +5,0 %.\nCroissance en 2025 : +4,0 %.",
     "options": [
-      "10 920 habitants",
-      "10 900 habitants",
+      "10 880 habitants",
       "10 950 habitants",
-      "10 880 habitants"
+      "10 900 habitants",
+      "10 920 habitants"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 10 000 × 1,05 = 10 500, puis 10 500 × 1,04 = 10 920 habitants.",
-      "10 900 habitants résulte de l'addition simple sans composition (5 % + 4 % = 9 %).",
+      "10 880 habitants sous-estime la croissance.",
       "10 950 habitants surestime le produit cumulé.",
-      "10 880 habitants sous-estime la croissance."
+      "10 900 habitants résulte de l'addition simple sans composition (5 % + 4 % = 9 %).",
+      "Correct : 10 000 × 1,05 = 10 500, puis 10 500 × 1,04 = 10 920 habitants."
     ],
     "explanation": "La croissance cumulée est multiplicative : 10 000 × 1,05 = 10 500 habitants au terme de 2024. Puis 10 500 × 1,04 = 10 920 habitants fin 2025.",
     "sourceType": "original_ai_assisted",
@@ -1402,17 +1402,17 @@
     "prompt": "Quel est le taux de consommation du budget d'investissement au 30 septembre ?",
     "stimulus": "Suivi budgétaire annuel :\nCrédits votés : 2 000 000 euros.\nCrédits ordonnancés au 30 septembre : 1 400 000 euros.",
     "options": [
-      "70,0 %",
-      "65,0 %",
       "75,0 %",
-      "60,0 %"
+      "60,0 %",
+      "70,0 %",
+      "65,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 1 400 000 / 2 000 000 = 0,70 soit 70,0 %.",
-      "65,0 % correspondrait à 1 300 000 euros.",
       "75,0 % correspondrait à 1 500 000 euros.",
-      "60,0 % correspondrait à 1 200 000 euros."
+      "60,0 % correspondrait à 1 200 000 euros.",
+      "Correct : 1 400 000 / 2 000 000 = 0,70 soit 70,0 %.",
+      "65,0 % correspondrait à 1 300 000 euros."
     ],
     "explanation": "Taux de consommation = Dépenses exécutées / Crédits votés = 1 400 000 / 2 000 000 = 70,0 %.",
     "sourceType": "original_ai_assisted",
@@ -1433,17 +1433,17 @@
     "prompt": "Sur un effectif de 400 agents, 15 % travaillent à temps partiel et parmi ceux-ci, 40 % travaillent à mi-temps exact. Combien d'agents travaillent à mi-temps exact ?",
     "stimulus": "Direction générale de l'administration :\nEffectif global : 400 agents.\nTaux de temps partiel : 15 %.\nPart du mi-temps parmi les temps partiels : 40 %.",
     "options": [
-      "24 agents",
-      "20 agents",
+      "30 agents",
       "28 agents",
-      "30 agents"
+      "20 agents",
+      "24 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 400 × 0,15 = 60 agents à temps partiel ; 60 × 0,40 = 24 agents.",
-      "20 agents correspondrait à un tiers des temps partiels.",
+      "30 agents correspondrait à 50 % des temps partiels.",
       "28 agents résulte d'un calcul erroné.",
-      "30 agents correspondrait à 50 % des temps partiels."
+      "20 agents correspondrait à un tiers des temps partiels.",
+      "Correct : 400 × 0,15 = 60 agents à temps partiel ; 60 × 0,40 = 24 agents."
     ],
     "explanation": "Agents à temps partiel : 400 × 0,15 = 60. Agents à mi-temps exact : 60 × 0,40 = 24 agents.",
     "sourceType": "original_ai_assisted",
@@ -1464,17 +1464,17 @@
     "prompt": "Le nombre d'usagers accueillis est passé de 2 500 à 2 000 au guichet. Quel est le pourcentage de baisse ?",
     "stimulus": "Fréquentation du guichet d'accueil citoyen :\nSemestre 1 : 2 500 usagers.\nSemestre 2 : 2 000 usagers.",
     "options": [
-      "-20,0 %",
       "-25,0 %",
+      "-18,0 %",
       "-15,0 %",
-      "-18,0 %"
+      "-20,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : (2 000 - 2 500) / 2 500 = -500 / 2 500 = -0,20 soit -20,0 %.",
       "-25,0 % correspondrait à rapporter la baisse de 500 à la valeur d'arrivée (500 / 2 000).",
+      "-18,0 % résulte d'une erreur de calcul.",
       "-15,0 % sous-estime l'ampleur de la diminution.",
-      "-18,0 % résulte d'une erreur de calcul."
+      "Correct : (2 000 - 2 500) / 2 500 = -500 / 2 500 = -0,20 soit -20,0 %."
     ],
     "explanation": "La variation en pourcentage est calculée par rapport à la valeur de départ : (2 000 - 2 500) / 2 500 = -500 / 2 500 = -20,0 %.",
     "sourceType": "original_ai_assisted",
@@ -1495,16 +1495,16 @@
     "prompt": "Le ratio hommes/femmes parmi les candidats reçus est de 3:5. Si 40 candidats sont admis au total, combien de femmes ont été reçues ?",
     "stimulus": "Résultats du concours administratif :\nNombre total d'admis : 40 candidats.\nRatio Hommes / Femmes : 3 : 5.",
     "options": [
+      "20 candidates",
       "25 candidates",
       "15 candidates",
-      "20 candidates",
       "30 candidates"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "20 candidates supposerait une stricte parité 1:1.",
       "Correct : total parts = 3 + 5 = 8 parts. Valeur d'une part = 40 / 8 = 5. Femmes = 5 × 5 = 25 candidates.",
       "15 candidats correspond au nombre d'hommes (3 parts × 5).",
-      "20 candidates supposerait une stricte parité 1:1.",
       "30 candidates correspondrait à un ratio 1:3."
     ],
     "explanation": "Le ratio comprend 8 parts égales (3 + 5 = 8). Une part équivaut à 40 / 8 = 5 candidats. Les femmes représentent 5 parts, soit 5 × 5 = 25 candidates.",
@@ -1527,16 +1527,16 @@
     "stimulus": "Épreuve écrite (coefficient 3) : 12 / 20.\nÉpreuve orale (coefficient 2) : 15 / 20.",
     "options": [
       "13,2 / 20",
-      "13,5 / 20",
+      "14,0 / 20",
       "13,0 / 20",
-      "14,0 / 20"
+      "13,5 / 20"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : ((12 × 3) + (15 × 2)) / (3 + 2) = (36 + 30) / 5 = 66 / 5 = 13,2 / 20.",
-      "13,5 / 20 est la moyenne arithmétique simple non pondérée (12 + 15)/2.",
+      "14,0 / 20 surpondère indûment l'épreuve orale.",
       "13,0 / 20 sous-évalue la note orale.",
-      "14,0 / 20 surpondère indûment l'épreuve orale."
+      "13,5 / 20 est la moyenne arithmétique simple non pondérée (12 + 15)/2."
     ],
     "explanation": "Total des points = (12 × 3) + (15 × 2) = 36 + 30 = 66 points. Total des coefficients = 3 + 2 = 5. Note moyenne pondérée = 66 / 5 = 13,2 / 20.",
     "sourceType": "original_ai_assisted",
@@ -1557,17 +1557,17 @@
     "prompt": "Quel est le solde budgétaire disponible non engagé en fin d'exercice ?",
     "stimulus": "Dotation initiale : 500 000 euros.\nEngagements réalisés : 420 000 euros.\nFactures payées : 380 000 euros.",
     "options": [
-      "80 000 euros",
       "120 000 euros",
-      "40 000 euros",
-      "100 000 euros"
+      "80 000 euros",
+      "100 000 euros",
+      "40 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : solde disponible non engagé = Dotation (500 000) - Engagements (420 000) = 80 000 euros.",
       "120 000 euros confond le solde disponible avec le solde non payé (500 000 - 380 000).",
-      "40 000 euros correspond à l'écart entre engagements et paiements (420 000 - 380 000).",
-      "100 000 euros résulte d'une mauvaise lecture des chiffres."
+      "Correct : solde disponible non engagé = Dotation (500 000) - Engagements (420 000) = 80 000 euros.",
+      "100 000 euros résulte d'une mauvaise lecture des chiffres.",
+      "40 000 euros correspond à l'écart entre engagements et paiements (420 000 - 380 000)."
     ],
     "explanation": "La disponibilité budgétaire se mesure par rapport aux engagements juridiques pris : 500 000 - 420 000 = 80 000 euros de crédits libres.",
     "sourceType": "original_ai_assisted",
@@ -1588,15 +1588,15 @@
     "prompt": "Un prix d'achat public hors taxes est de 80 000 euros. Le taux de TVA applicable est de 17,0 %. Quel est le montant toutes taxes comprises (TTC) ?",
     "stimulus": "Acquisition de matériel roulant :\nMontant hors taxes : 80 000 euros.\nTaux normal de TVA au Luxembourg : 17,0 %.",
     "options": [
-      "93 600 euros",
       "92 000 euros",
+      "93 600 euros",
       "94 200 euros",
       "91 500 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : TVA = 80 000 × 0,17 = 13 600 euros ; Total TTC = 80 000 + 13 600 = 93 600 euros.",
       "92 000 euros correspondrait à une TVA de 15,0 % (12 000 euros).",
+      "Correct : TVA = 80 000 × 0,17 = 13 600 euros ; Total TTC = 80 000 + 13 600 = 93 600 euros.",
       "94 200 euros surestime le montant de la taxe.",
       "91 500 euros sous-estime le montant de la taxe."
     ],
@@ -1619,17 +1619,17 @@
     "prompt": "Si le trafic des passagers d'une ligne de tramway progresse de 2,0 % par mois de manière constante, quelle est la progression sur 2 mois ?",
     "stimulus": "Fréquentation du réseau métropolitain :\nCroissance mensuelle régulière : +2,0 % par mois.",
     "options": [
+      "+3,98 %",
       "+4,04 %",
-      "+4,00 %",
       "+4,20 %",
-      "+3,98 %"
+      "+4,00 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "+3,98 % sous-estime la croissance.",
       "Correct : 1,02 × 1,02 = 1,0404 soit une hausse globale de +4,04 %.",
-      "+4,00 % est la somme linéaire qui omet les intérêts composés.",
       "+4,20 % surestime l'effet cumulé.",
-      "+3,98 % sous-estime la croissance."
+      "+4,00 % est la somme linéaire qui omet les intérêts composés."
     ],
     "explanation": "Le coefficient multiplicateur sur 2 mois est 1,02 × 1,02 = 1,0404, soit un taux d'accroissement global de (1,0404 - 1) × 100 = +4,04 %.",
     "sourceType": "original_ai_assisted",
@@ -1650,17 +1650,17 @@
     "prompt": "Sur une ligne budgétaire de 90 000 euros, les dépenses de matériel et de prestation externe sont dans un rapport de 4 pour 5. Quel montant revient au matériel ?",
     "stimulus": "Budget de service : 90 000 euros.\nRépartition Matériel : Prestations = 4 : 5.",
     "options": [
-      "40 000 euros",
       "50 000 euros",
-      "45 000 euros",
-      "36 000 euros"
+      "36 000 euros",
+      "40 000 euros",
+      "45 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : total des parts = 4 + 5 = 9 parts. Une part = 90 000 / 9 = 10 000 euros. Matériel = 4 × 10 000 = 40 000 euros.",
       "50 000 euros correspond aux prestations externes (5 parts).",
-      "45 000 euros correspondrait à une division en deux parts égales.",
-      "36 000 euros résulte d'un mauvais calcul de part."
+      "36 000 euros résulte d'un mauvais calcul de part.",
+      "Correct : total des parts = 4 + 5 = 9 parts. Une part = 90 000 / 9 = 10 000 euros. Matériel = 4 × 10 000 = 40 000 euros.",
+      "45 000 euros correspondrait à une division en deux parts égales."
     ],
     "explanation": "Total des parts = 4 + 5 = 9. Chaque part vaut 90 000 / 9 = 10 000 euros. La composante matériel représente 4 parts, soit 40 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -1681,17 +1681,17 @@
     "prompt": "Une administration accorde une remise commerciale de 12,0 % sur un catalogue d'équipements facturé à 25 000 euros. Quel est le montant net à payer ?",
     "stimulus": "Marché de mobilier de bureau :\nMontant brut catalogue : 25 000 euros.\nRemise négociée : 12,0 %.",
     "options": [
-      "22 000 euros",
       "21 500 euros",
-      "22 500 euros",
-      "23 000 euros"
+      "22 000 euros",
+      "23 000 euros",
+      "22 500 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : remise = 25 000 × 0,12 = 3 000 euros ; Net = 25 000 - 3 000 = 22 000 euros.",
       "21 500 euros déduit une remise excessive de 14 %.",
-      "22 500 euros applique une remise de 10 % seulement.",
-      "23 000 euros applique une remise de 8 % seulement."
+      "Correct : remise = 25 000 × 0,12 = 3 000 euros ; Net = 25 000 - 3 000 = 22 000 euros.",
+      "23 000 euros applique une remise de 8 % seulement.",
+      "22 500 euros applique une remise de 10 % seulement."
     ],
     "explanation": "Montant net = Montant brut × (1 - Remise) = 25 000 × (1 - 0,12) = 25 000 × 0,88 = 22 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -1712,17 +1712,17 @@
     "prompt": "Quel est le salaire moyen brut mensuel de ce service de 10 agents ?",
     "stimulus": "Répartition salariale du service :\n6 agents de catégorie B : 4 000 euros bruts.\n4 agents de catégorie A : 6 000 euros bruts.",
     "options": [
-      "4 800 euros",
-      "5 000 euros",
       "4 600 euros",
-      "5 200 euros"
+      "5 200 euros",
+      "4 800 euros",
+      "5 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : ((6 × 4 000) + (4 × 6 000)) / 10 = (24 000 + 24 000) / 10 = 48 000 / 10 = 4 800 euros.",
-      "5 000 euros est la moyenne arithmétique simple non pondérée (4 000 + 6 000)/2.",
       "4 600 euros sous-évalue la part des cadres de catégorie A.",
-      "5 200 euros surévalue la masse salariale globale."
+      "5 200 euros surévalue la masse salariale globale.",
+      "Correct : ((6 × 4 000) + (4 × 6 000)) / 10 = (24 000 + 24 000) / 10 = 48 000 / 10 = 4 800 euros.",
+      "5 000 euros est la moyenne arithmétique simple non pondérée (4 000 + 6 000)/2."
     ],
     "explanation": "Masse salariale totale = (6 × 4 000) + (4 × 6 000) = 24 000 + 24 000 = 48 000 euros. Salaire moyen = 48 000 / 10 = 4 800 euros.",
     "sourceType": "original_ai_assisted",
@@ -1743,17 +1743,17 @@
     "prompt": "Quel est le taux d'accroissement du nombre de télédéclarations entre les deux exercices ?",
     "stimulus": "Plateforme citoyenne en ligne :\nTélédéclarations année N-1 : 40 000 dossiers.\nTélédéclarations année N : 52 000 dossiers.",
     "options": [
-      "+30,0 %",
+      "+28,0 %",
       "+25,0 %",
       "+35,0 %",
-      "+28,0 %"
+      "+30,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : (52 000 - 40 000) / 40 000 = 12 000 / 40 000 = +0,30 soit +30,0 %.",
+      "+28,0 % résulte d'une erreur d'arrondi.",
       "+25,0 % correspondrait à 50 000 dossiers (+10 000).",
       "+35,0 % correspondrait à 54 000 dossiers.",
-      "+28,0 % résulte d'une erreur d'arrondi."
+      "Correct : (52 000 - 40 000) / 40 000 = 12 000 / 40 000 = +0,30 soit +30,0 %."
     ],
     "explanation": "Variation relative = (52 000 - 40 000) / 40 000 = 12 000 / 40 000 = +30,0 %.",
     "sourceType": "original_ai_assisted",
@@ -1774,17 +1774,17 @@
     "prompt": "Si les dépenses réelles dépassent les prévisions de 8,0 % sur un budget prévu de 650 000 euros, quel est le dépassement en valeur absolue ?",
     "stimulus": "Exécution des travaux publics :\nBudget prévisionnel approuvé : 650 000 euros.\nÉcart constaté : dépassement de 8,0 %.",
     "options": [
-      "52 000 euros",
+      "50 000 euros",
       "48 000 euros",
-      "56 000 euros",
-      "50 000 euros"
+      "52 000 euros",
+      "56 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 650 000 × 0,08 = 52 000 euros de surcoût.",
+      "50 000 euros est une estimation arrondie inexacte.",
       "48 000 euros sous-estime le montant (correspondrait à ~7,4 %).",
-      "56 000 euros surestime le dépassement.",
-      "50 000 euros est une estimation arrondie inexacte."
+      "Correct : 650 000 × 0,08 = 52 000 euros de surcoût.",
+      "56 000 euros surestime le dépassement."
     ],
     "explanation": "Le dépassement en euros est égal à 650 000 × 0,08 = 52 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -1806,16 +1806,16 @@
     "stimulus": "Capacité d'accueil hospitalière :\nNombre total de lits : 300.\nRatio Chirurgie : Médecine = 1 : 2.",
     "options": [
       "100 lits",
-      "150 lits",
+      "75 lits",
       "200 lits",
-      "75 lits"
+      "150 lits"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : total parts = 1 + 2 = 3. Valeur d'une part = 300 / 3 = 100 lits de chirurgie.",
-      "150 lits supposerait une répartition égale 1:1.",
+      "75 lits correspondrait à un quart de la capacité.",
       "200 lits correspond aux lits de médecine (2 parts).",
-      "75 lits correspondrait à un quart de la capacité."
+      "150 lits supposerait une répartition égale 1:1."
     ],
     "explanation": "Le ratio 1:2 totalise 3 parts égales. Chaque part représente 300 / 3 = 100 lits. La chirurgie disposant d'une part, elle compte 100 lits.",
     "sourceType": "original_ai_assisted",
@@ -1837,15 +1837,15 @@
     "stimulus": "Audit énergétique du siège administratif :\nCoût des travaux d'isolation : 200 000 euros.\nÉconomie nette d'exploitation par an : 15 000 euros.",
     "options": [
       "7,5 %",
-      "8,0 %",
       "7,0 %",
+      "8,0 %",
       "6,5 %"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 15 000 / 200 000 = 0,075 soit 7,5 %.",
-      "8,0 % correspondrait à 16 000 euros d'économies.",
       "7,0 % correspondrait à 14 000 euros d'économies.",
+      "8,0 % correspondrait à 16 000 euros d'économies.",
       "6,5 % correspondrait à 13 000 euros d'économies."
     ],
     "explanation": "Taux de rendement annuel = Économie annuelle / Investissement initial = 15 000 / 200 000 = 7,5 %.",
@@ -1867,17 +1867,17 @@
     "prompt": "Un traitement indiciaire subit deux hausses successives de 2,5 % au cours de l'année. Quel est le pourcentage total d'augmentation ?",
     "stimulus": "Indicateurs salariaux dans la fonction publique :\n1re tranche indiciaire : +2,5 %.\n2e tranche indiciaire : +2,5 %.",
     "options": [
-      "+5,0625 %",
-      "+5,0000 %",
+      "+4,9750 %",
       "+5,1250 %",
-      "+4,9750 %"
+      "+5,0625 %",
+      "+5,0000 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 1,025 × 1,025 = 1,050625, soit une augmentation globale de +5,0625 %.",
-      "+5,0000 % est la somme arithmétique simple qui omet l'effet de composition.",
+      "+4,9750 % sous-estime le résultat.",
       "+5,1250 % surestime l'effet cumulé.",
-      "+4,9750 % sous-estime le résultat."
+      "Correct : 1,025 × 1,025 = 1,050625, soit une augmentation globale de +5,0625 %.",
+      "+5,0000 % est la somme arithmétique simple qui omet l'effet de composition."
     ],
     "explanation": "Multiplicateur composé = 1,025 × 1,025 = 1,050625, traduisant une augmentation exacte de +5,0625 %.",
     "sourceType": "original_ai_assisted",
@@ -1898,17 +1898,17 @@
     "prompt": "Quel est l'écart en pourcentage entre le budget prévisionnel et les dépenses réelles ?",
     "stimulus": "Direction de l'environnement :\nBudget prévisionnel : 500 000 euros.\nDépenses réelles constatées : 475 000 euros.",
     "options": [
-      "-5,0 %",
       "-4,0 %",
-      "-6,0 %",
-      "-5,5 %"
+      "-5,5 %",
+      "-5,0 %",
+      "-6,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : (475 000 - 500 000) / 500 000 = -25 000 / 500 000 = -0,05 soit -5,0 %.",
       "-4,0 % correspondrait à une économie de 20 000 euros.",
-      "-6,0 % correspondrait à une économie de 30 000 euros.",
-      "-5,5 % résulte d'une erreur d'évaluation."
+      "-5,5 % résulte d'une erreur d'évaluation.",
+      "Correct : (475 000 - 500 000) / 500 000 = -25 000 / 500 000 = -0,05 soit -5,0 %.",
+      "-6,0 % correspondrait à une économie de 30 000 euros."
     ],
     "explanation": "Variation relative = (475 000 - 500 000) / 500 000 = -25 000 / 500 000 = -5,0 % (sous-consommation de 5 %).",
     "sourceType": "original_ai_assisted",
@@ -1929,17 +1929,17 @@
     "prompt": "Dans un service comptant 80 personnes, 65 % ont suivi la formation obligatoire à la sécurité. Combien d'agents n'ont PAS encore suivi la session ?",
     "stimulus": "Service logistique ministériel :\nEffectif total : 80 agents.\nTaux de participation constaté : 65 %.",
     "options": [
-      "28 agents",
-      "24 agents",
       "32 agents",
-      "26 agents"
+      "24 agents",
+      "26 agents",
+      "28 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : agents non formés = 100 % - 65 % = 35 % ; 80 × 0,35 = 28 agents.",
-      "24 agents correspondrait à 30 % d'agents non formés.",
       "32 agents correspondrait à 40 % d'agents non formés.",
-      "26 agents résulte d'un calcul inexact."
+      "24 agents correspondrait à 30 % d'agents non formés.",
+      "26 agents résulte d'un calcul inexact.",
+      "Correct : agents non formés = 100 % - 65 % = 35 % ; 80 × 0,35 = 28 agents."
     ],
     "explanation": "Le pourcentage d'agents restants est 100 % - 65 % = 35 %. 80 × 0,35 = 28 agents à former.",
     "sourceType": "original_ai_assisted",
@@ -1960,16 +1960,16 @@
     "prompt": "Une flotte de 180 véhicules de service comprend 2 véhicules électriques pour 1 véhicule thermique. Combien de véhicules électriques compte le parc ?",
     "stimulus": "Parc automobile administratif :\nTotal du parc : 180 véhicules.\nRatio Électrique : Thermique = 2 : 1.",
     "options": [
+      "60 véhicules",
       "120 véhicules",
       "90 véhicules",
-      "60 véhicules",
       "140 véhicules"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "60 véhicules correspond au nombre de véhicules thermiques (1 part).",
       "Correct : total parts = 2 + 1 = 3 parts. Une part = 180 / 3 = 60. Électriques = 2 × 60 = 120 véhicules.",
       "90 véhicules supposerait une parité stricte (1:1).",
-      "60 véhicules correspond au nombre de véhicules thermiques (1 part).",
       "140 véhicules surestime la part électrique."
     ],
     "explanation": "Le ratio 2:1 totalise 3 parts. Une part vaut 180 / 3 = 60. Les véhicules électriques représentent 2 parts, soit 2 × 60 = 120 véhicules.",
@@ -1991,17 +1991,17 @@
     "prompt": "Quel est le coût moyen de traitement d'un dossier administratif ?",
     "stimulus": "Service d'état civil communal :\nDépenses opérationnelles totales : 180 000 euros.\nNombre de dossiers traités : 4 500 dossiers.",
     "options": [
-      "40 euros",
-      "35 euros",
       "45 euros",
-      "50 euros"
+      "40 euros",
+      "50 euros",
+      "35 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 180 000 / 4 500 = 40 euros par dossier.",
-      "35 euros sous-estime le ratio de coût.",
       "45 euros surestime le ratio de coût.",
-      "50 euros correspondrait à un budget de 225 000 euros."
+      "Correct : 180 000 / 4 500 = 40 euros par dossier.",
+      "50 euros correspondrait à un budget de 225 000 euros.",
+      "35 euros sous-estime le ratio de coût."
     ],
     "explanation": "Coût unitaire moyen = Dépenses totales / Volume traité = 180 000 / 4 500 = 40 euros par dossier.",
     "sourceType": "original_ai_assisted",
@@ -2022,17 +2022,17 @@
     "prompt": "Sur une enveloppe globale de 600 000 euros, 45 % sont alloués aux travaux de voirie et 25 % aux espaces verts. Quel montant reste disponible pour les autres actions ?",
     "stimulus": "Budget participatif communal :\nEnveloppe totale : 600 000 euros.\nVoirie : 45 %.\nEspaces verts : 25 %.",
     "options": [
-      "180 000 euros",
-      "150 000 euros",
       "200 000 euros",
-      "160 000 euros"
+      "160 000 euros",
+      "180 000 euros",
+      "150 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : part restante = 100 % - (45 % + 25 %) = 30 % ; 600 000 × 0,30 = 180 000 euros.",
-      "150 000 euros correspondrait à 25 % restants.",
       "200 000 euros correspondrait à un tiers du budget.",
-      "160 000 euros résulte d'une erreur de calcul."
+      "160 000 euros résulte d'une erreur de calcul.",
+      "Correct : part restante = 100 % - (45 % + 25 %) = 30 % ; 600 000 × 0,30 = 180 000 euros.",
+      "150 000 euros correspondrait à 25 % restants."
     ],
     "explanation": "Les deux postes mobilisent 45 % + 25 % = 70 % de l'enveloppe. Il reste 30 % à attribuer : 600 000 × 0,30 = 180 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2053,17 +2053,17 @@
     "prompt": "Le volume de déchets ménagers non recyclés a baissé de 800 tonnes à 680 tonnes en un an. Quel est le pourcentage de réduction constaté ?",
     "stimulus": "Indicateurs environnementaux communaux :\nDéchets non recyclés an 1 : 800 tonnes.\nDéchets non recyclés an 2 : 680 tonnes.",
     "options": [
-      "-15,0 %",
-      "-12,0 %",
+      "-14,0 %",
       "-18,0 %",
-      "-14,0 %"
+      "-15,0 %",
+      "-12,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : (680 - 800) / 800 = -120 / 800 = -0,15 soit -15,0 %.",
-      "-12,0 % correspondrait à une baisse de 96 tonnes.",
+      "-14,0 % est un calcul inexact.",
       "-18,0 % correspondrait à une baisse de 144 tonnes.",
-      "-14,0 % est un calcul inexact."
+      "Correct : (680 - 800) / 800 = -120 / 800 = -0,15 soit -15,0 %.",
+      "-12,0 % correspondrait à une baisse de 96 tonnes."
     ],
     "explanation": "Variation relative = (680 - 800) / 800 = -120 / 800 = -15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -2115,17 +2115,17 @@
     "prompt": "Le ratio agents de terrain / agents administratifs dans un service de police est de 5:1. Pour 120 agents au total, combien d'agents exercent sur le terrain ?",
     "stimulus": "Effectifs du corps de police locale :\nTotal général : 120 agents.\nRatio Terrain : Administration = 5 : 1.",
     "options": [
+      "96 agents",
       "100 agents",
       "90 agents",
-      "105 agents",
-      "96 agents"
+      "105 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "96 agents correspondrait à 80 % de l'effectif.",
       "Correct : total parts = 5 + 1 = 6 parts. Une part = 120 / 6 = 20. Terrain = 5 × 20 = 100 agents.",
       "90 agents correspondrait à un ratio 3:1.",
-      "105 agents ne correspond pas à une division exacte en 6 parts.",
-      "96 agents correspondrait à 80 % de l'effectif."
+      "105 agents ne correspond pas à une division exacte en 6 parts."
     ],
     "explanation": "Le ratio 5:1 totalise 6 parts. Chaque part équivaut à 120 / 6 = 20 agents. Les agents de terrain représentant 5 parts, ils sont au nombre de 5 × 20 = 100 agents.",
     "sourceType": "original_ai_assisted",
@@ -2146,15 +2146,15 @@
     "prompt": "Une subvention de recherche de 100 000 euros croît de 10,0 % par an pendant deux années consécutives. Quel est son montant final ?",
     "stimulus": "Fonds national pour l'innovation scientifique :\nDotation de départ : 100 000 euros.\nIndexation annuelle : +10,0 % par an sur 2 ans.",
     "options": [
-      "121 000 euros",
       "120 000 euros",
+      "121 000 euros",
       "122 000 euros",
       "119 500 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 100 000 × 1,10 × 1,10 = 100 000 × 1,21 = 121 000 euros.",
       "120 000 euros résulte d'une addition linéaire simple (+10 % + 10 % = +20 %).",
+      "Correct : 100 000 × 1,10 × 1,10 = 100 000 × 1,21 = 121 000 euros.",
       "122 000 euros surestime le résultat composé.",
       "119 500 euros sous-estime la croissance."
     ],
@@ -2177,17 +2177,17 @@
     "prompt": "Sur une enveloppe de 240 000 euros, 35 % sont alloués aux rénovations thermiques. Quel est le montant de ce crédit ?",
     "stimulus": "Plan climat communal :\nEnveloppe totale disponible : 240 000 euros.\nPart réservée à la rénovation thermique : 35 %.",
     "options": [
-      "84 000 euros",
-      "72 000 euros",
       "90 000 euros",
-      "80 000 euros"
+      "80 000 euros",
+      "72 000 euros",
+      "84 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 240 000 × 0,35 = 84 000 euros.",
-      "72 000 euros correspondrait à un taux de 30 %.",
       "90 000 euros correspondrait à un taux de 37,5 %.",
-      "80 000 euros correspondrait à un tiers du budget."
+      "80 000 euros correspondrait à un tiers du budget.",
+      "72 000 euros correspondrait à un taux de 30 %.",
+      "Correct : 240 000 × 0,35 = 84 000 euros."
     ],
     "explanation": "Montant alloué = 240 000 × 0,35 = 84 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2209,16 +2209,16 @@
     "stimulus": "Facture énergétique de la cité administrative :\nAnnée N-1 : 120 000 euros.\nAnnée N : 102 000 euros.",
     "options": [
       "-15,0 %",
-      "-12,0 %",
       "-18,0 %",
-      "-14,0 %"
+      "-14,0 %",
+      "-12,0 %"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : (102 000 - 120 000) / 120 000 = -18 000 / 120 000 = -0,15 soit -15,0 %.",
-      "-12,0 % correspondrait à une dépense de 105 600 euros.",
       "-18,0 % confond l'écart brut de 18 000 avec le pourcentage.",
-      "-14,0 % résulte d'une erreur d'évaluation."
+      "-14,0 % résulte d'une erreur d'évaluation.",
+      "-12,0 % correspondrait à une dépense de 105 600 euros."
     ],
     "explanation": "La variation relative est (102 000 - 120 000) / 120 000 = -18 000 / 120 000 = -15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -2239,17 +2239,17 @@
     "prompt": "Quel est le coût moyen pondéré d'un audit de conformité par unité administrative ?",
     "stimulus": "Campagne d'audits internes :\nGroupe 1 : 10 unités auditées au coût de 3 000 euros chacune.\nGroupe 2 : 15 unités auditées au coût de 4 000 euros chacune.",
     "options": [
-      "3 600 euros",
+      "3 400 euros",
       "3 500 euros",
-      "3 800 euros",
-      "3 400 euros"
+      "3 600 euros",
+      "3 800 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : ((10 × 3 000) + (15 × 4 000)) / 25 = (30 000 + 60 000) / 25 = 90 000 / 25 = 3 600 euros.",
+      "3 400 euros sous-évalue le coût global moyen.",
       "3 500 euros est la moyenne arithmétique simple non pondérée (3 000 + 4 000)/2.",
-      "3 800 euros surévalue le poids du groupe 2.",
-      "3 400 euros sous-évalue le coût global moyen."
+      "Correct : ((10 × 3 000) + (15 × 4 000)) / 25 = (30 000 + 60 000) / 25 = 90 000 / 25 = 3 600 euros.",
+      "3 800 euros surévalue le poids du groupe 2."
     ],
     "explanation": "Coût total = 30 000 + 60 000 = 90 000 euros. Nombre d'unités = 25. Moyenne pondérée = 90 000 / 25 = 3 600 euros.",
     "sourceType": "original_ai_assisted",
@@ -2271,15 +2271,15 @@
     "stimulus": "Fonds pour la transition écologique :\nMontant total : 150 000 euros.\nClé de répartition Projet Vert : Projet Bleu = 2 : 3.",
     "options": [
       "90 000 euros",
-      "60 000 euros",
       "75 000 euros",
+      "60 000 euros",
       "100 000 euros"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : total parts = 2 + 3 = 5. Une part = 150 000 / 5 = 30 000 euros. Projet Bleu = 3 × 30 000 = 90 000 euros.",
-      "60 000 euros correspond à la part du projet Vert (2 parts).",
       "75 000 euros supposerait un partage à parts égales 1:1.",
+      "60 000 euros correspond à la part du projet Vert (2 parts).",
       "100 000 euros correspondrait à un ratio 1:2."
     ],
     "explanation": "Le ratio 2:3 comporte 5 parts au total. Chaque part vaut 150 000 / 5 = 30 000 euros. Le projet Bleu recevant 3 parts, son allocation est de 90 000 euros.",
@@ -2301,17 +2301,17 @@
     "prompt": "Quel est le coût total d'acquisition de 80 écrans bureautiques facturés à 175 euros l'unité hors taxes ?",
     "stimulus": "Renouvellement du matériel informatique :\nQuantité commandée : 80 écrans.\nPrix unitaire négocié : 175 euros hors taxes.",
     "options": [
-      "14 000 euros",
+      "12 800 euros",
       "13 500 euros",
-      "14 500 euros",
-      "12 800 euros"
+      "14 000 euros",
+      "14 500 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 80 × 175 = 14 000 euros.",
+      "12 800 euros correspondrait à 160 euros l'unité.",
       "13 500 euros sous-estime le total.",
-      "14 500 euros surestime le total.",
-      "12 800 euros correspondrait à 160 euros l'unité."
+      "Correct : 80 × 175 = 14 000 euros.",
+      "14 500 euros surestime le total."
     ],
     "explanation": "Calcul direct : 80 × 175 = (80 × 100) + (80 × 75) = 8 000 + 6 000 = 14 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2334,15 +2334,15 @@
     "options": [
       "52 650 euros",
       "53 500 euros",
-      "51 850 euros",
-      "54 200 euros"
+      "54 200 euros",
+      "51 850 euros"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : montant après remise = 50 000 × 0,90 = 45 000 euros HT ; Montant TTC = 45 000 × 1,17 = 52 650 euros.",
       "53 500 euros applique la TVA sur le montant brut avant remise (50 000 × 1,17 - 5 000).",
-      "51 850 euros correspondrait à une TVA de 15,2 %.",
-      "54 200 euros surestime le calcul final."
+      "54 200 euros surestime le calcul final.",
+      "51 850 euros correspondrait à une TVA de 15,2 %."
     ],
     "explanation": "Prix remisé HT = 50 000 × 0,90 = 45 000 euros. Avec TVA de 17 % : 45 000 × 1,17 = 52 650 euros TTC.",
     "sourceType": "original_ai_assisted",
@@ -2363,17 +2363,17 @@
     "prompt": "Un effectif de 500 agents progresse de 6,0 % la première année, puis diminue de 5,0 % la seconde année. Quel est l'effectif final ?",
     "stimulus": "Évolution pluriannuelle des effectifs municipaux :\nEffectif de départ : 500 agents.\nAnnée 1 : hausse de +6,0 %.\nAnnée 2 : baisse de -5,0 %.",
     "options": [
-      "503,5 agents",
       "505,0 agents",
-      "500,0 agents",
-      "508,0 agents"
+      "508,0 agents",
+      "503,5 agents",
+      "500,0 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 500 × 1,06 = 530 agents en an 1 ; 530 × 0,95 = 503,5 agents.",
       "505,0 agents résulterait de la simple addition linéaire (+6 % - 5 % = +1 %).",
-      "500,0 agents supposerait que la hausse et la baisse se neutralisent parfaitement.",
-      "508,0 agents surestime l'effectif résiduel."
+      "508,0 agents surestime l'effectif résiduel.",
+      "Correct : 500 × 1,06 = 530 agents en an 1 ; 530 × 0,95 = 503,5 agents.",
+      "500,0 agents supposerait que la hausse et la baisse se neutralisent parfaitement."
     ],
     "explanation": "Multiplicateur composé = 1,06 × 0,95 = 1,007. Effectif final = 500 × 1,007 = 503,5 agents (soit une hausse nette de 0,7 % et non 1,0 %).",
     "sourceType": "original_ai_assisted",
@@ -2394,17 +2394,17 @@
     "prompt": "Quel est le montant moyen des quatre subventions accordées aux associations culturelles ?",
     "stimulus": "Subventions attribuées par le conseil communal :\nAssociation A : 12 000 euros.\nAssociation B : 18 000 euros.\nAssociation C : 15 000 euros.\nAssociation D : 23 000 euros.",
     "options": [
-      "17 000 euros",
       "16 500 euros",
       "17 500 euros",
-      "18 000 euros"
+      "18 000 euros",
+      "17 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : (12 000 + 18 000 + 15 000 + 23 000) / 4 = 68 000 / 4 = 17 000 euros.",
       "16 500 euros sous-estime la somme moyenne.",
       "17 500 euros surestime la somme moyenne.",
-      "18 000 euros correspondrait à un total de 72 000 euros."
+      "18 000 euros correspondrait à un total de 72 000 euros.",
+      "Correct : (12 000 + 18 000 + 15 000 + 23 000) / 4 = 68 000 / 4 = 17 000 euros."
     ],
     "explanation": "Total cumulé = 12 000 + 18 000 + 15 000 + 23 000 = 68 000 euros. Moyenne arithmétique = 68 000 / 4 = 17 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2425,17 +2425,17 @@
     "prompt": "Dans un concours d'accès, 3 candidats sur 8 admissibles sont finalement déclarés lauréats. Si 48 candidats sont admissibles, combien sont admis ?",
     "stimulus": "Jury de concours administratif territorial :\nNombre de candidats admissibles : 48.\nTaux de réussite final : ratio de 3 lauréats pour 8 admissibles.",
     "options": [
-      "18 admis",
+      "24 admis",
       "16 admis",
       "20 admis",
-      "24 admis"
+      "18 admis"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 48 × (3 / 8) = 6 × 3 = 18 candidats admis.",
+      "24 candidats correspondrait à une parité de 50 % (1 sur 2).",
       "16 candidats correspondrait à un ratio de 1/3 (16 sur 48).",
       "20 candidats surestime le nombre d'admis.",
-      "24 candidats correspondrait à une parité de 50 % (1 sur 2)."
+      "Correct : 48 × (3 / 8) = 6 × 3 = 18 candidats admis."
     ],
     "explanation": "Nombre d'admis = 48 × (3/8) = (48 / 8) × 3 = 6 × 3 = 18 candidats.",
     "sourceType": "original_ai_assisted",
@@ -2456,16 +2456,16 @@
     "prompt": "Une administration réalise 18 000 euros d'économies sur une ligne budgétaire dotée de 300 000 euros. Quel est le pourcentage d'économie réalisé ?",
     "stimulus": "Bilan annuel d'exploitation :\nBudget alloué : 300 000 euros.\nÉconomie nette constatée : 18 000 euros.",
     "options": [
-      "6,0 %",
-      "5,0 %",
       "7,0 %",
+      "5,0 %",
+      "6,0 %",
       "5,5 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 18 000 / 300 000 = 0,06 soit 6,0 %.",
-      "5,0 % correspondrait à 15 000 euros d'économies.",
       "7,0 % correspondrait à 21 000 euros d'économies.",
+      "5,0 % correspondrait à 15 000 euros d'économies.",
+      "Correct : 18 000 / 300 000 = 0,06 soit 6,0 %.",
       "5,5 % correspondrait à 16 500 euros d'économies."
     ],
     "explanation": "Taux d'économie = 18 000 / 300 000 = 6 / 100 = 6,0 %.",
@@ -2488,15 +2488,15 @@
     "stimulus": "Indicateur de performance des services d'urbanisme :\nDélai initial : 25 jours.\nNouveau délai moyen constaté : 20 jours.",
     "options": [
       "-20,0 %",
-      "-25,0 %",
       "-15,0 %",
+      "-25,0 %",
       "-18,0 %"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : (20 - 25) / 25 = -5 / 25 = -0,20 soit -20,0 %.",
-      "-25,0 % correspondrait à rapporter le gain de 5 jours à la valeur finale (5 / 20).",
       "-15,0 % sous-estime l'amélioration de productivité.",
+      "-25,0 % correspondrait à rapporter le gain de 5 jours à la valeur finale (5 / 20).",
       "-18,0 % résulte d'une erreur de calcul."
     ],
     "explanation": "Variation relative = (20 - 25) / 25 = -5 / 25 = -20,0 % de réduction de temps.",
@@ -2549,17 +2549,17 @@
     "prompt": "Sur 1 200 réclamations annuelles, 75 % sont traitées sous 48 heures. Parmi le solde restant, 60 % sont réglées sous une semaine. Combien de dossiers restent non traités au bout d'une semaine ?",
     "stimulus": "Qualité de l'écoute usagers :\nTotal réclamations : 1 200.\nTraitées sous 48h : 75 %.\nTraitées entre 48h et 7 jours : 60 % du solde restant.",
     "options": [
-      "120 réclamations",
       "100 réclamations",
-      "150 réclamations",
-      "80 réclamations"
+      "120 réclamations",
+      "80 réclamations",
+      "150 réclamations"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : solde après 48h = 1 200 × 0,25 = 300 dossiers ; non traités à 7 jours = 300 × 0,40 = 120 réclamations.",
       "100 réclamations sous-estime le résidu.",
-      "150 réclamations supposerait que seulement 50 % du solde a été traité.",
-      "80 réclamations surestime l'apurement des dossiers."
+      "Correct : solde après 48h = 1 200 × 0,25 = 300 dossiers ; non traités à 7 jours = 300 × 0,40 = 120 réclamations.",
+      "80 réclamations surestime l'apurement des dossiers.",
+      "150 réclamations supposerait que seulement 50 % du solde a été traité."
     ],
     "explanation": "Dossiers non traités sous 48h = 1 200 × (1 - 0,75) = 300. Parmi ces 300, 40 % restent en attente après 7 jours : 300 × 0,40 = 120 dossiers.",
     "sourceType": "original_ai_assisted",
@@ -2580,16 +2580,16 @@
     "prompt": "Un candidat obtient 14 sur 20 à l'épreuve écrite (coefficient 4) et 11 sur 20 à l'épreuve orale (coefficient 2). Quelle est sa moyenne générale d'admission ?",
     "stimulus": "Barème des épreuves de sélection :\nÉpreuve écrite : coefficient 4, note 14 / 20.\nÉpreuve orale : coefficient 2, note 11 / 20.",
     "options": [
-      "13,0 / 20",
-      "12,5 / 20",
       "13,5 / 20",
+      "12,5 / 20",
+      "13,0 / 20",
       "12,0 / 20"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : ((14 × 4) + (11 × 2)) / (4 + 2) = (56 + 22) / 6 = 78 / 6 = 13,0 / 20.",
-      "12,5 / 20 est la moyenne arithmétique simple non pondérée (14 + 11)/2.",
       "13,5 / 20 surpondère indûment l'épreuve écrite.",
+      "12,5 / 20 est la moyenne arithmétique simple non pondérée (14 + 11)/2.",
+      "Correct : ((14 × 4) + (11 × 2)) / (4 + 2) = (56 + 22) / 6 = 78 / 6 = 13,0 / 20.",
       "12,0 / 20 sous-évalue la note globale."
     ],
     "explanation": "Points totaux = (14 × 4) + (11 × 2) = 56 + 22 = 78 points. Total des coefficients = 4 + 2 = 6. Moyenne = 78 / 6 = 13,0 / 20.",
@@ -2612,16 +2612,16 @@
     "stimulus": "Structure hiérarchique du service juridique :\nRatio Catégorie A : Catégorie B = 1 : 4.\nNombre d'agents de catégorie A : 8 agents.",
     "options": [
       "32 agents",
+      "40 agents",
       "28 agents",
-      "36 agents",
-      "40 agents"
+      "36 agents"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : 8 × 4 = 32 agents de catégorie B.",
+      "40 agents correspondrait à l'effectif total A + B (8 + 32 = 40).",
       "28 agents sous-estime l'effectif.",
-      "36 agents surestime l'effectif.",
-      "40 agents correspondrait à l'effectif total A + B (8 + 32 = 40)."
+      "36 agents surestime l'effectif."
     ],
     "explanation": "La proportion impose 4 agents de catégorie B pour chaque agent de catégorie A : 8 × 4 = 32 agents de catégorie B.",
     "sourceType": "original_ai_assisted",
@@ -2642,17 +2642,17 @@
     "prompt": "Un marché de travaux publics de 450 000 euros subit un avenant financier augmentant son coût de 8,0 %. Quel est le nouveau montant total du marché ?",
     "stimulus": "Rénovation du groupe scolaire communal :\nMontant initial du marché : 450 000 euros.\nAvenant validé en séance : +8,0 %.",
     "options": [
-      "486 000 euros",
-      "480 000 euros",
       "490 000 euros",
-      "475 000 euros"
+      "480 000 euros",
+      "475 000 euros",
+      "486 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : augmentation = 450 000 × 0,08 = 36 000 euros ; Nouveau total = 450 000 + 36 000 = 486 000 euros.",
-      "480 000 euros correspondrait à une hausse de 30 000 euros.",
       "490 000 euros surestime le surcoût de l'avenant.",
-      "475 000 euros sous-estime le nouveau total."
+      "480 000 euros correspondrait à une hausse de 30 000 euros.",
+      "475 000 euros sous-estime le nouveau total.",
+      "Correct : augmentation = 450 000 × 0,08 = 36 000 euros ; Nouveau total = 450 000 + 36 000 = 486 000 euros."
     ],
     "explanation": "Montant révisé = Montant initial × (1 + Taux) = 450 000 × 1,08 = 486 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2673,17 +2673,17 @@
     "prompt": "Le volume de courriers papier reçus baisse de 10 000 à 8 500 plis en un an. Quel est le taux de décroissance constaté ?",
     "stimulus": "Dématérialisation des flux entrants ministériels :\nVolume initial an N-1 : 10 000 courriers.\nVolume final an N : 8 500 courriers.",
     "options": [
+      "-14,0 %",
       "-15,0 %",
       "-12,5 %",
-      "-17,5 %",
-      "-14,0 %"
+      "-17,5 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
+      "-14,0 % résulte d'une erreur d'arrondi.",
       "Correct : (8 500 - 10 000) / 10 000 = -1 500 / 10 000 = -0,15 soit -15,0 %.",
       "-12,5 % correspondrait à 8 750 courriers.",
-      "-17,5 % correspondrait à 8 250 courriers.",
-      "-14,0 % résulte d'une erreur d'arrondi."
+      "-17,5 % correspondrait à 8 250 courriers."
     ],
     "explanation": "Variation en pourcentage = (8 500 - 10 000) / 10 000 = -1 500 / 10 000 = -15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -2704,17 +2704,17 @@
     "prompt": "Une enveloppe de 72 000 euros est partagée à parts strictement égales entre 6 services déconcentrés. Quel montant revient à chaque service ?",
     "stimulus": "Crédits déconcentrés d'action sociale :\nMontant total à ventiler : 72 000 euros.\nNombre de services bénéficiaires : 6 services.",
     "options": [
-      "12 000 euros",
+      "10 500 euros",
       "11 000 euros",
       "13 000 euros",
-      "10 500 euros"
+      "12 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 72 000 / 6 = 12 000 euros par service.",
+      "10 500 euros résulte d'une erreur de division.",
       "11 000 euros sous-estime la part unitaire.",
       "13 000 euros dépasserait l'enveloppe totale.",
-      "10 500 euros résulte d'une erreur de division."
+      "Correct : 72 000 / 6 = 12 000 euros par service."
     ],
     "explanation": "Division simple : 72 000 / 6 = 12 000 euros par entité.",
     "sourceType": "original_ai_assisted",
@@ -2766,17 +2766,17 @@
     "prompt": "Quel est le nombre moyen d'actes d'état civil délivrés par jour au cours de cette semaine de 5 jours ouvrés ?",
     "stimulus": "Activité du service de l'état civil communal :\nLundi : 45 actes.\nMardi : 52 actes.\nMercredi : 38 actes.\nJeudi : 60 actes.\nVendredi : 55 actes.",
     "options": [
-      "50 actes",
-      "48 actes",
+      "46 actes",
       "52 actes",
-      "46 actes"
+      "50 actes",
+      "48 actes"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : (45 + 52 + 38 + 60 + 55) / 5 = 250 / 5 = 50 actes par jour.",
-      "48 actes sous-estime la moyenne hebdomadaire.",
+      "46 actes résulte d'une erreur d'addition.",
       "52 actes surestime la moyenne hebdomadaire.",
-      "46 actes résulte d'une erreur d'addition."
+      "Correct : (45 + 52 + 38 + 60 + 55) / 5 = 250 / 5 = 50 actes par jour.",
+      "48 actes sous-estime la moyenne hebdomadaire."
     ],
     "explanation": "Total des actes = 45 + 52 + 38 + 60 + 55 = 250 actes. Moyenne journalière = 250 / 5 = 50 actes.",
     "sourceType": "original_ai_assisted",
@@ -2797,17 +2797,17 @@
     "prompt": "Un budget de formation de 80 000 euros est réparti entre trois directions A, B et C dans les proportions 1:2:5. Quel montant revient à la direction C ?",
     "stimulus": "Plan de formation ministériel :\nBudget global : 80 000 euros.\nClé de répartition Direction A : B : C = 1 : 2 : 5.",
     "options": [
-      "50 000 euros",
       "40 000 euros",
+      "30 000 euros",
       "45 000 euros",
-      "30 000 euros"
+      "50 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : total parts = 1 + 2 + 5 = 8. Une part = 80 000 / 8 = 10 000 euros. Direction C = 5 × 10 000 = 50 000 euros.",
       "40 000 euros correspondrait à la moitié exacte du budget.",
+      "30 000 euros sous-estime largement la part de C.",
       "45 000 euros ne correspond pas à un multiple entier de part.",
-      "30 000 euros sous-estime largement la part de C."
+      "Correct : total parts = 1 + 2 + 5 = 8. Une part = 80 000 / 8 = 10 000 euros. Direction C = 5 × 10 000 = 50 000 euros."
     ],
     "explanation": "Le total des parts est de 1 + 2 + 5 = 8 parts. Chaque part équivaut à 80 000 / 8 = 10 000 euros. La direction C recevant 5 parts, sa dotation est de 50 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2828,17 +2828,17 @@
     "prompt": "Un équipement public a perdu 20,0 % de sa valeur comptable la première année, puis 10,0 % de sa valeur résiduelle la seconde année. Quel est son taux global de dépréciation sur deux ans ?",
     "stimulus": "Amortissement comptable des matériels lourds :\nDépréciation An 1 : -20,0 %.\nDépréciation An 2 : -10,0 % sur la valeur résiduelle.",
     "options": [
-      "-28,0 %",
       "-30,0 %",
+      "-27,0 %",
       "-25,0 %",
-      "-27,0 %"
+      "-28,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : valeur résiduelle = (1 - 0,20) × (1 - 0,10) = 0,80 × 0,90 = 0,72 (soit 72 % restants). Dépréciation = 100 % - 72 % = -28,0 %.",
       "-30,0 % résulte de l'addition linéaire simple sans composition (-20 % - 10 %).",
+      "-27,0 % résulte d'une erreur de calcul.",
       "-25,0 % sous-estime la dépréciation globale.",
-      "-27,0 % résulte d'une erreur de calcul."
+      "Correct : valeur résiduelle = (1 - 0,20) × (1 - 0,10) = 0,80 × 0,90 = 0,72 (soit 72 % restants). Dépréciation = 100 % - 72 % = -28,0 %."
     ],
     "explanation": "Le coefficient résiduel est 0,80 × 0,90 = 0,72. La dépréciation cumulée s'établit donc à 1 - 0,72 = 0,28, soit -28,0 %.",
     "sourceType": "original_ai_assisted",
@@ -2859,17 +2859,17 @@
     "prompt": "Le montant d'une taxe communale passe de 400 euros à 460 euros par foyer. Quel est le pourcentage d'augmentation appliqué ?",
     "stimulus": "Délibération du conseil communal sur les tarifs d'enlèvement des déchets :\nAncien tarif forfaitaire : 400 euros.\nNouveau tarif voté : 460 euros.",
     "options": [
-      "+15,0 %",
       "+12,0 %",
       "+18,0 %",
-      "+14,0 %"
+      "+14,0 %",
+      "+15,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : (460 - 400) / 400 = 60 / 400 = +0,15 soit +15,0 %.",
       "+12,0 % correspondrait à une hausse de 48 euros.",
       "+18,0 % correspondrait à une hausse de 72 euros.",
-      "+14,0 % résulte d'une erreur d'évaluation."
+      "+14,0 % résulte d'une erreur d'évaluation.",
+      "Correct : (460 - 400) / 400 = 60 / 400 = +0,15 soit +15,0 %."
     ],
     "explanation": "Taux de variation = (460 - 400) / 400 = 60 / 400 = +15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -2890,17 +2890,17 @@
     "prompt": "Une administration commande 12 imprimantes réseau à 850 euros l'unité hors taxes. Quel est le montant hors taxes de la facture ?",
     "stimulus": "Marché public d'équipement bureautique :\nQuantité : 12 imprimantes réseau.\nPrix unitaire HT : 850 euros.",
     "options": [
-      "10 200 euros",
-      "10 000 euros",
       "10 400 euros",
-      "9 800 euros"
+      "9 800 euros",
+      "10 000 euros",
+      "10 200 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : 12 × 850 = 12 × 800 + 12 × 50 = 9 600 + 600 = 10 200 euros.",
-      "10 000 euros est une estimation arrondie inexacte.",
       "10 400 euros surestime le total.",
-      "9 800 euros sous-estime le montant facturé."
+      "9 800 euros sous-estime le montant facturé.",
+      "10 000 euros est une estimation arrondie inexacte.",
+      "Correct : 12 × 850 = 12 × 800 + 12 × 50 = 9 600 + 600 = 10 200 euros."
     ],
     "explanation": "Calcul direct : 12 × 850 = 10 200 euros HT.",
     "sourceType": "original_ai_assisted",
@@ -2921,17 +2921,17 @@
     "prompt": "Sur une enveloppe d'aide d'urgence de 500 000 euros, 82 % des crédits ont été engagés. Quel montant reste disponible à l'engagement ?",
     "stimulus": "Fonds communal de solidarité d'urgence :\nCrédits votés : 500 000 euros.\nTaux d'engagement constaté : 82 %.",
     "options": [
-      "90 000 euros",
       "80 000 euros",
+      "85 000 euros",
       "100 000 euros",
-      "85 000 euros"
+      "90 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : part disponible = 100 % - 82 % = 18 % ; 500 000 × 0,18 = 90 000 euros.",
       "80 000 euros correspondrait à un taux d'engagement de 84 %.",
+      "85 000 euros résulte d'une erreur de calcul.",
       "100 000 euros correspondrait à un taux d'engagement de 80 %.",
-      "85 000 euros résulte d'une erreur de calcul."
+      "Correct : part disponible = 100 % - 82 % = 18 % ; 500 000 × 0,18 = 90 000 euros."
     ],
     "explanation": "Crédits non engagés = 500 000 × (1 - 0,82) = 500 000 × 0,18 = 90 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -2952,17 +2952,17 @@
     "prompt": "Dans un pôle de 50 agents, 30 agents effectuent en moyenne 2 heures supplémentaires par semaine et 20 agents en effectuent 4 heures. Quelle est la moyenne d'heures supplémentaires par agent ?",
     "stimulus": "Gestion des temps et activités du service technique :\nGroupe 1 : 30 agents réalisant 2 heures supplémentaires.\nGroupe 2 : 20 agents réalisant 4 heures supplémentaires.",
     "options": [
-      "2,8 heures",
-      "3,0 heures",
       "2,6 heures",
-      "3,2 heures"
+      "3,0 heures",
+      "3,2 heures",
+      "2,8 heures"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : ((30 × 2) + (20 × 4)) / 50 = (60 + 80) / 50 = 140 / 50 = 2,8 heures.",
-      "3,0 heures est la moyenne simple non pondérée (2 + 4)/2.",
       "2,6 heures sous-évalue la contribution du groupe 2.",
-      "3,2 heures surestime le volume moyen."
+      "3,0 heures est la moyenne simple non pondérée (2 + 4)/2.",
+      "3,2 heures surestime le volume moyen.",
+      "Correct : ((30 × 2) + (20 × 4)) / 50 = (60 + 80) / 50 = 140 / 50 = 2,8 heures."
     ],
     "explanation": "Volume total d'heures = (30 × 2) + (20 × 4) = 60 + 80 = 140 heures. Moyenne pondérée = 140 / 50 = 2,8 heures par agent.",
     "sourceType": "original_ai_assisted",
@@ -2983,17 +2983,17 @@
     "prompt": "Le ratio agents contractuels / agents fonctionnaires est de 1:3 dans une équipe comptant 60 agents au total. Combien de contractuels l'équipe compte-t-elle ?",
     "stimulus": "Composition statutaire des effectifs :\nEffectif global : 60 agents.\nRatio Contractuels : Fonctionnaires = 1 : 3.",
     "options": [
-      "15 agents",
       "20 agents",
       "12 agents",
-      "18 agents"
+      "18 agents",
+      "15 agents"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : total parts = 1 + 3 = 4. Une part = 60 / 4 = 15 agents contractuels.",
       "20 agents correspondrait à un tiers des effectifs (1 pour 2).",
       "12 agents correspondrait à un ratio 1:4.",
-      "18 agents résulte d'un mauvais découpage des parts."
+      "18 agents résulte d'un mauvais découpage des parts.",
+      "Correct : total parts = 1 + 3 = 4. Une part = 60 / 4 = 15 agents contractuels."
     ],
     "explanation": "Le ratio comprend 4 parts égales (1 + 3). Une part vaut 60 / 4 = 15 agents. Il y a donc 15 contractuels et 45 fonctionnaires.",
     "sourceType": "original_ai_assisted",
@@ -3014,17 +3014,17 @@
     "prompt": "Le nombre de visites d'usagers au guichet passe de 1 600 en mars à 1 840 en avril. Quel est le taux de progression constaté ?",
     "stimulus": "Fréquentation du guichet multiservices communal :\nMars : 1 600 visites enregistrées.\nAvril : 1 840 visites enregistrées.",
     "options": [
-      "+15,0 %",
-      "+12,0 %",
       "+18,0 %",
-      "+14,0 %"
+      "+14,0 %",
+      "+15,0 %",
+      "+12,0 %"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : (1 840 - 1 600) / 1 600 = 240 / 1 600 = +0,15 soit +15,0 %.",
-      "+12,0 % correspondrait à 1 792 visites (+192).",
       "+18,0 % correspondrait à 1 888 visites (+288).",
-      "+14,0 % est un calcul inexact."
+      "+14,0 % est un calcul inexact.",
+      "Correct : (1 840 - 1 600) / 1 600 = 240 / 1 600 = +0,15 soit +15,0 %.",
+      "+12,0 % correspondrait à 1 792 visites (+192)."
     ],
     "explanation": "Taux de progression = (1 840 - 1 600) / 1 600 = 240 / 1 600 = +15,0 %.",
     "sourceType": "original_ai_assisted",
@@ -3046,15 +3046,15 @@
     "stimulus": "Licences d'exploitation d'un logiciel de gestion documentaire :\nCoût actuel HT : 12 000 euros.\nHausse tarifaire contractuelle : +5,0 %.\nTaux de TVA : 17,0 %.",
     "options": [
       "14 742 euros",
-      "14 500 euros",
       "14 850 euros",
+      "14 500 euros",
       "14 200 euros"
     ],
     "correctIndex": 0,
     "optionRationales": [
       "Correct : nouveau prix HT = 12 000 × 1,05 = 12 600 euros ; Nouveau coût TTC = 12 600 × 1,17 = 14 742 euros.",
-      "14 500 euros omet la TVA sur les 600 euros de hausse.",
       "14 850 euros surestime le résultat final.",
+      "14 500 euros omet la TVA sur les 600 euros de hausse.",
       "14 200 euros applique une base de calcul erronée."
     ],
     "explanation": "Prix révisé HT = 12 000 × 1,05 = 12 600 euros. Avec 17 % de TVA : 12 600 × 1,17 = 14 742 euros TTC.",
@@ -3076,17 +3076,17 @@
     "prompt": "Un fonctionnaire effectue un trajet professionnel aller-retour de 140 kilomètres. Si l'indemnité kilométrique légale est fixée à 0,40 euro par kilomètre, quel montant perçoit-il ?",
     "stimulus": "Frais de déplacement professionnel :\nDistance totale parcourue : 140 kilomètres.\nBarème kilométrique officiel d'indemnisation : 0,40 euro par kilomètre.",
     "options": [
-      "56,00 euros",
       "52,00 euros",
-      "60,00 euros",
-      "48,00 euros"
+      "56,00 euros",
+      "48,00 euros",
+      "60,00 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : 140 × 0,40 = 56,00 euros.",
       "52,00 euros correspondrait à 130 kilomètres.",
-      "60,00 euros correspondrait à 150 kilomètres.",
-      "48,00 euros correspondrait à un barème de 0,34 euro/km."
+      "Correct : 140 × 0,40 = 56,00 euros.",
+      "48,00 euros correspondrait à un barème de 0,34 euro/km.",
+      "60,00 euros correspondrait à 150 kilomètres."
     ],
     "explanation": "Montant indemnisé = 140 × 0,40 = 56,00 euros.",
     "sourceType": "original_ai_assisted",
@@ -3107,17 +3107,17 @@
     "prompt": "Quelle est la consommation moyenne trimestrielle de rames de papier d'une administration ?",
     "stimulus": "Suivi logistique annuel des fournitures :\nTrimestre 1 : 180 rames.\nTrimestre 2 : 220 rames.\nTrimestre 3 : 140 rames.\nTrimestre 4 : 260 rames.",
     "options": [
-      "200 rames",
       "190 rames",
       "210 rames",
-      "195 rames"
+      "195 rames",
+      "200 rames"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "optionRationales": [
-      "Correct : (180 + 220 + 140 + 260) / 4 = 800 / 4 = 200 rames par trimestre.",
       "190 rames sous-estime la moyenne.",
       "210 rames surestime la moyenne.",
-      "195 rames résulte d'une erreur d'addition."
+      "195 rames résulte d'une erreur d'addition.",
+      "Correct : (180 + 220 + 140 + 260) / 4 = 800 / 4 = 200 rames par trimestre."
     ],
     "explanation": "Total annuel = 180 + 220 + 140 + 260 = 800 rames. Consommation moyenne trimestrielle = 800 / 4 = 200 rames.",
     "sourceType": "original_ai_assisted",
@@ -3138,17 +3138,17 @@
     "prompt": "Une enveloppe de 63 000 euros est partagée entre deux actions éducatives dans le ratio 4:3. Quelle est la part de l'action principale ?",
     "stimulus": "Projets pédagogiques extrascolaires communaux :\nBudget total : 63 000 euros.\nClé de ventilation Action A : Action B = 4 : 3.",
     "options": [
-      "36 000 euros",
-      "27 000 euros",
       "32 000 euros",
-      "40 000 euros"
+      "40 000 euros",
+      "36 000 euros",
+      "27 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : total parts = 4 + 3 = 7. Une part = 63 000 / 7 = 9 000 euros. Action A = 4 × 9 000 = 36 000 euros.",
-      "27 000 euros correspond à l'action secondaire B (3 parts).",
       "32 000 euros ne correspond pas à la proportion 4:3.",
-      "40 000 euros surestime la part de l'action A."
+      "40 000 euros surestime la part de l'action A.",
+      "Correct : total parts = 4 + 3 = 7. Une part = 63 000 / 7 = 9 000 euros. Action A = 4 × 9 000 = 36 000 euros.",
+      "27 000 euros correspond à l'action secondaire B (3 parts)."
     ],
     "explanation": "Total parts = 7. Chaque part vaut 63 000 / 7 = 9 000 euros. L'action principale (4 parts) reçoit 4 × 9 000 = 36 000 euros.",
     "sourceType": "original_ai_assisted",
@@ -3169,15 +3169,15 @@
     "prompt": "Le coût annuel d'entretien d'un parc informatique s'élève à 80 000 euros l'an 1. Il augmente de 10 % l'an 2, puis subit une renégociation entraînant une baisse de 10 % l'an 3. Quel est son montant final en an 3 ?",
     "stimulus": "Marché pluriannuel de maintenance technique des serveurs :\nAnnée 1 : 80 000 euros.\nAnnée 2 : hausse contractuelle de +10,0 %.\nAnnée 3 : renégociation entraînant une baisse de -10,0 %.",
     "options": [
-      "79 200 euros",
       "80 000 euros",
+      "79 200 euros",
       "81 000 euros",
       "78 500 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "optionRationales": [
-      "Correct : an 2 = 80 000 × 1,10 = 88 000 euros ; an 3 = 88 000 × 0,90 = 79 200 euros.",
       "80 000 euros supposerait à tort qu'une hausse de 10 % et une baisse de 10 % s'annulent.",
+      "Correct : an 2 = 80 000 × 1,10 = 88 000 euros ; an 3 = 88 000 × 0,90 = 79 200 euros.",
       "81 000 euros surestime le résultat net.",
       "78 500 euros sous-estime le résultat."
     ],
@@ -3200,17 +3200,17 @@
     "prompt": "Sur une enveloppe globale de subvention de 350 000 euros, 60 % sont décaissés au premier semestre et 25 % au troisième trimestre. Quel montant reste à décaisser au quatrième trimestre ?",
     "stimulus": "Calendrier de décaissement d'une aide d'État :\nEnveloppe totale approuvée : 350 000 euros.\nDécaissement S1 : 60 %.\nDécaissement T3 : 25 %.",
     "options": [
-      "52 500 euros",
+      "48 000 euros",
       "50 000 euros",
-      "55 000 euros",
-      "48 000 euros"
+      "52 500 euros",
+      "55 000 euros"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : part restante = 100 % - (60 % + 25 %) = 15 % ; 350 000 × 0,15 = 52 500 euros.",
+      "48 000 euros sous-estime le solde à décaisser.",
       "50 000 euros est un montant arrondi inexact.",
-      "55 000 euros surestime le reliquat.",
-      "48 000 euros sous-estime le solde à décaisser."
+      "Correct : part restante = 100 % - (60 % + 25 %) = 15 % ; 350 000 × 0,15 = 52 500 euros.",
+      "55 000 euros surestime le reliquat."
     ],
     "explanation": "Part résiduelle au T4 = 100 % - 85 % = 15 %. Montant restant = 350 000 × 0,15 = 52 500 euros.",
     "sourceType": "original_ai_assisted",
@@ -3231,17 +3231,17 @@
     "prompt": "Un agent instructeur traite 15 dossiers par jour ouvré. Combien de dossiers aura-t-il traités au cours d'un mois comptant 22 jours ouvrés ?",
     "stimulus": "Rendement opérationnel d'un instructeur de demandes administratives :\nCadence moyenne : 15 dossiers traités par jour ouvré.\nNombre de jours ouvrés du mois : 22 jours.",
     "options": [
-      "330 dossiers",
       "320 dossiers",
-      "340 dossiers",
-      "315 dossiers"
+      "315 dossiers",
+      "330 dossiers",
+      "340 dossiers"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : 22 × 15 = 22 × 10 + 22 × 5 = 220 + 110 = 330 dossiers.",
       "320 dossiers sous-estime le total mensuel.",
-      "340 dossiers surestime le total mensuel.",
-      "315 dossiers correspondrait à 21 jours d'activité."
+      "315 dossiers correspondrait à 21 jours d'activité.",
+      "Correct : 22 × 15 = 22 × 10 + 22 × 5 = 220 + 110 = 330 dossiers.",
+      "340 dossiers surestime le total mensuel."
     ],
     "explanation": "Multiplication directe : 22 jours × 15 dossiers/jour = 330 dossiers traités sur le mois.",
     "sourceType": "original_ai_assisted",

@@ -66,7 +66,7 @@ The `stimulus` field must follow one of these structural formats:
    - Every wrong answer must correspond to a common cognitive slip: misread quantifier, calculation error, reversed direction, wrong time base, or breach of deontological neutrality.
 6. **Detailed Explanation:**
    - `explanation` must provide the complete deductive proof (arithmetic breakdown, cited sentence from stimulus, or sequential constraint elimination). It must never simply restate the correct option.
-7. **Randomized Key Balance:** Vary `correctIndex` evenly across generated items (do not cluster answers on index 0 or 2).
+7. **Randomized Key Balance:** Vary `correctIndex` evenly across generated items: each position should hold the correct answer about a quarter of the time. The validator rejects a batch of 20+ items where one position exceeds 40 %.
 8. **Neutral Public Administration Setting:**
    - Fictional public bodies, ministries, services, and citizens only. No real politicians, real people, political debates, or cultural stereotypes.
 9. **Typography & Formatting Rules:**
@@ -83,7 +83,7 @@ The `stimulus` field must follow one of these structural formats:
 
 # Category Specifications (Groupe A1)
 
-*(Quoted descriptions derive from the official GovJobs Luxembourg regulations of 15 September 2026. Note: Control and precision is excluded for Group A1).*
+*(Quoted descriptions come from the official GovJobs page « Les tests de l'épreuve d'aptitude générale ». The rest are design choices for this practice bank. Control and precision is not part of the Group A1 tests.)*
 
 ---
 
@@ -91,7 +91,8 @@ The `stimulus` field must follow one of these structural formats:
 *Official: « séries de formes ou de matrices géométriques... repérer la logique qui l'unifie et sélectionner l'élément qui la complète ».*
 - **Task:** Geometric matrix completion (2×2 or 3×3) or figural sequence ending in `?`.
 - **Allowed symbols:** Geometric unicode symbols only: `▲ △ ▼ ▽ ◀ ◁ ▶ ▷ ● ○ ■ □ ◆ ◇ ◰ ◱ ◲ ◳ ⬡ ⬢ ⬟ ⬠` and directional arrows (`→ ← ↑ ↓ ↗ ↘ ↙ ↖`).
-- **Forbidden:** No letters, no digits, no words, no odd-one-out items.
+- **Forbidden:** No letters, no digits, no words, no ideograms or look-alike characters (回, ヨ, ⊞…), no odd-one-out items, no geometry-knowledge questions (« combien de côtés… »). The validator rejects any other character.
+- Exactly one `?` in the stimulus, none in the options. Do not use `→` as a separator when arrows are themselves elements of the series.
 - **Allowed Transformation Rules:**
   - Spatial rotation (90°, 45° clockwise/counter-clockwise).
   - Shape shading/fill alternation (empty, filled, patterned).

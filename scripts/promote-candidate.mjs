@@ -3,6 +3,7 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
+import { EagRules } from "./lib/rules.mjs";
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -60,6 +61,7 @@ const now = new Date().toISOString();
 const byCategory = new Map();
 const promoted = [];
 let blocked = 0;
+const logEntries = [];
 
 for (const id of requested) {
   const item = candidates.find((c) => c.id === id);
@@ -100,6 +102,11 @@ for (const id of requested) {
   if (isRevision) bank[existingIndex] = approved;
   else bank.push(approved);
   promoted.push(id);
+  logEntries.push({
+    id, decision: isRevision ? "revised" : "approved", version: approved.version, hash: EagRules.contentHash(approved),
+    reviewer, at: now, aiDecision: decision?.decision ?? null, aiOverride: Boolean(values["ignore-ai-review"] && decision?.decision !== "pass"),
+    file: path.basename(candidateFile),
+  });
   console.log(`${isRevision ? "~" : "+"} ${id} (${item.category}) → ${target}${isRevision ? ` (révision, version ${approved.version})` : ""}`);
 }
 
@@ -113,6 +120,12 @@ if (values["dry-run"]) {
 }
 
 for (const [target, bank] of byCategory) fs.writeFileSync(target, JSON.stringify(bank, null, 2) + "\n", "utf8");
+
+// Review log: CI (scripts/check-review-log.mjs) requires one entry per approved item and version.
+fs.mkdirSync("data/review-log", { recursive: true });
+const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
+fs.writeFileSync(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n", "utf8");
+console.log(`Journal de relecture : ${logFile}`);
 
 // Remove promoted items from the candidate file so nothing is approved twice.
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
