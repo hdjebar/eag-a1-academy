@@ -3398,5 +3398,345 @@
     "createdAt": "2026-10-02T19:30:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-epso261001-001",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●    ○○    ●●●    ○○○○    ?"
+    },
+    "options": [
+      "●●●●●",
+      "●●●●",
+      "○○○",
+      "○○○○○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : cinq figures, pleines comme aux rangs impairs.",
+      "Le nombre augmente d'une unité : il en faut cinq.",
+      "Revient en arrière au lieu de progresser.",
+      "Bon nombre, mais le remplissage alterne : le 5e rang est plein."
+    ],
+    "explanation": "Deux règles : le nombre de disques augmente d'une unité à chaque case (1, 2, 3, 4, 5) et le remplissage alterne plein / vide. La 5e case contient donc cinq disques pleins.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-002",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑↑    →←    ↓↓    ←→    ?"
+    },
+    "options": [
+      "↑↓",
+      "→→",
+      "↑↑",
+      "↓↑"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "La seconde flèche, qui tourne dans l'autre sens, pointe aussi vers le haut.",
+      "Ajoute un quart de tour de trop à la première flèche.",
+      "Correct : les deux flèches reviennent vers le haut.",
+      "Inverse les deux flèches."
+    ],
+    "explanation": "La flèche de gauche tourne d'un quart de tour dans le sens horaire (↑ → ↓ ←), celle de droite d'un quart de tour dans le sens antihoraire (↑ ← ↓ →). Après quatre étapes, les deux reviennent vers le haut : ↑↑.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-003",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲    ▷    ▼    ◁    ?"
+    },
+    "options": [
+      "▽",
+      "▲",
+      "▶",
+      "△"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Orientation et remplissage incorrects.",
+      "Correct : pointe vers le haut et pleine.",
+      "Un quart de tour de trop.",
+      "Bonne orientation, mais le remplissage alterne : la 5e figure est pleine."
+    ],
+    "explanation": "Le triangle tourne d'un quart de tour dans le sens horaire à chaque étape (haut, droite, bas, gauche, haut) et son remplissage alterne plein / vide. La 5e figure pointe vers le haut et est pleine : ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-004",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●        ●●       ●●●\n■■       ■■■      ■\n▲▲▲      ▲        ?"
+    },
+    "options": [
+      "■■",
+      "▲",
+      "▲▲",
+      "▲▲▲"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "La forme reste le triangle sur la troisième ligne.",
+      "Le nombre 1 figure déjà sur cette ligne.",
+      "Correct : la ligne contient alors 3, 1 et 2 triangles.",
+      "Le nombre 3 figure déjà sur cette ligne."
+    ],
+    "explanation": "Chaque ligne utilise une seule forme et contient une fois 1, 2 et 3 figures. La troisième ligne a déjà 3 puis 1 triangle : il manque 2 triangles.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-005",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Quelle figure complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○  ■  ▲\n■  △  ●\n▲  ●  ?"
+    },
+    "options": [
+      "○",
+      "□",
+      "■",
+      "△"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le disque figure déjà sur la ligne et la colonne.",
+      "Correct : carré, et vide car sur la diagonale.",
+      "Bonne forme, mais les figures de la diagonale sont vides.",
+      "Le triangle figure déjà sur la ligne et la colonne."
+    ],
+    "explanation": "Deux règles : chaque ligne et chaque colonne contient une fois le disque, le carré et le triangle ; les figures de la diagonale (en haut à gauche, centre, en bas à droite) sont vides, les autres pleines. La case manquante est un carré sur la diagonale : □.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-006",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "La même transformation s'applique aux deux paires. Quel résultat obtient-on ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■  ○   →   ●  □\n▲  ◇   →   ?"
+    },
+    "options": [
+      "▲  ◇",
+      "◇  ▲",
+      "◆  △",
+      "△  ◆"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Aucune transformation appliquée.",
+      "Ordre inversé, mais remplissage conservé.",
+      "Correct : ordre inversé et remplissage inversé.",
+      "Remplissage inversé, mais ordre conservé."
+    ],
+    "explanation": "La transformation échange les deux figures et inverse leur remplissage : ■ ○ devient ○ ■ puis ● □. Appliquée à ▲ ◇ : ◇ ▲ puis ◆ △.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-007",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel élément vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■  ▲  ▲  ●  ●  ●  ■  ■  ■  ■  ?"
+    },
+    "options": [
+      "◆",
+      "▲",
+      "■",
+      "●"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le losange n'apparaît pas dans la série.",
+      "Correct : début du groupe de cinq triangles.",
+      "Le groupe de quatre carrés est complet.",
+      "Le disque vient après les triangles dans le cycle."
+    ],
+    "explanation": "Les formes suivent le cycle carré, triangle, disque, et chaque groupe compte une figure de plus que le précédent : 1 carré, 2 triangles, 3 disques, 4 carrés. Vient ensuite un groupe de 5 triangles, qui commence par ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-008",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case vient ensuite dans la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑    →→    ↓↓↓    ←←←←    ?"
+    },
+    "options": [
+      "→→→→→",
+      "←←←←←",
+      "↑↑↑↑↑",
+      "↑↑↑↑"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Un quart de tour de trop.",
+      "L'orientation doit encore tourner.",
+      "Correct : cinq flèches orientées vers le haut.",
+      "Il faut une flèche de plus."
+    ],
+    "explanation": "À chaque case, le nombre de flèches augmente d'une unité et leur direction tourne d'un quart de tour dans le sens horaire. La 5e case contient cinq flèches vers le haut.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-009",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●        ■        ●  ■\n▲        ●        ▲  ●\n■        ▲        ?"
+    },
+    "options": [
+      "■  ▲",
+      "■  ■",
+      "▲  ●",
+      "■  ●"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la 3e colonne réunit les figures des deux premières.",
+      "Le triangle de la 2e colonne manque.",
+      "Le carré de la 1re colonne manque.",
+      "Le disque n'appartient pas à cette ligne."
+    ],
+    "explanation": "Sur chaque ligne, la troisième case réunit la figure de la première colonne puis celle de la deuxième. Troisième ligne : ■ puis ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "abstract-epso261001-010",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "La même transformation s'applique aux deux lignes. Quel résultat obtient-on ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲  ▶   →   ◀  ▼\n▼  ◀  ▲   →   ?"
+    },
+    "options": [
+      "▲  ◀  ▼",
+      "▼  ▶  ▲",
+      "▲  ▶  ▼",
+      "▼  ◀  ▲"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Ordre inversé, mais les figures n'ont pas tourné.",
+      "Correct : la ligne entière a tourné de 180°.",
+      "Chaque figure tourne, mais l'ordre doit aussi s'inverser.",
+      "Aucune transformation appliquée."
+    ],
+    "explanation": "La ligne entière tourne de 180° : l'ordre des figures s'inverse et chaque figure fait un demi-tour (▲ ▶ → ▶ ▲ → ◀ ▼). Pour ▼ ◀ ▲ : ordre inversé ▲ ◀ ▼, puis demi-tour de chaque figure : ▼ ▶ ▲.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
   }
 ]
