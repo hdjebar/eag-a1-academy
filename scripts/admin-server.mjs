@@ -20,7 +20,7 @@ const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
 const GENERATED = path.join(ROOT, "generated");
 const APPROVED = path.join(ROOT, "data/approved");
 const LOG_DIR = path.join(ROOT, "data/review-log");
-const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8" };
+const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8", "/shared/chart.js": "text/javascript; charset=utf-8" };
 const CANDIDATE_NAME = /^[A-Za-z0-9._-]+\.json$/;
 const MAX_BODY = 5 * 1024 * 1024;
 const TOKEN = crypto.randomBytes(18).toString("base64url");
