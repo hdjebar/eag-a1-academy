@@ -11,13 +11,13 @@
     "prompt": "Quelle case vient ensuite dans la série ?",
     "stimulus": {
       "type": "shapes",
-      "text": "[●]    [○○]    [●●●]    [○○○○]    ?"
+      "text": "●    ○○    ●●●    ○○○○    ?"
     },
     "options": [
-      "[●●●●●]",
-      "[●●●●]",
-      "[○○○]",
-      "[○○○○○]"
+      "●●●●●",
+      "●●●●",
+      "○○○",
+      "○○○○○"
     ],
     "correctIndex": 0,
     "optionRationales": [
@@ -43,13 +43,13 @@
     "prompt": "Quelle case vient ensuite dans la série ?",
     "stimulus": {
       "type": "shapes",
-      "text": "[↑ ↑]    [→ ←]    [↓ ↓]    [← →]    ?"
+      "text": "↑↑    →←    ↓↓    ←→    ?"
     },
     "options": [
-      "[↑ ↓]",
-      "[→ →]",
-      "[↑ ↑]",
-      "[↓ ↑]"
+      "↑↓",
+      "→→",
+      "↑↑",
+      "↓↑"
     ],
     "correctIndex": 2,
     "optionRationales": [
@@ -58,7 +58,7 @@
       "Correct : les deux flèches reviennent vers le haut.",
       "Inverse les deux flèches."
     ],
-    "explanation": "La flèche de gauche tourne d'un quart de tour dans le sens horaire (↑ → ↓ ←), celle de droite d'un quart de tour dans le sens antihoraire (↑ ← ↓ →). Après quatre étapes, les deux reviennent vers le haut : [↑ ↑].",
+    "explanation": "La flèche de gauche tourne d'un quart de tour dans le sens horaire (↑ → ↓ ←), celle de droite d'un quart de tour dans le sens antihoraire (↑ ← ↓ →). Après quatre étapes, les deux reviennent vers le haut : ↑↑.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "candidate",
     "createdAt": "2026-10-01T23:30:00+02:00"
@@ -235,13 +235,13 @@
     "prompt": "Quelle case vient ensuite dans la série ?",
     "stimulus": {
       "type": "shapes",
-      "text": "[↑]    [→→]    [↓↓↓]    [←←←←]    ?"
+      "text": "↑    →→    ↓↓↓    ←←←←    ?"
     },
     "options": [
-      "[→→→→→]",
-      "[←←←←←]",
-      "[↑↑↑↑↑]",
-      "[↑↑↑↑]"
+      "→→→→→",
+      "←←←←←",
+      "↑↑↑↑↑",
+      "↑↑↑↑"
     ],
     "correctIndex": 2,
     "optionRationales": [
