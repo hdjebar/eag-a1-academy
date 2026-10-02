@@ -53,13 +53,17 @@ Official specifications retrieved and verified live in October 2026 from the [Go
 
 ## Detailed Test Analysis & Format Concordance (Group A1)
 
-### 1. Raisonnement abstrait (Abstract Reasoning)
+### 1. Raisonnement abstrait (Abstract Reasoning / « Test géométrique »)
 
 - **Official GovJobs Definition:** *"Le test de raisonnement abstrait est composé de séries de formes ou de matrices géométriques. Le candidat doit identifier les règles ou les relations qui relient les différents éléments d'une série, afin de repérer la logique qui l'unifie et sélectionner l'élément qui la complète."*
+- **Candidate Terminology & « Test géométrique » :**
+  - In candidate forums, prep communities, and civil service exchanges, this test is universally referred to as the **« test géométrique »** (geometric test).
+  - This designation reflects the exclusive use of geometric shapes (Raven-like 3×3 matrices, rotating polygonal figures, progressive element counts, and shading symmetries).
 - **Reconciliation & Format Settlement:**
   - *Discrepancy:* Commercial prep site `psychotechnique.lu` asserted that the 2026 test is exclusively an odd-one-out format (*"trouver l'intrus parmi 9 figures"*).
   - *Official Reality:* GovJobs explicitly specifies **series and matrix completion**.
   - *Implementation Decision (ADR-0005):* Standardise on pure geometric series (horizontal/vertical transformations, rotations, symmetry, progressions) and 3×3 matrix completion. Strictly exclude alphanumeric symbols or odd-one-out items.
+  - *Calibrated Bank:* The platform provides **100 validated geometric items** conforming strictly to this official specification.
 - **Top Psychometric Analogues:**
   1. **EPSO Abstract Reasoning (AST/AD samples):** Series of 5 geometric frames, 5 choices (A–E). Official European psychometric benchmark.
   2. **SHL Direct Inductive Reasoning:** Progressive transformations with verified explanations.
@@ -151,9 +155,10 @@ graph TD
    - Scored via continuous linear concordance:
      $$\text{score} = \max\left(0, 1 - \frac{|\text{userRating} - \text{targetRating}|}{3}\right)$$
    - Full credit (1.0) for exact match, 0.67 for adjacent ratings, 0.33 for distance 2, 0.0 for polar opposition.
-3. **Local Offline Determinism:**
-   - Precompiled into `generated/bank.js` with zero runtime network dependencies.
-   - Fisher-Yates array shuffling on session launch to ensure repeatable, fair simulation.
+3. **Local Offline Determinism & 500-Question Calibrated Bank:**
+   - Precompiled directly into `app.js` and `admin.js` via `npm run build:bank` with zero runtime network dependencies.
+   - Bank of **500 validated items** (100 per category: RA, RV, RN, PL, JS).
+   - Dynamic random sampling without replacement (Fisher-Yates) on session launch (10 items for guided practice, 15 for simulation, 5 tests for exam mode) ensuring high replay value and broad coverage.
 
 ---
 

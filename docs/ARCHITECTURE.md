@@ -107,12 +107,13 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Contenu = données** : `app.js` échappe tout le texte des items via `esc()` ; les tableaux (`type: "table"`) et les figures (`type: "shapes"`) sont décrits en JSON structuré et construits sémantiquement par l'application. Un item ne peut injecter aucun balisage ni code arbitraire.
+* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les **100 questions calibrées** de la catégorie (soit **500 questions au total** dans la banque).
+* **Raisonnement abstrait (Test géométrique)** : le stimulus de type `{ type: "shapes", text: "..." }` permet la représentation structurée et accessible de matrices 3×3 et de suites de figures (rotations, symétries, grilles d'éléments géométriques purs), sans dépendance d'image externe ni risque d'injection.
 * **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
 * **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :
   $$\text{score} = \max\left(0, 1 - \frac{\sum_{i=1}^n |k_i - u_i|}{3 \cdot n}\right)$$
   où $u_i$ est la note attribuée par le candidat, $k_i$ la note de référence et $n=4$ le nombre d'options. L'item est considéré comme réussi si $\text{score} \ge 0{,}75$.
-* **Explications et justifications unitaires (`optionRationales`)** : 100 % des questions validées fournissent un distractor argumenté pour chaque option expliquant précisément le piège évité ou la règle cognitive appliquée.
+* **Explications et justifications unitaires (`optionRationales`)** : 100 % des questions validées fournissent un distracteur argumenté pour chaque option expliquant précisément le piège évité ou la règle cognitive appliquée.
 * **Aucune ressource externe** : polices système exclusivement (`system-ui`), aucun appel réseau à l'exécution.
 
 ---

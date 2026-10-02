@@ -6,16 +6,18 @@ Ce projet traite toute sortie générée par IA comme du matériel candidat **no
 
 ## Principes
 
-1. **Aucune contrefaçon** : ne jamais reproduire, mémoriser ou reconstituer des questions de l'épreuve réelle. Les items sont 100 % originaux.
-2. **Formulations interdites** : `question officielle`, `item officiel`, `barème officiel`, `confidentiel` sont rejetés par le validateur.
-3. **Texte brut uniquement** : aucun HTML, aucune balise, aucune entité (`&nbsp;`) dans les items. Les tableaux et les figures utilisent les objets `stimulus` structurés (voir ci-dessous) ; l'application les affiche en échappant tout le texte.
-4. **Conformité aux descriptions officielles A1** (page GovJobs « Les tests de l'EAG ») :
-   - **abstrait** : compléter une série ou une matrice de **figures** (symboles géométriques uniquement, ni lettres, ni chiffres, ni mots) ;
-   - **verbal** : répondre ou appliquer une consigne à partir du seul texte ;
-   - **numérique** : tableaux, graphiques, données chiffrées, opérations simples (calculatrice autorisée) ;
-   - **planification** : gérer un agenda (délais, disponibilités, priorités, dépendances) ;
+1. **Aucune contrefaçon & vocabulaire réservé** : ne jamais reproduire, mémoriser ou reconstituer des questions de l'épreuve réelle. Les items sont 100 % originaux. Formulations formellement interdites par le validateur : `question officielle`, `item officiel`, `barème officiel`, `confidentiel` (ainsi que toute variante de cette racine lexicale).
+2. **Texte brut uniquement** : aucun HTML, aucune balise, aucune entité (`&nbsp;`) dans les items. Tout texte est échappé par le moteur de rendu.
+3. **Conformité aux descriptions officielles A1** (page GovJobs « Les tests de l'EAG ») :
+   - **abstrait (*Test géométrique*)** : compléter une série ou une matrice 3×3 de **figures géométriques pures** (symboles géométriques uniquement, ni lettres, ni chiffres, ni mots) via un stimulus `{ "type": "shapes", "text": "..." }` ;
+   - **verbal** : répondre ou appliquer une consigne à partir du seul texte (formats `single_best` ou `tfcs` Vrai / Faux / Indéterminé) ;
+   - **numérique** : tableaux, graphiques, données chiffrées, opérations simples (calculatrice de base autorisée) ;
+   - **planification** : gérer un agenda sous contraintes (délais, disponibilités, priorités, dépendances) ;
    - **jugement situationnel** : **noter chaque réaction** de 1 à 4 (format `rating`), compétences « servir le client-usager » et « conseiller » uniquement.
-5. **Une seule réponse défendable**, des options de longueur comparable, une explication qui démontre la réponse et une justification par option (`optionRationales`).
+4. **Exigences psychométriques du validateur** :
+   - **Équilibre des longueurs** : pour les questions `single_best`, le ratio entre la longueur de l'option la plus longue et celle de la plus courte ne doit pas dépasser **$1{,}35$** ($\text{longueur max} \le 1{,}35 \times \text{longueur min}$), éliminant le biais de l'option « trop détaillée » ;
+   - **Règles du format `rating`** : `correctIndex` fixé à `0`, `ratings[0] === 4` (exactement une note maximale), aucune autre option notée `4`, et au moins 3 notes distinctes parmi $\{1, 2, 3, 4\}$ ;
+   - **Rationales obligatoires à 100 %** : une explication générale et une justification détaillée par option (`optionRationales`) expliquant l'erreur cognitive ou la règle appliquée.
 
 Le contrat complet est dans [`schema/question.schema.json`](../schema/question.schema.json) ; les consignes de rédaction sont dans [`prompts/generate-bank.md`](../prompts/generate-bank.md).
 
