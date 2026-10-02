@@ -508,5 +508,685 @@
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "abstract-symb-016",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quel symbole complète logiquement cette série de figures ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ▲  ■  ●  ▲  ▲  ■  ■  ●  ▲  ▲  ▲  ?"
+    },
+    "options": [
+      "■■■",
+      "▲▲▲",
+      "●●",
+      "■■"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les triangles et carrés augmentent de 1 à chaque cycle (1▲ 1■, 2▲ 2■, 3▲ 3■).",
+      "Le groupe de 3 triangles vient d'être achevé, c'est au tour des carrés.",
+      "Le disque reste un séparateur isolé unique à chaque cycle.",
+      "Deux carrés correspondent au cycle précédent, le cycle actuel en exige 3."
+    ],
+    "explanation": "La série est rythmée par un disque isolateur ● suivi de triangles puis de carrés en nombre croissant : d'abord 1▲ et 1■, puis 2▲ et 2■, enfin 3▲ et donc 3■.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-017",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète la dernière ligne de la matrice 3×3 ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○   △   □\n●   ▲   ■\n◎   ◬   ?"
+    },
+    "options": [
+      "回",
+      "■",
+      "□",
+      "◇"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : cercle concentrique, triangle imbriqué, puis carré avec cadre concentrique (figure double).",
+      "Le carré plein figure déjà sur la deuxième ligne.",
+      "Le carré simple vide figure déjà sur la première ligne.",
+      "Le losange n'appartient pas à la famille cercle-triangle-carré de la matrice."
+    ],
+    "explanation": "Chaque colonne conserve une forme géométrique : colonne 1 = cercle, colonne 2 = triangle, colonne 3 = carré. Chaque ligne applique un traitement : ligne 1 = forme simple vide, ligne 2 = forme pleine, ligne 3 = forme concentrique imbriquée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-rot-018",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quelle figure succède logiquement dans la séquence rotative ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲  →  ▶  →  ▼  →  ?"
+    },
+    "options": [
+      "◀",
+      "▲",
+      "▶",
+      "▼"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : rotation horaire de 90° faisant pointer le sommet vers la gauche.",
+      "Retour en arrière de 270° au lieu d'une rotation de 90°.",
+      "Répétition de la deuxième étape sans progression.",
+      "Répétition de l'étape précédente."
+    ],
+    "explanation": "Le triangle tourne de 90° dans le sens horaire à chaque pas : haut (▲), droite (▶), bas (▼), puis gauche (◀).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-trans-019",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle figure remplace le point d'interrogation selon la même relation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◐  →  ◑\n◓  →  ?"
+    },
+    "options": [
+      "◒",
+      "◓",
+      "◐",
+      "◑"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : demi-disque haut plein devenant demi-disque bas plein par symétrie axiale.",
+      "Figure identique sans transformation.",
+      "Passe arbitrairement à une division verticale.",
+      "Confusion avec la transformation de la première ligne."
+    ],
+    "explanation": "La première ligne effectue une symétrie inversant le côté plein (gauche devient droite). La seconde ligne applique la même inversion à la division horizontale : le demi-disque haut plein (◓) devient le demi-disque bas plein (◒).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-020",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle figure complète la matrice 2×2 ci-dessous ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆   ◇\n●   ?"
+    },
+    "options": [
+      "○",
+      "●",
+      "◆",
+      "◇"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la forme pleine devient vide (◆ donne ◇, donc ● donne ○).",
+      "Conserve le remplissage plein sans appliquer la règle de la première ligne.",
+      "Réintroduit le losange sur la ligne des disques.",
+      "Réintroduit le losange vide déjà présent en ligne 1."
+    ],
+    "explanation": "Chaque ligne conserve sa forme propre (losange en ligne 1, disque en ligne 2) et passe de la version pleine à la version vide de gauche à droite. ● donne donc ○.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-step-021",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quel terme complète logiquement cette progression arithmétique de formes ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "★     ★★     ★★★     ?"
+    },
+    "options": [
+      "★★★★",
+      "★★★",
+      "★★★★★",
+      "☆☆☆☆"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : progression de +1 étoile pleine à chaque étape (1, 2, 3, 4).",
+      "Répète le terme précédent sans incrémenter.",
+      "Saute une étape en passant directement à 5 étoiles.",
+      "Bonne quantité mais altère arbitrairement le remplissage en étoiles vides."
+    ],
+    "explanation": "La règle est une incrémentation constante d'une étoile pleine par étape. Après 3 étoiles pleines viennent 4 étoiles pleines (★★★★).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-rot-022",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle figure poursuit cette rotation anti-horaire ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳  →  ◰  →  ◱  →  ?"
+    },
+    "options": [
+      "◲",
+      "◳",
+      "◰",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le quadrant plein passe de bas-gauche (◱) à bas-droite (◲) en sens anti-horaire.",
+      "Retour erroné au point initial avant d'avoir bouclé le cycle.",
+      "Rotation dans le sens inverse (horaire).",
+      "Répétition de la figure précédente."
+    ],
+    "explanation": "Le quadrant plein effectue une rotation de 90° dans le sens anti-horaire : haut-droite (◳), haut-gauche (◰), bas-gauche (◱), puis bas-droite (◲).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-trans-023",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle figure correspond à la même règle de symétrie horizontale ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◁  →  ▷\n▲  →  ▲\n◀  →  ?"
+    },
+    "options": [
+      "▶",
+      "◀",
+      "▲",
+      "▼"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : triangle plein orienté vers la gauche tourné en triangle plein orienté vers la droite.",
+      "Figure identique sans symétrie.",
+      "Orientation verticale sans rapport avec la symétrie horizontale.",
+      "Orientation vers le bas sans rapport avec la règle gauche/droite."
+    ],
+    "explanation": "La transformation est un retournement horizontal (miroir vertical). Le triangle plein orienté vers la gauche (◀) devient un triangle plein orienté vers la droite (▶).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-024",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Quelle case remplace le point d'interrogation dans la matrice 3×3 ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ■  ▲\n▲  ●  ■\n■  ▲  ?"
+    },
+    "options": [
+      "●",
+      "■",
+      "▲",
+      "○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : chaque ligne et chaque colonne comporte exactement un cercle, un carré et un triangle pleins.",
+      "Le carré est déjà présent en première colonne de la troisième ligne.",
+      "Le triangle est déjà présent en deuxième colonne de la troisième ligne.",
+      "La forme circulaire est correcte mais elle doit être pleine comme le reste de la matrice."
+    ],
+    "explanation": "Il s'agit d'un carré latin de formes : chaque ligne et colonne permute le cercle, le carré et le triangle. La troisième ligne (■, ▲, ?) et la troisième colonne (▲, ■, ?) manquent toutes deux du cercle plein ●.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-symb-025",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quel groupe de figures complète logiquement la série alternée ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○ ●     ○○ ●●     ○○○ ●●●     ?"
+    },
+    "options": [
+      "○○○○ ●●●●",
+      "○○○○ ●●●",
+      "○○○ ●●●●",
+      "●●●● ○○○○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les cercles vides et les cercles pleins progressent simultanément de 1 à chaque pas (4 de chaque).",
+      "Sous-estime le nombre de disques pleins qui doit égaler 4.",
+      "Omet d'incrémenter le groupe des disques vides.",
+      "Inverse l'ordre d'apparition en plaçant les disques pleins avant les vides."
+    ],
+    "explanation": "Chaque groupe contient un nombre égal de cercles vides puis pleins, avec un incrément d'une unité à chaque étape : 1, 2, 3, puis 4. Le terme suivant comporte 4 disques vides suivis de 4 disques pleins.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-rot-026",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle flèche complète la rotation continue de 90° anti-horaire ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑  →  ←  →  ↓  →  ?"
+    },
+    "options": [
+      "→",
+      "↑",
+      "←",
+      "↓"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : après sud (↓), la rotation anti-horaire de 90° pointe vers l'est (→).",
+      "Rotation de 180° au lieu de 90°.",
+      "Retour en arrière vers l'ouest.",
+      "Répétition de l'orientation sud précédente."
+    ],
+    "explanation": "La flèche tourne de 90° dans le sens anti-horaire (trigonométrique) : nord (↑), ouest (←), sud (↓), puis est (→).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-027",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle case complète la dernière colonne de la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆      ◆◆      ◆◆◆\n◇      ◇◇      ?"
+    },
+    "options": [
+      "◇◇◇",
+      "◇◇",
+      "◆◆◆",
+      "◇◇◇◇"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 3 losanges vides, prolongeant la progression 1, 2, 3 en ligne 2.",
+      "Répète la case précédente sans progression.",
+      "Introduit des losanges pleins réservés à la première ligne.",
+      "Progresse de 2 unités au lieu d'une."
+    ],
+    "explanation": "Chaque ligne conserve sa forme propre (losanges pleins en ligne 1, vides en ligne 2). Chaque colonne augmente la quantité d'une unité : 1 en colonne 1, 2 en colonne 2, 3 en colonne 3. Ligne 2, colonne 3 requiert donc 3 losanges vides (◇◇◇).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-trans-028",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Quelle figure résulte de la combinaison des deux transformations ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■ ▲   →   ▲ ■ (inversion position)\n▲ △   →   △ ▲ (inversion position)\n● ○   →   ?"
+    },
+    "options": [
+      "○ ●",
+      "● ○",
+      "● ●",
+      "○ ○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : permutation horizontale inversant la place du disque plein et du disque vide.",
+      "Identique sans permutation.",
+      "Deux figures pleines au lieu d'une inversion de position.",
+      "Deux figures vides au lieu d'une inversion de position."
+    ],
+    "explanation": "La transformation permute strictement la figure de gauche et la figure de droite : ● ○ devient donc ○ ●.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-symb-029",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel terme complète cette suite alternée à double pas ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●  ■  ■  ●  ■  ■  ■  ●  ■  ■  ■  ■  ?"
+    },
+    "options": [
+      "●",
+      "■",
+      "▲",
+      "○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le bloc de 4 carrés est terminé, un disque délimiteur s'impose.",
+      "Ajouterait un cinquième carré rompant le cycle de 4.",
+      "Forme triangulaire étrangère à la suite.",
+      "Cercle vide alors que tous les cercles de la série sont pleins."
+    ],
+    "explanation": "Entre deux disques pleins ●, le nombre de carrés pleins ■ augmente d'un à chaque intervalle : 2 carrés, puis 3 carrés, puis 4 carrés. Le groupe de 4 étant achevé, le terme suivant est un disque ●.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-rot-030",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle orientation prend la flèche après 3 rotations successives de 45° horaire ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "←  →  ↖  →  ↑  →  ?"
+    },
+    "options": [
+      "↗",
+      "→",
+      "↓",
+      "↘"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : rotation de 45° horaire après le nord (↑) amenant la flèche au nord-est (↗).",
+      "Rotation de 90° au lieu de 45° après le nord.",
+      "Rotation de 180° opposée au nord.",
+      "Rotation de 135° sautant une orientation."
+    ],
+    "explanation": "La flèche tourne régulièrement de 45° dans le sens horaire : ouest (←), nord-ouest (↖), nord (↑). L'orientation suivante pointe au nord-est (↗).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-031",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle forme remplace le point d'interrogation dans la matrice 3×3 ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△  △  △\n□  □  □\n○  ○  ?"
+    },
+    "options": [
+      "○",
+      "●",
+      "□",
+      "△"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : chaque ligne conserve une forme identique sur ses trois cases (cercles vides en ligne 3).",
+      "Cercle plein alors que toutes les figures de la matrice sont vides.",
+      "Le carré appartient exclusivement à la deuxième ligne.",
+      "Le triangle appartient exclusivement à la première ligne."
+    ],
+    "explanation": "La règle horizontale impose l'invariance stricte de forme et de remplissage sur chaque ligne : ligne 1 = triangles vides, ligne 2 = carrés vides, ligne 3 = cercles vides. La case manquante est donc un cercle vide (○).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-trans-032",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle figure complète la transformation par inversion de remplissage ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■  →  □\n●  →  ○\n◆  →  ?"
+    },
+    "options": [
+      "◇",
+      "◆",
+      "□",
+      "○"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : inversion de remplissage transformant le losange plein en losange vide.",
+      "Conserve le remplissage plein sans transformation.",
+      "Remplace arbitrairement la forme par un carré.",
+      "Remplace arbitrairement la forme par un cercle."
+    ],
+    "explanation": "Chaque forme pleine devient sa contrepartie vide correspondante : le losange plein ◆ devient un losange vide ◇.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-symb-033",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quel symbole complète la suite décroissante de formes ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■■■■■  →  ■■■■  →  ■■■  →  ■■  →  ?"
+    },
+    "options": [
+      "■",
+      "□",
+      "■■■",
+      "●"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : décrémentation constante de 1 carré plein (5, 4, 3, 2, 1).",
+      "Carré vide alors que tous les éléments de la suite sont pleins.",
+      "Remonte à 3 carrés au lieu de poursuivre la décrémentation.",
+      "Changement injustifié de forme géométrique."
+    ],
+    "explanation": "Le nombre de carrés pleins décroît d'une unité à chaque étape : 5, 4, 3, 2, puis 1 carré plein (■).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-rot-034",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quelle figure complète la demi-rotation (180°) ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲  →  ▼\n◀  →  ▷\n↑  →  ?"
+    },
+    "options": [
+      "↓",
+      "↑",
+      "→",
+      "←"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : rotation de 180° inversant la direction du nord (↑) vers le sud (↓).",
+      "Figure identique sans rotation.",
+      "Rotation de 90° horaire au lieu de 180°.",
+      "Rotation de 90° anti-horaire au lieu de 180°."
+    ],
+    "explanation": "Chaque terme subit un demi-tour complet (180°) : haut devient bas, gauche devient droite. La flèche pointant vers le haut (↑) pointe donc vers le bas (↓).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "abstract-matrix-035",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète logiquement la matrice 2×2 ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●   ▲\n■   ?"
+    },
+    "options": [
+      "◆",
+      "●",
+      "▲",
+      "■"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : quatrième figure géométrique distincte complétant l'ensemble (cercle, triangle, carré, losange).",
+      "Répète le cercle figurant déjà en première case.",
+      "Répète le triangle figurant déjà en deuxième case.",
+      "Répète le carré figurant déjà en troisième case."
+    ],
+    "explanation": "La matrice associe 4 polygones de complexité ou forme différente sans répétition (cercle, triangle, carré, losange). La case manquante est le losange plein ◆.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
   }
 ]

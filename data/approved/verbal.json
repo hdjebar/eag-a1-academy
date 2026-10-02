@@ -459,5 +459,617 @@
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "verbal-contra-016",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle conclusion s'impose avec une certitude absolue à partir des prémisses fournies ?",
+    "stimulus": "Tout marché public d'un montant supérieur à 100 000 euros requiert un avis préalable du contrôleur financier. L'acquisition de matériel X n'a reçu aucun avis du contrôleur financier.",
+    "options": [
+      "Le montant du marché X n'est pas supérieur à 100 000 euros.",
+      "Le marché X est entaché d'une nullité administrative définitive.",
+      "Le contrôleur financier a refusé de valider le marché X.",
+      "Le marché X sera examiné lors de la prochaine session financière."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : par contraposition stricte (si montant > 100 000 € alors avis obligatoire ; or pas d'avis, donc montant ≤ 100 000 € pour être régulier).",
+      "Extrapolation infondée : le texte ne statue sur aucune nullité prononcée.",
+      "Affirmation non étayée : l'absence d'avis ne prouve pas un refus d'examen.",
+      "Pure supposition temporelle sans ancrage dans le texte fourni."
+    ],
+    "explanation": "Par application directe de la contraposée logique : si la règle impose « Marché > 100 000 € ⇒ Avis », alors l'absence d'avis implique nécessairement que le marché ne dépasse pas ce seuil réglementaire sous réserve de conformité.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-tfcs-017",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : L'agent Claire a droit au remboursement intégral de ses frais de déplacement.",
+    "stimulus": "Les agents effectuant un déplacement professionnel hors du Grand-Duché bénéficient d'une indemnité forfaitaire kilométrique. Claire a effectué un déplacement professionnel à Esch-sur-Alzette.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte ne précise pas si les déplacements nationaux sont remboursés ou exclus.",
+      "Le texte n'affirme pas que les déplacements nationaux sont privés de remboursement.",
+      "Correct : la règle régit les déplacements hors du pays, mais reste silencieuse sur les règles applicables aux trajets nationaux comme Esch-sur-Alzette."
+    ],
+    "explanation": "Le texte ne mentionne que les conditions applicables aux déplacements internationaux. Rien n'est précisé sur les modalités applicables aux déplacements à l'intérieur du Grand-Duché (comme Esch-sur-Alzette). Il est impossible de conclure.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-rule-018",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle décision applique rigoureusement la consigne de conservation ?",
+    "stimulus": "Les procès-verbaux de séance sont versés aux archives définitives après un délai de 5 ans en archives courantes. Les brouillons préparatoires doivent être détruits immédiatement après adoption du texte définitif.",
+    "options": [
+      "Détruire les brouillons préparatoires dès l'adoption du texte définitif.",
+      "Conserver les brouillons préparatoires pendant une durée minimale de 5 ans.",
+      "Verser les brouillons préparatoires aux archives définitives avec le procès-verbal.",
+      "Transférer les procès-verbaux aux archives définitives dès leur adoption."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : respecte scrupuleusement l'obligation de destruction immédiate des brouillons.",
+      "Confond la règle des brouillons avec le délai de conservation des procès-verbaux.",
+      "Viole l'obligation de destruction en conservant des documents préparatoires.",
+      "Viole le délai intermédiaire de 5 ans imposé pour les procès-verbaux."
+    ],
+    "explanation": "La consigne distingue formellement les procès-verbaux (conservés 5 ans en archives courantes avant versement) et les brouillons préparatoires (destruction immédiate obligatoire dès adoption).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-quant-019",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle déduction logique est nécessairement vraie ?",
+    "stimulus": "Aucun document non signé n'est exécutoire. Certains documents de la division R sont exécutoires.",
+    "options": [
+      "Certains documents de la division R sont signés.",
+      "Tous les documents de la division R sont signés.",
+      "Aucun document de la division R n'est signé.",
+      "Tous les documents signés sont exécutoires."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les documents exécutoires étant obligatoirement signés, ceux de la division R qui sont exécutoires sont signés.",
+      "Généralisation abusive : seuls certains documents de R sont exécutoires.",
+      "Contredit directement la prémisse affirmant que certains documents de R sont exécutoires.",
+      "Confond condition nécessaire (signature requise) et condition suffisante."
+    ],
+    "explanation": "Si aucun document non signé n'est exécutoire, tout document exécutoire est obligatoirement signé. Comme certains documents de la division R sont exécutoires, ils sont donc nécessairement signés.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-comp-020",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quelle proposition énonce un fait objectif et non une appréciation qualitative ?",
+    "stimulus": "La refonte du portail citoyen a permis de diviser par deux le délai de délivrance des extraits de casier judiciaire, passant de 6 jours à 3 jours ouvrés, pour le plus grand confort des administrés.",
+    "options": [
+      "Le délai de délivrance est passé de 6 jours à 3 jours ouvrés.",
+      "Le confort des administrés est grandement amélioré par la réforme.",
+      "La nouvelle procédure est la plus efficace de l'administration.",
+      "Le portail citoyen offre une ergonomie particulièrement réussie."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : mesure chiffrée factuelle, vérifiable et exempte de jugement de valeur.",
+      "Appréciation qualitative subjective sur le ressenti des usagers.",
+      "Jugement de valeur comparatif sans base quantitative fournie.",
+      "Opinion esthétique et ergonomique subjective."
+    ],
+    "explanation": "Le passage de 6 à 3 jours ouvrés est une donnée temporelle chiffrée, mesurable et vérifiable, contrairement aux mentions sur le confort ou la qualité ergonomique.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-synth-021",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle proposition résume le plus fidèlement le dispositif décrit ?",
+    "stimulus": "Les demandes de subvention sont recevables du 1er janvier au 31 mars. Toute demande déposée hors délai est déclarée irrecevable sans examen au fond, sauf cas de force majeure dûment attesté par une autorité publique compétente.",
+    "options": [
+      "Les demandes hors délai sont irrecevables, sauf force majeure attestée par une autorité.",
+      "Toute demande déposée après le 31 mars est définitivement rejetée sans exception possible.",
+      "Les demandes déposées entre janvier et mars font l'objet d'une acceptation automatique.",
+      "Une attestation sur l'honneur suffit pour justifier un dépôt de dossier tardif."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : reprend fidèlement le principe d'irrecevabilité et l'unique exception d'autorité.",
+      "Ignore l'exception expresse de force majeure prévue par le texte.",
+      "Confond la recevabilité de la demande avec son acceptation au fond.",
+      "Contredit l'exigence d'une attestation délivrée par une autorité publique compétente."
+    ],
+    "explanation": "La synthèse exacte préserve la règle générale (irrecevabilité des dossiers tardifs) ainsi que sa condition dérogatoire stricte (force majeure établie par une autorité publique).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-tfcs-022",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : La demande de congé de Julien a été approuvée par son supérieur.",
+    "stimulus": "Toute demande de congé bonifié doit être déposée un mois avant le départ. Julien a déposé sa demande de congé bonifié six semaines avant la date de départ prévue.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le respect du délai de dépôt ne garantit pas la décision favorable de l'autorité.",
+      "Le texte n'indique en aucun cas que la demande de Julien a été refusée.",
+      "Correct : Julien a respecté le délai de dépôt, mais le texte ne dit rien sur la décision finale de sa hiérarchie."
+    ],
+    "explanation": "Le texte confirme uniquement le respect de la formalité temporelle de dépôt (6 semaines > 1 mois requis). Il ne contient aucune information quant à l'acceptation ou au refus de la demande.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-syll-023",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle proposition est rigoureusement déduite des prémisses ?",
+    "stimulus": "Tous les inspecteurs assermentés disposent d'un droit d'accès aux locaux professionnels. Aucun stagiaire n'est assermenté.",
+    "options": [
+      "Certaines personnes ayant un droit d'accès ne sont pas stagiaires.",
+      "Tous les stagiaires sont interdits d'accès aux locaux professionnels.",
+      "Tous les inspecteurs assermentés sont d'anciens stagiaires.",
+      "L'assermentation est accordée à tout agent après deux ans de service."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les inspecteurs assermentés disposent du droit d'accès et, n'étant pas stagiaires, constituent des personnes autorisées non-stagiaires.",
+      "Le texte ne dit pas que les stagiaires ne peuvent pas avoir accès pour un autre motif.",
+      "Spéculation sur l'historique de carrière absente du texte.",
+      "Règle temporelle totalement inexistante dans les prémisses."
+    ],
+    "explanation": "Les inspecteurs assermentés ont un droit d'accès et aucun stagiaire n'est assermenté. Par conséquent, les inspecteurs assermentés représentent au moins une catégorie de personnes dotées d'un droit d'accès qui ne sont pas des stagiaires.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-app-024",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel dossier remplit scrupuleusement toutes les conditions d'éligibilité ?",
+    "stimulus": "Pour être éligible au fonds d'innovation, un projet doit réunir trois critères cumulatifs : être porté par au moins deux services distincts, avoir une durée d'exécution inférieure à 12 mois, et ne pas dépasser un budget total de 50 000 euros.",
+    "options": [
+      "Projet A : 2 services, durée de 9 mois, budget de 45 000 euros.",
+      "Projet B : 1 service, durée de 6 mois, budget de 30 000 euros.",
+      "Projet C : 3 services, durée de 14 mois, budget de 48 000 euros.",
+      "Projet D : 2 services, durée de 10 mois, budget de 55 000 euros."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 2 services (≥ 2), 9 mois (< 12) et 45 000 € (≤ 50 000 €) valident les 3 critères cumulatifs.",
+      "Échoue sur le nombre de services (1 seul service au lieu de deux au minimum).",
+      "Échoue sur la durée d'exécution (14 mois dépasse la limite stricte de 12 mois).",
+      "Échoue sur le budget prévisionnel (55 000 € dépasse le plafond de 50 000 €)."
+    ],
+    "explanation": "Seul le projet A remplit simultanément les trois conditions cumulatives imposées par le texte : au moins deux services (2), durée inférieure à 12 mois (9 mois), et budget n'excédant pas 50 000 euros (45 000 euros).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-comp-025",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle proposition reformule le texte sans altérer son sens logique ?",
+    "stimulus": "Le renouvellement d'une autorisation d'exploitation n'est accordé que si l'exploitant a transmis son bilan environnemental annuel avant le 1er décembre.",
+    "options": [
+      "La transmission du bilan avant le 1er décembre est une condition nécessaire au renouvellement.",
+      "La transmission du bilan avant le 1er décembre garantit automatiquement le renouvellement.",
+      "L'exploitant qui transmet son bilan le 5 décembre obtiendra une dérogation de plein droit.",
+      "Le renouvellement de l'autorisation d'exploitation dispense du bilan environnemental."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la locution « n'est accordé que si » définit strictement une condition nécessaire.",
+      "Confond condition nécessaire et condition suffisante d'approbation.",
+      "Contredit formellement l'échéance impérative du 1er décembre.",
+      "Contredit l'obligation légale de transmission du bilan."
+    ],
+    "explanation": "La formulation « n'est accordé que si » signifie que sans ce dépôt préalable avant le 1er décembre, le renouvellement est impossible. Cela en fait une condition sine qua non (nécessaire), mais pas forcément suffisante.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-inf-026",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle conclusion est absolument certaine ?",
+    "stimulus": "Toutes les réunions de crise ont lieu dans la salle rouge. La réunion de ce matin a lieu dans la salle bleue.",
+    "options": [
+      "La réunion de ce matin n'est pas une réunion de crise.",
+      "La réunion de ce matin est un simple point d'information interne.",
+      "La salle rouge était indisponible ce matin pour travaux.",
+      "Aucune réunion n'a eu lieu dans la salle rouge ce matin."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : par contraposition (si réunion de crise alors salle rouge ; or salle bleue, donc pas de crise).",
+      "Spéculation sur la nature exacte de la réunion non étayée par le texte.",
+      "Hypothèse matérielle non mentionnée dans les prémisses.",
+      "Rien ne permet d'affirmer que la salle rouge est restée inoccupée."
+    ],
+    "explanation": "Si toute réunion de crise se déroule obligatoirement dans la salle rouge, une réunion tenue dans la salle bleue ne peut en aucun cas être une réunion de crise (contraposition formelle).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-tfcs-027",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : L'ensemble des fonctionnaires du ministère a suivi la session de sensibilisation à la cybersécurité.",
+    "stimulus": "La participation à la session de sensibilisation à la cybersécurité était obligatoire pour les agents du service informatique. Certains agents d'autres services y ont également assisté de manière volontaire.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Affirmer que tous ont suivi la session contredit le périmètre restreint d'obligation du texte.",
+      "Correct : l'obligation ne visait que le service informatique et seuls certains agents des autres services ont participé, ce qui exclut une participation universelle.",
+      "Le texte permet d'affirmer avec certitude que la totalité n'y a pas participé."
+    ],
+    "explanation": "Le texte stipule que la session n'était obligatoire que pour le service informatique et que seuls certains agents des autres départements étaient présents. L'affirmation selon laquelle « l'ensemble » des fonctionnaires y a assisté est donc fausse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-app-028",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle modalité de transmission est strictement conforme à la directive ?",
+    "stimulus": "Les réclamations relatives à la taxe foncière doivent être transmises exclusivement par pli recommandé avec avis de réception ou déposées contre récépissé au secrétariat communal.",
+    "options": [
+      "Envoi postal par lettre recommandée avec avis de réception.",
+      "Transmission par courrier électronique avec confirmation de lecture.",
+      "Dépôt d'une lettre simple dans la boîte aux lettres de la commune.",
+      "Appel téléphonique enregistré auprès de l'agent de permanence."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : mode d'envoi expressément prévu et autorisé par la directive.",
+      "L'envoi électronique n'est pas autorisé par l'adverbe d'exclusivité « exclusivement ».",
+      "Le dépôt sans récépissé ne remplit pas l'exigence formelle requise.",
+      "La voie orale par téléphone est dépourvue de toute valeur probante au regard de la règle."
+    ],
+    "explanation": "La consigne restreint les voies de recours admissibles à deux modalités exclusives : le pli recommandé avec accusé de réception ou le dépôt physique contre récépissé. L'envoi en recommandé AR est donc conforme.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-inf-029",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Laquelle des assertions constitue une extrapolation non garantie par le passage ?",
+    "stimulus": "Au cours de l'année écoulée, l'introduction d'un outil d'indexation automatisé a permis aux agents d'instruire 1 800 requêtes contre 1 200 l'année précédente, sans augmentation d'effectif.",
+    "options": [
+      "Les agents éprouvent une plus grande satisfaction dans leur quotidien professionnel.",
+      "Le nombre total de requêtes instruites a progressé de 50 % par rapport à l'année précédente.",
+      "L'effectif du service est demeuré stable sur les deux années comparées.",
+      "La productivité moyenne par agent a augmenté au cours de l'année écoulée."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le passage renseigne des données d'activité et d'effectif, mais aucune indication sur la satisfaction des agents.",
+      "Démontré mathématiquement : (1 800 - 1 200) / 1 200 = 600 / 1 200 = +50 %.",
+      "Démontré textuellement par la mention « sans augmentation d'effectif ».",
+      "Démontré par la hausse de volume à effectif inchangé."
+    ],
+    "explanation": "Le texte ne fournit que des indicateurs quantitatifs objectifs (volume de dossiers et stabilité des ressources humaines). Prêter aux agents une satisfaction accrue relève d'une extrapolation subjective non garantie.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-synth-030",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle proposition synthétise le plus fidèlement les obligations déontologiques énoncées ?",
+    "stimulus": "Tout fonctionnaire est tenu au secret professionnel pour les faits dont il a connaissance dans l'exercice de ses fonctions. Il ne peut en être délié que par une décision expresse du ministre de tutelle ou dans les cas expressément prescrits par la loi pénale.",
+    "options": [
+      "Le secret s'impose à tout fonctionnaire, avec pour seules dérogations la décision ministérielle ou la loi pénale.",
+      "Le fonctionnaire peut librement divulguer des informations réservées à ses collègues proches.",
+      "La levée du secret professionnel est accordée de plein droit sur simple demande d'un citoyen.",
+      "Le secret professionnel ne s'applique plus dès lors que l'agent quitte définitivement son service."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : résume fidèlement le champ universel de l'obligation et les deux seules exceptions limitatives.",
+      "Viole l'obligation de secret qui ne tolère aucun partage informel entre collègues.",
+      "Contredit le principe d'interdiction et les conditions strictes de levée.",
+      "Extrapolation injustifiée : l'obligation demeure attachée aux faits connus en exercice."
+    ],
+    "explanation": "La synthèse restitue fidèlement les deux composantes du texte : le caractère général de l'obligation de secret professionnel et les deux seuls cas d'exception limitativement énumérés (décision du ministre ou prescription de la loi pénale).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-inf-031",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle déduction logique est incontestable ?",
+    "stimulus": "Tous les lauréats de l'épreuve A1 possèdent un diplôme de niveau master ou équivalent. Marc est lauréat de l'épreuve A1.",
+    "options": [
+      "Marc possède un diplôme de niveau master ou équivalent.",
+      "Marc est déjà titularisé dans son grade de recrutement.",
+      "Marc a obtenu la note maximale lors de l'épreuve écrite.",
+      "Tous les titulaires d'un master réussissent l'épreuve A1."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : déduction directe par syllogisme (Tout A est B ; Marc est A ; donc Marc est B).",
+      "Confusion entre le statut de lauréat et la titularisation ultérieure.",
+      "Spéculation sur la note obtenue sans base dans l'énoncé.",
+      "Réciproque erronée (affirmer que tout master réussit inverse l'implication logique)."
+    ],
+    "explanation": "Puisque l'ensemble des lauréats possède un diplôme de niveau master ou équivalent et que Marc appartient à cet ensemble, Marc détient nécessairement ce niveau de qualification.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-app-032",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle suite convient de donner selon la directive interne ?",
+    "stimulus": "En cas d'absence imprévue pour raison de santé, l'agent doit en informer sa hiérarchie dans un délai de 2 heures suivant sa prise de service théorique, et transmettre un certificat médical sous 48 heures ouvrables.",
+    "options": [
+      "Prévenir sa hiérarchie sous 2 heures et envoyer le certificat médical sous 48 heures ouvrables.",
+      "Attendre 48 heures ouvrables avant d'établir le premier contact avec son service.",
+      "Déposer un certificat médical sans obligation préalable d'information hiérarchique.",
+      "Prévenir sa hiérarchie uniquement après avoir obtenu son certificat médical."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : respecte scrupuleusement les deux démarches et leurs délais respectifs distincts.",
+      "Omet l'obligation de premier signalement dans les 2 heures.",
+      "Viole l'exigence d'information immédiate sous 2 heures.",
+      "Inverse la chronologie des obligations fixée par la directive."
+    ],
+    "explanation": "La règle cumule deux obligations temporelles précises : un avertissement hiérarchique rapide (sous 2 heures) puis la formalisation justificative par certificat (sous 48 heures ouvrables).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-tfcs-033",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : Le dossier de subvention n° 404 sera automatiquement rejeté.",
+    "stimulus": "Les dossiers de subvention incomplets sont retournés au demandeur avec un délai de régularisation de 15 jours calendaires. Le dossier n° 404 déposé par l'association E est incomplet.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le texte ne prévoit pas de rejet automatique, mais un retour pour régularisation sous 15 jours.",
+      "Correct : le dossier incomplet n'est pas rejeté d'emblée, il bénéficie d'une procédure de régularisation.",
+      "La règle de traitement des dossiers incomplets est clairement et explicitement définie dans le texte."
+    ],
+    "explanation": "Le texte stipule expressément que les dossiers incomplets ne sont pas rejetés directement, mais renvoyés pour régularisation sous 15 jours. L'affirmation d'un rejet automatique est donc fausse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-comp-034",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle proposition exprime la même restriction d'accès ?",
+    "stimulus": "Seuls les agents titulaires d'une habilitation de sécurité spéciale peuvent consulter les documents classifiés de niveau 3.",
+    "options": [
+      "L'habilitation de sécurité spéciale est indispensable pour consulter ces documents.",
+      "Tout agent titulaire de l'habilitation spéciale a obligation de consulter ces documents.",
+      "Les agents stagiaires peuvent consulter ces documents s'ils sont accompagnés d'un tuteur.",
+      "L'habilitation de sécurité spéciale dispense de tout contrôle de sécurité ultérieur."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la restriction « seuls les agents titulaires » fait de l'habilitation une condition sine qua non.",
+      "Confond autorisation d'accès avec obligation professionnelle de consultation.",
+      "Extrapole une exception de tutorat non prévue par le texte.",
+      "Rien n'indique que l'habilitation dispense de respecter les règles de sécurité."
+    ],
+    "explanation": "La locution restrictive « seuls les agents... peuvent » établit que détenir l'habilitation constitue une condition nécessaire et incontournable (indispensable) pour consulter les documents classifiés.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "verbal-inf-035",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle conclusion découle avec certitude des éléments fournis ?",
+    "stimulus": "Certains membres de la commission d'évaluation sont experts-comptables. Tous les experts-comptables sont soumis à un code de déontologie financière.",
+    "options": [
+      "Certains membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
+      "Tous les membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
+      "Aucun membre de la commission d'évaluation n'est expert-comptable.",
+      "La commission d'évaluation est composée exclusivement d'experts-comptables."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les membres qui sont experts-comptables étant tous soumis au code, certains membres le sont obligatoirement.",
+      "Généralisation abusive à l'ensemble des membres de la commission.",
+      "Contredit formellement la première prémisse.",
+      "L'adjectif « certains » interdit d'affirmer l'exclusivité de la composition."
+    ],
+    "explanation": "Puisque certains membres de la commission sont experts-comptables et que tout expert-comptable relève du code de déontologie, il existe obligatoirement des membres de la commission soumis à ce code.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
   }
 ]

@@ -539,5 +539,700 @@
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "numeric-calc-016",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le montant de la remise totale accordée sur cette commande de fournitures ?",
+    "stimulus": "Un marché de fournitures administratives d'un montant brut de 12 000 euros bénéficie d'une remise commerciale de 8 %.",
+    "options": [
+      "960 euros",
+      "800 euros",
+      "1 040 euros",
+      "1 200 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 12 000 × 0,08 = 960 euros.",
+      "Calcul basé sur un taux erroné de 6,67 %.",
+      "Surestimation correspondant à un taux de 8,67 %.",
+      "Correspondrait à une remise de 10 % au lieu de 8 %."
+    ],
+    "explanation": "Le montant de la remise se calcule directement : 12 000 € × (8 / 100) = 960 euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-table-017",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quel département affiche le taux de conformité le plus élevé ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Contrôles de conformité par département",
+      "headers": [
+        "Département",
+        "Dossiers contrôlés",
+        "Dossiers conformes"
+      ],
+      "rows": [
+        [
+          "Département Nord",
+          200,
+          170
+        ],
+        [
+          "Département Sud",
+          250,
+          220
+        ],
+        [
+          "Département Centre",
+          150,
+          126
+        ]
+      ]
+    },
+    "options": [
+      "Département Sud",
+      "Département Nord",
+      "Département Centre",
+      "Département Nord et Centre à égalité"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 220 / 250 = 88,0 %, taux le plus élevé du tableau.",
+      "Département Nord : 170 / 200 = 85,0 %.",
+      "Département Centre : 126 / 150 = 84,0 %.",
+      "Les taux de Nord (85 %) et Centre (84 %) sont distincts et inférieurs à Sud."
+    ],
+    "explanation": "Taux de conformité respectifs : Nord = 170 / 200 = 85,0 % ; Sud = 220 / 250 = 88,0 % ; Centre = 126 / 150 = 84,0 %. Le Département Sud présente le taux le plus élevé.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-var-018",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle est la variation relative des inscriptions entre 2024 et 2025 ?",
+    "stimulus": "Le nombre d'inscriptions à l'examen professionnel est passé de 400 candidats en 2024 à 460 candidats en 2025.",
+    "options": [
+      "+15,0 %",
+      "+12,0 %",
+      "+60,0 %",
+      "+13,0 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : (460 - 400) / 400 = 60 / 400 = +15,0 %.",
+      "Division erronée par la valeur finale (60 / 460 ≈ 13 %).",
+      "Confusion entre l'augmentation en valeur absolue (+60) et le pourcentage.",
+      "Erreur d'arrondi sur la valeur finale."
+    ],
+    "explanation": "La variation relative est donnée par (Valeur finale - Valeur initiale) / Valeur initiale : (460 - 400) / 400 = 60 / 400 = 0,15, soit une progression de +15,0 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-mean-019",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle est la durée moyenne de traitement par dossier sur l'ensemble de la journée ?",
+    "stimulus": "Matin : 10 dossiers traités en 20 minutes chacun. Après-midi : 20 dossiers traités en 35 minutes chacun.",
+    "options": [
+      "30 minutes",
+      "27,5 minutes",
+      "25 minutes",
+      "32,5 minutes"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : [(10 × 20) + (20 × 35)] / 30 = (200 + 700) / 30 = 900 / 30 = 30 minutes.",
+      "Moyenne arithmétique simple non pondérée : (20 + 35) / 2 = 27,5 minutes.",
+      "Sous-pondération arbitraire des dossiers de l'après-midi.",
+      "Surpondération excessive de l'après-midi."
+    ],
+    "explanation": "Calcul de la moyenne pondérée : temps total = (10 × 20) + (20 × 35) = 200 + 700 = 900 minutes. Divisé par 30 dossiers (10 + 20), on obtient 30 minutes par dossier.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-ratio-020",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Combien d'agents seront affectés au Pôle Accueil selon ce ratio ?",
+    "stimulus": "Une enveloppe de 35 nouveaux agents est répartie entre le Pôle Accueil et le Pôle Instruction selon un ratio de 3 pour 4 (3 parts pour l'Accueil, 4 parts pour l'Instruction).",
+    "options": [
+      "15 agents",
+      "20 agents",
+      "12 agents",
+      "18 agents"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : total de 3 + 4 = 7 parts ; 1 part = 35 / 7 = 5 agents ; Accueil = 3 × 5 = 15 agents.",
+      "Correspond à la part du Pôle Instruction (4 × 5 = 20 agents).",
+      "Sous-évaluation résultant d'une erreur de calcul.",
+      "Répartition erronée sans respect du dénominateur 7."
+    ],
+    "explanation": "Le ratio 3:4 totalise 7 parts égales. Une part vaut 35 / 7 = 5 agents. Le Pôle Accueil recevant 3 parts, il accueille 3 × 5 = 15 agents.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-perc-021",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Quel est le prix final du logiciel après l'application de ces deux remises successives ?",
+    "stimulus": "Une licence logicielle d'une valeur de 2 000 euros bénéficie d'une remise initiale de 20 %, puis d'une remise additionnelle de 10 % sur le montant résiduel.",
+    "options": [
+      "1 440 euros",
+      "1 400 euros",
+      "1 500 euros",
+      "1 380 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 2 000 × 0,80 = 1 600 €, puis 1 600 × 0,90 = 1 440 euros.",
+      "Additionne à tort les deux taux (20 % + 10 % = 30 % de 2 000 € = 1 400 €).",
+      "Sous-estime la remise cumulée.",
+      "Erreur de calcul dans la cascade des pourcentages."
+    ],
+    "explanation": "Après la première remise de 20 %, le prix devient 2 000 € × 0,80 = 1 600 €. La seconde remise de 10 % s'applique sur cette base : 1 600 € × 0,90 = 1 440 euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-ops-022",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "operations-simples",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Combien d'heures sont nécessaires pour instruire les 90 dossiers restants avec l'équipe réunie ?",
+    "stimulus": "L'agent A instruit 5 dossiers par heure. L'agent B instruit 7 dossiers par heure. L'agent C instruit 3 dossiers par heure. Ils travaillent conjointement.",
+    "options": [
+      "6 heures",
+      "5 heures",
+      "7 heures",
+      "8 heures"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : cadence cumulée = 5 + 7 + 3 = 15 dossiers/h ; 90 / 15 = 6 heures.",
+      "À 15 dossiers/h, 5 heures ne produiraient que 75 dossiers.",
+      "Surestimation de la durée requise.",
+      "Correspondrait au travail sans l'agent B."
+    ],
+    "explanation": "La cadence conjointe est de 5 + 7 + 3 = 15 dossiers par heure. Pour traiter 90 dossiers, le temps nécessaire est de 90 / 15 = 6 heures.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-table-023",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quel est le montant total des crédits restants non consommés au 31 décembre ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Consommation budgétaire par programme (en milliers d'euros)",
+      "headers": [
+        "Programme",
+        "Budget alloué",
+        "Budget consommé"
+      ],
+      "rows": [
+        [
+          "Programme 1",
+          500,
+          420
+        ],
+        [
+          "Programme 2",
+          300,
+          270
+        ],
+        [
+          "Programme 3",
+          200,
+          160
+        ]
+      ]
+    },
+    "options": [
+      "150 milliers d'euros",
+      "130 milliers d'euros",
+      "170 milliers d'euros",
+      "140 milliers d'euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : écarts respectifs = (500 - 420) + (300 - 270) + (200 - 160) = 80 + 30 + 40 = 150 milliers d'euros.",
+      "Sous-estime le reliquat du Programme 1.",
+      "Erreur d'addition sur les crédits résiduels.",
+      "Omet une partie des reliquats budgétaires."
+    ],
+    "explanation": "Les reliquats non consommés s'élèvent à : Programme 1 = 80 k€, Programme 2 = 30 k€, Programme 3 = 40 k€. La somme totale est de 80 + 30 + 40 = 150 milliers d'euros.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-var-024",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "De combien de points de pourcentage le taux de réussite a-t-il varié ?",
+    "stimulus": "Le taux de réussite à l'examen passe de 45 % lors de la session de printemps à 58 % lors de la session d'automne.",
+    "options": [
+      "+13 points",
+      "+28,9 %",
+      "+13 %",
+      "+10 points"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 58 - 45 = 13 points de pourcentage d'écart absolu.",
+      "Progression relative : (58 - 45) / 45 ≈ +28,9 %, et non écart en points.",
+      "Confusion d'unité : l'écart entre deux taux s'exprime en points et non en pour cent.",
+      "Erreur arithmétique de soustraction."
+    ],
+    "explanation": "La différence arithmétique directe entre deux pourcentages s'exprime en points de pourcentage : 58 − 45 = 13 points de pourcentage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-mean-025",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle est la moyenne arithmétique simple des cinq notes obtenues ?",
+    "stimulus": "Notes obtenues aux cinq épreuves du concours : 12/20, 14/20, 15/20, 11/20, 18/20.",
+    "options": [
+      "14,0 / 20",
+      "13,5 / 20",
+      "14,5 / 20",
+      "15,0 / 20"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : (12 + 14 + 15 + 11 + 18) / 5 = 70 / 5 = 14,0 / 20.",
+      "Sous-estime la somme des notes de 2,5 points.",
+      "Surestimation résultant d'une erreur d'addition.",
+      "Arrondi excessif sans justification mathématique."
+    ],
+    "explanation": "La somme des notes est 12 + 14 + 15 + 11 + 18 = 70. Divisée par 5 épreuves, la moyenne simple est de 70 / 5 = 14,0 / 20.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-scale-026",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle est la distance réelle sur le terrain correspondant à ce tracé ?",
+    "stimulus": "Sur un plan cadastral à l'échelle 1:5 000, une voie d'accès mesure 6 centimètres.",
+    "options": [
+      "300 mètres",
+      "30 mètres",
+      "3 000 mètres",
+      "600 mètres"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 6 cm × 5 000 = 30 000 cm = 300 mètres.",
+      "Erreur d'un facteur 10 dans la conversion d'unités (30 m).",
+      "Erreur par excès d'un facteur 10 (3 000 m).",
+      "Confusion dans la multiplication (6 × 10 000 au lieu de 6 × 5 000)."
+    ],
+    "explanation": "Distance réelle = 6 cm × 5 000 = 30 000 cm. Converti en mètres (1 m = 100 cm), cela équivaut à 30 000 / 100 = 300 mètres.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-perc-027",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Combien d'agents participent régulièrement au télétravail ?",
+    "stimulus": "Sur un effectif total de 450 agents, 40 % bénéficient d'une convention de télétravail régulière.",
+    "options": [
+      "180 agents",
+      "175 agents",
+      "190 agents",
+      "200 agents"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 450 × 0,40 = 180 agents.",
+      "Calcul erroné basé sur 38,9 %.",
+      "Surestimation correspondant à 42,2 %.",
+      "Calcul correspondant à 44,4 % de l'effectif."
+    ],
+    "explanation": "Le calcul est direct : 450 × (40 / 100) = 45 × 4 = 180 agents.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-var-028",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le pourcentage de baisse de la consommation de papier ?",
+    "stimulus": "La consommation annuelle de rames de papier passe de 5 000 rames à 3 500 rames grâce à la dématérialisation.",
+    "options": [
+      "-30,0 %",
+      "-25,0 %",
+      "-1 500 %",
+      "-35,0 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : (3 500 - 5 000) / 5 000 = -1 500 / 5 000 = -30,0 %.",
+      "Sous-estime la réduction en divisant par une base erronée.",
+      "Confusion entre volume absolu (-1 500 rames) et pourcentage.",
+      "Division par la valeur finale au lieu de la valeur initiale (-1 500 / 3 500 ≈ -42,8 %)."
+    ],
+    "explanation": "La variation relative est (3 500 - 5 000) / 5 000 = -1 500 / 5 000 = -0,30, soit une diminution de 30,0 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-mean-029",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle est la note globale pondérée du candidat ?",
+    "stimulus": "Épreuve écrite (coefficient 4) : 15/20. Épreuve orale (coefficient 6) : 12/20.",
+    "options": [
+      "13,2 / 20",
+      "13,5 / 20",
+      "13,0 / 20",
+      "13,8 / 20"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : [(15 × 4) + (12 × 6)] / (4 + 6) = (60 + 72) / 10 = 132 / 10 = 13,2 / 20.",
+      "Moyenne arithmétique simple non pondérée : (15 + 12) / 2 = 13,5 / 20.",
+      "Sous-évaluation sans respect des coefficients.",
+      "Inversion des coefficients en faveur de l'écrit [(15 × 6) + (12 × 4)] / 10 = 13,8."
+    ],
+    "explanation": "Moyenne pondérée : points totaux = (15 × 4) + (12 × 6) = 60 + 72 = 132. Divisé par la somme des coefficients (4 + 6 = 10), le résultat est 132 / 10 = 13,2 / 20.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-ratio-030",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quel volume d'archivage reste-t-il à traiter au service Numérisation ?",
+    "stimulus": "Sur un fonds total de 1 200 cartons, le rapport entre cartons traités et cartons non traités est de 3 pour 1.",
+    "options": [
+      "300 cartons",
+      "400 cartons",
+      "900 cartons",
+      "250 cartons"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 3 + 1 = 4 parts ; 1 part (non traités) = 1 200 / 4 = 300 cartons.",
+      "Calcul erroné divisant par 3 au lieu de 4.",
+      "Correspond aux cartons déjà traités (3 parts = 900 cartons).",
+      "Sous-évaluation du reliquat d'archivage."
+    ],
+    "explanation": "Le ratio 3:1 correspond à 4 parts au total. Chaque part représente 1 200 / 4 = 300 cartons. La part restante non traitée étant de 1, il reste 300 cartons.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-ops-031",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "operations-simples",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quel est le coût moyen de repas par agent lors de ce séminaire ?",
+    "stimulus": "La facture de restauration s'élève à 1 800 euros pour un groupe de 75 participants.",
+    "options": [
+      "24 euros",
+      "22 euros",
+      "25 euros",
+      "26 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 1 800 / 75 = 24 euros par participant.",
+      "Sous-estime le coût unitaire réel.",
+      "Arrondi arbitraire à 25 euros.",
+      "Surestimation arithmétique."
+    ],
+    "explanation": "Division simple : 1 800 € / 75 = 24 euros par participant.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-perc-032",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Combien d'agents ont formulé une demande de mobilité interne ?",
+    "stimulus": "Au sein d'un ministère comptant 800 agents, 15 % ont déposé une demande de mobilité cette année.",
+    "options": [
+      "120 agents",
+      "110 agents",
+      "130 agents",
+      "125 agents"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 800 × 0,15 = 120 agents.",
+      "Correspondrait à un taux de 13,75 %.",
+      "Correspondrait à un taux de 16,25 %.",
+      "Erreur d'arrondi sur le calcul direct."
+    ],
+    "explanation": "Calcul direct : 800 × (15 / 100) = 8 × 15 = 120 agents.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-table-033",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Quel trimestre affiche la plus forte progression absolue de dossiers clôturés par rapport au trimestre précédent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers clôturés par trimestre",
+      "headers": [
+        "Trimestre",
+        "Dossiers clôturés"
+      ],
+      "rows": [
+        [
+          "T1",
+          300
+        ],
+        [
+          "T2",
+          380
+        ],
+        [
+          "T3",
+          440
+        ],
+        [
+          "T4",
+          490
+        ]
+      ]
+    },
+    "options": [
+      "Trimestre 2",
+      "Trimestre 3",
+      "Trimestre 4",
+      "Trimestre 2 et Trimestre 3 à égalité"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : T2 gagne +80 dossiers (380 - 300), contre +60 en T3 et +50 en T4.",
+      "T3 gagne 440 - 380 = 60 dossiers, soit moins que T2.",
+      "T4 gagne 490 - 440 = 50 dossiers, soit moins que T2.",
+      "Les progressions trimestrielles sont distinctes (80 vs 60 dossiers)."
+    ],
+    "explanation": "Écarts absolus successifs : T2 - T1 = 380 - 300 = +80 ; T3 - T2 = 440 - 380 = +60 ; T4 - T3 = 490 - 440 = +50. La plus forte hausse en valeur absolue a lieu au Trimestre 2 (+80 dossiers).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-var-034",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Quel est le budget final après ces deux variations annuelles consécutives ?",
+    "stimulus": "Un budget de fonctionnement de 100 000 euros diminue de 20 % en année 1, puis augmente de 20 % en année 2 sur la base du montant réduit.",
+    "options": [
+      "96 000 euros",
+      "100 000 euros",
+      "98 000 euros",
+      "94 000 euros"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 100 000 × 0,80 = 80 000 €, puis 80 000 × 1,20 = 96 000 euros.",
+      "Erreur classique consistant à croire qu'une hausse de 20 % compense une baisse de 20 %.",
+      "Calcul erroné minorant la perte globale.",
+      "Sous-estimation excessive du budget reconstitué."
+    ],
+    "explanation": "Année 1 : 100 000 € × 0,80 = 80 000 €. Année 2 : 80 000 € × 1,20 = 96 000 €. Le montant final accuse une baisse nette de 4 % par rapport au budget initial.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "numeric-mean-035",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "moyenne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Combien d'appels le centre de contact traite-t-il en moyenne par heure ?",
+    "stimulus": "Le centre d'appel a réceptionné 540 communications téléphoniques au cours d'une journée continue de 9 heures d'ouverture.",
+    "options": [
+      "60 appels",
+      "55 appels",
+      "65 appels",
+      "50 appels"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 540 / 9 = 60 appels par heure.",
+      "Sous-estime le flux horaire moyen (55 × 9 = 495).",
+      "Surestimation du flux horaire (65 × 9 = 585).",
+      "Sous-évaluation excessive (50 × 9 = 450)."
+    ],
+    "explanation": "La moyenne horaire s'obtient en divisant le total des appels par le nombre d'heures d'ouverture : 540 / 9 = 60 appels par heure.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
   }
 ]

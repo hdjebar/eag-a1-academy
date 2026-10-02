@@ -553,5 +553,745 @@
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T14:55:00+02:00"
+  },
+  {
+    "id": "situational-serve-016",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez l'adéquation de chacune des réactions suivantes face à la situation décrite.",
+    "stimulus": "Un usager se présente au guichet en exigeant le traitement immédiat de son attestation, expliquant qu'il a un avion à prendre dans deux heures. La procédure standard impose une vérification de sécurité de 24 heures.",
+    "options": [
+      "Lui expliquer posément la contrainte réglementaire de 24 heures tout en vérifiant si un traitement accéléré est prévu pour urgence avérée.",
+      "Lui délivrer immédiatement l'attestation sans vérification pour lui éviter de manquer son vol.",
+      "L'éconduire froidement en lui reprochant son manque d'anticipation et d'organisation personnelle.",
+      "Vérifier la complétude de son dossier pour engager le contrôle sans délai et lui proposer l'envoi dématérialisé dès validation."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : concilie écoute active, courtoisie et recherche des voies légales sans enfreindre la règle.",
+      "Très inapproprié : viole la procédure de sécurité obligatoire et engage la responsabilité de l'administration.",
+      "Très inapproprié : manque manifeste de courtoisie et attitude agressive contraire au devoir d'accueil.",
+      "Plutôt approprié : optimise le processus dans le cadre légal et offre une solution de continuité numérique."
+    ],
+    "explanation": "Face à une demande urgente d'usager, le fonctionnaire doit maintenir un accueil courtois et impartial, respecter scrupuleusement les exigences réglementaires de contrôle, et rechercher des solutions constructives légales (accélération si prévue, délivrance numérique immédiate dès validation).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-017",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque conseil formulé par l'agent public.",
+    "stimulus": "Un usager sollicite votre avis personnel sur l'opportunité de contester en justice une décision administrative de refus prise par un autre ministère.",
+    "options": [
+      "Lui exposer objectivement les voies et délais de recours légaux existants sans émettre d'avis subjectif sur l'issue judiciaire.",
+      "Lui conseiller vivement d'attaquer la décision en lui affirmant qu'il gagnera son procès à coup sûr.",
+      "Refuser tout dialogue sous prétexte que le dossier relève d'un autre ministère.",
+      "L'orienter vers les permanences juridiques gratuites ou le Médiateur pour une analyse spécialisée et indépendante de sa situation."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : conseil neutre, factuel et centré sur l'information légale sans prise de position partisane.",
+      "Très inapproprié : manque total de réserve, promesse irréaliste et dépassement flagrant de compétence.",
+      "Très inapproprié : refus d'information élémentaire contraire au rôle de service public et d'orientation citoyenne.",
+      "Plutôt approprié : orientation vers les organismes compétents assurant un accompagnement indépendant."
+    ],
+    "explanation": "Le devoir de conseil de l'agent public exige une neutralité absolue et le respect de son périmètre de compétence. Il doit fournir les informations procédurales objectives (délais, recours) et orienter vers les professionnels du droit sans jamais spéculer sur une issue judiciaire.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-018",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque attitude face à un usager vulnérable.",
+    "stimulus": "Une personne âgée se présente désemparée au guichet car elle ne parvient pas à télédéclarer son formulaire sur la plateforme numérique obligatoire.",
+    "options": [
+      "L'accompagner pas à pas à la borne numérique publique de l'administration pour lui montrer la démarche avec bienveillance.",
+      "Lui rétorquer que l'administration est désormais 100 % numérique et qu'elle doit se débrouiller par elle-même.",
+      "Lui proposer un rendez-vous personnalisé d'assistance ou lui fournir un formulaire papier alternatif si la réglementation l'autorise.",
+      "Prendre ses identifiants secrets personnels pour remplir la déclaration à sa place sur son compte privé."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      3,
+      1
+    ],
+    "optionRationales": [
+      "Très approprié : réponse exemplaire d'inclusion numérique garantissant l'accès universel au service public.",
+      "Très inapproprié : rejet discriminatoire violant l'obligation d'accessibilité et de continuité du service public.",
+      "Plutôt approprié : solution d'accompagnement formelle respectant le cadre réglementaire d'assistance.",
+      "Très inapproprié : grave manquement aux règles élémentaires de sécurité informatique et de protection des données."
+    ],
+    "explanation": "L'administration moderne doit lutter contre l'illectronisme par un accompagnement humain bienveillant (médiation numérique, assistance guidée) sans jamais enfreindre les règles de sécurité relatives aux identifiants personnels des citoyens.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-019",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez la pertinence de chaque modalité de conseil face à une incertitude réglementaire.",
+    "stimulus": "Une entreprise vous sollicite pour savoir si son nouveau procédé industriel entre dans le champ d'application d'une taxe environnementale récemment votée mais dont le règlement d'application n'est pas encore publié.",
+    "options": [
+      "Lui exposer l'état actuel des textes officiels, réserver votre réponse sur les points en suspens et solliciter une note de cadrage ministérielle.",
+      "Lui garantir par écrit une exonération totale définitive pour rassurer immédiatement l'investisseur.",
+      "Rejeter d'office la demande de l'entreprise en lui demandant de ne pas importuner les services ministériels.",
+      "Lui indiquer les critères probables issus des débats parlementaires tout en précisant expressément leur caractère non opposable."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : démarche rigoureuse préservant la sécurité juridique de l'administration et de l'usager.",
+      "Très inapproprié : engagement illégal engageant la responsabilité financière de l'État sans texte d'application.",
+      "Très inapproprié : mépris du monde économique contraire aux missions de conseil et d'accueil de l'administration.",
+      "Plutôt approprié : information contextuelle utile assortie de la réserve juridique indispensable sur la non-opposabilité."
+    ],
+    "explanation": "En cas de vide ou d'attente d'un décret d'application, le conseiller public doit faire preuve d'une prudence juridique stricte. Il informe sur les bases existantes, réserve l'interprétation officielle auprès de la direction compétente et s'abstient de tout engagement prématuré.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-020",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque comportement d'accueil face à une situation de tension au guichet.",
+    "stimulus": "Un administré hausse le ton et accuse nominativement un de vos collègues d'avoir égaré son dossier d'aide au logement il y a deux semaines.",
+    "options": [
+      "L'inviter calmement à s'asseoir dans un espace discret, écouter sa réclamation sans accuser le collègue et vérifier immédiatement l'historique informatique du dossier.",
+      "Prendre immédiatement la défense agressive de votre collègue en haussant le ton à votre tour contre l'usager.",
+      "Donner immédiatement raison à l'usager devant tout le monde en dénigrant ouvertement les compétences de votre collègue.",
+      "Lui expliquer le processus de reconstitution rapide de dossier si la perte est confirmée et lui remettre un accusé de réception horodaté."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : désamorce le conflit, isole la tension, protège l'esprit d'équipe et engage la vérification objective.",
+      "Très inapproprié : escalade de l'agressivité violant les principes d'accueil professionnel et de retenue.",
+      "Très inapproprié : manquement grave au devoir de confraternité et décrédibilisation publique du service.",
+      "Plutôt approprié : orientation constructive vers la résolution matérielle du problème avec formalisation administrative."
+    ],
+    "explanation": "Face à une accusation visant un collègue, l'agent doit concilier écoute empathique de l'usager, désescalade relationnelle dans un cadre calme, loyauté envers ses pairs et vérification factuelle impartiale dans les systèmes de gestion.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-021",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque recommandation d'un agent public.",
+    "stimulus": "Un citoyen ne comprend pas les motifs du rejet partiel de sa demande d'allocation familiale et vous demande ce qu'il peut faire concrètement.",
+    "options": [
+      "Reprendre avec lui les critères légaux point par point pour expliciter de manière claire et intelligible les fondements de la décision.",
+      "Lui répondre que les décisions de l'administration ne se discutent pas et qu'il n'a qu'à relire la notification.",
+      "Lui préciser la procédure de recours gracieux auprès de la direction ainsi que le délai légal imparti pour le formuler.",
+      "Rédiger vous-même la lettre de recours de l'usager pour contester la décision de votre propre administration."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      3,
+      1
+    ],
+    "optionRationales": [
+      "Très approprié : pédagogie administrative remarquable renforçant la transparence et la compréhension citoyenne.",
+      "Très inapproprié : posture autoritaire et fermée bafouant le devoir d'explication des décisions administratives.",
+      "Plutôt approprié : information juridique indispensable permettant à l'usager d'exercer ses droits réguliers.",
+      "Très inapproprié : conflit d'intérêts et confusion des rôles (l'agent public ne peut se substituer au requérant)."
+    ],
+    "explanation": "Le devoir de conseil impose d'expliquer avec pédagogie les motivations d'un refus et d'éclairer l'usager sur les voies de recours légales, sans pour autant se substituer à lui dans la rédaction d'un recours contentieux.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-022",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez l'adéquation de chaque attitude d'accueil multilingue.",
+    "stimulus": "Dans une administration luxembourgeoise, un usager résident étranger ne s'exprime qu'en anglais et éprouve des difficultés à comprendre le formulaire officiel rédigé en français.",
+    "options": [
+      "Mobiliser vos compétences en anglais pour lui expliciter les rubriques principales et lui remettre la documentation explicative multilingue disponible.",
+      "Exiger sur un ton comminatoire qu'il revienne avec un interprète assermenté pour pouvoir être accueilli.",
+      "Refuser catégoriquement de prononcer un mot d'anglais au nom de la stricte réglementation linguistique.",
+      "Faire appel à un collègue disponible du service bilingue pour fluidifier l'échange et sécuriser la complétude du dossier."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : pragmatisme, sens du service public et facilitation de l'accès aux démarches administratives.",
+      "Très inapproprié : rigidité disproportionnée et accueil hostile portant atteinte à la qualité de service.",
+      "Très inapproprié : manque manifeste de courtoisie et d'adaptation au contexte multiculturel du pays.",
+      "Plutôt approprié : excellente collaboration interne permettant de résoudre la difficulté sans ralentir le service."
+    ],
+    "explanation": "Au Luxembourg, le sens du service au client-usager implique de faciliter la compréhension des démarches grâce au multilinguisme pratique des équipes, dans le respect de l'équité de traitement et de la bienveillance administrative.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-023",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez chaque posture de conseil déontologique face à un cadeau d'entreprise.",
+    "stimulus": "À l'issue de l'instruction favorable d'un dossier complexe, le dirigeant d'une société privée reconnaissant vous dépose un panier gastronomique d'une valeur de 150 euros.",
+    "options": [
+      "Refuser avec courtoisie en rappelant le code de déontologie des agents de l'État qui proscrit tout avantage personnel en lien avec les fonctions.",
+      "Accepter discrètement le cadeau pour ne pas vexer ce partenaire économique de l'État.",
+      "Partager le panier avec toute l'équipe dans la salle de repos sans en informer votre hiérarchie.",
+      "Informer votre supérieur hiérarchique du dépôt du panier et solliciter la restitution formelle ou son don à une œuvre caritative reconnue."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : rectitude déontologique exemplaire, clarté et préservation de l'intégrité de la fonction publique.",
+      "Très inapproprié : manquement déontologique caractérisé pouvant constituer une faute disciplinaire grave.",
+      "Très inapproprié : le partage interne ne purge pas l'irrégularité de l'acceptation d'un avantage indu.",
+      "Plutôt approprié : transparence hiérarchique totale assurant un traitement institutionnel conforme et désintéressé."
+    ],
+    "explanation": "Les règles de déontologie publique interdisent formellement aux agents de recevoir des gratifications de valeur de la part d'usagers ou d'entreprises. Le refus courtois mais ferme ou l'arbitrage transparent de la hiérarchie sont les seules voies conformes.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-024",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque réaction face à une erreur administrative avérée.",
+    "stimulus": "Vous découvrez qu'en raison d'un bogue informatique temporaire, un courrier erroné réclamant indûment une pièce justificative déjà fournie a été envoyé à 50 usagers.",
+    "options": [
+      "Informer immédiatement la hiérarchie, adresser un rectificatif explicatif d'excuse aux 50 usagers et valider leurs dossiers sans délai supplémentaire.",
+      "Ignorer l'incident en espérant que la majorité des usagers renverra une seconde fois la pièce sans protester.",
+      "Attendre que chaque usager se manifeste individuellement au guichet pour rectifier au cas par cas.",
+      "Rassurer au téléphone les usagers qui appellent en enregistrant la régularisation immédiate sur leur dossier informatique."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : proactivité, transparence, assomption de l'erreur administrative et respect de la confiance du public.",
+      "Très inapproprié : passivité coupable surchargeant indûment les administrés pour masquer une défaillance interne.",
+      "Très inapproprié : gestion passive et inéquitable pénalisant les usagers qui n'osent pas réclamer.",
+      "Plutôt approprié : réaction positive et aidante au contact individuel, mais insuffisante à l'échelle du groupe impacté."
+    ],
+    "explanation": "Le service à l'usager commande une transparence proactive en cas d'erreur de l'administration : un message rectificatif global avec excuses professionnelles et validation automatique des droits rétablit la confiance légitime des administrés.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-025",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque démarche de conseil auprès d'un usager en situation de précarité.",
+    "stimulus": "Un administré en grande difficulté financière sollicite une aide d'urgence pour laquelle il ne remplit pas l'ensemble des critères d'attribution légale.",
+    "options": [
+      "Lui expliquer avec tact les limites du dispositif sollicité et l'orienter activement vers l'office social compétent ou les aides complémentaires existantes.",
+      "Lui promettre verbalement l'octroi de l'aide en forçant les critères de saisie informatique à son insu.",
+      "Lui notifier un rejet brutal sans aucune explication ni recherche de relais d'accompagnement social.",
+      "Lui remettre la liste coordonnée des structures d'aide sociale de sa commune et prendre contact avec un assistant social référent avec son accord."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : humanité, rigueur réglementaire et orientation sociale constructive sans fausse promesse.",
+      "Très inapproprié : fraude administrative délibérée violant la loi sous couvert de compassion personnelle.",
+      "Très inapproprié : inhumanité et défaillance du rôle fondamental d'orientation sociale du service public.",
+      "Plutôt approprié : excellente démarche partenariale facilitant l'accès effectif aux droits sociaux territoriaux."
+    ],
+    "explanation": "Conseiller un citoyen en précarité nécessite d'allier rigueur déontologique (interdiction d'altérer les critères légaux) et empathie active (orientation vers les dispositifs d'assistance sociale adaptés).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-026",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la qualité de prise en charge d'un usager mécontent au téléphone.",
+    "stimulus": "Un citoyen excédé vous appelle car sa demande de prime n'a pas été traitée après six semaines d'attente, alors que le délai indicatif annoncé est de quatre semaines.",
+    "options": [
+      "Écouter attentivement son mécontentement sans lui couper la parole, consulter immédiatement l'état du dossier et lui communiquer une date prévisionnelle fiable.",
+      "Lui raccrocher immédiatement au nez au motif qu'il manifeste un agacement verbal excessif.",
+      "Lui répondre que les agents font ce qu'ils peuvent et qu'il n'est pas le seul à attendre dans le pays.",
+      "Identifier le point de blocage précis dans le dossier, le débloquer si cela relève de vos attributions et le rappeler personnellement dès finalisation."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : écoute active, courtoisie, apaisement de la relation et information transparente sur le délai réel.",
+      "Très inapproprié : faute professionnelle grave rompant unilatéralement la communication avec l'usager.",
+      "Très inapproprié : réponse infantilisante et méprisante aggravant le sentiment d'injustice de l'administré.",
+      "Plutôt approprié : engagement professionnel proactif et sens aigu de la responsabilité individuelle au service de l'usager."
+    ],
+    "explanation": "Face au retard et à la frustration d'un usager, la posture requise consiste en une écoute calme et respectueuse, l'analyse factuelle de l'origine du délai et un engagement clair et réaliste sur le traitement de la demande.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-027",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque conseil formulé à un collaborateur face à un risque de conflit d'intérêts.",
+    "stimulus": "Un collègue gestionnaire de dossiers d'attribution de marchés publics vous confie que l'entreprise de son beau-frère a déposé une offre pour un marché dont il a la charge.",
+    "options": [
+      "Lui conseiller de déclarer immédiatement ce lien familial à sa hiérarchie et de solliciter formellement son déport de cette commission d'évaluation.",
+      "Lui recommander de ne rien dire pour ne pas éveiller de soupçons inutiles si son jugement demeure impartial.",
+      "Lui suggérer de favoriser discrètement l'offre de son parent pour soutenir l'économie familiale.",
+      "L'inviter à consulter sans délai le référent déontologue de votre ministère pour sécuriser la procédure d'attribution."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : mesure de déport impérative protégeant la légalité du marché public et l'intégrité de l'agent.",
+      "Très inapproprié : conseil dangereux exposant l'agent à une qualification pénale de prise illégale d'intérêts.",
+      "Très inapproprié : incitation directe à la commission d'un délit de favoritisme pénalement répréhensible.",
+      "Plutôt approprié : recours au référent institutionnel garantissant un conseil d'expert indépendant et formel."
+    ],
+    "explanation": "En matière de commande publique, tout lien d'intérêt personnel ou familial avec un soumissionnaire impose une déclaration immédiate et un déport strict pour prévenir toute suspicion de favoritisme ou de conflit d'intérêts.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-028",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque comportement d'accueil en situation d'affluence au guichet.",
+    "stimulus": "À 11 h 45, alors que le guichet ferme normalement à 12 h 00, une dizaine d'usagers attendent encore dans le hall en raison d'une panne réseau intervenue le matin.",
+    "options": [
+      "Informer avec courtoisie la file d'attente de la situation, évaluer les demandes prioritaires et prolonger l'accueil pour traiter les démarches urgentes engagées.",
+      "Baisser le rideau métallique à midi pile sans un mot en refusant de prendre en charge les usagers restants.",
+      "Prendre les coordonnées et l'objet des démarches des usagers en attente pour leur proposer un créneau garanti dès le début d'après-midi.",
+      "Renvoyer tous les usagers vers le site web sans s'assurer s'ils disposent des moyens d'effectuer la démarche en ligne."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      3,
+      1
+    ],
+    "optionRationales": [
+      "Très approprié : sens des responsabilités, adaptation aux aléas techniques internes et respect des citoyens.",
+      "Très inapproprié : comportement rigide et irrespectueux ignorant l'aléa matériel subi par les usagers.",
+      "Plutôt approprié : organisation pragmatique offrant une solution alternative garantie et individualisée.",
+      "Très inapproprié : rejet expéditif méconnaissant les contraintes réelles des usagers présents."
+    ],
+    "explanation": "Lorsqu'un dysfonctionnement technique imputable à l'administration retarde les usagers, le service public doit faire preuve de souplesse, de communication claire et d'aménagements raisonnables pour honorer son obligation d'accueil.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-029",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque recommandation d'un agent public.",
+    "stimulus": "Un citoyen hésite entre deux formulaires fiscaux pour déclarer un revenu accessoire perçu à l'étranger et vous sollicite pour faire le bon choix déclaratif.",
+    "options": [
+      "Lui expliquer précisément la notice fiscale et les critères distinctifs de chaque formulaire sans vous substituer à son choix déclaratif.",
+      "Lui conseiller de dissimuler ce revenu à l'étranger pour échapper à toute imposition complémentaire.",
+      "Lui désigner un formulaire au hasard sans vérifier les conventions bilatérales pour écourter le rendez-vous.",
+      "Lui fournir le guide pratique de fiscalité internationale et l'orienter vers la division spécialisée des non-résidents si nécessaire."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : conseil explicatif rigoureux respectant l'autonomie et la responsabilité déclarative de l'usager.",
+      "Très inapproprié : incitation délibérée à la fraude fiscale bafouant l'honneur et la légalité républicaine.",
+      "Très inapproprié : désinvolture professionnelle coupable pouvant induire l'usager en erreur fiscale grave.",
+      "Plutôt approprié : mise à disposition d'outils d'information officiels et orientation vers le service compétent."
+    ],
+    "explanation": "Le fonctionnaire doit guider l'usager dans la compréhension des critères juridiques et des notices explicatives, tout en lui laissant la responsabilité de sa déclaration fiscale et en proscrivant toute incitation à la fraude.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-030",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque modalité de traitement d'une réclamation d'usager.",
+    "stimulus": "Un usager vous transmet une réclamation écrite affirmant qu'un agent d'accueil lui a manqué de respect la veille au guichet.",
+    "options": [
+      "Accuser réception de sa réclamation par écrit, transmettre les faits à la hiérarchie pour examen contradictoire et lui garantir une réponse motivée sous 15 jours.",
+      "Déchirer la lettre de réclamation pour protéger la réputation du service et étouffer l'incident.",
+      "Répondre avec agressivité à l'usager en lui interdisant désormais l'accès aux locaux administratifs.",
+      "Entendre avec bienveillance l'usager par téléphone pour consigner sa version détaillée tout en préservant la présomption de régularité du service."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : traitement procédural exemplaire alliant écoute citoyenne, respect du contradictoire et engagement formel.",
+      "Très inapproprié : destruction illégale d'un document administratif et opacité contraire aux normes de transparence.",
+      "Très inapproprié : abus d'autorité intolérable bafouant les droits fondamentaux des usagers.",
+      "Plutôt approprié : démarche d'écoute attentive permettant d'éclairer l'instruction administrative de la réclamation."
+    ],
+    "explanation": "Toute réclamation d'usager doit faire l'objet d'un accusé de réception formel, d'une instruction équitable et contradictoire par l'autorité hiérarchique, et d'une réponse motivée dans un délai prévisible.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-031",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez chaque posture de conseil lors d'une sollicitation par la presse.",
+    "stimulus": "Un journaliste vous contacte directement sur votre ligne professionnelle pour recueillir votre avis sur une polémique relative à la gestion d'un dossier sensible de votre direction.",
+    "options": [
+      "Lui rappeler courtoisement le devoir de réserve de l'agent public et l'orienter sans délai vers le service de communication ministériel officiel.",
+      "Lui livrer sous le manteau des détails internes sensibles en exigeant son anonymat journalistique.",
+      "Lui raccrocher au nez en l'injuriant pour avoir osé vous déranger durant votre travail.",
+      "Lui indiquer les données publiques déjà communiquées dans les communiqués officiels en vous abstenant de tout commentaire personnel."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : respect rigoureux du devoir de réserve et orientation vers les canaux habilités de communication publique.",
+      "Très inapproprié : violation caractérisée du secret professionnel et manquement lourd à l'obligation de discrétion.",
+      "Très inapproprié : attitude hostile dégradant l'image institutionnelle de l'administration auprès des médias.",
+      "Plutôt approprié : rappel factuel d'éléments déjà rendus publics sans franchir les limites du droit de réserve."
+    ],
+    "explanation": "Les relations avec les médias sont strictement encadrées dans la fonction publique. L'agent doit observer un devoir de réserve scrupuleux, s'abstenir de tout commentaire personnel et orienter le journaliste vers le porte-parole officiel du ministère.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-032",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque réaction face à une demande formulée hors compétences.",
+    "stimulus": "Un citoyen se présente à votre guichet communal pour solliciter un permis de chasse, démarche qui relève exclusivement d'une administration d'État (Environnement).",
+    "options": [
+      "Lui expliquer avec courtoisie le partage des compétences et lui fournir l'adresse exacte, le site internet et les horaires du service compétent.",
+      "L'éconduire sèchement en lui disant que la commune n'a rien à voir avec ses activités de loisirs.",
+      "Prendre son dossier et ses pièces en lui promettant que vous vous en occuperez vous-même sans en avoir le pouvoir.",
+      "Lui imprimer le formulaire officiel de l'administration d'État et lui indiquer les pièces requises pour préparer son dépôt."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : orientation citoyenne claire, courtoise et efficace illustrant le principe de guichet unique relationnel.",
+      "Très inapproprié : accueil méprisant renvoyant une image dégradée de l'administration publique.",
+      "Très inapproprié : promesse illégitime générant une fausse attente et un retard préjudiciable pour l'administré.",
+      "Plutôt approprié : aide concrète et utile facilitant les démarches du citoyen auprès du bon organisme."
+    ],
+    "explanation": "Même face à une démarche ne relevant pas de son autorité, l'agent public a un devoir d'accueil et d'orientation : il informe le citoyen sur le service compétent et lui fournit les coordonnées utiles sans créer d'engagements illégitimes.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-033",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque posture de conseil face à une tentative de contournement procédural.",
+    "stimulus": "Une connaissance personnelle vous sollicite pour faire passer en priorité le dossier de permis de construire de son fils avant la commission municipale de demain.",
+    "options": [
+      "Lui rappeler avec fermeté et courtoisie le principe constitutionnel d'égalité de traitement des usagers interdisant tout passe-droit.",
+      "Accepter avec empressement pour faire plaisir à votre relation personnelle en passant outre le registre chronologique.",
+      "Exiger une contrepartie financière ou un service personnel en échange de votre intervention prioritaire.",
+      "Lui expliquer le fonctionnement impartial de l'ordre d'instruction et lui proposer de vérifier l'état d'avancement régulier du dossier."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : réaffirmation exemplaire de l'éthique républicaine et de l'égalité d'accès des citoyens aux services publics.",
+      "Très inapproprié : rupture caractérisée de l'égalité des usagers et favoritisme administratif injustifiable.",
+      "Très inapproprié : comportement délictuel de corruption passive constitutive d'une infraction pénale gravissime.",
+      "Plutôt approprié : pédagogie administrative rappelant la règle d'impartialité tout en apportant une réponse factuelle légale."
+    ],
+    "explanation": "Le principe fondamental d'égalité de traitement devant le service public proscrit tout traitement préférentiel motivé par des liens privés. L'agent doit opposer un refus sans équivoque en rappelant les règles d'instruction impartiale.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-serve-034",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque attitude d'accueil face à un usager sourd ou malentendant.",
+    "stimulus": "Un citoyen sourd se présente au guichet pour une démarche d'état civil et éprouve des difficultés à lire sur les lèvres en raison du port de masques ou de parois vitrées.",
+    "options": [
+      "Proposer immédiatement un échange par écrit sur bloc-notes ou support numérique, avec des phrases simples et claires.",
+      "Hausser la voix de plus en plus fort en criant à travers la vitre de protection.",
+      "Lui faire signe de la main de quitter les lieux et refuser de traiter sa demande.",
+      "Vérifier si un agent formé à la langue des signes est présent dans le service ou mobiliser le service de visio-interprétation de l'État."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : adaptation immédiate, respectueuse et efficace garantissant l'accessibilité universelle.",
+      "Très inapproprié : comportement inadapté et potentiellement humiliant n'apportant aucune aide à une personne sourde.",
+      "Très inapproprié : discrimination inacceptable et manquement intolérable aux obligations d'accueil.",
+      "Plutôt approprié : recours judicieux aux technologies et compétences inclusives mises en place par l'État."
+    ],
+    "explanation": "L'accessibilité des services publics aux personnes en situation de handicap exige de faire preuve d'adaptabilité, de bienveillance et d'ingéniosité (échange manuscrit, supports visuels, recours aux dispositifs de relais inclusifs).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
+  },
+  {
+    "id": "situational-advise-035",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque posture de conseil face à une omission déclarative constatée.",
+    "stimulus": "Lors de la vérification d'un dossier de subvention d'une association, vous constatez qu'il manque un bilan d'activité obligatoire qui entraînerait le rejet automatique par la commission de demain.",
+    "options": [
+      "Contacter sans attendre le responsable associatif par téléphone et courriel pour lui permettre de transmettre la pièce manquante avant la clôture.",
+      "Laisser le dossier passer en commission en se réjouissant d'avance de son rejet automatique.",
+      "Rédiger un faux bilan d'activité à la place de l'association pour éviter tout retard d'instruction.",
+      "Informer le président de la commission de la démarche de régularisation engagée et solliciter un report bienveillant de l'examen."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Très approprié : accompagnement proactif et bienveillant évitant un rejet préjudiciable sur simple oubli matériel.",
+      "Très inapproprié : cynisme et malveillance contraires à la mission d'appui aux usagers et au monde associatif.",
+      "Très inapproprié : falsification documentaire illégale constitutive d'un faux en écriture publique.",
+      "Plutôt approprié : transparence procédurale auprès de l'organe délibérant pour ménager une issue constructive."
+    ],
+    "explanation": "La bienveillance administrative encourage la régularisation proactive des omissions matérielles avant prise de décision définitive, tout en respectant strictement l'authenticité des pièces qui doivent émaner du seul déclarant.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T13:28:18.714Z"
   }
 ]
