@@ -91,6 +91,88 @@ npm test
 
 ---
 
+## Interface d'administration
+
+La même page, `admin.html`, fonctionne en deux modes.
+
+| | Hors ligne (`admin.html` ouvert depuis le disque) | Local (`npm run admin`) |
+| :--- | :--- | :--- |
+| Banque approuvée | intégrée à `admin.js` par `npm run build:bank` | lue sur le disque |
+| Candidats | glisser-déposer des fichiers `generated/*.json` et `*.review.json` | chargés automatiquement depuis `generated/` |
+| Enregistrement | archive `.zip` à décompresser à la racine du dépôt | écrit dans le dépôt, puis `app.js` et `admin.js` resynchronisés |
+| Tâches | — | génération, revue aveugle, `npm test`, état Git |
+| Session | sauvegardée dans le navigateur, reprise possible | l'état fait foi sur le disque |
+
+**File de relecture** : pour chaque candidat, aperçu tel que le voit l'apprenant, **résolution à l'aveugle** (la clé reste masquée jusqu'à votre réponse), résultat de la revue IA, contrôles automatiques (mêmes règles que `validate-bank.mjs`), questions proches déjà présentes, et éditeur complet (énoncé, tableau ou figures, options, notes, justifications).
+
+**Décisions** : *Approuver* exige un nom de relecteur et zéro erreur ; si la revue IA n'est pas `pass` (absente, `revise`, `reject` ou obsolète après modification), vous devez cocher « J'ai vérifié la réponse moi-même ». *Rejeter* exige un motif. Chaque décision est consignée dans `data/review-log/<date>.json`.
+
+**Banque approuvée** : couverture par catégorie, compétence et difficulté (les compétences absentes sont signalées), alertes, questions très proches ; modification d'une question (version incrémentée, relecteur et date mis à jour) ou retrait.
+
+**Sécurité du mode local** : le serveur n'écoute que `127.0.0.1` ; chaque appel exige le jeton affiché au démarrage ; l'hôte et l'origine sont vérifiés ; tout enregistrement est revalidé avec le validateur de référence (Ajv) avant écriture ; seuls les fichiers de `data/approved/`, `data/review-log/` et `generated/` peuvent être écrits.
+
+Après un enregistrement : relisez `git diff`, puis committez. La CI refuse toujours les PR qui laissent des fichiers dans `generated/`.
+
+---
+
+## Importer des fichiers de questions
+
+Tout fichier JSON de questions candidates (sorties de `generate:bank` ou `regenerate:bank`, fichiers exportés par l'interface, réponses d'un chat IA enregistrées) peut être importé dans la file de relecture.
+
+| Méthode | Comment | Remarques |
+| :--- | :--- | :--- |
+| **Glisser-déposer** (hors ligne) | Ouvrez `admin.html`, puis glissez les fichiers sur « Charger des candidats » ou cliquez sur « choisissez des fichiers ». | Plusieurs fichiers à la fois. Les fichiers `*.review.json` se rattachent à leurs questions par identifiant : chargez-les en même temps que les questions ou après. |
+| **Dossier `generated/`** (local) | Copiez les fichiers dans `generated/`, puis rechargez la page de `npm run admin` (ou « Recharger depuis le disque » dans l'onglet Exporter). | Tous les fichiers `generated/*.json` sont chargés automatiquement avec leur revue. |
+| **Coller du JSON** (les deux modes) | « Générer avec l'IA… » → « Copier-coller avec un chat IA » → collez le JSON dans « Réponse JSON du chat » → « Importer ». | Le texte autour du JSON et les blocs de code sont ignorés. Les champs gérés par le pipeline sont complétés automatiquement. |
+
+Format attendu : un **tableau JSON** de questions conformes à [`schema/question.schema.json`](../schema/question.schema.json). Un fichier de revue est un objet `{"reviews": [...]}` produit par `review:bank`.
+
+Après l'import, chaque question passe par le même circuit : aperçu, résolution à l'aveugle, contrôles, édition, puis approbation ou rejet. Une question dont l'identifiant existe déjà dans la banque est signalée au chargement (hors ligne) et bloquée à l'approbation (dans les deux modes), sauf s'il s'agit d'une révision (`revisionOf`) : changez alors son identifiant dans l'éditeur. Le collage via « Générer avec l'IA… » importe toujours des questions nouvelles ; pour importer des révisions, utilisez le collage depuis « Régénérer avec l'IA » sur les questions concernées.
+
+### Limites actuelles
+
+- **Glisser-déposer et dossier `generated/`** : les fichiers sont importés tels quels. Si des questions n'ont pas les champs normalement ajoutés par le pipeline (`version`, `createdAt`, `sourceType`, `reviewStatus`), elles apparaissent avec des erreurs à corriger dans l'éditeur. Pour un import automatique de ces champs, utilisez plutôt **Coller du JSON**.
+- **Ancien format** (antérieur à la version 1.3.0 : tableaux HTML, compétences en texte libre, sans `itemFormat`, jugement situationnel à réponse unique) : les questions sont importées mais ne passent pas la validation ; chaque question doit être corrigée dans l'éditeur.
+- **Une seule question** : le fichier doit contenir un tableau, même pour une question (`[ { … } ]`).
+- **Mode local** : pas de bouton d'envoi de fichier ; copiez les fichiers dans `generated/`.
+
+Les fichiers chargés hors ligne restent dans la session du navigateur (« Reprendre la session précédente ») jusqu'à l'export ou à « Effacer la session locale ».
+
+---
+
+## Régénérer des questions avec un LLM
+
+Quatre usages, depuis l'interface d'administration (ou la ligne de commande) :
+
+| Usage | Où | Résultat |
+| :--- | :--- | :--- |
+| **Réviser une question** | Banque approuvée → question → « Régénérer avec l'IA » | une révision dans la file de relecture |
+| **Réviser une sélection** | Banque approuvée → cases à cocher (« Tout (filtre) », « Avec alertes ») → « Régénérer avec l'IA » | une révision par question |
+| **Générer de nouvelles questions** | File de relecture → « Générer avec l'IA… » | nouveaux candidats |
+| **Reconstruire une catégorie** | File de relecture → « Reconstruire une catégorie… » | un lot complet de remplacement ; approuvez ce que vous gardez, puis retirez les anciennes questions (sélection → « Retirer ») |
+
+Chaque question à réviser est envoyée avec les problèmes détectés (erreurs, alertes, notes de relecture) et votre consigne (texte libre ou consignes prêtes à l'emploi : lever l'ambiguïté, équilibrer la longueur des options, rendre plus difficile…). Le modèle suit [`prompts/revise-bank.md`](../prompts/revise-bank.md).
+
+**Une révision ne modifie jamais la banque directement.** Elle garde l'identifiant de la question et porte `revisionOf`. Dans la file de relecture, elle est marquée « Révision », avec un tableau **Avant / Après** des champs modifiés. L'approuver remplace la question d'origine et incrémente sa version ; la rejeter laisse la banque intacte.
+
+**Mode local** (`npm run admin` avec `AI_API_URL`, `AI_API_KEY`, `AI_MODEL` dans `.env`) : bouton « Lancer avec l'IA » ; la revue IA aveugle est lancée automatiquement sur le résultat. La clé d'API reste sur votre ordinateur et n'est jamais envoyée au navigateur. Vos décisions non enregistrées sont conservées pendant les tâches.
+
+**Copier-coller** (hors ligne, ou sans API) : « Copier le prompt », collez-le dans votre chat IA (ChatGPT, Claude, Gemini, Le Chat…), puis collez sa réponse dans « Réponse JSON du chat » et importez. Le texte autour du JSON et les blocs de code sont tolérés ; les identifiants inconnus sont refusés.
+
+**Ligne de commande** :
+
+```bash
+IDS=numeric-mean-002,planning-slot-001 INSTRUCTION="Lever toute ambiguïté." npm run regenerate:bank
+npm run review:bank
+node scripts/promote-candidate.mjs generated/revise-<…>.json --reviewer "Prénom Nom" --approve all
+# Nouvelles questions avec consigne :
+CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." npm run generate:bank
+```
+
+`promote-candidate.mjs` traite les révisions comme dans l'interface : remplacement de la question d'origine et version incrémentée.
+
+---
+
 ## Commandes de référence
 
 | Commande | Rôle |
@@ -100,6 +182,9 @@ npm test
 | `npm run build:bank -- --check` | Vérifie que `app.js` est synchronisé (CI). |
 | `npm run validate:bank [fichiers]` | Valide contre le schéma et les règles complémentaires (sans argument : tous les candidats). |
 | `npm run generate:bank` | Génère un lot de candidats via l'API configurée. |
+| `npm run regenerate:bank` | Révise des questions approuvées (`IDS`, `INSTRUCTION`) ; résultat dans `generated/revise-*.json`. |
 | `npm run review:bank [fichier]` | Revue IA aveugle d'un lot de candidats. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Promotion humaine explicite vers `data/approved/`. |
+| Importer des fichiers | Glisser-déposer dans `admin.html`, copie dans `generated/` (mode local) ou collage du JSON : voir [Importer des fichiers de questions](#importer-des-fichiers-de-questions). |
+| `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
 | `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation. |

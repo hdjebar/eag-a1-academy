@@ -15,6 +15,7 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 - [Familles d'Épreuves & Formats 2026](#familles-dépreuves--formats-2026)
 - [Démarrage Rapide](#démarrage-rapide)
 - [Architecture & Principes de Conception](#architecture--principes-de-conception)
+- [Administration des Questions](#administration-des-questions)
 - [Pipeline de Questions Assisté par IA (Zero-Trust)](#pipeline-de-questions-assisté-par-ia-zero-trust)
 - [Commandes Utiles](#commandes-utiles)
 - [Références Officielles & Recherche Psychométrique](#références-officielles--recherche-psychométrique)
@@ -31,11 +32,14 @@ Application web statique, académique et **non officielle** pour s'entraîner au
   - Formats tabulaires structurés et assertions Vrai / Faux / Indéterminé (`tfcs`).
   - Évaluation de pertinence sur échelle 1 à 4 pour chaque réaction du jugement situationnel (`rating`).
 - **Retour pédagogique à 100 %** : chaque option (bonne réponse ou distracteur) intègre une justification unitaire (`optionRationales`) expliquant l'erreur cognitive ou la règle appliquée.
-- **Deux modes d'entraînement** :
+- **Trois modes d'entraînement** :
   - *Entraînement guidé* : correction immédiate après chaque validation avec explication pas à pas.
   - *Simulation chronométrée* : 15 questions en 25 minutes avec correction différée et calcul de concordance.
+  - *Examen blanc de 2 h* : les cinq tests A1 l'un après l'autre, écran de consignes et chronomètre par test, bilan par test et moyenne (hypothèse de 24 minutes par test, réglable dans la constante `EXAM` de `app.js` ; GovJobs ne publie ni l'ordre ni le temps par test).
 - **Neutralisation des biais** : brassage aléatoire des options à chaque affichage (algorithme de Fisher-Yates).
 - **Zéro dépendance d'exécution** : 100 % hors-ligne, aucune police externe, modes clair et sombre natifs.
+- **Interface d'administration** (`admin.html`, hors ligne ou via `npm run admin`) : relecture à l'aveugle, édition, approbation nominative, couverture de la banque, import de fichiers de questions.
+- **Régénération par LLM** : une question, une sélection ou une catégorie entière, via votre API ou par copier-coller avec un chat IA ; chaque version proposée est relue avant de remplacer l'originale.
 
 ---
 
@@ -78,7 +82,7 @@ Pour contribuer au code ou valider la banque de questions, Node.js 22+ est requi
 # Installation des outils de validation (Ajv 2020-12)
 npm ci
 
-# Exécution de la suite de tests complète (syntaxe, self-tests, validation des 50 questions, synchronisation)
+# Exécution de la suite de tests complète (syntaxe, self-tests, validation de la banque, synchronisation)
 npm test
 ```
 
@@ -93,7 +97,22 @@ Le projet repose sur une séparation physique stricte entre l'application client
    - Les questions validées de `data/approved/` sont compilées et embarquées dans `app.js` lors du build (`npm run build:bank`), permettant un fonctionnement immédiat même via le protocole `file://`.
 2. **Architecture décisionnelle documentée** :
    - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : description détaillée des modules, de l'état en mémoire et du cycle de vie.
-   - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0005).
+   - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0007).
+
+---
+
+## Administration des Questions
+
+Une interface d'administration permet de relire, résoudre à l'aveugle, modifier, approuver ou rejeter les questions, et de suivre la couverture de la banque.
+
+* **Hors ligne** : ouvrez `admin.html`, chargez les fichiers `generated/*.json` (et leurs `*.review.json`), puis téléchargez l'archive produite et décompressez-la à la racine du dépôt.
+* **En local** : `npm ci && npm run admin`. Un serveur limité à votre ordinateur lit et écrit directement dans le dépôt, et permet de lancer génération, revue aveugle, `npm test` et l'état Git.
+
+Les fichiers de questions JSON s'importent par glisser-déposer (hors ligne), en les copiant dans `generated/` (mode local) ou en collant leur contenu : voir [Importer des fichiers de questions](docs/AI-QUESTION-BANKS.md#importer-des-fichiers-de-questions).
+
+Elle permet aussi de **régénérer des questions avec un LLM** : une question, une sélection ou une catégorie entière, via votre API (mode local) ou par copier-coller avec n'importe quel chat IA. Les versions proposées passent toujours par la file de relecture, avec un comparatif avant/après.
+
+Détails : [docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md#interface-dadministration).
 
 ---
 
@@ -113,8 +132,10 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 
 | Commande | Rôle |
 | :--- | :--- |
-| `npm test` | Exécute la vérification syntaxique, les 13 cas de self-tests Ajv, la validation des 50 items et le contrôle de synchronisation. |
-| `npm run build:bank` | Compile et synchronise `data/approved/*.json` dans `app.js`. |
+| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque et le contrôle de synchronisation de `app.js` et `admin.js`. |
+| `npm run admin` | Lance l'interface d'administration locale (127.0.0.1, jeton par session). |
+| `npm run regenerate:bank` | Révise des questions approuvées avec un LLM (`IDS`, `INSTRUCTION`) ; résultat à relire dans `generated/`. |
+| `npm run build:bank` | Compile et synchronise `data/approved/*.json` dans `app.js` et `admin.js`. |
 | `npm run validate:bank` | Valide un ou plusieurs fichiers de questions candidats contre le schéma. |
 | `npm run generate:bank` | Génère un lot de questions candidates via API (OpenAI/Ollama). |
 | `npm run review:bank` | Lance la revue IA à l'aveugle sur un lot candidat. |
@@ -132,6 +153,8 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
   - [docs/research/eag-2026-benchmark.md](docs/research/eag-2026-benchmark.md) : dossier d'analyse comparative approfondie des formats psychotechniques internationaux (EPSO, SHL Direct, psychotechnique.lu, Travaillerpour.be, Commission de la fonction publique du Canada).
 
 ---
+
+GovJobs publie la durée totale (2 h), la liste des tests A1 et la notation (Stanine, moyenne d'au moins 5), mais ni l'ordre des tests, ni le temps par test, ni le nombre de questions. L'examen blanc utilise une hypothèse de travail (24 minutes par test) réglable dans la constante `EXAM` en tête de `app.js`.
 
 ## Confidentialité
 

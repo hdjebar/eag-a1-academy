@@ -5,165 +5,556 @@
   "description": "Original practice item for EAG A1 familiarisation. Never an official EAG question. Text fields are plain text: HTML is forbidden (enforced by scripts/validate-bank.mjs).",
   "type": "object",
   "required": [
-    "id", "version", "category", "itemFormat", "skill", "difficulty", "language",
-    "estimatedSeconds", "prompt", "stimulus", "options", "correctIndex",
-    "explanation", "sourceType", "reviewStatus", "createdAt"
+    "id",
+    "version",
+    "category",
+    "itemFormat",
+    "skill",
+    "difficulty",
+    "language",
+    "estimatedSeconds",
+    "prompt",
+    "stimulus",
+    "options",
+    "correctIndex",
+    "explanation",
+    "sourceType",
+    "reviewStatus",
+    "createdAt"
   ],
   "properties": {
-    "id": { "type": "string", "pattern": "^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$" },
-    "version": { "type": "integer", "minimum": 1 },
-    "category": { "enum": ["abstract", "verbal", "numeric", "planning", "situational"] },
+    "id": {
+      "type": "string",
+      "pattern": "^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "category": {
+      "enum": [
+        "abstract",
+        "verbal",
+        "numeric",
+        "planning",
+        "situational"
+      ]
+    },
     "itemFormat": {
       "description": "single_best: one correct option (abstract, verbal, numeric, planning). tfcs: Vrai / Faux / On ne peut pas savoir (verbal only; practice format, not described officially). rating: each response rated 1-4 for appropriateness (situational only, matching the official 'évaluer leur pertinence').",
-      "enum": ["single_best", "tfcs", "rating"]
+      "enum": [
+        "single_best",
+        "tfcs",
+        "rating"
+      ]
     },
-    "skill": { "type": "string" },
+    "skill": {
+      "type": "string"
+    },
     "difficulty": {
       "description": "1 = one reasoning step; 2 = two steps or one plausible trap; 3 = three or more steps or interacting constraints.",
-      "type": "integer", "minimum": 1, "maximum": 3
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
     },
-    "language": { "enum": ["fr", "de"] },
-    "estimatedSeconds": { "type": "integer", "minimum": 20, "maximum": 300 },
-    "prompt": { "type": "string", "minLength": 12 },
+    "language": {
+      "enum": [
+        "fr",
+        "de"
+      ]
+    },
+    "estimatedSeconds": {
+      "type": "integer",
+      "minimum": 20,
+      "maximum": 300
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 12
+    },
     "stimulus": {
       "oneOf": [
-        { "type": "null" },
-        { "type": "string", "minLength": 10, "description": "Plain text; line breaks are preserved." },
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "minLength": 10,
+          "description": "Plain text; line breaks are preserved."
+        },
         {
           "type": "object",
           "description": "Figural series or matrix written with symbols. Use \\n between matrix rows.",
-          "required": ["type", "text"],
+          "required": [
+            "type",
+            "text"
+          ],
           "properties": {
-            "type": { "const": "shapes" },
-            "text": { "type": "string", "minLength": 3 }
+            "type": {
+              "const": "shapes"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 3
+            }
           },
           "additionalProperties": false
         },
         {
           "type": "object",
           "description": "Data table. The app renders it; never write HTML.",
-          "required": ["type", "headers", "rows"],
+          "required": [
+            "type",
+            "headers",
+            "rows"
+          ],
           "properties": {
-            "type": { "const": "table" },
-            "caption": { "type": "string" },
-            "headers": { "type": "array", "minItems": 2, "items": { "type": "string" } },
-            "rows": {
-              "type": "array", "minItems": 1,
-              "items": { "type": "array", "minItems": 2, "items": { "type": ["string", "number"] } }
+            "type": {
+              "const": "table"
             },
-            "note": { "type": "string" }
+            "caption": {
+              "type": "string"
+            },
+            "headers": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": [
+                    "string",
+                    "number"
+                  ]
+                }
+              }
+            },
+            "note": {
+              "type": "string"
+            }
           },
           "additionalProperties": false
         }
       ]
     },
     "options": {
-      "type": "array", "minItems": 3, "maxItems": 4, "uniqueItems": true,
-      "items": { "type": "string", "minLength": 1 }
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
-    "correctIndex": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "correctIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
     "ratings": {
       "description": "rating format only: appropriateness of each option, 1 = très inapproprié ... 4 = très approprié. Same order as options; exactly one 4, at correctIndex (checked by validate-bank.mjs).",
-      "type": "array", "minItems": 4, "maxItems": 4,
-      "items": { "type": "integer", "minimum": 1, "maximum": 4 }
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4
+      }
     },
     "optionRationales": {
       "description": "Recommended (required by the generation prompt): one entry per option, same order, saying why it is right or which error makes it wrong.",
-      "type": "array", "minItems": 3, "maxItems": 4,
-      "items": { "type": "string", "minLength": 8 }
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "minLength": 8
+      }
     },
-    "explanation": { "type": "string", "minLength": 12 },
-    "sourceType": { "enum": ["original_ai_assisted", "original_human"] },
-    "reviewStatus": { "enum": ["candidate", "pending_human", "approved", "rejected"] },
-    "createdAt": { "type": "string", "format": "date-time" },
-    "reviewer": { "type": "string", "minLength": 2 },
-    "reviewedAt": { "type": "string", "format": "date-time" },
-    "reviewNotes": { "type": "string" },
-    "rejectionReason": { "type": "string", "minLength": 3 }
+    "explanation": {
+      "type": "string",
+      "minLength": 12
+    },
+    "sourceType": {
+      "enum": [
+        "original_ai_assisted",
+        "original_human"
+      ]
+    },
+    "reviewStatus": {
+      "enum": [
+        "candidate",
+        "pending_human",
+        "approved",
+        "rejected"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 2
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewNotes": {
+      "type": "string"
+    },
+    "rejectionReason": {
+      "type": "string",
+      "minLength": 3
+    },
+    "revisionOf": {
+      "type": "string",
+      "pattern": "^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$",
+      "description": "Candidate only: id of the approved item this revision would replace (same id). Removed on approval."
+    }
   },
   "additionalProperties": false,
-
   "allOf": [
     {
-      "if": { "properties": { "category": { "const": "abstract" } } },
-      "then": { "properties": {
-        "id": { "pattern": "^abstract-" },
-        "skill": { "enum": ["suite-logique", "matrice", "rotation", "transformation"] },
-        "itemFormat": { "const": "single_best" },
-        "stimulus": { "type": "object", "properties": { "type": { "const": "shapes" } } }
-      } }
-    },
-    {
-      "if": { "properties": { "category": { "const": "verbal" } } },
-      "then": { "properties": {
-        "id": { "pattern": "^verbal-" },
-        "skill": { "enum": ["comprehension", "inference", "application-consigne", "vrai-faux-indetermine", "synthese"] },
-        "itemFormat": { "enum": ["single_best", "tfcs"] },
-        "stimulus": { "type": "string" }
-      } }
-    },
-    {
-      "if": { "properties": { "category": { "const": "numeric" } } },
-      "then": { "properties": {
-        "id": { "pattern": "^numeric-" },
-        "skill": { "enum": ["pourcentage", "variation", "ratio-proportion", "moyenne", "lecture-tableau", "lecture-graphique", "operations-simples"] },
-        "itemFormat": { "const": "single_best" },
-        "stimulus": { "type": ["string", "object"] }
-      } }
-    },
-    {
-      "if": { "properties": { "category": { "const": "planning" } } },
-      "then": { "properties": {
-        "id": { "pattern": "^planning-" },
-        "skill": { "enum": ["agenda-contraintes", "priorisation", "dependances", "disponibilites", "conflits"] },
-        "itemFormat": { "const": "single_best" },
-        "stimulus": { "type": ["string", "object"] }
-      } }
-    },
-    {
-      "if": { "properties": { "category": { "const": "situational" } } },
-      "then": { "properties": {
-        "id": { "pattern": "^situational-" },
-        "skill": { "enum": ["servir-client-usager", "conseiller"] },
-        "itemFormat": { "const": "rating" },
-        "stimulus": { "type": "string" }
-      } }
-    },
-    {
-      "if": { "properties": { "itemFormat": { "const": "tfcs" } }, "required": ["itemFormat"] },
+      "if": {
+        "properties": {
+          "category": {
+            "const": "abstract"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
       "then": {
         "properties": {
-          "options": { "enum": [
-            ["Vrai", "Faux", "On ne peut pas savoir"],
-            ["Richtig", "Falsch", "Nicht zu entscheiden"]
-          ] },
-          "correctIndex": { "maximum": 2 },
-          "optionRationales": { "minItems": 3, "maxItems": 3 }
+          "id": {
+            "pattern": "^abstract-"
+          },
+          "skill": {
+            "enum": [
+              "suite-logique",
+              "matrice",
+              "rotation",
+              "transformation"
+            ]
+          },
+          "itemFormat": {
+            "const": "single_best"
+          },
+          "stimulus": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "shapes"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "verbal"
+          }
         },
-        "not": { "required": ["ratings"] }
-      }
-    },
-    {
-      "if": { "properties": { "itemFormat": { "const": "single_best" } }, "required": ["itemFormat"] },
+        "required": [
+          "category"
+        ]
+      },
       "then": {
-        "properties": { "options": { "minItems": 4 }, "optionRationales": { "minItems": 4 } },
-        "not": { "required": ["ratings"] }
+        "properties": {
+          "id": {
+            "pattern": "^verbal-"
+          },
+          "skill": {
+            "enum": [
+              "comprehension",
+              "inference",
+              "application-consigne",
+              "vrai-faux-indetermine",
+              "synthese"
+            ]
+          },
+          "itemFormat": {
+            "enum": [
+              "single_best",
+              "tfcs"
+            ]
+          },
+          "stimulus": {
+            "type": "string"
+          }
+        }
       }
     },
     {
-      "if": { "properties": { "itemFormat": { "const": "rating" } }, "required": ["itemFormat"] },
+      "if": {
+        "properties": {
+          "category": {
+            "const": "numeric"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
       "then": {
-        "required": ["ratings"],
-        "properties": { "options": { "minItems": 4 }, "optionRationales": { "minItems": 4 } }
+        "properties": {
+          "id": {
+            "pattern": "^numeric-"
+          },
+          "skill": {
+            "enum": [
+              "pourcentage",
+              "variation",
+              "ratio-proportion",
+              "moyenne",
+              "lecture-tableau",
+              "lecture-graphique",
+              "operations-simples"
+            ]
+          },
+          "itemFormat": {
+            "const": "single_best"
+          },
+          "stimulus": {
+            "type": [
+              "string",
+              "object"
+            ]
+          }
+        }
       }
     },
     {
-      "if": { "properties": { "reviewStatus": { "const": "approved" } }, "required": ["reviewStatus"] },
-      "then": { "required": ["reviewer", "reviewedAt"] }
+      "if": {
+        "properties": {
+          "category": {
+            "const": "planning"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "id": {
+            "pattern": "^planning-"
+          },
+          "skill": {
+            "enum": [
+              "agenda-contraintes",
+              "priorisation",
+              "dependances",
+              "disponibilites",
+              "conflits"
+            ]
+          },
+          "itemFormat": {
+            "const": "single_best"
+          },
+          "stimulus": {
+            "type": [
+              "string",
+              "object"
+            ]
+          }
+        }
+      }
     },
     {
-      "if": { "properties": { "reviewStatus": { "const": "rejected" } }, "required": ["reviewStatus"] },
-      "then": { "required": ["reviewer", "rejectionReason"] }
+      "if": {
+        "properties": {
+          "category": {
+            "const": "situational"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "id": {
+            "pattern": "^situational-"
+          },
+          "skill": {
+            "enum": [
+              "servir-client-usager",
+              "conseiller"
+            ]
+          },
+          "itemFormat": {
+            "const": "rating"
+          },
+          "stimulus": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "itemFormat": {
+            "const": "tfcs"
+          }
+        },
+        "required": [
+          "itemFormat"
+        ]
+      },
+      "then": {
+        "properties": {
+          "options": {
+            "enum": [
+              [
+                "Vrai",
+                "Faux",
+                "On ne peut pas savoir"
+              ],
+              [
+                "Richtig",
+                "Falsch",
+                "Nicht zu entscheiden"
+              ]
+            ]
+          },
+          "correctIndex": {
+            "maximum": 2
+          },
+          "optionRationales": {
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "not": {
+          "required": [
+            "ratings"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "itemFormat": {
+            "const": "single_best"
+          }
+        },
+        "required": [
+          "itemFormat"
+        ]
+      },
+      "then": {
+        "properties": {
+          "options": {
+            "minItems": 4
+          },
+          "optionRationales": {
+            "minItems": 4
+          }
+        },
+        "not": {
+          "required": [
+            "ratings"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "itemFormat": {
+            "const": "rating"
+          }
+        },
+        "required": [
+          "itemFormat"
+        ]
+      },
+      "then": {
+        "required": [
+          "ratings"
+        ],
+        "properties": {
+          "options": {
+            "minItems": 4
+          },
+          "optionRationales": {
+            "minItems": 4
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "reviewStatus": {
+            "const": "approved"
+          }
+        },
+        "required": [
+          "reviewStatus"
+        ]
+      },
+      "then": {
+        "required": [
+          "reviewer",
+          "reviewedAt"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "reviewStatus": {
+            "const": "rejected"
+          }
+        },
+        "required": [
+          "reviewStatus"
+        ]
+      },
+      "then": {
+        "required": [
+          "reviewer",
+          "rejectionReason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "reviewStatus": {
+            "const": "approved"
+          }
+        },
+        "required": [
+          "reviewStatus"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "revisionOf"
+          ]
+        }
+      }
     }
   ]
 }

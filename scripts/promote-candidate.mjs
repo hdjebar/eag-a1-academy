@@ -71,24 +71,36 @@ for (const id of requested) {
   }
   const approved = { ...item, reviewStatus: "approved", reviewer, reviewedAt: now };
   delete approved.rejectionReason;
+  const isRevision = Boolean(item.revisionOf);
+  delete approved.revisionOf;
 
   const target = path.join("data/approved", `${item.category}.json`);
   if (!byCategory.has(target)) byCategory.set(target, fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, "utf8")) : []);
   const bank = byCategory.get(target);
-  if (bank.some((x) => x.id === id)) {
+  const existingIndex = bank.findIndex((x) => x.id === id);
+  if (isRevision) {
+    if (existingIndex === -1) {
+      console.log(`- ${id} : révision d'une question absente de ${target} (ignoré)`);
+      blocked++;
+      continue;
+    }
+    approved.version = (bank[existingIndex].version || 1) + 1;
+  } else if (existingIndex !== -1) {
     console.log(`- ${id} : déjà présent dans ${target} (ignoré)`);
     blocked++;
     continue;
   }
-  const { errors } = checkBank([...bank, approved]);
+  const nextBank = isRevision ? bank.map((x, i) => (i === existingIndex ? approved : x)) : [...bank, approved];
+  const { errors } = checkBank(nextBank);
   if (errors.length) {
     console.log(`- ${id} : invalide\n    ${errors.join("\n    ")}`);
     blocked++;
     continue;
   }
-  bank.push(approved);
+  if (isRevision) bank[existingIndex] = approved;
+  else bank.push(approved);
   promoted.push(id);
-  console.log(`+ ${id} (${item.category}) → ${target}`);
+  console.log(`${isRevision ? "~" : "+"} ${id} (${item.category}) → ${target}${isRevision ? ` (révision, version ${approved.version})` : ""}`);
 }
 
 if (!promoted.length) {

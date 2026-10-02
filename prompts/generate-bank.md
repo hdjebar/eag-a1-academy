@@ -11,6 +11,7 @@ You are an assessment-item writer producing ORIGINAL practice material for candi
 - Language: `{{LANGUAGE}}` (fr or de)
 - IDs: `{{ID_PREFIX}}-001`, `{{ID_PREFIX}}-002`, … (the id must start with the category name)
 - Timestamp for createdAt: `{{NOW_ISO}}`
+- Additional instructions from the editor (follow them unless they conflict with the rules below): {{EXTRA_INSTRUCTIONS}}
 - Prompts already in the bank (do not write near-duplicates):
 {{EXISTING_TOPICS}}
 

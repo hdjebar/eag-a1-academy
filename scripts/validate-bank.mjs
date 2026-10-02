@@ -10,32 +10,20 @@ const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 const validateSchema = ajv.compile(schema);
 
-const FORBIDDEN_WORDING = [/question officielle/i, /item officiel/i, /bar[eè]me officiel/i, /confidentiel/i];
-const CATCH_ALL_OPTIONS = [/aucun(?:e)?\s+(?:de\s+ces|des)/i, /toutes?\s+les\s+(?:r[ée]ponses|options)/i, /keine\s+der/i, /alle\s+antworten/i];
-// Anything that looks like markup or an entity. Item text is rendered as text, never as HTML.
-const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
+// Same rules file as admin.html (classic script exposing globalThis.EagRules).
+import { EagRules } from "./lib/rules.mjs";
+const { semanticChecks, validateSchema: miniValidate } = EagRules;
 
 /**
- * Recursively yields all strings contained within an object or array.
- * @param {*} value - The value to inspect.
- * @param {string} where - Path context (for informative error reporting).
- * @returns {Generator<[string, string]>} Tuples of [property path, text value].
- */
-function* strings(value, where) {
-  if (typeof value === "string") yield [where, value];
-  else if (Array.isArray(value)) for (let i = 0; i < value.length; i++) yield* strings(value[i], `${where}[${i}]`);
-  else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) yield* strings(v, `${where}.${k}`);
-}
-
-/**
- * Validates a single test item against JSON Schema 2020-12 and deterministic psychometric quality rules.
+ * Validates a single test item: JSON Schema 2020-12 via Ajv (authoritative), then the shared
+ * semantic rules of shared/item-rules.js (also used by admin.html).
  *
  * Rules enforced:
- * - Structural schema conformity via Ajv 2020 (types, required fields, enums).
+ * - Structural schema conformity via Ajv 2020 (types, required fields, enums, per-category formats).
  * - Complete absence of HTML tags, scripts, and entities (plain text only).
  * - Absence of forbidden wording ("question officielle", "confidentiel", etc.).
  * - Correct index bounds and uniqueness of options.
- * - Prohibition of catch-all options ("aucun de ces créneaux", "toutes les options").
+ * - Prohibition of catch-all options ("aucune de ces réponses", "aucun de ces créneaux", "toutes les options").
  * - Parity of optionRationales with options count.
  * - Situational rating rules (exact single 4 placed at correctIndex, 1-4 scale).
  * - Length disproportion heuristic (alerts if target is >1.4x longer than all distractors).
@@ -48,58 +36,14 @@ function* strings(value, where) {
 export function checkItem(item, index = 0) {
   const ref = item && typeof item === "object" && item.id ? item.id : `item ${index + 1}`;
   const errors = [];
-  const warnings = [];
-
   if (!validateSchema(item)) {
     for (const e of validateSchema.errors) {
       if (e.keyword === "if") continue; // the failing branch is reported separately
       errors.push(`${ref}: ${e.instancePath || "(racine)"} ${e.message}${e.params?.allowedValues ? ` (${e.params.allowedValues.join(", ")})` : ""}`);
     }
   }
-  if (!item || typeof item !== "object") return { errors, warnings };
-
-  for (const [where, text] of strings(item, "item")) {
-    if (HTML_LIKE.test(text)) errors.push(`${ref}: ${where} contient du HTML ou une entité (texte brut uniquement)`);
-  }
-
-  const learnerText = [...strings([item.prompt, item.stimulus, item.options, item.explanation, item.optionRationales], "x")].map(([, t]) => t).join(" ");
-  for (const pattern of FORBIDDEN_WORDING) if (pattern.test(learnerText)) errors.push(`${ref}: formulation interdite (${pattern})`);
-
-  const options = Array.isArray(item.options) ? item.options : [];
-  const ci = item.correctIndex;
-  if (Number.isInteger(ci) && (ci < 0 || ci >= options.length)) errors.push(`${ref}: correctIndex hors des options`);
-  if (new Set(options.map((o) => String(o).trim().toLowerCase())).size !== options.length) errors.push(`${ref}: options dupliquées (casse ignorée)`);
-  for (const o of options) if (CATCH_ALL_OPTIONS.some((p) => p.test(o))) errors.push(`${ref}: option fourre-tout interdite (« ${o} »)`);
-  if (Array.isArray(item.optionRationales) && item.optionRationales.length !== options.length) {
-    errors.push(`${ref}: optionRationales doit avoir une entrée par option`);
-  }
-
-  if (item.itemFormat === "rating" && Array.isArray(item.ratings) && item.ratings.length === options.length) {
-    const max = Math.max(...item.ratings);
-    if (max !== 4 || item.ratings.filter((r) => r === 4).length !== 1 || item.ratings[ci] !== 4) {
-      errors.push(`${ref}: ratings doit contenir un seul 4, placé à correctIndex`);
-    }
-    if (new Set(item.ratings).size < 3) warnings.push(`${ref}: ratings utilise moins de 3 valeurs distinctes`);
-  }
-
-  if (item.itemFormat !== "tfcs" && options.length >= 3 && Number.isInteger(ci) && options[ci]) {
-    const lengths = options.map((o) => o.length);
-    const others = lengths.filter((_, i) => i !== ci);
-    if (lengths[ci] > 1.4 * Math.max(...others) && lengths[ci] > 25) {
-      warnings.push(`${ref}: la bonne réponse est nettement la plus longue (indice involontaire)`);
-    }
-  }
-
-  if (item.language === "fr" && item.category === "numeric") {
-    const text = [...strings([item.prompt, item.stimulus, item.options], "x")].map(([, t]) => t).join(" ");
-    if (/\d\.\d/.test(text)) warnings.push(`${ref}: point décimal détecté ; en français, utilisez la virgule (12,5)`);
-    if (/\d%/.test(text)) warnings.push(`${ref}: écrivez « 12 % » avec une espace`);
-  }
-
-  if (typeof item.explanation === "string" && options[ci] && item.explanation.trim().toLowerCase() === options[ci].trim().toLowerCase()) {
-    errors.push(`${ref}: l'explication se contente de répéter la réponse`);
-  }
-  return { errors, warnings };
+  const sem = semanticChecks(item);
+  return { errors: errors.concat(sem.errors.map((m) => `${ref}: ${m}`)), warnings: sem.warnings.map((m) => `${ref}: ${m}`) };
 }
 
 /**
@@ -142,9 +86,10 @@ function candidateFiles() {
 }
 
 /**
- * Runs internal self-tests against both valid baselines and 13 intentional mutation cases
- * to guarantee that the validator detects all required anti-patterns.
- * @throws {Error} If valid items fail or any of the 13 invalid cases fails to be caught.
+ * Runs internal self-tests: valid baselines (including legitimate "aucun des…" wording) must pass,
+ * every intentional mutation case must be rejected, and the browser validator used by admin.html
+ * must give the same verdict as Ajv on all fixtures and approved items.
+ * @throws {Error} If a valid item fails, an invalid case is accepted, or the two validators disagree.
  */
 function selfTest() {
   const base = {
@@ -174,15 +119,34 @@ function selfTest() {
     "options dupliquées": { ...base, options: ["5", "10", "15", "5"] },
     "optionRationales nombre d'entrées inattendu": { ...base, optionRationales: ["Juste", "Faux"] },
     "formulation interdite (question officielle)": { ...base, prompt: "Voici une question officielle de l'épreuve." },
+    "champ inconnu": { ...base, extra: 1 },
+    "date invalide": { ...base, createdAt: "hier" },
+    "stimulus abstrait en texte": { ...base, id: "abstract-demo-001", category: "abstract", skill: "matrice", stimulus: "Série de formes à compléter" },
+    "tfcs mal formé": { ...base, id: "verbal-demo-002", category: "verbal", skill: "inference", itemFormat: "tfcs", options: ["Oui", "Non", "Peut-être"] },
   };
-  const ok = [base, rating].map((x) => JSON.parse(JSON.stringify(x)));
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  // Legitimate options that mention "aucun" / "toutes" must stay allowed.
+  const mustPass = {
+    "conclusion « aucun des agents »": { ...base, id: "verbal-demo-003", category: "verbal", skill: "inference", stimulus: "Aucun agent du service B ne travaille le samedi.", options: ["Aucun des agents du service B ne travaille le samedi.", "Tous les agents travaillent le samedi.", "Certains agents du service B travaillent le samedi.", "Le service B ferme le vendredi."] },
+    "contrainte « aucune des deux réunions »": { ...base, id: "planning-demo-001", category: "planning", skill: "conflits", stimulus: "Deux réunions fixes occupent la matinée de 9 h à 12 h.", options: ["Aucune des deux réunions ne peut être déplacée.", "La première réunion peut être avancée.", "La seconde réunion peut être reportée.", "Les deux réunions peuvent être fusionnées."] },
+  };
+  const ok = [base, rating, ...Object.values(mustPass)].map(clone);
   const r = checkBank(ok);
-  if (r.errors.length) throw new Error(`Self-test : items valides rejetés\n${r.errors.join("\n")}`);
+  if (r.errors.length) throw new Error(`Self-test : items valides rejetés (${Object.keys(mustPass).join(", ")} compris)\n${r.errors.join("\n")}`);
   for (const [name, item] of Object.entries(mustFail)) {
-    const clean = JSON.parse(JSON.stringify(item));
-    if (!checkBank([clean]).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
+    if (!checkBank([clone(item)]).errors.length) throw new Error(`Self-test : « ${name} » aurait dû être rejeté`);
   }
-  console.log(`Self-test passed (${Object.keys(mustFail).length} cas invalides détectés)`);
+
+  // The browser validator (admin.html) must agree with Ajv on every fixture and every approved item.
+  const approvedDir = path.join(ROOT, "data/approved");
+  const approved = fs.readdirSync(approvedDir).filter((f) => f.endsWith(".json")).flatMap((f) => JSON.parse(fs.readFileSync(path.join(approvedDir, f), "utf8")));
+  const corpus = [...ok, ...Object.values(mustFail).map(clone), ...approved];
+  for (const item of corpus) {
+    const ajvValid = validateSchema(item);
+    const miniValid = miniValidate(schema, item).length === 0;
+    if (ajvValid !== miniValid) throw new Error(`Self-test : le validateur navigateur et Ajv divergent sur ${item.id} (Ajv ${ajvValid}, navigateur ${miniValid})`);
+  }
+  console.log(`Self-test passed (${Object.keys(mustFail).length} cas invalides détectés, ${corpus.length} items : validateur navigateur = Ajv)`);
 }
 
 const isDirectRun = Boolean(process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]));
