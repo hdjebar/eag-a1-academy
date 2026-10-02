@@ -1,15 +1,44 @@
-# Recherche Psychométrique & Études Préparatoires
+# Recherche Psychométrique & Cadre Réglementaire (EAG 2026)
 
-Ce répertoire regroupe les études comparatives, les benchmarks de tests psychotechniques et les analyses documentaires servant de fondement empirique à la conception des exercices d'**EAG A1 Académie**.
+Ce répertoire centralise les études comparatives, les benchmarks de tests psychotechniques internationaux et les analyses réglementaires officielles servant de fondement empirique et méthodologique à la conception d'**EAG A1 Académie**.
 
-## Documents disponibles
+---
 
-- **[`eag-2026-benchmark.md`](eag-2026-benchmark.md)** :
-  - Analyse comparative des formats de tests issus de la réforme EAG du 15 septembre 2026 (Groupe A1).
-  - Évaluation des sources et analogues psychométriques internationaux :
-    - **EPSO** (Office européen de sélection du personnel) : séries de figures, raisonnement numérique et verbal.
-    - **SHL Direct** : matrices inductives, tableaux financiers, raisonnement logique.
-    - **Travaillerpour.be / Psychotechnique.be** : tests de jugement situationnel et planification.
-    - **Commission de la fonction publique du Canada (CFP)** : échelles d'efficacité comportementale pour tests de jugement situationnel.
-    - **psychotechnique.lu** : étude critique des formats payants et mini-tests en ligne.
-  - Définition des règles de transposition appliquées dans [`prompts/generate-bank.md`](../../prompts/generate-bank.md) et validées dans [`schema/question.schema.json`](../../schema/question.schema.json).
+## Documents de référence
+
+### 📊 [Benchmark Psychométrique & Sources d'entraînement (EAG 2026)](eag-2026-benchmark.md)
+*Dernière mise à jour et vérification en direct : Octobre 2026.*
+
+Ce document détaille :
+1. **Le cadre réglementaire officiel GovJobs (Réforme du 15 septembre 2026) :**
+   - Épreuve informatisée standardisée de **2h00** au CGPO (Tour A, Kirchberg).
+   - Inscription individuelle continue tout au long de l'année via MyGuichet.lu.
+   - Notation en **échelle Stanine (1 à 9)** avec seuil de réussite fixé à une moyenne $\ge 5,0$.
+   - Validité des résultats de **12 mois** pour une seule admission au stage.
+   - **Politique de non-diffusion :** GovJobs ne publie plus d'exemples d'entraînement préalables (mesure anti-IA garantissant l'équité des épreuves).
+2. **La composition stricte pour le Groupe A1 :**
+   - *Raisonnement abstrait :* Séries géométriques et complétion de matrices (exclusion des lettres/chiffres et du format intrus).
+   - *Raisonnement verbal :* Textes d'instructions administratives avec logique Vrai / Faux / Indéterminé.
+   - *Raisonnement numérique :* Tableaux de données, graphiques, ratios et calculatrice logicielle intégrée.
+   - *Test de planification :* Gestion d'agenda sous contraintes temporelles, d'échéances et de disponibilités.
+   - *Test de jugement situationnel (SJT) :* Évaluation de la pertinence des comportements sur les compétences *« servir le client-usager »* et *« conseiller »*.
+   - *(Note : Le test de contrôle et précision est réservé aux groupes B1 et C1).*
+3. **L'analyse comparative des analogues internationaux :**
+   - **EPSO (UE) :** Séries de figures et raisonnement numérique/verbal.
+   - **SHL Direct :** Tests inductifs et compréhension verbale.
+   - **Travaillerpour.be (Selor - Belgique) :** Jugement situationnel avec échelle d'évaluation (++ à --).
+   - **Commission de la fonction publique du Canada (CFP) :** Échelles d'efficacité comportementale (Tests 318 et 375).
+4. **La transposition technique dans EAG A1 Académie :**
+   - Architecture arrêtée dans [ADR-0005](../decisions/ADR-0005-item-bank-and-pedagogical-engine.md).
+   - Validation stricte des questions via JSON Schema ([`schema/question.schema.json`](../../schema/question.schema.json)).
+   - Justifications pédagogiques obligatoires à 100% sur l'ensemble des choix (`optionRationales`).
+   - Évaluation continue du jugement situationnel par formule de concordance linéaire.
+
+---
+
+## Liens connexes
+
+- [Architecture logicielle et psychométrique du projet](../ARCHITECTURE.md)
+- [Guide de contribution et enrichissement de la banque](../CONTRIBUTING.md)
+- [Décision d'architecture ADR-0005 (Moteur pédagogique & banque)](../decisions/ADR-0005-item-bank-and-pedagogical-engine.md)
+- [Prompt de génération de questions](../../prompts/generate-bank.md)
