@@ -1154,5 +1154,2249 @@
     "createdAt": "2026-10-02T13:42:39.867Z",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T13:42:39.867Z"
+  },
+  {
+    "id": "abstract-quad-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◰◰     ◲◲◲     ◰     ?"
+    },
+    "options": [
+      "◲◲◲",
+      "◰◰",
+      "◲◲",
+      "◱◱"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 2 figure(s) ◲.",
+    "optionRationales": [
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3.",
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-cnt-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ●●     ●●●     ●●●●     ?"
+    },
+    "options": [
+      "●●●●",
+      "●●●●●●",
+      "●●●●●",
+      "○○○○○"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le nombre de disques augmente d'une unité à chaque étape (1, 2, 3, 4, 5). Le groupe suivant compte 5 disques pleins.",
+    "optionRationales": [
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : bon nombre, mais le remplissage change sans raison."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-pos-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●○○○○     ○○○○●     ○○○●○     ○○●○○     ?"
+    },
+    "options": [
+      "○○○●○",
+      "○○●○○",
+      "○●○○○",
+      "●○○○○"
+    ],
+    "correctIndex": 2,
+    "explanation": "La case pleine se déplace d'une case vers la gauche à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ○●○○○.",
+    "optionRationales": [
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : correspond à deux étapes plus loin."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mix-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↓     ■     ↙     ■■     ←     ■■■     ?"
+    },
+    "options": [
+      "↘",
+      "↖",
+      "■■■■",
+      "←"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 45° dans le sens horaire ; les positions paires portent un groupe de carrés qui grandit d'une unité. Le septième élément est une flèche : ↖.",
+    "optionRationales": [
+      "Incorrect : orientation opposée à la bonne.",
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes.",
+      "Incorrect : reprend la flèche précédente sans rotation."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◱◱     ◳◳◳     ◱     ◳◳     ?"
+    },
+    "options": [
+      "◱",
+      "◳◳◳",
+      "◱◱◱",
+      "◰◰◰"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 3 figure(s) ◱.",
+    "optionRationales": [
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3.",
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-cnt-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◇◇◇     ◆◆◆◆◆     ◇◇◇◇◇◇◇     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆◆◆◆◆",
+      "◇◇◇◇◇◇◇◇◇",
+      "◆◆◆◆◆◆◆◆◆",
+      "◆◆◆◆◆◆◆"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le nombre de losanges augmente de deux unités à chaque étape (1, 3, 5, 7, 9), et les groupes sont alternativement pleins et vides. Le groupe suivant compte 9 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Incorrect : bon nombre, mais le remplissage n'alterne pas.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : reprend le nombre de l'étape précédente."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-pos-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○○○●○     ●○○○○     ○○●○○     ○○○○●     ?"
+    },
+    "options": [
+      "○○○○●",
+      "○○●○○",
+      "○○○●○",
+      "○●○○○"
+    ],
+    "correctIndex": 3,
+    "explanation": "La case pleine se déplace de deux cases vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ○●○○○.",
+    "optionRationales": [
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : correspond à deux étapes plus loin.",
+      "Correct : position(s) correcte(s) à l'étape suivante."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mix-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↘     ●     ↗     ●●     ↖     ●●●     ?"
+    },
+    "options": [
+      "↙",
+      "↗",
+      "↖",
+      "●●●●"
+    ],
+    "correctIndex": 0,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 90° dans le sens anti-horaire ; les positions paires portent un groupe de disques qui grandit d'une unité. Le septième élément est une flèche : ↙.",
+    "optionRationales": [
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : orientation opposée à la bonne.",
+      "Incorrect : reprend la flèche précédente sans rotation.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◳◳     ◱◱◱     ◳     ◱◱     ?"
+    },
+    "options": [
+      "◱◱◱",
+      "◳◳◳",
+      "◲◲◲",
+      "◳"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 3 figure(s) ◳.",
+    "optionRationales": [
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour).",
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-cnt-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◇◇     ◆◆◆     ◇◇◇◇     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆",
+      "◇◇◇◇◇",
+      "◆◆◆◆",
+      "◆◆◆◆◆"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le nombre de losanges augmente d'une unité à chaque étape (1, 2, 3, 4, 5), et les groupes sont alternativement pleins et vides. Le groupe suivant compte 5 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Incorrect : bon nombre, mais le remplissage n'alterne pas.",
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Correct : nombre et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-pos-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◇◇◆◇◇     ◇◇◇◆◇     ◇◇◇◇◆     ◆◇◇◇◇     ?"
+    },
+    "options": [
+      "◇◆◇◇◇",
+      "◇◇◆◇◇",
+      "◆◇◇◇◇",
+      "◇◇◇◆◇"
+    ],
+    "correctIndex": 0,
+    "explanation": "La case pleine se déplace d'une case vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ◇◆◇◇◇.",
+    "optionRationales": [
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : correspond à deux étapes plus loin.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mix-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↙     ◆     ←     ◆◆     ↖     ◆◆◆     ?"
+    },
+    "options": [
+      "↓",
+      "↑",
+      "↖",
+      "◆◆◆◆"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 45° dans le sens horaire ; les positions paires portent un groupe de losanges qui grandit d'une unité. Le septième élément est une flèche : ↑.",
+    "optionRationales": [
+      "Incorrect : orientation opposée à la bonne.",
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : reprend la flèche précédente sans rotation.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-cnt-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◆◆     ◆◆◆     ◆◆◆◆     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆",
+      "◆◆◆◆◆",
+      "◆◆◆◆",
+      "◇◇◇◇◇"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le nombre de losanges augmente d'une unité à chaque étape (1, 2, 3, 4, 5). Le groupe suivant compte 5 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Incorrect : bon nombre, mais le remplissage change sans raison."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-pos-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "□□□□■     □■□□□     □□□■□     ■□□□□     ?"
+    },
+    "options": [
+      "□□■□□",
+      "□□□■□",
+      "■□□□□",
+      "□□□□■"
+    ],
+    "correctIndex": 0,
+    "explanation": "La case pleine se déplace de deux cases vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est □□■□□.",
+    "optionRationales": [
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : correspond à deux étapes plus loin."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "←     ↑     →     ↓     ←     ?"
+    },
+    "options": [
+      "↖",
+      "↓",
+      "↗",
+      "↑"
+    ],
+    "correctIndex": 3,
+    "explanation": "La flèche tourne de 90° dans le sens horaire à chaque étape. Après ←, elle pointe vers le haut : ↑.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°.",
+      "Correct : rotation de 90° horaire appliquée une fois de plus."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◱     ◰     ◳     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le quart noir tourne d'un coin dans le sens horaire à chaque étape. Après ◳, il se place en bas à droite : ◲.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en haut à gauche (coin opposé).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à droite (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en bas à gauche (un pas de trop)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ▷     ▲     ◁     ▼     ?"
+    },
+    "options": [
+      "▼",
+      "▶",
+      "▷",
+      "◁"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens anti-horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ▷.",
+    "optionRationales": [
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↖     ↙     ↘     ↗     ↖     ?"
+    },
+    "options": [
+      "↗",
+      "↙",
+      "←",
+      "↓"
+    ],
+    "correctIndex": 1,
+    "explanation": "La flèche tourne de 90° dans le sens anti-horaire à chaque étape. Après ↖, elle pointe en bas à gauche : ↙.",
+    "optionRationales": [
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Correct : rotation de 90° anti-horaire appliquée une fois de plus.",
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰     ◱     ◲     ◳     ?"
+    },
+    "options": [
+      "◱",
+      "◲",
+      "◰",
+      "◳"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◳, il se place en haut à gauche : ◰.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en bas à gauche (un pas de trop).",
+      "Incorrect : le quart noir est placé en bas à droite (coin opposé).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à droite (figure précédente répétée)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ▼     ◁     ▲     ▷     ?"
+    },
+    "options": [
+      "▼",
+      "▽",
+      "▷",
+      "▲"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ▼.",
+    "optionRationales": [
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↖     ↙     ↘     ↗     ?"
+    },
+    "options": [
+      "←",
+      "↑",
+      "↘",
+      "↖"
+    ],
+    "correctIndex": 3,
+    "explanation": "La flèche tourne de 90° dans le sens anti-horaire à chaque étape. Après ↗, elle pointe en haut à gauche : ↖.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°.",
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Correct : rotation de 90° anti-horaire appliquée une fois de plus."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰     ◱     ◲     ?"
+    },
+    "options": [
+      "◰",
+      "◳",
+      "◲",
+      "◱"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◲, il se place en haut à droite : ◳.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en haut à gauche (un pas de trop).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en bas à droite (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en bas à gauche (coin opposé)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▶     ▽     ◀     △     ?"
+    },
+    "options": [
+      "▷",
+      "◀",
+      "△",
+      "▶"
+    ],
+    "correctIndex": 3,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ▶.",
+    "optionRationales": [
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : bon remplissage, mais orientation opposée.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Correct : orientation et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↓     ↙     ←     ↖     ?"
+    },
+    "options": [
+      "↖",
+      "↑",
+      "↓",
+      "↗"
+    ],
+    "correctIndex": 1,
+    "explanation": "La flèche tourne de 45° dans le sens horaire à chaque étape. Après ↖, elle pointe vers le haut : ↑.",
+    "optionRationales": [
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Correct : rotation de 45° horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-quad-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◲     ◳     ◰     ◱     ?"
+    },
+    "options": [
+      "◱",
+      "◳",
+      "◲",
+      "◰"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◱, il se place en bas à droite : ◲.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en bas à gauche (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en haut à droite (un pas de trop).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à gauche (coin opposé)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ◁     ▲     ▷     ▼     ?"
+    },
+    "options": [
+      "▼",
+      "▷",
+      "◀",
+      "◁"
+    ],
+    "correctIndex": 3,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ◁.",
+    "optionRationales": [
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↑     ↖     ←     ?"
+    },
+    "options": [
+      "↙",
+      "↗",
+      "←",
+      "↓"
+    ],
+    "correctIndex": 0,
+    "explanation": "La flèche tourne de 45° dans le sens anti-horaire à chaque étape. Après ←, elle pointe en bas à gauche : ↙.",
+    "optionRationales": [
+      "Correct : rotation de 45° anti-horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ◀     △     ▶     ▽     ?"
+    },
+    "options": [
+      "◁",
+      "◀",
+      "▽",
+      "▶"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ◀.",
+    "optionRationales": [
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↑     ↖     ←     ↙     ?"
+    },
+    "options": [
+      "↑",
+      "↙",
+      "↓",
+      "↘"
+    ],
+    "correctIndex": 2,
+    "explanation": "La flèche tourne de 45° dans le sens anti-horaire à chaque étape. Après ↙, elle pointe vers le bas : ↓.",
+    "optionRationales": [
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Correct : rotation de 45° anti-horaire appliquée une fois de plus.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-tri-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ▲     ◁     ▼     ?"
+    },
+    "options": [
+      "▷",
+      "▼",
+      "▶",
+      "◁"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens anti-horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ▷.",
+    "optionRationales": [
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑     ↙     →     ↖     ?"
+    },
+    "options": [
+      "↙",
+      "↘",
+      "↓",
+      "↑"
+    ],
+    "correctIndex": 2,
+    "explanation": "La flèche tourne de 135° dans le sens anti-horaire à chaque étape. Après ↖, elle pointe vers le bas : ↓.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 90° au dernier pas au lieu de 135°.",
+      "Incorrect : correspond à une rotation de 180° au dernier pas au lieu de 135°.",
+      "Correct : rotation de 135° anti-horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Les pas de rotation alternent. Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     →     ↙     ←     ↗     →     ?"
+    },
+    "options": [
+      "↘",
+      "↗",
+      "←",
+      "↙"
+    ],
+    "correctIndex": 3,
+    "explanation": "Les rotations alternent : 45° horaire, puis 135° horaire, et ainsi de suite. Le dernier pas appliqué était 45° horaire ; le suivant est donc 135° horaire, ce qui donne ↙.",
+    "optionRationales": [
+      "Incorrect : répète le pas de 45° horaire au lieu d'alterner.",
+      "Incorrect : pointe dans la direction opposée.",
+      "Incorrect : applique les deux pas d'un coup.",
+      "Correct : le pas suivant est 135° horaire."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-rot-110",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Les pas de rotation alternent. Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "→     ↘     ←     ↖     →     ↘     ?"
+    },
+    "options": [
+      "↓",
+      "←",
+      "↖",
+      "→"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les rotations alternent : 45° horaire, puis 135° horaire, et ainsi de suite. Le dernier pas appliqué était 45° horaire ; le suivant est donc 135° horaire, ce qui donne ←.",
+    "optionRationales": [
+      "Incorrect : répète le pas de 45° horaire au lieu d'alterner.",
+      "Correct : le pas suivant est 135° horaire.",
+      "Incorrect : applique les deux pas d'un coup.",
+      "Incorrect : pointe dans la direction opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ◆     ▲\n◆     ▲     ●\n▲     ?     ◆"
+    },
+    "options": [
+      "▲",
+      "●",
+      "○",
+      "◆"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-shift-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆△▲     ▲◆△     △▲◆\n▲◆△     △▲◆     ◆△▲\n△▲◆     ◆△▲     ?"
+    },
+    "options": [
+      "◆△▲",
+      "△◆▲",
+      "△▲◆",
+      "▲◆△"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ▲◆△.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ■     ▲\n□     △     ◇\n▲     ?     ■"
+    },
+    "options": [
+      "▲",
+      "■",
+      "◆",
+      "◇"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-shift-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◇○▲     ○▲◇     ▲◇○\n○▲◇     ▲◇○     ◇○▲\n▲◇○     ◇○▲     ?"
+    },
+    "options": [
+      "◇○▲",
+      "◇▲○",
+      "○▲◇",
+      "▲◇○"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ○▲◇.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ▲     ◆\n◆     ●     ▲\n▲     ?     ●"
+    },
+    "options": [
+      "◆",
+      "◇",
+      "●",
+      "▲"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-shift-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "□○◇     ◇□○     ○◇□\n◇□○     ○◇□     □○◇\n○◇□     ?     ◇□○"
+    },
+    "options": [
+      "○◇□",
+      "□○◇",
+      "◇○□",
+      "◇□○"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est □○◇.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ■     ▲\n△     ○     □\n■     ?     ●"
+    },
+    "options": [
+      "●",
+      "△",
+      "▲",
+      "■"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ▲.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-shift-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△○■     ■△○     ○■△\n■△○     ○■△     △○■\n?     △○■     ■△○"
+    },
+    "options": [
+      "△○■",
+      "△■○",
+      "■△○",
+      "○■△"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ○■△.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ●     ■\n□     ◇     ○\n?     ■     ◆"
+    },
+    "options": [
+      "●",
+      "■",
+      "○",
+      "◆"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ◆     ●\n○     △     ◇\n?     ●     ▲"
+    },
+    "options": [
+      "●",
+      "◇",
+      "◆",
+      "▲"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     □     ▲\n■     △     ●\n▲     ?     ■"
+    },
+    "options": [
+      "△",
+      "●",
+      "□",
+      "○"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième colonne est vide, les autres sont pleines. La case manquante doit donc contenir ○.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ○     ■\n●     □     ▲\n■     △     ?"
+    },
+    "options": [
+      "■",
+      "○",
+      "●",
+      "▲"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième colonne est vide, les autres sont pleines. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-mat-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■■■     ■■     ■\n?     ●●     ●\n◆◆◆     ◆◆     ◆"
+    },
+    "options": [
+      "○○○",
+      "●●●",
+      "◆◆◆",
+      "●●"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque ligne utilise une seule forme ; le nombre de figures diminue de 3 à 1 de gauche à droite. La case manquante contient 3 disque(s) plein(s).",
+    "optionRationales": [
+      "Incorrect : mauvais remplissage.",
+      "Correct : forme, nombre et remplissage corrects.",
+      "Incorrect : forme d'une autre ligne.",
+      "Incorrect : mauvais nombre de figures pour cette colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ◀\n▷     △\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◱",
+      "◳",
+      "◲"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◳.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◲.",
+      "Incorrect : la figure n'a pas été transformée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ○\n▽     ▶\n△     ?"
+    },
+    "options": [
+      "◁",
+      "▷",
+      "◀",
+      "▽"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ▷\n◀     ▼\n◱     ?"
+    },
+    "options": [
+      "◱",
+      "◰",
+      "◲",
+      "◳"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◱, elle donne ◲.",
+    "optionRationales": [
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◱.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     △\n▶     ▷\n△     ?"
+    },
+    "options": [
+      "▶",
+      "▷",
+      "◁",
+      "▼"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à △."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ◁\n▽     △\n△     ?"
+    },
+    "options": [
+      "▽",
+      "△",
+      "▼",
+      "▷"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ▽.",
+    "optionRationales": [
+      "Correct : demi-tour appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◲\n▲     ▶\n◱     ?"
+    },
+    "options": [
+      "◲",
+      "◰",
+      "◱",
+      "◳"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◱, elle donne ◰.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens horaire appliquée à ◱.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ▶\n▽     ▷\n△     ?"
+    },
+    "options": [
+      "▶",
+      "◁",
+      "▼",
+      "▷"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ◁.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◁     ▲\n■     □\n▷     ?"
+    },
+    "options": [
+      "▲",
+      "▶",
+      "▼",
+      "◀"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▷, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens horaire et inversion du remplissage appliquée à ▷.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△     ▼\n◇     ◆\n▽     ?"
+    },
+    "options": [
+      "▶",
+      "▲",
+      "◀",
+      "▷"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▽, elle donne ▲.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à ▽.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-110",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     △\n◱     ◰\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◱",
+      "◳"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◳.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas appliquée à ◲."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-111",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◰     ◱\n▽     ▷\n▲     ?"
+    },
+    "options": [
+      "▲",
+      "◀",
+      "▼",
+      "▶"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ▲.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-112",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◀     ◁\n◇     ◆\n◁     ?"
+    },
+    "options": [
+      "◁",
+      "▲",
+      "△",
+      "◀"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◁, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (symétrie haut-bas), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à ◁."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-113",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ◁\n◱     ◰\n◳     ?"
+    },
+    "options": [
+      "◲",
+      "◰",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◳, elle donne ◲.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens horaire appliquée à ◳.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-114",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰\n◁     ▽\n◀     ?"
+    },
+    "options": [
+      "▼",
+      "▽",
+      "▲",
+      "◁"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◀, elle donne ▼.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◀.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-115",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◀     ▶\n◱     ◳\n◁     ?"
+    },
+    "options": [
+      "▽",
+      "▶",
+      "△",
+      "▷"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◁, elle donne ▷.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : demi-tour appliquée à ◁."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-116",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◱\n◰     ◲\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◰.",
+    "optionRationales": [
+      "Correct : demi-tour appliquée à ◲.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-117",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◰\n◲     ◳\n▲     ?"
+    },
+    "options": [
+      "▽",
+      "▼",
+      "▲",
+      "◀"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : symétrie haut-bas. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Correct : symétrie haut-bas appliquée à ▲.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-118",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○     ●\n▽     ▶\n▼     ?"
+    },
+    "options": [
+      "▶",
+      "▷",
+      "◀",
+      "▽"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▼, elle donne ▷.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage appliquée à ▼.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-119",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△     ▽\n◰     ◲\n▲     ?"
+    },
+    "options": [
+      "▶",
+      "△",
+      "▲",
+      "▼"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Correct : demi-tour appliquée à ▲."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "abstract-trf-120",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◳\n◀     ▼\n◳     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◳, elle donne ◰.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◳.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T17:42:15.980Z"
   }
 ]
