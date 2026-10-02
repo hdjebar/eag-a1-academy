@@ -22,7 +22,10 @@ jobs:
       - run: npm test
       - name: Validate candidate files when present
         run: |
-          files=$(find generated -maxdepth 1 -name '*.json' ! -name '*.review.json' -print)
+          files=""
+          if [ -d generated ]; then
+            files=$(find generated -maxdepth 1 -name '*.json' ! -name '*.review.json' -print)
+          fi
           if [ -n "$files" ]; then node scripts/validate-bank.mjs $files; fi
       - name: Block merging unpromoted candidates
         if: github.event_name == 'pull_request'

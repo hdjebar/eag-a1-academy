@@ -1,7 +1,7 @@
 [
   {
     "id": "numeric-ratio-001",
-    "version": 2,
+    "version": 3,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "variation",
@@ -39,19 +39,25 @@
       "Service A",
       "Service B",
       "Service C",
-      "Progression identique entre A et B"
+      "Service A et Service B à égalité"
     ],
     "correctIndex": 1,
+    "optionRationales": [
+      "Le service A progresse de (138 - 120) / 120 = +15 %.",
+      "Correct : le service B progresse de (96 - 80) / 80 = +20 %, soit la hausse relative la plus forte.",
+      "Le service C progresse de (165 - 150) / 150 = +10 %.",
+      "Les progressions relatives sont différentes : 15 % pour A et 20 % pour B."
+    ],
     "explanation": "Calcul des taux : Service A = (138-120)/120 = +15 % ; Service B = (96-80)/80 = +20 % ; Service C = (165-150)/150 = +10 %. Le service B a la plus forte hausse.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-mean-002",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -67,16 +73,22 @@
       "65 dossiers"
     ],
     "correctIndex": 2,
+    "optionRationales": [
+      "Sous-estime la cadence quotidienne (50 × 7 = 350 dossiers au lieu de 420).",
+      "Erreur de division arithmétique (55 × 7 = 385 dossiers).",
+      "Correct : 420 dossiers divisés par 7 jours ouvrés donnent 60 dossiers par jour.",
+      "Surestime la cadence quotidienne (65 × 7 = 455 dossiers)."
+    ],
     "explanation": "Le calcul direct de la moyenne quotidienne donne 420 divisé par 7, soit exactement 60 dossiers par jour ouvré.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-perc-003",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -92,16 +104,22 @@
       "38 minutes"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : réduction de 15 % de 40 min = 6 min ; 40 - 6 = 34 minutes.",
+      "Soustraction erronée de 5 minutes au lieu de 6 minutes.",
+      "Correspondrait à une réduction de 10 % seulement (4 minutes retranchées).",
+      "Correspondrait à une réduction de 5 % seulement (2 minutes retranchées)."
+    ],
     "explanation": "La réduction s'élève à 15 % de 40 = 6 minutes. Le nouveau délai est donc de 40 - 6 = 34 minutes.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-rate-004",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -117,16 +135,22 @@
       "185 demandes"
     ],
     "correctIndex": 2,
+    "optionRationales": [
+      "Correspondrait à 68 % de 250 demandes.",
+      "Correspondrait à 70 % de 250 demandes.",
+      "Correct : 250 × 0,72 = 180 demandes approuvées.",
+      "Correspondrait à 74 % de 250 demandes."
+    ],
     "explanation": "Le calcul direct donne 250 × 0,72 = 180 demandes approuvées.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-table-005",
-    "version": 2,
+    "version": 3,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "lecture-tableau",
@@ -164,19 +188,25 @@
       "Trimestre 1",
       "Trimestre 2",
       "Trimestre 3",
-      "T1 et T3 ex aequo"
+      "Trimestre 1 et Trimestre 3 à égalité"
     ],
     "correctIndex": 1,
+    "optionRationales": [
+      "T1 affiche un taux de 160 / 200 = 80 %.",
+      "Correct : T2 affiche un taux de 204 / 240 = 85 %, le plus performant.",
+      "T3 affiche un taux de 144 / 180 = 80 %.",
+      "T1 et T3 atteignent tous deux 80 %, mais restent inférieurs aux 85 % de T2."
+    ],
     "explanation": "Taux de résolution : T1 = 160/200 = 80 % ; T2 = 204/240 = 85 % ; T3 = 144/180 = 80 %. Le trimestre 2 est le plus performant.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-budget-006",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -192,16 +222,22 @@
       "16 000 euros"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : consommation cumulée de 70 % ; reste 30 % de 80 000 € = 24 000 euros.",
+      "Correspondrait à 25 % de reliquat (75 % de consommation supposée).",
+      "Sous-estimerait la consommation globale à 65 % au lieu de 70 %.",
+      "Calculerait seulement 20 % de budget résiduel."
+    ],
     "explanation": "La consommation totale représente 45 % + 25 % = 70 % du montant initial. La part restante est de 30 % de 80 000 euros, soit 24 000 euros.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-weight-007",
-    "version": 2,
+    "version": 3,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -217,16 +253,22 @@
       "12,5 / 20"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : [(14×3) + (16×2) + (11×5)] / 10 = (42 + 32 + 55) / 10 = 129 / 10 = 12,9.",
+      "Erreur d'application sur la pondération du coefficient 5.",
+      "Correspondrait à la moyenne simple non pondérée : (14 + 16 + 11) / 3 = 13,67.",
+      "Sous-évaluation globale résultant d'une erreur de sommation des coefficients."
+    ],
     "explanation": "Calcul de la moyenne pondérée : [(14×3) + (16×2) + (11×5)] / (3+2+5) = (42 + 32 + 55) / 10 = 129 / 10 = 12,9 / 20.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-scale-008",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "ratio-proportion",
@@ -242,16 +284,22 @@
       "160 mètres"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 8 cm × 2 500 = 20 000 cm = 200 mètres.",
+      "Erreur d'un facteur 10 dans la conversion des centimètres en mètres.",
+      "Erreur d'un facteur 10 par excès dans la conversion d'unités.",
+      "Confusion dans le calcul (8 × 2 000 au lieu de 8 × 2 500)."
+    ],
     "explanation": "La distance réelle équivaut à 8 cm × 2 500 = 20 000 cm = 200 mètres.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-speed-009",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "operations-simples",
@@ -267,16 +315,22 @@
       "8 heures"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : cadence cumulée de 6 + 4 = 10 dossiers/h ; 60 / 10 = 6 heures.",
+      "Sous-estime le temps nécessaire (à 10 dossiers/h, 5 h ne produiraient que 50 dossiers).",
+      "Surestimerait la durée nécessaire en minorant le débit conjoint.",
+      "Correspondrait au travail d'un seul agent sans mise en commun des cadences."
+    ],
     "explanation": "Leur cadence combinée est de 6 + 4 = 10 dossiers par heure. Pour 60 dossiers, il faut 60 / 10 = 6 heures.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "numeric-delta-010",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "variation",
@@ -292,11 +346,17 @@
       "20 points"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : l'écart arithmétique absolu entre 75 % et 60 % est de 15 points de pourcentage.",
+      "Confond la progression relative (+25 %) avec l'écart absolu en points.",
+      "Emploie le symbole % réservé aux variations relatives, et non aux points d'écart.",
+      "Erreur arithmétique dans la soustraction 75 - 60."
+    ],
     "explanation": "La différence entre deux pourcentages s'exprime en points de pourcentage : 75 - 60 = 15 points (alors que la hausse relative est de 25 %).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   }
 ]

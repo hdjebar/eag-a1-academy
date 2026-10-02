@@ -1,7 +1,7 @@
 [
   {
     "id": "planning-slot-001",
-    "version": 2,
+    "version": 3,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "disponibilites",
@@ -9,24 +9,30 @@
     "language": "fr",
     "estimatedSeconds": 75,
     "prompt": "Quel créneau permet d'organiser une réunion de 45 minutes commune aux deux participants ?",
-    "stimulus": "Léa est libre de 9:00 à 10:00 et de 14:00 à 15:00. Sam est libre de 9:30 à 11:00 et de 14:30 à 16:00.",
+    "stimulus": "Léa est disponible de 9 h 00 à 10 h 30 et de 14 h 00 à 15 h 00. Sam est disponible de 9 h 30 à 11 h 00 et de 14 h 30 à 16 h 00.",
     "options": [
-      "9:00 à 9:45",
-      "9:30 à 10:15",
-      "14:00 à 14:45",
-      "Aucun de ces créneaux"
+      "9 h 00 à 9 h 45",
+      "9 h 30 à 10 h 15",
+      "14 h 00 à 14 h 45",
+      "14 h 30 à 15 h 15"
     ],
-    "correctIndex": 3,
-    "explanation": "Les intersections communes sont 9:30-10:00 (30 min) et 14:30-15:00 (30 min). Aucune plage continue commune n'atteint la durée exigée de 45 minutes.",
+    "correctIndex": 1,
+    "optionRationales": [
+      "Sam n'est pas disponible avant 9 h 30.",
+      "Correct : les deux participants sont disponibles simultanément de 9 h 30 à 10 h 30.",
+      "Sam n'est pas disponible avant 14 h 30.",
+      "Léa n'est plus disponible après 15 h 00 (la réunion se terminerait à 15 h 15)."
+    ],
+    "explanation": "Le créneau commun le matin s'étend de 9 h 30 à 10 h 30 (durée 60 min). La réunion de 45 minutes peut donc se tenir de 9 h 30 à 10 h 15. Les autres créneaux empiètent sur l'indisponibilité de l'un des participants (Sam avant 9 h 30 ou après 14 h 30 ; Léa après 15 h 00).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-prio-002",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "priorisation",
@@ -39,19 +45,25 @@
       "Tâche A",
       "Tâche B",
       "Tâche C",
-      "Ordre indifférent"
+      "Tâche B puis C"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : son échéance (10 h 00) est la plus imminente et impose un démarrage sans attendre.",
+      "Échéance fixée au lendemain, donc bien moins urgente que la tâche A.",
+      "Échéance fixée à 16 h 00, laissant une marge temporelle suffisante après réalisation de A.",
+      "Ces deux tâches ont des échéances plus lointaines que la tâche A."
+    ],
     "explanation": "La tâche A a l'échéance la plus imminente (10 h 00) et peut être achevée avant sa date limite en débutant sans délai.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-order-003",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "dependances",
@@ -67,16 +79,22 @@
       "X, puis Y, puis Z"
     ],
     "correctIndex": 3,
+    "optionRationales": [
+      "Viole les deux contraintes : Z est placé avant Y, et Y est placé après Z.",
+      "Viole la contrainte imposant que Z soit réalisé après Y.",
+      "Viole la préséance stricte de X sur Y.",
+      "Correct : respecte successivement X avant Y, puis Y avant Z."
+    ],
     "explanation": "Les contraintes X < Y et Y < Z imposent strictement l'enchaînement direct X, puis Y, puis Z.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-room-004",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "conflits",
@@ -92,16 +110,22 @@
       "11:15 à 11:45"
     ],
     "correctIndex": 3,
+    "optionRationales": [
+      "Conflit avec la candidate dès 10:15, ne laissant que 15 minutes utiles.",
+      "La candidate est en indisponibilité sur l'ensemble de cette plage horaire.",
+      "La candidate n'est pas encore disponible entre 11:00 et 11:15.",
+      "Correct : la salle est libre jusqu'à midi et la candidate est disponible dès 11:15 pour 30 minutes."
+    ],
     "explanation": "La candidate se libère à 11:15 et la salle est libre jusqu'à 12:00 ; le créneau 11:15-11:45 offre 30 minutes effectives sans conflit.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-delay-005",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "priorisation",
@@ -117,16 +141,22 @@
       "Note de synthèse, dossier urgent, appel"
     ],
     "correctIndex": 1,
+    "optionRationales": [
+      "La note de 90 min repousse l'urgence à 14:30, provoquant un dépassement de délai.",
+      "Correct : dossier urgent terminé à 13:45 (avant 14:00), appel à 14:00, puis note de synthèse.",
+      "Placer la note à 13:15 repousse le dossier urgent à 14:45, après son échéance.",
+      "Prioriser la note de 90 min fait manquer l'échéance de 14:00 du dossier urgent."
+    ],
     "explanation": "Le dossier urgent doit se terminer à 13:45 pour respecter l'échéance de 14:00, suivi de l'appel (13:45-14:00), laissant le temps pour la note.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-crit-006",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "dependances",
@@ -142,16 +172,22 @@
       "13 jours"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : chemin critique déterminé par 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours.",
+      "Calcule à tort sur la branche parallèle la plus rapide 2A (3 + 4 + 2 = 9).",
+      "Additionne toutes les phases en série sans exploiter la parallélisation (3 + 4 + 6 + 2 = 15).",
+      "Surévaluation arbitraire de deux jours par rapport au chemin critique réel."
+    ],
     "explanation": "Entre 2A et 2B menées en parallèle, le chemin le plus long impose 6 jours. La durée totale incompressible est donc 3 + max(4, 6) + 2 = 3 + 6 + 2 = 11 jours.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-capa-007",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "agenda-contraintes",
@@ -164,19 +200,25 @@
       "1 agent supplémentaire",
       "2 agents supplémentaires",
       "3 agents supplémentaires",
-      "Aucun agent supplémentaire"
+      "4 agents supplémentaires"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : besoin total de 3 agents (120 h / 40 h), 2 étant déjà affectés, 1 agent suffit en renfort.",
+      "Confond le nombre d'agents déjà en poste avec le besoin de renfort additionnel.",
+      "Indique l'effectif global nécessaire sans soustraire les 2 agents déjà en place.",
+      "Surdimensionne l'équipe à 6 agents au total, soit le double de la charge requise."
+    ],
     "explanation": "En 5 jours, 1 agent produit 5 × 8 = 40 heures. Pour réaliser 120 heures, il faut 120 / 40 = 3 agents au total. Deux étant déjà présents, il faut 1 agent de plus.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-overlap-008",
-    "version": 2,
+    "version": 3,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "disponibilites",
@@ -192,16 +234,22 @@
       "17 h 00"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : l'agent B quittant son poste à 15 h 30, c'est l'heure limite exacte pour éviter une rupture de permanence.",
+      "Une arrivée à 16 h 00 entraînerait 30 minutes de fermeture non autorisée du guichet.",
+      "Une arrivée à 12 h 00 assure la continuité mais ne constitue pas l'horaire le plus tardif possible.",
+      "Une arrivée à 17 h 00 créerait une interruption de service prolongée de 1 h 30."
+    ],
     "explanation": "Le guichet est couvert par A puis B jusqu'à 15 h 30. L'agent C doit être présent au plus tard à ce moment ; 12 h fonctionne aussi, mais ce n'est pas l'heure la plus tardive possible.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-buffer-009",
-    "version": 2,
+    "version": 3,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "agenda-contraintes",
@@ -214,19 +262,25 @@
       "4 jours ouvrés",
       "2 jours ouvrés",
       "6 jours ouvrés",
-      "Aucun jour"
+      "8 jours ouvrés"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : la marge de battement s'élève exactement à 20 - 16 = 4 jours ouvrés.",
+      "Sous-estime de 2 jours la marge réelle disponible.",
+      "Surestime la marge de 2 jours, ce qui risquerait d'entraîner un retard effectif.",
+      "Surestimation excessive qui provoquerait un dépassement d'échéance certain de 4 jours."
+    ],
     "explanation": "Les deux durées sont exprimées dans la même unité (jours ouvrés). La marge totale vaut 20 − 16 = 4 jours ouvrés.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "planning-dep-010",
-    "version": 2,
+    "version": 3,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "dependances",
@@ -242,11 +296,17 @@
       "Diffuser le compte rendu"
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : c'est la seule tâche immédiatement actionnable dont toutes les dépendances sont levées.",
+      "Bloquée tant que le rapport financier n'a pas été finalisé.",
+      "Bloquée par la dépendance envers la validation hiérarchique.",
+      "Bloquée par les étapes préalables de convocation et de déroulement de la réunion."
+    ],
     "explanation": "Chaque étape dépend de la précédente : validation, puis convocations, puis compte rendu, et tout attend le rapport financier. Seule sa relecture finale peut avancer dès ce matin.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   }
 ]

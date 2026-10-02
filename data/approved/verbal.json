@@ -1,7 +1,7 @@
 [
   {
     "id": "verbal-deduct-001",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
@@ -17,16 +17,22 @@
       "Tous les dossiers de la journée sont urgents."
     ],
     "correctIndex": 1,
+    "optionRationales": [
+      "L'examen ne préjuge en rien de la décision finale (acceptation ou rejet).",
+      "Correct : tout dossier urgent étant examiné le jour même, le dossier L l'est obligatoirement.",
+      "L'énoncé ne précise aucun ordre de passage parmi les dossiers examinés.",
+      "Généralise abusivement la propriété d'un sous-ensemble à l'ensemble des dossiers."
+    ],
     "explanation": "L'énoncé affirme expressément que tout dossier urgent fait l'objet d'un examen le jour même ; aucune conclusion sur la décision finale ou l'ordre exact n'est permise.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-cond-002",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
@@ -42,12 +48,18 @@
       "La demande de Nora sera automatiquement acceptée."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les créneaux avant 10 h étant réservés aux dossiers complets, un créneau à 9 h 15 implique un dossier complet.",
+      "Le guichet ouvrant à 8 h 30, un rendez-vous à 9 h 15 a lieu après l'ouverture.",
+      "L'ouverture a lieu à 8 h 30, tandis que le rendez-vous de Nora est calé à 9 h 15.",
+      "L'obtention d'un rendez-vous ne préjuge aucunement de l'acceptation de la demande."
+    ],
     "explanation": "Les créneaux avant 10 h sont réservés aux demandes déjà complètes ; un rendez-vous à 9 h 15 implique donc une demande complète. Le texte ne dit rien de l'heure exacte de passage, ni de la décision.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-quant-003",
@@ -80,7 +92,7 @@
   },
   {
     "id": "verbal-order-004",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
@@ -96,16 +108,22 @@
       "12/04 n° 12, puis 11/04 n° 10"
     ],
     "correctIndex": 2,
+    "optionRationales": [
+      "Viole la préséance de date croissante (le 12/04 est placé avant le 11/04).",
+      "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le 22.",
+      "Correct : date identique (11/04) et ordre croissant strict des numéros (19 avant 22).",
+      "Viole l'ordre chronologique croissant des dates."
+    ],
     "explanation": "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le numéro plus élevé (22).",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-neg-005",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
@@ -121,16 +139,22 @@
       "Au moins un rapport du service B est transmis."
     ],
     "correctIndex": 2,
+    "optionRationales": [
+      "Justifié : les rapports transmis étant nécessairement complets, ceux de B qui sont transmis sont complets.",
+      "Justifié : découle directement de la prémisse interdisant la transmission de rapports incomplets.",
+      "Correct : le fait que certains rapports soient transmis n'autorise pas à affirmer que tous le sont.",
+      "Justifié : l'emploi de « certains » implique l'existence d'au moins un élément."
+    ],
     "explanation": "Le passage mentionne que certains rapports sont transmis, ce qui interdit d'affirmer que tous les rapports du service le sont.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-syll-006",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
@@ -146,16 +170,22 @@
       "Certains arrêtés ministériels ne sont pas publiés."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : par contraposition (si arrêté alors publié ; non publié donc pas un arrêté).",
+      "Spéculation sans fondement dans les prémisses fournies.",
+      "Supposition temporelle non étayée par le texte.",
+      "Contredit formellement la règle selon laquelle tout arrêté est publié."
+    ],
     "explanation": "Par contraposition logique : si tout arrêté est publié, un document non publié ne peut en aucun cas constituer un arrêté ministériel.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-rule-007",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
@@ -171,16 +201,22 @@
       "Le projet Alpha est dispensé de tout contrôle administratif."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le seuil d'exigence étant strictement supérieur à 50 000 euros, 45 000 euros n'activent pas cette obligation.",
+      "La règle n'évoque aucun accord unanime requis.",
+      "Confusion : la directive n'impose aucun seuil minimal pour solliciter une subvention.",
+      "Généralisation abusive : le projet n'est exempté que de cette formalité spécifique."
+    ],
     "explanation": "Le seuil obligatoire est fixé strictement aux montants supérieurs à 50 000 euros ; 45 000 euros ne déclenchent pas cette obligation spécifique.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-extrap-008",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
@@ -196,16 +232,22 @@
       "Le traitement moyen était plus long avant le premier semestre concerné."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le texte n'apporte aucune donnée sur la satisfaction des usagers, seulement un indicateur de délai.",
+      "Parfaitement démontré par la différence arithmétique (14 - 6 = 8 jours).",
+      "Démontré par l'observation directe du chiffre de 6 jours.",
+      "Démontré par la comparaison avec la durée préalable de 14 jours."
+    ],
     "explanation": "Le texte renseigne un indicateur temporel précis (délai en jours), mais ne fournit aucune donnée sur le niveau de satisfaction des usagers.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-equiv-009",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
@@ -221,16 +263,22 @@
       "Le badge actif garantit un accès permanent et sans restriction."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : l'impossibilité d'accéder sans badge fait de sa détention une condition nécessaire (indispensable).",
+      "Confond condition nécessaire et condition suffisante (le badge est requis, mais d'autres conditions peuvent s'appliquer).",
+      "Extrapole une exception d'accompagnement non stipulée dans la règle.",
+      "Le badge est requis, mais il ne confère aucun accès permanent ou sans restriction."
+    ],
     "explanation": "L'absence de badge empêchant l'accès, la détention d'un badge actif constitue bien une condition nécessaire (indispensable) d'accès.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   },
   {
     "id": "verbal-fact-010",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
@@ -246,11 +294,17 @@
       "Ce système est la meilleure solution disponible."
     ],
     "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le comptage de 1 200 connexions est une donnée objective et quantifiable.",
+      "Appréciation qualitative subjective.",
+      "Jugement de valeur subjectif quant au bien-être du personnel.",
+      "Jugement subjectif sans fondement factuel quantifié."
+    ],
     "explanation": "Le comptage de 1 200 connexions est une mesure quantitative objectivement vérifiable, à la différence des appréciations qualitatives.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-09-30T12:00:00+02:00"
+    "reviewedAt": "2026-10-02T09:15:00+02:00"
   }
 ]

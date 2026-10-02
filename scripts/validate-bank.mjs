@@ -11,7 +11,7 @@ addFormats(ajv);
 const validateSchema = ajv.compile(schema);
 
 const FORBIDDEN_WORDING = [/question officielle/i, /item officiel/i, /bar[eè]me officiel/i, /confidentiel/i];
-const CATCH_ALL_OPTIONS = [/aucune de ces r[ée]ponses/i, /toutes les r[ée]ponses/i, /keine der antworten/i, /alle antworten/i];
+const CATCH_ALL_OPTIONS = [/aucun(?:e)?\s+(?:de\s+ces|des)/i, /toutes?\s+les\s+(?:r[ée]ponses|options)/i, /keine\s+der/i, /alle\s+antworten/i];
 // Anything that looks like markup or an entity. Item text is rendered as text, never as HTML.
 const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
 
