@@ -1,0 +1,1012 @@
+{
+  "model": "independent blind solvers (Claude subagents, keys hidden); 4 items re-checked after wording fixes",
+  "reviewedAt": "2026-10-02T17:09:42.417Z",
+  "reviews": [
+    {
+      "id": "abstract-quad-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-cnt-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-pos-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mix-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-105",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-cnt-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-pos-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mix-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-106",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-cnt-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-pos-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mix-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-cnt-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-pos-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-quad-107",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-105",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-105",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-106",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-tri-106",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-108",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-109",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-rot-110",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-shift-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-shift-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-shift-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-shift-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-105",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-106",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-107",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-108",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-mat-109",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-101",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-102",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-103",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-104",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-105",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-106",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-107",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-108",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-109",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-110",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-111",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-112",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-113",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-114",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-115",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-116",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-117",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-118",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-119",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "abstract-trf-120",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-027",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-033",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-036",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-083",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-076",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-087",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-093",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-text-099",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-contra-016",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-tfcs-017",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-quant-019",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-syll-023",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-comp-034",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-table-011",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-ratio-030",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-ops-031",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-calc-041",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-calc-072",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-buffer-015",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-prio-032",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-dep-034",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-sched-055",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-sched-079",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "planning-sched-094",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-023",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-025",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-026",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-033",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        2,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-044",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-074",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-079",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-095",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        3,
+        2,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-097",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        1,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-100",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-012",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-014",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-advise-019",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-020",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-024",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-serve-030",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": [
+        1,
+        3,
+        1,
+        4
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-070",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        2,
+        4,
+        2,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-090",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        1,
+        3,
+        4,
+        3
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-091",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        2,
+        1,
+        4,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-092",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        1,
+        4,
+        3,
+        2
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-094",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 2,
+      "ratings": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "confidence": null
+    },
+    {
+      "id": "situational-scen-099",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 1,
+      "ratings": [
+        3,
+        4,
+        1,
+        2
+      ],
+      "confidence": null
+    }
+  ]
+}

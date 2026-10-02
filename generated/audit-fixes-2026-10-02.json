@@ -1,0 +1,3622 @@
+[
+  {
+    "id": "abstract-quad-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◰◰     ◲◲◲     ◰     ?"
+    },
+    "options": [
+      "◲◲◲",
+      "◰◰",
+      "◲◲",
+      "◱◱"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 2 figure(s) ◲.",
+    "optionRationales": [
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3.",
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-cnt-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ●●     ●●●     ●●●●     ?"
+    },
+    "options": [
+      "●●●●",
+      "●●●●●●",
+      "●●●●●",
+      "○○○○○"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le nombre de disques augmente d'une unité à chaque étape (1, 2, 3, 4, 5). Le groupe suivant compte 5 disques pleins.",
+    "optionRationales": [
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : bon nombre, mais le remplissage change sans raison."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-pos-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●○○○○     ○○○○●     ○○○●○     ○○●○○     ?"
+    },
+    "options": [
+      "○○○●○",
+      "○○●○○",
+      "○●○○○",
+      "●○○○○"
+    ],
+    "correctIndex": 2,
+    "explanation": "La case pleine se déplace d'une case vers la gauche à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ○●○○○.",
+    "optionRationales": [
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : correspond à deux étapes plus loin."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mix-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↓     ■     ↙     ■■     ←     ■■■     ?"
+    },
+    "options": [
+      "↘",
+      "↖",
+      "■■■■",
+      "←"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 45° dans le sens horaire ; les positions paires portent un groupe de carrés qui grandit d'une unité. Le septième élément est une flèche : ↖.",
+    "optionRationales": [
+      "Incorrect : orientation opposée à la bonne.",
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes.",
+      "Incorrect : reprend la flèche précédente sans rotation."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◱◱     ◳◳◳     ◱     ◳◳     ?"
+    },
+    "options": [
+      "◱",
+      "◳◳◳",
+      "◱◱◱",
+      "◰◰◰"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 3 figure(s) ◱.",
+    "optionRationales": [
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3.",
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-cnt-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◇◇◇     ◆◆◆◆◆     ◇◇◇◇◇◇◇     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆◆◆◆◆",
+      "◇◇◇◇◇◇◇◇◇",
+      "◆◆◆◆◆◆◆◆◆",
+      "◆◆◆◆◆◆◆"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le nombre de losanges augmente de deux unités à chaque étape (1, 3, 5, 7, 9), et les groupes sont alternativement pleins et vides. Le groupe suivant compte 9 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Incorrect : bon nombre, mais le remplissage n'alterne pas.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : reprend le nombre de l'étape précédente."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-pos-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○○○●○     ●○○○○     ○○●○○     ○○○○●     ?"
+    },
+    "options": [
+      "○○○○●",
+      "○○●○○",
+      "○○○●○",
+      "○●○○○"
+    ],
+    "correctIndex": 3,
+    "explanation": "La case pleine se déplace de deux cases vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ○●○○○.",
+    "optionRationales": [
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : correspond à deux étapes plus loin.",
+      "Correct : position(s) correcte(s) à l'étape suivante."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mix-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↘     ●     ↗     ●●     ↖     ●●●     ?"
+    },
+    "options": [
+      "↙",
+      "↗",
+      "↖",
+      "●●●●"
+    ],
+    "correctIndex": 0,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 90° dans le sens anti-horaire ; les positions paires portent un groupe de disques qui grandit d'une unité. Le septième élément est une flèche : ↙.",
+    "optionRationales": [
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : orientation opposée à la bonne.",
+      "Incorrect : reprend la flèche précédente sans rotation.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux règles agissent en même temps. Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◳◳     ◱◱◱     ◳     ◱◱     ?"
+    },
+    "options": [
+      "◱◱◱",
+      "◳◳◳",
+      "◲◲◲",
+      "◳"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deux règles : le quart noir saute d'un demi-tour à chaque étape (il alterne entre deux coins opposés), et le nombre de figures suit le cycle 1, 2, 3. L'étape suivante compte 3 figure(s) ◳.",
+    "optionRationales": [
+      "Incorrect : le quart noir n'a pas changé de coin.",
+      "Correct : les deux règles sont respectées.",
+      "Incorrect : le quart noir est dans le mauvais coin (rotation d'un quart de tour au lieu d'un demi-tour).",
+      "Incorrect : le nombre de figures ne suit pas le cycle 1, 2, 3."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-cnt-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◇◇     ◆◆◆     ◇◇◇◇     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆",
+      "◇◇◇◇◇",
+      "◆◆◆◆",
+      "◆◆◆◆◆"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le nombre de losanges augmente d'une unité à chaque étape (1, 2, 3, 4, 5), et les groupes sont alternativement pleins et vides. Le groupe suivant compte 5 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Incorrect : bon nombre, mais le remplissage n'alterne pas.",
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Correct : nombre et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-pos-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◇◇◆◇◇     ◇◇◇◆◇     ◇◇◇◇◆     ◆◇◇◇◇     ?"
+    },
+    "options": [
+      "◇◆◇◇◇",
+      "◇◇◆◇◇",
+      "◆◇◇◇◇",
+      "◇◇◇◆◇"
+    ],
+    "correctIndex": 0,
+    "explanation": "La case pleine se déplace d'une case vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est ◇◆◇◇◇.",
+    "optionRationales": [
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : correspond à deux étapes plus loin.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mix-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Deux séries sont entrelacées. Quel élément complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↙     ◆     ←     ◆◆     ↖     ◆◆◆     ?"
+    },
+    "options": [
+      "↓",
+      "↑",
+      "↖",
+      "◆◆◆◆"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les positions impaires portent une flèche qui tourne de 45° dans le sens horaire ; les positions paires portent un groupe de losanges qui grandit d'une unité. Le septième élément est une flèche : ↑.",
+    "optionRationales": [
+      "Incorrect : orientation opposée à la bonne.",
+      "Correct : prochaine flèche de la série des positions impaires.",
+      "Incorrect : reprend la flèche précédente sans rotation.",
+      "Incorrect : le septième élément appartient à la série des flèches, pas à celle des groupes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-cnt-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quel groupe complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ◆◆     ◆◆◆     ◆◆◆◆     ?"
+    },
+    "options": [
+      "◆◆◆◆◆◆",
+      "◆◆◆◆◆",
+      "◆◆◆◆",
+      "◇◇◇◇◇"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le nombre de losanges augmente d'une unité à chaque étape (1, 2, 3, 4, 5). Le groupe suivant compte 5 losanges pleins.",
+    "optionRationales": [
+      "Incorrect : la progression du nombre est mal appliquée.",
+      "Correct : nombre et remplissage corrects.",
+      "Incorrect : reprend le nombre de l'étape précédente.",
+      "Incorrect : bon nombre, mais le remplissage change sans raison."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-pos-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "suite-logique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle rangée complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "□□□□■     □■□□□     □□□■□     ■□□□□     ?"
+    },
+    "options": [
+      "□□■□□",
+      "□□□■□",
+      "■□□□□",
+      "□□□□■"
+    ],
+    "correctIndex": 0,
+    "explanation": "La case pleine se déplace de deux cases vers la droite à chaque étape ; arrivée au bout de la rangée, elle repart de l'autre extrémité. L'étape suivante est □□■□□.",
+    "optionRationales": [
+      "Correct : position(s) correcte(s) à l'étape suivante.",
+      "Incorrect : position(s) incompatible(s) avec la règle de déplacement.",
+      "Incorrect : répète la dernière rangée sans déplacement.",
+      "Incorrect : correspond à deux étapes plus loin."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "←     ↑     →     ↓     ←     ?"
+    },
+    "options": [
+      "↖",
+      "↓",
+      "↗",
+      "↑"
+    ],
+    "correctIndex": 3,
+    "explanation": "La flèche tourne de 90° dans le sens horaire à chaque étape. Après ←, elle pointe vers le haut : ↑.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°.",
+      "Correct : rotation de 90° horaire appliquée une fois de plus."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◱     ◰     ◳     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le quart noir tourne d'un coin dans le sens horaire à chaque étape. Après ◳, il se place en bas à droite : ◲.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en haut à gauche (coin opposé).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à droite (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en bas à gauche (un pas de trop)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ▷     ▲     ◁     ▼     ?"
+    },
+    "options": [
+      "▼",
+      "▶",
+      "▷",
+      "◁"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens anti-horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ▷.",
+    "optionRationales": [
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↖     ↙     ↘     ↗     ↖     ?"
+    },
+    "options": [
+      "↗",
+      "↙",
+      "←",
+      "↓"
+    ],
+    "correctIndex": 1,
+    "explanation": "La flèche tourne de 90° dans le sens anti-horaire à chaque étape. Après ↖, elle pointe en bas à gauche : ↙.",
+    "optionRationales": [
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Correct : rotation de 90° anti-horaire appliquée une fois de plus.",
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰     ◱     ◲     ◳     ?"
+    },
+    "options": [
+      "◱",
+      "◲",
+      "◰",
+      "◳"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◳, il se place en haut à gauche : ◰.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en bas à gauche (un pas de trop).",
+      "Incorrect : le quart noir est placé en bas à droite (coin opposé).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à droite (figure précédente répétée)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ▼     ◁     ▲     ▷     ?"
+    },
+    "options": [
+      "▼",
+      "▽",
+      "▷",
+      "▲"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ▼.",
+    "optionRationales": [
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↖     ↙     ↘     ↗     ?"
+    },
+    "options": [
+      "←",
+      "↑",
+      "↘",
+      "↖"
+    ],
+    "correctIndex": 3,
+    "explanation": "La flèche tourne de 90° dans le sens anti-horaire à chaque étape. Après ↗, elle pointe en haut à gauche : ↖.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 135° au dernier pas au lieu de 90°.",
+      "Incorrect : correspond à une rotation de 45° au dernier pas au lieu de 90°.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Correct : rotation de 90° anti-horaire appliquée une fois de plus."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰     ◱     ◲     ?"
+    },
+    "options": [
+      "◰",
+      "◳",
+      "◲",
+      "◱"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◲, il se place en haut à droite : ◳.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en haut à gauche (un pas de trop).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en bas à droite (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en bas à gauche (coin opposé)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▶     ▽     ◀     △     ?"
+    },
+    "options": [
+      "▷",
+      "◀",
+      "△",
+      "▶"
+    ],
+    "correctIndex": 3,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ▶.",
+    "optionRationales": [
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : bon remplissage, mais orientation opposée.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Correct : orientation et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↓     ↙     ←     ↖     ?"
+    },
+    "options": [
+      "↖",
+      "↑",
+      "↓",
+      "↗"
+    ],
+    "correctIndex": 1,
+    "explanation": "La flèche tourne de 45° dans le sens horaire à chaque étape. Après ↖, elle pointe vers le haut : ↑.",
+    "optionRationales": [
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Correct : rotation de 45° horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-quad-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◲     ◳     ◰     ◱     ?"
+    },
+    "options": [
+      "◱",
+      "◳",
+      "◲",
+      "◰"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le quart noir tourne d'un coin dans le sens anti-horaire à chaque étape. Après ◱, il se place en bas à droite : ◲.",
+    "optionRationales": [
+      "Incorrect : le quart noir est placé en bas à gauche (figure précédente répétée).",
+      "Incorrect : le quart noir est placé en haut à droite (un pas de trop).",
+      "Correct : le quart noir avance d'un coin de plus.",
+      "Incorrect : le quart noir est placé en haut à gauche (coin opposé)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ◁     ▲     ▷     ▼     ?"
+    },
+    "options": [
+      "▼",
+      "▷",
+      "◀",
+      "◁"
+    ],
+    "correctIndex": 3,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ◁.",
+    "optionRationales": [
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↑     ↖     ←     ?"
+    },
+    "options": [
+      "↙",
+      "↗",
+      "←",
+      "↓"
+    ],
+    "correctIndex": 0,
+    "explanation": "La flèche tourne de 45° dans le sens anti-horaire à chaque étape. Après ←, elle pointe en bas à gauche : ↙.",
+    "optionRationales": [
+      "Correct : rotation de 45° anti-horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ◀     △     ▶     ▽     ?"
+    },
+    "options": [
+      "◁",
+      "◀",
+      "▽",
+      "▶"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens horaire, et il est alternativement plein et vide. La figure suivante est pleine et orientée comme ◀.",
+    "optionRationales": [
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     ↑     ↖     ←     ↙     ?"
+    },
+    "options": [
+      "↑",
+      "↙",
+      "↓",
+      "↘"
+    ],
+    "correctIndex": 2,
+    "explanation": "La flèche tourne de 45° dans le sens anti-horaire à chaque étape. Après ↙, elle pointe vers le bas : ↓.",
+    "optionRationales": [
+      "Incorrect : pointe dans la direction opposée à la bonne orientation.",
+      "Incorrect : reprend la dernière flèche sans appliquer la rotation.",
+      "Correct : rotation de 45° anti-horaire appliquée une fois de plus.",
+      "Incorrect : correspond à une rotation de 0° au dernier pas au lieu de 45°."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-tri-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ▲     ◁     ▼     ?"
+    },
+    "options": [
+      "▷",
+      "▼",
+      "▶",
+      "◁"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deux règles : le triangle tourne d'un quart de tour dans le sens anti-horaire, et il est alternativement plein et vide. La figure suivante est vide et orientée comme ▷.",
+    "optionRationales": [
+      "Correct : orientation et remplissage corrects.",
+      "Incorrect : ni l'orientation ni le remplissage ne suivent la règle.",
+      "Incorrect : bonne orientation, mais le remplissage n'alterne pas.",
+      "Incorrect : bon remplissage, mais orientation opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↑     ↙     →     ↖     ?"
+    },
+    "options": [
+      "↙",
+      "↘",
+      "↓",
+      "↑"
+    ],
+    "correctIndex": 2,
+    "explanation": "La flèche tourne de 135° dans le sens anti-horaire à chaque étape. Après ↖, elle pointe vers le bas : ↓.",
+    "optionRationales": [
+      "Incorrect : correspond à une rotation de 90° au dernier pas au lieu de 135°.",
+      "Incorrect : correspond à une rotation de 180° au dernier pas au lieu de 135°.",
+      "Correct : rotation de 135° anti-horaire appliquée une fois de plus.",
+      "Incorrect : pointe dans la direction opposée à la bonne orientation."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Les pas de rotation alternent. Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "↗     →     ↙     ←     ↗     →     ?"
+    },
+    "options": [
+      "↘",
+      "↗",
+      "←",
+      "↙"
+    ],
+    "correctIndex": 3,
+    "explanation": "Les rotations alternent : 45° horaire, puis 135° horaire, et ainsi de suite. Le dernier pas appliqué était 45° horaire ; le suivant est donc 135° horaire, ce qui donne ↙.",
+    "optionRationales": [
+      "Incorrect : répète le pas de 45° horaire au lieu d'alterner.",
+      "Incorrect : pointe dans la direction opposée.",
+      "Incorrect : applique les deux pas d'un coup.",
+      "Correct : le pas suivant est 135° horaire."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-rot-110",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "rotation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Les pas de rotation alternent. Quelle flèche complète la série ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "→     ↘     ←     ↖     →     ↘     ?"
+    },
+    "options": [
+      "↓",
+      "←",
+      "↖",
+      "→"
+    ],
+    "correctIndex": 1,
+    "explanation": "Les rotations alternent : 45° horaire, puis 135° horaire, et ainsi de suite. Le dernier pas appliqué était 45° horaire ; le suivant est donc 135° horaire, ce qui donne ←.",
+    "optionRationales": [
+      "Incorrect : répète le pas de 45° horaire au lieu d'alterner.",
+      "Correct : le pas suivant est 135° horaire.",
+      "Incorrect : applique les deux pas d'un coup.",
+      "Incorrect : pointe dans la direction opposée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ◆     ▲\n◆     ▲     ●\n▲     ?     ◆"
+    },
+    "options": [
+      "▲",
+      "●",
+      "○",
+      "◆"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-shift-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆△▲     ▲◆△     △▲◆\n▲◆△     △▲◆     ◆△▲\n△▲◆     ◆△▲     ?"
+    },
+    "options": [
+      "◆△▲",
+      "△◆▲",
+      "△▲◆",
+      "▲◆△"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ▲◆△.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ■     ▲\n□     △     ◇\n▲     ?     ■"
+    },
+    "options": [
+      "▲",
+      "■",
+      "◆",
+      "◇"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-shift-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◇○▲     ○▲◇     ▲◇○\n○▲◇     ▲◇○     ◇○▲\n▲◇○     ◇○▲     ?"
+    },
+    "options": [
+      "◇○▲",
+      "◇▲○",
+      "○▲◇",
+      "▲◇○"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ○▲◇.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ▲     ◆\n◆     ●     ▲\n▲     ?     ●"
+    },
+    "options": [
+      "◆",
+      "◇",
+      "●",
+      "▲"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-shift-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "□○◇     ◇□○     ○◇□\n◇□○     ○◇□     □○◇\n○◇□     ?     ◇□○"
+    },
+    "options": [
+      "○◇□",
+      "□○◇",
+      "◇○□",
+      "◇□○"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est □○◇.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ■     ▲\n△     ○     □\n■     ?     ●"
+    },
+    "options": [
+      "●",
+      "△",
+      "▲",
+      "■"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ▲.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-shift-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△○■     ■△○     ○■△\n■△○     ○■△     △○■\n?     △○■     ■△○"
+    },
+    "options": [
+      "△○■",
+      "△■○",
+      "■△○",
+      "○■△"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque case est une rangée de trois formes. D'une case à l'autre (vers la droite ou vers le bas), la rangée est décalée selon la même règle, de sorte que chaque arrangement apparaît une fois par ligne et par colonne. La case manquante est ○■△.",
+    "optionRationales": [
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne.",
+      "Incorrect : cet arrangement ne respecte pas le décalage.",
+      "Incorrect : cet arrangement figure déjà dans la ligne ou la colonne, ou inverse l'ordre des formes.",
+      "Correct : c'est le seul arrangement absent de la ligne et de la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◆     ●     ■\n□     ◇     ○\n?     ■     ◆"
+    },
+    "options": [
+      "●",
+      "■",
+      "○",
+      "◆"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ◆     ●\n○     △     ◇\n?     ●     ▲"
+    },
+    "options": [
+      "●",
+      "◇",
+      "◆",
+      "▲"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième ligne est vide, les autres sont pleines. La case manquante doit donc contenir ◆.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     □     ▲\n■     △     ●\n▲     ?     ■"
+    },
+    "options": [
+      "△",
+      "●",
+      "□",
+      "○"
+    ],
+    "correctIndex": 3,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième colonne est vide, les autres sont pleines. La case manquante doit donc contenir ○.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Correct : forme et remplissage respectent les deux règles."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quelle figure remplace le point d'interrogation dans la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ○     ■\n●     □     ▲\n■     △     ?"
+    },
+    "options": [
+      "■",
+      "○",
+      "●",
+      "▲"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chaque ligne et chaque colonne contiennent une seule fois chacune des trois formes ; la deuxième colonne est vide, les autres sont pleines. La case manquante doit donc contenir ●.",
+    "optionRationales": [
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne.",
+      "Incorrect : bonne forme, mais mauvais remplissage.",
+      "Correct : forme et remplissage respectent les deux règles.",
+      "Incorrect : cette forme figure déjà dans la ligne ou la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-mat-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "matrice",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Quelle case complète la matrice ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "■■■     ■■     ■\n?     ●●     ●\n◆◆◆     ◆◆     ◆"
+    },
+    "options": [
+      "○○○",
+      "●●●",
+      "◆◆◆",
+      "●●"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chaque ligne utilise une seule forme ; le nombre de figures diminue de 3 à 1 de gauche à droite. La case manquante contient 3 disque(s) plein(s).",
+    "optionRationales": [
+      "Incorrect : mauvais remplissage.",
+      "Correct : forme, nombre et remplissage corrects.",
+      "Incorrect : forme d'une autre ligne.",
+      "Incorrect : mauvais nombre de figures pour cette colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-101",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▲     ◀\n▷     △\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◱",
+      "◳",
+      "◲"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◳.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◲.",
+      "Incorrect : la figure n'a pas été transformée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-102",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "●     ○\n▽     ▶\n△     ?"
+    },
+    "options": [
+      "◁",
+      "▷",
+      "◀",
+      "▽"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-103",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ▷\n◀     ▼\n◱     ?"
+    },
+    "options": [
+      "◱",
+      "◰",
+      "◲",
+      "◳"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◱, elle donne ◲.",
+    "optionRationales": [
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◱.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-104",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     △\n▶     ▷\n△     ?"
+    },
+    "options": [
+      "▶",
+      "▷",
+      "◁",
+      "▼"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à △."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-105",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▷     ◁\n▽     △\n△     ?"
+    },
+    "options": [
+      "▽",
+      "△",
+      "▼",
+      "▷"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ▽.",
+    "optionRationales": [
+      "Correct : demi-tour appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-106",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◲\n▲     ▶\n◱     ?"
+    },
+    "options": [
+      "◲",
+      "◰",
+      "◱",
+      "◳"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◱, elle donne ◰.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens horaire appliquée à ◱.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-107",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▼     ▶\n▽     ▷\n△     ?"
+    },
+    "options": [
+      "▶",
+      "◁",
+      "▼",
+      "▷"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à △, elle donne ◁.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à △.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-108",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◁     ▲\n■     □\n▷     ?"
+    },
+    "options": [
+      "▲",
+      "▶",
+      "▼",
+      "◀"
+    ],
+    "correctIndex": 2,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▷, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens horaire et inversion du remplissage appliquée à ▷.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-109",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△     ▼\n◇     ◆\n▽     ?"
+    },
+    "options": [
+      "▶",
+      "▲",
+      "◀",
+      "▷"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▽, elle donne ▲.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à ▽.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-110",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     △\n◱     ◰\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◱",
+      "◳"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◳.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas appliquée à ◲."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-111",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◰     ◱\n▽     ▷\n▲     ?"
+    },
+    "options": [
+      "▲",
+      "◀",
+      "▼",
+      "▶"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ▲.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-112",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◀     ◁\n◇     ◆\n◁     ?"
+    },
+    "options": [
+      "◁",
+      "▲",
+      "△",
+      "◀"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : symétrie haut-bas et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◁, elle donne ◀.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (symétrie haut-bas), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : symétrie haut-bas et inversion du remplissage appliquée à ◁."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-113",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "▽     ◁\n◱     ◰\n◳     ?"
+    },
+    "options": [
+      "◲",
+      "◰",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◳, elle donne ◲.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens horaire appliquée à ◳.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-114",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◰\n◁     ▽\n◀     ?"
+    },
+    "options": [
+      "▼",
+      "▽",
+      "▲",
+      "◁"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◀, elle donne ▼.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◀.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-115",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◀     ▶\n◱     ◳\n◁     ?"
+    },
+    "options": [
+      "▽",
+      "▶",
+      "△",
+      "▷"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◁, elle donne ▷.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Correct : demi-tour appliquée à ◁."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-116",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◳     ◱\n◰     ◲\n◲     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◲, elle donne ◰.",
+    "optionRationales": [
+      "Correct : demi-tour appliquée à ◲.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-117",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◱     ◰\n◲     ◳\n▲     ?"
+    },
+    "options": [
+      "▽",
+      "▼",
+      "▲",
+      "◀"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : symétrie haut-bas. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (demi-tour et inversion du remplissage), contredite par les exemples.",
+      "Correct : symétrie haut-bas appliquée à ▲.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-118",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 110,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "○     ●\n▽     ▶\n▼     ?"
+    },
+    "options": [
+      "▶",
+      "▷",
+      "◀",
+      "▽"
+    ],
+    "correctIndex": 1,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▼, elle donne ▷.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens anti-horaire), contredite par les exemples.",
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire et inversion du remplissage appliquée à ▼.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-119",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "△     ▽\n◰     ◲\n▲     ?"
+    },
+    "options": [
+      "▶",
+      "△",
+      "▲",
+      "▼"
+    ],
+    "correctIndex": 3,
+    "explanation": "La transformation est : demi-tour. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ▲, elle donne ▼.",
+    "optionRationales": [
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (inversion du remplissage), contredite par les exemples.",
+      "Incorrect : résulte d'une autre transformation (symétrie gauche-droite), contredite par les exemples.",
+      "Correct : demi-tour appliquée à ▲."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "abstract-trf-120",
+    "version": 1,
+    "category": "abstract",
+    "itemFormat": "single_best",
+    "skill": "transformation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Dans chaque ligne, la figure de droite est obtenue à partir de celle de gauche par la même transformation. Quelle figure remplace le point d'interrogation ?",
+    "stimulus": {
+      "type": "shapes",
+      "text": "◲     ◳\n◀     ▼\n◳     ?"
+    },
+    "options": [
+      "◰",
+      "◲",
+      "◳",
+      "◱"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transformation est : rotation d'un quart de tour dans le sens anti-horaire. Les deux premières lignes l'illustrent sans ambiguïté. Appliquée à ◳, elle donne ◰.",
+    "optionRationales": [
+      "Correct : rotation d'un quart de tour dans le sens anti-horaire appliquée à ◳.",
+      "Incorrect : résulte d'une autre transformation (rotation d'un quart de tour dans le sens horaire), contredite par les exemples.",
+      "Incorrect : la figure n'a pas été transformée.",
+      "Incorrect : résulte d'une autre transformation (demi-tour), contredite par les exemples."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-tfcs-027",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Affirmation : Tous les agents du service informatique ont suivi la session du 12 mars.",
+    "stimulus": "La session de sensibilisation à la cybersécurité du 12 mars était obligatoire pour tous les agents du service informatique. Les agents des autres services pouvaient s'y inscrire de manière volontaire. Le registre de présence indique que deux agents du service informatique étaient absents ce jour-là pour raison de santé.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Confond l'obligation de participer avec la participation effective.",
+      "Correct : le registre mentionne deux absents du service informatique.",
+      "Le texte tranche : il indique explicitement deux absences."
+    ],
+    "explanation": "Le texte précise que « deux agents du service informatique étaient absents ce jour-là ». L'obligation de participer ne signifie pas que tous étaient présents : l'affirmation est contredite par le registre, elle est donc fausse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-tfcs-033",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : Le dossier n° 404 a été classé sans suite.",
+    "stimulus": "Les dossiers de subvention incomplets sont retournés au demandeur, qui dispose de 15 jours calendaires pour les compléter. Un dossier qui n'est pas complété dans ce délai est classé sans suite. Le dossier n° 404 de l'association E a été retourné le 3 mai parce qu'il était incomplet.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Suppose que l'association n'a pas complété son dossier, ce que le texte ne dit pas.",
+      "Suppose que l'association a complété son dossier à temps, ce que le texte ne dit pas.",
+      "Correct : l'issue dépend d'un fait (dossier complété ou non) que le texte ne donne pas."
+    ],
+    "explanation": "Le classement sans suite ne frappe que les dossiers non complétés dans les 15 jours. Le texte dit que le dossier n° 404 a été retourné, mais ne dit pas si l'association l'a complété à temps : on ne peut pas savoir.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-036",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Selon l'extrait de cette circulaire, quelles conditions ouvrent droit à l'indemnité forfaitaire de repas ?",
+    "stimulus": "Circulaire relative aux frais professionnels : Les agents se déplaçant pour les besoins du service hors de leur résidence administrative sur une distance supérieure à vingt kilomètres bénéficient d'une indemnité forfaitaire de repas, à la condition expresse que la mission englobe l'intégralité du créneau compris entre midi et quatorze heures.",
+    "options": [
+      "Parcourir plus de vingt kilomètres et couvrir le créneau méridien.",
+      "Effectuer un trajet supérieur à dix kilomètres hors du bureau usuel.",
+      "Justifier d'une absence professionnelle supérieure à quatre heures.",
+      "Présenter les factures réelles acquittées auprès des restaurants."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : le texte exige cumulativement plus de 20 km et la couverture de 12h00 à 14h00.",
+      "Le seuil de dix kilomètres est inférieur aux vingt kilomètres prescrits.",
+      "La durée brute de quatre heures n'est pas mentionnée dans la circulaire.",
+      "L'indemnité est forfaitaire et ne requiert pas de factures réelles de repas."
+    ],
+    "explanation": "Le texte pose deux conditions cumulatives expresses : une distance supérieure à 20 km hors de la résidence administrative et une mission couvrant la totalité du créneau de 12h00 à 14h00.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-083",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Selon ce texte, quelle formalité conditionne le versement des indemnités de mission à l'étranger ?",
+    "stimulus": "Indemnités de mission à l'étranger : Le versement des indemnités forfaitaires journalières pour mission officielle hors des frontières est subordonné au dépôt d'un rapport de fin de mission visé par le chef de délégation, accompagné des titres originaux de transport, dans les quinze jours suivant le retour.",
+    "options": [
+      "Déposer un rapport de mission visé et les titres de transport sous quinze jours.",
+      "Obtenir une décharge écrite contresignée par l'ambassadeur du pays visité lors du séjour.",
+      "Effectuer une déclaration orale auprès du contrôleur financier dès le lendemain du voyage.",
+      "Fournir les reçus de tous les repas pris au restaurant durant le séjour officiel."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les conditions énoncées sont le rapport visé, les titres de transport et le respect du délai de 15 jours.",
+      "Aucune décharge d'ambassadeur n'est mentionnée dans le texte.",
+      "La déclaration orale est exclue par l'exigence d'un rapport écrit visé.",
+      "L'indemnité étant forfaitaire, le texte n'exige pas les reçus réels de chaque repas."
+    ],
+    "explanation": "Le texte subordonne expressément la liquidation de l'indemnité au respect des formalités documentaires (rapport visé et billets) dans le délai de 15 jours.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-076",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Un agent prévient sa hiérarchie le premier jour, mais son certificat ne parvient au bureau du personnel que le cinquième jour d'absence. Que prévoit le texte ?",
+    "stimulus": "Régime des congés de maladie : tout agent dans l'impossibilité d'exercer ses fonctions pour raison médicale en avertit sa hiérarchie le premier jour ouvrable de son absence. Le certificat médical doit parvenir au bureau du personnel dans un délai de quarante-huit heures. À défaut, l'absence est considérée comme non justifiée jusqu'à la réception du certificat et peut donner lieu à une retenue sur traitement pour cette période.",
+    "options": [
+      "Aucune conséquence, puisque la hiérarchie a été prévenue dès le premier jour ouvrable.",
+      "Une retenue possible sur traitement pour la période précédant la réception du certificat.",
+      "Le refus du certificat, qui ne peut plus être pris en compte après quarante-huit heures.",
+      "Une retenue possible sur traitement pour toute la durée de l'absence, certificat compris."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Oublie que le certificat reste exigé dans les quarante-huit heures, même si la hiérarchie a été prévenue.",
+      "Correct : la retenue ne vise que la période précédant la réception du certificat.",
+      "Le texte ne prévoit pas le refus du certificat tardif ; il le prend en compte à sa réception.",
+      "Étend la retenue au-delà de la période prévue par le texte."
+    ],
+    "explanation": "Le certificat est arrivé après le délai de quarante-huit heures. Le texte prévoit alors que l'absence est « non justifiée jusqu'à la réception du certificat » et peut donner lieu à une retenue « pour cette période », c'est-à-dire jusqu'au cinquième jour seulement.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-087",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Un agent à temps plein donne des cours rémunérés le samedi sans avoir demandé d'autorisation. Ces cours ne concurrencent pas les missions de son administration. Que prévoit le texte ?",
+    "stimulus": "Statut des agents : l'exercice d'une activité rémunérée accessoire par un agent à temps plein est soumis à l'autorisation écrite préalable du ministre de tutelle. L'autorisation est refusée si l'activité porte atteinte à l'indépendance ou à la neutralité du service, ou si elle concurrence les missions de l'administration. Une activité exercée sans autorisation expose l'agent à une procédure disciplinaire.",
+    "options": [
+      "L'activité est autorisée d'office, puisqu'elle est exercée en dehors des heures de service.",
+      "L'agent doit régulariser en déposant une demande, sans autre conséquence prévue.",
+      "L'agent s'expose à une procédure disciplinaire, faute d'autorisation préalable.",
+      "Aucune conséquence, puisque l'activité ne concurrence pas son administration."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte ne prévoit aucune autorisation d'office, quel que soit l'horaire.",
+      "Le texte ne prévoit pas de simple régularisation pour une activité déjà exercée.",
+      "Correct : la dernière phrase du texte s'applique directement.",
+      "Confond une condition d'octroi de l'autorisation avec une dispense d'autorisation."
+    ],
+    "explanation": "L'autorisation écrite préalable est exigée pour toute activité rémunérée accessoire, et le texte précise : « Une activité exercée sans autorisation expose l'agent à une procédure disciplinaire. » L'absence de concurrence est un critère d'octroi de l'autorisation, pas une dispense.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-093",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Un agent qui n'est pas d'astreinte utilise un véhicule de service pour ses courses du samedi, sans autorisation. Que prévoit le texte ?",
+    "stimulus": "Règles d'utilisation du parc automobile : les véhicules de service sont réservés aux déplacements professionnels. Un usage privé n'est possible qu'avec l'autorisation écrite du secrétaire général, accordée pour des astreintes. Tout usage privé non autorisé est signalé au secrétaire général et peut entraîner le retrait de l'accès au parc automobile.",
+    "options": [
+      "Aucune mesure, l'usage privé n'étant interdit que pendant les heures de service.",
+      "Le retrait automatique et définitif de son accès au parc, sans autre formalité.",
+      "Un signalement au secrétaire général et, éventuellement, le retrait de son accès au parc.",
+      "Une autorisation accordée a posteriori, puisque le déplacement a eu lieu un samedi."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte réserve les véhicules aux déplacements professionnels, quel que soit le jour.",
+      "Transforme une possibilité (« peut entraîner ») en sanction automatique.",
+      "Correct : reprend exactement les deux conséquences prévues.",
+      "Le texte ne prévoit d'autorisation que pour les astreintes, et préalablement."
+    ],
+    "explanation": "L'usage privé sans autorisation « est signalé au secrétaire général et peut entraîner le retrait de l'accès au parc automobile ». Le retrait est une possibilité, pas une conséquence automatique.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-text-099",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Un acheteur publie un avis rectificatif pour une modification substantielle, mais maintient la date limite de remise des offres. Que prévoit le texte ?",
+    "stimulus": "Passation des marchés : toute modification substantielle des documents de consultation en cours de procédure impose la publication d'un avis rectificatif, dans les mêmes formes que l'avis initial. Le rectificatif prolonge le délai de remise des offres d'une durée suffisante pour permettre aux candidats d'adapter leur offre. À défaut de prolongation, la procédure peut être annulée à la demande de tout candidat lésé.",
+    "options": [
+      "La procédure peut être annulée à la demande d'un candidat lésé.",
+      "La procédure reste valable, puisqu'un avis rectificatif a été publié.",
+      "Les offres déjà remises sont écartées et doivent être déposées à nouveau.",
+      "Le délai est prolongé d'office d'une durée fixée par la commission."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : conséquence expressément prévue par la dernière phrase.",
+      "Oublie que la publication du rectificatif ne suffit pas sans prolongation du délai.",
+      "Le texte ne prévoit pas d'écarter les offres déjà remises.",
+      "Le texte ne prévoit aucune prolongation d'office ni de commission."
+    ],
+    "explanation": "Le rectificatif doit s'accompagner d'une prolongation du délai. Le texte prévoit qu'« à défaut de prolongation, la procédure peut être annulée à la demande de tout candidat lésé ».",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "verbal-contra-016",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle conclusion s'impose avec une certitude absolue à partir des prémisses fournies ?",
+    "stimulus": "Tout marché public d'un montant supérieur à 100 000 euros requiert un avis préalable du contrôleur financier, et le service applique toujours cette règle. Le marché public X, relatif à l'acquisition de matériel informatique, a été attribué sans avis du contrôleur financier.",
+    "options": [
+      "Le contrôleur financier a refusé de valider le marché X.",
+      "Le marché X sera examiné lors de la prochaine session financière.",
+      "Le montant du marché X n'est pas supérieur à 100 000 euros.",
+      "Le marché X est entaché d'une nullité administrative définitive."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Affirmation non étayée : l'absence d'avis ne prouve pas un refus d'examen.",
+      "Pure supposition temporelle sans ancrage dans le texte fourni.",
+      "Correct : par contraposition stricte (si montant > 100 000 € alors avis obligatoire ; or pas d'avis, donc montant ≤ 100 000 € pour être régulier).",
+      "Extrapolation infondée : le texte ne statue sur aucune nullité prononcée."
+    ],
+    "explanation": "Par application directe de la contraposée logique : si la règle impose « Marché > 100 000 € ⇒ Avis », alors l'absence d'avis implique nécessairement que le marché ne dépasse pas ce seuil réglementaire sous réserve de conformité.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "verbal-contra-016"
+  },
+  {
+    "id": "verbal-tfcs-017",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : Claire bénéficie de l'indemnité forfaitaire kilométrique pour ce déplacement.",
+    "stimulus": "Seuls les agents qui effectuent un déplacement professionnel hors du Grand-Duché bénéficient d'une indemnité forfaitaire kilométrique. Claire a effectué un déplacement professionnel à Esch-sur-Alzette, ville du Grand-Duché.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Ignore la restriction « seuls … hors du Grand-Duché ».",
+      "Correct : le déplacement a eu lieu au Grand-Duché, ce qui exclut l'indemnité.",
+      "Le texte permet de trancher : il donne la condition et le lieu du déplacement."
+    ],
+    "explanation": "L'indemnité est réservée (« seuls ») aux déplacements hors du Grand-Duché. Le déplacement de Claire a eu lieu au Grand-Duché : l'affirmation est fausse.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "verbal-tfcs-017"
+  },
+  {
+    "id": "verbal-quant-019",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle conclusion est nécessairement vraie ?",
+    "stimulus": "Tous les dossiers transmis à la commission ont été visés par le chef de service. Aucun dossier visé par le chef de service n'a été transmis avant le 1er juin. Le dossier de M. Weber a été transmis à la commission.",
+    "options": [
+      "Tous les dossiers visés ont été transmis à la commission.",
+      "Le dossier de M. Weber a été transmis le 1er juin ou après.",
+      "Le chef de service a visé ce dossier après le 1er juin.",
+      "Le dossier de M. Weber a été transmis avant le 1er juin."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Inverse la première phrase : tout dossier transmis est visé, pas l'inverse.",
+      "Correct : enchaînement des deux premières phrases.",
+      "Le texte ne donne pas la date du visa, seulement celle de la transmission.",
+      "Contredit la deuxième phrase."
+    ],
+    "explanation": "Le dossier de M. Weber a été transmis, donc il a été visé (première phrase). Aucun dossier visé n'a été transmis avant le 1er juin (deuxième phrase) : il a donc été transmis le 1er juin ou après.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "verbal-quant-019"
+  },
+  {
+    "id": "verbal-syll-023",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quelle proposition est rigoureusement déduite des prémisses ?",
+    "stimulus": "Tous les inspecteurs assermentés disposent d'un droit d'accès aux locaux professionnels. Aucun stagiaire n'est assermenté. Le service compte plusieurs inspecteurs assermentés.",
+    "options": [
+      "Certaines personnes ayant un droit d'accès ne sont pas stagiaires.",
+      "Tous les stagiaires sont interdits d'accès aux locaux professionnels.",
+      "L'assermentation est accordée à tout agent après deux ans de service.",
+      "Tous les inspecteurs assermentés sont d'anciens stagiaires."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les inspecteurs assermentés disposent du droit d'accès et, n'étant pas stagiaires, constituent des personnes autorisées non-stagiaires.",
+      "Le texte ne dit pas que les stagiaires ne peuvent pas avoir accès pour un autre motif.",
+      "Règle temporelle totalement inexistante dans les prémisses.",
+      "Spéculation sur l'historique de carrière absente du texte."
+    ],
+    "explanation": "Les inspecteurs assermentés ont un droit d'accès et aucun stagiaire n'est assermenté. Par conséquent, les inspecteurs assermentés représentent au moins une catégorie de personnes dotées d'un droit d'accès qui ne sont pas des stagiaires.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "verbal-syll-023"
+  },
+  {
+    "id": "verbal-comp-034",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 65,
+    "prompt": "Quelle conclusion est nécessairement vraie ?",
+    "stimulus": "Seuls les agents titulaires d'une habilitation de sécurité spéciale peuvent consulter les documents classifiés de niveau 3. Mme Hoffmann a consulté hier un document classifié de niveau 3, conformément aux règles.",
+    "options": [
+      "Les documents de niveau 3 ne sont consultés que par Mme Hoffmann.",
+      "Mme Hoffmann est titulaire de l'habilitation de sécurité spéciale.",
+      "Tout titulaire de l'habilitation spéciale a consulté un document de niveau 3.",
+      "Mme Hoffmann ne consulte que des documents classifiés de niveau 3."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le texte ne dit rien des autres agents habilités.",
+      "Correct : l'habilitation est une condition nécessaire de la consultation.",
+      "Inverse la condition : être habilité permet de consulter, n'oblige pas à le faire.",
+      "Généralisation abusive à partir d'une seule consultation."
+    ],
+    "explanation": "« Seuls » les titulaires de l'habilitation peuvent consulter ces documents ; Mme Hoffmann en a consulté un conformément aux règles : elle est donc titulaire de l'habilitation.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "verbal-comp-034"
+  },
+  {
+    "id": "numeric-table-011",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le montant total des dépenses engagées pour la Direction B sur l'ensemble de l'exercice ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dépenses semestrielles par direction (en milliers d'euros)",
+      "headers": [
+        "Direction",
+        "Semestre 1",
+        "Semestre 2"
+      ],
+      "rows": [
+        [
+          "Direction A",
+          320,
+          380
+        ],
+        [
+          "Direction B",
+          240,
+          260
+        ],
+        [
+          "Direction C",
+          180,
+          220
+        ]
+      ],
+      "note": "Crédits consommés arrêtés au 31 décembre."
+    },
+    "options": [
+      "480 milliers d'euros",
+      "520 milliers d'euros",
+      "700 milliers d'euros",
+      "500 milliers d'euros"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Correspondrait à la somme de Direction C (180 + 220 = 400) plus une erreur de calcul.",
+      "Erreur d'addition sur le deuxième semestre.",
+      "Correspond au total de la Direction A (320 + 380 = 700 milliers d'euros).",
+      "Correct : addition des deux semestres de la Direction B : 240 + 260 = 500 milliers d'euros."
+    ],
+    "explanation": "La Direction B a consommé 240 milliers d'euros au premier semestre et 260 milliers d'euros au second semestre. La somme annuelle totale est de 240 + 260 = 500 milliers d'euros (soit 500 000 euros).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "revisionOf": "numeric-table-011"
+  },
+  {
+    "id": "numeric-ratio-030",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "ratio-proportion",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Combien de cartons reste-t-il à traiter au service Numérisation ?",
+    "stimulus": "Le service Numérisation gère un fonds de 1 200 cartons d'archives. Le rapport entre cartons déjà traités et cartons non traités est de 3 pour 1.",
+    "options": [
+      "300 cartons",
+      "250 cartons",
+      "400 cartons",
+      "900 cartons"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 3 + 1 = 4 parts ; 1 part (non traités) = 1 200 / 4 = 300 cartons.",
+      "Sous-évaluation du reliquat d'archivage.",
+      "Calcul erroné divisant par 3 au lieu de 4.",
+      "Correspond aux cartons déjà traités (3 parts = 900 cartons)."
+    ],
+    "explanation": "Le ratio 3:1 correspond à 4 parts au total. Chaque part représente 1 200 / 4 = 300 cartons. La part restante non traitée étant de 1, il reste 300 cartons.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "numeric-ratio-030"
+  },
+  {
+    "id": "numeric-ops-031",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "operations-simples",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Quel est le coût moyen de restauration par participant lors de ce séminaire ?",
+    "stimulus": "La facture de restauration du séminaire s'élève à 1 800 euros pour un groupe de 75 participants.",
+    "options": [
+      "25 euros",
+      "24 euros",
+      "22 euros",
+      "26 euros"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Arrondi arbitraire à 25 euros.",
+      "Correct : 1 800 / 75 = 24 euros par participant.",
+      "Sous-estime le coût unitaire réel.",
+      "Surestimation arithmétique."
+    ],
+    "explanation": "Division simple : 1 800 € / 75 = 24 euros par participant.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "numeric-ops-031"
+  },
+  {
+    "id": "numeric-calc-041",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "pourcentage",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel est le taux de consommation du budget d'investissement au 30 septembre ?",
+    "stimulus": "Suivi du budget d'investissement :\nCrédits votés : 2 000 000 euros.\nCrédits ordonnancés au 30 septembre : 1 400 000 euros.",
+    "options": [
+      "75,0 %",
+      "60,0 %",
+      "70,0 %",
+      "65,0 %"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "75,0 % correspondrait à 1 500 000 euros.",
+      "60,0 % correspondrait à 1 200 000 euros.",
+      "Correct : 1 400 000 / 2 000 000 = 0,70 soit 70,0 %.",
+      "65,0 % correspondrait à 1 300 000 euros."
+    ],
+    "explanation": "Taux de consommation = Dépenses exécutées / Crédits votés = 1 400 000 / 2 000 000 = 70,0 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:36:51.069Z",
+    "revisionOf": "numeric-calc-041"
+  },
+  {
+    "id": "numeric-calc-072",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "variation",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Quel est l'effectif à la fin de l'année 2 ?",
+    "stimulus": "Évolution des effectifs municipaux :\nEffectif de départ : 1 000 agents.\nAnnée 1 : hausse de 6,0 %.\nAnnée 2 : baisse de 5,0 %.",
+    "options": [
+      "1 010 agents",
+      "1 000 agents",
+      "1 007 agents",
+      "1 060 agents"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Additionne les pourcentages (+6 % − 5 % = +1 %) au lieu de les enchaîner.",
+      "Suppose à tort que la hausse et la baisse se compensent.",
+      "Correct : 1 000 × 1,06 × 0,95 = 1 007.",
+      "Oublie la baisse de la seconde année."
+    ],
+    "explanation": "Les variations s'enchaînent : 1 000 × 1,06 = 1 060 agents à la fin de l'année 1, puis 1 060 × 0,95 = 1 007 agents à la fin de l'année 2 (hausse nette de 0,7 %, et non de 1 %).",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "numeric-calc-072"
+  },
+  {
+    "id": "planning-buffer-015",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "À quelle heure au plus tard l'instruction du dossier doit-elle commencer pour respecter l'échéance ?",
+    "stimulus": "Un dossier d'agrément demande 2 h 30 de travail. Le travail peut être interrompu puis repris sans perte de temps. Le dossier doit être transmis par courriel au plus tard à 17 h 00. Une coupure réseau planifiée empêche tout travail de 15 h 00 à 15 h 30.",
+    "options": [
+      "13 h 30",
+      "14 h 30",
+      "14 h 00",
+      "14 h 15"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Respecte l'échéance, mais ce n'est pas l'heure la plus tardive possible.",
+      "Oublie la coupure : il ne reste que 2 h de travail avant 17 h 00.",
+      "Correct : exactement 2 h 30 de travail disponible avant 17 h 00.",
+      "Il ne reste que 2 h 15 de travail avant 17 h 00."
+    ],
+    "explanation": "De 14 h 00 à 17 h 00, il y a 3 h, dont 30 minutes de coupure : il reste 2 h 30 de travail (14 h 00 – 15 h 00, puis 15 h 30 – 17 h 00). Commencer plus tard laisse moins de 2 h 30.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "planning-prio-032",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "priorisation",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel ordre permet de respecter toutes les échéances ?",
+    "stimulus": "Il est 10 h 00. Vous devez réaliser trois tâches, l'une après l'autre et sans interruption :\n- Tâche X : 20 min, à terminer au plus tard à 10 h 30.\n- Tâche Y : 40 min, à terminer au plus tard à 11 h 00.\n- Tâche Z : 30 min, à terminer au plus tard à 12 h 00.",
+    "options": [
+      "Tâche Y, puis X, puis Z",
+      "Tâche X, puis Z, puis Y",
+      "Tâche Z, puis X, puis Y",
+      "Tâche X, puis Y, puis Z"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "X finirait à 11 h 00, après son échéance de 10 h 30.",
+      "Y finirait à 11 h 30, après son échéance de 11 h 00.",
+      "X finirait à 10 h 50, après son échéance de 10 h 30.",
+      "Correct : les trois échéances sont respectées."
+    ],
+    "explanation": "X, Y, Z : X finit à 10 h 20 (≤ 10 h 30), Y à 11 h 00 (≤ 11 h 00), Z à 11 h 30 (≤ 12 h 00). Toute autre séquence retarde X ou Y au-delà de leur échéance.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "planning-dep-034",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Quel jour le rapport est-il soumis ?",
+    "stimulus": "Un rapport passe par trois étapes successives. Chaque étape commence le jour ouvré qui suit la fin de la précédente :\n- collecte des données : 2 jours ouvrés, à partir du lundi 5 octobre ;\n- traitement statistique : 1 jour ouvré ;\n- relecture juridique : 1 jour ouvré.\nLe rapport est soumis le jour ouvré qui suit la fin de la relecture.",
+    "options": [
+      "Jeudi 8 octobre",
+      "Lundi 12 octobre",
+      "Vendredi 9 octobre",
+      "Mercredi 7 octobre"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "C'est le jour de la relecture ; la soumission a lieu le jour ouvré suivant.",
+      "Ajoute un jour de trop (ou saute le vendredi).",
+      "Correct : jour ouvré qui suit la relecture du jeudi.",
+      "C'est le jour du traitement statistique."
+    ],
+    "explanation": "Collecte lundi 5 et mardi 6, traitement mercredi 7, relecture jeudi 8, soumission le jour ouvré suivant : vendredi 9 octobre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "planning-sched-055",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quel créneau (heure de Luxembourg) permet une visioconférence de 2 heures pendant les heures d'ouverture des deux bureaux ?",
+    "stimulus": "Heures d'ouverture des bureaux (heure locale) :\n- Luxembourg : 8 h 00 à 17 h 30.\n- Tokyo : 9 h 00 à 18 h 00.\nÀ cette période de l'année, Tokyo a 7 heures d'avance sur Luxembourg.",
+    "options": [
+      "De 9 h 30 à 11 h 30",
+      "De 8 h 30 à 10 h 30",
+      "De 7 h 30 à 9 h 30",
+      "De 11 h 00 à 13 h 00"
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Finit à 18 h 30 à Tokyo, après la fermeture.",
+      "Correct : de 15 h 30 à 17 h 30 à Tokyo, dans les heures des deux bureaux.",
+      "Commence avant l'ouverture du bureau de Luxembourg.",
+      "Correspond à 18 h 00 – 20 h 00 à Tokyo, après la fermeture."
+    ],
+    "explanation": "Tokyo est ouvert de 9 h 00 à 18 h 00, soit de 2 h 00 à 11 h 00 heure de Luxembourg. La plage commune est donc 8 h 00 – 11 h 00. Seul le créneau 8 h 30 – 10 h 30 (15 h 30 – 17 h 30 à Tokyo) y tient entièrement.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "planning-sched-079",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Dans quel ordre ces formalités s'enchaînent-elles ?",
+    "stimulus": "Départ à la retraite pour invalidité – quatre formalités :\n1. Notification de l'arrêté accordant la pension.\n2. Dépôt de la demande par l'agent auprès de son service du personnel.\n3. Contrôle de la carrière et calcul des droits par la caisse de pension.\n4. Avis de la commission médicale.\nRègles : la commission médicale se prononce après le dépôt de la demande ; la caisse de pension calcule les droits après avoir reçu l'avis de la commission ; l'arrêté est notifié après le calcul des droits.",
+    "options": [
+      "2 → 3 → 4 → 1",
+      "4 → 2 → 3 → 1",
+      "2 → 3 → 1 → 4",
+      "2 → 4 → 3 → 1"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Place le calcul des droits avant l'avis de la commission, contrairement à la deuxième règle.",
+      "Place l'avis de la commission avant le dépôt de la demande.",
+      "Notifie l'arrêté avant l'avis de la commission.",
+      "Correct : respecte les trois règles."
+    ],
+    "explanation": "Le dépôt (2) déclenche l'avis de la commission (4), qui précède le calcul des droits (3), lequel précède la notification de l'arrêté (1) : 2 → 4 → 3 → 1.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "planning-sched-094",
+    "version": 2,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Quel horaire permet de tenir une conférence de presse de 45 minutes au ministère ?",
+    "stimulus": "Agenda du ministre, mercredi après-midi :\n- 14 h 00 – 16 h 00 : séance à la Chambre des députés.\n- 16 h 00 – 17 h 30 : libre.\n- 17 h 30 – 19 h 00 : réception d'une délégation.\nLe trajet de la Chambre au ministère dure 15 minutes, comme celui du ministère au lieu de la réception.",
+    "options": [
+      "De 16 h 00 à 16 h 45",
+      "De 16 h 45 à 17 h 30",
+      "De 16 h 15 à 17 h 00",
+      "De 15 h 30 à 16 h 15"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Oublie le trajet de 15 minutes depuis la Chambre.",
+      "Le ministre arriverait à 17 h 45 à la réception.",
+      "Correct : respecte les deux trajets et les deux engagements.",
+      "Chevauche la séance à la Chambre."
+    ],
+    "explanation": "Le ministre peut être au ministère à 16 h 15 au plus tôt et doit en partir à 17 h 15 au plus tard pour la réception. Seul le créneau 16 h 15 – 17 h 00 tient dans cette plage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-advise-023",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Une collègue vous demande conseil : le dirigeant d'une entreprise dont elle vient d'instruire favorablement le dossier lui a fait déposer au bureau un panier gastronomique d'environ 150 euros. Le règlement interne interdit d'accepter tout cadeau lié aux fonctions.",
+    "options": [
+      "Lui conseiller de refuser le panier par téléphone auprès de l'entreprise, sans en parler à sa hiérarchie.",
+      "Lui conseiller d'informer sa hiérarchie par écrit et de faire restituer le panier avec un courrier poli.",
+      "Lui conseiller de partager le panier avec l'équipe et d'en parler lors de la prochaine réunion de service.",
+      "Lui conseiller de garder le panier cette fois, en prévenant l'entreprise qu'elle refusera les prochains."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "optionRationales": [
+      "Refus correct, mais sans trace ni information de la hiérarchie.",
+      "Correct : restitution et transparence envers la hiérarchie.",
+      "Revient à accepter le cadeau, même si le geste est rendu public.",
+      "Accepte un cadeau interdit par le règlement."
+    ],
+    "explanation": "Le règlement interdit tout cadeau lié aux fonctions. Le meilleur conseil combine la restitution et l'information écrite de la hiérarchie, qui laisse une trace et protège la collègue. Refuser sans informer est correct mais moins sûr ; partager ou garder le cadeau revient à l'accepter.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-advise-025",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager en grande difficulté financière demande une aide d'urgence. Après vérification, il ne remplit pas l'une des conditions légales d'attribution. Il insiste en expliquant qu'il ne peut plus payer son loyer.",
+    "options": [
+      "Lui remettre la liste des organismes d'aide au logement en lui conseillant de les contacter dès aujourd'hui.",
+      "Enregistrer la demande comme complète afin qu'elle soit acceptée, puisque sa situation est réellement urgente.",
+      "Lui expliquer que la demande sera refusée et l'inviter à revenir si sa situation personnelle évolue.",
+      "Lui expliquer la condition manquante et, avec son accord, le mettre en relation avec l'office social."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Utile, mais laisse l'usager faire seul les démarches.",
+      "Fausse déclaration contraire à la loi, même pour une bonne cause.",
+      "Exact sur le fond, mais n'offre aucune solution.",
+      "Correct : explication de la décision et relais actif vers l'aide adaptée."
+    ],
+    "explanation": "L'agent applique la règle (l'aide ne peut pas être accordée) tout en servant l'usager : il explique pourquoi et organise un relais concret vers l'office social. Une simple liste aide moins ; un refus sec n'oriente pas ; contourner la règle est illégal.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-serve-026",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager vous appelle, très mécontent : sa demande de prime n'est pas traitée après six semaines, alors que le délai indicatif annoncé est de quatre semaines.",
+    "options": [
+      "Lui promettre que sa prime sera versée cette semaine, pour mettre fin à son mécontentement.",
+      "Noter sa réclamation, vérifier le dossier après l'appel et le rappeler dans la journée.",
+      "Lui rappeler que le délai de quatre semaines n'est qu'indicatif et l'inviter à patienter.",
+      "Consulter le dossier pendant l'appel, lui expliquer la cause du retard et l'étape suivante."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      1,
+      3,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Promesse que l'agent ne peut pas garantir.",
+      "Sérieux, mais diffère l'information alors qu'elle est accessible.",
+      "Exact, mais n'apporte aucune information sur le dossier.",
+      "Correct : information immédiate, transparente et sans promesse."
+    ],
+    "explanation": "L'usager a besoin d'une information fiable : consulter le dossier pendant l'appel permet d'expliquer le retard et la suite sans promettre ce que l'agent ne maîtrise pas. Rappeler plus tard est acceptable ; se retrancher derrière le caractère indicatif du délai ou promettre un versement ne l'est pas.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-advise-033",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Une connaissance personnelle vous demande de faire examiner en priorité le dossier de permis de construire de son fils, déposé il y a deux semaines, avant la commission de demain.",
+    "options": [
+      "Refuser poliment en rappelant l'égalité de traitement, et signaler à votre hiérarchie le lien avec le demandeur.",
+      "Accepter d'avancer discrètement le dossier, puisqu'il est complet et qu'aucun autre demandeur n'en serait lésé.",
+      "Transmettre la demande au chef de service en le laissant décider s'il convient d'avancer l'examen du dossier.",
+      "Refuser poliment en rappelant que tous les dossiers sont examinés dans leur ordre d'arrivée, sans exception."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "optionRationales": [
+      "Correct : refus motivé et prévention du conflit d'intérêts.",
+      "Passe-droit contraire à l'égalité de traitement.",
+      "Fait remonter une demande illégitime au lieu de la refuser.",
+      "Refus correct, mais le conflit d'intérêts n'est pas signalé."
+    ],
+    "explanation": "Un passe-droit est contraire à l'égalité de traitement. Le refus doit être expliqué, et le lien personnel avec le demandeur signalé à la hiérarchie pour prévenir tout conflit d'intérêts. Transmettre la demande la légitime ; l'accepter est une faute.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-044",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Votre cheffe de service vous demande votre avis sur un projet de courrier informant 2 000 familles d'une hausse du tarif de la cantine scolaire. Le courrier ne mentionne ni la date d'effet de la hausse, ni les voies de recours.",
+    "options": [
+      "Lui conseiller d'envoyer le courrier tel quel, puis de publier une foire aux questions sur le site internet.",
+      "Lui conseiller d'ajouter la date d'effet, le motif de la hausse et les voies de recours avant l'envoi.",
+      "Lui conseiller de reporter l'envoi après l'entrée en vigueur, pour éviter des contestations anticipées.",
+      "Lui conseiller d'ajouter la date d'effet et un numéro de contact, les recours pouvant être précisés sur demande."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      2,
+      4,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Laisse partir un courrier incomplet.",
+      "Correct : le courrier devient complet et contestable en connaissance de cause.",
+      "Retarde l'information pour empêcher les recours : contraire à la transparence.",
+      "Amélioration partielle : les voies de recours restent absentes."
+    ],
+    "explanation": "Un courrier qui annonce une décision défavorable doit permettre aux usagers de la comprendre et de la contester : date d'effet, motif et voies de recours. Ajouter seulement la date et un contact améliore le courrier sans le compléter ; envoyer tel quel ou retarder l'information pour éviter les recours n'est pas acceptable.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-074",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Vous animez une réunion de projet. Deux agents d'un autre service s'invectivent à propos d'une erreur d'aiguillage d'un dossier ; le ton monte et les autres participants sont mal à l'aise.",
+    "options": [
+      "Poursuivre l'ordre du jour sans commenter l'incident, pour ne pas donner plus d'importance à la dispute.",
+      "Suspendre la réunion quelques minutes, puis la reprendre en passant au point suivant de l'ordre du jour.",
+      "Désigner devant les participants l'agent responsable de l'erreur, afin de clore rapidement le débat.",
+      "Interrompre l'échange, rappeler les règles de courtoisie et proposer de traiter l'erreur après la réunion."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      2,
+      3,
+      1,
+      4
+    ],
+    "optionRationales": [
+      "Laisse le conflit sans réponse.",
+      "Apaise, mais ne rappelle pas le cadre et ne traite pas le fond.",
+      "Met en cause publiquement un agent et aggrave le conflit.",
+      "Correct : arrêt de l'altercation, rappel du cadre, fond traité à part."
+    ],
+    "explanation": "L'animateur doit faire cesser l'altercation, rappeler le cadre et renvoyer le fond à un échange dédié. Une simple pause apaise sans traiter le problème ; ignorer l'incident le laisse s'envenimer ; désigner un coupable en public aggrave la tension.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-079",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Au guichet, un usager glisse une enveloppe contenant de l'argent liquide dans son dossier de permis de construire, « pour accélérer le traitement ». Plusieurs personnes attendent derrière lui.",
+    "options": [
+      "Lui rendre l'enveloppe en refusant clairement, rappeler que le délai est le même pour tous et signaler l'incident.",
+      "Lui rendre l'enveloppe discrètement et sans commentaire, pour éviter de l'humilier devant les autres usagers.",
+      "Accepter l'enveloppe pour la verser ensuite à la caisse du service, en la considérant comme un don volontaire.",
+      "Refuser l'enveloppe en rappelant que le délai est le même pour tous, sans donner d'autre suite à l'incident."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      2,
+      1,
+      3
+    ],
+    "optionRationales": [
+      "Correct : refus explicite, égalité de traitement rappelée, incident signalé.",
+      "Refus sans explication ni signalement.",
+      "Accepter une somme liée à un dossier est interdit, quelle qu'en soit l'affectation.",
+      "Refus correct, mais l'incident n'est pas signalé."
+    ],
+    "explanation": "Une tentative de corruption doit être refusée clairement et signalée à la hiérarchie. Refuser sans signaler est insuffisant ; rendre l'enveloppe sans un mot laisse l'usager sans message clair ; l'accepter, même pour le service, est interdit.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-095",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un usager ne parvient pas à remplir le formulaire en ligne de demande d'allocation : il n'a ni ordinateur ni accès à internet. Un formulaire papier existe aussi, et le guichet peut enregistrer les demandes papier. Le délai de dépôt expire dans trois jours.",
+    "options": [
+      "Lui remettre le formulaire papier en l'invitant à le renvoyer par la poste avant l'échéance.",
+      "Lui conseiller de demander à un proche de faire la démarche en ligne à sa place d'ici trois jours.",
+      "Lui indiquer que la démarche se fait en ligne et l'orienter vers un espace public numérique.",
+      "Remplir avec lui le formulaire papier au guichet et l'enregistrer immédiatement, avant l'échéance."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      2,
+      1,
+      4
+    ],
+    "optionRationales": [
+      "Utile, mais l'envoi postal risque de ne pas arriver dans les trois jours.",
+      "Reporte la démarche sur un tiers alors qu'une solution existe au guichet.",
+      "Information inexacte : un formulaire papier existe.",
+      "Correct : la demande est déposée dans les délais."
+    ],
+    "explanation": "Le formulaire papier existe et le délai est court : l'aider à le remplir et l'enregistrer tout de suite garantit le dépôt. Lui remettre le formulaire est utile mais laisse un risque ; s'en remettre à un proche ou affirmer que seule la voie en ligne existe ne le sert pas.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-097",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Au bureau de la population, une usagère arrive paniquée : elle a perdu son portefeuille avec sa carte d'identité. La procédure prévoit de déclarer la perte à la police, puis de demander une nouvelle carte au bureau de la population, sur présentation de la déclaration de perte.",
+    "options": [
+      "L'orienter vers le commissariat le plus proche pour déclarer la perte, en l'invitant à revenir ensuite.",
+      "Commencer tout de suite la demande de nouvelle carte, la déclaration de perte pouvant être ajoutée plus tard.",
+      "La rassurer, lui expliquer les deux étapes et lui remettre la liste des pièces à fournir pour la nouvelle carte.",
+      "Lui conseiller d'attendre quelques jours, le portefeuille pouvant être retrouvé ou rapporté par un passant."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      3,
+      1,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Juste, mais l'usagère ne sait pas quoi apporter ensuite.",
+      "Contraire à la procédure, qui exige la déclaration de perte.",
+      "Correct : accueil, explication complète et préparation de la suite.",
+      "Retarde une démarche nécessaire sans raison."
+    ],
+    "explanation": "L'agent rassure et rend l'usagère autonome : il explique les deux étapes prévues et prépare la seconde. L'orienter vers la police est juste mais incomplet ; attendre retarde inutilement ; inverser les étapes contrevient à la procédure.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-scen-100",
+    "version": 2,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque conseil dans ce contexte.",
+    "stimulus": "Un stagiaire de votre équipe vous demande conseil : son tuteur lui a confié la rédaction d'une note de synthèse, mais il ne comprend pas bien ce qu'on attend de lui et n'ose pas le dire.",
+    "options": [
+      "Lui expliquer vous-même ce qu'on attend en général d'une note de synthèse et lui montrer un exemple.",
+      "Lui proposer de rédiger la note à sa place, pour lui éviter de se mettre en difficulté devant son tuteur.",
+      "Lui conseiller de reformuler la demande par écrit et de la faire valider par son tuteur avant de commencer.",
+      "Lui conseiller de rédiger une première version et d'attendre les corrections de son tuteur pour comprendre."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      3,
+      1,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Utile, mais ne lève pas le doute sur cette demande précise.",
+      "Ne l'aide pas à progresser et masque la difficulté.",
+      "Correct : clarification de la demande auprès du tuteur.",
+      "Fait perdre du temps et repousse la clarification."
+    ],
+    "explanation": "Le meilleur conseil aide le stagiaire à clarifier la demande avec la personne qui l'a formulée. Un exemple général aide mais ne garantit pas de répondre à la demande précise ; rédiger à l'aveugle fait perdre du temps ; rédiger à sa place ne l'aide pas à apprendre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T19:30:00+02:00"
+  },
+  {
+    "id": "situational-advise-012",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un jeune collègue chargé d'études doit animer une réunion avec des représentants syndicaux sur un projet de refonte des horaires. Il craint des tensions et vous demande comment structurer son intervention.",
+    "options": [
+      "Lui recommander de présenter le calendrier ministériel comme définitif et de limiter l'échange aux aspects pratiques.",
+      "Lui conseiller de présenter les constats et le cadre, puis d'organiser un échange structuré sur les besoins.",
+      "Lui suggérer de reporter la réunion et d'annoncer le projet par une note de service adressée à tous.",
+      "Lui proposer une rencontre informelle sans ordre du jour, pour laisser chacun exprimer ses craintes."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      2,
+      4,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Ferme la discussion sur le fond et risque d'accroître les tensions.",
+      "Correct : base factuelle partagée et échange cadré.",
+      "Évite le dialogue social au lieu de le préparer.",
+      "Écoute, mais sans cadre ni objectif, ce qui expose à des débats confus."
+    ],
+    "explanation": "Le conseil professionnel (note 4) encourage une méthode rigoureuse : baser l'échange sur des éléments factuels partagés, donner la parole de manière cadrée et écouter les observations pour coconstruire la mise en œuvre.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "revisionOf": "situational-advise-012"
+  },
+  {
+    "id": "situational-advise-014",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 100,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Votre chef de service souhaite accélérer l'octroi d'un marché public avant la fin de l'exercice budgétaire pour éviter la perte de crédits, en omettant l'avis obligatoire de la commission des marchés.",
+    "options": [
+      "Alerter par écrit le chef de service sur le risque d'illégalité et proposer un calendrier accéléré mais conforme.",
+      "Préparer le marché sans l'avis de la commission, comme demandé, pour éviter la perte des crédits de l'exercice.",
+      "Exprimer oralement votre désaccord au chef de service, puis exécuter sa demande sans laisser de trace écrite.",
+      "Signaler directement la situation au contrôleur financier, sans en parler d'abord à votre chef de service."
+    ],
+    "correctIndex": 0,
+    "ratings": [
+      4,
+      1,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Correct : mise en garde loyale et écrite, avec une solution légale.",
+      "Exécute une procédure irrégulière.",
+      "Le désaccord oral ne protège ni l'administration ni l'agent, et la procédure reste irrégulière.",
+      "Contourne la hiérarchie sans lui avoir d'abord exposé le risque."
+    ],
+    "explanation": "L'agent public de catégorie A1 a un devoir de conseil technique : il doit formuler par écrit une mise en garde loyale sur les risques juridiques (nullité du marché, engagement de responsabilité) tout en étant force de proposition pour rechercher une issue légale dans les délais.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T14:55:00+02:00",
+    "revisionOf": "situational-advise-014"
+  },
+  {
+    "id": "situational-advise-019",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 95,
+    "prompt": "Évaluez la pertinence de chaque modalité de conseil face à une incertitude réglementaire.",
+    "stimulus": "Une entreprise vous sollicite pour savoir si son nouveau procédé industriel entre dans le champ d'application d'une taxe environnementale récemment votée mais dont le règlement d'application n'est pas encore publié.",
+    "options": [
+      "Lui répondre que la question ne pourra être traitée qu'après la publication du règlement d'application.",
+      "Lui confirmer par écrit que son procédé sera exonéré, au vu des objectifs affichés par la loi.",
+      "Lui exposer les textes en vigueur, réserver les points en suspens et saisir la direction compétente.",
+      "Lui indiquer les critères évoqués lors des débats parlementaires, en précisant qu'ils ne l'engagent pas."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      2,
+      1,
+      4,
+      3
+    ],
+    "optionRationales": [
+      "Prudent, mais n'apporte aucune information utile à l'entreprise.",
+      "Engagement prématuré que l'administration ne peut pas garantir.",
+      "Correct : information sur l'existant, réserve et saisine de la direction compétente.",
+      "Utile et prudent, mais sans démarche pour obtenir une position officielle."
+    ],
+    "explanation": "En cas de vide ou d'attente d'un décret d'application, le conseiller public doit faire preuve d'une prudence juridique stricte. Il informe sur les bases existantes, réserve l'interprétation officielle auprès de la direction compétente et s'abstient de tout engagement prématuré.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "situational-advise-019"
+  },
+  {
+    "id": "situational-serve-020",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque comportement d'accueil face à une situation de tension au guichet.",
+    "stimulus": "Un administré hausse le ton et accuse nominativement un de vos collègues d'avoir égaré son dossier d'aide au logement il y a deux semaines.",
+    "options": [
+      "Lui expliquer comment le dossier serait reconstitué si la perte était confirmée et lui remettre un accusé de réception.",
+      "Lui donner raison devant les autres usagers en reconnaissant que votre collègue est souvent négligent.",
+      "Défendre fermement votre collègue en lui expliquant qu'une telle erreur est impossible dans le service.",
+      "L'inviter au calme dans un espace discret, écouter sa réclamation et vérifier l'historique du dossier."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      3,
+      1,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Utile, mais anticipe une perte avant toute vérification.",
+      "Dénigre un collègue en public sans aucune vérification.",
+      "Prend parti sans vérifier et nie une possibilité réelle.",
+      "Correct : désescalade, écoute et vérification impartiale."
+    ],
+    "explanation": "Face à une accusation visant un collègue, l'agent doit concilier écoute empathique de l'usager, désescalade relationnelle dans un cadre calme, loyauté envers ses pairs et vérification factuelle impartiale dans les systèmes de gestion.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "situational-serve-020"
+  },
+  {
+    "id": "situational-serve-024",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque réaction face à une erreur administrative avérée.",
+    "stimulus": "Vous découvrez qu'en raison d'un bogue informatique temporaire, un courrier erroné réclamant indûment une pièce justificative déjà fournie a été envoyé à 50 usagers.",
+    "options": [
+      "Rassurer les usagers qui appellent et noter sur leur dossier que la pièce a bien été reçue.",
+      "Informer la hiérarchie et envoyer aux 50 usagers un rectificatif indiquant qu'ils n'ont rien à fournir.",
+      "Laisser les usagers renvoyer la pièce, puisque cela ne retarde pas le traitement de leur dossier.",
+      "Traiter au cas par cas les usagers qui se manifestent, au guichet ou par téléphone."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      3,
+      4,
+      1,
+      2
+    ],
+    "optionRationales": [
+      "Correct pour ceux qui appellent, mais les autres usagers restent mal informés.",
+      "Correct : correction proactive et transparente auprès de tous.",
+      "Laisse les usagers accomplir une démarche inutile sans les informer.",
+      "Réactif seulement, et sans information de la hiérarchie."
+    ],
+    "explanation": "L'erreur vient de l'administration : elle doit la corriger elle-même, auprès de tous les usagers concernés, en informant la hiérarchie. Répondre seulement à ceux qui appellent laisse les autres dans l'erreur.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "situational-serve-024"
+  },
+  {
+    "id": "situational-serve-030",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez chaque modalité de traitement d'une réclamation d'usager.",
+    "stimulus": "Un usager vous transmet une réclamation écrite affirmant qu'un agent d'accueil lui a manqué de respect la veille au guichet.",
+    "options": [
+      "Classer la réclamation sans suite, l'agent concerné ayant toujours donné satisfaction jusqu'ici.",
+      "Appeler l'usager pour recueillir sa version détaillée des faits avant de décider de la suite à donner.",
+      "Répondre à l'usager que les agents d'accueil subissent une forte pression et l'inviter à l'indulgence.",
+      "Accuser réception par écrit, transmettre les faits à la hiérarchie et informer l'usager de la suite."
+    ],
+    "correctIndex": 3,
+    "ratings": [
+      1,
+      3,
+      2,
+      4
+    ],
+    "optionRationales": [
+      "Écarte la réclamation sans l'examiner.",
+      "Utile, mais la réclamation n'est ni enregistrée ni transmise.",
+      "Justifie le comportement au lieu d'examiner les faits.",
+      "Correct : réclamation tracée, examinée et suivie."
+    ],
+    "explanation": "Une réclamation appelle un accusé de réception, un examen par la hiérarchie et une information de l'usager sur la suite. Recueillir sa version est utile mais ne suffit pas ; excuser l'agent ou classer sans examen ne traite pas la réclamation.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "revisionOf": "situational-serve-030"
+  },
+  {
+    "id": "situational-scen-070",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un citoyen malentendant se présente au guichet pour une démarche complexe d'état civil. La communication verbale usuelle s'avère particulièrement difficile.",
+    "options": [
+      "Parler plus lentement et plus fort, en répétant les explications jusqu'à ce qu'il comprenne.",
+      "Passer à l'écrit avec des phrases simples et vérifier pas à pas qu'il a compris chaque étape.",
+      "Reporter toute la démarche à un rendez-vous ultérieur avec un interprète en langue des signes.",
+      "Lui demander de revenir accompagné d'un proche qui pourra faire la démarche à sa place."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      2,
+      4,
+      3,
+      1
+    ],
+    "optionRationales": [
+      "Insuffisant et peu adapté à une démarche complexe.",
+      "Correct : adaptation immédiate du mode de communication.",
+      "Adapté, mais retarde une démarche qui peut être menée par écrit dès maintenant.",
+      "Prive l'usager de son autonomie et lui impose une condition."
+    ],
+    "explanation": "L'accessibilité des services publics impose d'adapter le mode d'échange (écrit, reformulation, outils spécialisés) pour garantir l'accueil égalitaire des usagers en situation de handicap.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-070"
+  },
+  {
+    "id": "situational-scen-090",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 80,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Une panne générale du système informatique bloque la délivrance des certificats au guichet pendant plus de deux heures devant une file de trente personnes.",
+    "options": [
+      "Faire patienter les usagers sans annonce, la panne pouvant être réparée à tout moment.",
+      "Enregistrer à la main les demandes urgentes pour les saisir dès le retour du système.",
+      "Informer la salle de la panne et de sa durée estimée, et proposer un traitement différé.",
+      "Distribuer des tickets de passage et demander aux usagers de revenir après la réparation."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      1,
+      3,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Laisse les usagers sans information.",
+      "Utile pour les urgences, mais la salle reste sans information.",
+      "Correct : information transparente et solution pour tous.",
+      "Organise le retour, mais sans information sur la durée de la panne."
+    ],
+    "explanation": "Lors d'une panne technique prolongée, une communication claire, honnête et régulière permet de désamorcer les tensions et d'orienter les usagers vers des modalités de traitement différé.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-090"
+  },
+  {
+    "id": "situational-scen-091",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "conseiller",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Vous êtes le supérieur d'un agent récemment promu chef d'équipe. Il se montre autoritaire et méprisant envers ses anciens collègues ; deux d'entre eux envisagent de demander leur mutation.",
+    "options": [
+      "Réunir toute l'équipe pour clarifier collectivement les règles de fonctionnement et le rôle de chacun.",
+      "Laisser faire, le nouveau chef d'équipe ayant besoin d'asseoir son autorité au début de sa prise de fonction.",
+      "Le recevoir en entretien pour lui rappeler les attentes en matière de respect et proposer un accompagnement.",
+      "Prévoir des points d'étape réguliers sur sa prise de fonction, sans aborder directement le problème."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      2,
+      1,
+      4,
+      2
+    ],
+    "optionRationales": [
+      "Expose le problème collectivement sans traiter le comportement individuel.",
+      "Laisse se dégrader la situation de l'équipe.",
+      "Correct : recadrage direct et accompagnement.",
+      "Évite le sujet alors que la situation est urgente."
+    ],
+    "explanation": "L'apprentissage du management chez un nouveau responsable requiert un accompagnement rigoureux de la hiérarchie. L'autoritarisme toxique doit être corrigé fermement dès les premiers signaux.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-091"
+  },
+  {
+    "id": "situational-scen-092",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un administré demande à consulter le dossier complet d'un projet d'infrastructure routière qui traversera sa propriété foncière.",
+    "options": [
+      "Refuser l'accès aux plans tant que le tracé définitif n'a pas été arrêté par le ministre.",
+      "Lui donner accès aux pièces communicables et lui expliquer la procédure et les délais d'enquête.",
+      "Lui fixer un rendez-vous avec le technicien du projet pour une présentation détaillée des plans.",
+      "Lui remettre la notice publique résumant les impacts et le calendrier prévisionnel des travaux."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      1,
+      4,
+      3,
+      2
+    ],
+    "optionRationales": [
+      "Refuse un accès auquel l'usager a droit pour les pièces communicables.",
+      "Correct : accès effectif et information sur la procédure.",
+      "Utile, mais diffère l'accès aux pièces.",
+      "Information partielle, sans accès au dossier."
+    ],
+    "explanation": "Les projets d'aménagement public font l'objet d'un droit d'accès et d'information garanti aux citoyens. L'administration doit faciliter la consultation des pièces communicables en toute transparence.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-092"
+  },
+  {
+    "id": "situational-scen-094",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 85,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un citoyen très mécontent menace de saisir le médiateur de l'État suite au rejet réitéré de sa demande d'aide financière communale.",
+    "options": [
+      "Lui réexpliquer calmement les critères d'attribution qui ont motivé le rejet de sa demande.",
+      "Lui proposer de faire réexaminer le dossier par un autre agent, en espérant éviter la saisine.",
+      "Prendre acte de sa démarche, lui donner les coordonnées du médiateur et lui réexpliquer la décision.",
+      "Lui expliquer que la saisine du médiateur ne pourra pas modifier une décision déjà prise."
+    ],
+    "correctIndex": 2,
+    "ratings": [
+      3,
+      2,
+      4,
+      1
+    ],
+    "optionRationales": [
+      "Utile, mais n'informe pas l'usager sur la voie qu'il envisage.",
+      "Réexamen informel destiné à dissuader une démarche légitime.",
+      "Correct : respect du droit de saisine et explication de la décision.",
+      "Décourage une démarche légitime par une affirmation inexacte."
+    ],
+    "explanation": "Le médiateur de l'État (Ombudsman) est une institution indépendante garantissant les droits citoyens. L'administration doit informer les usagers de cette faculté sans aucune hostilité.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-094"
+  },
+  {
+    "id": "situational-scen-099",
+    "version": 1,
+    "category": "situational",
+    "itemFormat": "rating",
+    "skill": "servir-client-usager",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Évaluez la pertinence de chaque réaction dans ce contexte.",
+    "stimulus": "Un citoyen formule une suggestion particulièrement judicieuse pour améliorer la signalétique et fluidifier l'orientation des usagers dans le hall principal.",
+    "options": [
+      "Transmettre la suggestion au responsable de la logistique du bâtiment pour qu'il en étudie la faisabilité.",
+      "Remercier l'usager, consigner sa suggestion au registre qualité et la transmettre au service compétent.",
+      "Le remercier en lui expliquant que la signalétique vient d'être refaite et ne sera pas modifiée.",
+      "Installer vous-même dès aujourd'hui un fléchage provisoire, sans en parler au service logistique."
+    ],
+    "correctIndex": 1,
+    "ratings": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "optionRationales": [
+      "Utile, mais l'usager n'est pas remercié et la suggestion n'est pas tracée.",
+      "Correct : reconnaissance, traçabilité et transmission.",
+      "Courtois, mais écarte d'emblée une suggestion utile.",
+      "Initiative hors de vos attributions, sans coordination."
+    ],
+    "explanation": "L'amélioration de la qualité de service repose sur l'écoute active des remarques des administrés. Une suggestion pertinente doit être accueillie avec gratitude et transmise aux décideurs.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-02T13:42:39.868Z",
+    "revisionOf": "situational-scen-099"
+  }
+]
