@@ -237,7 +237,7 @@
   },
   {
     "id": "numeric-weight-007",
-    "version": 3,
+    "version": 4,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -245,7 +245,32 @@
     "language": "fr",
     "estimatedSeconds": 75,
     "prompt": "Quelle est la moyenne pondérée des trois évaluations ?",
-    "stimulus": "Évaluation A (coefficient 3) : 14/20. Évaluation B (coefficient 2) : 16/20. Évaluation C (coefficient 5) : 11/20.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Résultats des évaluations",
+      "headers": [
+        "Évaluation",
+        "Coefficient",
+        "Note (sur 20)"
+      ],
+      "rows": [
+        [
+          "Évaluation A",
+          3,
+          14
+        ],
+        [
+          "Évaluation B",
+          2,
+          16
+        ],
+        [
+          "Évaluation C",
+          5,
+          11
+        ]
+      ]
+    },
     "options": [
       "12,5 / 20",
       "12,9 / 20",
@@ -264,7 +289,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-scale-008",
@@ -480,7 +505,7 @@
   },
   {
     "id": "numeric-mean-014",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -488,7 +513,27 @@
     "language": "fr",
     "estimatedSeconds": 75,
     "prompt": "Quel est le coût moyen de traitement par dossier sur l'ensemble des dossiers instruits ?",
-    "stimulus": "Le bureau 1 traite 100 dossiers pour un coût moyen de 20 euros par dossier. Le bureau 2 traite 300 dossiers pour un coût moyen de 40 euros par dossier.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Activité et coût de traitement par bureau",
+      "headers": [
+        "Bureau",
+        "Dossiers traités",
+        "Coût moyen par dossier (euros)"
+      ],
+      "rows": [
+        [
+          "Bureau 1",
+          100,
+          20
+        ],
+        [
+          "Bureau 2",
+          300,
+          40
+        ]
+      ]
+    },
     "options": [
       "38 euros",
       "32 euros",
@@ -507,7 +552,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-var-015",
@@ -660,7 +705,7 @@
   },
   {
     "id": "numeric-mean-019",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -668,7 +713,27 @@
     "language": "fr",
     "estimatedSeconds": 80,
     "prompt": "Quelle est la durée moyenne de traitement par dossier sur l'ensemble de la journée ?",
-    "stimulus": "Matin : 10 dossiers traités en 20 minutes chacun. Après-midi : 20 dossiers traités en 35 minutes chacun.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers traités au cours de la journée",
+      "headers": [
+        "Période",
+        "Dossiers traités",
+        "Durée par dossier (minutes)"
+      ],
+      "rows": [
+        [
+          "Matin",
+          10,
+          20
+        ],
+        [
+          "Après-midi",
+          20,
+          35
+        ]
+      ]
+    },
     "options": [
       "27,5 minutes",
       "32,5 minutes",
@@ -687,7 +752,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-ratio-020",
@@ -753,7 +818,7 @@
   },
   {
     "id": "numeric-ops-022",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "operations-simples",
@@ -761,7 +826,29 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Combien d'heures sont nécessaires pour instruire les 90 dossiers restants avec l'équipe réunie ?",
-    "stimulus": "L'agent A instruit 5 dossiers par heure. L'agent B instruit 7 dossiers par heure. L'agent C instruit 3 dossiers par heure. Ils travaillent conjointement.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Cadence d'instruction des agents",
+      "headers": [
+        "Agent",
+        "Dossiers instruits par heure"
+      ],
+      "rows": [
+        [
+          "Agent A",
+          5
+        ],
+        [
+          "Agent B",
+          7
+        ],
+        [
+          "Agent C",
+          3
+        ]
+      ],
+      "note": "Les trois agents travaillent conjointement."
+    },
     "options": [
       "5 heures",
       "6 heures",
@@ -780,7 +867,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-table-023",
@@ -871,7 +958,7 @@
   },
   {
     "id": "numeric-mean-025",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -879,7 +966,36 @@
     "language": "fr",
     "estimatedSeconds": 75,
     "prompt": "Quelle est la moyenne arithmétique simple des cinq notes obtenues ?",
-    "stimulus": "Notes obtenues aux cinq épreuves du concours : 12/20, 14/20, 15/20, 11/20, 18/20.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Notes obtenues aux épreuves du concours",
+      "headers": [
+        "Épreuve",
+        "Note (sur 20)"
+      ],
+      "rows": [
+        [
+          "Épreuve 1",
+          12
+        ],
+        [
+          "Épreuve 2",
+          14
+        ],
+        [
+          "Épreuve 3",
+          15
+        ],
+        [
+          "Épreuve 4",
+          11
+        ],
+        [
+          "Épreuve 5",
+          18
+        ]
+      ]
+    },
     "options": [
       "15,0 / 20",
       "14,5 / 20",
@@ -898,7 +1014,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-scale-026",
@@ -1299,7 +1415,7 @@
   },
   {
     "id": "numeric-calc-038",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -1307,7 +1423,27 @@
     "language": "fr",
     "estimatedSeconds": 85,
     "prompt": "Quel est le coût moyen pondéré d'une journée de formation par stagiaire ?",
-    "stimulus": "Session A : 20 participants à 100 euros par jour.\nSession B : 30 participants à 150 euros par jour.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Sessions de formation",
+      "headers": [
+        "Session",
+        "Participants",
+        "Coût par participant et par jour (euros)"
+      ],
+      "rows": [
+        [
+          "Session A",
+          20,
+          100
+        ],
+        [
+          "Session B",
+          30,
+          150
+        ]
+      ]
+    },
     "options": [
       "120 euros",
       "130 euros",
@@ -1326,7 +1462,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-039",
@@ -1547,7 +1683,7 @@
   },
   {
     "id": "numeric-calc-046",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -1555,7 +1691,28 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Quel est le solde budgétaire disponible non engagé en fin d'exercice ?",
-    "stimulus": "Dotation initiale : 500 000 euros.\nEngagements réalisés : 420 000 euros.\nFactures payées : 380 000 euros.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Exécution budgétaire de l'exercice",
+      "headers": [
+        "Poste",
+        "Montant (euros)"
+      ],
+      "rows": [
+        [
+          "Dotation initiale",
+          500000
+        ],
+        [
+          "Engagements réalisés",
+          420000
+        ],
+        [
+          "Factures payées",
+          380000
+        ]
+      ]
+    },
     "options": [
       "120 000 euros",
       "80 000 euros",
@@ -1574,7 +1731,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-047",
@@ -1702,7 +1859,7 @@
   },
   {
     "id": "numeric-calc-051",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -1710,7 +1867,27 @@
     "language": "fr",
     "estimatedSeconds": 85,
     "prompt": "Quel est le salaire moyen brut mensuel de ce service de 10 agents ?",
-    "stimulus": "Répartition salariale du service :\n6 agents de catégorie B : 4 000 euros bruts.\n4 agents de catégorie A : 6 000 euros bruts.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Répartition salariale du service",
+      "headers": [
+        "Catégorie",
+        "Nombre d'agents",
+        "Salaire mensuel brut (euros)"
+      ],
+      "rows": [
+        [
+          "Catégorie B",
+          6,
+          4000
+        ],
+        [
+          "Catégorie A",
+          4,
+          6000
+        ]
+      ]
+    },
     "options": [
       "4 600 euros",
       "5 200 euros",
@@ -1729,7 +1906,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-052",
@@ -2012,7 +2189,7 @@
   },
   {
     "id": "numeric-calc-061",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -2020,7 +2197,24 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Sur une enveloppe globale de 600 000 euros, 45 % sont alloués aux travaux de voirie et 25 % aux espaces verts. Quel montant reste disponible pour les autres actions ?",
-    "stimulus": "Budget participatif communal :\nEnveloppe totale : 600 000 euros.\nVoirie : 45 %.\nEspaces verts : 25 %.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Budget participatif communal (enveloppe totale : 600 000 euros)",
+      "headers": [
+        "Poste",
+        "Part de l'enveloppe (%)"
+      ],
+      "rows": [
+        [
+          "Voirie",
+          45
+        ],
+        [
+          "Espaces verts",
+          25
+        ]
+      ]
+    },
     "options": [
       "200 000 euros",
       "160 000 euros",
@@ -2039,7 +2233,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-062",
@@ -2074,7 +2268,7 @@
   },
   {
     "id": "numeric-calc-063",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2082,7 +2276,27 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Quel est le délai moyen de réponse de l'administration pour ces 100 réclamations ?",
-    "stimulus": "Qualité de service usagers :\n40 réclamations traitées en 5 jours.\n60 réclamations traitées en 10 jours.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Qualité de service usagers",
+      "headers": [
+        "Lot",
+        "Réclamations traitées",
+        "Délai de traitement (jours)"
+      ],
+      "rows": [
+        [
+          "Lot 1",
+          40,
+          5
+        ],
+        [
+          "Lot 2",
+          60,
+          10
+        ]
+      ]
+    },
     "options": [
       "8,0 jours",
       "7,5 jours",
@@ -2101,7 +2315,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-064",
@@ -2229,7 +2443,7 @@
   },
   {
     "id": "numeric-calc-068",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2237,7 +2451,27 @@
     "language": "fr",
     "estimatedSeconds": 85,
     "prompt": "Quel est le coût moyen pondéré d'un audit de conformité par unité administrative ?",
-    "stimulus": "Campagne d'audits internes :\nGroupe 1 : 10 unités auditées au coût de 3 000 euros chacune.\nGroupe 2 : 15 unités auditées au coût de 4 000 euros chacune.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Campagne d'audits internes",
+      "headers": [
+        "Groupe",
+        "Unités auditées",
+        "Coût par unité (euros)"
+      ],
+      "rows": [
+        [
+          "Groupe 1",
+          10,
+          3000
+        ],
+        [
+          "Groupe 2",
+          15,
+          4000
+        ]
+      ]
+    },
     "options": [
       "3 400 euros",
       "3 500 euros",
@@ -2256,7 +2490,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-069",
@@ -2384,7 +2618,7 @@
   },
   {
     "id": "numeric-calc-073",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2392,7 +2626,32 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Quel est le montant moyen des quatre subventions accordées aux associations culturelles ?",
-    "stimulus": "Subventions attribuées par le conseil communal :\nAssociation A : 12 000 euros.\nAssociation B : 18 000 euros.\nAssociation C : 15 000 euros.\nAssociation D : 23 000 euros.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Subventions attribuées par le conseil communal",
+      "headers": [
+        "Association",
+        "Subvention (euros)"
+      ],
+      "rows": [
+        [
+          "Association A",
+          12000
+        ],
+        [
+          "Association B",
+          18000
+        ],
+        [
+          "Association C",
+          15000
+        ],
+        [
+          "Association D",
+          23000
+        ]
+      ]
+    },
     "options": [
       "16 500 euros",
       "17 500 euros",
@@ -2411,7 +2670,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-074",
@@ -2508,7 +2767,7 @@
   },
   {
     "id": "numeric-calc-077",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "operations-simples",
@@ -2516,7 +2775,32 @@
     "language": "fr",
     "estimatedSeconds": 65,
     "prompt": "Combien d'agents au total composent le pôle logistique de cette direction ?",
-    "stimulus": "Répartition des équipes de soutien logistique :\nÉquipe Maintenance : 14 agents.\nÉquipe Accueil et Courrier : 12 agents.\nÉquipe Chauffeurs : 8 agents.\nÉquipe Reprographie : 6 agents.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Répartition des équipes de soutien logistique",
+      "headers": [
+        "Équipe",
+        "Effectif (agents)"
+      ],
+      "rows": [
+        [
+          "Maintenance",
+          14
+        ],
+        [
+          "Accueil et Courrier",
+          12
+        ],
+        [
+          "Chauffeurs",
+          8
+        ],
+        [
+          "Reprographie",
+          6
+        ]
+      ]
+    },
     "options": [
       "40 agents",
       "38 agents",
@@ -2535,7 +2819,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-078",
@@ -2570,7 +2854,7 @@
   },
   {
     "id": "numeric-calc-079",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2578,7 +2862,27 @@
     "language": "fr",
     "estimatedSeconds": 80,
     "prompt": "Un candidat obtient 14 sur 20 à l'épreuve écrite (coefficient 4) et 11 sur 20 à l'épreuve orale (coefficient 2). Quelle est sa moyenne générale d'admission ?",
-    "stimulus": "Barème des épreuves de sélection :\nÉpreuve écrite : coefficient 4, note 14 / 20.\nÉpreuve orale : coefficient 2, note 11 / 20.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Barème des épreuves de sélection",
+      "headers": [
+        "Épreuve",
+        "Coefficient",
+        "Note (sur 20)"
+      ],
+      "rows": [
+        [
+          "Épreuve écrite",
+          4,
+          14
+        ],
+        [
+          "Épreuve orale",
+          2,
+          11
+        ]
+      ]
+    },
     "options": [
       "13,5 / 20",
       "12,5 / 20",
@@ -2597,7 +2901,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-080",
@@ -2725,7 +3029,7 @@
   },
   {
     "id": "numeric-calc-084",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "pourcentage",
@@ -2733,7 +3037,24 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Sur un parc automobile de 150 véhicules de service, 20 % roulent au biogaz et 40 % sont 100 % électriques. Combien de véhicules au total utilisent ces énergies propres ?",
-    "stimulus": "Verdissement de la flotte publique :\nNombre total de véhicules : 150.\nPart biogaz : 20 %.\nPart électrique : 40 %.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Verdissement de la flotte publique (150 véhicules au total)",
+      "headers": [
+        "Motorisation",
+        "Part du parc (%)"
+      ],
+      "rows": [
+        [
+          "Biogaz",
+          20
+        ],
+        [
+          "Électrique",
+          40
+        ]
+      ]
+    },
     "options": [
       "90 véhicules",
       "80 véhicules",
@@ -2752,11 +3073,11 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-085",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2764,7 +3085,36 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Quel est le nombre moyen d'actes d'état civil délivrés par jour au cours de cette semaine de 5 jours ouvrés ?",
-    "stimulus": "Activité du service de l'état civil communal :\nLundi : 45 actes.\nMardi : 52 actes.\nMercredi : 38 actes.\nJeudi : 60 actes.\nVendredi : 55 actes.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Activité du service de l'état civil communal",
+      "headers": [
+        "Jour",
+        "Actes délivrés"
+      ],
+      "rows": [
+        [
+          "Lundi",
+          45
+        ],
+        [
+          "Mardi",
+          52
+        ],
+        [
+          "Mercredi",
+          38
+        ],
+        [
+          "Jeudi",
+          60
+        ],
+        [
+          "Vendredi",
+          55
+        ]
+      ]
+    },
     "options": [
       "46 actes",
       "52 actes",
@@ -2783,7 +3133,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-086",
@@ -2942,7 +3292,7 @@
   },
   {
     "id": "numeric-calc-091",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -2950,7 +3300,27 @@
     "language": "fr",
     "estimatedSeconds": 85,
     "prompt": "Dans un pôle de 50 agents, 30 agents effectuent en moyenne 2 heures supplémentaires par semaine et 20 agents en effectuent 4 heures. Quelle est la moyenne d'heures supplémentaires par agent ?",
-    "stimulus": "Gestion des temps et activités du service technique :\nGroupe 1 : 30 agents réalisant 2 heures supplémentaires.\nGroupe 2 : 20 agents réalisant 4 heures supplémentaires.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Gestion des temps et activités du service technique",
+      "headers": [
+        "Groupe",
+        "Nombre d'agents",
+        "Heures supplémentaires par agent"
+      ],
+      "rows": [
+        [
+          "Groupe 1",
+          30,
+          2
+        ],
+        [
+          "Groupe 2",
+          20,
+          4
+        ]
+      ]
+    },
     "options": [
       "2,6 heures",
       "3,0 heures",
@@ -2969,7 +3339,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-092",
@@ -3097,7 +3467,7 @@
   },
   {
     "id": "numeric-calc-096",
-    "version": 1,
+    "version": 2,
     "category": "numeric",
     "itemFormat": "single_best",
     "skill": "moyenne",
@@ -3105,7 +3475,32 @@
     "language": "fr",
     "estimatedSeconds": 70,
     "prompt": "Quelle est la consommation moyenne trimestrielle de rames de papier d'une administration ?",
-    "stimulus": "Suivi logistique annuel des fournitures :\nTrimestre 1 : 180 rames.\nTrimestre 2 : 220 rames.\nTrimestre 3 : 140 rames.\nTrimestre 4 : 260 rames.",
+    "stimulus": {
+      "type": "table",
+      "caption": "Suivi logistique annuel des fournitures",
+      "headers": [
+        "Trimestre",
+        "Consommation (rames)"
+      ],
+      "rows": [
+        [
+          "Trimestre 1",
+          180
+        ],
+        [
+          "Trimestre 2",
+          220
+        ],
+        [
+          "Trimestre 3",
+          140
+        ],
+        [
+          "Trimestre 4",
+          260
+        ]
+      ]
+    },
     "options": [
       "190 rames",
       "210 rames",
@@ -3124,7 +3519,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "numeric-calc-097",
@@ -3249,5 +3644,2111 @@
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T13:42:39.868Z"
+  },
+  {
+    "id": "numeric-tab-201",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Combien de courriers le service Informatique totalise-t-il sur les trois périodes ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Courriers enregistrés par service",
+      "headers": [
+        "Service",
+        "Janv.",
+        "Févr.",
+        "Mars"
+      ],
+      "rows": [
+        [
+          "Sports",
+          880,
+          500,
+          330
+        ],
+        [
+          "Environnement",
+          160,
+          930,
+          930
+        ],
+        [
+          "État civil",
+          400,
+          180,
+          780
+        ],
+        [
+          "Informatique",
+          940,
+          200,
+          160
+        ]
+      ]
+    },
+    "options": [
+      "1 710 courriers",
+      "1 140 courriers",
+      "2 380 courriers",
+      "1 300 courriers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ligne « Informatique » : 940 + 200 + 160 = 1 300 courriers.",
+    "optionRationales": [
+      "Somme de la ligne « Sports ».",
+      "Oublie la troisième période.",
+      "Somme d'une colonne (tous services) au lieu d'une ligne.",
+      "Correct : somme des trois valeurs de la bonne ligne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-202",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la variation, entre 2025 et 2026, pour le service Archives ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers traités par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Sports",
+          620,
+          660
+        ],
+        [
+          "Archives",
+          1160,
+          1120
+        ],
+        [
+          "Ressources humaines",
+          1700,
+          1780
+        ],
+        [
+          "Finances",
+          1240,
+          1480
+        ]
+      ]
+    },
+    "options": [
+      "96,6 %",
+      "−3,5 %",
+      "−3,6 %",
+      "−3,4 %"
+    ],
+    "correctIndex": 3,
+    "explanation": "Variation = (1 120 − 1 160) / 1 160 × 100 = −3,4 % (la base est l'année de départ, 2025).",
+    "optionRationales": [
+      "Donne le rapport 2026 / 2025, pas la variation.",
+      "Divise par la moyenne des deux années au lieu de la valeur de départ.",
+      "Divise par la valeur d'arrivée (2026) au lieu de la valeur de départ.",
+      "Correct : base de départ (2025) correctement utilisée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-203",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle part du total des certificats revient au service État civil ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Certificats délivrés en 2026",
+      "headers": [
+        "Service",
+        "Certificats délivrés"
+      ],
+      "rows": [
+        [
+          "Accueil",
+          330
+        ],
+        [
+          "État civil",
+          300
+        ],
+        [
+          "Archives",
+          390
+        ],
+        [
+          "Environnement",
+          370
+        ],
+        [
+          "Finances",
+          350
+        ]
+      ]
+    },
+    "options": [
+      "20,0 %",
+      "90,9 %",
+      "20,8 %",
+      "17,2 %"
+    ],
+    "correctIndex": 3,
+    "explanation": "Total = 330 + 300 + 390 + 370 + 350 = 1 740. Part = 300 / 1 740 × 100 = 17,2 %.",
+    "optionRationales": [
+      "Part égale supposée entre services, sans calcul.",
+      "Rapporte la valeur à celle du service Accueil.",
+      "Divise par le total des autres services seulement.",
+      "Correct : rapport entre la valeur du service et le total de la colonne."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-204",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quel service connaît la plus forte hausse en pourcentage entre 2025 et 2026 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Appels au service d'information par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Environnement",
+          180,
+          280
+        ],
+        [
+          "Ressources humaines",
+          250,
+          370
+        ],
+        [
+          "Aides sociales",
+          700,
+          780
+        ],
+        [
+          "Voirie",
+          590,
+          770
+        ]
+      ]
+    },
+    "options": [
+      "Environnement",
+      "Aides sociales",
+      "Voirie",
+      "Ressources humaines"
+    ],
+    "correctIndex": 0,
+    "explanation": "Taux de hausse : Environnement 55,6 % ; Ressources humaines 48,0 % ; Aides sociales 11,4 % ; Voirie 30,5 %. Le plus élevé est celui du service Environnement, même si la plus forte hausse en valeur absolue est celle du service Voirie.",
+    "optionRationales": [
+      "Correct : taux de hausse le plus élevé.",
+      "Taux de hausse inférieur à celui du bon service.",
+      "Plus forte hausse en valeur absolue, pas en pourcentage.",
+      "Taux de hausse inférieur à celui du bon service."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-205",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Combien de visites le service Accueil totalise-t-il sur les trois périodes ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Visites au guichet par service",
+      "headers": [
+        "Service",
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "rows": [
+        [
+          "Culture",
+          770,
+          200,
+          180
+        ],
+        [
+          "Archives",
+          280,
+          220,
+          860
+        ],
+        [
+          "Urbanisme",
+          530,
+          740,
+          210
+        ],
+        [
+          "Accueil",
+          290,
+          440,
+          630
+        ]
+      ]
+    },
+    "options": [
+      "1 870 visites",
+      "730 visites",
+      "1 360 visites",
+      "1 150 visites"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ligne « Accueil » : 290 + 440 + 630 = 1 360 visites.",
+    "optionRationales": [
+      "Somme d'une colonne (tous services) au lieu d'une ligne.",
+      "Oublie la troisième période.",
+      "Correct : somme des trois valeurs de la bonne ligne.",
+      "Somme de la ligne « Culture »."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-206",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Combien de visites le service État civil totalise-t-il sur les trois périodes ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Visites au guichet par service",
+      "headers": [
+        "Service",
+        "Janv.",
+        "Févr.",
+        "Mars"
+      ],
+      "rows": [
+        [
+          "Culture",
+          660,
+          310,
+          430
+        ],
+        [
+          "Environnement",
+          440,
+          690,
+          470
+        ],
+        [
+          "État civil",
+          690,
+          650,
+          890
+        ],
+        [
+          "Informatique",
+          660,
+          470,
+          570
+        ]
+      ]
+    },
+    "options": [
+      "1 340 visites",
+      "2 230 visites",
+      "2 450 visites",
+      "1 400 visites"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ligne « État civil » : 690 + 650 + 890 = 2 230 visites.",
+    "optionRationales": [
+      "Oublie la troisième période.",
+      "Correct : somme des trois valeurs de la bonne ligne.",
+      "Somme d'une colonne (tous services) au lieu d'une ligne.",
+      "Somme de la ligne « Culture »."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-207",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la variation, entre 2025 et 2026, pour le service État civil ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Certificats délivrés par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Archives",
+          1600,
+          1640
+        ],
+        [
+          "État civil",
+          440,
+          680
+        ],
+        [
+          "Aides sociales",
+          520,
+          540
+        ],
+        [
+          "Urbanisme",
+          1460,
+          1680
+        ]
+      ]
+    },
+    "options": [
+      "+35,3 %",
+      "154,5 %",
+      "+54,5 %",
+      "+42,9 %"
+    ],
+    "correctIndex": 2,
+    "explanation": "Variation = (680 − 440) / 440 × 100 = +54,5 % (la base est l'année de départ, 2025).",
+    "optionRationales": [
+      "Divise par la valeur d'arrivée (2026) au lieu de la valeur de départ.",
+      "Donne le rapport 2026 / 2025, pas la variation.",
+      "Correct : base de départ (2025) correctement utilisée.",
+      "Divise par la moyenne des deux années au lieu de la valeur de départ."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-208",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle part du total des certificats revient au service Accueil ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Certificats délivrés en 2026",
+      "headers": [
+        "Service",
+        "Certificats délivrés"
+      ],
+      "rows": [
+        [
+          "Accueil",
+          270
+        ],
+        [
+          "Environnement",
+          130
+        ],
+        [
+          "Finances",
+          190
+        ],
+        [
+          "Informatique",
+          510
+        ],
+        [
+          "Ressources humaines",
+          120
+        ]
+      ]
+    },
+    "options": [
+      "22,1 %",
+      "52,9 %",
+      "28,4 %",
+      "20,0 %"
+    ],
+    "correctIndex": 0,
+    "explanation": "Total = 270 + 130 + 190 + 510 + 120 = 1 220. Part = 270 / 1 220 × 100 = 22,1 %.",
+    "optionRationales": [
+      "Correct : rapport entre la valeur du service et le total de la colonne.",
+      "Rapporte la valeur à celle du service Informatique.",
+      "Divise par le total des autres services seulement.",
+      "Part égale supposée entre services, sans calcul."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-209",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quel service connaît la plus forte hausse en pourcentage entre 2025 et 2026 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Visites au guichet par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "État civil",
+          430,
+          540
+        ],
+        [
+          "Sports",
+          160,
+          290
+        ],
+        [
+          "Archives",
+          280,
+          450
+        ],
+        [
+          "Accueil",
+          410,
+          440
+        ]
+      ]
+    },
+    "options": [
+      "Accueil",
+      "Sports",
+      "État civil",
+      "Archives"
+    ],
+    "correctIndex": 1,
+    "explanation": "Taux de hausse : État civil 25,6 % ; Sports 81,3 % ; Archives 60,7 % ; Accueil 7,3 %. Le plus élevé est celui du service Sports, même si la plus forte hausse en valeur absolue est celle du service Archives.",
+    "optionRationales": [
+      "Taux de hausse inférieur à celui du bon service.",
+      "Correct : taux de hausse le plus élevé.",
+      "Taux de hausse inférieur à celui du bon service.",
+      "Plus forte hausse en valeur absolue, pas en pourcentage."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-210",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Combien de demandes le service Archives totalise-t-il sur les trois périodes ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes reçues par service",
+      "headers": [
+        "Service",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Archives",
+          160,
+          210,
+          720
+        ],
+        [
+          "Aides sociales",
+          250,
+          570,
+          900
+        ],
+        [
+          "Finances",
+          810,
+          190,
+          610
+        ],
+        [
+          "Informatique",
+          550,
+          590,
+          760
+        ]
+      ]
+    },
+    "options": [
+      "1 090 demandes",
+      "1 770 demandes",
+      "1 720 demandes",
+      "370 demandes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ligne « Archives » : 160 + 210 + 720 = 1 090 demandes.",
+    "optionRationales": [
+      "Correct : somme des trois valeurs de la bonne ligne.",
+      "Somme d'une colonne (tous services) au lieu d'une ligne.",
+      "Somme de la ligne « Aides sociales ».",
+      "Oublie la troisième période."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-211",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Combien de dossiers le service Archives totalise-t-il sur les trois périodes ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers traités par service",
+      "headers": [
+        "Service",
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "rows": [
+        [
+          "Informatique",
+          390,
+          580,
+          360
+        ],
+        [
+          "Archives",
+          580,
+          780,
+          550
+        ],
+        [
+          "Finances",
+          600,
+          120,
+          130
+        ],
+        [
+          "Accueil",
+          250,
+          910,
+          320
+        ]
+      ]
+    },
+    "options": [
+      "1 360 dossiers",
+      "1 820 dossiers",
+      "1 910 dossiers",
+      "1 330 dossiers"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ligne « Archives » : 580 + 780 + 550 = 1 910 dossiers.",
+    "optionRationales": [
+      "Oublie la troisième période.",
+      "Somme d'une colonne (tous services) au lieu d'une ligne.",
+      "Correct : somme des trois valeurs de la bonne ligne.",
+      "Somme de la ligne « Informatique »."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-212",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la variation, entre 2025 et 2026, pour le service Archives ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Demandes reçues par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Archives",
+          1260,
+          1380
+        ],
+        [
+          "Environnement",
+          520,
+          420
+        ],
+        [
+          "Culture",
+          1140,
+          1340
+        ],
+        [
+          "Ressources humaines",
+          840,
+          820
+        ]
+      ]
+    },
+    "options": [
+      "+9,1 %",
+      "+9,5 %",
+      "109,5 %",
+      "+8,7 %"
+    ],
+    "correctIndex": 1,
+    "explanation": "Variation = (1 380 − 1 260) / 1 260 × 100 = +9,5 % (la base est l'année de départ, 2025).",
+    "optionRationales": [
+      "Divise par la moyenne des deux années au lieu de la valeur de départ.",
+      "Correct : base de départ (2025) correctement utilisée.",
+      "Donne le rapport 2026 / 2025, pas la variation.",
+      "Divise par la valeur d'arrivée (2026) au lieu de la valeur de départ."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-213",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle part du total des dossiers revient au service Environnement ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "table",
+      "caption": "Dossiers traités en 2026",
+      "headers": [
+        "Service",
+        "Dossiers traités"
+      ],
+      "rows": [
+        [
+          "Aides sociales",
+          370
+        ],
+        [
+          "Voirie",
+          560
+        ],
+        [
+          "Archives",
+          600
+        ],
+        [
+          "Environnement",
+          130
+        ],
+        [
+          "État civil",
+          220
+        ]
+      ]
+    },
+    "options": [
+      "6,9 %",
+      "35,1 %",
+      "20,0 %",
+      "7,4 %"
+    ],
+    "correctIndex": 0,
+    "explanation": "Total = 370 + 560 + 600 + 130 + 220 = 1 880. Part = 130 / 1 880 × 100 = 6,9 %.",
+    "optionRationales": [
+      "Correct : rapport entre la valeur du service et le total de la colonne.",
+      "Rapporte la valeur à celle du service Aides sociales.",
+      "Part égale supposée entre services, sans calcul.",
+      "Divise par le total des autres services seulement."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-tab-214",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-tableau",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quel service connaît la plus forte hausse en pourcentage entre 2025 et 2026 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Courriers enregistrés par service",
+      "headers": [
+        "Service",
+        "2025",
+        "2026"
+      ],
+      "rows": [
+        [
+          "Aides sociales",
+          490,
+          540
+        ],
+        [
+          "Ressources humaines",
+          240,
+          330
+        ],
+        [
+          "État civil",
+          750,
+          910
+        ],
+        [
+          "Culture",
+          740,
+          920
+        ]
+      ]
+    },
+    "options": [
+      "Culture",
+      "Ressources humaines",
+      "État civil",
+      "Aides sociales"
+    ],
+    "correctIndex": 1,
+    "explanation": "Taux de hausse : Aides sociales 10,2 % ; Ressources humaines 37,5 % ; État civil 21,3 % ; Culture 24,3 %. Le plus élevé est celui du service Ressources humaines, même si la plus forte hausse en valeur absolue est celle du service Culture.",
+    "optionRationales": [
+      "Plus forte hausse en valeur absolue, pas en pourcentage.",
+      "Correct : taux de hausse le plus élevé.",
+      "Taux de hausse inférieur à celui du bon service.",
+      "Taux de hausse inférieur à celui du bon service."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-201",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Mars et Avr. ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Visites au guichet par mois",
+      "unit": "visites",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai"
+      ],
+      "series": [
+        {
+          "name": "Visites au guichet",
+          "values": [
+            850,
+            510,
+            320,
+            810,
+            360
+          ]
+        }
+      ]
+    },
+    "options": [
+      "490 visites",
+      "1 130 visites",
+      "530 visites",
+      "500 visites"
+    ],
+    "correctIndex": 0,
+    "explanation": "Avr. : 810 ; Mars : 320. Écart = 490 visites.",
+    "optionRationales": [
+      "Correct : différence entre les deux barres demandées.",
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Utilise la barre de Janv. au lieu de Avr.",
+      "Erreur de lecture d'une des deux barres."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-202",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la moyenne mensuelle sur la période représentée ? (arrondie à 0,1)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Visites au guichet par mois",
+      "unit": "visites",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Visites au guichet",
+          "values": [
+            570,
+            270,
+            400,
+            610,
+            620,
+            220
+          ]
+        }
+      ]
+    },
+    "options": [
+      "420,0 visites",
+      "485,0 visites",
+      "538,0 visites",
+      "448,3 visites"
+    ],
+    "correctIndex": 3,
+    "explanation": "Somme = 570 + 270 + 400 + 610 + 620 + 220 = 2 690 ; moyenne = 2 690 / 6 = 448,3 visites.",
+    "optionRationales": [
+      "Moyenne du minimum et du maximum seulement.",
+      "Valeur médiane, pas la moyenne.",
+      "Divise par 5 au lieu de 6.",
+      "Correct : somme divisée par le nombre de périodes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-203",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "En quel mois l'écart entre Antenne Sud et Site central est-il le plus grand ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Dossiers traités par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Antenne Sud",
+          "values": [
+            125,
+            240,
+            215,
+            250,
+            155,
+            395
+          ]
+        },
+        {
+          "name": "Site central",
+          "values": [
+            400,
+            170,
+            200,
+            275,
+            420,
+            345
+          ]
+        }
+      ]
+    },
+    "options": [
+      "Févr.",
+      "Janv.",
+      "Juin",
+      "Mai"
+    ],
+    "correctIndex": 1,
+    "explanation": "Écarts mensuels : Janv. 275 ; Févr. 70 ; Mars 15 ; Avr. 25 ; Mai 265 ; Juin 50. Le plus grand est en Janv.",
+    "optionRationales": [
+      "L'écart y est de 70, inférieur au maximum.",
+      "Correct : écart maximal entre les deux courbes.",
+      "Mois où Antenne Sud atteint son maximum, pas l'écart maximal.",
+      "Mois où Site central atteint son maximum, pas l'écart maximal."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-204",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quelle est la variation entre 2022 et 2026 ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Appels au service d'information par année",
+      "unit": "appels",
+      "labels": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "series": [
+        {
+          "name": "Appels au service d'information",
+          "values": [
+            780,
+            700,
+            470,
+            690,
+            390
+          ]
+        }
+      ]
+    },
+    "options": [
+      "−43,5 %",
+      "−12,5 %",
+      "−50,0 %",
+      "−100,0 %"
+    ],
+    "correctIndex": 2,
+    "explanation": "(390 − 780) / 780 × 100 = −50,0 %.",
+    "optionRationales": [
+      "Variation de la dernière année seulement (2025 → 2026).",
+      "Divise la variation totale par 4, ce qui n'est pas demandé.",
+      "Correct : base de départ 2022 correctement utilisée.",
+      "Divise par la valeur de 2026 au lieu de celle de 2022."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-205",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Au T1, quelle part des courriers a été traitée en ligne ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Courriers enregistrés selon le canal",
+      "unit": "courriers",
+      "labels": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "series": [
+        {
+          "name": "En ligne",
+          "values": [
+            220,
+            160,
+            150,
+            180
+          ]
+        },
+        {
+          "name": "Au guichet",
+          "values": [
+            350,
+            170,
+            450,
+            170
+          ]
+        }
+      ]
+    },
+    "options": [
+      "61,4 %",
+      "62,9 %",
+      "38,4 %",
+      "38,6 %"
+    ],
+    "correctIndex": 3,
+    "explanation": "T1 : 220 en ligne et 350 au guichet, soit 570. Part en ligne = 220 / 570 × 100 = 38,6 %.",
+    "optionRationales": [
+      "Part du guichet, pas du canal en ligne.",
+      "Rapporte le canal en ligne au guichet au lieu du total.",
+      "Part en ligne sur toute l'année, pas sur le trimestre demandé.",
+      "Correct : part du canal en ligne dans le total du trimestre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-206",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Juin et Juil. ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Demandes reçues par mois",
+      "unit": "demandes",
+      "labels": [
+        "Juin",
+        "Juil.",
+        "Août",
+        "Sept.",
+        "Oct."
+      ],
+      "series": [
+        {
+          "name": "Demandes reçues",
+          "values": [
+            850,
+            640,
+            190,
+            510,
+            170
+          ]
+        }
+      ]
+    },
+    "options": [
+      "210 demandes",
+      "660 demandes",
+      "220 demandes",
+      "1 490 demandes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Juil. : 640 ; Juin : 850. Écart = 210 demandes.",
+    "optionRationales": [
+      "Correct : différence entre les deux barres demandées.",
+      "Utilise la barre de Août au lieu de Juil.",
+      "Erreur de lecture d'une des deux barres.",
+      "Additionne les deux valeurs au lieu de les soustraire."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-207",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Avr. et Mai ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Demandes reçues par mois",
+      "unit": "demandes",
+      "labels": [
+        "Avr.",
+        "Mai",
+        "Juin",
+        "Juil.",
+        "Août"
+      ],
+      "series": [
+        {
+          "name": "Demandes reçues",
+          "values": [
+            570,
+            150,
+            780,
+            370,
+            780
+          ]
+        }
+      ]
+    },
+    "options": [
+      "430 demandes",
+      "720 demandes",
+      "210 demandes",
+      "420 demandes"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mai : 150 ; Avr. : 570. Écart = 420 demandes.",
+    "optionRationales": [
+      "Erreur de lecture d'une des deux barres.",
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Utilise la barre de Juin au lieu de Mai.",
+      "Correct : différence entre les deux barres demandées."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-208",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la moyenne trimestrielle sur la période représentée ? (arrondie à 0,1)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Visites au guichet par trimestre",
+      "unit": "visites",
+      "labels": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "series": [
+        {
+          "name": "Visites au guichet",
+          "values": [
+            590,
+            330,
+            410,
+            550
+          ]
+        }
+      ]
+    },
+    "options": [
+      "460 visites",
+      "626,7 visites",
+      "480 visites",
+      "470 visites"
+    ],
+    "correctIndex": 3,
+    "explanation": "Somme = 590 + 330 + 410 + 550 = 1 880 ; moyenne = 1 880 / 4 = 470 visites.",
+    "optionRationales": [
+      "Moyenne du minimum et du maximum seulement.",
+      "Divise par 3 au lieu de 4.",
+      "Valeur médiane, pas la moyenne.",
+      "Correct : somme divisée par le nombre de périodes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-209",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "En quel mois l'écart entre Antenne Nord et Site central est-il le plus grand ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Dossiers traités par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Antenne Nord",
+          "values": [
+            235,
+            185,
+            415,
+            265,
+            150,
+            360
+          ]
+        },
+        {
+          "name": "Site central",
+          "values": [
+            315,
+            140,
+            360,
+            335,
+            160,
+            230
+          ]
+        }
+      ]
+    },
+    "options": [
+      "Mars",
+      "Juin",
+      "Janv.",
+      "Févr."
+    ],
+    "correctIndex": 1,
+    "explanation": "Écarts mensuels : Janv. 80 ; Févr. 45 ; Mars 55 ; Avr. 70 ; Mai 10 ; Juin 130. Le plus grand est en Juin.",
+    "optionRationales": [
+      "Mois où Antenne Nord atteint son maximum, pas l'écart maximal.",
+      "Correct : écart maximal entre les deux courbes.",
+      "L'écart y est de 80, inférieur au maximum.",
+      "L'écart y est de 45, inférieur au maximum."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-210",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quelle est la variation entre 2022 et 2026 ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Crédits engagés par année",
+      "unit": "milliers d'euros",
+      "labels": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "series": [
+        {
+          "name": "Crédits engagés",
+          "values": [
+            660,
+            360,
+            390,
+            860,
+            850
+          ]
+        }
+      ]
+    },
+    "options": [
+      "+28,8 %",
+      "+22,4 %",
+      "−1,2 %",
+      "+7,2 %"
+    ],
+    "correctIndex": 0,
+    "explanation": "(850 − 660) / 660 × 100 = +28,8 %.",
+    "optionRationales": [
+      "Correct : base de départ 2022 correctement utilisée.",
+      "Divise par la valeur de 2026 au lieu de celle de 2022.",
+      "Variation de la dernière année seulement (2025 → 2026).",
+      "Divise la variation totale par 4, ce qui n'est pas demandé."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-211",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Au T4, quelle part des dossiers a été traitée en ligne ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Dossiers traités selon le canal",
+      "unit": "dossiers",
+      "labels": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "series": [
+        {
+          "name": "En ligne",
+          "values": [
+            160,
+            340,
+            580,
+            320
+          ]
+        },
+        {
+          "name": "Au guichet",
+          "values": [
+            400,
+            380,
+            470,
+            280
+          ]
+        }
+      ]
+    },
+    "options": [
+      "46,7 %",
+      "47,8 %",
+      "114,3 %",
+      "53,3 %"
+    ],
+    "correctIndex": 3,
+    "explanation": "T4 : 320 en ligne et 280 au guichet, soit 600. Part en ligne = 320 / 600 × 100 = 53,3 %.",
+    "optionRationales": [
+      "Part du guichet, pas du canal en ligne.",
+      "Part en ligne sur toute l'année, pas sur le trimestre demandé.",
+      "Rapporte le canal en ligne au guichet au lieu du total.",
+      "Correct : part du canal en ligne dans le total du trimestre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-212",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Févr. et Mai ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Demandes reçues par mois",
+      "unit": "demandes",
+      "labels": [
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Demandes reçues",
+          "values": [
+            770,
+            550,
+            840,
+            860,
+            560
+          ]
+        }
+      ]
+    },
+    "options": [
+      "1 630 demandes",
+      "90 demandes",
+      "220 demandes",
+      "100 demandes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mai : 860 ; Févr. : 770. Écart = 90 demandes.",
+    "optionRationales": [
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Correct : différence entre les deux barres demandées.",
+      "Utilise la barre de Mars au lieu de Mai.",
+      "Erreur de lecture d'une des deux barres."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-213",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Févr. et Mai ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Visites au guichet par mois",
+      "unit": "visites",
+      "labels": [
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Visites au guichet",
+          "values": [
+            360,
+            500,
+            150,
+            210,
+            630
+          ]
+        }
+      ]
+    },
+    "options": [
+      "140 visites",
+      "150 visites",
+      "160 visites",
+      "570 visites"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mai : 210 ; Févr. : 360. Écart = 150 visites.",
+    "optionRationales": [
+      "Utilise la barre de Mars au lieu de Mai.",
+      "Correct : différence entre les deux barres demandées.",
+      "Erreur de lecture d'une des deux barres.",
+      "Additionne les deux valeurs au lieu de les soustraire."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-214",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la moyenne mensuelle sur la période représentée ? (arrondie à 0,1)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Dossiers traités par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Dossiers traités",
+          "values": [
+            470,
+            780,
+            370,
+            230,
+            240,
+            550
+          ]
+        }
+      ]
+    },
+    "options": [
+      "420 dossiers",
+      "505 dossiers",
+      "528 dossiers",
+      "440 dossiers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Somme = 470 + 780 + 370 + 230 + 240 + 550 = 2 640 ; moyenne = 2 640 / 6 = 440 dossiers.",
+    "optionRationales": [
+      "Valeur médiane, pas la moyenne.",
+      "Moyenne du minimum et du maximum seulement.",
+      "Divise par 5 au lieu de 6.",
+      "Correct : somme divisée par le nombre de périodes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-215",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "En quel mois l'écart entre Service A et Antenne Sud est-il le plus grand ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Dossiers traités par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Service A",
+          "values": [
+            195,
+            395,
+            305,
+            320,
+            235,
+            445
+          ]
+        },
+        {
+          "name": "Antenne Sud",
+          "values": [
+            120,
+            395,
+            410,
+            270,
+            370,
+            255
+          ]
+        }
+      ]
+    },
+    "options": [
+      "Juin",
+      "Mars",
+      "Janv.",
+      "Févr."
+    ],
+    "correctIndex": 0,
+    "explanation": "Écarts mensuels : Janv. 75 ; Févr. 0 ; Mars 105 ; Avr. 50 ; Mai 135 ; Juin 190. Le plus grand est en Juin.",
+    "optionRationales": [
+      "Correct : écart maximal entre les deux courbes.",
+      "Mois où Antenne Sud atteint son maximum, pas l'écart maximal.",
+      "L'écart y est de 75, inférieur au maximum.",
+      "L'écart y est de 0, inférieur au maximum."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-216",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Quelle est la variation entre 2022 et 2026 ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Dépenses de fonctionnement par année",
+      "unit": "milliers d'euros",
+      "labels": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "series": [
+        {
+          "name": "Dépenses de fonctionnement",
+          "values": [
+            590,
+            640,
+            890,
+            440,
+            770
+          ]
+        }
+      ]
+    },
+    "options": [
+      "+75,0 %",
+      "+23,4 %",
+      "+7,6 %",
+      "+30,5 %"
+    ],
+    "correctIndex": 3,
+    "explanation": "(770 − 590) / 590 × 100 = +30,5 %.",
+    "optionRationales": [
+      "Variation de la dernière année seulement (2025 → 2026).",
+      "Divise par la valeur de 2026 au lieu de celle de 2022.",
+      "Divise la variation totale par 4, ce qui n'est pas demandé.",
+      "Correct : base de départ 2022 correctement utilisée."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-217",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Au T3, quelle part des courriers a été traitée en ligne ? (arrondie à 0,1 %)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Courriers enregistrés selon le canal",
+      "unit": "courriers",
+      "labels": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "series": [
+        {
+          "name": "En ligne",
+          "values": [
+            370,
+            570,
+            510,
+            180
+          ]
+        },
+        {
+          "name": "Au guichet",
+          "values": [
+            400,
+            510,
+            370,
+            350
+          ]
+        }
+      ]
+    },
+    "options": [
+      "50,0 %",
+      "42,0 %",
+      "58,0 %",
+      "137,8 %"
+    ],
+    "correctIndex": 2,
+    "explanation": "T3 : 510 en ligne et 370 au guichet, soit 880. Part en ligne = 510 / 880 × 100 = 58,0 %.",
+    "optionRationales": [
+      "Part en ligne sur toute l'année, pas sur le trimestre demandé.",
+      "Part du guichet, pas du canal en ligne.",
+      "Correct : part du canal en ligne dans le total du trimestre.",
+      "Rapporte le canal en ligne au guichet au lieu du total."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-218",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Mai et Sept. ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Courriers enregistrés par mois",
+      "unit": "courriers",
+      "labels": [
+        "Mai",
+        "Juin",
+        "Juil.",
+        "Août",
+        "Sept."
+      ],
+      "series": [
+        {
+          "name": "Courriers enregistrés",
+          "values": [
+            190,
+            600,
+            180,
+            480,
+            750
+          ]
+        }
+      ]
+    },
+    "options": [
+      "940 courriers",
+      "570 courriers",
+      "410 courriers",
+      "560 courriers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sept. : 750 ; Mai : 190. Écart = 560 courriers.",
+    "optionRationales": [
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Erreur de lecture d'une des deux barres.",
+      "Utilise la barre de Juin au lieu de Sept.",
+      "Correct : différence entre les deux barres demandées."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-219",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Sept. et Oct. ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Visites au guichet par mois",
+      "unit": "visites",
+      "labels": [
+        "Sept.",
+        "Oct.",
+        "Nov.",
+        "Déc."
+      ],
+      "series": [
+        {
+          "name": "Visites au guichet",
+          "values": [
+            340,
+            870,
+            340,
+            720
+          ]
+        }
+      ]
+    },
+    "options": [
+      "540 visites",
+      "150 visites",
+      "1 210 visites",
+      "530 visites"
+    ],
+    "correctIndex": 3,
+    "explanation": "Oct. : 870 ; Sept. : 340. Écart = 530 visites.",
+    "optionRationales": [
+      "Erreur de lecture d'une des deux barres.",
+      "Écart entre Oct. et Déc. au lieu de Sept. et Oct.",
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Correct : différence entre les deux barres demandées."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-220",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la moyenne mensuelle sur la période représentée ? (arrondie à 0,1)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Appels au service d'information par mois",
+      "unit": "appels",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Appels au service d'information",
+          "values": [
+            280,
+            560,
+            240,
+            660,
+            790,
+            640
+          ]
+        }
+      ]
+    },
+    "options": [
+      "528,3 appels",
+      "600,0 appels",
+      "515,0 appels",
+      "634,0 appels"
+    ],
+    "correctIndex": 0,
+    "explanation": "Somme = 280 + 560 + 240 + 660 + 790 + 640 = 3 170 ; moyenne = 3 170 / 6 = 528,3 appels.",
+    "optionRationales": [
+      "Correct : somme divisée par le nombre de périodes.",
+      "Valeur médiane, pas la moyenne.",
+      "Moyenne du minimum et du maximum seulement.",
+      "Divise par 5 au lieu de 6."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "numeric-chart-221",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "En quel mois l'écart entre Service B et Site central est-il le plus grand ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Demandes reçues par mois",
+      "unit": "demandes",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai",
+        "Juin"
+      ],
+      "series": [
+        {
+          "name": "Service B",
+          "values": [
+            180,
+            320,
+            165,
+            395,
+            315,
+            435
+          ]
+        },
+        {
+          "name": "Site central",
+          "values": [
+            400,
+            265,
+            165,
+            325,
+            265,
+            275
+          ]
+        }
+      ]
+    },
+    "options": [
+      "Févr.",
+      "Mars",
+      "Juin",
+      "Janv."
+    ],
+    "correctIndex": 3,
+    "explanation": "Écarts mensuels : Janv. 220 ; Févr. 55 ; Mars 0 ; Avr. 70 ; Mai 50 ; Juin 160. Le plus grand est en Janv.",
+    "optionRationales": [
+      "L'écart y est de 55, inférieur au maximum.",
+      "L'écart y est de 0, inférieur au maximum.",
+      "Mois où Service B atteint son maximum, pas l'écart maximal.",
+      "Correct : écart maximal entre les deux courbes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   }
 ]
