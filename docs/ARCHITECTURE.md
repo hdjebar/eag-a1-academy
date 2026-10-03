@@ -38,12 +38,17 @@ flowchart TB
 ```text
 eag-a1-academy/
 ├── eag-a1-academy.html       # Point d'entrée de l'application (HTML5 sémantique + styles CSS)
-├── app.js                    # Moteur de session, rendu réactif et banque de données compilée
+├── app.js                    # Interface de l'application (rendu, navigation, chronomètres)
+├── bank/app-bank.js          # Banque compacte générée par npm run build:bank (chargée avant app.js)
+├── bank/admin-bank.js        # Schéma, banque complète et consignes pour admin.html (généré)
+├── shared/session.js         # Tirage équilibré, ordre des options, notation, examen blanc (fonctions pures)
 ├── index.html                # Redirection d'appoint vers eag-a1-academy.html
 ├── admin.html / admin.js     # Interface d'administration (hors ligne ou via npm run admin)
 ├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité, empreinte de contenu)
 ├── shared/chart.js           # Rendu SVG des graphiques (barres, courbes) pour l'application et l'admin
 ├── shared/calculator.js      # Calculatrice à l'écran des tests numériques (analyseur sans eval)
+├── tests/e2e/                # Tests de bout en bout Playwright (application, administration, accessibilité)
+├── playwright.config.mjs     # Configuration Playwright (bureau et mobile 375 px)
 │
 ├── data/
 │   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand, empreinte) ; contrôlé en CI
@@ -115,7 +120,7 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les questions approuvées de chaque catégorie (591 au 3 octobre 2026).
+* **Tirage aléatoire équilibré par catégorie** : chaque session (entraînement, simulation de 15 questions, examen blanc de 5 tests de 10 questions) tire ses questions sans remise dans la catégorie, en répartissant le tirage sur toutes les compétences puis sur les niveaux de difficulté (`EagSession.drawBalanced`, `shared/session.js`). Le générateur aléatoire est injectable : les tests utilisent une graine fixe.
 * **Raisonnement abstrait (Test géométrique)** : le stimulus de type `{ type: "shapes", text: "..." }` permet la représentation structurée et accessible de matrices 3×3 et de suites de figures (rotations, symétries, grilles d'éléments géométriques purs), sans dépendance d'image externe ni risque d'injection.
 * **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
 * **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :
@@ -158,6 +163,7 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0007 : Régénération par LLM sous forme de révisions relues](adr/0007-llm-revisions.md)
 * [ADR-0008 : Traçabilité obligatoire en CI (check-review-log) et génération déterministe de figures abstraites](adr/0008-ci-review-log-gate-and-rule-based-abstract-generation.md)
 * [ADR-0009 : Graphiques et contrôles de réalisme des formats](adr/0009-charts-and-format-realism.md)
+* [ADR-0010 : Banque dans `bank/*.js`, logique de session pure et tests de bout en bout](adr/0010-bank-files-session-core-e2e.md)
 
 L'étude comparative et le cadre de référence psychométrique sont documentés dans :
 * [docs/research/eag-2026-benchmark.md](research/eag-2026-benchmark.md) : Benchmark approfondi des épreuves psychotechniques internationales (EPSO, SHL Direct, GovJobs, psychotechnique.lu, Travaillerpour.be).

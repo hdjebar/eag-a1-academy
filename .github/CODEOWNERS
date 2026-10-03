@@ -1,0 +1,10 @@
+# Changes to approved questions, review decisions, the item schema and the review tooling
+# need a review from the owner. Takes effect once branch protection on `main` requires
+# "Review from Code Owners" (Settings → Branches).
+/data/approved/            @hdjebar
+/data/review-log/          @hdjebar
+/schema/                   @hdjebar
+/shared/item-rules.js      @hdjebar
+/scripts/promote-candidate.mjs @hdjebar
+/scripts/check-review-log.mjs  @hdjebar
+/.github/                  @hdjebar
