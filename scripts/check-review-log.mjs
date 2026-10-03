@@ -77,6 +77,7 @@ export function checkReviewLogData(approvedItems, logs) {
   const latest = new Map();
   const lifecycle = new Map();
   const seen = new Map(); // id -> fingerprints already recorded, for exact-duplicate diagnostics
+  const history = new Map(); // id -> [{ d, t, file }] approving decisions, for undone restoration
   let entries = 0;
   const errors = [];
   for (const { file, log } of logs) {
@@ -97,13 +98,28 @@ export function checkReviewLogData(approvedItems, logs) {
         seen.set(d.id, prior);
         const prev = latest.get(d.id);
         if (!prev || t >= prev.t) latest.set(d.id, { ...d, t, file });
+        const hist = history.get(d.id) || [];
+        hist.push({ ...d, t, file });
+        history.set(d.id, hist);
       } else if (d && REMOVING.has(d.decision)) {
         const invalid = removalDecisionErrors(d);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
       } else if (d && MINOR.has(d.decision)) {
         const invalid = minorDecisionErrors(d);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
-        if (d.decision === "undone") { latest.delete(d.id); lifecycle.delete(d.id); continue; }
+        if (d.decision === "undone") {
+          // The undone cancels the latest approval of the id (e.g. a revision whose
+          // undo restores the previous version) and any earlier one remains in force.
+          const hist = history.get(d.id) || [];
+          let idx = -1;
+          for (let j = hist.length - 1; j >= 0; j--) if (hist[j].t <= t) { idx = j; break; }
+          if (idx !== -1) hist.splice(idx, 1);
+          history.set(d.id, hist);
+          const rest = hist.length ? hist.reduce((a, b) => (b.t >= a.t ? b : a)) : null;
+          if (rest) { latest.set(d.id, rest); lifecycle.set(d.id, rest); }
+          else { latest.delete(d.id); lifecycle.delete(d.id); }
+          continue;
+        }
       }
       if (d && (APPROVING.has(d.decision) || REMOVING.has(d.decision))) {
         const prev = lifecycle.get(d.id);

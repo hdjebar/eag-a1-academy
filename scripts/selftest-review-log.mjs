@@ -77,6 +77,15 @@ const mkDec = (item, over = {}) => ({
   const r = checkReviewLogData([v2], logs);
   if (r.errors.length) throw new Error(`approuver → annuler → réapprouver doit passer — ${r.errors.join(" ; ")}`);
 }
+{
+  // Undoing a REVISION restores the previous approval: the bank keeps v1, whose
+  // approving decision must become the reference again (not be erased with the revision's).
+  const v1 = mkItem();
+  const v2 = mkItem({ version: 2, reviewedAt: "2026-10-03T12:00:00Z" });
+  const undone = { id: v1.id, decision: "undone", reviewer: v1.reviewer, at: "2026-10-03T14:00:00Z" };
+  const r = checkReviewLogData([v1], [{ file: "a.json", log: { decisions: [mkDec(v1), mkDec(v2), undone] } }]);
+  if (r.errors.length) throw new Error(`annuler une révision doit rétablir l'approbation v1 — ${r.errors.join(" ; ")}`);
+}
 
 /* The item's reviewedAt must match the decision's timestamp. */
 {
