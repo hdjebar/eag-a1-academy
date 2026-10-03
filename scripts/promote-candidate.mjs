@@ -6,6 +6,9 @@ import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { candidateReviewHash } from "./lib/review-rules.mjs";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
+import { withLock } from "./lib/lockfile.mjs";
+
+const ROOT = path.resolve(".");
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -153,7 +156,7 @@ if (values["dry-run"]) {
 const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
 const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
-const { total } = withFileRollback(touched, () => {
+const { total } = await withLock(ROOT, "promote", () => withFileRollback(touched, () => {
   for (const [target, bank] of byCategory) writeFileAtomic(target, JSON.stringify(bank, null, 2) + "\n");
   writeFileAtomic(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n");
   if (remaining.length) writeFileAtomic(candidateFile, JSON.stringify(remaining, null, 2) + "\n");
@@ -162,7 +165,7 @@ const { total } = withFileRollback(touched, () => {
     if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
   }
   return syncAppJs();
-});
+}));
 console.log(`Journal de relecture : ${logFile}`);
 if (remaining.length) console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
 else console.log(`\nTous les items traités : ${candidateFile} supprimé.`);

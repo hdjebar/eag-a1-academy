@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
+import { withLock } from "./lib/lockfile.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { approvingDecisionErrors, removalDecisionErrors } from "./check-review-log.mjs";
 
@@ -269,8 +270,11 @@ const server = http.createServer(async (req, res) => {
 
     if (req.method === "GET" && url.pathname === "/api/state") return send(res, 200, state());
     if (req.method === "POST" && url.pathname === "/api/save") {
+      // Read the body first so a /api/run arriving mid-read wins the race
+      // (the running check must reflect the state at save time, not at receive time).
+      const body = await readBody(req);
       if (running) return send(res, 409, { error: "Une tâche est en cours" });
-      return send(res, 200, save(await readBody(req)));
+      return send(res, 200, await withLock(ROOT, "save", () => save(body)));
     }
     if (req.method === "POST" && url.pathname === "/api/run") {
       if (running) return send(res, 409, { error: "Une tâche est déjà en cours" });
