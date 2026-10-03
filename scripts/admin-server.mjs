@@ -25,7 +25,7 @@ const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
 const GENERATED = path.join(ROOT, "generated");
 const APPROVED = path.join(ROOT, "data/approved");
 const LOG_DIR = path.join(ROOT, "data/review-log");
-const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8", "/shared/chart.js": "text/javascript; charset=utf-8" };
+const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8", "/shared/chart.js": "text/javascript; charset=utf-8", "/bank/admin-bank.js": "text/javascript; charset=utf-8" };
 const CANDIDATE_NAME = /^[A-Za-z0-9._-]+\.json$/;
 const MAX_BODY = 5 * 1024 * 1024;
 const TOKEN = crypto.randomBytes(18).toString("base64url");
@@ -193,7 +193,7 @@ function save(body) {
   const deleted = [];
   const manualFile = manual.length ? path.join(GENERATED, `manual-${stamp()}.json`) : null;
   const logFile = logName ? path.join(LOG_DIR, logName) : null;
-  const touched = [path.join(ROOT, "app.js"), path.join(ROOT, "admin.js"), ...Object.keys(approved).map((c) => path.join(APPROVED, `${c}.json`))];
+  const touched = [path.join(ROOT, "bank/app-bank.js"), path.join(ROOT, "bank/admin-bank.js"), ...Object.keys(approved).map((c) => path.join(APPROVED, `${c}.json`))];
   for (const name of Object.keys(candidates)) {
     const f = path.join(GENERATED, name);
     touched.push(f, f.replace(/\.json$/, ".review.json"));
@@ -215,7 +215,7 @@ function save(body) {
     if (logFile) { writeJson(logFile, proposedLog); written.push(rel(logFile)); }
     return syncAppJs();
   });
-  return { written, deleted, build: `app.js et admin.js resynchronisés (${total} questions).` };
+  return { written, deleted, build: `bank/app-bank.js et bank/admin-bank.js recompilés (${total} questions).` };
 }
 
 function run(cmd, args, env = {}) {
