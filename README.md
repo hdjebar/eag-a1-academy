@@ -103,7 +103,7 @@ Le projet repose sur une séparation physique stricte entre l'application client
 
 1. **Client statique (`app.js`, `eag-a1-academy.html`)** :
    - Rendu sécurisé : tout texte d'item est formellement échappé via `esc()` pour neutraliser les injections XSS.
-   - Les questions validées de `data/approved/` sont compilées et embarquées dans `app.js` lors du build (`npm run build:bank`), permettant un fonctionnement immédiat même via le protocole `file://`.
+   - Les questions validées de `data/approved/` sont compilées par `npm run build:bank` dans `bank/app-bank.js` (application) et `bank/admin-bank.js` (administration), chargés par des balises `<script>` classiques : l'application fonctionne toujours en ouvrant le fichier HTML directement (`file://`), et le code applicatif (`app.js`, `admin.js`) reste lisible et séparé des données.
 2. **Architecture décisionnelle documentée** :
    - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : description détaillée des modules, de l'état en mémoire et du cycle de vie.
    - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0007).
@@ -141,9 +141,9 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 
 | Commande | Rôle |
 | :--- | :--- |
-| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque, le contrôle de synchronisation de `app.js` et `admin.js`, et le contrôle de relecture (`check:review-log`). |
+| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque, le contrôle de synchronisation de `bank/*.js`, et le contrôle de relecture (`check:review-log`). |
 | `npm run admin` | Lance l'interface d'administration locale (127.0.0.1, jeton par session). |
-| `npm run build:bank` | Compile et synchronise `data/approved/*.json` dans `app.js` et `admin.js`. |
+| `npm run build:bank` | Compile `data/approved/*.json` dans `bank/app-bank.js` et `bank/admin-bank.js`. |
 | `npm run validate:bank` | Valide un ou plusieurs fichiers de questions candidats contre le schéma. |
 | `npm run generate:bank` | Génère un lot de questions candidates via API (OpenAI/Ollama). |
 | `npm run generate:abstract` | Génère des candidats de raisonnement abstrait déterministes par règles géométriques (matrices et suites). |

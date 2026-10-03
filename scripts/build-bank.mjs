@@ -5,13 +5,10 @@ import { checkBank } from "./validate-bank.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPROVED_DIR = path.join(ROOT, "data/approved");
-const TARGET_FILE = path.join(ROOT, "app.js");
-const ADMIN_FILE = path.join(ROOT, "admin.js");
+const TARGET_FILE = path.join(ROOT, "bank/app-bank.js");
+const ADMIN_FILE = path.join(ROOT, "bank/admin-bank.js");
 const SCHEMA_FILE = path.join(ROOT, "schema/question.schema.json");
-const ADMIN_START = "/* ADMIN_DATA_START */";
-const ADMIN_END = "/* ADMIN_DATA_END */";
-const START_MARKER = "/* QUESTION_BANK_START */";
-const END_MARKER = "/* QUESTION_BANK_END */";
+const HEADER = "/* Fichier généré par npm run build:bank depuis data/approved/, schema/ et prompts/ : ne pas modifier à la main. */\n";
 const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
 
 /**
@@ -63,56 +60,41 @@ function readPrompts() {
 }
 
 /**
- * Replaces the text between two markers (markers included) in a source file.
- * @param {string} source - File content.
- * @param {string} start - Start marker.
- * @param {string} end - End marker.
- * @param {string} block - Replacement block, markers included.
- * @param {string} file - File name, for error messages.
- * @returns {string} Updated content.
- */
-function replaceBlock(source, start, end, block, file) {
-  const a = source.indexOf(start);
-  const b = source.indexOf(end);
-  if (a === -1 || b === -1 || b < a) throw new Error(`Marqueurs ${start} introuvables dans ${file}`);
-  return source.slice(0, a) + block + source.slice(b + end.length);
-}
-
-/**
- * Wraps the categorized question data in delimiting markers for static embedding.
+ * Compact bank loaded by eag-a1-academy.html before app.js (classic script, works from file://).
  * @param {Record<string, object[]>} categorized - Compact bank object.
- * @returns {string} JavaScript code snippet with delimiters.
+ * @returns {string} JavaScript source.
  */
 export function generateBankCode(categorized) {
-  return `${START_MARKER}\nconst q = ${JSON.stringify(categorized)};\n${END_MARKER}`;
+  return `${HEADER}globalThis.EAG_BANK = Object.freeze(${JSON.stringify(categorized)});\n`;
 }
 
 /**
- * Synchronizes the generated blocks of app.js (compact question bank) and admin.js
- * (JSON Schema, full approved bank and prompt templates for the offline admin page).
- *
- * In check mode (--check), it only verifies that both files are identical to what
- * data/approved/, the schema and the prompts would produce, without writing (used in CI).
+ * Admin data loaded by admin.html before admin.js: JSON Schema, full approved items, prompt templates.
+ * @param {Record<string, object[]>} full - Full approved items by category.
+ * @returns {string} JavaScript source.
+ */
+export function generateAdminCode(full) {
+  const data = { schema: JSON.parse(fs.readFileSync(SCHEMA_FILE, "utf8")), approved: full, prompts: readPrompts() };
+  return `${HEADER}globalThis.EAG_ADMIN_DATA = ${JSON.stringify(data)};\n`;
+}
+
+/**
+ * Writes bank/app-bank.js and bank/admin-bank.js from data/approved/, the schema and the prompts.
+ * In check mode (--check, used in CI) it only verifies that both files are up to date.
  *
  * @param {object} [options]
- * @param {boolean} [options.check=false] - If true, only checks synchronization without modifying files.
- * @returns {{ total: number, inSync: boolean, bank: Record<string, object[]> }} Synchronization diagnostics and compiled bank.
+ * @param {boolean} [options.check=false] - If true, only checks synchronization without writing.
+ * @returns {{ total: number, inSync: boolean, bank: Record<string, object[]> }}
  */
 export function syncAppJs({ check = false } = {}) {
   const bank = loadAndCompileBank();
   const total = Object.values(bank).reduce((n, items) => n + items.length, 0);
-  const targets = [
-    [TARGET_FILE, START_MARKER, END_MARKER, generateBankCode(bank)],
-    [ADMIN_FILE, ADMIN_START, ADMIN_END, `${ADMIN_START}\nconst SCHEMA = ${JSON.stringify(JSON.parse(fs.readFileSync(SCHEMA_FILE, "utf8")))};\nconst APPROVED_EMBEDDED = ${JSON.stringify(bank.full)};\nconst PROMPTS = ${JSON.stringify(readPrompts())};\n${ADMIN_END}`],
-  ];
   let inSync = true;
-  for (const [file, start, end, block] of targets) {
-    if (!fs.existsSync(file)) continue;
-    const source = fs.readFileSync(file, "utf8");
-    const updated = replaceBlock(source, start, end, block, path.basename(file));
-    if (updated !== source) {
+  for (const [file, code] of [[TARGET_FILE, generateBankCode(bank)], [ADMIN_FILE, generateAdminCode(bank.full)]]) {
+    const current = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null;
+    if (current !== code) {
       inSync = false;
-      if (!check) fs.writeFileSync(file, updated, "utf8");
+      if (!check) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, code, "utf8"); }
     }
   }
   return { total, inSync, bank };
@@ -124,12 +106,12 @@ if (isDirectRun) {
   const { total, inSync, bank } = syncAppJs({ check });
   if (check) {
     if (!inSync) {
-      console.error("❌ app.js ou admin.js n'est pas synchronisé avec data/approved/ et le schéma (lancez npm run build:bank)");
+      console.error("❌ bank/app-bank.js ou bank/admin-bank.js n'est pas à jour (lancez npm run build:bank)");
       process.exit(1);
     }
     console.log(`✅ Banque vérifiée : ${total} questions synchronisées.`);
   } else {
-    console.log(`✅ Banque compilée dans app.js et admin.js (${total} questions) :`);
+    console.log(`✅ Banque compilée dans bank/app-bank.js et bank/admin-bank.js (${total} questions) :`);
     for (const [cat, items] of Object.entries(bank)) console.log(`   - ${cat} : ${items.length}`);
   }
 }

@@ -62,7 +62,7 @@ eag-a1-academy/
 │
 ├── scripts/
 │   ├── admin-server.mjs      # Serveur local de l'interface d'administration (127.0.0.1, jeton)
-│   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js et admin.js
+│   ├── build-bank.mjs        # Compilation de data/approved/ vers bank/app-bank.js et bank/admin-bank.js
 │   ├── check-review-log.mjs  # Contrôle CI : chaque question approuvée a une décision tracée
 │   ├── generate-abstract-figures.mjs # Générateur déterministe de figures abstraites par règles géométriques
 │   ├── generate-data-items.mjs # Générateur par règles : numérique (tableaux, graphiques) et agendas en tableau

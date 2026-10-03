@@ -167,4 +167,4 @@ if (remaining.length) {
 }
 
 const { total } = syncAppJs();
-console.log(`🎉 ${promoted.length} item(s) promu(s) par ${reviewer}. app.js resynchronisé (${total} questions).`);
+console.log(`🎉 ${promoted.length} item(s) promu(s) par ${reviewer}. banque recompilée dans bank/ (${total} questions).`);

@@ -139,7 +139,7 @@ La même page, `admin.html`, fonctionne en deux modes.
 | :--- | :--- | :--- |
 | Banque approuvée | intégrée à `admin.js` par `npm run build:bank` | lue sur le disque |
 | Candidats | glisser-déposer des fichiers `generated/*.json` et `*.review.json` | chargés automatiquement depuis `generated/` |
-| Enregistrement | archive `.zip` à décompresser à la racine du dépôt | écrit dans le dépôt, puis `app.js` et `admin.js` resynchronisés |
+| Enregistrement | archive `.zip` à décompresser à la racine du dépôt | écrit dans le dépôt, puis `bank/*.js` recompilés |
 | Tâches | — | génération, revue aveugle, `npm test`, état Git |
 | Session | sauvegardée dans le navigateur, reprise possible | l'état fait foi sur le disque |
 
@@ -218,7 +218,7 @@ CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." np
 | Commande | Rôle |
 | :--- | :--- |
 | `npm ci` | Installe les outils de validation (Ajv). L'application elle-même n'a aucune dépendance. |
-| `npm run build:bank` | Compile `data/approved/` dans `app.js`. |
+| `npm run build:bank` | Compile `data/approved/` dans `bank/app-bank.js` et `bank/admin-bank.js`. |
 | `npm run build:bank -- --check` | Vérifie que `app.js` est synchronisé (CI). |
 | `npm run validate:bank [fichiers]` | Valide contre le schéma et les règles complémentaires (sans argument : tous les candidats). |
 | `npm run generate:bank` | Génère un lot de candidats via l'API configurée. |

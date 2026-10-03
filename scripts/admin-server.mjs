@@ -20,7 +20,7 @@ const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
 const GENERATED = path.join(ROOT, "generated");
 const APPROVED = path.join(ROOT, "data/approved");
 const LOG_DIR = path.join(ROOT, "data/review-log");
-const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8", "/shared/chart.js": "text/javascript; charset=utf-8" };
+const STATIC = { "/admin.html": "text/html; charset=utf-8", "/admin.js": "text/javascript; charset=utf-8", "/shared/item-rules.js": "text/javascript; charset=utf-8", "/shared/chart.js": "text/javascript; charset=utf-8", "/bank/admin-bank.js": "text/javascript; charset=utf-8" };
 const CANDIDATE_NAME = /^[A-Za-z0-9._-]+\.json$/;
 const MAX_BODY = 5 * 1024 * 1024;
 const TOKEN = crypto.randomBytes(18).toString("base64url");
@@ -142,7 +142,7 @@ function save(body) {
   if (decisions.length) { const f = path.join(LOG_DIR, `${stamp()}.json`); writeJson(f, { reviewer, savedAt: new Date().toISOString(), mode: "server", decisions }); written.push(rel(f)); }
 
   const { total } = syncAppJs();
-  return { written, deleted, build: `app.js et admin.js resynchronisés (${total} questions).` };
+  return { written, deleted, build: `bank/app-bank.js et bank/admin-bank.js recompilés (${total} questions).` };
 }
 
 function run(cmd, args, env = {}) {
