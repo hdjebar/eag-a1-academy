@@ -31,8 +31,10 @@ function stimulusHtml(s){
 function prepare(x,m){const order=x.f==="tfcs"?x.o.map((_,i)=>i):shuffle(x.o.map((_,i)=>i));return{...x,m,o:order.map(i=>x.o[i]),r:x.r?order.map(i=>x.r[i]):null,x:x.x?order.map(i=>x.x[i]):null,a:order.indexOf(x.a)}}
 function scoreRating(user,key){const gap=key.reduce((s,k,i)=>s+Math.abs(k-user[i]),0)/key.length;return Math.max(0,1-gap/3)}
 function startTimer(onExpire){
-  const s=state.session;clearInterval(s.interval);s.deadline=EagTimer.deadline(s.seconds);
-  s.timerUpdate=()=>{if(state.session!==s||s.done)return;s.seconds=EagTimer.secondsLeft(s.deadline);tick();if(s.seconds<=0){clearInterval(s.interval);s.timerUpdate=null;onExpire()}};
+  const s=state.session;clearInterval(s.interval);
+  const T=globalThis.EagTimer||{deadline:(sec)=>Date.now()+Math.max(0,Number(sec)||0)*1000,secondsLeft:(end)=>Math.max(0,Math.ceil((Number(end)-Date.now())/1000))};
+  s.deadline=T.deadline(s.seconds);
+  s.timerUpdate=()=>{if(state.session!==s||s.done)return;s.seconds=T.secondsLeft(s.deadline);tick();if(s.seconds<=0){clearInterval(s.interval);s.timerUpdate=null;onExpire()}};
   s.interval=setInterval(s.timerUpdate,1000);s.timerUpdate();
 }
 
@@ -42,7 +44,7 @@ function optionReview(t){
   const x=t.x,ans=t.ans;
   if(x.f==="rating"){
     return x.o.map((opt,i)=>{const u=ans&&ans.choice?ans.choice[i]:null,k=x.r[i],cls=u==null?"":Math.abs(u-k)<=0?" is-user-correct":Math.abs(u-k)===1?"":" is-user-wrong";
-      return`<div class="review-opt${cls}${i===x.a?" is-target":""}"><span>${esc(opt)}${x.x?`<small class="why">${esc(x.x[i])}</small>`:""}</span><span class="review-tag ${u===k?"user correct":"target"}">Vous : ${u??"—"} · Réf. : ${k}</span></div>`}).join("");
+      return`<div class="review-opt${cls}${i===x.a?" is-target":""}"><span>${esc(opt)}${x.x?`<small class="why">${esc(x.x[i])}</small>`:""}</span><span class="review-tag ${u===k?"user correct":"target"}">Vous : ${u??"—"} · Réf. : ${esc(k)}</span></div>`}).join("");
   }
   return x.o.map((opt,i)=>{const isUser=ans&&ans.choice===i,isTarget=i===x.a;let cls="review-opt",tag="";
     if(isUser&&isTarget){cls+=" is-user-correct";tag='<span class="review-tag user correct">Votre choix (correct)</span>'}

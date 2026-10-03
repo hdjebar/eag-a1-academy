@@ -15,7 +15,8 @@
    * @returns {number} result (throws on a syntax error or a division by zero)
    */
   function evaluate(src) {
-    const s = String(src).replace(/\s+/g, "").replace(/[×x]/g, "*").replace(/[÷:]/g, "/").replace(/[−–]/g, "-");
+    const s = String(src).replace(/\s+/g, "").replace(/×/g, "*").replace(/[÷:]/g, "/").replace(/[−–]/g, "-");
+    if (s.length > 100) throw new Error("Expression trop longue");
     let i = 0;
     const peek = () => s[i];
     const fail = () => { throw new Error("Expression invalide"); };
@@ -66,7 +67,7 @@
   /** HTML of the calculator panel (plain markup; wired by mount()). */
   function html() {
     return `<details class="calc" open><summary>Calculatrice</summary><div class="calc-body">`
-      + `<label class="sr" for="calc-input">Expression</label><input id="calc-input" class="calc-input" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="Ex. (1 380 − 1 200) ÷ 1 200 × 100">`
+      + `<label class="sr" for="calc-input">Expression</label><input id="calc-input" class="calc-input" inputmode="decimal" autocomplete="off" spellcheck="false" maxlength="100" placeholder="Ex. (1 380 − 1 200) ÷ 1 200 × 100">`
       + `<output id="calc-out" class="calc-out" aria-live="polite"></output>`
       + `<div class="calc-keys">${KEYS.map((k) => `<button type="button" data-k="${k}" aria-label="${k === "⌫" ? "Effacer le dernier caractère" : k === "C" ? "Tout effacer" : k}">${k}</button>`).join("")}<button type="button" data-k="=" class="calc-eq">=</button></div>`
       + `</div></details>`;
