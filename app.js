@@ -12,7 +12,9 @@ const state={route:"accueil",dark:false,session:null,answered:0,points:0,session
 
 /* All item text is escaped: question content is data, never markup. */
 function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function shuffle(a){const r=[...a];for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]]}return r}
+/* Tirage, ordre des options et notation : shared/session.js (fonctions pures, testées dans npm test). */
+const S=globalThis.EagSession;
+function shuffle(a){return S.shuffle(a)}
 function skillOf(x){return x.skill?` · ${esc(skillLabels[x.skill]||x.skill)}`:""}
 function stimulusHtml(s){
   if(s==null)return"";
@@ -26,9 +28,8 @@ function stimulusHtml(s){
   if(s.type==="chart")return globalThis.EagChart?`<div class="stimulus">${EagChart.html(s,esc)}</div>`:`<div class="stimulus text">Graphique indisponible (fichier shared/chart.js manquant). Passez cette question.</div>`;
   return"";
 }
-/* Options are shuffled once per question so the answer position carries no information. */
-function prepare(x,m){const order=x.f==="tfcs"?x.o.map((_,i)=>i):shuffle(x.o.map((_,i)=>i));return{...x,m,o:order.map(i=>x.o[i]),r:x.r?order.map(i=>x.r[i]):null,x:x.x?order.map(i=>x.x[i]):null,a:order.indexOf(x.a)}}
-function scoreRating(user,key){const gap=key.reduce((s,k,i)=>s+Math.abs(k-user[i]),0)/key.length;return Math.max(0,1-gap/3)}
+function prepare(x,m){return S.prepare(x,m)}
+function scoreRating(user,key){return S.scoreRating(user,key)}
 
 function route(n){if(state.session&&!state.session.done&&!["session","results"].includes(n)){if(!confirm("Quitter cette session ?"))return;clearInterval(state.session.interval);state.session=null}state.route=n;$$('.view').forEach(v=>v.classList.toggle('active',v.id===`v-${n}`));$$('[data-route]').forEach(b=>b.setAttribute('aria-current',b.dataset.route===n?'page':'false'));$('#crumb').textContent=names[n];history.replaceState(null,"",n==='accueil'?location.pathname:`#${n}`);scrollTo({top:0,behavior:'smooth'});if(n==='accueil')dashboard()}
 
@@ -58,20 +59,10 @@ function renderReview(filter="all"){
 }
 
 function start(type,countChoice){
-  let questions,title,seconds,guided=true;
-  const pick=(k,n)=>shuffle(q[k]||[]).slice(0,n).map(x=>prepare(x,k));
+  if(type==='examen')return startExam();
   const count=countChoice!==undefined?countChoice:state.sessionCount;
-  if(type==='diagnostic'){questions=shuffle(Object.keys(modules).flatMap(k=>pick(k,2)));title='Diagnostic transversal';seconds=900}
-  else if(type==='simulation'){questions=shuffle(Object.keys(modules).flatMap(k=>pick(k,3)));title='Simulation A1';seconds=1500;guided=false}
-  else if(type==='examen'){return startExam()}
-  else{
-    const total=(q[type]||[]).length;
-    const n=(count==='all'||Number(count)>=total)?total:(Number(count)||5);
-    questions=pick(type,n);
-    title=`${modules[type].title} · ${questions.length} questions`;
-    const baseMins=modules[type].minutes||10;
-    seconds=Math.max(180,Math.round(questions.length*(baseMins*60/(total||10))));
-  }
+  const {questions,seconds,guided}=S.buildSession(q,{modules,type,count});
+  const title=type==='diagnostic'?'Diagnostic transversal':type==='simulation'?'Simulation A1':`${modules[type].title} · ${questions.length} questions`;
   if(!questions.length)return;
   state.session={type,countChoice:count,questions,title,seconds,guided,index:0,answers:[],locked:false,done:false};
   $('#sessiontitle').textContent=title;$('#sessionkind').textContent=guided?'Entraînement guidé avec retour immédiat':'Simulation chronométrée (correction à la fin)';
@@ -79,8 +70,7 @@ function start(type,countChoice){
   state.session.interval=setInterval(()=>{state.session.seconds--;tick();if(state.session.seconds<=0)finish()},1000);
 }
 function startExam(){
-  const sections=[],questions=[];
-  for(const k of EXAM.sections){const qs=shuffle(q[k]||[]).slice(0,EXAM.questionsPerSection||Infinity).map(x=>prepare(x,k));if(!qs.length)continue;sections.push({cat:k,from:questions.length,to:questions.length+qs.length-1});questions.push(...qs)}
+  const {questions,sections}=S.buildExam(q,EXAM);
   if(!questions.length)return;
   state.session={type:'examen',questions,title:'Examen blanc A1 · 2 h',seconds:EXAM.minutesPerSection*60,guided:false,index:0,answers:[],locked:false,done:false,exam:{sections,current:0,waiting:true}};
   $('#sessiontitle').textContent=state.session.title;$('#sessionkind').textContent='Examen blanc : tests successifs chronométrés, correction à la fin';
@@ -134,8 +124,7 @@ function submit(){
 function record(choice){
   const s=state.session;if(s.locked)return;s.locked=true;
   const x=s.questions[s.index];
-  const points=choice===null?0:x.f==="rating"?scoreRating(choice,x.r):choice===x.a?1:0;
-  const good=x.f==="rating"?points>=0.75:points===1;
+  const {points,good}=S.scoreAnswer(x,choice);
   s.answers[s.index]={choice,good,points};
   if(choice!==null){state.answered++;state.points+=points}
   if(!s.guided||choice===null)return next();
@@ -151,13 +140,12 @@ function record(choice){
 function next(){const s=state.session;if(s.exam&&s.index>=s.exam.sections[s.exam.current].to)return endSection();if(s.index<s.questions.length-1){s.index++;render()}else finish()}
 function finish(){
   const s=state.session;if(!s||s.done)return;s.done=true;clearInterval(s.interval);
-  const total=s.questions.length,pts=s.answers.reduce((n,a)=>n+(a?a.points:0),0),good=s.answers.filter(a=>a&&a.good).length,pct=Math.round(pts/total*100);
+  const sum=S.summarize(s.questions,s.answers,s.exam?s.exam.sections:null),{total,good,pct}=sum;
   $('#ring').style.setProperty('--score',`${pct}%`);$('#score').textContent=`${pct}%`;
   $('#message').textContent=pct>=80?'Très bonne maîtrise':pct>=60?'Base solide à consolider':'Analysez vos erreurs';
   $('#detail').textContent=`${good} question(s) réussie(s) sur ${total}. Les questions de jugement situationnel comptent selon la concordance de vos notes. Ce pourcentage n’est pas une note Stanine.`;
   if(s.exam){
-    const rows=s.exam.sections.map(sec=>{const idx=[];for(let i=sec.from;i<=sec.to;i++)idx.push(i);const p=idx.reduce((n,i)=>n+(s.answers[i]?s.answers[i].points:0),0),done=idx.filter(i=>s.answers[i]&&s.answers[i].choice!==null).length;return{cat:sec.cat,pct:Math.round(p/idx.length*100),done,n:idx.length}});
-    const avg=Math.round(rows.reduce((n,r)=>n+r.pct,0)/rows.length);
+    const rows=sum.sections,avg=sum.avg;
     $('#ring').style.setProperty('--score',`${avg}%`);$('#score').textContent=`${avg}%`;
     $('#message').textContent=avg>=80?'Très bonne maîtrise':avg>=60?'Base solide à consolider':'Analysez vos erreurs';
     $('#detail').innerHTML=`Moyenne des ${rows.length} tests (chacun compte autant, comme dans la notation officielle) : <strong>${avg} %</strong>. Ce n'est pas une note Stanine.<span class="sectionscores">${rows.map(r=>`<span class="row"><span>${esc(modules[r.cat].title)}</span><span>${r.pct} % · ${r.done}/${r.n} traitées</span></span>`).join('')}</span>`;
