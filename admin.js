@@ -50,7 +50,7 @@ function reviewCurrent(item, review) { return Boolean(review?.candidateHash && r
 function stimulusHtml(s) {
   if (s == null) return "";
   if (typeof s === "string") return `<div class="stimulus text">${esc(s)}</div>`;
-  if (s.type === "shapes") return `<div class="stimulus"><div class="shapes">${esc(s.text)}</div></div>`;
+  if (s.type === "shapes") return `<div class="stimulus"><div class="shapes" role="img" aria-label="Série de figures">${esc(s.text)}</div></div>`;
   if (s.type === "table") {
     const head = `<tr>${(s.headers || []).map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr>`;
     const body = (s.rows || []).map((r) => `<tr>${(r || []).map((c, i) => (i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(typeof c === "number" ? c.toLocaleString("fr-FR") : c)}</td>`)).join("")}</tr>`).join("");
@@ -174,6 +174,15 @@ async function reloadFromServer() {
 /** After a task: add new candidate files and fresh reviews without touching unsaved work. */
 async function mergeFromServer() {
   const st = await api("/api/state");
+  // If the approved bank changed on disk while we hold unsaved edits, stop here: refreshing
+  // the revision would let the next save silently overwrite the concurrent change (the
+  // per-item decision checks would catch it later, but the stale revision fails fast).
+  const dirty = CATS.some((c) => JSON.stringify(S.approved[c] || []) !== S.approvedOrig[c]);
+  const serverChanged = CATS.some((c) => JSON.stringify(st.approved?.[c] || []) !== S.approvedOrig[c]);
+  if (dirty && serverChanged) {
+    toast("La banque approuvée a changé sur le disque : rechargez-la avant d'enregistrer.");
+    return [];
+  }
   S.aiConfigured = st.aiConfigured; S.workspaceRevision = st.workspaceRevision;
   const added = [];
   for (const f of st.candidates) {
@@ -232,9 +241,9 @@ function previewHtml(item, { blind, mine, showKey }) {
   const opts = (item.options || []).map((o, i) => {
     const isKey = showKey && i === item.correctIndex;
     let meta = "";
-    if (showKey && item.itemFormat === "rating" && item.ratings) meta += `<span class="chip ${item.ratings[i] === 4 ? "ok" : ""}">réf. ${item.ratings[i]}</span>`;
+    if (showKey && item.itemFormat === "rating" && item.ratings) meta += `<span class="chip ${item.ratings[i] === 4 ? "ok" : ""}">réf. ${esc(item.ratings[i])}</span>`;
     if (mine != null) {
-      if (item.itemFormat === "rating" && Array.isArray(mine)) meta += `<span class="chip info">vous : ${mine[i] ?? "—"}</span>`;
+      if (item.itemFormat === "rating" && Array.isArray(mine)) meta += `<span class="chip info">vous : ${esc(mine[i] ?? "—")}</span>`;
       else if (mine === i) meta += `<span class="chip info">votre choix</span>`;
     }
     if (showKey && isKey) meta += `<span class="chip ok">clé</span>`;

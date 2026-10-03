@@ -5,35 +5,84 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = fs.readFileSync(path.join(ROOT, "admin.js"), "utf8");
-const match = source.match(/async function mergeFromServer\(\) \{[\s\S]*?^\}/m);
-if (!match) throw new Error("mergeFromServer introuvable dans admin.js");
+const extract = (name) => {
+  const match = source.match(new RegExp(`(?:async )?function ${name}\\([^)]*\\) \\{[\\s\\S]*?\\n\\}`, "m"));
+  if (!match) throw new Error(`${name} introuvable dans admin.js`);
+  return match[0];
+};
+const mergeSrc = extract("mergeFromServer");
+const attachSrc = extract("attachReview");
+const reviewCurrentSrc = extract("reviewCurrent");
 
-const state = { aiConfigured: false, workspaceRevision: "old", files: {} };
-const added = [];
-const reviews = [];
+const CATS = ["abstract", "verbal", "numeric", "planning", "situational"];
 const serverState = {
   aiConfigured: true,
   workspaceRevision: "new",
+  approved: { abstract: [], verbal: [], numeric: [], planning: [], situational: [] },
   candidates: [
     { file: "fresh.json", items: [{ id: "numeric-test-001" }], review: null },
     { file: "existing.json", items: [], review: { reviews: [] } },
   ],
 };
-state.files["existing.json"] = { ids: [], hasReview: false };
-const context = {
+const mkContext = (state) => ({
   S: state,
+  CATS,
+  toast: (m) => { state.toasts = state.toasts || []; state.toasts.push(m); },
   api: async (route) => {
     if (route !== "/api/state") throw new Error(`Route inattendue : ${route}`);
     return serverState;
   },
-  addCandidates: (file) => { state.files[file] = { ids: [], hasReview: false }; added.push(file); },
-  attachReview: (review) => reviews.push(review),
-};
+  addCandidates: (file) => { state.files[file] = { ids: [], hasReview: false }; state.added.push(file); },
+  attachReview: (review) => state.reviews.push(review),
+});
 
-const result = await vm.runInNewContext(`${match[0]}\nmergeFromServer();`, context);
-if (state.workspaceRevision !== "new") throw new Error("La fusion serveur ne rafraîchit pas la révision de travail");
-if (!state.aiConfigured) throw new Error("La fusion serveur ne rafraîchit pas la configuration IA");
-if (result.length !== 1 || result[0] !== "fresh.json" || added[0] !== "fresh.json") throw new Error("La fusion serveur n'ajoute pas correctement les nouveaux candidats");
-if (reviews.length !== 1) throw new Error("La fusion serveur ne rattache pas les nouvelles revues");
+/* 1. Merge after a task refreshes revision + aiConfigured and adds new candidates. */
+{
+  const state = { aiConfigured: false, workspaceRevision: "old", files: {}, added: [], reviews: [], approvedOrig: { abstract: "[]", verbal: "[]", numeric: "[]", planning: "[]", situational: "[]" }, approved: { abstract: [], verbal: [], numeric: [], planning: [], situational: [] } };
+  state.files["existing.json"] = { ids: [], hasReview: false };
+  const result = await vm.runInNewContext(`${mergeSrc}\nmergeFromServer();`, mkContext(state));
+  if (state.workspaceRevision !== "new") throw new Error("La fusion serveur ne rafraîchit pas la révision de travail");
+  if (!state.aiConfigured) throw new Error("La fusion serveur ne rafraîchit pas la configuration IA");
+  if (result.length !== 1 || result[0] !== "fresh.json" || state.added[0] !== "fresh.json") throw new Error("La fusion serveur n'ajoute pas correctement les nouveaux candidats");
+  if (state.reviews.length !== 1) throw new Error("La fusion serveur ne rattache pas les nouvelles revues");
+}
 
-console.log("Admin self-test passed (fusion serveur et révision de travail)");
+/* 2. Merge guard: unsaved local edits + bank changed on disk -> refuse, keep stale revision. */
+{
+  const state = {
+    aiConfigured: false, workspaceRevision: "old", files: {}, added: [], reviews: [],
+    approvedOrig: { abstract: "[]", verbal: "[]", numeric: "[]", planning: "[]", situational: "[]" },
+    approved: { abstract: [], verbal: [], numeric: [{ id: "numeric-edit-001" }], planning: [], situational: [] },
+  };
+  serverState.approved = { abstract: [], verbal: [], numeric: [{ id: "numeric-server-001" }], planning: [], situational: [] };
+  const result = await vm.runInNewContext(`${mergeSrc}\nmergeFromServer();`, mkContext(state));
+  if (result.length !== 0 || state.added.length !== 0) throw new Error("La fusion a ignoré la modification simultanée de la banque");
+  if (state.workspaceRevision !== "old") throw new Error("La fusion a rafraîchi la révision malgré un conflit de banque");
+  if (!state.toasts?.some((t) => t.includes("a changé sur le disque"))) throw new Error("La fusion n'a pas averti d'un changement concurrent de la banque");
+  serverState.approved = { abstract: [], verbal: [], numeric: [], planning: [], situational: [] };
+}
+
+/* 3. attachReview attaches only reviews whose candidateHash matches the current item. */
+{
+  const state = {
+    cands: [
+      { file: "c.json", item: { id: "numeric-c-001", prompt: "x" }, ai: null, aiStale: true },
+      { file: "c.json", item: { id: "numeric-c-002", prompt: "y" }, ai: null, aiStale: true },
+    ],
+    files: { "c.json": { ids: [], hasReview: false } },
+  };
+  const ctx = { ...mkContext(state), R: { contentHash: (o) => "h" + JSON.stringify(o.candidate) } };
+  const review = {
+    reviews: [
+      { id: "numeric-c-001", decision: "pass", candidateHash: "h" + JSON.stringify({ id: "numeric-c-001", prompt: "x" }) },
+      { id: "numeric-c-002", decision: "pass", candidateHash: "stale-hash" },
+    ],
+  };
+  const n = vm.runInNewContext(`${attachSrc}\n${reviewCurrentSrc}\nattachReview(${JSON.stringify(review)});`, ctx);
+  if (n !== 1) throw new Error("attachReview a rattaché une revue obsolète ou n'a pas rattaché la revue courante");
+  const [c1, c2] = state.cands;
+  if (c1.ai?.decision !== "pass" || c1.aiStale !== false) throw new Error("attachReview n'a pas mis à jour l'item courant");
+  if (c2.ai !== null || c2.aiStale !== true) throw new Error("attachReview a accepté une revue obsolète");
+}
+
+console.log("Admin self-test passed (fusion serveur, garde de banque modifiée, rattachement des revues)");
