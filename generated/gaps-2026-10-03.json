@@ -1,0 +1,134 @@
+[
+  {
+    "id": "numeric-chart-222",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel est l'écart entre Sept. et Oct. ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Dossiers traités par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Sept.",
+        "Oct.",
+        "Nov.",
+        "Déc."
+      ],
+      "series": [
+        {
+          "name": "Dossiers traités",
+          "values": [
+            830,
+            660,
+            270,
+            570
+          ]
+        }
+      ]
+    },
+    "options": [
+      "180 dossiers",
+      "560 dossiers",
+      "1 490 dossiers",
+      "170 dossiers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Oct. : 660 ; Sept. : 830. Écart = 170 dossiers.",
+    "optionRationales": [
+      "Erreur de lecture d'une des deux barres.",
+      "Utilise la barre de Nov. au lieu de Oct.",
+      "Additionne les deux valeurs au lieu de les soustraire.",
+      "Correct : différence entre les deux barres demandées."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-03T00:36:42.076Z"
+  },
+  {
+    "id": "numeric-chart-223",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle est la moyenne mensuelle sur la période représentée ? (arrondie à 0,1)",
+    "stimulus": {
+      "type": "chart",
+      "kind": "bar",
+      "caption": "Courriers enregistrés par mois",
+      "unit": "courriers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr.",
+        "Mai"
+      ],
+      "series": [
+        {
+          "name": "Courriers enregistrés",
+          "values": [
+            570,
+            690,
+            250,
+            490,
+            510
+          ]
+        }
+      ]
+    },
+    "options": [
+      "510,0 courriers",
+      "627,5 courriers",
+      "470,0 courriers",
+      "502,0 courriers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Somme = 570 + 690 + 250 + 490 + 510 = 2 510 ; moyenne = 2 510 / 5 = 502,0 courriers.",
+    "optionRationales": [
+      "Valeur médiane, pas la moyenne.",
+      "Divise par 4 au lieu de 5.",
+      "Moyenne du minimum et du maximum seulement.",
+      "Correct : somme divisée par le nombre de périodes."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-03T00:36:42.076Z"
+  },
+  {
+    "id": "verbal-epso261001-002",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure. Les horaires d'ouverture sont affichés à l'entrée et sur le site de la commune.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les retours sont possibles tous les jours, pour tous.",
+      "La restriction ne concerne que les emprunts à la borne.",
+      "Le texte répond explicitement : « Les retours restent possibles tous les jours »."
+    ],
+    "explanation": "La condition de carte annuelle s'applique aux emprunts du dimanche, pas aux retours : « Les retours restent possibles tous les jours grâce à une boîte extérieure. »",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "revisionOf": "verbal-epso261001-002"
+  }
+]

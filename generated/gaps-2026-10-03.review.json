@@ -1,0 +1,30 @@
+{
+  "model": "independent blind solver (Claude subagent, keys hidden)",
+  "reviewedAt": "2026-10-03T00:37:16.252Z",
+  "reviews": [
+    {
+      "id": "numeric-chart-222",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "numeric-chart-223",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 3,
+      "ratings": null,
+      "confidence": null
+    },
+    {
+      "id": "verbal-epso261001-002",
+      "decision": "pass",
+      "issues": [],
+      "chosenIndex": 0,
+      "ratings": null,
+      "confidence": null
+    }
+  ]
+}
