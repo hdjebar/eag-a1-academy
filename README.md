@@ -63,7 +63,7 @@ Conformément aux directives officielles GovJobs pour le **Groupe de traitement 
 > - **Audit du 2 octobre 2026** : 90 questions retirées (items abstraits contenant des lettres ou chiffres, clé erronée, ambiguïtés, doublons). 112 questions de remplacement et de correction ont été résolues à l'aveugle par des relecteurs IA indépendants, puis approuvées par hdjebar via `npm run promote:candidate` (500 questions).
 > - **Passe de réalisme (2–3 octobre 2026)** : questions numériques sur tableaux et graphiques, agendas de planification en tableau, textes verbaux et scénarios situationnels allongés, compétences situationnelles rééquilibrées, et 30 questions originales de style EPSO. Même processus : résolution à l'aveugle, puis approbation par hdjebar (591 questions).
 > - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). Les items sont composés uniquement de formes et de flèches (règle vérifiée par le validateur).
-> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les questions approuvées de chaque catégorie (10 par épreuve pour l'examen blanc).
+> - **Tirage aléatoire équilibré** : à chaque lancement, les questions sont tirées sans remise dans chaque catégorie, réparties sur toutes les compétences et sur les niveaux de difficulté ; l'ordre des options est mélangé (sauf Vrai / Faux / On ne peut pas savoir). L'application ne garde aucune trace entre deux visites (ADR-0001) : une question vue lors d'une visite précédente peut revenir.
 > - **Test de contrôle/précision** : Ce test ne concerne pas le groupe A1 (réservé aux groupes B1 et C1) et n'est donc pas inclus dans cette application.
 
 ---
@@ -151,6 +151,7 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 | `npm run regenerate:bank` | Révise des questions approuvées avec un LLM (`IDS`, `INSTRUCTION`) ; résultat à relire dans `generated/`. |
 | `npm run review:bank` | Lance la revue IA à l'aveugle sur un lot candidat. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Approuve et promeut des questions candidates vers `data/approved/`. |
+| `npm run test:e2e` | Tests de bout en bout Playwright : modes d'entraînement, examen blanc et chronomètre, calculatrice, stimulus, texte malveillant, mobile 375 px, accessibilité (axe, thèmes clair et sombre), parcours d'administration. Premier lancement : `npx playwright install chromium`. |
 | `npm run check:review-log` | Vérifie que chaque question approuvée correspond à une décision tracée dans `data/review-log/`. |
 
 ---
