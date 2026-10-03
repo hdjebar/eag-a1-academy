@@ -4,11 +4,14 @@
 // Output goes to generated/ as candidates: blind review and human promotion still apply.
 //
 // Usage: node scripts/generate-abstract-figures.mjs [output.json] [--target 100] [--seed text]
+// The default seed is today's date; pass --seed to reproduce a batch. Ids continue after the
+// highest id already present in data/approved/ and generated/.
 import fs from "node:fs";
 import crypto from "node:crypto";
 import { parseArgs } from "node:util";
+import { lastNumber, knownItems } from "./lib/ids.mjs";
 
-const { values: args, positionals } = parseArgs({ allowPositionals: true, options: { target: { type: "string", default: "100" }, seed: { type: "string", default: "abstract-audit-2026-10-02" } } });
+const { values: args, positionals } = parseArgs({ allowPositionals: true, options: { target: { type: "string", default: "100" }, seed: { type: "string", default: `abstract-${new Date().toISOString().slice(0, 10)}` } } });
 const NOW = new Date().toISOString();
 let seed = crypto.createHash("sha256").update(args.seed).digest();
 let si = 0;
@@ -28,6 +31,7 @@ const PLAIN_NAME = { circle: "disque", square: "carré", diamond: "losange" };
 
 const items = [];
 const seen = new Set();
+const KNOWN = knownItems();
 const counters = {};
 function add(fam, skill, difficulty, prompt, text, correct, distractors, explanation, rationales) {
   const key = text.replace(/\s+/g, " ").trim();
@@ -36,7 +40,7 @@ function add(fam, skill, difficulty, prompt, text, correct, distractors, explana
   if (new Set(opts).size !== 4 || opts.some((o) => !o || o.includes("?"))) return false;
   seen.add(key);
   const order = shuffle([0, 1, 2, 3]);
-  counters[fam] = (counters[fam] || 100) + 1;
+  counters[fam] = (counters[fam] ?? lastNumber(`abstract-${fam}`, 100, KNOWN)) + 1; // continue after existing ids
   items.push({
     id: `abstract-${fam}-${counters[fam]}`, version: 1, category: "abstract", itemFormat: "single_best", skill, difficulty, language: "fr",
     estimatedSeconds: [0, 45, 75, 110][difficulty], prompt, stimulus: { type: "shapes", text },

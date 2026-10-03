@@ -127,6 +127,8 @@ function selfTest() {
     "figure abstraite avec deux « ? »": { ...base, id: "abstract-demo-003", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "●  ■  ?  ?" }, options: ["●", "■", "▲", "○"] },
     "figure abstraite avec un idéogramme": { ...base, id: "abstract-demo-004", category: "abstract", skill: "suite-logique", stimulus: { type: "shapes", text: "回  ■  □  ?" }, options: ["●", "■", "▲", "○"] },
     "graphique : séries et étiquettes de longueurs différentes": { ...base, id: "numeric-demo-004", skill: "lecture-graphique", stimulus: { type: "chart", kind: "bar", caption: "Demandes par mois", labels: ["Janv.", "Févr.", "Mars"], series: [{ name: "Demandes", values: [10, 20] }] } },
+    "graphique : série nulle (signalée, sans plantage)": { ...base, id: "numeric-demo-006", skill: "lecture-graphique", stimulus: { type: "chart", kind: "bar", caption: "Demandes", labels: ["A", "B"], series: [null] } },
+    "graphique : valeur hors bornes": { ...base, id: "numeric-demo-007", skill: "lecture-graphique", stimulus: { type: "chart", kind: "bar", caption: "Demandes", labels: ["A", "B"], series: [{ name: "x", values: [1, 1e12] }] } },
     "graphique : type inconnu": { ...base, id: "numeric-demo-005", skill: "lecture-graphique", stimulus: { type: "chart", kind: "pie", caption: "Répartition", labels: ["A", "B"], series: [{ name: "Part", values: [1, 2] }] } },
     "tfcs mal formé": { ...base, id: "verbal-demo-002", category: "verbal", skill: "inference", itemFormat: "tfcs", options: ["Oui", "Non", "Peut-être"] },
   };
@@ -148,6 +150,10 @@ function selfTest() {
   const bankFail = {
     "même figure abstraite": [fig, { ...fig, id: "abstract-demo-011", prompt: "Autre consigne pour la même figure ?" }],
     "quasi-doublon textuel": [base, { ...base, id: "numeric-demo-002" }],
+    "mêmes données de tableau": [
+      { ...base, id: "numeric-demo-020", skill: "lecture-tableau", stimulus: { type: "table", headers: ["Service", "2025"], rows: [["A", 10], ["B", 20]] } },
+      { ...base, id: "numeric-demo-021", skill: "lecture-tableau", prompt: "Autre question sur le même tableau ?", stimulus: { type: "table", headers: ["Service", "2025"], rows: [["A", 10], ["B", 20]] } },
+    ],
     "bonne réponse toujours en position 1": Array.from({ length: 20 }, (_, i) => ({ ...base, id: `numeric-demo-${String(i + 10).padStart(3, "0")}`, stimulus: `Calculez ${i + 10} % de ${i * 37 + 50} unités pour le service ${i}.` })),
   };
   for (const [name, items] of Object.entries(bankFail)) {

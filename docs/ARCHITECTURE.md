@@ -41,7 +41,8 @@ eag-a1-academy/
 ├── app.js                    # Moteur de session, rendu réactif et banque de données compilée
 ├── index.html                # Redirection d'appoint vers eag-a1-academy.html
 ├── admin.html / admin.js     # Interface d'administration (hors ligne ou via npm run admin)
-├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité)
+├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité, empreinte de contenu)
+├── shared/chart.js           # Rendu SVG des graphiques (barres, courbes) pour l'application et l'admin
 │
 ├── data/
 │   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand, empreinte) ; contrôlé en CI
@@ -63,6 +64,7 @@ eag-a1-academy/
 │   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js et admin.js
 │   ├── check-review-log.mjs  # Contrôle CI : chaque question approuvée a une décision tracée
 │   ├── generate-abstract-figures.mjs # Générateur déterministe de figures abstraites par règles géométriques
+│   ├── generate-data-items.mjs # Générateur par règles : numérique (tableaux, graphiques) et agendas en tableau
 │   ├── generate-bank.mjs     # Génération via API compatible OpenAI (consigne facultative)
 │   ├── regenerate-bank.mjs   # Révision de questions approuvées par LLM (sortie : révisions à relire)
 │   ├── promote-candidate.mjs # Promotion humaine explicite (relecteur nommé, identifiants listés)
@@ -70,7 +72,8 @@ eag-a1-academy/
 │   ├── validate-bank.mjs     # Schéma (Ajv) + règles complémentaires (HTML interdit, notes, longueurs…)
 │   └── lib/
 │       ├── ai.mjs            # Client HTTP commun compatible OpenAI
-│       └── rules.mjs         # Règles communes de hachage et de normalisation
+│       ├── ids.mjs           # Numérotation des identifiants générés (suite des identifiants existants)
+│       └── rules.mjs         # Charge shared/item-rules.js (EagRules) dans Node
 │
 ├── prompts/
 │   ├── generate-bank.md      # Consignes système et contraintes de génération
@@ -111,7 +114,7 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les 100 questions approuvées de chaque catégorie (500 items au total).
+* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les questions approuvées de chaque catégorie (591 au 3 octobre 2026).
 * **Raisonnement abstrait (Test géométrique)** : le stimulus de type `{ type: "shapes", text: "..." }` permet la représentation structurée et accessible de matrices 3×3 et de suites de figures (rotations, symétries, grilles d'éléments géométriques purs), sans dépendance d'image externe ni risque d'injection.
 * **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
 * **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :
@@ -153,6 +156,7 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0006 : Interface d'administration à deux modes (hors ligne et serveur local)](adr/0006-admin-ui.md)
 * [ADR-0007 : Régénération par LLM sous forme de révisions relues](adr/0007-llm-revisions.md)
 * [ADR-0008 : Traçabilité obligatoire en CI (check-review-log) et génération déterministe de figures abstraites](adr/0008-ci-review-log-gate-and-rule-based-abstract-generation.md)
+* [ADR-0009 : Graphiques et contrôles de réalisme des formats](adr/0009-charts-and-format-realism.md)
 
 L'étude comparative et le cadre de référence psychométrique sont documentés dans :
 * [docs/research/eag-2026-benchmark.md](research/eag-2026-benchmark.md) : Benchmark approfondi des épreuves psychotechniques internationales (EPSO, SHL Direct, GovJobs, psychotechnique.lu, Travaillerpour.be).

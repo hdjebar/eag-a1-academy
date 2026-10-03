@@ -4,14 +4,17 @@
 // promotion still apply.
 //
 // Usage: node scripts/generate-data-items.mjs [output.json] [--numeric 32] [--planning 26] [--seed text]
+// The default seed is today's date; pass --seed to reproduce a batch. Ids continue after the
+// highest id already present in data/approved/ and generated/.
 import fs from "node:fs";
 import crypto from "node:crypto";
 import { parseArgs } from "node:util";
 import { EagRules } from "./lib/rules.mjs";
+import { knownItems, lastNumber } from "./lib/ids.mjs";
 
 const { values: args, positionals } = parseArgs({
   allowPositionals: true,
-  options: { numeric: { type: "string", default: "32" }, planning: { type: "string", default: "26" }, seed: { type: "string", default: "data-items-2026-10-02" } },
+  options: { numeric: { type: "string", default: "32" }, planning: { type: "string", default: "26" }, seed: { type: "string", default: `data-items-${new Date().toISOString().slice(0, 10)}` } },
 });
 const NOW = new Date().toISOString();
 let seed = crypto.createHash("sha256").update(args.seed).digest();
@@ -35,6 +38,9 @@ const round = (v, d = 1) => Math.round(v * 10 ** d) / 10 ** d;
 
 const items = [];
 const used = new Set();
+const KNOWN = knownItems();
+const dataKey = (st) => (st.type === "table" ? `t:${JSON.stringify(st.headers || [])}${JSON.stringify(st.rows || [])}` : `c:${JSON.stringify(st.labels || [])}${JSON.stringify(st.series || [])}`);
+const KNOWN_DATA = new Set(KNOWN.filter((x) => x.stimulus && (x.stimulus.type === "table" || x.stimulus.type === "chart")).map((x) => dataKey(x.stimulus)));
 const counters = {};
 function add(category, fam, skill, difficulty, prompt, stimulus, correct, distractors, explanation, rationales) {
   const opts = [correct, ...distractors];
@@ -45,9 +51,10 @@ function add(category, fam, skill, difficulty, prompt, stimulus, correct, distra
   // Keep templated items clearly distinct (the validator rejects similarity >= 0.9).
   const text = `${EagRules.itemText({ category, prompt, stimulus })} ${opts.join(" ")}`;
   if (items.some((x) => x.category === category && EagRules.similarity(text, `${EagRules.itemText(x)} ${x.options.join(" ")}`) >= 0.8)) return false;
+  if ((stimulus.type === "table" || stimulus.type === "chart") && KNOWN_DATA.has(dataKey(stimulus))) return false; // same data as an existing item
   const order = shuffle([0, 1, 2, 3]);
   const k = `${category}-${fam}`;
-  counters[k] = (counters[k] || 200) + 1;
+  counters[k] = (counters[k] ?? lastNumber(k, 200, KNOWN)) + 1; // continue after existing ids
   items.push({
     id: `${category}-${fam}-${counters[k]}`, version: 1, category, itemFormat: "single_best", skill, difficulty, language: "fr",
     estimatedSeconds: [0, 50, 90, 130][difficulty], prompt, stimulus,
@@ -235,7 +242,7 @@ function pSlot(d) {
       { type: "table", caption: "Agenda du mardi", headers: ["Agent", ...SLOTS], rows: ppl.map((p, i) => [p, ...grid[i]]) },
       SLOTS[j], SLOTS.filter((_, k) => k !== j),
       `Seul le créneau ${SLOTS[j]} est libre pour toutes les personnes. ${SLOTS.map((s, k) => (k === j ? null : `${s} : ${blockers[k].join(", ")} indisponible(s)`)).filter(Boolean).join(" ; ")}.`,
-      ["toutes les personnes sont libres.", ...SLOTS.filter((_, k) => k !== j).map((s) => `${blockers[SLOTS.indexOf(s)].join(", ")} n'est pas libre.`)]);
+      ["toutes les personnes sont libres.", ...SLOTS.filter((_, k) => k !== j).map((s) => { const b = blockers[SLOTS.indexOf(s)]; return `${listFr(b)} ${b.length > 1 ? "ne sont pas libres" : "n'est pas libre"}.`; })]);
   }
   return false;
 }

@@ -114,12 +114,33 @@ if (!promoted.length) {
   console.log(`\nAucun item promu (${blocked} bloqué(s)).`);
   process.exit(blocked ? 1 : 0);
 }
+// Bank-level rules (duplicates, answer-position balance) on each final bank. Items named in an
+// error are set aside (a revision falls back to the approved version) and the bank is re-checked;
+// the run stops without writing only if an error cannot be traced to a promoted item.
 for (const [target, bank] of byCategory) {
-  const { errors } = checkBank(bank);
-  if (errors.length) {
-    console.error(`❌ ${target} serait invalide après promotion :\n- ${errors.join("\n- ")}\nRien n'a été écrit.`);
-    process.exit(1);
+  const original = fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, "utf8")) : [];
+  for (;;) {
+    const { errors } = checkBank(bank);
+    if (!errors.length) break;
+    const culprits = promoted.filter((id) => bank.some((x) => x.id === id) && errors.some((e) => new RegExp(`(^|[^\\w-])${id}([^\\w-]|$)`).test(e)));
+    if (!culprits.length) {
+      console.error(`❌ ${target} serait invalide après promotion :\n- ${errors.join("\n- ")}\nRien n'a été écrit.`);
+      process.exit(1);
+    }
+    for (const id of culprits) {
+      const i = bank.findIndex((x) => x.id === id);
+      const before = original.find((x) => x.id === id);
+      if (before) bank[i] = before; else bank.splice(i, 1);
+      promoted.splice(promoted.indexOf(id), 1);
+      logEntries.splice(logEntries.findIndex((e) => e.id === id), 1);
+      blocked++;
+      console.log(`- ${id} : écarté (${errors.filter((e) => e.includes(id)).join(" ; ")})`);
+    }
   }
+}
+if (!promoted.length) {
+  console.log(`\nAucun item promu (${blocked} bloqué(s)).`);
+  process.exit(1);
 }
 if (values["dry-run"]) {
   console.log(`\n(dry-run) ${promoted.length} item(s) seraient promus. Rien n'a été écrit.`);

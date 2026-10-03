@@ -14,6 +14,7 @@ Ce répertoire consigne l'historique des décisions d'architecture structurantes
 | [ADR-0006](0006-admin-ui.md) | Interface d'administration à deux modes (hors ligne et serveur local) | 2026-10-01 | Accepté |
 | [ADR-0007](0007-llm-revisions.md) | Régénération par LLM sous forme de révisions relues | 2026-10-01 | Accepté |
 | [ADR-0008](0008-ci-review-log-gate-and-rule-based-abstract-generation.md) | Traçabilité obligatoire en CI (`check-review-log`) et générateur déterministe de figures abstraites | 2026-10-02 | Accepté |
+| [ADR-0009](0009-charts-and-format-realism.md) | Graphiques (stimulus `chart`) et contrôles de réalisme des formats | 2026-10-03 | Accepté |
 
 ---
 

@@ -153,7 +153,7 @@
     }
     const st = item.stimulus;
     if (st && st.type === "chart" && Array.isArray(st.labels) && Array.isArray(st.series)) {
-      for (const ser of st.series) if (Array.isArray(ser.values) && ser.values.length !== st.labels.length) errors.push(`graphique : la série « ${ser.name} » a ${ser.values.length} valeurs pour ${st.labels.length} étiquettes`);
+      for (const ser of st.series) if (ser && Array.isArray(ser.values) && ser.values.length !== st.labels.length) errors.push(`graphique : la série « ${ser.name} » a ${ser.values.length} valeurs pour ${st.labels.length} étiquettes`);
     }
     // Text lengths set by the generation prompt (realistic reading load).
     const words = (t) => String(t || "").trim().split(/\s+/).filter(Boolean).length;
@@ -251,7 +251,18 @@
   function bankChecks(items) {
     const errors = [], warnings = [];
     const list = (Array.isArray(items) ? items : []).filter((x) => x && typeof x === "object");
-    const grams = list.map((x) => trigrams(`${itemText(x)} ${(x.options || []).join(" ")}`));
+    // Items built on a table or a chart share their template wording and a small cell vocabulary
+    // (« Libre », « Présent »…) by design: trigram similarity is meaningless for them. They are
+    // duplicates only when the data themselves are identical.
+    const dataKey = (x) => {
+      const st = x.stimulus;
+      if (st && st.type === "table") return `t:${JSON.stringify(st.headers || [])}${JSON.stringify(st.rows || [])}`;
+      if (st && st.type === "chart") return `c:${JSON.stringify(st.labels || [])}${JSON.stringify(st.series || [])}`;
+      return null;
+    };
+    const dupText = (x) => `${itemText(x)} ${(x.options || []).join(" ")}`;
+    const keys = list.map(dataKey);
+    const grams = list.map((x, i) => (keys[i] ? null : trigrams(dupText(x))));
     for (let i = 0; i < list.length; i++) {
       for (let j = i + 1; j < list.length; j++) {
         const a = list[i], b = list[j];
@@ -261,6 +272,10 @@
           continue;
         }
         if (a.category === "abstract") continue; // trigram similarity is meaningless on short symbol strings
+        if (keys[i] || keys[j]) {
+          if (keys[i] && keys[i] === keys[j]) errors.push(`${a.id} et ${b.id} : mêmes données (doublon)`);
+          continue;
+        }
         const s = jaccard(grams[i], grams[j]);
         if (s >= DUP_ERROR) errors.push(`${a.id} et ${b.id} : quasi-doublon (similarité ${s.toFixed(2)})`);
         else if (s >= DUP_WARN) warnings.push(`${a.id} et ${b.id} : très proches (similarité ${s.toFixed(2)})`);
