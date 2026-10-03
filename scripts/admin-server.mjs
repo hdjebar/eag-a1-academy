@@ -14,7 +14,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
-import { withFileRollback } from "./lib/file-transaction.mjs";
+import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { approvingDecisionErrors, removalDecisionErrors } from "./check-review-log.mjs";
 
@@ -36,7 +36,7 @@ let running = null; // current task
 
 /* ---------- helpers ---------- */
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
-const writeJson = (file, data) => { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n", "utf8"); };
+const writeJson = (file, data) => { writeFileAtomic(file, JSON.stringify(data, null, 2) + "\n"); };
 const rel = (file) => path.relative(ROOT, file).split(path.sep).join("/");
 const stamp = () => `${new Date().toISOString().replace(/[:.]/g, "-")}-${crypto.randomBytes(3).toString("hex")}`;
 

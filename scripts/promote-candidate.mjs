@@ -5,7 +5,7 @@ import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { candidateReviewHash } from "./lib/review-rules.mjs";
-import { withFileRollback } from "./lib/file-transaction.mjs";
+import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -154,10 +154,9 @@ const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promo
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
 const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
 const { total } = withFileRollback(touched, () => {
-  for (const [target, bank] of byCategory) fs.writeFileSync(target, JSON.stringify(bank, null, 2) + "\n", "utf8");
-  fs.mkdirSync("data/review-log", { recursive: true });
-  fs.writeFileSync(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n", "utf8");
-  if (remaining.length) fs.writeFileSync(candidateFile, JSON.stringify(remaining, null, 2) + "\n", "utf8");
+  for (const [target, bank] of byCategory) writeFileAtomic(target, JSON.stringify(bank, null, 2) + "\n");
+  writeFileAtomic(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n");
+  if (remaining.length) writeFileAtomic(candidateFile, JSON.stringify(remaining, null, 2) + "\n");
   else {
     fs.rmSync(candidateFile);
     if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
