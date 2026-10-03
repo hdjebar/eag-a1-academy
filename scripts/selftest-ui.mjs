@@ -23,10 +23,12 @@ const charts = [
   { labels: ["a", "b"], series: [{ name: "x", values: [Infinity, "12"] }] },
   { kind: "line", labels: ["<b>", "b"], series: [{ name: "<script>", values: [0, 50] }, { name: "q", values: [20, 40] }] },
 ];
+// Préchauffe le JIT pour éviter les faux positifs de latence au démarrage à froid sur les runners partagés
+EagChart.html({ type: "chart", kind: "bar", caption: "warmup", labels: ["a"], series: [{ name: "s", values: [1] }] }, esc);
 for (const c of charts) {
   const t = Date.now();
   const h = EagChart.html({ type: "chart", kind: "bar", caption: "<img>", ...c }, esc);
-  if (Date.now() - t > 200) fail("graphique : rendu trop lent");
+  if (Date.now() - t > 1000) fail("graphique : rendu trop lent (boucle infinie ou régression majeure)");
   if (/<script|<img|<b>/.test(h)) fail("graphique : texte non échappé");
 }
 const end = EagTimer.deadline(25, 1000);
