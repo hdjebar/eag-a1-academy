@@ -30,6 +30,11 @@ function stimulusHtml(s){
 /* Options are shuffled once per question so the answer position carries no information. */
 function prepare(x,m){const order=x.f==="tfcs"?x.o.map((_,i)=>i):shuffle(x.o.map((_,i)=>i));return{...x,m,o:order.map(i=>x.o[i]),r:x.r?order.map(i=>x.r[i]):null,x:x.x?order.map(i=>x.x[i]):null,a:order.indexOf(x.a)}}
 function scoreRating(user,key){const gap=key.reduce((s,k,i)=>s+Math.abs(k-user[i]),0)/key.length;return Math.max(0,1-gap/3)}
+function startTimer(onExpire){
+  const s=state.session;clearInterval(s.interval);s.deadline=EagTimer.deadline(s.seconds);
+  s.timerUpdate=()=>{if(state.session!==s||s.done)return;s.seconds=EagTimer.secondsLeft(s.deadline);tick();if(s.seconds<=0){clearInterval(s.interval);s.timerUpdate=null;onExpire()}};
+  s.interval=setInterval(s.timerUpdate,1000);s.timerUpdate();
+}
 
 function route(n){if(state.session&&!state.session.done&&!["session","results"].includes(n)){if(!confirm("Quitter cette session ?"))return;clearInterval(state.session.interval);state.session=null}state.route=n;$$('.view').forEach(v=>v.classList.toggle('active',v.id===`v-${n}`));$$('[data-route]').forEach(b=>b.setAttribute('aria-current',b.dataset.route===n?'page':'false'));$('#crumb').textContent=names[n];history.replaceState(null,"",n==='accueil'?location.pathname:`#${n}`);scrollTo({top:0,behavior:'smooth'});if(n==='accueil')dashboard()}
 
@@ -77,7 +82,7 @@ function start(type,countChoice){
   state.session={type,countChoice:count,questions,title,seconds,guided,index:0,answers:[],locked:false,done:false};
   $('#sessiontitle').textContent=title;$('#sessionkind').textContent=guided?'Entraînement guidé avec retour immédiat':'Simulation chronométrée (correction à la fin)';
   route('session');render();tick();
-  state.session.interval=setInterval(()=>{state.session.seconds--;tick();if(state.session.seconds<=0)finish()},1000);
+  startTimer(finish);
 }
 function startExam(){
   const sections=[],questions=[];
@@ -89,15 +94,15 @@ function startExam(){
 }
 function sectionIntro(){
   const s=state.session,e=s.exam,sec=e.sections[e.current],n=sec.to-sec.from+1;
-  e.waiting=true;s.seconds=EXAM.minutesPerSection*60;tick();
+  clearInterval(s.interval);s.timerUpdate=null;e.waiting=true;s.seconds=EXAM.minutesPerSection*60;tick();
   $('#position').textContent=`Test ${e.current+1} / ${e.sections.length}`;
   $('#sessionbar').style.setProperty('--value',`${(sec.from/s.questions.length)*100}%`);
   $('#question').innerHTML=`<p class="eyebrow">Test ${e.current+1} sur ${e.sections.length}</p><h2 class="qprompt">${esc(modules[sec.cat].title)}</h2><p class="lede">${n} questions · ${EXAM.minutesPerSection} minutes. Le chronomètre démarre quand vous commencez ; à la fin du temps, le test suivant s'ouvre et les questions non traitées comptent comme non répondues.</p><p class="lede">Le jour de l'épreuve, lisez les consignes et résolvez les exemples proposés au début de chaque test.</p>${sec.cat==="numeric"?'<p class="lede">Une calculatrice est disponible à l\'écran, comme la calculatrice de l\'ordinateur autorisée le jour de l\'épreuve (appareils personnels interdits).</p>':''}<div class="actions"><button class="btn" id="startsection">Commencer le test</button></div>`;
-  $('#startsection').onclick=()=>{e.waiting=false;s.index=sec.from;render();s.interval=setInterval(()=>{s.seconds--;tick();if(s.seconds<=0)endSection()},1000)};
+  $('#startsection').onclick=()=>{e.waiting=false;s.index=sec.from;render();startTimer(endSection)};
 }
 function endSection(){
   const s=state.session;if(!s||!s.exam||s.done)return;
-  clearInterval(s.interval);
+  clearInterval(s.interval);s.timerUpdate=null;
   const e=s.exam,sec=e.sections[e.current];
   for(let i=sec.from;i<=sec.to;i++)if(!s.answers[i])s.answers[i]={choice:null,good:false,points:0};
   e.current++;
@@ -151,7 +156,7 @@ function record(choice){
 }
 function next(){const s=state.session;if(s.exam&&s.index>=s.exam.sections[s.exam.current].to)return endSection();if(s.index<s.questions.length-1){s.index++;render()}else finish()}
 function finish(){
-  const s=state.session;if(!s||s.done)return;s.done=true;clearInterval(s.interval);
+  const s=state.session;if(!s||s.done)return;s.done=true;clearInterval(s.interval);s.timerUpdate=null;
   const total=s.questions.length,pts=s.answers.reduce((n,a)=>n+(a?a.points:0),0),good=s.answers.filter(a=>a&&a.good).length,pct=Math.round(pts/total*100);
   $('#ring').style.setProperty('--score',`${pct}%`);$('#score').textContent=`${pct}%`;
   $('#message').textContent=pct>=80?'Très bonne maîtrise':pct>=60?'Base solide à consolider':'Analysez vos erreurs';
@@ -176,6 +181,7 @@ function renderModules(){
   }).join('');
 }
 function init(){
+  document.addEventListener('visibilitychange',()=>state.session?.timerUpdate?.());
   renderModules();
   $('#modules').onclick=e=>{const b=e.target.closest('[data-module]');if(b)start(b.dataset.module)};
   const picker=$('#session-picker');

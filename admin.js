@@ -44,6 +44,7 @@ function catRules(cat) {
 }
 function checks(item) { return R.checkItem(SCHEMA, item); }
 function allApproved() { return CATS.flatMap((c) => S.approved[c] || []); }
+function reviewCurrent(item, review) { return Boolean(review?.candidateHash && review.candidateHash === R.contentHash({ candidate: item })); }
 
 /* ---------- Rendering helpers ---------- */
 function stimulusHtml(s) {
@@ -103,7 +104,8 @@ function addCandidates(fileName, items, review, isNew = false) {
     if (!raw || typeof raw !== "object") continue;
     const key = `${fileName}::${raw.id}`;
     if (S.cands.some((c) => c.key === key)) continue;
-    S.cands.push({ key, file: fileName, item: raw, orig: JSON.stringify(raw), ai: reviews.get(raw.id) || null, aiStale: false, decision: null, reason: "", blind: null });
+    const ai = reviews.get(raw.id) || null;
+    S.cands.push({ key, file: fileName, item: raw, orig: JSON.stringify(raw), ai, aiStale: Boolean(ai && !reviewCurrent(raw, ai)), decision: null, reason: "", blind: null });
     S.files[fileName].ids.push(raw.id);
     added++;
   }
@@ -112,7 +114,7 @@ function addCandidates(fileName, items, review, isNew = false) {
 function attachReview(review) {
   let n = 0;
   for (const r of review.reviews || []) {
-    for (const c of S.cands.filter((c) => c.item.id === r.id)) { c.ai = r; c.aiStale = false; S.files[c.file].hasReview = true; n++; }
+    for (const c of S.cands.filter((c) => c.item.id === r.id && reviewCurrent(c.item, r))) { c.ai = r; c.aiStale = false; S.files[c.file].hasReview = true; n++; }
   }
   return n;
 }
@@ -252,11 +254,9 @@ function renderDetail() {
     <div class="panel"><div class="section-title">Contrôles automatiques</div><div id="d-checks" class="msgs"></div></div>
     <div class="panel"><details ${c.decision ? "" : "open"}><summary>Modifier la question</summary><div id="d-editor" style="margin-top:var(--s3)"></div></details></div>`;
   $("#blindmode").onchange = (e) => { if (!e.target.checked && !c.blind) c.blind = { skipped: true }; else if (e.target.checked) c.blind = null; refreshDetail(); };
-  renderEditor($("#d-editor"), c.item, () => { if (c.ai) c.aiStale = c.ai && JSON.stringify(stripMeta(c.item)) !== JSON.stringify(stripMeta(JSON.parse(c.orig))); c.blind = c.blind?.skipped ? c.blind : null; refreshDetail(); persist(); renderQueue(); }, { lockId: false });
+  renderEditor($("#d-editor"), c.item, () => { if (c.ai) c.aiStale = !reviewCurrent(c.item, c.ai); c.blind = c.blind?.skipped ? c.blind : null; refreshDetail(); persist(); renderQueue(); }, { lockId: false });
   refreshDetail();
 }
-function stripMeta(x) { const { reviewNotes, reviewer, reviewedAt, reviewStatus, rejectionReason, ...rest } = x; return rest; }
-
 function refreshDetail() {
   const c = currentCand(); if (!c) return;
   const item = c.item;

@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
+import { candidateReviewHash } from "./lib/review-rules.mjs";
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -66,8 +67,9 @@ const logEntries = [];
 for (const id of requested) {
   const item = candidates.find((c) => c.id === id);
   const decision = decisions.get(id);
-  if (!values["ignore-ai-review"] && decision?.decision !== "pass") {
-    console.log(`- ${id} : bloqué (revue IA : ${decision?.decision ?? "absente"}${decision?.issues?.length ? ` — ${decision.issues.join(" ; ")}` : ""})`);
+  const reviewCurrent = decision?.candidateHash === candidateReviewHash(item);
+  if (!values["ignore-ai-review"] && (decision?.decision !== "pass" || !reviewCurrent)) {
+    console.log(`- ${id} : bloqué (revue IA : ${decision?.decision ?? "absente"}${decision && !reviewCurrent ? " — empreinte absente ou obsolète" : ""}${decision?.issues?.length ? ` — ${decision.issues.join(" ; ")}` : ""})`);
     blocked++;
     continue;
   }
@@ -104,7 +106,7 @@ for (const id of requested) {
   promoted.push(id);
   logEntries.push({
     id, decision: isRevision ? "revised" : "approved", version: approved.version, hash: EagRules.contentHash(approved),
-    reviewer, at: now, aiDecision: decision?.decision ?? null, aiOverride: Boolean(values["ignore-ai-review"] && decision?.decision !== "pass"),
+    reviewer, at: now, aiDecision: decision?.decision ?? null, aiOverride: Boolean(values["ignore-ai-review"] && (decision?.decision !== "pass" || !reviewCurrent)),
     file: path.basename(candidateFile),
   });
   console.log(`${isRevision ? "~" : "+"} ${id} (${item.category}) → ${target}${isRevision ? ` (révision, version ${approved.version})` : ""}`);

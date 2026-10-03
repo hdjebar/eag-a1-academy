@@ -14,6 +14,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
+import { withFileRollback } from "./lib/file-transaction.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
@@ -35,7 +36,7 @@ let running = null; // current task
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 const writeJson = (file, data) => { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n", "utf8"); };
 const rel = (file) => path.relative(ROOT, file).split(path.sep).join("/");
-const stamp = () => new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+const stamp = () => `${new Date().toISOString().replace(/[:.]/g, "-")}-${crypto.randomBytes(3).toString("hex")}`;
 
 function send(res, status, body, type = "application/json; charset=utf-8") {
   res.writeHead(status, {
@@ -126,22 +127,34 @@ function save(body) {
   if (decisions.length && reviewer.length < 2) errors.push("Nom du relecteur manquant pour le journal des décisions");
   if (errors.length) { const e = new Error(errors.slice(0, 20).join("\n")); e.status = 400; throw e; }
 
-  // 2. Write.
+  // 2. Write as one recoverable transaction. Candidate deletion happens only inside
+  // the same rollback boundary as bank compilation.
   const written = [];
   const deleted = [];
-  for (const c of Object.keys(approved)) { const f = path.join(APPROVED, `${c}.json`); writeJson(f, finalBank[c]); written.push(rel(f)); }
-  for (const [name, items] of Object.entries(candidates)) {
+  const manualFile = manual.length ? path.join(GENERATED, `manual-${stamp()}.json`) : null;
+  const logFile = decisions.length ? path.join(LOG_DIR, `${stamp()}.json`) : null;
+  const touched = [path.join(ROOT, "app.js"), path.join(ROOT, "admin.js"), ...Object.keys(approved).map((c) => path.join(APPROVED, `${c}.json`))];
+  for (const name of Object.keys(candidates)) {
     const f = path.join(GENERATED, name);
-    if (items === null) {
-      fs.rmSync(f, { force: true }); deleted.push(rel(f));
-      const r = f.replace(/\.json$/, ".review.json");
-      if (fs.existsSync(r)) { fs.rmSync(r); deleted.push(rel(r)); }
-    } else { writeJson(f, items); written.push(rel(f)); }
+    touched.push(f, f.replace(/\.json$/, ".review.json"));
   }
-  if (manual.length) { const f = path.join(GENERATED, `manual-${stamp()}.json`); writeJson(f, manual); written.push(rel(f)); }
-  if (decisions.length) { const f = path.join(LOG_DIR, `${stamp()}.json`); writeJson(f, { reviewer, savedAt: new Date().toISOString(), mode: "server", decisions }); written.push(rel(f)); }
+  if (manualFile) touched.push(manualFile);
+  if (logFile) touched.push(logFile);
 
-  const { total } = syncAppJs();
+  const { total } = withFileRollback(touched, () => {
+    for (const c of Object.keys(approved)) { const f = path.join(APPROVED, `${c}.json`); writeJson(f, finalBank[c]); written.push(rel(f)); }
+    for (const [name, items] of Object.entries(candidates)) {
+      const f = path.join(GENERATED, name);
+      if (items === null) {
+        fs.rmSync(f, { force: true }); deleted.push(rel(f));
+        const r = f.replace(/\.json$/, ".review.json");
+        if (fs.existsSync(r)) { fs.rmSync(r); deleted.push(rel(r)); }
+      } else { writeJson(f, items); written.push(rel(f)); }
+    }
+    if (manualFile) { writeJson(manualFile, manual); written.push(rel(manualFile)); }
+    if (logFile) { writeJson(logFile, { reviewer, savedAt: new Date().toISOString(), mode: "server", decisions }); written.push(rel(logFile)); }
+    return syncAppJs();
+  });
   return { written, deleted, build: `app.js et admin.js resynchronisés (${total} questions).` };
 }
 
