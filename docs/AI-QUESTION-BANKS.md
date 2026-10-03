@@ -98,6 +98,26 @@ npm test
 
 ---
 
+## Méthode 4 : Génération déterministe par règles (Raisonnement abstrait / Test géométrique)
+
+Pour le **Raisonnement abstrait** (Test géométrique), les figures ne doivent comporter aucun chiffre, lettre ou mot. Un générateur par règles déterministes est disponible pour produire des matrices 3×3, des rotations, des transformations et des suites logiques sans risque d'hallucination de contenu textuel :
+
+```bash
+# Génère les candidats nécessaires pour atteindre 100 items approuvés au total
+npm run generate:abstract generated/candidats-abstrait.json -- --target 100
+
+# Valide et lance la revue aveugle
+npm run validate:bank generated/candidats-abstrait.json
+npm run review:bank generated/candidats-abstrait.json
+
+# Promotion humaine explicite après relecture
+node scripts/promote-candidate.mjs generated/candidats-abstrait.json --reviewer "Prénom Nom" --approve all
+```
+
+Le script calcule la solution mathématiquement, vérifie l'unicité des formes (en tenant compte des rotations et symétries) et produit des distracteurs distincts et plausibles.
+
+---
+
 ## Interface d'administration
 
 La même page, `admin.html`, fonctionne en deux modes.

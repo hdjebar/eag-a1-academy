@@ -61,12 +61,16 @@ eag-a1-academy/
 ├── scripts/
 │   ├── admin-server.mjs      # Serveur local de l'interface d'administration (127.0.0.1, jeton)
 │   ├── build-bank.mjs        # Compilation de data/approved/ vers app.js et admin.js
+│   ├── check-review-log.mjs  # Contrôle CI : chaque question approuvée a une décision tracée
+│   ├── generate-abstract-figures.mjs # Générateur déterministe de figures abstraites par règles géométriques
 │   ├── generate-bank.mjs     # Génération via API compatible OpenAI (consigne facultative)
 │   ├── regenerate-bank.mjs   # Révision de questions approuvées par LLM (sortie : révisions à relire)
 │   ├── promote-candidate.mjs # Promotion humaine explicite (relecteur nommé, identifiants listés)
 │   ├── review-bank.mjs       # Revue aveugle par LLM, comparée à la clé par le script
 │   ├── validate-bank.mjs     # Schéma (Ajv) + règles complémentaires (HTML interdit, notes, longueurs…)
-│   └── lib/ai.mjs            # Client HTTP commun compatible OpenAI
+│   └── lib/
+│       ├── ai.mjs            # Client HTTP commun compatible OpenAI
+│       └── rules.mjs         # Règles communes de hachage et de normalisation
 │
 ├── prompts/
 │   ├── generate-bank.md      # Consignes système et contraintes de génération
@@ -107,7 +111,7 @@ Tout contenu généré par un LLM est traité comme suspect jusqu'à preuve du c
 3. **Approbation humaine obligatoire** : `promote-candidate.mjs` exige un relecteur nommé et la liste explicite des identifiants approuvés ; la CI refuse toute PR qui laisse des fichiers dans `generated/`.
 
 ### 3.4. Rendu sûr et neutre
-* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les questions approuvées de la catégorie (410 au 2 octobre 2026, objectif 100 par catégorie).
+* **Tirage aléatoire dynamique par catégorie** : pour assurer une rejouabilité maximale sans redondance, chaque session (entraînement guidé de 10 questions, simulation de 15 questions, ou examen blanc de 5 épreuves) procède à un tirage aléatoire sans remise (Fisher-Yates) parmi les 100 questions approuvées de chaque catégorie (500 items au total).
 * **Raisonnement abstrait (Test géométrique)** : le stimulus de type `{ type: "shapes", text: "..." }` permet la représentation structurée et accessible de matrices 3×3 et de suites de figures (rotations, symétries, grilles d'éléments géométriques purs), sans dépendance d'image externe ni risque d'injection.
 * **Ordre des options aléatoire** : les options sont mélangées à chaque affichage via l'algorithme de Fisher-Yates (sauf pour le format `tfcs` Vrai / Faux / On ne peut pas savoir qui conserve son ordre logique immuable).
 * **Jugement situationnel noté (échelle 1 à 4)** : chaque réaction est notée individuellement. Le score unitaire d'un item situationnel est calculé par la concordance moyenne absolue avec les notes de référence :
@@ -148,6 +152,7 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0005 : Items en texte brut, rendu échappé et formats alignés sur GovJobs](adr/0005-plain-text-items-and-official-formats.md)
 * [ADR-0006 : Interface d'administration à deux modes (hors ligne et serveur local)](adr/0006-admin-ui.md)
 * [ADR-0007 : Régénération par LLM sous forme de révisions relues](adr/0007-llm-revisions.md)
+* [ADR-0008 : Traçabilité obligatoire en CI (check-review-log) et génération déterministe de figures abstraites](adr/0008-ci-review-log-gate-and-rule-based-abstract-generation.md)
 
 L'étude comparative et le cadre de référence psychométrique sont documentés dans :
 * [docs/research/eag-2026-benchmark.md](research/eag-2026-benchmark.md) : Benchmark approfondi des épreuves psychotechniques internationales (EPSO, SHL Direct, GovJobs, psychotechnique.lu, Travaillerpour.be).

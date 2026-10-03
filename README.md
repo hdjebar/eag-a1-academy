@@ -26,7 +26,7 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 
 ## Fonctionnalités
 
-- **Banque de questions originales relues** : 410 questions approuvées après l'audit du 2 octobre 2026 (objectif : 100 par catégorie ; un lot de remplacement attend la relecture humaine), tirage aléatoire sans remise.
+- **Banque de questions originales relues** : 500 questions approuvées et relues (100 par catégorie), tirage aléatoire sans remise.
 - **5 familles de tests A1** : Raisonnement abstrait (*Test géométrique* : matrices 3×3 et séries de figures), verbal, numérique, planification et jugement situationnel.
 - **Formats officiels 2026** :
   - Matrices et suites géométriques pures pour l'abstrait.
@@ -50,17 +50,17 @@ Conformément aux directives officielles GovJobs pour le **Groupe de traitement 
 
 | Code | Famille de test | Compétences couvertes | Format d'item | Questions validées |
 | :---: | :--- | :--- | :--- | :---: |
-| **RA** | **Raisonnement abstrait** *(Test géométrique)* | Suite logique, matrice 3×3, rotation, transformation géométrique | `single_best` (formes pures) | 34 |
-| **RV** | **Raisonnement verbal** | Compréhension, inférence, application de consigne, vrai/faux/indéterminé, synthèse | `single_best`, `tfcs` | 92 |
+| **RA** | **Raisonnement abstrait** *(Test géométrique)* | Suite logique, matrice 3×3, rotation, transformation géométrique | `single_best` (formes pures) | 100 |
+| **RV** | **Raisonnement verbal** | Compréhension, inférence, application de consigne, vrai/faux/indéterminé, synthèse | `single_best`, `tfcs` | 100 |
 | **RN** | **Raisonnement numérique** | Pourcentage, variation, ratio & proportion, moyenne, lecture de tableau, opérations simples | `single_best` (calculatrice de base) | 100 |
-| **PL** | **Planification** | Agenda & contraintes, priorisation, dépendances, disponibilités, conflits | `single_best` (gestion d'agenda) | 94 |
-| **JS** | **Jugement situationnel** | Servir le client-usager, Conseiller | `rating` (notes 1 à 4) | 90 |
-| **Total** | *Banque étalonnée complète* | *5 épreuves A1 conformes à la réforme GovJobs 2026* | — | **410** |
+| **PL** | **Planification** | Agenda & contraintes, priorisation, dépendances, disponibilités, conflits | `single_best` (gestion d'agenda) | 100 |
+| **JS** | **Jugement situationnel** | Servir le client-usager, Conseiller | `rating` (notes 1 à 4) | 100 |
+| **Total** | *Banque étalonnée complète* | *5 épreuves A1 conformes à la réforme GovJobs 2026* | — | **500** |
 
 > **Notes importantes** :
-> - **Audit du 2 octobre 2026** : 90 questions retirées (66 items abstraits contenant des lettres, chiffres ou mots, 1 clé erronée, des questions ambiguës, sans réponse valable ou faisant appel à des connaissances extérieures, des doublons). Leurs remplacements sont proposés comme candidats et n'entrent dans la banque qu'après approbation humaine (`npm run promote:candidate`).
+> - **Audit du 2 octobre 2026 et rétablissement du palier 500 questions** : Suite à un audit approfondi de la banque le 2 octobre 2026, 90 questions ont été retirées (items abstraits contenant des lettres ou chiffres, ambiguïtés, etc.). Un lot de 112 questions candidates (générateur géométrique déterministe pour l'abstrait, révisions et nouveaux items pour les autres catégories) a ensuite été passé en revue IA aveugle, validé et approuvé par relecture humaine (`npm run promote:candidate`), rétablissant la banque à 100 questions par épreuve (500 items au total).
 > - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). Les items sont composés uniquement de formes et de flèches (règle vérifiée par le validateur).
-> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les items disponibles dans chaque catégorie.
+> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les 100 items disponibles dans chaque catégorie.
 > - **Test de contrôle/précision** : Ce test ne concerne pas le groupe A1 (réservé aux groupes B1 et C1) et n'est donc pas inclus dans cette application.
 
 ---
@@ -138,14 +138,16 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 
 | Commande | Rôle |
 | :--- | :--- |
-| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque et le contrôle de synchronisation de `app.js` et `admin.js`. |
+| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque, le contrôle de synchronisation de `app.js` et `admin.js`, et le contrôle de relecture (`check:review-log`). |
 | `npm run admin` | Lance l'interface d'administration locale (127.0.0.1, jeton par session). |
-| `npm run regenerate:bank` | Révise des questions approuvées avec un LLM (`IDS`, `INSTRUCTION`) ; résultat à relire dans `generated/`. |
 | `npm run build:bank` | Compile et synchronise `data/approved/*.json` dans `app.js` et `admin.js`. |
 | `npm run validate:bank` | Valide un ou plusieurs fichiers de questions candidats contre le schéma. |
 | `npm run generate:bank` | Génère un lot de questions candidates via API (OpenAI/Ollama). |
+| `npm run generate:abstract` | Génère des candidats de raisonnement abstrait déterministes par règles géométriques (matrices et suites). |
+| `npm run regenerate:bank` | Révise des questions approuvées avec un LLM (`IDS`, `INSTRUCTION`) ; résultat à relire dans `generated/`. |
 | `npm run review:bank` | Lance la revue IA à l'aveugle sur un lot candidat. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Approuve et promeut des questions candidates vers `data/approved/`. |
+| `npm run check:review-log` | Vérifie que chaque question approuvée correspond à une décision tracée dans `data/review-log/`. |
 
 ---
 
