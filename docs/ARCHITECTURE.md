@@ -43,6 +43,7 @@ eag-a1-academy/
 ├── admin.html / admin.js     # Interface d'administration (hors ligne ou via npm run admin)
 ├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité, empreinte de contenu)
 ├── shared/chart.js           # Rendu SVG des graphiques (barres, courbes) pour l'application et l'admin
+├── shared/calculator.js      # Calculatrice à l'écran des tests numériques (analyseur sans eval)
 │
 ├── data/
 │   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand, empreinte) ; contrôlé en CI

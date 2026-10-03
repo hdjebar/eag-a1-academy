@@ -92,7 +92,7 @@ function sectionIntro(){
   e.waiting=true;s.seconds=EXAM.minutesPerSection*60;tick();
   $('#position').textContent=`Test ${e.current+1} / ${e.sections.length}`;
   $('#sessionbar').style.setProperty('--value',`${(sec.from/s.questions.length)*100}%`);
-  $('#question').innerHTML=`<p class="eyebrow">Test ${e.current+1} sur ${e.sections.length}</p><h2 class="qprompt">${esc(modules[sec.cat].title)}</h2><p class="lede">${n} questions · ${EXAM.minutesPerSection} minutes. Le chronomètre démarre quand vous commencez ; à la fin du temps, le test suivant s'ouvre et les questions non traitées comptent comme non répondues.</p><p class="lede">Le jour de l'épreuve, lisez les consignes et résolvez les exemples proposés au début de chaque test.</p><div class="actions"><button class="btn" id="startsection">Commencer le test</button></div>`;
+  $('#question').innerHTML=`<p class="eyebrow">Test ${e.current+1} sur ${e.sections.length}</p><h2 class="qprompt">${esc(modules[sec.cat].title)}</h2><p class="lede">${n} questions · ${EXAM.minutesPerSection} minutes. Le chronomètre démarre quand vous commencez ; à la fin du temps, le test suivant s'ouvre et les questions non traitées comptent comme non répondues.</p><p class="lede">Le jour de l'épreuve, lisez les consignes et résolvez les exemples proposés au début de chaque test.</p>${sec.cat==="numeric"?'<p class="lede">Une calculatrice est disponible à l\'écran, comme la calculatrice de l\'ordinateur autorisée le jour de l\'épreuve (appareils personnels interdits).</p>':''}<div class="actions"><button class="btn" id="startsection">Commencer le test</button></div>`;
   $('#startsection').onclick=()=>{e.waiting=false;s.index=sec.from;render();s.interval=setInterval(()=>{s.seconds--;tick();if(s.seconds<=0)endSection()},1000)};
 }
 function endSection(){
@@ -116,7 +116,8 @@ function render(){
   }else{
     body=`<fieldset class="options${x.m==="abstract"?" figs":""}"><legend class="sr">Options de réponse</legend>${x.o.map((z,i)=>`<label class="option"><input type="radio" name="answer" value="${i}"><span>${esc(z)}</span></label>`).join('')}</fieldset>`;
   }
-  $('#question').innerHTML=`<p class="eyebrow">${esc(modules[x.m].title)}${skillOf(x)}</p><h2 class="qprompt">${esc(x.p)}</h2>${stimulusHtml(x.s)}${body}<div id="feedback" role="status" aria-live="polite"></div><div class="actions"><button class="btn" id="validate">${s.guided?'Valider':'Réponse suivante'}</button><button class="btn ghost" id="pass">Passer</button>${sec?'<button class="btn secondary" id="endsection">Terminer ce test</button>':''}</div>`;
+  $('#question').innerHTML=`<p class="eyebrow">${esc(modules[x.m].title)}${skillOf(x)}</p><h2 class="qprompt">${esc(x.p)}</h2>${stimulusHtml(x.s)}${body}<div id="feedback" role="status" aria-live="polite"></div><div class="actions"><button class="btn" id="validate">${s.guided?'Valider':'Réponse suivante'}</button><button class="btn ghost" id="pass">Passer</button>${sec?'<button class="btn secondary" id="endsection">Terminer ce test</button>':''}</div>${x.m==="numeric"&&globalThis.EagCalc?EagCalc.html():""}`;
+  if(x.m==="numeric"&&globalThis.EagCalc)EagCalc.mount($('#question'));
   $('#validate').onclick=submit;$('#pass').onclick=()=>record(null);
   if(sec)$('#endsection').onclick=()=>{if(confirm('Terminer ce test ? Les questions non traitées compteront comme non répondues.'))endSection()};
 }
