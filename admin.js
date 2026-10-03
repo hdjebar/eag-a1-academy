@@ -189,6 +189,9 @@ function persist() {
 }
 function restore(saved) {
   S.cands = saved.cands || []; S.files = saved.files || {}; S.log = saved.log || [];
+  // Persisted sessions may predate content-bound AI reviews. Never trust the
+  // serialized aiStale flag; derive it again from the current item and review.
+  for (const c of S.cands) c.aiStale = Boolean(c.ai && !reviewCurrent(c.item, c.ai));
   for (const c of CATS) S.approved[c] = saved.approved?.[c] || S.approved[c];
   S.removed = new Set(saved.removed || []);
   S.sel.queue = S.cands[0]?.key || null;

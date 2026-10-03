@@ -5,6 +5,7 @@ import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { candidateReviewHash } from "./lib/review-rules.mjs";
+import { withFileRollback } from "./lib/file-transaction.mjs";
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -149,24 +150,21 @@ if (values["dry-run"]) {
   process.exit(0);
 }
 
-for (const [target, bank] of byCategory) fs.writeFileSync(target, JSON.stringify(bank, null, 2) + "\n", "utf8");
-
-// Review log: CI (scripts/check-review-log.mjs) requires one entry per approved item and version.
-fs.mkdirSync("data/review-log", { recursive: true });
 const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
-fs.writeFileSync(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n", "utf8");
-console.log(`Journal de relecture : ${logFile}`);
-
-// Remove promoted items from the candidate file so nothing is approved twice.
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
-if (remaining.length) {
-  fs.writeFileSync(candidateFile, JSON.stringify(remaining, null, 2) + "\n", "utf8");
-  console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
-} else {
-  fs.rmSync(candidateFile);
-  if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
-  console.log(`\nTous les items traités : ${candidateFile} supprimé.`);
-}
-
-const { total } = syncAppJs();
+const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
+const { total } = withFileRollback(touched, () => {
+  for (const [target, bank] of byCategory) fs.writeFileSync(target, JSON.stringify(bank, null, 2) + "\n", "utf8");
+  fs.mkdirSync("data/review-log", { recursive: true });
+  fs.writeFileSync(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n", "utf8");
+  if (remaining.length) fs.writeFileSync(candidateFile, JSON.stringify(remaining, null, 2) + "\n", "utf8");
+  else {
+    fs.rmSync(candidateFile);
+    if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
+  }
+  return syncAppJs();
+});
+console.log(`Journal de relecture : ${logFile}`);
+if (remaining.length) console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
+else console.log(`\nTous les items traités : ${candidateFile} supprimé.`);
 console.log(`🎉 ${promoted.length} item(s) promu(s) par ${reviewer}. app.js resynchronisé (${total} questions).`);

@@ -13,7 +13,7 @@
     "check:review-log": "node scripts/check-review-log.mjs",
     "generate:abstract": "node scripts/generate-abstract-figures.mjs",
     "generate:data": "node scripts/generate-data-items.mjs",
-    "test": "node --check app.js && node --check admin.js && node --check shared/item-rules.js && node --check shared/chart.js && node --check shared/calculator.js && node --check shared/timer.js && node scripts/selftest-ui.mjs && node scripts/selftest-review.mjs && node scripts/selftest-transaction.mjs && node --check scripts/regenerate-bank.mjs && node --check scripts/check-review-log.mjs && node --check scripts/generate-abstract-figures.mjs && node --check scripts/generate-data-items.mjs && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check && node scripts/check-review-log.mjs",
+    "test": "node scripts/check-syntax.mjs && node scripts/selftest-ui.mjs && node scripts/selftest-review.mjs && node scripts/selftest-review-log.mjs && node scripts/selftest-transaction.mjs && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check && node scripts/check-review-log.mjs",
     "regenerate:bank": "node --env-file-if-exists=.env scripts/regenerate-bank.mjs"
   },
   "devDependencies": {

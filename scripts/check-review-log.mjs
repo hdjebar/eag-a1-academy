@@ -7,6 +7,19 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPROVED_DIR = path.join(ROOT, "data/approved");
 const LOG_DIR = path.join(ROOT, "data/review-log");
 const APPROVING = new Set(["approved", "revised", "modified", "legacy"]);
+const ITEM_ID = /^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$/;
+const HASH = /^[0-9a-f]{16}$/;
+
+export function approvingDecisionErrors(d) {
+  const errors = [];
+  if (!d || typeof d !== "object" || Array.isArray(d)) return ["décision invalide : objet attendu"];
+  if (typeof d.id !== "string" || !ITEM_ID.test(d.id)) errors.push("identifiant absent ou invalide");
+  if (!Number.isInteger(d.version) || d.version < 1) errors.push("version absente ou invalide");
+  if (typeof d.hash !== "string" || !HASH.test(d.hash)) errors.push("empreinte absente ou invalide");
+  if (typeof d.reviewer !== "string" || d.reviewer.trim().length < 2) errors.push("relecteur absent ou invalide");
+  if (typeof d.at !== "string" || Number.isNaN(Date.parse(d.at))) errors.push("horodatage absent ou invalide");
+  return errors;
+}
 
 /**
  * Review gate: every item in data/approved/ must match a human decision in data/review-log/.
@@ -27,10 +40,13 @@ export function checkReviewLog() {
   for (const f of files) {
     let log;
     try { log = JSON.parse(fs.readFileSync(path.join(LOG_DIR, f), "utf8")); } catch (e) { errors.push(`${f} : JSON illisible (${e.message})`); continue; }
-    for (const d of Array.isArray(log.decisions) ? log.decisions : []) {
+    const decisions = Array.isArray(log.decisions) ? log.decisions : [];
+    for (let i = 0; i < decisions.length; i++) {
+      const d = decisions[i];
       entries++;
-      if (!d || !d.id) continue;
-      if (APPROVING.has(d.decision)) {
+      if (d && APPROVING.has(d.decision)) {
+        const invalid = approvingDecisionErrors(d);
+        if (invalid.length) { errors.push(`${f} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
         const prev = latest.get(d.id);
         if (!prev || String(d.at || "") >= String(prev.at || "")) latest.set(d.id, { ...d, file: f });
       }
@@ -43,9 +59,8 @@ export function checkReviewLog() {
       const d = latest.get(item.id);
       if (!d) { errors.push(`${item.id} : aucune décision de relecture dans data/review-log/`); continue; }
       if (d.version !== item.version) errors.push(`${item.id} : version ${item.version} approuvée sans décision (journal : version ${d.version}, ${d.file})`);
-      else if (!d.hash) errors.push(`${item.id} : décision sans empreinte de contenu (${d.file})`);
       else if (d.hash !== EagRules.contentHash(item)) errors.push(`${item.id} : contenu modifié depuis la décision de ${d.reviewer} (${d.file}) ; faites-le relire et approuver à nouveau`);
-      if (d.reviewer && item.reviewer && d.reviewer !== item.reviewer) errors.push(`${item.id} : relecteur « ${item.reviewer} » différent de celui du journal (« ${d.reviewer} »)`);
+      if (d.reviewer !== item.reviewer) errors.push(`${item.id} : relecteur « ${item.reviewer} » différent de celui du journal (« ${d.reviewer} »)`);
     }
   }
   return { errors, checked, entries };
