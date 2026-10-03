@@ -17,7 +17,8 @@ import { syncAppJs } from "./build-bank.mjs";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
 import { withLock } from "./lib/lockfile.mjs";
 import { EagRules } from "./lib/rules.mjs";
-import { approvingDecisionErrors, removalDecisionErrors } from "./check-review-log.mjs";
+import { approvingDecisionErrors, removalDecisionErrors, minorDecisionErrors } from "./check-review-log.mjs";
+import { versionBumpErrors } from "./lib/review-rules.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
@@ -146,10 +147,12 @@ function save(body) {
     const after = new Map((Array.isArray(finalBank[c]) ? finalBank[c] : []).map((x) => [x.id, x]));
     for (const [id, item] of before) {
       if (after.has(id)) continue;
-      const d = decisions.find((x) => x?.id === id && x.decision === "removed");
+      const d = decisions.find((x) => x?.id === id && (x.decision === "removed" || x.decision === "undone"));
       if (!d) errors.push(`${id} : retrait sans décision « removed »`);
       else {
-        const invalid = removalDecisionErrors(d);
+        // « undone » annule l'approbation précédente : un retrait fait immédiatement
+        // suite à une annulation n'a pas besoin d'une décision « removed ».
+        const invalid = d.decision === "undone" ? minorDecisionErrors(d) : removalDecisionErrors(d);
         if (invalid.length) errors.push(`${id} : décision de retrait invalide (${invalid.join(" ; ")})`);
       }
     }
@@ -162,6 +165,7 @@ function save(body) {
         const invalid = approvingDecisionErrors(d);
         if (invalid.length || d.reviewer !== item.reviewer) errors.push(`${id} : décision d'approbation invalide (${[...invalid, ...(d.reviewer !== item.reviewer ? ["relecteur incohérent"] : [])].join(" ; ")})`);
       }
+      errors.push(...versionBumpErrors(old, item).map((e) => `${id} : ${e}`));
     }
   }
   if (errors.length) { const e = new Error(errors.slice(0, 20).join("\n")); e.status = 400; throw e; }
@@ -198,6 +202,9 @@ function save(body) {
 }
 
 function run(cmd, args, env = {}) {
+  // `shell: true` on Windows is safe only because every interpolated value here is an
+  // env var or a validated literal. NEVER append raw user input to `args`: on Windows
+  // it would become shell-injectable.
   return new Promise((resolve) => {
     const child = spawn(cmd, args, { cwd: ROOT, env: { ...process.env, ...env }, shell: process.platform === "win32" });
     let output = "";
