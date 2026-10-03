@@ -111,7 +111,9 @@ for (const id of requested) {
   logEntries.push({
     id, decision: isRevision ? "revised" : "approved", version: approved.version, hash: EagRules.contentHash(approved),
     reviewer, at: now, aiDecision: decision?.decision ?? null, aiOverride: Boolean(values["ignore-ai-review"] && (decision?.decision !== "pass" || !reviewCurrent)),
-    file: path.basename(candidateFile),
+    // Binding kept after the .review.json is deleted: the recorded AI decision can be
+    // checked against the candidate's fingerprint that produced it.
+    candidateHash: decision?.candidateHash ?? null, file: path.basename(candidateFile),
   });
   console.log(`${isRevision ? "~" : "+"} ${id} (${item.category}) → ${target}${isRevision ? ` (révision, version ${approved.version})` : ""}`);
 }
