@@ -174,7 +174,7 @@ async function reloadFromServer() {
 /** After a task: add new candidate files and fresh reviews without touching unsaved work. */
 async function mergeFromServer() {
   const st = await api("/api/state");
-  S.aiConfigured = st.aiConfigured;
+  S.aiConfigured = st.aiConfigured; S.workspaceRevision = st.workspaceRevision;
   const added = [];
   for (const f of st.candidates) {
     if (!S.files[f.file]) { addCandidates(f.file, f.items, f.review); added.push(f.file); }

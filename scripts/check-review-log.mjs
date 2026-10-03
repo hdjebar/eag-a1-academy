@@ -31,6 +31,12 @@ export function removalDecisionErrors(d) {
   return errors;
 }
 
+export function reviewLogErrors(log) {
+  if (!log || typeof log !== "object" || Array.isArray(log)) return ["journal invalide : objet attendu"];
+  if (!Array.isArray(log.decisions)) return ["champ decisions absent ou invalide : tableau attendu"];
+  return [];
+}
+
 /**
  * Review gate: every item in data/approved/ must match a human decision in data/review-log/.
  *
@@ -51,7 +57,9 @@ export function checkReviewLog() {
   for (const f of files) {
     let log;
     try { log = JSON.parse(fs.readFileSync(path.join(LOG_DIR, f), "utf8")); } catch (e) { errors.push(`${f} : JSON illisible (${e.message})`); continue; }
-    const decisions = Array.isArray(log.decisions) ? log.decisions : [];
+    const invalidLog = reviewLogErrors(log);
+    if (invalidLog.length) { errors.push(`${f} : ${invalidLog.join(" ; ")}`); continue; }
+    const decisions = log.decisions;
     for (let i = 0; i < decisions.length; i++) {
       const d = decisions[i];
       entries++;
