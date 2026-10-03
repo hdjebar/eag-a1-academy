@@ -19,7 +19,7 @@ const TFCS = { fr: ["Vrai", "Faux", "On ne peut pas savoir"], de: ["Richtig", "F
 const STORE_KEY = "eag-admin-session-v1";
 
 const S = {
-  mode: "offline", token: null, aiConfigured: false,
+  mode: "offline", token: null, aiConfigured: false, workspaceRevision: null, approvedBaseHash: null,
   approved: {}, approvedOrig: {}, removed: new Set(),
   cands: [], files: {}, log: [],
   sel: { queue: null, bank: null }, bankDraft: null, bankSel: new Set(), tab: "queue", busy: false,
@@ -93,6 +93,7 @@ function dupMsgs(item, exceptId) {
 function setApproved(bank) {
   S.approved = {}; S.approvedOrig = {}; S.removed = new Set();
   for (const c of CATS) { S.approved[c] = clone(bank[c] || []); S.approvedOrig[c] = JSON.stringify(bank[c] || []); }
+  S.approvedBaseHash = R.contentHash({ approved: bank });
 }
 function addCandidates(fileName, items, review, isNew = false) {
   if (!Array.isArray(items)) throw new Error("tableau JSON attendu");
@@ -162,7 +163,7 @@ async function detectServer() {
 }
 async function reloadFromServer() {
   const st = await api("/api/state");
-  S.mode = "server"; S.aiConfigured = st.aiConfigured;
+  S.mode = "server"; S.aiConfigured = st.aiConfigured; S.workspaceRevision = st.workspaceRevision;
   setApproved(st.approved);
   S.cands = []; S.files = {};
   for (const f of st.candidates) addCandidates(f.file, f.items, f.review);
@@ -185,9 +186,13 @@ async function mergeFromServer() {
 /* ---------- Offline session persistence ---------- */
 function persist() {
   if (S.mode !== "offline") return;
-  store(STORE_KEY, { savedAt: nowIso(), cands: S.cands, files: S.files, approved: S.approved, removed: [...S.removed], log: S.log });
+  store(STORE_KEY, { savedAt: nowIso(), baseHash: S.approvedBaseHash, cands: S.cands, files: S.files, approved: S.approved, removed: [...S.removed], log: S.log });
 }
 function restore(saved) {
+  if (!saved.baseHash || saved.baseHash !== S.approvedBaseHash) {
+    toast("Session incompatible avec la banque actuelle : rechargez les candidats sans restaurer cet ancien état.");
+    return false;
+  }
   S.cands = saved.cands || []; S.files = saved.files || {}; S.log = saved.log || [];
   // Persisted sessions may predate content-bound AI reviews. Never trust the
   // serialized aiStale flag; derive it again from the current item and review.
@@ -196,6 +201,7 @@ function restore(saved) {
   S.removed = new Set(saved.removed || []);
   S.sel.queue = S.cands[0]?.key || null;
   renderAll();
+  return true;
 }
 
 /* ---------- Queue ---------- */
@@ -739,7 +745,7 @@ async function saveToServer(plan) {
   const approved = Object.fromEntries(plan.cats.map((c) => [c, S.approved[c]]));
   try {
     $("#save").disabled = true;
-    const res = await api("/api/save", { approved, candidates, manual, log: { reviewer: reviewer(), decisions: S.log } });
+    const res = await api("/api/save", { workspaceRevision: S.workspaceRevision, approved, candidates, manual, log: { reviewer: reviewer(), decisions: S.log } });
     toast(`Enregistré : ${res.written.length} fichier(s) écrit(s), ${res.deleted.length} supprimé(s)`);
     S.log = [];
     await reloadFromServer(); renderAll();
@@ -931,7 +937,7 @@ async function init() {
     if (saved && (saved.cands?.length || saved.log?.length)) {
       const b = $("#restore");
       b.hidden = false; b.textContent = `Reprendre la session du ${new Date(saved.savedAt).toLocaleString("fr-FR")}`;
-      b.onclick = () => { restore(saved); b.hidden = true; toast("Session restaurée"); };
+      b.onclick = () => { if (restore(saved)) { b.hidden = true; toast("Session restaurée"); } };
     }
   }
   renderAll();

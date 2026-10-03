@@ -7,6 +7,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPROVED_DIR = path.join(ROOT, "data/approved");
 const LOG_DIR = path.join(ROOT, "data/review-log");
 const APPROVING = new Set(["approved", "revised", "modified", "legacy"]);
+const REMOVING = new Set(["removed"]);
 const ITEM_ID = /^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$/;
 const HASH = /^[0-9a-f]{16}$/;
 
@@ -16,6 +17,15 @@ export function approvingDecisionErrors(d) {
   if (typeof d.id !== "string" || !ITEM_ID.test(d.id)) errors.push("identifiant absent ou invalide");
   if (!Number.isInteger(d.version) || d.version < 1) errors.push("version absente ou invalide");
   if (typeof d.hash !== "string" || !HASH.test(d.hash)) errors.push("empreinte absente ou invalide");
+  if (typeof d.reviewer !== "string" || d.reviewer.trim().length < 2) errors.push("relecteur absent ou invalide");
+  if (typeof d.at !== "string" || Number.isNaN(Date.parse(d.at))) errors.push("horodatage absent ou invalide");
+  return errors;
+}
+
+export function removalDecisionErrors(d) {
+  const errors = [];
+  if (!d || typeof d !== "object" || Array.isArray(d)) return ["décision invalide : objet attendu"];
+  if (typeof d.id !== "string" || !ITEM_ID.test(d.id)) errors.push("identifiant absent ou invalide");
   if (typeof d.reviewer !== "string" || d.reviewer.trim().length < 2) errors.push("relecteur absent ou invalide");
   if (typeof d.at !== "string" || Number.isNaN(Date.parse(d.at))) errors.push("horodatage absent ou invalide");
   return errors;
@@ -34,6 +44,7 @@ export function approvingDecisionErrors(d) {
  */
 export function checkReviewLog() {
   const latest = new Map();
+  const lifecycle = new Map();
   let entries = 0;
   const files = fs.existsSync(LOG_DIR) ? fs.readdirSync(LOG_DIR).filter((f) => f.endsWith(".json")).sort() : [];
   const errors = [];
@@ -49,19 +60,33 @@ export function checkReviewLog() {
         if (invalid.length) { errors.push(`${f} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
         const prev = latest.get(d.id);
         if (!prev || String(d.at || "") >= String(prev.at || "")) latest.set(d.id, { ...d, file: f });
+      } else if (d && REMOVING.has(d.decision)) {
+        const invalid = removalDecisionErrors(d);
+        if (invalid.length) { errors.push(`${f} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
+      }
+      if (d && (APPROVING.has(d.decision) || REMOVING.has(d.decision))) {
+        const prev = lifecycle.get(d.id);
+        if (!prev || String(d.at || "") >= String(prev.at || "")) lifecycle.set(d.id, { ...d, file: f });
       }
     }
   }
   let checked = 0;
+  const currentIds = new Set();
   for (const f of fs.readdirSync(APPROVED_DIR).filter((x) => x.endsWith(".json")).sort()) {
     for (const item of JSON.parse(fs.readFileSync(path.join(APPROVED_DIR, f), "utf8"))) {
       checked++;
+      currentIds.add(item.id);
       const d = latest.get(item.id);
       if (!d) { errors.push(`${item.id} : aucune décision de relecture dans data/review-log/`); continue; }
       if (d.version !== item.version) errors.push(`${item.id} : version ${item.version} approuvée sans décision (journal : version ${d.version}, ${d.file})`);
       else if (d.hash !== EagRules.contentHash(item)) errors.push(`${item.id} : contenu modifié depuis la décision de ${d.reviewer} (${d.file}) ; faites-le relire et approuver à nouveau`);
       if (d.reviewer !== item.reviewer) errors.push(`${item.id} : relecteur « ${item.reviewer} » différent de celui du journal (« ${d.reviewer} »)`);
+      const last = lifecycle.get(item.id);
+      if (last?.decision === "removed") errors.push(`${item.id} : présent dans la banque malgré une décision de retrait plus récente (${last.file})`);
     }
+  }
+  for (const [id, last] of lifecycle) {
+    if (!currentIds.has(id) && last.decision !== "removed") errors.push(`${id} : disparu de la banque sans décision de retrait après son approbation (${last.file})`);
   }
   return { errors, checked, entries };
 }

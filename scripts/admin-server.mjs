@@ -15,6 +15,8 @@ import { fileURLToPath } from "node:url";
 import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { withFileRollback } from "./lib/file-transaction.mjs";
+import { EagRules } from "./lib/rules.mjs";
+import { approvingDecisionErrors, removalDecisionErrors } from "./check-review-log.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CATEGORIES = ["abstract", "verbal", "numeric", "planning", "situational"];
@@ -69,14 +71,13 @@ function candidateFiles() {
   if (!fs.existsSync(GENERATED)) return [];
   return fs.readdirSync(GENERATED).filter((f) => CANDIDATE_NAME.test(f) && !f.endsWith(".review.json")).sort();
 }
-
-/* ---------- API ---------- */
-function state() {
-  const approved = {};
-  for (const c of CATEGORIES) {
-    const f = path.join(APPROVED, `${c}.json`);
-    approved[c] = fs.existsSync(f) ? readJson(f) : [];
-  }
+function approvedState() {
+  return Object.fromEntries(CATEGORIES.map((c) => {
+    const file = path.join(APPROVED, `${c}.json`);
+    return [c, fs.existsSync(file) ? readJson(file) : []];
+  }));
+}
+function candidateState() {
   const candidates = [];
   for (const file of candidateFiles()) {
     let items;
@@ -87,7 +88,15 @@ function state() {
     try { if (fs.existsSync(reviewPath)) review = readJson(reviewPath); } catch { /* ignore broken review */ }
     candidates.push({ file, items, review });
   }
-  return { approved, candidates, aiConfigured: aiConfigured() };
+  return candidates;
+}
+const workspaceRevision = (approved, candidates) => EagRules.contentHash({ approved, candidates });
+
+/* ---------- API ---------- */
+function state() {
+  const approved = approvedState();
+  const candidates = candidateState();
+  return { approved, workspaceRevision: workspaceRevision(approved, candidates), candidates, aiConfigured: aiConfigured() };
 }
 
 function save(body) {
@@ -96,13 +105,18 @@ function save(body) {
   const manual = Array.isArray(body.manual) ? body.manual : [];
   const decisions = Array.isArray(body.log?.decisions) ? body.log.decisions : [];
   const reviewer = String(body.log?.reviewer || "").trim();
+  const currentBank = approvedState();
+  const currentCandidates = candidateState();
+  if (body.workspaceRevision !== workspaceRevision(currentBank, currentCandidates)) {
+    const e = new Error("Les données ont changé depuis leur chargement. Rechargez-les avant d'enregistrer."); e.status = 409; throw e;
+  }
 
   // 1. Validate everything before writing anything.
   const errors = [];
   const finalBank = {};
   for (const c of CATEGORIES) {
     const f = path.join(APPROVED, `${c}.json`);
-    finalBank[c] = c in approved ? approved[c] : fs.existsSync(f) ? readJson(f) : [];
+    finalBank[c] = c in approved ? approved[c] : currentBank[c];
   }
   for (const c of Object.keys(approved)) if (!CATEGORIES.includes(c)) errors.push(`Catégorie inconnue : ${c}`);
   for (const c of CATEGORIES) {
@@ -125,6 +139,30 @@ function save(body) {
   }
   if (manual.length > 500 || manual.some((x) => !x || typeof x !== "object" || Array.isArray(x))) errors.push("Nouvelles questions : format invalide");
   if (decisions.length && reviewer.length < 2) errors.push("Nom du relecteur manquant pour le journal des décisions");
+  const approving = new Set(["approved", "revised", "modified", "legacy"]);
+  for (const c of CATEGORIES) {
+    const before = new Map(currentBank[c].map((x) => [x.id, x]));
+    const after = new Map((Array.isArray(finalBank[c]) ? finalBank[c] : []).map((x) => [x.id, x]));
+    for (const [id, item] of before) {
+      if (after.has(id)) continue;
+      const d = decisions.find((x) => x?.id === id && x.decision === "removed");
+      if (!d) errors.push(`${id} : retrait sans décision « removed »`);
+      else {
+        const invalid = removalDecisionErrors(d);
+        if (invalid.length) errors.push(`${id} : décision de retrait invalide (${invalid.join(" ; ")})`);
+      }
+    }
+    for (const [id, item] of after) {
+      const old = before.get(id);
+      if (old && EagRules.contentHash(old) === EagRules.contentHash(item)) continue;
+      const d = decisions.find((x) => x?.id === id && approving.has(x.decision) && x.version === item.version && x.hash === EagRules.contentHash(item));
+      if (!d) errors.push(`${id} : ajout ou modification sans décision d'approbation correspondante`);
+      else {
+        const invalid = approvingDecisionErrors(d);
+        if (invalid.length || d.reviewer !== item.reviewer) errors.push(`${id} : décision d'approbation invalide (${[...invalid, ...(d.reviewer !== item.reviewer ? ["relecteur incohérent"] : [])].join(" ; ")})`);
+      }
+    }
+  }
   if (errors.length) { const e = new Error(errors.slice(0, 20).join("\n")); e.status = 400; throw e; }
 
   // 2. Write as one recoverable transaction. Candidate deletion happens only inside

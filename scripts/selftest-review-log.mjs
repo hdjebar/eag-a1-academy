@@ -1,4 +1,4 @@
-import { approvingDecisionErrors } from "./check-review-log.mjs";
+import { approvingDecisionErrors, removalDecisionErrors } from "./check-review-log.mjs";
 
 const valid = {
   id: "numeric-demo-001", decision: "approved", version: 1, hash: "0123456789abcdef",
@@ -14,4 +14,6 @@ for (const [name, decision] of [
 ]) {
   if (!approvingDecisionErrors(decision).length) throw new Error(`Décision invalide acceptée (${name})`);
 }
-console.log("Review-log self-test passed (structure des décisions approuvantes)");
+const removal = { id: valid.id, decision: "removed", reviewer: valid.reviewer, at: valid.at };
+if (removalDecisionErrors(removal).length || !removalDecisionErrors({ ...removal, reviewer: "" }).length) throw new Error("Validation des décisions de retrait incorrecte");
+console.log("Review-log self-test passed (structure des approbations et retraits)");
