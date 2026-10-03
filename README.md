@@ -27,6 +27,8 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 ## Fonctionnalités
 
 - **Banque de questions originales relues** : 591 questions approuvées, chacune vérifiée par une résolution à l'aveugle et tracée dans `data/review-log/` ; tirage aléatoire sans remise. Le décompte par catégorie est affiché par `npm run build:bank`.
+- **Calculatrice à l'écran** pendant les questions numériques, comme la calculatrice de l'ordinateur autorisée le jour de l'épreuve (appareils personnels interdits).
+- **« Le jour de l'épreuve »** (page Ressources) : inscription, durée, langues, calculatrice, notation, résultats, validité, tentatives, aménagements et contact, chaque point relié à sa source officielle (vérifié le 3 octobre 2026).
 - **5 familles de tests A1** : Raisonnement abstrait (*Test géométrique* : matrices 3×3 et séries de figures), verbal, numérique, planification et jugement situationnel.
 - **Formats officiels 2026** :
   - Matrices et suites géométriques pures pour l'abstrait.
