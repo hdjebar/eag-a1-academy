@@ -30,7 +30,12 @@ Le contrat complet est dans [`schema/question.schema.json`](../schema/question.s
 "stimulus": "Texte simple. Les retours à la ligne sont conservés."
 "stimulus": { "type": "shapes", "text": "●  ■  ▲\n■  ▲  ●\n▲  ●  ?" }
 "stimulus": { "type": "table", "caption": "Demandes par service", "headers": ["Service", "Janv.", "Févr."], "rows": [["A", 120, 138], ["B", 80, 96]] }
+"stimulus": { "type": "chart", "kind": "bar", "caption": "Dossiers traités par mois", "unit": "dossiers", "labels": ["Janv.", "Févr.", "Mars"], "series": [{ "name": "Service A", "values": [120, 138, 150] }] }
 ```
+
+Les graphiques (`kind` : `bar` ou `line`, 1 à 3 séries) sont dessinés en SVG par `shared/chart.js`, valeurs affichées, avec un tableau équivalent pour les lecteurs d'écran.
+
+**Réalisme (avertissements du validateur)** : textes verbaux de 40 à 200 mots, scénarios situationnels de 30 à 120 mots ; au moins 40 % des items numériques sur tableau ou graphique (dont 15 % de graphiques) ; au moins 20 % des agendas de planification en tableau.
 
 ---
 
@@ -98,12 +103,12 @@ npm test
 
 ---
 
-## Méthode 4 : Génération déterministe par règles (Raisonnement abstrait / Test géométrique)
+## Méthode 4 : Génération déterministe par règles (abstrait, numérique, planification)
 
 Pour le **Raisonnement abstrait** (Test géométrique), les figures ne doivent comporter aucun chiffre, lettre ou mot. Un générateur par règles déterministes est disponible pour produire des matrices 3×3, des rotations, des transformations et des suites logiques sans risque d'hallucination de contenu textuel :
 
 ```bash
-# Génère les candidats nécessaires pour atteindre 100 items approuvés au total
+# Génère les candidats nécessaires pour atteindre la cible par compétence (ici 100 items au total)
 npm run generate:abstract generated/candidats-abstrait.json -- --target 100
 
 # Valide et lance la revue aveugle
@@ -115,6 +120,14 @@ node scripts/promote-candidate.mjs generated/candidats-abstrait.json --reviewer 
 ```
 
 Le script calcule la solution mathématiquement, vérifie l'unicité des formes (en tenant compte des rotations et symétries) et produit des distracteurs distincts et plausibles.
+
+Le même principe vaut pour les questions numériques sur tableaux et graphiques et pour les agendas de planification en tableau :
+
+```bash
+npm run generate:data generated/candidats-donnees.json -- --numeric 20 --planning 10
+```
+
+Les deux générateurs utilisent par défaut la date du jour comme graine (`--seed` pour reproduire un lot) et numérotent les identifiants à la suite de ceux déjà présents dans `data/approved/` et `generated/` ; des données identiques à un item existant ne sont pas régénérées.
 
 ---
 
@@ -215,5 +228,6 @@ CATEGORY=situational COUNT=10 INSTRUCTION="Couvrir surtout « conseiller »." np
 | Importer des fichiers | Glisser-déposer dans `admin.html`, copie dans `generated/` (mode local) ou collage du JSON : voir [Importer des fichiers de questions](#importer-des-fichiers-de-questions). |
 | `npm run admin` | Lance l'interface d'administration locale (port 4174 par défaut, `ADMIN_PORT` pour changer). |
 | `npm run generate:abstract [fichier] [-- --target 100]` | Génère des candidats de raisonnement abstrait par règles (clés calculées, unicité vérifiée contre rotations, symétries et remplissage) dans `generated/`, pour compléter chaque compétence jusqu'à la cible. Revue aveugle et promotion humaine restent nécessaires. |
+| `npm run generate:data [fichier] [-- --numeric 35 --planning 26]` | Génère par règles des candidats numériques sur tableaux et graphiques (`lecture-tableau`, `lecture-graphique`) et des agendas de planification en tableau (disponibilités, salles, présences, tâches et prérequis). Clés calculées, une seule option valide par construction, sortie dans `generated/`. |
 | `npm run check:review-log` | Vérifie que chaque question approuvée est tracée dans `data/review-log/`. |
 | `npm test` | Syntaxe, self-tests du validateur, validation des banques approuvées, synchronisation, contrôle de relecture. |

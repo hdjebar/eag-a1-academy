@@ -12,7 +12,8 @@
     "validate:bank": "node scripts/validate-bank.mjs",
     "check:review-log": "node scripts/check-review-log.mjs",
     "generate:abstract": "node scripts/generate-abstract-figures.mjs",
-    "test": "node --check app.js && node --check admin.js && node --check shared/item-rules.js && node --check scripts/regenerate-bank.mjs && node --check scripts/check-review-log.mjs && node --check scripts/generate-abstract-figures.mjs && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check && node scripts/check-review-log.mjs",
+    "generate:data": "node scripts/generate-data-items.mjs",
+    "test": "node --check app.js && node --check admin.js && node --check shared/item-rules.js && node --check shared/chart.js && node --check scripts/regenerate-bank.mjs && node --check scripts/check-review-log.mjs && node --check scripts/generate-abstract-figures.mjs && node --check scripts/generate-data-items.mjs && node scripts/validate-bank.mjs --self-test && node scripts/validate-bank.mjs data/approved/*.json && node scripts/build-bank.mjs --check && node scripts/check-review-log.mjs",
     "regenerate:bank": "node --env-file-if-exists=.env scripts/regenerate-bank.mjs"
   },
   "devDependencies": {

@@ -97,6 +97,7 @@
     /\bkeine\s+der\s+(?:antworten|optionen|aussagen|m[öo]glichkeiten)\b/i,
     /\balle\s+(?:antworten|optionen|aussagen)\b/i,
   ];
+  const LENGTHS = { verbal: [40, 200], situational: [30, 120] };
   const HTML_LIKE = /<[a-z!/?]|&[a-z]+;|&#\d+;|javascript:/i;
   /** Characters allowed in abstract figures: whitespace, « ? », arrows, geometric shapes and related symbol blocks. */
   function isFigureChar(c) {
@@ -150,6 +151,22 @@
       if (marks !== 1) errors.push(`figure abstraite : exactement un « ? » attendu dans le stimulus (trouvé : ${marks})`);
       if (options.some((o) => o.includes("?"))) errors.push("figure abstraite : une option ne peut pas contenir « ? »");
     }
+    const st = item.stimulus;
+    if (st && st.type === "chart" && Array.isArray(st.labels) && Array.isArray(st.series)) {
+      for (const ser of st.series) if (ser && Array.isArray(ser.values) && ser.values.length !== st.labels.length) errors.push(`graphique : la série « ${ser.name} » a ${ser.values.length} valeurs pour ${st.labels.length} étiquettes`);
+    }
+    // Text lengths set by the generation prompt (realistic reading load).
+    const words = (t) => String(t || "").trim().split(/\s+/).filter(Boolean).length;
+    if (item.category === "verbal" && typeof st === "string") {
+      const n = words(st);
+      if (n < LENGTHS.verbal[0]) warnings.push(`texte court (${n} mots ; ${LENGTHS.verbal[0]} à ${LENGTHS.verbal[1]} attendus)`);
+      if (n > LENGTHS.verbal[1]) warnings.push(`texte long (${n} mots ; ${LENGTHS.verbal[0]} à ${LENGTHS.verbal[1]} attendus)`);
+    }
+    if (item.category === "situational" && typeof st === "string") {
+      const n = words(st);
+      if (n < LENGTHS.situational[0]) warnings.push(`scénario court (${n} mots ; ${LENGTHS.situational[0]} à ${LENGTHS.situational[1]} attendus)`);
+      if (n > LENGTHS.situational[1]) warnings.push(`scénario long (${n} mots ; ${LENGTHS.situational[0]} à ${LENGTHS.situational[1]} attendus)`);
+    }
     if (item.language === "fr" && item.category === "numeric") {
       const text = strings([item.prompt, item.stimulus, item.options], "x", []).map((s) => s[1]).join(" ");
       if (/\d\.\d/.test(text)) warnings.push("point décimal détecté ; en français, utilisez la virgule (12,5)");
@@ -178,7 +195,9 @@
     return set;
   }
   function similarity(a, b) {
-    const A = trigrams(a), B = trigrams(b);
+    return jaccard(trigrams(a), trigrams(b));
+  }
+  function jaccard(A, B) {
     if (!A.size || !B.size) return 0;
     let inter = 0;
     for (const x of A) if (B.has(x)) inter++;
@@ -188,7 +207,7 @@
     const s = item.stimulus;
     // Abstract prompts are generic ("Quel élément complète la série ?"): compare the figures instead.
     if (item.category === "abstract" && s && s.text) return `${s.text} ${(item.options || []).join(" ")}`;
-    const stim = s == null ? "" : typeof s === "string" ? s : s.text || JSON.stringify(s.rows || "");
+    const stim = s == null ? "" : typeof s === "string" ? s : s.text || (s.type === "chart" ? `${s.caption} ${JSON.stringify(s.series)}` : `${s.caption || ""} ${JSON.stringify(s.rows || "")}`);
     return `${item.prompt || ""} ${stim}`;
   }
 
@@ -232,7 +251,18 @@
   function bankChecks(items) {
     const errors = [], warnings = [];
     const list = (Array.isArray(items) ? items : []).filter((x) => x && typeof x === "object");
-    const texts = list.map((x) => `${itemText(x)} ${(x.options || []).join(" ")}`);
+    // Items built on a table or a chart share their template wording and a small cell vocabulary
+    // (« Libre », « Présent »…) by design: trigram similarity is meaningless for them. They are
+    // duplicates only when the data themselves are identical.
+    const dataKey = (x) => {
+      const st = x.stimulus;
+      if (st && st.type === "table") return `t:${JSON.stringify(st.headers || [])}${JSON.stringify(st.rows || [])}`;
+      if (st && st.type === "chart") return `c:${JSON.stringify(st.labels || [])}${JSON.stringify(st.series || [])}`;
+      return null;
+    };
+    const dupText = (x) => `${itemText(x)} ${(x.options || []).join(" ")}`;
+    const keys = list.map(dataKey);
+    const grams = list.map((x, i) => (keys[i] ? null : trigrams(dupText(x))));
     for (let i = 0; i < list.length; i++) {
       for (let j = i + 1; j < list.length; j++) {
         const a = list[i], b = list[j];
@@ -242,7 +272,11 @@
           continue;
         }
         if (a.category === "abstract") continue; // trigram similarity is meaningless on short symbol strings
-        const s = similarity(texts[i], texts[j]);
+        if (keys[i] || keys[j]) {
+          if (keys[i] && keys[i] === keys[j]) errors.push(`${a.id} et ${b.id} : mêmes données (doublon)`);
+          continue;
+        }
+        const s = jaccard(grams[i], grams[j]);
         if (s >= DUP_ERROR) errors.push(`${a.id} et ${b.id} : quasi-doublon (similarité ${s.toFixed(2)})`);
         else if (s >= DUP_WARN) warnings.push(`${a.id} et ${b.id} : très proches (similarité ${s.toFixed(2)})`);
       }
@@ -262,6 +296,15 @@
       if (top / xs.length > MAX_POSITION_SHARE) errors.push(`${cat} : la bonne réponse est en position ${counts.indexOf(top) + 1} dans ${top}/${xs.length} items (max ${MAX_POSITION_SHARE * 100} %) ; mélangez l'ordre des options`);
       if (longest / xs.length > MAX_LONGEST_SHARE) warnings.push(`${cat} : la bonne réponse est l'option la plus longue dans ${longest}/${xs.length} items (indice exploitable)`);
     }
+    // Official descriptions: numerical tests use « tableaux, graphiques », planning means « gérer un agenda ».
+    const share = (cat, pred) => { const xs = list.filter((x) => x.category === cat); return xs.length >= BALANCE_MIN_ITEMS ? [xs.filter(pred).length, xs.length] : null; };
+    const isType = (...t) => (x) => x.stimulus && t.includes(x.stimulus.type);
+    let r = share("numeric", isType("table", "chart"));
+    if (r && r[0] / r[1] < 0.4) warnings.push(`numeric : ${r[0]}/${r[1]} items s'appuient sur un tableau ou un graphique (40 % au moins recommandés)`);
+    r = share("numeric", isType("chart"));
+    if (r && r[0] / r[1] < 0.15) warnings.push(`numeric : ${r[0]}/${r[1]} items s'appuient sur un graphique (15 % au moins recommandés)`);
+    r = share("planning", isType("table"));
+    if (r && r[0] / r[1] < 0.2) warnings.push(`planning : ${r[0]}/${r[1]} agendas présentés en tableau (20 % au moins recommandés)`);
     return { errors, warnings };
   }
 

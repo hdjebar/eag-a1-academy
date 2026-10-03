@@ -141,6 +141,77 @@
             }
           },
           "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "Bar or line chart. The app draws it and prints every value; never write SVG or HTML.",
+          "required": [
+            "type",
+            "kind",
+            "caption",
+            "labels",
+            "series"
+          ],
+          "properties": {
+            "type": {
+              "const": "chart"
+            },
+            "kind": {
+              "enum": [
+                "bar",
+                "line"
+              ]
+            },
+            "caption": {
+              "type": "string",
+              "minLength": 3
+            },
+            "unit": {
+              "type": "string"
+            },
+            "labels": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "series": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "values"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "values": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 12,
+                    "items": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1000000000
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
       ]
     },

@@ -1,77 +1,75 @@
 [
   {
     "id": "verbal-deduct-001",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 1,
     "language": "fr",
-    "estimatedSeconds": 45,
-    "prompt": "Quelle conclusion est absolument certaine à partir des seuls éléments fournis ?",
-    "stimulus": "Tous les dossiers urgents sont examinés le jour même. Le dossier L est urgent.",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : Le dossier L a été examiné le lundi 4 mars.",
+    "stimulus": "Note de service – Traitement du courrier entrant. Le courrier du service des aides au logement est enregistré chaque matin avant 10 h par le secrétariat. Les dossiers marqués « urgent » par le chef de bureau sont examinés le jour même de leur enregistrement ; les autres dossiers sont répartis entre les gestionnaires selon l'ordre d'arrivée et traités dans un délai de dix jours ouvrables. Le bilan mensuel indique que cette règle a été respectée pour tous les dossiers du mois de mars. Le lundi 4 mars, le dossier L a été enregistré à 9 h 20 et marqué « urgent » par le chef de bureau. Le même jour, le service a reçu quarante-deux autres dossiers.",
     "options": [
-      "Le dossier L est examiné le jour même.",
-      "Le dossier L est le premier examiné.",
-      "Le dossier L est accepté.",
-      "Tous les dossiers de la journée sont urgents."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : tout dossier urgent étant examiné le jour même, le dossier L l'est obligatoirement.",
-      "L'énoncé ne précise aucun ordre de passage parmi les dossiers examinés.",
-      "L'examen ne préjuge en rien de la décision finale (acceptation ou rejet).",
-      "Généralise abusivement la propriété d'un sous-ensemble à l'ensemble des dossiers."
+      "Correct : le dossier L, urgent, a été enregistré le 4 mars, et le bilan confirme que tous les dossiers urgents de mars ont été examinés le jour même.",
+      "Rien dans la note ne contredit l'affirmation ; au contraire, le bilan de mars confirme l'application de la règle.",
+      "La note donne tous les éléments nécessaires : la règle, son application effective en mars et le statut urgent du dossier L."
     ],
-    "explanation": "L'énoncé affirme expressément que tout dossier urgent fait l'objet d'un examen le jour même ; aucune conclusion sur la décision finale ou l'ordre exact n'est permise.",
+    "explanation": "Les dossiers urgents sont examinés le jour de leur enregistrement et le bilan confirme que la règle a été appliquée à tous les dossiers de mars. Le dossier L, urgent, ayant été enregistré le 4 mars, il a été examiné ce jour-là. Le nombre d'autres dossiers reçus est sans incidence.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-cond-002",
-    "version": 3,
+    "version": 4,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle affirmation découle rigoureusement des conditions indiquées ?",
-    "stimulus": "Le guichet ouvre à 8 h 30. Les rendez-vous avant 10 h sont réservés aux demandes déjà complètes. Nora a obtenu un rendez-vous à 9 h 15.",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle affirmation découle avec certitude de cet extrait ?",
+    "stimulus": "Extrait du règlement d'accueil – Guichet des cartes de stationnement résidentiel. Le guichet ouvre au public à 8 h 30 du lundi au vendredi. Les rendez-vous fixés avant 10 h sont réservés aux demandes dont le dossier est complet ; les créneaux suivants sont ouverts aux demandes incomplètes, qui donnent lieu à un entretien d'orientation. Le secrétariat attribue tous les créneaux en appliquant strictement cette règle. Un rendez-vous dure en principe vingt minutes et la décision est notifiée par courrier dans les dix jours. Le parking visiteurs est accessible par la rue latérale. Nora a obtenu un rendez-vous le mardi à 9 h 15.",
     "options": [
-      "Nora sera reçue avant l'ouverture générale du guichet.",
-      "Nora sera reçue dès l'ouverture du guichet.",
-      "La demande de Nora est déjà complète.",
-      "La demande de Nora sera automatiquement acceptée."
+      "Nora sera reçue avant l'ouverture du guichet au public.",
+      "Nora devra passer d'abord par un entretien d'orientation.",
+      "Le dossier de Nora était complet lors de son inscription.",
+      "La carte de Nora lui sera remise à l'issue du rendez-vous."
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Le guichet ouvrant à 8 h 30, un rendez-vous à 9 h 15 a lieu après l'ouverture.",
-      "L'ouverture a lieu à 8 h 30, tandis que le rendez-vous de Nora est calé à 9 h 15.",
-      "Correct : les créneaux avant 10 h étant réservés aux dossiers complets, un créneau à 9 h 15 implique un dossier complet.",
-      "L'obtention d'un rendez-vous ne préjuge aucunement de l'acceptation de la demande."
+      "Le guichet ouvre à 8 h 30 ; un rendez-vous à 9 h 15 a lieu après l'ouverture.",
+      "L'entretien d'orientation concerne les demandes incomplètes, reçues après 10 h ; ce n'est pas le cas de Nora.",
+      "Correct : les créneaux avant 10 h sont réservés aux dossiers complets et le secrétariat applique strictement cette règle.",
+      "La décision est notifiée par courrier dans les dix jours ; rien n'indique une remise le jour même ni même une décision favorable."
     ],
-    "explanation": "Les créneaux avant 10 h sont réservés aux demandes déjà complètes ; un rendez-vous à 9 h 15 implique donc une demande complète. Le texte ne dit rien de l'heure exacte de passage, ni de la décision.",
+    "explanation": "Le créneau de 9 h 15 est antérieur à 10 h. Comme ces créneaux sont réservés aux dossiers complets et que le secrétariat applique strictement la règle, le dossier de Nora était complet. Le texte ne dit rien de l'issue de la demande, qui est notifiée plus tard par courrier.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-quant-003",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "tfcs",
     "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Affirmation : Malik travaille à distance.",
-    "stimulus": "Certains analystes travaillent à distance. Malik est analyste.",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : Malik travaille à distance le mercredi.",
+    "stimulus": "Compte rendu de la réunion d'équipe du 12 mai – Service statistique. Le service compte huit analystes et trois assistants. Depuis janvier, certains analystes travaillent à distance le mercredi et le vendredi, selon un planning tenu par la cheffe de service ; les assistants travaillent tous sur site. Malik, analyste recruté en février, a présenté les premiers résultats de l'enquête sur la mobilité des agents. La publication de l'enquête est prévue pour septembre. Il est rappelé que le planning de travail à distance n'est pas diffusé en dehors du service. La prochaine réunion se tiendra le 9 juin en salle 2.14.",
     "options": [
       "Vrai",
       "Faux",
@@ -79,233 +77,231 @@
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Généralise « certains » à tous les analystes.",
-      "Le texte n'exclut pas non plus que Malik travaille à distance.",
-      "Correct : « certains » ne permet pas de savoir si Malik en fait partie."
+      "Le texte indique seulement que « certains » analystes travaillent à distance ; rien ne permet de dire que Malik en fait partie.",
+      "Rien n'exclut que Malik figure parmi les analystes concernés ; seuls les assistants sont dits travailler tous sur site.",
+      "Correct : Malik est analyste et certains analystes seulement travaillent à distance ; le texte ne dit pas lesquels."
     ],
-    "explanation": "L'expression « certains » indique l'existence d'au moins un analyste à distance, sans préciser si Malik en fait partie.",
+    "explanation": "« Certains analystes » ne signifie pas « tous les analystes ». Malik est analyste, mais le compte rendu ne précise pas s'il fait partie de ceux qui travaillent à distance. L'affirmation n'est ni confirmée ni contredite.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-01T21:00:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-order-004",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
     "difficulty": 1,
     "language": "fr",
-    "estimatedSeconds": 45,
-    "prompt": "Quelle séquence respecte scrupuleusement la règle de classement ?",
-    "stimulus": "Classer les dossiers par date croissante. À date identique, placer en premier le numéro le plus petit.",
+    "estimatedSeconds": 60,
+    "prompt": "Dans quel ordre l'agent doit-il ranger les quatre dossiers complets dans le bac ?",
+    "stimulus": "Procédure de classement – Bureau des réclamations. Les dossiers complets sont rangés dans le bac de traitement par date de réception croissante, le plus ancien en premier. À date de réception identique, le dossier portant le numéro d'enregistrement le plus petit est placé en premier. Les dossiers incomplets sont rangés selon la même règle dans un bac séparé. Le classement est vérifié chaque vendredi par le chef de bureau. Ce matin, l'agent doit ranger les dossiers complets suivants : n° 22 reçu le 11 avril, n° 19 reçu le 11 avril, n° 12 reçu le 12 avril et n° 30 reçu le 10 avril. Le dossier n° 25, reçu le 9 avril, est incomplet.",
     "options": [
-      "12/04 n° 18, puis 11/04 n° 22",
-      "11/04 n° 22, puis 11/04 n° 19",
-      "12/04 n° 12, puis 11/04 n° 10",
-      "11/04 n° 19, puis 11/04 n° 22"
+      "n° 12, n° 19, n° 22, n° 30",
+      "n° 30, n° 22, n° 19, n° 12",
+      "n° 12, n° 22, n° 19, n° 30",
+      "n° 30, n° 19, n° 22, n° 12"
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "Viole la préséance de date croissante (le 12/04 est placé avant le 11/04).",
-      "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le 22.",
-      "Viole l'ordre chronologique croissant des dates.",
-      "Correct : date identique (11/04) et ordre croissant strict des numéros (19 avant 22)."
+      "Classe uniquement par numéro croissant, sans tenir compte de la date de réception.",
+      "Respecte l'ordre des dates mais inverse les n° 19 et 22, reçus le même jour : le plus petit numéro doit passer en premier.",
+      "Classe par date décroissante (le plus récent en premier), à l'inverse de la consigne.",
+      "Correct : n° 30 (10 avril), puis n° 19 et n° 22 (11 avril, plus petit numéro d'abord), puis n° 12 (12 avril)."
     ],
-    "explanation": "À date identique (11/04), le numéro le plus faible (19) doit impérativement précéder le numéro plus élevé (22).",
+    "explanation": "On classe d'abord par date de réception : 10 avril (n° 30), 11 avril (n° 19 et 22), 12 avril (n° 12). Pour le 11 avril, le n° 19 précède le n° 22. Le dossier n° 25, incomplet, va dans l'autre bac et ne figure pas dans ce classement.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-neg-005",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle conclusion n'est PAS justifiée par le passage ?",
-    "stimulus": "Aucun rapport incomplet n'est transmis. Certains rapports du service B sont transmis.",
+    "estimatedSeconds": 85,
+    "prompt": "Quelle conclusion n'est PAS justifiée par la circulaire ?",
+    "stimulus": "Circulaire relative aux rapports d'activité trimestriels. Les rapports sont déposés par chaque service sur la plateforme commune avant le 15 du mois qui suit la fin du trimestre. Le bureau de coordination vérifie chaque rapport : aucun rapport incomplet n'est transmis au comité de direction ; les rapports incomplets sont renvoyés à leur auteur avec la liste des rubriques manquantes. Pour le deuxième trimestre, le bureau de coordination signale que certains rapports du service B ont été transmis au comité de direction et que le service C a demandé un délai supplémentaire. Le modèle de rapport sera révisé en septembre.",
     "options": [
-      "Aucun rapport transmis n'est incomplet.",
-      "Tous les rapports du service B sont transmis.",
-      "Au moins un rapport du service B est transmis.",
-      "Certains rapports du service B sont complets."
+      "Aucun rapport transmis au comité n'était incomplet.",
+      "Tous les rapports du service B ont été transmis.",
+      "Au moins un rapport du service B a été transmis au comité.",
+      "Certains rapports du service B étaient complets."
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "Justifié : découle directement de la prémisse interdisant la transmission de rapports incomplets.",
-      "Correct : le fait que certains rapports soient transmis n'autorise pas à affirmer que tous le sont.",
-      "Justifié : l'emploi de « certains » implique l'existence d'au moins un élément.",
-      "Justifié : les rapports transmis étant nécessairement complets, ceux de B qui sont transmis sont complets."
+      "Justifiée : c'est la reformulation directe de la règle « aucun rapport incomplet n'est transmis ».",
+      "Correct : « certains rapports » transmis ne permet pas de conclure que tous l'ont été ; d'autres ont pu être renvoyés à leur auteur.",
+      "Justifiée : « certains rapports » signifie au moins un.",
+      "Justifiée : les rapports transmis sont nécessairement complets, et certains rapports du service B ont été transmis."
     ],
-    "explanation": "Le passage mentionne que certains rapports sont transmis, ce qui interdit d'affirmer que tous les rapports du service le sont.",
+    "explanation": "La règle exclut toute transmission de rapport incomplet ; les rapports du service B qui ont été transmis sont donc complets, et il y en a au moins un. En revanche, « certains » ne veut pas dire « tous » : rien n'indique que l'ensemble des rapports du service B ait été transmis.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-syll-006",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
     "estimatedSeconds": 75,
-    "prompt": "Quelle déduction s'impose logiquement à partir des deux prémisses ?",
-    "stimulus": "Tout arrêté ministériel fait l'objet d'une publication. Le document G ne fait l'objet d'aucune publication.",
+    "prompt": "Affirmation : Le règlement R est resté affiché pendant quinze jours, puis a été retiré.",
+    "stimulus": "Note du secrétariat communal – Publication des actes. Les règlements adoptés par le conseil communal sont affichés à la maison communale pendant quinze jours à compter de leur adoption, à l'exception des règlements de police d'urgence, qui restent affichés pendant trente jours. Le secrétariat applique ces durées sans exception et consigne les dates d'affichage dans un registre. Les procès-verbaux de séance sont, quant à eux, consultables sur demande au secrétariat. Lors de sa séance du 3 juin, le conseil a adopté trois règlements, dont le règlement R, règlement de police d'urgence relatif à la circulation pendant des travaux de voirie.",
     "options": [
-      "Le document G est un projet de loi en cours.",
-      "Certains arrêtés ministériels ne sont pas publiés.",
-      "Le document G n'est pas un arrêté ministériel.",
-      "Le document G sera publié ultérieurement."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "optionRationales": [
-      "Spéculation sans fondement dans les prémisses fournies.",
-      "Contredit formellement la règle selon laquelle tout arrêté est publié.",
-      "Correct : par contraposition (si arrêté alors publié ; non publié donc pas un arrêté).",
-      "Supposition temporelle non étayée par le texte."
+      "La durée de quinze jours est la règle générale ; elle ne s'applique pas aux règlements de police d'urgence.",
+      "Correct : le règlement R est un règlement de police d'urgence ; il reste affiché trente jours, et le secrétariat applique ces durées sans exception.",
+      "Le texte permet de trancher : il donne la catégorie du règlement R, la durée applicable et précise qu'elle est toujours respectée."
     ],
-    "explanation": "Par contraposition logique : si tout arrêté est publié, un document non publié ne peut en aucun cas constituer un arrêté ministériel.",
+    "explanation": "La règle générale (quinze jours) comporte une exception : les règlements de police d'urgence restent affichés trente jours. Le règlement R relève de cette exception et le secrétariat applique les durées sans exception ; un retrait après quinze jours est donc exclu.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-rule-007",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle décision est conforme à la directive énoncée ?",
-    "stimulus": "Toute demande de subvention supérieure à 50 000 euros requiert un avis préalable de la commission financière. Le projet Alpha sollicite 45 000 euros.",
+    "estimatedSeconds": 95,
+    "prompt": "Quelle procédure s'applique à la demande de l'association Alpha ?",
+    "stimulus": "Circulaire relative aux subventions aux associations. Les demandes sont déposées avant le 30 avril. La procédure dépend du montant pris en compte : jusqu'à 10 000 euros, le chef de service décide seul ; de 10 001 à 50 000 euros, il décide après avis du comité de lecture ; au-delà de 50 000 euros, la demande est soumise à l'avis préalable de la commission financière, puis à la décision du ministre. Le montant pris en compte est le montant demandé ; toutefois, lorsque le projet est cofinancé par une autre administration publique, c'est le coût total du projet qui est retenu. L'association Alpha sollicite 45 000 euros pour un projet de 80 000 euros, dont 35 000 euros sont financés par la commune.",
     "options": [
-      "Le projet Alpha doit impérativement obtenir l'accord unanime de la commission financière.",
-      "Le projet Alpha sera automatiquement rejeté pour insuffisance de montant.",
-      "Le projet Alpha ne requiert pas obligatoirement l'avis préalable de la commission financière au titre de cette règle.",
-      "Le projet Alpha est dispensé de tout contrôle administratif."
+      "Décision du chef de service seul, sans aucun avis préalable.",
+      "Avis préalable du comité de lecture, puis décision du chef de service.",
+      "Avis de la commission financière, puis décision du ministre.",
+      "Avis préalable du comité de lecture, puis décision du ministre."
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "La règle n'évoque aucun accord unanime requis.",
-      "Confusion : la directive n'impose aucun seuil minimal pour solliciter une subvention.",
-      "Correct : le seuil d'exigence étant strictement supérieur à 50 000 euros, 45 000 euros n'activent pas cette obligation.",
-      "Généralisation abusive : le projet n'est exempté que de cette formalité spécifique."
+      "Cette procédure vaut pour un montant pris en compte inférieur ou égal à 10 000 euros.",
+      "Ce serait la procédure si l'on retenait le seul montant demandé (45 000 euros) ; or le projet est cofinancé par la commune.",
+      "Correct : le projet étant cofinancé par une autre administration publique, on retient son coût total de 80 000 euros, supérieur à 50 000 euros.",
+      "Cette combinaison ne correspond à aucune des trois procédures prévues par la circulaire."
     ],
-    "explanation": "Le seuil obligatoire est fixé strictement aux montants supérieurs à 50 000 euros ; 45 000 euros ne déclenchent pas cette obligation spécifique.",
+    "explanation": "La commune étant une autre administration publique qui cofinance le projet, le montant à retenir est le coût total, 80 000 euros, et non les 45 000 euros demandés. Au-delà de 50 000 euros, la demande passe par l'avis préalable de la commission financière puis par la décision du ministre.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-extrap-008",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 3,
     "language": "fr",
-    "estimatedSeconds": 120,
-    "prompt": "Laquelle des propositions constitue une extrapolation non démontrée par le texte ?",
-    "stimulus": "La dématérialisation des formulaires a réduit le délai moyen de traitement de 14 jours à 6 jours au premier semestre.",
+    "estimatedSeconds": 110,
+    "prompt": "Laquelle de ces propositions va au-delà de ce que permet d'affirmer le compte rendu ?",
+    "stimulus": "Compte rendu du comité de suivi – Service des allocations familiales. Le délai moyen de traitement des demandes est passé de 14 jours au second semestre de l'année dernière à 6 jours au premier semestre de cette année. Cette baisse coïncide avec la mise en ligne du formulaire électronique en janvier et avec l'arrivée de deux gestionnaires supplémentaires en février. Le nombre de demandes reçues est resté stable, autour de 2 300 par semestre. Les demandes sur papier restent acceptées. Une enquête de satisfaction auprès des usagers est prévue à l'automne. Le comité se réunira de nouveau en octobre.",
     "options": [
-      "Le traitement moyen était plus long avant le premier semestre concerné.",
-      "Le délai moyen de traitement constaté s'est contracté de 8 jours.",
-      "Le délai moyen est passé sous la barre des dix jours au premier semestre.",
-      "Les usagers sont globalement plus satisfaits de la qualité de service."
+      "Le délai moyen était plus long au second semestre précédent.",
+      "Le délai moyen de traitement a diminué de huit jours.",
+      "Le nombre de demandes reçues n'a pas sensiblement varié.",
+      "La baisse du délai résulte du seul formulaire électronique."
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "Démontré par la comparaison avec la durée préalable de 14 jours.",
-      "Parfaitement démontré par la différence arithmétique (14 - 6 = 8 jours).",
-      "Démontré par l'observation directe du chiffre de 6 jours.",
-      "Correct : le texte n'apporte aucune donnée sur la satisfaction des usagers, seulement un indicateur de délai."
+      "Établi : le délai était de 14 jours au second semestre de l'année dernière, contre 6 jours ensuite.",
+      "Établi : 14 jours moins 6 jours font bien une baisse de 8 jours.",
+      "Établi : le compte rendu indique que les demandes sont restées stables, autour de 2 300 par semestre.",
+      "Correct : le texte constate une coïncidence avec deux changements (formulaire et renforts) ; attribuer la baisse au seul formulaire est une extrapolation."
     ],
-    "explanation": "Le texte renseigne un indicateur temporel précis (délai en jours), mais ne fournit aucune donnée sur le niveau de satisfaction des usagers.",
+    "explanation": "Le compte rendu se limite à constater que la baisse du délai coïncide avec deux évolutions : le formulaire électronique et l'arrivée de deux gestionnaires. Il n'établit aucune cause unique. Les trois autres propositions découlent directement des chiffres cités.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-equiv-009",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle formulation exprime exactement le même sens logique ?",
-    "stimulus": "Il est impossible d'accéder à la zone sécurisée sans badge d'identification actif.",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle proposition décrit exactement le rôle du badge actif dans l'accès à la zone des archives sécurisées ?",
+    "stimulus": "Règlement d'accès – Archives centrales. L'accès à la zone des archives sécurisées est impossible sans badge d'identification actif. La détention d'un badge actif ne suffit toutefois pas : l'agent doit également figurer sur la liste nominative des personnes autorisées, mise à jour chaque trimestre par le responsable des archives. Les badges sont activés par le service de sécurité pour une durée d'un an. Les visiteurs extérieurs ne sont jamais admis dans cette zone. La salle de lecture, située au rez-de-chaussée, reste librement accessible aux agents pendant les heures d'ouverture.",
     "options": [
-      "Avoir un badge actif est une condition indispensable pour accéder à la zone sécurisée.",
-      "Le badge actif garantit un accès permanent et sans restriction.",
-      "Toute personne munie d'un badge actif a le droit d'entrer dans la zone sécurisée.",
-      "Les personnes sans badge peuvent être admises avec un accompagnateur."
+      "Il est nécessaire, mais il ne suffit pas pour entrer dans la zone.",
+      "Il suffit à tout agent de l'administration pour entrer dans la zone.",
+      "Il n'est pas exigé des agents inscrits sur la liste nominative.",
+      "Il permet d'entrer librement dans la zone pendant toute une année."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : l'impossibilité d'accéder sans badge fait de sa détention une condition nécessaire (indispensable).",
-      "Le badge est requis, mais il ne confère aucun accès permanent ou sans restriction.",
-      "Confond condition nécessaire et condition suffisante (le badge est requis, mais d'autres conditions peuvent s'appliquer).",
-      "Extrapole une exception d'accompagnement non stipulée dans la règle."
+      "Correct : sans badge actif, l'accès est impossible ; mais il faut en outre figurer sur la liste nominative.",
+      "Le règlement précise expressément que le badge actif ne suffit pas.",
+      "L'inscription sur la liste s'ajoute au badge ; elle ne le remplace pas.",
+      "La durée d'activation d'un an ne dispense pas de l'inscription sur la liste nominative."
     ],
-    "explanation": "L'absence de badge empêchant l'accès, la détention d'un badge actif constitue bien une condition nécessaire (indispensable) d'accès.",
+    "explanation": "« Impossible sans badge actif » fait du badge une condition nécessaire. Le règlement ajoute que cette condition ne suffit pas, puisque l'inscription sur la liste nominative est aussi exigée. Le badge est donc nécessaire mais non suffisant.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-fact-010",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
-    "skill": "comprehension",
+    "skill": "synthese",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle proposition relève d'un fait constatable et non d'une appréciation subjective ?",
-    "stimulus": "Le nouveau logiciel de gestion des congés est remarquable, il enregistre 1 200 connexions quotidiennes et simplifie grandement la vie du personnel.",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle proposition résume le plus fidèlement ce compte rendu ?",
+    "stimulus": "Compte rendu – Bilan du logiciel de gestion des congés, trois mois après son déploiement. Le logiciel enregistre en moyenne 1 200 connexions par jour ouvrable. Selon la direction des ressources humaines, 85 % des demandes de congé passent désormais par cet outil, contre un formulaire papier auparavant. Deux défauts ont été signalés : l'affichage des soldes de congé est erroné pour les agents à temps partiel, et les chefs de service ne reçoivent pas toujours d'alerte lorsqu'une demande leur est soumise. Le prestataire s'est engagé à corriger ces deux défauts en mai. Une formation complémentaire sera proposée aux secrétariats en juin.",
     "options": [
-      "Le nouveau logiciel est particulièrement remarquable.",
-      "La vie du personnel est grandement simplifiée.",
-      "Le logiciel enregistre 1 200 connexions quotidiennes.",
-      "Ce système est la meilleure solution disponible."
+      "Le logiciel est abandonné en raison de défauts trop nombreux.",
+      "Le logiciel est bien utilisé, mais aucune correction n'est prévue.",
+      "Le logiciel est très utilisé ; deux défauts seront corrigés en mai.",
+      "Le logiciel ne sert qu'aux chefs de service pour valider les congés."
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Appréciation qualitative subjective.",
-      "Jugement de valeur subjectif quant au bien-être du personnel.",
-      "Correct : le comptage de 1 200 connexions est une donnée objective et quantifiable.",
-      "Jugement subjectif sans fondement factuel quantifié."
+      "Le compte rendu ne mentionne aucun abandon ; il prévoit au contraire des corrections et une formation.",
+      "Le prestataire s'est engagé à corriger les deux défauts en mai.",
+      "Correct : la proposition reprend les deux idées principales, l'usage important de l'outil et la correction prévue des deux défauts.",
+      "L'outil est utilisé pour 85 % des demandes de congé, donc par les agents et pas seulement par les chefs de service."
     ],
-    "explanation": "Le comptage de 1 200 connexions est une mesure quantitative objectivement vérifiable, à la différence des appréciations qualitatives.",
+    "explanation": "Le compte rendu fait deux constats principaux : l'outil est très utilisé (1 200 connexions par jour, 85 % des demandes) et deux défauts identifiés seront corrigés en mai. Les autres propositions contredisent le texte ou le déforment.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-09-30T12:00:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T09:15:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-telework-011",
@@ -340,32 +336,32 @@
   },
   {
     "id": "verbal-tfcs-012",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "tfcs",
     "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
     "estimatedSeconds": 75,
-    "prompt": "Affirmation : Tous les candidats retenus pour l'épreuve orale ont validé l'évaluation écrite.",
-    "stimulus": "Seuls les candidats ayant validé l'évaluation écrite avec une note minimale de 12 sur 20 sont convoqués à l'épreuve orale. Vingt-cinq candidats participent actuellement à l'épreuve orale.",
+    "prompt": "Affirmation : Tout candidat ayant obtenu au moins 12 sur 20 à l'épreuve écrite a été convoqué à l'épreuve orale.",
+    "stimulus": "Note du secrétariat du jury – Concours de recrutement de gestionnaires. Soixante-quatre candidats ont participé à l'épreuve écrite le 15 mai. Seuls les candidats ayant obtenu au moins 12 sur 20 à l'écrit peuvent être convoqués à l'épreuve orale ; le secrétariat vérifie cette condition avant l'envoi de chaque convocation. Le nombre de places à l'oral est limité à vingt-cinq ; vingt-cinq convocations ont été envoyées. L'épreuve orale se déroulera du 10 au 14 juin devant un jury de trois membres. Les candidats non convoqués reçoivent leur relevé de notes par courrier.",
     "options": [
       "Vrai",
       "Faux",
       "On ne peut pas savoir"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "optionRationales": [
-      "Correct : la validation de l'évaluation écrite est une condition nécessaire stricte d'accès à l'oral.",
-      "Contredit formellement la règle d'admission énoncée dans le texte.",
-      "Le texte est affirmatif et sans ambiguïté sur cette condition exclusive (« seuls les candidats... »)."
+      "« Seuls » fixe une condition nécessaire, pas suffisante : obtenir 12 sur 20 ne garantit pas une convocation, les places étant limitées à vingt-cinq.",
+      "Le texte ne dit pas combien de candidats ont obtenu 12 sur 20 ; il est possible qu'ils soient exactement vingt-cinq, tous convoqués.",
+      "Correct : on sait que tous les convoqués ont au moins 12, pas que tous ceux qui ont au moins 12 sont convoqués ; le nombre de candidats ayant atteint ce seuil n'est pas donné."
     ],
-    "explanation": "L'emploi de la tournure restrictive « seuls les candidats ayant validé l'évaluation écrite... » établit que la validation écrite est une condition sine qua non. Tout candidat présent à l'oral l'a donc obligatoirement validée.",
+    "explanation": "La note dit que seuls les candidats ayant au moins 12 peuvent être convoqués : c'est une condition nécessaire. Elle ne dit pas que cette note suffit, et les places sont limitées à vingt-cinq. Sans connaître le nombre de candidats ayant atteint 12, on ne peut ni confirmer ni infirmer l'affirmation.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-synth-013",
@@ -400,108 +396,108 @@
   },
   {
     "id": "verbal-deont-014",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 3,
     "language": "fr",
-    "estimatedSeconds": 90,
-    "prompt": "Quelle déduction s'impose logiquement par contraposition ?",
-    "stimulus": "Tout fonctionnaire participant à une commission de sélection doit souscrire une déclaration préalable d'absence de conflit d'intérêts. L'agent Marc n'a souscrit aucune déclaration d'absence de conflit d'intérêts.",
+    "estimatedSeconds": 95,
+    "prompt": "Quelle conclusion s'impose à partir de cette note ?",
+    "stimulus": "Note de la direction – Prévention des conflits d'intérêts. Tout fonctionnaire qui participe à une commission de sélection doit avoir souscrit, au préalable, une déclaration d'absence de conflit d'intérêts. Les déclarations sont recueillies par le secrétariat de la direction et conservées pendant cinq ans. La commission de sélection pour le poste de gestionnaire budgétaire se réunira le 18 octobre ; elle comprend trois membres titulaires et un suppléant. Le registre tenu à jour par le secrétariat indique que le fonctionnaire Marc Weber n'a souscrit aucune déclaration d'absence de conflit d'intérêts. M. Weber a par ailleurs suivi la formation aux techniques d'entretien en septembre.",
     "options": [
-      "Certains fonctionnaires sont dispensés de déclaration en commission de sélection.",
-      "L'agent Marc ne peut pas régulièrement participer à une commission de sélection.",
-      "L'agent Marc est sous le coup d'une procédure disciplinaire pour omission.",
-      "L'agent Marc participera à la commission de sélection avec une dispense écrite."
+      "Certains fonctionnaires sont dispensés de déclaration préalable.",
+      "M. Weber ne peut pas valablement siéger dans la commission.",
+      "M. Weber fait l'objet d'une procédure pour défaut de déclaration.",
+      "M. Weber siégera dans la commission comme membre suppléant."
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "Contredit le caractère universel de l'obligation énoncée (« tout fonctionnaire »).",
-      "Correct : contraposition stricte (si participation alors déclaration ; or pas de déclaration donc pas de participation régulière).",
-      "Extrapolation injustifiée : le texte n'évoque aucune sanction disciplinaire.",
-      "Contredit la règle selon laquelle tout fonctionnaire participant doit déclarer."
+      "La note pose l'obligation pour tout fonctionnaire participant ; elle ne prévoit aucune dispense.",
+      "Correct : la participation exige une déclaration préalable ; M. Weber n'en a souscrit aucune, il ne remplit donc pas cette condition.",
+      "Aucune procédure n'est mentionnée ; la note ne prévoit pas de sanction.",
+      "La note ne précise pas qui sont les membres ; le suppléant est lui aussi un participant soumis à l'obligation."
     ],
-    "explanation": "La règle énonce une implication universelle : Participation ⇒ Déclaration. Par contraposition logique (Non Déclaration ⇒ Non Participation), Marc ne peut légalement siéger en commission de sélection.",
+    "explanation": "La déclaration préalable est une condition de toute participation à une commission de sélection. Comme M. Weber n'en a souscrit aucune, il ne peut pas y siéger régulièrement. La formation suivie par M. Weber et la composition de la commission sont sans incidence sur ce raisonnement.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-cert-015",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle affirmation est directement corroborée par les faits mentionnés ?",
-    "stimulus": "La nouvelle procédure de délivrance numérique a permis de délivrer 4 500 attestations au premier trimestre, contre 3 000 attestations papier au trimestre correspondant de l'année précédente.",
+    "estimatedSeconds": 85,
+    "prompt": "Quelle affirmation est directement confirmée par les chiffres du rapport ?",
+    "stimulus": "Rapport trimestriel – Bureau des attestations. Au premier trimestre de cette année, le bureau a délivré 4 500 attestations de résidence au total, dont 3 900 par voie numérique et 600 sur papier. Au premier trimestre de l'année précédente, il en avait délivré 3 000, toutes sur papier. Le formulaire numérique a été mis en service en décembre. Deux agents ont été formés à l'assistance téléphonique des usagers. Le rapport précise qu'aucune enquête n'a encore été menée sur la préférence des usagers entre les deux formats. Le prochain rapport portera également sur le nombre de réclamations.",
     "options": [
-      "La procédure numérique a totalement supprimé les erreurs de saisie des agents.",
-      "Toutes les attestations administratives de l'État sont désormais délivrées en ligne.",
-      "Les usagers préfèrent unanimement le format numérique au format papier.",
-      "Le volume d'attestations délivrées a augmenté de 1 500 unités entre les deux trimestres comparés."
+      "Le bureau a cessé de délivrer des attestations sur papier.",
+      "Les usagers préfèrent désormais le format numérique au papier.",
+      "Le nombre de réclamations des usagers a nettement diminué.",
+      "Le total délivré dépasse de 1 500 celui d'il y a un an."
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "Extrapolation infondée : le texte ne mentionne aucun taux d'erreur.",
-      "Généralisation abusive à l'ensemble des attestations administratives de l'État.",
-      "Jugement qualitatif subjectif absent des données factuelles du texte.",
-      "Correct : corroboré par la différence arithmétique directe (4 500 - 3 000 = 1 500)."
+      "600 attestations ont encore été délivrées sur papier au premier trimestre.",
+      "Le rapport précise qu'aucune enquête n'a été menée sur la préférence des usagers.",
+      "Les réclamations ne seront étudiées que dans le prochain rapport ; aucun chiffre n'est donné.",
+      "Correct : 4 500 attestations au total contre 3 000 un an plus tôt, soit 1 500 de plus."
     ],
-    "explanation": "Seule la hausse factuelle de 1 500 attestations (4 500 contre 3 000) découle directement du texte. Les autres options constituent des jugements subjectifs ou des généralisations sans preuve.",
+    "explanation": "Les totaux comparables sont 4 500 attestations cette année et 3 000 l'année précédente, soit une hausse de 1 500. Le papier n'a pas disparu (600 attestations), la préférence des usagers n'a pas été mesurée et les réclamations ne sont pas chiffrées.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T14:55:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T14:55:00+02:00"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-contra-016",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle conclusion s'impose avec une certitude absolue à partir des prémisses fournies ?",
-    "stimulus": "Tout marché public d'un montant supérieur à 100 000 euros requiert un avis préalable du contrôleur financier, et le service applique toujours cette règle. Le marché public X, relatif à l'acquisition de matériel informatique, a été attribué sans avis du contrôleur financier.",
+    "estimatedSeconds": 85,
+    "prompt": "Quelle conclusion est certaine à partir des éléments fournis ?",
+    "stimulus": "Extrait du compte rendu du service des achats. Tout marché public d'un montant supérieur à 100 000 euros requiert un avis préalable du contrôleur financier. L'audit interne de l'an dernier a confirmé que le service applique cette règle sans exception. Les marchés sont publiés sur la plateforme des achats publics et attribués par une commission de trois membres. Le marché X, relatif à l'acquisition de matériel informatique pour les écoles, a été attribué le 2 février sans avis du contrôleur financier. La livraison du matériel est prévue en avril, et une formation des enseignants sera organisée en mai.",
     "options": [
       "Le contrôleur financier a refusé de valider le marché X.",
-      "Le marché X sera examiné lors de la prochaine session financière.",
-      "Le montant du marché X n'est pas supérieur à 100 000 euros.",
-      "Le marché X est entaché d'une nullité administrative définitive."
+      "Le marché X sera réexaminé lors de la prochaine session.",
+      "Le montant du marché X ne dépasse pas 100 000 euros.",
+      "Le marché X a été attribué de manière irrégulière."
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Affirmation non étayée : l'absence d'avis ne prouve pas un refus d'examen.",
-      "Pure supposition temporelle sans ancrage dans le texte fourni.",
-      "Correct : par contraposition stricte (si montant > 100 000 € alors avis obligatoire ; or pas d'avis, donc montant ≤ 100 000 € pour être régulier).",
-      "Extrapolation infondée : le texte ne statue sur aucune nullité prononcée."
+      "Le contrôleur financier n'a pas été saisi ; on ne peut pas parler de refus.",
+      "Aucun réexamen n'est mentionné dans le compte rendu.",
+      "Correct : la règle est appliquée sans exception ; un marché attribué sans avis ne peut donc pas dépasser 100 000 euros.",
+      "Puisque la règle est toujours appliquée, l'absence d'avis indique un montant ne nécessitant pas d'avis, et non une irrégularité."
     ],
-    "explanation": "Par application directe de la contraposée logique : si la règle impose « Marché > 100 000 € ⇒ Avis », alors l'absence d'avis implique nécessairement que le marché ne dépasse pas ce seuil réglementaire sous réserve de conformité.",
+    "explanation": "Si le montant du marché X dépassait 100 000 euros, un avis aurait été requis et, la règle étant appliquée sans exception, il aurait été obtenu. Le marché ayant été attribué sans avis, son montant ne dépasse pas 100 000 euros. Rien n'indique une irrégularité.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T17:42:15.980Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-tfcs-017",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
     "itemFormat": "tfcs",
     "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Affirmation : Claire bénéficie de l'indemnité forfaitaire kilométrique pour ce déplacement.",
-    "stimulus": "Seuls les agents qui effectuent un déplacement professionnel hors du Grand-Duché bénéficient d'une indemnité forfaitaire kilométrique. Claire a effectué un déplacement professionnel à Esch-sur-Alzette, ville du Grand-Duché.",
+    "estimatedSeconds": 70,
+    "prompt": "Affirmation : Claire perçoit l'indemnité forfaitaire kilométrique pour son déplacement du 7 mars.",
+    "stimulus": "Note de service – Frais de déplacement. Seuls les agents qui effectuent un déplacement professionnel hors du territoire national bénéficient de l'indemnité forfaitaire kilométrique. Les autres déplacements donnent lieu au remboursement des frais réels, sur présentation des justificatifs, dans un délai de deux mois. Les demandes sont adressées au bureau de la comptabilité au moyen du formulaire de frais. Le 7 mars, Claire, gestionnaire au service des marchés, s'est rendue en voiture de service à Neufmoulin, commune située sur le territoire national, pour une réunion avec un fournisseur. Elle a remis son formulaire le 10 mars.",
     "options": [
       "Vrai",
       "Faux",
@@ -509,47 +505,47 @@
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "Ignore la restriction « seuls … hors du Grand-Duché ».",
-      "Correct : le déplacement a eu lieu au Grand-Duché, ce qui exclut l'indemnité.",
-      "Le texte permet de trancher : il donne la condition et le lieu du déplacement."
+      "L'indemnité est réservée aux déplacements hors du territoire national ; celui de Claire a eu lieu sur le territoire national.",
+      "Correct : « seuls » les déplacements hors du territoire ouvrent droit à l'indemnité ; le déplacement de Claire, sur le territoire national, en est exclu.",
+      "Le texte suffit : il précise la condition et le lieu du déplacement, ce qui permet de trancher."
     ],
-    "explanation": "L'indemnité est réservée (« seuls ») aux déplacements hors du Grand-Duché. Le déplacement de Claire a eu lieu au Grand-Duché : l'affirmation est fausse.",
+    "explanation": "« Seuls » les déplacements hors du territoire national ouvrent droit à l'indemnité forfaitaire. Neufmoulin étant, selon la note, sur le territoire national, Claire ne remplit pas la condition : elle relève du remboursement des frais réels.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T17:42:15.980Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-rule-018",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Quelle décision applique rigoureusement la consigne de conservation ?",
-    "stimulus": "Les procès-verbaux de séance sont versés aux archives définitives après un délai de 5 ans en archives courantes. Les brouillons préparatoires doivent être détruits immédiatement après adoption du texte définitif.",
+    "estimatedSeconds": 80,
+    "prompt": "Le 21 mars, que doit faire l'agent des brouillons préparatoires de la note d'orientation ?",
+    "stimulus": "Consigne de conservation – Secrétariat du conseil d'administration. Les procès-verbaux de séance sont conservés cinq ans en archives courantes, puis versés aux archives définitives. Les brouillons préparatoires d'un texte doivent être détruits immédiatement après l'adoption du texte définitif ; seule la version adoptée est jointe au procès-verbal. Les procès-verbaux sont approuvés lors de la séance suivante. Le 20 mars, le conseil a adopté la note d'orientation budgétaire ; sa prochaine séance aura lieu le 15 avril. Le 21 mars, l'agent du secrétariat retrouve dans son bureau trois brouillons préparatoires de cette note.",
     "options": [
-      "Conserver les brouillons préparatoires pendant une durée minimale de 5 ans.",
-      "Détruire les brouillons préparatoires dès l'adoption du texte définitif.",
-      "Transférer les procès-verbaux aux archives définitives dès leur adoption.",
-      "Verser les brouillons préparatoires aux archives définitives avec le procès-verbal."
+      "Les conserver en archives courantes pendant cinq ans.",
+      "Les détruire sans attendre, le texte étant adopté.",
+      "Les joindre au procès-verbal de la séance du 20 mars.",
+      "Les garder jusqu'à l'approbation du procès-verbal le 15 avril."
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "Confond la règle des brouillons avec le délai de conservation des procès-verbaux.",
-      "Correct : respecte scrupuleusement l'obligation de destruction immédiate des brouillons.",
-      "Viole le délai intermédiaire de 5 ans imposé pour les procès-verbaux.",
-      "Viole l'obligation de destruction en conservant des documents préparatoires."
+      "La durée de cinq ans vaut pour les procès-verbaux, pas pour les brouillons.",
+      "Correct : la note a été adoptée le 20 mars ; ses brouillons doivent être détruits immédiatement.",
+      "Seule la version adoptée est jointe au procès-verbal, pas les brouillons.",
+      "La consigne lie la destruction à l'adoption du texte, non à l'approbation du procès-verbal le 15 avril."
     ],
-    "explanation": "La consigne distingue formellement les procès-verbaux (conservés 5 ans en archives courantes avant versement) et les brouillons préparatoires (destruction immédiate obligatoire dès adoption).",
+    "explanation": "La consigne prévoit la destruction des brouillons immédiatement après l'adoption du texte définitif. La note ayant été adoptée le 20 mars, l'agent doit détruire les brouillons le 21 mars sans attendre la séance du 15 avril.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-quant-019",
@@ -584,77 +580,77 @@
   },
   {
     "id": "verbal-comp-020",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
     "difficulty": 1,
     "language": "fr",
     "estimatedSeconds": 60,
-    "prompt": "Quelle proposition énonce un fait objectif et non une appréciation qualitative ?",
-    "stimulus": "La refonte du portail citoyen a permis de diviser par deux le délai de délivrance des extraits de casier judiciaire, passant de 6 jours à 3 jours ouvrés, pour le plus grand confort des administrés.",
+    "prompt": "Quelle proposition énonce un fait vérifiable et non une appréciation ?",
+    "stimulus": "Extrait de la lettre d'information du ministère. La refonte du portail des démarches en ligne, achevée en février, est une réussite remarquable. Le délai de délivrance des certificats de résidence est passé de 6 à 3 jours ouvrés, pour le plus grand confort des usagers. Le nouveau portail, à l'ergonomie particulièrement soignée, propose désormais quatorze démarches au lieu de neuf. Selon la rédaction, il s'agit de la modernisation la plus aboutie de ces dernières années. Une version en langue anglaise est en préparation.",
     "options": [
-      "La nouvelle procédure est la plus efficace de l'administration.",
-      "Le portail citoyen offre une ergonomie particulièrement réussie.",
-      "Le délai de délivrance est passé de 6 jours à 3 jours ouvrés.",
-      "Le confort des administrés est grandement amélioré par la réforme."
+      "La refonte du portail est une réussite remarquable.",
+      "L'ergonomie du portail est particulièrement soignée.",
+      "Le portail offre quatorze démarches contre neuf.",
+      "Il s'agit de la modernisation la plus aboutie."
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Jugement de valeur comparatif sans base quantitative fournie.",
-      "Opinion esthétique et ergonomique subjective.",
-      "Correct : mesure chiffrée factuelle, vérifiable et exempte de jugement de valeur.",
-      "Appréciation qualitative subjective sur le ressenti des usagers."
+      "« Réussite remarquable » est un jugement de valeur.",
+      "« Particulièrement soignée » exprime une appréciation de la rédaction.",
+      "Correct : le nombre de démarches proposées est une donnée chiffrée, vérifiable.",
+      "« La plus aboutie » est une appréciation attribuée à la rédaction."
     ],
-    "explanation": "Le passage de 6 à 3 jours ouvrés est une donnée temporelle chiffrée, mesurable et vérifiable, contrairement aux mentions sur le confort ou la qualité ergonomique.",
+    "explanation": "Seul le nombre de démarches proposées (quatorze au lieu de neuf) est un fait que l'on peut vérifier. Les autres propositions reprennent des jugements de valeur de la rédaction.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-synth-021",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "synthese",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 80,
+    "estimatedSeconds": 90,
     "prompt": "Quelle proposition résume le plus fidèlement le dispositif décrit ?",
-    "stimulus": "Les demandes de subvention sont recevables du 1er janvier au 31 mars. Toute demande déposée hors délai est déclarée irrecevable sans examen au fond, sauf cas de force majeure dûment attesté par une autorité publique compétente.",
+    "stimulus": "Appel à projets culturels – Règles de recevabilité. Les demandes de subvention sont recevables du 1er janvier au 31 mars. Toute demande déposée hors de cette période est déclarée irrecevable sans examen au fond, sauf cas de force majeure dûment attesté par une autorité publique compétente ; une attestation sur l'honneur du demandeur ne suffit pas. Les demandes recevables sont ensuite examinées par un comité d'experts, qui se réunit en mai et rend un avis motivé. Le formulaire de demande est disponible sur le site du ministère. Les associations peuvent obtenir une aide à la rédaction auprès du bureau d'accueil.",
     "options": [
-      "Toute demande déposée après le 31 mars est définitivement rejetée sans exception possible.",
-      "Une attestation sur l'honneur suffit pour justifier un dépôt de dossier tardif.",
-      "Les demandes déposées entre janvier et mars font l'objet d'une acceptation automatique.",
-      "Les demandes hors délai sont irrecevables, sauf force majeure attestée par une autorité."
+      "Les demandes tardives sont toutes rejetées, sans aucune exception.",
+      "Une attestation sur l'honneur permet de justifier un dépôt tardif.",
+      "Les demandes déposées à temps sont acceptées automatiquement.",
+      "Un dépôt tardif est irrecevable, sauf force majeure attestée."
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "Ignore l'exception expresse de force majeure prévue par le texte.",
-      "Contredit l'exigence d'une attestation délivrée par une autorité publique compétente.",
-      "Confond la recevabilité de la demande avec son acceptation au fond.",
-      "Correct : reprend fidèlement le principe d'irrecevabilité et l'unique exception d'autorité."
+      "Le texte prévoit une exception : la force majeure attestée par une autorité publique.",
+      "Le texte exclut expressément l'attestation sur l'honneur.",
+      "Les demandes recevables sont examinées par un comité d'experts ; elles ne sont pas acceptées d'office.",
+      "Correct : la proposition reprend la règle principale et son unique exception."
     ],
-    "explanation": "La synthèse exacte préserve la règle générale (irrecevabilité des dossiers tardifs) ainsi que sa condition dérogatoire stricte (force majeure établie par une autorité publique).",
+    "explanation": "Le cœur du dispositif est la période de dépôt, dont le non-respect entraîne l'irrecevabilité, sauf force majeure attestée par une autorité publique. Les autres propositions suppriment l'exception, l'élargissent à tort ou confondent recevabilité et acceptation.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-tfcs-022",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "tfcs",
     "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 60,
-    "prompt": "Affirmation : La demande de congé de Julien a été approuvée par son supérieur.",
-    "stimulus": "Toute demande de congé bonifié doit être déposée un mois avant le départ. Julien a déposé sa demande de congé bonifié six semaines avant la date de départ prévue.",
+    "estimatedSeconds": 70,
+    "prompt": "Affirmation : Le supérieur hiérarchique de Julien a approuvé sa demande de congé bonifié.",
+    "stimulus": "Note de la direction des ressources humaines – Congé bonifié. Toute demande de congé bonifié doit être déposée au moins un mois avant la date de départ prévue. Une demande déposée hors délai n'est pas instruite. Les demandes déposées dans le délai sont transmises au supérieur hiérarchique, qui statue en fonction des nécessités de service et notifie sa décision par écrit. Le formulaire est disponible sur l'intranet. Julien, agent du service de la paie, a déposé sa demande de congé bonifié six semaines avant la date de départ prévue. Sa collègue Inès a déposé la sienne trois semaines avant son départ.",
     "options": [
       "Vrai",
       "Faux",
@@ -662,47 +658,45 @@
     ],
     "correctIndex": 2,
     "optionRationales": [
-      "Le respect du délai de dépôt ne garantit pas la décision favorable de l'autorité.",
-      "Le texte n'indique en aucun cas que la demande de Julien a été refusée.",
-      "Correct : Julien a respecté le délai de dépôt, mais le texte ne dit rien sur la décision finale de sa hiérarchie."
+      "Le dépôt dans le délai permet seulement l'instruction ; la décision dépend des nécessités de service.",
+      "Rien n'indique un refus : la note ne donne pas la décision du supérieur.",
+      "Correct : la demande de Julien est recevable et transmise au supérieur, mais le texte ne dit pas ce que celui-ci a décidé."
     ],
-    "explanation": "Le texte confirme uniquement le respect de la formalité temporelle de dépôt (6 semaines > 1 mois requis). Il ne contient aucune information quant à l'acceptation ou au refus de la demande.",
+    "explanation": "En déposant sa demande six semaines avant son départ, Julien respecte le délai d'un mois : sa demande est instruite et transmise à son supérieur. Celui-ci statue selon les nécessités de service, et sa décision n'est pas mentionnée. Le cas d'Inès est sans rapport avec l'affirmation.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-syll-023",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle proposition est rigoureusement déduite des prémisses ?",
-    "stimulus": "Tous les inspecteurs assermentés disposent d'un droit d'accès aux locaux professionnels. Aucun stagiaire n'est assermenté. Le service compte plusieurs inspecteurs assermentés.",
+    "estimatedSeconds": 85,
+    "prompt": "Affirmation : Au moins une personne disposant du droit d'accès aux locaux contrôlés n'est pas stagiaire.",
+    "stimulus": "Note de l'inspection du travail – Organisation des contrôles. Tous les inspecteurs assermentés disposent d'un droit d'accès aux locaux professionnels contrôlés. L'assermentation est délivrée après une formation de six mois et une prestation de serment ; aucun stagiaire n'est assermenté. Les stagiaires peuvent toutefois accompagner un inspecteur lors des visites, à titre d'observateurs. Le service compte actuellement plusieurs inspecteurs assermentés et quatre stagiaires. Les rapports de contrôle sont rédigés dans les dix jours suivant la visite. Un nouveau modèle de rapport sera utilisé à partir de janvier.",
     "options": [
-      "Certaines personnes ayant un droit d'accès ne sont pas stagiaires.",
-      "Tous les stagiaires sont interdits d'accès aux locaux professionnels.",
-      "L'assermentation est accordée à tout agent après deux ans de service.",
-      "Tous les inspecteurs assermentés sont d'anciens stagiaires."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : les inspecteurs assermentés disposent du droit d'accès et, n'étant pas stagiaires, constituent des personnes autorisées non-stagiaires.",
-      "Le texte ne dit pas que les stagiaires ne peuvent pas avoir accès pour un autre motif.",
-      "Règle temporelle totalement inexistante dans les prémisses.",
-      "Spéculation sur l'historique de carrière absente du texte."
+      "Correct : le service compte plusieurs inspecteurs assermentés ; ils disposent du droit d'accès et, aucun stagiaire n'étant assermenté, ils ne sont pas stagiaires.",
+      "Rien ne contredit l'affirmation : les inspecteurs assermentés du service la rendent vraie.",
+      "Le texte suffit à trancher : l'existence d'inspecteurs assermentés est expressément mentionnée."
     ],
-    "explanation": "Les inspecteurs assermentés ont un droit d'accès et aucun stagiaire n'est assermenté. Par conséquent, les inspecteurs assermentés représentent au moins une catégorie de personnes dotées d'un droit d'accès qui ne sont pas des stagiaires.",
+    "explanation": "Le service compte plusieurs inspecteurs assermentés. Chacun dispose du droit d'accès et, puisqu'aucun stagiaire n'est assermenté, aucun d'eux n'est stagiaire. Il existe donc au moins une personne ayant le droit d'accès sans être stagiaire. Le texte ne dit pas, en revanche, si des stagiaires ont un droit d'accès propre.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T17:42:15.980Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-app-024",
@@ -737,127 +731,125 @@
   },
   {
     "id": "verbal-comp-025",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "comprehension",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle proposition reformule le texte sans altérer son sens logique ?",
-    "stimulus": "Le renouvellement d'une autorisation d'exploitation n'est accordé que si l'exploitant a transmis son bilan environnemental annuel avant le 1er décembre.",
-    "options": [
-      "Le renouvellement de l'autorisation d'exploitation dispense du bilan environnemental.",
-      "La transmission du bilan avant le 1er décembre est une condition nécessaire au renouvellement.",
-      "La transmission du bilan avant le 1er décembre garantit automatiquement le renouvellement.",
-      "L'exploitant qui transmet son bilan le 5 décembre obtiendra une dérogation de plein droit."
-    ],
-    "correctIndex": 1,
-    "optionRationales": [
-      "Contredit l'obligation légale de transmission du bilan.",
-      "Correct : la locution « n'est accordé que si » définit strictement une condition nécessaire.",
-      "Confond condition nécessaire et condition suffisante d'approbation.",
-      "Contredit formellement l'échéance impérative du 1er décembre."
-    ],
-    "explanation": "La formulation « n'est accordé que si » signifie que sans ce dépôt préalable avant le 1er décembre, le renouvellement est impossible. Cela en fait une condition sine qua non (nécessaire), mais pas forcément suffisante.",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "verbal-inf-026",
-    "version": 1,
-    "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
-    "difficulty": 2,
-    "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle conclusion est absolument certaine ?",
-    "stimulus": "Toutes les réunions de crise ont lieu dans la salle rouge. La réunion de ce matin a lieu dans la salle bleue.",
-    "options": [
-      "La réunion de ce matin est un simple point d'information interne.",
-      "La réunion de ce matin n'est pas une réunion de crise.",
-      "La salle rouge était indisponible ce matin pour travaux.",
-      "Aucune réunion n'a eu lieu dans la salle rouge ce matin."
-    ],
-    "correctIndex": 1,
-    "optionRationales": [
-      "Spéculation sur la nature exacte de la réunion non étayée par le texte.",
-      "Correct : par contraposition (si réunion de crise alors salle rouge ; or salle bleue, donc pas de crise).",
-      "Hypothèse matérielle non mentionnée dans les prémisses.",
-      "Rien ne permet d'affirmer que la salle rouge est restée inoccupée."
-    ],
-    "explanation": "Si toute réunion de crise se déroule obligatoirement dans la salle rouge, une réunion tenue dans la salle bleue ne peut en aucun cas être une réunion de crise (contraposition formelle).",
-    "sourceType": "original_ai_assisted",
-    "reviewStatus": "approved",
-    "createdAt": "2026-10-02T13:28:18.714Z",
-    "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
-  },
-  {
-    "id": "verbal-app-028",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle modalité de transmission est strictement conforme à la directive ?",
-    "stimulus": "Les réclamations relatives à la taxe foncière doivent être transmises exclusivement par pli recommandé avec avis de réception ou déposées contre récépissé au secrétariat communal.",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle décision la note impose-t-elle pour les dossiers examinés ?",
+    "stimulus": "Note du service des autorisations environnementales. Le renouvellement d'une autorisation d'exploitation n'est accordé que si l'exploitant a transmis son bilan environnemental annuel avant le 1er décembre. Le bilan est déposé sur la plateforme dédiée ; un accusé de réception électronique en fait foi. Les dossiers de renouvellement sont instruits en janvier et la redevance annuelle est appelée en février. Cette année, l'exploitant A a transmis son bilan le 28 novembre ; l'exploitant B l'a transmis le 3 décembre ; l'exploitant C, dont l'autorisation initiale a été délivrée en juin, n'a pas encore de bilan à produire.",
     "options": [
-      "Appel téléphonique enregistré auprès de l'agent de permanence.",
-      "Transmission par courrier électronique avec confirmation de lecture.",
-      "Envoi postal par lettre recommandée avec avis de réception.",
-      "Dépôt d'une lettre simple dans la boîte aux lettres de la commune."
+      "Le renouvellement de l'exploitant A doit être accordé.",
+      "Le renouvellement de l'exploitant B ne peut être accordé.",
+      "L'exploitant B peut être renouvelé s'il paie sa redevance.",
+      "L'exploitant C est dispensé de tout bilan environnemental."
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "optionRationales": [
-      "La voie orale par téléphone est dépourvue de toute valeur probante au regard de la règle.",
-      "L'envoi électronique n'est pas autorisé par l'adverbe d'exclusivité « exclusivement ».",
-      "Correct : mode d'envoi expressément prévu et autorisé par la directive.",
-      "Le dépôt sans récépissé ne remplit pas l'exigence formelle requise."
+      "La transmission à temps est une condition nécessaire, pas suffisante : elle ne garantit pas le renouvellement.",
+      "Correct : B a transmis son bilan après le 1er décembre ; la condition nécessaire au renouvellement n'est pas remplie.",
+      "Le paiement de la redevance ne remplace pas la condition de dépôt du bilan avant le 1er décembre.",
+      "Le texte dit seulement que C n'a pas encore de bilan à produire ; il ne parle pas d'une dispense définitive."
     ],
-    "explanation": "La consigne restreint les voies de recours admissibles à deux modalités exclusives : le pli recommandé avec accusé de réception ou le dépôt physique contre récépissé. L'envoi en recommandé AR est donc conforme.",
+    "explanation": "« N'est accordé que si » pose une condition nécessaire. B, qui a transmis son bilan le 3 décembre, ne la remplit pas : son renouvellement ne peut pas être accordé. Pour A, la condition est remplie, mais elle ne suffit pas à imposer le renouvellement.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "verbal-inf-026",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 70,
+    "prompt": "Affirmation : La réunion de ce matin est une réunion de crise.",
+    "stimulus": "Note de la direction de la sécurité civile – Utilisation des salles. Toutes les réunions de crise se tiennent dans la salle rouge, équipée de liaisons sécurisées avec les services de secours. En dehors des situations de crise, la salle rouge peut être réservée pour d'autres réunions, notamment les exercices et les formations, par l'intermédiaire du secrétariat. La salle bleue est réservée aux réunions de service hebdomadaires. Ce matin, une réunion a lieu dans la salle rouge à 9 h ; douze personnes y participent, dont deux représentants de la commune. Le secrétariat rappelle que les réservations se font au moins 48 heures à l'avance.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Les réunions de crise ont lieu dans la salle rouge, mais une réunion dans la salle rouge n'est pas forcément une réunion de crise.",
+      "La salle rouge accueille aussi les réunions de crise ; rien n'exclut que celle de ce matin en soit une.",
+      "Correct : la salle rouge accueille les réunions de crise mais aussi d'autres réunions ; le texte ne précise pas la nature de celle de ce matin."
+    ],
+    "explanation": "La note dit que toute réunion de crise a lieu dans la salle rouge, pas que toute réunion dans la salle rouge est une réunion de crise ; elle précise même que la salle sert à d'autres réunions. Le lieu ne permet donc pas de déterminer la nature de la réunion de ce matin.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "verbal-app-028",
+    "version": 2,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Mme Weber souhaite contester son avis d'impôt foncier. Quelle façon de transmettre sa réclamation est conforme à la note ?",
+    "stimulus": "Note d'information aux usagers – Réclamations relatives à l'impôt foncier communal. Les réclamations doivent être introduites dans un délai de trois mois à compter de la date d'envoi de l'avis d'imposition. Elles sont transmises exclusivement par lettre recommandée avec avis de réception ou déposées au secrétariat communal contre récépissé. La réclamation indique le numéro de l'avis et les motifs de la contestation. Le secrétariat est ouvert du lundi au vendredi de 8 h à 12 h. Les questions générales peuvent être posées par téléphone ou par courrier électronique, mais ces échanges ne valent pas réclamation.",
+    "options": [
+      "Exposer ses motifs par téléphone à l'agent de permanence.",
+      "Envoyer un courrier électronique avec confirmation de lecture.",
+      "Envoyer une lettre recommandée avec avis de réception.",
+      "Déposer une lettre simple dans la boîte aux lettres communale."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Les échanges téléphoniques ne valent pas réclamation selon la note.",
+      "Le courrier électronique est réservé aux questions générales et ne vaut pas réclamation.",
+      "Correct : la lettre recommandée avec avis de réception est l'une des deux modalités admises.",
+      "Un dépôt sans récépissé ne correspond pas à la modalité « contre récépissé » prévue au secrétariat."
+    ],
+    "explanation": "La note n'admet que deux modalités : la lettre recommandée avec avis de réception et le dépôt au secrétariat contre récépissé. Téléphone et courrier électronique ne valent pas réclamation, et une lettre simple glissée dans la boîte ne donne pas lieu à récépissé.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T13:28:18.714Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-inf-029",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "inference",
     "difficulty": 3,
     "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Laquelle des assertions constitue une extrapolation non garantie par le passage ?",
-    "stimulus": "Au cours de l'année écoulée, l'introduction d'un outil d'indexation automatisé a permis aux agents d'instruire 1 800 requêtes contre 1 200 l'année précédente, sans augmentation d'effectif.",
+    "estimatedSeconds": 95,
+    "prompt": "Quelle conclusion peut-on tirer avec certitude de ce compte rendu ?",
+    "stimulus": "Compte rendu annuel – Cellule d'instruction des requêtes. Au cours de l'année écoulée, la cellule a instruit 1 800 requêtes, contre 1 200 l'année précédente. Un outil d'indexation automatisé a été mis en service en mars ; dans le même temps, les procédures internes ont été simplifiées. L'effectif de la cellule n'a pas augmenté entre les deux années. Le nombre de requêtes reçues n'est pas indiqué, faute de données fiables pour l'année précédente. Une enquête auprès des agents sur leurs conditions de travail sera menée au printemps. Le budget de fonctionnement a été reconduit à l'identique.",
     "options": [
-      "Les agents éprouvent une plus grande satisfaction dans leur quotidien professionnel.",
-      "L'effectif du service est demeuré stable sur les deux années comparées.",
-      "La productivité moyenne par agent a augmenté au cours de l'année écoulée.",
-      "Le nombre total de requêtes instruites a progressé de 50 % par rapport à l'année précédente."
+      "Le nombre moyen de requêtes instruites par agent a augmenté.",
+      "Les agents sont plus satisfaits de leurs conditions de travail.",
+      "La hausse de l'activité est due au seul outil d'indexation.",
+      "Le nombre de requêtes reçues par la cellule a augmenté."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : le passage renseigne des données d'activité et d'effectif, mais aucune indication sur la satisfaction des agents.",
-      "Démontré textuellement par la mention « sans augmentation d'effectif ».",
-      "Démontré par la hausse de volume à effectif inchangé.",
-      "Démontré mathématiquement : (1 800 - 1 200) / 1 200 = 600 / 1 200 = +50 %."
+      "Correct : 600 requêtes de plus ont été instruites alors que l'effectif n'a pas augmenté ; la moyenne par agent a donc forcément progressé.",
+      "L'enquête sur les conditions de travail n'a pas encore eu lieu ; rien n'est dit sur la satisfaction.",
+      "Le texte mentionne aussi la simplification des procédures ; il n'établit aucune cause unique.",
+      "Le compte rendu parle des requêtes instruites ; les requêtes reçues ne sont pas chiffrées."
     ],
-    "explanation": "Le texte ne fournit que des indicateurs quantitatifs objectifs (volume de dossiers et stabilité des ressources humaines). Prêter aux agents une satisfaction accrue relève d'une extrapolation subjective non garantie.",
+    "explanation": "Le nombre de requêtes instruites passe de 1 200 à 1 800 avec un effectif qui n'a pas augmenté (il est resté stable ou a diminué) : la moyenne par agent a nécessairement augmenté. Le texte ne permet de conclure ni sur la satisfaction des agents, ni sur la cause de la hausse, ni sur les requêtes reçues.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-synth-030",
@@ -892,127 +884,121 @@
   },
   {
     "id": "verbal-inf-031",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle déduction logique est incontestable ?",
-    "stimulus": "Tous les lauréats de l'épreuve A1 possèdent un diplôme de niveau master ou équivalent. Marc est lauréat de l'épreuve A1.",
+    "estimatedSeconds": 80,
+    "prompt": "Affirmation : Marc conserve le bénéfice de sa réussite à l'examen.",
+    "stimulus": "Règlement de l'examen d'admission au stage – Article 12. Les lauréats de l'examen reçoivent une notification écrite de leur réussite. Ils disposent d'un délai de trente jours à compter de la réception de cette notification pour fournir un extrait de casier judiciaire récent et une copie de leur diplôme. À défaut, ils perdent le bénéfice de leur réussite, sauf si le retard est dû à l'administration qui délivre ces pièces. Les stages débutent le 1er septembre. Marc, lauréat de l'examen, a reçu sa notification le 2 mai et a fourni les deux pièces le 10 juin. Il n'invoque aucun retard de l'administration.",
     "options": [
-      "Marc a obtenu la note maximale lors de l'épreuve écrite.",
-      "Marc possède un diplôme de niveau master ou équivalent.",
-      "Tous les titulaires d'un master réussissent l'épreuve A1.",
-      "Marc est déjà titularisé dans son grade de recrutement."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
     "correctIndex": 1,
     "optionRationales": [
-      "Spéculation sur la note obtenue sans base dans l'énoncé.",
-      "Correct : déduction directe par syllogisme (Tout A est B ; Marc est A ; donc Marc est B).",
-      "Réciproque erronée (affirmer que tout master réussit inverse l'implication logique).",
-      "Confusion entre le statut de lauréat et la titularisation ultérieure."
+      "Le délai de trente jours courait jusqu'au 1er juin ; les pièces fournies le 10 juin sont hors délai.",
+      "Correct : notifié le 2 mai, Marc devait fournir ses pièces au plus tard le 1er juin ; il les a remises le 10 juin sans invoquer l'exception, il perd donc le bénéfice de sa réussite.",
+      "Le texte donne la règle, les dates et précise qu'aucun retard de l'administration n'est invoqué : on peut trancher."
     ],
-    "explanation": "Puisque l'ensemble des lauréats possède un diplôme de niveau master ou équivalent et que Marc appartient à cet ensemble, Marc détient nécessairement ce niveau de qualification.",
+    "explanation": "Trente jours à compter du 2 mai mènent au 1er juin. Marc a fourni ses pièces le 10 juin et l'exception (retard de l'administration) ne s'applique pas : il perd le bénéfice de sa réussite. L'affirmation est donc fausse.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-app-032",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "application-consigne",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle suite convient de donner selon la directive interne ?",
-    "stimulus": "En cas d'absence imprévue pour raison de santé, l'agent doit en informer sa hiérarchie dans un délai de 2 heures suivant sa prise de service théorique, et transmettre un certificat médical sous 48 heures ouvrables.",
+    "estimatedSeconds": 80,
+    "prompt": "Que doit faire Mme Klein pour respecter la directive ?",
+    "stimulus": "Directive interne – Absences pour raison de santé. En cas d'absence imprévue pour raison de santé, l'agent informe sa hiérarchie au plus tard deux heures après l'heure à laquelle il aurait dû prendre son service. Il transmet ensuite un certificat médical au service du personnel au plus tard le deuxième jour ouvrable qui suit le premier jour d'absence. Les absences de plus de trois semaines donnent lieu à un examen par le médecin du travail. Mme Klein, dont la prise de service est fixée à 8 h, est malade ce lundi matin ; le mardi et le mercredi sont des jours ouvrables.",
     "options": [
-      "Attendre 48 heures ouvrables avant d'établir le premier contact avec son service.",
-      "Prévenir sa hiérarchie uniquement après avoir obtenu son certificat médical.",
-      "Déposer un certificat médical sans obligation préalable d'information hiérarchique.",
-      "Prévenir sa hiérarchie sous 2 heures et envoyer le certificat médical sous 48 heures ouvrables."
+      "Envoyer son certificat d'ici mercredi, sans autre démarche lundi.",
+      "Prévenir sa hiérarchie après avoir vu un médecin, même l'après-midi.",
+      "Prévenir sa hiérarchie avant 10 h, puis consulter le médecin du travail.",
+      "Prévenir sa hiérarchie avant 10 h, certificat d'ici mercredi."
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "Omet l'obligation de premier signalement dans les 2 heures.",
-      "Inverse la chronologie des obligations fixée par la directive.",
-      "Viole l'exigence d'information immédiate sous 2 heures.",
-      "Correct : respecte scrupuleusement les deux démarches et leurs délais respectifs distincts."
+      "L'information de la hiérarchie dans les deux heures est obligatoire, en plus du certificat.",
+      "L'information doit intervenir au plus tard à 10 h, sans attendre la consultation.",
+      "L'examen par le médecin du travail ne concerne que les absences de plus de trois semaines ; le certificat reste à transmettre.",
+      "Correct : prise de service à 8 h, donc information avant 10 h ; le deuxième jour ouvrable après lundi est mercredi."
     ],
-    "explanation": "La règle cumule deux obligations temporelles précises : un avertissement hiérarchique rapide (sous 2 heures) puis la formalisation justificative par certificat (sous 48 heures ouvrables).",
+    "explanation": "La directive impose deux démarches : prévenir la hiérarchie dans les deux heures suivant l'heure de prise de service (soit avant 10 h) et transmettre un certificat au plus tard le deuxième jour ouvrable suivant le premier jour d'absence (mercredi). Seule la dernière proposition respecte les deux.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-comp-034",
-    "version": 2,
+    "version": 3,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 65,
-    "prompt": "Quelle conclusion est nécessairement vraie ?",
-    "stimulus": "Seuls les agents titulaires d'une habilitation de sécurité spéciale peuvent consulter les documents classifiés de niveau 3. Mme Hoffmann a consulté hier un document classifié de niveau 3, conformément aux règles.",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : Mme Hoffmann est titulaire de l'habilitation de sécurité spéciale.",
+    "stimulus": "Règlement relatif aux documents classifiés – Service des relations extérieures. Seuls les agents titulaires d'une habilitation de sécurité spéciale peuvent consulter les documents classifiés de niveau 3. Chaque consultation est inscrite dans un registre tenu par l'officier de sécurité, qui vérifie l'habilitation de l'agent avant de remettre le document. Les documents de niveau 2 sont accessibles à tous les agents du service. Le registre indique qu'hier, Mme Hoffmann a consulté un document classifié de niveau 3, après vérification par l'officier de sécurité. M. Dupont a consulté le même jour deux documents de niveau 2.",
     "options": [
-      "Les documents de niveau 3 ne sont consultés que par Mme Hoffmann.",
-      "Mme Hoffmann est titulaire de l'habilitation de sécurité spéciale.",
-      "Tout titulaire de l'habilitation spéciale a consulté un document de niveau 3.",
-      "Mme Hoffmann ne consulte que des documents classifiés de niveau 3."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "optionRationales": [
-      "Le texte ne dit rien des autres agents habilités.",
-      "Correct : l'habilitation est une condition nécessaire de la consultation.",
-      "Inverse la condition : être habilité permet de consulter, n'oblige pas à le faire.",
-      "Généralisation abusive à partir d'une seule consultation."
+      "Correct : seuls les titulaires de l'habilitation spéciale peuvent consulter un document de niveau 3 ; Mme Hoffmann en a consulté un après vérification de son habilitation.",
+      "Rien ne contredit l'affirmation ; la consultation régulière d'un document de niveau 3 suppose au contraire l'habilitation.",
+      "Le texte permet de conclure : la consultation a eu lieu après vérification de l'habilitation par l'officier de sécurité."
     ],
-    "explanation": "« Seuls » les titulaires de l'habilitation peuvent consulter ces documents ; Mme Hoffmann en a consulté un conformément aux règles : elle est donc titulaire de l'habilitation.",
+    "explanation": "« Seuls » les agents habilités peuvent consulter les documents de niveau 3, et l'officier de sécurité vérifie l'habilitation avant chaque remise. Mme Hoffmann ayant consulté un tel document après cette vérification, elle est titulaire de l'habilitation spéciale. Le cas de M. Dupont est sans rapport.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T17:42:15.980Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-inf-035",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
-    "itemFormat": "single_best",
-    "skill": "inference",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle conclusion découle avec certitude des éléments fournis ?",
-    "stimulus": "Certains membres de la commission d'évaluation sont experts-comptables. Tous les experts-comptables sont soumis à un code de déontologie financière.",
+    "estimatedSeconds": 80,
+    "prompt": "Affirmation : Certains membres de la commission d'évaluation sont soumis au code de déontologie financière.",
+    "stimulus": "Arrêté de composition – Commission d'évaluation des projets d'investissement. La commission compte neuf membres nommés pour trois ans : des fonctionnaires du ministère, des représentants des communes et des experts extérieurs. Certains membres de la commission sont experts-comptables. Tous les experts-comptables sont soumis au code de déontologie financière de leur profession, qui leur impose notamment de déclarer leurs mandats. La commission se réunit au moins quatre fois par an et rend ses avis à la majorité simple. Le secrétariat est assuré par le service du budget.",
     "options": [
-      "Tous les membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
-      "Certains membres de la commission d'évaluation sont soumis à un code de déontologie financière.",
-      "Aucun membre de la commission d'évaluation n'est expert-comptable.",
-      "La commission d'évaluation est composée exclusivement d'experts-comptables."
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "optionRationales": [
-      "Généralisation abusive à l'ensemble des membres de la commission.",
-      "Correct : les membres qui sont experts-comptables étant tous soumis au code, certains membres le sont obligatoirement.",
-      "Contredit formellement la première prémisse.",
-      "L'adjectif « certains » interdit d'affirmer l'exclusivité de la composition."
+      "Correct : certains membres sont experts-comptables, et tous les experts-comptables sont soumis au code de déontologie financière.",
+      "Rien ne contredit l'affirmation : l'existence de membres experts-comptables la rend vraie.",
+      "Le texte suffit : il affirme que certains membres sont experts-comptables et que ceux-ci sont soumis au code."
     ],
-    "explanation": "Puisque certains membres de la commission sont experts-comptables et que tout expert-comptable relève du code de déontologie, il existe obligatoirement des membres de la commission soumis à ce code.",
+    "explanation": "Certains membres sont experts-comptables et tous les experts-comptables sont soumis au code de déontologie financière. Au moins ces membres-là y sont donc soumis. Le texte ne permet pas, en revanche, de l'affirmer pour tous les membres.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:28:18.714Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:28:18.714Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-text-037",
@@ -1512,34 +1498,34 @@
   },
   {
     "id": "verbal-text-053",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
     "estimatedSeconds": 75,
-    "prompt": "Quelle proposition s'insère le plus harmonieusement pour compléter la réflexion économique ?",
-    "stimulus": "Transition énergétique des bâtiments publics : La rénovation thermique globale des cités administratives engendre des coûts initiaux d'investissement très substantiels. Toutefois, en réduisant la facture d'exploitation de près de 35 % dès la cinquième année, [...]",
+    "prompt": "Quelle proposition complète le plus logiquement la phrase laissée en suspens ?",
+    "stimulus": "Note de synthèse – Rénovation énergétique des bâtiments publics. Le programme concerne quatre cités administratives construites avant 1980, dont les installations de chauffage arrivent en fin de vie. La rénovation thermique globale de ces bâtiments engendre des coûts initiaux d'investissement très substantiels, estimés à 12 millions d'euros. Les travaux seront réalisés par tranches pour maintenir l'accueil du public. Toutefois, en réduisant la facture d'exploitation de près de 35 % chaque année à partir de la cinquième année, [...]. Un comité de pilotage suivra les consommations réelles.",
     "options": [
-      "ces opérations s'avèrent hautement rentables sur l'ensemble de leur cycle.",
-      "le confort thermique des usagers se trouve irrémédiablement dégradé en hiver.",
-      "les dépenses énergétiques continuent d'augmenter inexorablement chaque saison.",
-      "les pouvoirs publics envisagent l'abandon pur et simple des programmes verts."
+      "ces opérations peuvent devenir rentables à long terme.",
+      "ces opérations sont rentabilisées dès la première année.",
+      "ces opérations dégradent le confort des usagers en hiver.",
+      "ces opérations justifient l'abandon des programmes verts."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : cohérent avec l'opposition 'Toutefois' introduisant la rentabilité à terme du projet.",
-      "Incohérent : la rénovation thermique vise à améliorer le confort et non à le dégrader.",
-      "Incohérent : une baisse de 35 % contredit l'idée d'une augmentation inexorable.",
-      "Incohérent : l'économie de 35 % ne justifie en rien un abandon du programme."
+      "Correct : « Toutefois » oppose aux coûts initiaux élevés un bénéfice futur ; des économies durables à partir de la cinquième année rendent une rentabilité à long terme plausible.",
+      "Les économies n'apparaissent qu'à partir de la cinquième année ; une rentabilité dès la première année contredit le texte.",
+      "Cette suite n'a aucun lien avec les économies annoncées et ne répond pas à l'opposition marquée par « Toutefois ».",
+      "Cette suite contredit la logique du texte, qui présente un bénéfice compensant les coûts."
     ],
-    "explanation": "Le connecteur d'opposition 'Toutefois' annonce que l'économie substantielle d'exploitation (35 %) compense l'investissement initial à long terme.",
+    "explanation": "« Toutefois » introduit un argument qui contrebalance le coût initial élevé. Une baisse durable de 35 % des dépenses d'exploitation à partir de la cinquième année conduit logiquement à une possible rentabilité à long terme, et non immédiate.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-text-054",
@@ -1791,34 +1777,34 @@
   },
   {
     "id": "verbal-text-062",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
-    "skill": "comprehension",
+    "skill": "synthese",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 70,
-    "prompt": "Quelle proposition s'insère le plus logiquement pour clore ce paragraphe administratif ?",
-    "stimulus": "Gestion de l'archivage électronique : La pérennité des documents administratifs numériques repose sur l'utilisation de formats de stockage ouverts et standardisés. Les formats propriétaires exposent les services à un risque majeur d'obsolescence logicielle. Dès lors, [...]",
+    "estimatedSeconds": 80,
+    "prompt": "Quelle proposition résume le plus fidèlement cette note ?",
+    "stimulus": "Note du service des archives – Archivage électronique. La pérennité des documents administratifs numériques repose sur l'utilisation de formats de stockage ouverts et standardisés. Les formats propriétaires exposent en effet les services à un risque important d'obsolescence : lorsque le logiciel d'origine n'est plus maintenu, les fichiers peuvent devenir illisibles. Le service des archives recommande donc d'enregistrer les documents destinés à être conservés dans des formats ouverts. Une liste des formats acceptés est publiée sur l'intranet. Les documents papier continuent d'être traités selon la procédure habituelle.",
     "options": [
-      "l'adoption exclusive de standards ouverts garantit l'accès aux données futures.",
-      "il est vivement recommandé d'imprimer tous les fichiers sur support papier.",
-      "les archives historiques n'ont plus vocation à être conservées au-delà d'un an.",
-      "l'acquisition de logiciels propriétaires fermés doit être généralisée à l'État."
+      "Préférer les formats ouverts limite le risque d'obsolescence.",
+      "Les documents numériques doivent être imprimés pour être sûrs.",
+      "Les archives numériques sont conservées un an au maximum.",
+      "Les logiciels propriétaires sont les plus sûrs pour archiver."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : s'inscrit en continuité directe de la mise en garde contre l'obsolescence des formats propriétaires.",
-      "La solution préconisée n'est pas le tout-papier mais l'usage de formats ouverts pérennes.",
-      "Contredit le principe même de pérennité des archives administratives.",
-      "Contredit formellement la mise en garde contre les formats propriétaires."
+      "Correct : la proposition reprend le constat (risque des formats propriétaires) et la recommandation (formats ouverts).",
+      "La note ne recommande pas l'impression ; elle traite du choix des formats numériques.",
+      "Aucune durée de conservation n'est mentionnée.",
+      "La note affirme l'inverse : les formats propriétaires exposent à l'obsolescence."
     ],
-    "explanation": "La logique argumentative oppose formats propriétaires (risqués) et formats ouverts ; la conclusion logique est de préconiser les standards ouverts.",
+    "explanation": "La note établit que les formats propriétaires font courir un risque d'obsolescence et recommande en conséquence les formats ouverts. Elle ne promet pas une garantie absolue : elle présente les formats ouverts comme un moyen de réduire ce risque.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:36:51.069Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:36:51.069Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-text-063",
@@ -2411,34 +2397,34 @@
   },
   {
     "id": "verbal-text-084",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
-    "skill": "inference",
+    "skill": "application-consigne",
     "difficulty": 3,
     "language": "fr",
-    "estimatedSeconds": 80,
-    "prompt": "Que se produit-il si un agent ne transmet son rapport de mission qu'au bout d'un mois sans motif légitime ?",
-    "stimulus": "Indemnités de mission à l'étranger : Le versement des indemnités forfaitaires journalières pour mission officielle hors des frontières est subordonné au dépôt d'un rapport de fin de mission visé par le chef de délégation, accompagné des titres originaux de transport, dans les quinze jours suivant le retour.",
+    "estimatedSeconds": 100,
+    "prompt": "Un agent rentré de mission le 1er mars dépose son rapport, visé et complet, le 31 mars, sans motif légitime. Que doit faire le gestionnaire ?",
+    "stimulus": "Indemnités de mission à l'étranger – Extrait de la procédure. Le versement des indemnités journalières de mission est subordonné au dépôt d'un rapport de fin de mission visé par le chef de délégation et accompagné des titres de transport originaux, dans les quinze jours suivant le retour. À défaut de dépôt dans ce délai, le versement est suspendu jusqu'à la réception du rapport. Au-delà de soixante jours après le retour, les indemnités ne sont plus dues, sauf motif légitime apprécié par le directeur. Les indemnités sont versées sur le compte bancaire de l'agent. Les avances sur frais de mission restent régies par une circulaire distincte.",
     "options": [
-      "Le paiement de l'indemnité peut être légalement suspendu ou différé par le gestionnaire.",
-      "L'indemnité est versée d'office avec une retenue financière forfaitaire de 50 %.",
-      "Le chef de délégation est personnellement tenu de rembourser les frais engagés.",
-      "L'agent est automatiquement traduit devant la commission de discipline ministérielle."
+      "Verser l'indemnité, la suspension cessant à la réception.",
+      "Refuser l'indemnité, le délai de quinze jours étant dépassé.",
+      "Verser l'indemnité avec une retenue proportionnelle au retard.",
+      "Soumettre le dossier au directeur pour apprécier le retard."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : le versement étant expressément subordonné au dépôt dans les 15 jours, l'omission bloque la mise en paiement.",
-      "Aucune minoration de 50 % n'est prévue par la réglementation.",
-      "La responsabilité financière personnelle du chef de délégation n'est pas engagée pour le retard d'un pair.",
-      "Le retard dans la remise d'un rapport de frais ne relève pas de prime abord du conseil de discipline."
+      "Correct : le rapport arrive trente jours après le retour, après le délai de quinze jours mais avant soixante jours ; la suspension prend fin à sa réception.",
+      "La perte des indemnités n'intervient qu'au-delà de soixante jours ; ici, trente jours se sont écoulés.",
+      "La procédure ne prévoit aucune retenue ; le retard entraîne seulement une suspension.",
+      "Le directeur n'intervient que pour apprécier un motif légitime au-delà de soixante jours."
     ],
-    "explanation": "La règle posant une condition suspensive au versement ('subordonné au dépôt (...) dans les quinze jours'), le non-respect du délai fait obstacle au paiement.",
+    "explanation": "Le rapport est déposé trente jours après le retour : le délai de quinze jours est dépassé, donc le versement a été suspendu, mais le seuil de soixante jours n'est pas atteint. La suspension dure jusqu'à la réception du rapport ; une fois celui-ci reçu, l'indemnité est versée.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-text-085",
@@ -2783,34 +2769,34 @@
   },
   {
     "id": "verbal-text-098",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "single_best",
     "skill": "comprehension",
     "difficulty": 2,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "D'après cette note, quelle condition régit la publication d'un rectificatif à un avis de marché public ?",
-    "stimulus": "Passation des marchés : Toute modification substantielle apportée aux documents de consultation en cours de procédure impose la publication d'un avis rectificatif dans les mêmes formes que l'avis initial. Ce rectificatif doit prolonger le délai de réception des offres d'une durée proportionnée permettant aux candidats d'adapter leur proposition.",
+    "estimatedSeconds": 85,
+    "prompt": "D'après cette note, que doit faire le pouvoir adjudicateur en cas de modification substantielle des documents de consultation ?",
+    "stimulus": "Note de procédure – Passation des marchés. Les avis de marché sont publiés au bulletin des marchés publics et sur la plateforme électronique de l'administration. Toute modification substantielle apportée aux documents de consultation en cours de procédure impose la publication d'un avis rectificatif dans les mêmes formes que l'avis initial. Ce rectificatif prolonge le délai de réception des offres d'une durée proportionnée, afin de permettre à tous les candidats d'adapter leur proposition. Les corrections mineures, comme une erreur de frappe, sont signalées par simple message aux candidats inscrits. Les questions des candidats sont reçues jusqu'à dix jours avant la date limite.",
     "options": [
-      "Publier un avis identique et prolonger le délai de remise pour adapter les offres.",
-      "Exiger des soumissionnaires qu'ils déposent leur offre sans tenir compte des changements.",
-      "Modifier discrètement le cahier des charges sans en aviser les entreprises candidates.",
-      "Annuler d'office la totalité de la consultation et recommencer la procédure à zéro."
+      "Publier un rectificatif dans les mêmes formes et allonger le délai.",
+      "Publier un rectificatif sur la seule plateforme, sans autre support.",
+      "Publier un rectificatif en maintenant la date limite des offres.",
+      "Prolonger le délai pour les seuls candidats qui le demandent."
     ],
     "correctIndex": 0,
     "optionRationales": [
-      "Correct : publication selon les mêmes formes et report proportionné du délai de dépôt des offres.",
-      "Les soumissionnaires doivent impérativement pouvoir intégrer les nouvelles prescriptions.",
-      "Toute modification occulte violerait le principe fondamental de transparence et d'égalité.",
-      "L'annulation n'est pas requise si l'avis rectificatif et le report de délai suffisent à rétablir l'égalité."
+      "Correct : la note impose un rectificatif publié dans les mêmes formes que l'avis initial et une prolongation proportionnée du délai.",
+      "L'avis initial est publié au bulletin et sur la plateforme ; le rectificatif doit l'être dans les mêmes formes.",
+      "Le rectificatif doit prolonger le délai de réception des offres.",
+      "La prolongation vise à permettre à tous les candidats d'adapter leur offre, pas seulement à certains."
     ],
-    "explanation": "La modification des pièces en cours de consultation impose une publicité rectificative identique et une prolongation équitable du calendrier de réponse.",
+    "explanation": "En cas de modification substantielle, deux obligations s'appliquent : publier un rectificatif dans les mêmes formes que l'avis initial (bulletin et plateforme) et prolonger le délai de réception des offres pour tous les candidats. Le simple message est réservé aux corrections mineures.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "verbal-text-100",
@@ -3086,5 +3072,307 @@
     "createdAt": "2026-10-02T19:30:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "verbal-epso261001-001",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "comprehension",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Laquelle des affirmations suivantes est conforme au texte ?",
+    "stimulus": "Depuis janvier, l'administration de l'environnement du Grand-Comté verse aux agents une prime mensuelle de 40 € lorsqu'ils viennent au travail à vélo au moins douze jours dans le mois. Les agents à temps partiel y ont droit à partir de huit jours de trajet. La prime est versée le mois suivant, sur la base d'une déclaration validée par le supérieur hiérarchique. Le dispositif sera évalué en décembre : s'il réduit d'au moins 5 % l'occupation du parking du personnel, il pourra être étendu aux trajets à pied.",
+    "options": [
+      "Le dispositif sera étendu aux trajets à pied en décembre.",
+      "Les trajets à pied donnent déjà droit à la prime mensuelle.",
+      "Un agent à temps partiel venu à vélo dix jours dans le mois peut percevoir la prime.",
+      "La prime est versée le mois même où les trajets ont été effectués."
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "L'extension est conditionnelle (« pourra »), pas décidée.",
+      "L'extension aux trajets à pied n'est qu'envisagée.",
+      "Correct : le seuil est de huit jours pour le temps partiel.",
+      "Le texte dit « le mois suivant »."
+    ],
+    "explanation": "Le texte indique : « Les agents à temps partiel y ont droit à partir de huit jours de trajet. » Dix jours dépassent ce seuil. Les autres affirmations contredisent le texte ou transforment une possibilité en décision.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-002",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les retours sont possibles tous les jours, pour tous.",
+      "La restriction ne concerne que les emprunts à la borne.",
+      "Le texte répond explicitement : « Les retours restent possibles tous les jours »."
+    ],
+    "explanation": "La condition de carte annuelle s'applique aux emprunts du dimanche, pas aux retours : « Les retours restent possibles tous les jours grâce à une boîte extérieure. »",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-003",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : la plupart des usagers ayant déposé leur dossier au guichet trouvent les délais trop longs.",
+    "stimulus": "Une enquête menée auprès de 600 usagers du service des titres de séjour de la ville fictive de Brennac montre que 72 % des répondants jugent les délais trop longs. Parmi ces répondants insatisfaits, une majorité a déposé son dossier en ligne. Le rapport ne précise pas combien de répondants ont utilisé le guichet.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 2,
+    "optionRationales": [
+      "Le texte ne donne aucun chiffre sur les usagers du guichet.",
+      "Rien ne permet non plus d'affirmer le contraire.",
+      "Correct : la répartition des usagers du guichet n'est pas connue."
+    ],
+    "explanation": "Le texte indique seulement que, parmi les insatisfaits, une majorité a déposé en ligne, et précise : « Le rapport ne précise pas combien de répondants ont utilisé le guichet. » On ne peut donc pas savoir ce que pensent les usagers du guichet.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-004",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le 20 mai, un agent rentré de mission le 2 mai demande le remboursement d'un repas de 31 € avec ticket et d'un repas sans ticket. Quel montant peut-il obtenir pour ces deux repas ?",
+    "stimulus": "Règles de remboursement des frais de mission :\n1. Les repas sont remboursés sur justificatif, dans la limite de 25 € par repas.\n2. Sans justificatif, un forfait de 12 € par repas est appliqué.\n3. Les frais de taxi ne sont remboursés qu'avec l'accord préalable du chef de service.\n4. Toute demande doit être déposée dans les 30 jours suivant la fin de la mission.",
+    "options": [
+      "50 €",
+      "43 €",
+      "31 €",
+      "37 €"
+    ],
+    "correctIndex": 3,
+    "optionRationales": [
+      "Applique le plafond aux deux repas, même sans ticket.",
+      "Oublie le plafond de 25 € par repas.",
+      "Ne rembourse que le repas avec ticket, sans plafond.",
+      "Correct : 25 € (plafond) + 12 € (forfait)."
+    ],
+    "explanation": "La demande arrive dans les 30 jours (18 jours après la mission). Repas avec ticket : 31 € plafonnés à 25 € (règle 1). Repas sans ticket : forfait de 12 € (règle 2). Total : 37 €.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-005",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "application-consigne",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Une lettre adressée nominativement à Mme Weber, actuellement absente, porte la mention « Personnel ». Que faut-il en faire ?",
+    "stimulus": "Règles de traitement du courrier entrant :\n– Le courrier portant la mention « Urgent » est transmis le jour même au service concerné.\n– Le courrier adressé nominativement à un agent absent est remis à son suppléant, sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent.\n– Le courrier sans destinataire identifiable est ouvert par le secrétariat.",
+    "options": [
+      "La faire ouvrir par le secrétariat.",
+      "La conserver jusqu'au retour de Mme Weber.",
+      "La transmettre le jour même au service.",
+      "La remettre au suppléant de Mme Weber."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le destinataire est identifiable.",
+      "Correct : exception prévue pour la mention « Personnel ».",
+      "La lettre ne porte pas la mention « Urgent ».",
+      "C'est la règle générale, mais l'exception s'applique ici."
+    ],
+    "explanation": "La règle générale (remise au suppléant) comporte une exception : « sauf s'il porte la mention « Personnel » : il est alors conservé jusqu'au retour de l'agent ». La lettre est donc conservée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-006",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quelle conclusion peut-on tirer du texte ?",
+    "stimulus": "Le service de l'emploi de la commune fictive de Lorvenne constate que ses ateliers de rédaction de CV organisés en soirée attirent deux fois plus de participants que ceux du matin. Pourtant, le taux de retour à l'emploi à six mois est identique dans les deux groupes. Le service envisage donc de déplacer la plupart des ateliers en soirée, tout en maintenant une session matinale pour les personnes qui ne peuvent pas se déplacer le soir.",
+    "options": [
+      "Les participants du matin sont deux fois moins motivés que les autres.",
+      "L'horaire des ateliers ne semble pas influencer le retour à l'emploi à six mois.",
+      "Les ateliers du soir permettent de retrouver un emploi plus rapidement.",
+      "Toutes les sessions du matin seront supprimées l'an prochain."
+    ],
+    "correctIndex": 1,
+    "optionRationales": [
+      "Le texte parle de participation, pas de motivation.",
+      "Correct : le taux à six mois est identique pour les deux horaires.",
+      "Le texte indique un taux identique.",
+      "Une session matinale est maintenue."
+    ],
+    "explanation": "Le texte précise que « le taux de retour à l'emploi à six mois est identique dans les deux groupes » : l'horaire ne semble donc pas jouer sur ce résultat. Les autres affirmations contredisent le texte ou en tirent une interprétation non fondée.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-007",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "synthese",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel titre résume le mieux ce texte ?",
+    "stimulus": "À partir de l'an prochain, les fournisseurs de l'administration régionale fictive du Nordal devront transmettre leurs factures par voie électronique. Le papier ne sera plus accepté, sauf pour les entreprises de moins de cinq salariés, qui disposeront d'un an de délai supplémentaire. L'objectif est de ramener le délai moyen de paiement de 45 à 30 jours. Des sessions d'information gratuites seront proposées aux fournisseurs.",
+    "options": [
+      "Facturation électronique obligatoire pour accélérer les paiements",
+      "Le délai de paiement fixé à 30 jours dès janvier",
+      "Une formation obligatoire pour tous les fournisseurs",
+      "Les petites entreprises dispensées de facture électronique"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : reprend la mesure principale et son objectif.",
+      "Trente jours est un objectif, pas une règle déjà en vigueur.",
+      "Les sessions sont gratuites et facultatives.",
+      "Elles obtiennent un délai d'un an, pas une dispense."
+    ],
+    "explanation": "Le texte annonce l'obligation de facturation électronique et son but, réduire les délais de paiement. Les autres titres déforment un détail : délai transformé en dispense, objectif transformé en règle, information transformée en obligation.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-008",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "Affirmation : M. Koch justifie d'au moins cinq ans d'expérience dans le domaine.",
+    "stimulus": "Pour le poste de chargé d'études, le jury retient en priorité les candidats titulaires d'un master. Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience dans le domaine. Le jury a retenu M. Koch, qui n'est pas titulaire d'un master.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : sans master, il n'a pu être retenu qu'avec cinq ans d'expérience.",
+      "Cela contredirait la règle « ne sont retenus que si ».",
+      "La condition « ne… que si » permet de conclure."
+    ],
+    "explanation": "« Les candidats sans master ne sont retenus que s'ils justifient d'au moins cinq ans d'expérience. » M. Koch n'a pas de master et a été retenu : il remplit donc nécessairement la condition d'expérience.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-009",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "single_best",
+    "skill": "inference",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 120,
+    "prompt": "Laquelle des affirmations suivantes est justifiée par le texte ?",
+    "stimulus": "En 2025, le guichet des aides au logement de la ville fictive de Sarlin a reçu 4 000 demandes, contre 3 200 en 2024, avec un effectif d'agents inchangé. Le délai moyen de traitement est passé de 20 à 26 jours. La direction attribue cet allongement à la hausse des demandes, mais relève aussi que 15 % des dossiers de 2025 étaient incomplets, contre 8 % en 2024.",
+    "options": [
+      "Le nombre de dossiers incomplets a plus que doublé entre 2024 et 2025.",
+      "La hausse des demandes est la seule cause de l'allongement des délais.",
+      "Le délai moyen de traitement a augmenté de 6 % en un an.",
+      "Le guichet a dû recruter des agents supplémentaires en 2025."
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : 256 dossiers incomplets en 2024, 600 en 2025.",
+      "La direction cite aussi les dossiers incomplets.",
+      "Le délai a augmenté de 6 jours, soit 30 %.",
+      "Le texte précise que l'effectif est inchangé."
+    ],
+    "explanation": "Dossiers incomplets : 8 % de 3 200 = 256 en 2024 ; 15 % de 4 000 = 600 en 2025, soit plus du double. Les autres affirmations sont contredites par le texte ou confondent jours et pourcentage.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "verbal-epso261001-010",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 45,
+    "prompt": "Affirmation : le parc compte dix véhicules électriques.",
+    "stimulus": "Le parc automobile du ministère fictif des Transports du Valmont compte 40 véhicules, dont un quart sont électriques. Les véhicules électriques sont réservés en priorité aux déplacements de moins de 150 km. Les réservations se font sur l'intranet, au moins 48 heures à l'avance, et chaque véhicule fait l'objet d'un contrôle technique annuel.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : un quart de 40 véhicules, soit 10.",
+      "Le calcul à partir du texte donne bien 10.",
+      "Le texte donne les deux informations nécessaires."
+    ],
+    "explanation": "Le texte indique 40 véhicules, « dont un quart sont électriques » : 40 / 4 = 10 véhicules électriques.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:32.382Z"
   }
 ]

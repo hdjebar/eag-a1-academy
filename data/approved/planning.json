@@ -1985,34 +1985,34 @@
   },
   {
     "id": "planning-res-069",
-    "version": 1,
+    "version": 2,
     "category": "planning",
     "itemFormat": "single_best",
     "skill": "agenda-contraintes",
-    "difficulty": 2,
+    "difficulty": 3,
     "language": "fr",
-    "estimatedSeconds": 75,
-    "prompt": "Combien d'agents au minimum doivent être mobilisés pour instruire 180 dossiers en 6 jours ouvrés à raison de 3 dossiers traités par jour et par agent ?",
-    "stimulus": "Campagne de régularisation des demandes d'aides exceptionnelles :\nVolume global : 180 dossiers à traiter.\nDélai imparti : 6 jours ouvrés.\nProductivité moyenne constatée : 3 dossiers traités par jour et par agent.",
+    "estimatedSeconds": 120,
+    "prompt": "En combien de jours ouvrés, au minimum, la campagne peut-elle être terminée ?",
+    "stimulus": "Campagne de régularisation des demandes d'aides exceptionnelles :\nVolume global : 180 dossiers à traiter.\nÉquipe : 4 agents, chacun traitant 3 dossiers par jour ouvré.\nUn des quatre agents est en formation les deux premiers jours ouvrés de la campagne et ne traite aucun dossier ces jours-là.",
     "options": [
-      "12 agents",
-      "15 agents",
-      "8 agents",
-      "10 agents"
+      "15 jours ouvrés",
+      "20 jours ouvrés",
+      "14 jours ouvrés",
+      "16 jours ouvrés"
     ],
     "correctIndex": 3,
     "optionRationales": [
-      "12 agents correspondrait à un besoin de 216 dossiers.",
-      "15 agents correspondrait à un besoin de 270 dossiers.",
-      "8 agents ne traiteraient que 8 × 18 = 144 dossiers.",
-      "Correct : un agent traite 3 × 6 = 18 dossiers en 6 jours. Pour 180 dossiers, il faut 180 / 18 = 10 agents."
+      "Oublie l'absence : 180 / 12 = 15 jours.",
+      "Compte 3 agents pendant toute la campagne : 180 / 9 = 20 jours.",
+      "Oublie d'ajouter les deux premiers jours au calcul du reste.",
+      "Correct : 2 jours à 9 dossiers (18), puis 162 dossiers à 12 par jour, soit 13,5 jours arrondis à 14 ; total 16 jours."
     ],
-    "explanation": "Capacité individuelle = 3 dossiers/jour × 6 jours = 18 dossiers. Nombre d'agents nécessaires = 180 / 18 = 10 agents.",
+    "explanation": "Les deux premiers jours, 3 agents traitent 3 × 3 = 9 dossiers par jour, soit 18 dossiers. Il en reste 162, traités à 4 × 3 = 12 dossiers par jour : 162 / 12 = 13,5, donc 14 jours. Total : 2 + 14 = 16 jours ouvrés.",
     "sourceType": "original_ai_assisted",
     "reviewStatus": "approved",
     "createdAt": "2026-10-02T13:42:39.868Z",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T13:42:39.868Z"
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   },
   {
     "id": "planning-conf-070",
@@ -3098,5 +3098,1739 @@
     "createdAt": "2026-10-02T19:30:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T17:42:15.980Z"
+  },
+  {
+    "id": "planning-agenda-201",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel créneau permet de réunir M. Becker, Mme Arendt et Mme Gomes pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Becker",
+          "Libre",
+          "Audience",
+          "Réunion",
+          "Rendez-vous"
+        ],
+        [
+          "Mme Arendt",
+          "Libre",
+          "Libre",
+          "Rendez-vous",
+          "Libre"
+        ],
+        [
+          "Mme Gomes",
+          "Libre",
+          "Libre",
+          "Rendez-vous",
+          "Rendez-vous"
+        ]
+      ]
+    },
+    "options": [
+      "10 h – 11 h 30",
+      "8 h 30 – 10 h",
+      "13 h 30 – 15 h",
+      "15 h – 16 h 30"
+    ],
+    "correctIndex": 1,
+    "explanation": "Seul le créneau 8 h 30 – 10 h est libre pour toutes les personnes. 10 h – 11 h 30 : M. Becker indisponible(s) ; 13 h 30 – 15 h : M. Becker, Mme Arendt, Mme Gomes indisponible(s) ; 15 h – 16 h 30 : M. Becker, Mme Gomes indisponible(s).",
+    "optionRationales": [
+      "M. Becker n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "M. Becker, Mme Arendt, Mme Gomes n'est pas libre.",
+      "M. Becker, Mme Gomes n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-salle-201",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "conflits",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le mardi, vous devez organiser une réunion de 13 participants d'une durée d'1 h 30. Quelle salle et quel créneau conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Réservations des salles, mardi",
+      "headers": [
+        "Salle (places)",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "Salle Alzette (20)",
+          "Réservée",
+          "Réservée",
+          "Réservée",
+          "Libre"
+        ],
+        [
+          "Salle Clerve (10)",
+          "Libre",
+          "Réservée",
+          "Réservée",
+          "Réservée"
+        ],
+        [
+          "Salle Our (6)",
+          "Réservée",
+          "Libre",
+          "Réservée",
+          "Réservée"
+        ],
+        [
+          "Salle Eisch (24)",
+          "Réservée",
+          "Réservée",
+          "Réservée",
+          "Réservée"
+        ]
+      ]
+    },
+    "options": [
+      "Salle Eisch, 8 h 30 – 10 h",
+      "Salle Alzette, 15 h – 16 h 30",
+      "Salle Our, 10 h – 11 h 30",
+      "Salle Clerve, 8 h 30 – 10 h"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il faut au moins 13 places et un créneau libre. Seule la Salle Alzette (20 places) est libre à 15 h – 16 h 30 parmi les salles assez grandes.",
+    "optionRationales": [
+      "Salle Eisch est réservée sur ce créneau.",
+      "Correct : salle assez grande et libre sur ce créneau.",
+      "Salle Our n'a que 6 places.",
+      "Salle Clerve n'a que 10 places."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-201",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Une formation se déroule sur deux jours consécutifs, sur place, avec M. Hoffmann et Mme Arendt. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présences et absences prévues",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Hoffmann",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Télétravail"
+        ],
+        [
+          "Mme Arendt",
+          "Présent",
+          "Présent",
+          "Congé",
+          "Présent",
+          "Télétravail"
+        ]
+      ]
+    },
+    "options": [
+      "Mardi et Mercredi",
+      "Lundi et Mardi",
+      "Jeudi et Vendredi",
+      "Mercredi et Jeudi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls lundi et mardi remplissent la condition.",
+    "optionRationales": [
+      "Absence : Mme Arendt (congé le mercredi).",
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : M. Hoffmann (télétravail le vendredi), Mme Arendt (télétravail le vendredi).",
+      "Absence : Mme Arendt (congé le mercredi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-taches-201",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Vous commencez à 13 h 30 et traitez les tâches l'une après l'autre, sans pause. Une tâche ne peut commencer qu'une fois ses prérequis terminés. À quelle heure, au plus tôt, la tâche « mise à jour du registre » peut-elle être terminée ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Liste des tâches",
+      "headers": [
+        "Tâche",
+        "Durée",
+        "Prérequis"
+      ],
+      "rows": [
+        [
+          "Rédaction de la note",
+          "60 min",
+          "—"
+        ],
+        [
+          "Mise en signature",
+          "45 min",
+          "Rédaction de la note"
+        ],
+        [
+          "Préparation du tableau",
+          "60 min",
+          "Mise en signature"
+        ],
+        [
+          "Relecture juridique",
+          "60 min",
+          "—"
+        ],
+        [
+          "Mise à jour du registre",
+          "45 min",
+          "Relecture juridique, Mise en signature"
+        ]
+      ]
+    },
+    "options": [
+      "18 h 00",
+      "16 h 00",
+      "17 h 00",
+      "14 h 15"
+    ],
+    "correctIndex": 2,
+    "explanation": "La tâche « mise à jour du registre » exige, directement ou indirectement : rédaction de la note, mise en signature, relecture juridique. Durée cumulée : 60 + 45 + 60 + 45 = 210 min, soit une fin à 17 h 00. Les autres tâches peuvent attendre.",
+    "optionRationales": [
+      "Fait toutes les tâches avant, y compris celles qui ne sont pas nécessaires.",
+      "Oublie les prérequis indirects (prérequis des prérequis).",
+      "Correct : seules les tâches nécessaires sont faites avant.",
+      "Ignore tous les prérequis."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-202",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel créneau permet de réunir M. Dupont, Mme Gomes, Mme Ianni et Mme Costa pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Formation",
+          "Libre",
+          "Libre",
+          "Audience"
+        ],
+        [
+          "Mme Gomes",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Mme Ianni",
+          "Réunion",
+          "Réunion",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Mme Costa",
+          "Réunion",
+          "Guichet",
+          "Libre",
+          "Rendez-vous"
+        ]
+      ]
+    },
+    "options": [
+      "8 h 30 – 10 h",
+      "15 h – 16 h 30",
+      "10 h – 11 h 30",
+      "13 h 30 – 15 h"
+    ],
+    "correctIndex": 3,
+    "explanation": "Seul le créneau 13 h 30 – 15 h est libre pour toutes les personnes. 8 h 30 – 10 h : M. Dupont, Mme Ianni, Mme Costa indisponible(s) ; 10 h – 11 h 30 : Mme Ianni, Mme Costa indisponible(s) ; 15 h – 16 h 30 : M. Dupont, Mme Costa indisponible(s).",
+    "optionRationales": [
+      "M. Dupont, Mme Ianni, Mme Costa n'est pas libre.",
+      "M. Dupont, Mme Costa n'est pas libre.",
+      "Mme Ianni, Mme Costa n'est pas libre.",
+      "Correct : toutes les personnes sont libres."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-202",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Une formation se déroule sur deux jours consécutifs, sur place, avec M. Fischer, Mme Costa et Mme Arendt. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Calendrier de la semaine 42",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Fischer",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "Mme Costa",
+          "Présent",
+          "Présent",
+          "Congé",
+          "Présent",
+          "Télétravail"
+        ],
+        [
+          "Mme Arendt",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ]
+      ]
+    },
+    "options": [
+      "Mardi et Mercredi",
+      "Mercredi et Jeudi",
+      "Lundi et Mardi",
+      "Jeudi et Vendredi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls lundi et mardi remplissent la condition.",
+    "optionRationales": [
+      "Absence : Mme Costa (congé le mercredi).",
+      "Absence : Mme Costa (congé le mercredi).",
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : Mme Costa (télétravail le vendredi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-203",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel créneau permet de réunir M. Dupont, M. Jacoby et Mme Arendt pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Libre",
+          "Libre",
+          "Rendez-vous",
+          "Libre"
+        ],
+        [
+          "M. Jacoby",
+          "Libre",
+          "Réunion",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Mme Arendt",
+          "Guichet",
+          "Libre",
+          "Libre",
+          "Libre"
+        ]
+      ]
+    },
+    "options": [
+      "13 h 30 – 15 h",
+      "15 h – 16 h 30",
+      "8 h 30 – 10 h",
+      "10 h – 11 h 30"
+    ],
+    "correctIndex": 1,
+    "explanation": "Seul le créneau 15 h – 16 h 30 est libre pour toutes les personnes. 8 h 30 – 10 h : Mme Arendt indisponible(s) ; 10 h – 11 h 30 : M. Jacoby indisponible(s) ; 13 h 30 – 15 h : M. Dupont indisponible(s).",
+    "optionRationales": [
+      "M. Dupont n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "Mme Arendt n'est pas libre.",
+      "M. Jacoby n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-203",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Un atelier se déroule sur deux jours consécutifs, sur place, avec M. Becker et M. Fischer. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Calendrier de la semaine 42",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Becker",
+          "Mission",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "M. Fischer",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Télétravail",
+          "Présent"
+        ]
+      ]
+    },
+    "options": [
+      "Mardi et Mercredi",
+      "Jeudi et Vendredi",
+      "Lundi et Mardi",
+      "Mercredi et Jeudi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mardi et mercredi remplissent la condition.",
+    "optionRationales": [
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : M. Fischer (télétravail le jeudi).",
+      "Absence : M. Becker (mission le lundi).",
+      "Absence : M. Fischer (télétravail le jeudi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-taches-202",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Vous commencez à 13 h 30 et traitez les tâches l'une après l'autre, sans pause. Une tâche ne peut commencer qu'une fois ses prérequis terminés. À quelle heure, au plus tôt, la tâche « mise en signature » peut-elle être terminée ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Liste des tâches",
+      "headers": [
+        "Tâche",
+        "Durée",
+        "Prérequis"
+      ],
+      "rows": [
+        [
+          "Préparation du tableau",
+          "90 min",
+          "—"
+        ],
+        [
+          "Envoi aux usagers",
+          "30 min",
+          "Préparation du tableau"
+        ],
+        [
+          "Archivage",
+          "90 min",
+          "Envoi aux usagers, Préparation du tableau"
+        ],
+        [
+          "Contrôle qualité",
+          "45 min",
+          "Préparation du tableau"
+        ],
+        [
+          "Mise en signature",
+          "30 min",
+          "Contrôle qualité, Envoi aux usagers"
+        ]
+      ]
+    },
+    "options": [
+      "15 h 15",
+      "18 h 15",
+      "16 h 45",
+      "14 h 00"
+    ],
+    "correctIndex": 2,
+    "explanation": "La tâche « mise en signature » exige, directement ou indirectement : préparation du tableau, envoi aux usagers, contrôle qualité. Durée cumulée : 90 + 30 + 45 + 30 = 195 min, soit une fin à 16 h 45. Les autres tâches peuvent attendre.",
+    "optionRationales": [
+      "Oublie les prérequis indirects (prérequis des prérequis).",
+      "Fait toutes les tâches avant, y compris celles qui ne sont pas nécessaires.",
+      "Correct : seules les tâches nécessaires sont faites avant.",
+      "Ignore tous les prérequis."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-204",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel créneau permet de réunir M. Jacoby, Mme Engel, M. Becker et Mme Arendt pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Jacoby",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Mme Engel",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "M. Becker",
+          "Libre",
+          "Libre",
+          "Audience",
+          "Réunion"
+        ],
+        [
+          "Mme Arendt",
+          "Formation",
+          "Libre",
+          "Rendez-vous",
+          "Réunion"
+        ]
+      ]
+    },
+    "options": [
+      "10 h – 11 h 30",
+      "13 h 30 – 15 h",
+      "8 h 30 – 10 h",
+      "15 h – 16 h 30"
+    ],
+    "correctIndex": 0,
+    "explanation": "Seul le créneau 10 h – 11 h 30 est libre pour toutes les personnes. 8 h 30 – 10 h : Mme Arendt indisponible(s) ; 13 h 30 – 15 h : M. Becker, Mme Arendt indisponible(s) ; 15 h – 16 h 30 : M. Becker, Mme Arendt indisponible(s).",
+    "optionRationales": [
+      "Correct : toutes les personnes sont libres.",
+      "M. Becker, Mme Arendt n'est pas libre.",
+      "Mme Arendt n'est pas libre.",
+      "M. Becker, Mme Arendt n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-204",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Un séminaire de service se déroule sur deux jours consécutifs, sur place, avec Mme Engel, M. Dupont et Mme Gomes. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présences et absences prévues",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "Mme Engel",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Congé"
+        ],
+        [
+          "M. Dupont",
+          "Présent",
+          "Télétravail",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "Mme Gomes",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ]
+      ]
+    },
+    "options": [
+      "Lundi et Mardi",
+      "Mardi et Mercredi",
+      "Jeudi et Vendredi",
+      "Mercredi et Jeudi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mercredi et jeudi remplissent la condition.",
+    "optionRationales": [
+      "Absence : M. Dupont (télétravail le mardi).",
+      "Absence : M. Dupont (télétravail le mardi).",
+      "Absence : Mme Engel (congé le vendredi).",
+      "Correct : tous les participants sont présents les deux jours."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-salle-202",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "conflits",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le vendredi, vous devez organiser une réunion de 22 participants d'une durée d'1 h 30. Quelle salle et quel créneau conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Réservations des salles, vendredi",
+      "headers": [
+        "Salle (places)",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "Salle Wiltz (30)",
+          "Réservée",
+          "Réservée",
+          "Réservée",
+          "Libre"
+        ],
+        [
+          "Salle Attert (16)",
+          "Libre",
+          "Réservée",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Salle Clerve (10)",
+          "Réservée",
+          "Libre",
+          "Réservée",
+          "Réservée"
+        ],
+        [
+          "Salle Alzette (20)",
+          "Libre",
+          "Réservée",
+          "Réservée",
+          "Réservée"
+        ]
+      ]
+    },
+    "options": [
+      "Salle Wiltz, 15 h – 16 h 30",
+      "Salle Wiltz, 8 h 30 – 10 h",
+      "Salle Alzette, 8 h 30 – 10 h",
+      "Salle Attert, 15 h – 16 h 30"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il faut au moins 22 places et un créneau libre. Seule la Salle Wiltz (30 places) est libre à 15 h – 16 h 30 parmi les salles assez grandes.",
+    "optionRationales": [
+      "Correct : salle assez grande et libre sur ce créneau.",
+      "Salle Wiltz est réservée sur ce créneau.",
+      "Salle Alzette n'a que 20 places.",
+      "Salle Attert n'a que 16 places."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-taches-203",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Vous commencez à 8 h 00 et traitez les tâches l'une après l'autre, sans pause. Une tâche ne peut commencer qu'une fois ses prérequis terminés. À quelle heure, au plus tôt, la tâche « vérification des montants » peut-elle être terminée ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Liste des tâches",
+      "headers": [
+        "Tâche",
+        "Durée",
+        "Prérequis"
+      ],
+      "rows": [
+        [
+          "Archivage",
+          "90 min",
+          "—"
+        ],
+        [
+          "Contrôle qualité",
+          "90 min",
+          "Archivage"
+        ],
+        [
+          "Mise en signature",
+          "60 min",
+          "Archivage"
+        ],
+        [
+          "Vérification des montants",
+          "60 min",
+          "Contrôle qualité, Mise en signature"
+        ],
+        [
+          "Collecte des pièces",
+          "45 min",
+          "Contrôle qualité, Mise en signature"
+        ]
+      ]
+    },
+    "options": [
+      "11 h 30",
+      "13 h 00",
+      "13 h 45",
+      "9 h 00"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tâche « vérification des montants » exige, directement ou indirectement : archivage, contrôle qualité, mise en signature. Durée cumulée : 90 + 90 + 60 + 60 = 300 min, soit une fin à 13 h 00. Les autres tâches peuvent attendre.",
+    "optionRationales": [
+      "Oublie les prérequis indirects (prérequis des prérequis).",
+      "Correct : seules les tâches nécessaires sont faites avant.",
+      "Fait toutes les tâches avant, y compris celles qui ne sont pas nécessaires.",
+      "Ignore tous les prérequis."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-205",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel créneau permet de réunir Mme Engel, M. Hoffmann, M. Fischer et Mme Costa pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "Mme Engel",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "M. Hoffmann",
+          "Libre",
+          "Réunion",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "M. Fischer",
+          "Rendez-vous",
+          "Libre",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "Mme Costa",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Guichet"
+        ]
+      ]
+    },
+    "options": [
+      "15 h – 16 h 30",
+      "8 h 30 – 10 h",
+      "13 h 30 – 15 h",
+      "10 h – 11 h 30"
+    ],
+    "correctIndex": 2,
+    "explanation": "Seul le créneau 13 h 30 – 15 h est libre pour toutes les personnes. 8 h 30 – 10 h : M. Fischer indisponible(s) ; 10 h – 11 h 30 : M. Hoffmann indisponible(s) ; 15 h – 16 h 30 : Mme Costa indisponible(s).",
+    "optionRationales": [
+      "Mme Costa n'est pas libre.",
+      "M. Fischer n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "M. Hoffmann n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-205",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Une session de recrutement se déroule sur deux jours consécutifs, sur place, avec Mme Gomes, M. Dupont et Mme Engel. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Planning de présence de l'équipe",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "Mme Gomes",
+          "Mission",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "M. Dupont",
+          "Présent",
+          "Télétravail",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "Mme Engel",
+          "Mission",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Mission"
+        ]
+      ]
+    },
+    "options": [
+      "Jeudi et Vendredi",
+      "Lundi et Mardi",
+      "Mardi et Mercredi",
+      "Mercredi et Jeudi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mercredi et jeudi remplissent la condition.",
+    "optionRationales": [
+      "Absence : Mme Engel (mission le vendredi).",
+      "Absence : Mme Gomes (mission le lundi), M. Dupont (télétravail le mardi), Mme Engel (mission le lundi).",
+      "Absence : M. Dupont (télétravail le mardi).",
+      "Correct : tous les participants sont présents les deux jours."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-206",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel créneau permet de réunir M. Becker, M. Hoffmann et Mme Ianni pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Becker",
+          "Libre",
+          "Guichet",
+          "Formation",
+          "Libre"
+        ],
+        [
+          "M. Hoffmann",
+          "Rendez-vous",
+          "Réunion",
+          "Audience",
+          "Libre"
+        ],
+        [
+          "Mme Ianni",
+          "Libre",
+          "Réunion",
+          "Formation",
+          "Libre"
+        ]
+      ]
+    },
+    "options": [
+      "13 h 30 – 15 h",
+      "15 h – 16 h 30",
+      "10 h – 11 h 30",
+      "8 h 30 – 10 h"
+    ],
+    "correctIndex": 1,
+    "explanation": "Seul le créneau 15 h – 16 h 30 est libre pour toutes les personnes. 8 h 30 – 10 h : M. Hoffmann indisponible(s) ; 10 h – 11 h 30 : M. Becker, M. Hoffmann, Mme Ianni indisponible(s) ; 13 h 30 – 15 h : M. Becker, M. Hoffmann, Mme Ianni indisponible(s).",
+    "optionRationales": [
+      "M. Becker, M. Hoffmann, Mme Ianni n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "M. Becker, M. Hoffmann, Mme Ianni n'est pas libre.",
+      "M. Hoffmann n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-206",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Un séminaire de service se déroule sur deux jours consécutifs, sur place, avec Mme Costa et M. Jacoby. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présence prévue la semaine prochaine",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "Mme Costa",
+          "Télétravail",
+          "Présent",
+          "Présent",
+          "Télétravail",
+          "Présent"
+        ],
+        [
+          "M. Jacoby",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Congé",
+          "Congé"
+        ]
+      ]
+    },
+    "options": [
+      "Mardi et Mercredi",
+      "Jeudi et Vendredi",
+      "Lundi et Mardi",
+      "Mercredi et Jeudi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mardi et mercredi remplissent la condition.",
+    "optionRationales": [
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : Mme Costa (télétravail le jeudi), M. Jacoby (congé le jeudi), M. Jacoby (congé le vendredi).",
+      "Absence : Mme Costa (télétravail le lundi).",
+      "Absence : Mme Costa (télétravail le jeudi), M. Jacoby (congé le jeudi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-taches-204",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Vous commencez à 8 h 30 et traitez les tâches l'une après l'autre, sans pause. Une tâche ne peut commencer qu'une fois ses prérequis terminés. À quelle heure, au plus tôt, la tâche « mise à jour du registre » peut-elle être terminée ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Liste des tâches",
+      "headers": [
+        "Tâche",
+        "Durée",
+        "Prérequis"
+      ],
+      "rows": [
+        [
+          "Collecte des pièces",
+          "90 min",
+          "—"
+        ],
+        [
+          "Envoi aux usagers",
+          "45 min",
+          "Collecte des pièces"
+        ],
+        [
+          "Rédaction de la note",
+          "60 min",
+          "Envoi aux usagers"
+        ],
+        [
+          "Relecture juridique",
+          "60 min",
+          "Rédaction de la note"
+        ],
+        [
+          "Mise à jour du registre",
+          "90 min",
+          "Rédaction de la note"
+        ]
+      ]
+    },
+    "options": [
+      "11 h 00",
+      "13 h 15",
+      "10 h 00",
+      "14 h 15"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tâche « mise à jour du registre » exige, directement ou indirectement : collecte des pièces, envoi aux usagers, rédaction de la note. Durée cumulée : 90 + 45 + 60 + 90 = 285 min, soit une fin à 13 h 15. Les autres tâches peuvent attendre.",
+    "optionRationales": [
+      "Oublie les prérequis indirects (prérequis des prérequis).",
+      "Correct : seules les tâches nécessaires sont faites avant.",
+      "Ignore tous les prérequis.",
+      "Fait toutes les tâches avant, y compris celles qui ne sont pas nécessaires."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-207",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel créneau permet de réunir M. Hoffmann, M. Dupont, Mme Ianni et Mme Arendt pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Hoffmann",
+          "Guichet",
+          "Libre",
+          "Libre",
+          "Rendez-vous"
+        ],
+        [
+          "M. Dupont",
+          "Libre",
+          "Libre",
+          "Libre",
+          "Réunion"
+        ],
+        [
+          "Mme Ianni",
+          "Réunion",
+          "Libre",
+          "Audience",
+          "Libre"
+        ],
+        [
+          "Mme Arendt",
+          "Réunion",
+          "Libre",
+          "Audience",
+          "Libre"
+        ]
+      ]
+    },
+    "options": [
+      "10 h – 11 h 30",
+      "13 h 30 – 15 h",
+      "15 h – 16 h 30",
+      "8 h 30 – 10 h"
+    ],
+    "correctIndex": 0,
+    "explanation": "Seul le créneau 10 h – 11 h 30 est libre pour toutes les personnes. 8 h 30 – 10 h : M. Hoffmann, Mme Ianni, Mme Arendt indisponible(s) ; 13 h 30 – 15 h : Mme Ianni, Mme Arendt indisponible(s) ; 15 h – 16 h 30 : M. Hoffmann, M. Dupont indisponible(s).",
+    "optionRationales": [
+      "Correct : toutes les personnes sont libres.",
+      "Mme Ianni, Mme Arendt n'est pas libre.",
+      "M. Hoffmann, M. Dupont n'est pas libre.",
+      "M. Hoffmann, Mme Ianni, Mme Arendt n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-207",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Un séminaire de service se déroule sur deux jours consécutifs, sur place, avec M. Dupont, Mme Costa et M. Becker. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présences et absences prévues",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Mission",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent"
+        ],
+        [
+          "Mme Costa",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Télétravail",
+          "Présent"
+        ],
+        [
+          "M. Becker",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Mission",
+          "Présent"
+        ]
+      ]
+    },
+    "options": [
+      "Mercredi et Jeudi",
+      "Mardi et Mercredi",
+      "Jeudi et Vendredi",
+      "Lundi et Mardi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mardi et mercredi remplissent la condition.",
+    "optionRationales": [
+      "Absence : Mme Costa (télétravail le jeudi), M. Becker (mission le jeudi).",
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : Mme Costa (télétravail le jeudi), M. Becker (mission le jeudi).",
+      "Absence : M. Dupont (mission le lundi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-208",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Un audit des comptes se déroule sur deux jours consécutifs, sur place, avec M. Dupont et M. Fischer. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présences et absences prévues",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Congé"
+        ],
+        [
+          "M. Fischer",
+          "Télétravail",
+          "Présent",
+          "Présent",
+          "Télétravail",
+          "Congé"
+        ]
+      ]
+    },
+    "options": [
+      "Mardi et Mercredi",
+      "Mercredi et Jeudi",
+      "Jeudi et Vendredi",
+      "Lundi et Mardi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls mardi et mercredi remplissent la condition.",
+    "optionRationales": [
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : M. Fischer (télétravail le jeudi).",
+      "Absence : M. Dupont (congé le vendredi), M. Fischer (télétravail le jeudi), M. Fischer (congé le vendredi).",
+      "Absence : M. Fischer (télétravail le lundi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-taches-205",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "dependances",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Vous commencez à 13 h 30 et traitez les tâches l'une après l'autre, sans pause. Une tâche ne peut commencer qu'une fois ses prérequis terminés. À quelle heure, au plus tôt, la tâche « rédaction de la note » peut-elle être terminée ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Liste des tâches",
+      "headers": [
+        "Tâche",
+        "Durée",
+        "Prérequis"
+      ],
+      "rows": [
+        [
+          "Relecture juridique",
+          "60 min",
+          "—"
+        ],
+        [
+          "Vérification des montants",
+          "60 min",
+          "—"
+        ],
+        [
+          "Préparation du tableau",
+          "45 min",
+          "Vérification des montants"
+        ],
+        [
+          "Rédaction de la note",
+          "90 min",
+          "Relecture juridique, Préparation du tableau"
+        ],
+        [
+          "Contrôle qualité",
+          "30 min",
+          "Relecture juridique"
+        ]
+      ]
+    },
+    "options": [
+      "17 h 45",
+      "16 h 45",
+      "18 h 15",
+      "15 h 00"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tâche « rédaction de la note » exige, directement ou indirectement : relecture juridique, vérification des montants, préparation du tableau. Durée cumulée : 60 + 60 + 45 + 90 = 255 min, soit une fin à 17 h 45. Les autres tâches peuvent attendre.",
+    "optionRationales": [
+      "Correct : seules les tâches nécessaires sont faites avant.",
+      "Oublie les prérequis indirects (prérequis des prérequis).",
+      "Fait toutes les tâches avant, y compris celles qui ne sont pas nécessaires.",
+      "Ignore tous les prérequis."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-208",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Quel créneau permet de réunir Mme Gomes, Mme Engel, Mme Arendt et M. Hoffmann pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "Mme Gomes",
+          "Libre",
+          "Libre",
+          "Audience",
+          "Libre"
+        ],
+        [
+          "Mme Engel",
+          "Libre",
+          "Réunion",
+          "Formation",
+          "Guichet"
+        ],
+        [
+          "Mme Arendt",
+          "Libre",
+          "Guichet",
+          "Libre",
+          "Libre"
+        ],
+        [
+          "M. Hoffmann",
+          "Libre",
+          "Libre",
+          "Formation",
+          "Guichet"
+        ]
+      ]
+    },
+    "options": [
+      "13 h 30 – 15 h",
+      "8 h 30 – 10 h",
+      "15 h – 16 h 30",
+      "10 h – 11 h 30"
+    ],
+    "correctIndex": 1,
+    "explanation": "Seul le créneau 8 h 30 – 10 h est libre pour toutes les personnes. 10 h – 11 h 30 : Mme Engel, Mme Arendt indisponible(s) ; 13 h 30 – 15 h : Mme Gomes, Mme Engel, M. Hoffmann indisponible(s) ; 15 h – 16 h 30 : Mme Engel, M. Hoffmann indisponible(s).",
+    "optionRationales": [
+      "Mme Gomes, Mme Engel, M. Hoffmann n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "Mme Engel, M. Hoffmann n'est pas libre.",
+      "Mme Engel, Mme Arendt n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-semaine-209",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "agenda-contraintes",
+    "difficulty": 3,
+    "language": "fr",
+    "estimatedSeconds": 130,
+    "prompt": "Un atelier se déroule sur deux jours consécutifs, sur place, avec M. Dupont, M. Becker et Mme Engel. Quels jours conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Présences et absences prévues",
+      "headers": [
+        "Agent",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Présent",
+          "Présent",
+          "Télétravail",
+          "Mission",
+          "Présent"
+        ],
+        [
+          "M. Becker",
+          "Présent",
+          "Présent",
+          "Présent",
+          "Congé",
+          "Télétravail"
+        ],
+        [
+          "Mme Engel",
+          "Présent",
+          "Présent",
+          "Mission",
+          "Présent",
+          "Télétravail"
+        ]
+      ]
+    },
+    "options": [
+      "Lundi et Mardi",
+      "Jeudi et Vendredi",
+      "Mercredi et Jeudi",
+      "Mardi et Mercredi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il faut deux jours consécutifs où chacun est « Présent ». Seuls lundi et mardi remplissent la condition.",
+    "optionRationales": [
+      "Correct : tous les participants sont présents les deux jours.",
+      "Absence : M. Dupont (mission le jeudi), M. Becker (congé le jeudi), M. Becker (télétravail le vendredi), Mme Engel (télétravail le vendredi).",
+      "Absence : M. Dupont (télétravail le mercredi), M. Dupont (mission le jeudi), M. Becker (congé le jeudi), Mme Engel (mission le mercredi).",
+      "Absence : M. Dupont (télétravail le mercredi), Mme Engel (mission le mercredi)."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-agenda-209",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "disponibilites",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 50,
+    "prompt": "Quel créneau permet de réunir M. Dupont, M. Hoffmann et M. Becker pendant 1 h 30 ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Agenda du mardi",
+      "headers": [
+        "Agent",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "M. Dupont",
+          "Libre",
+          "Guichet",
+          "Guichet",
+          "Formation"
+        ],
+        [
+          "M. Hoffmann",
+          "Libre",
+          "Libre",
+          "Guichet",
+          "Libre"
+        ],
+        [
+          "M. Becker",
+          "Libre",
+          "Réunion",
+          "Réunion",
+          "Réunion"
+        ]
+      ]
+    },
+    "options": [
+      "13 h 30 – 15 h",
+      "8 h 30 – 10 h",
+      "15 h – 16 h 30",
+      "10 h – 11 h 30"
+    ],
+    "correctIndex": 1,
+    "explanation": "Seul le créneau 8 h 30 – 10 h est libre pour toutes les personnes. 10 h – 11 h 30 : M. Dupont, M. Becker indisponible(s) ; 13 h 30 – 15 h : M. Dupont, M. Hoffmann, M. Becker indisponible(s) ; 15 h – 16 h 30 : M. Dupont, M. Becker indisponible(s).",
+    "optionRationales": [
+      "M. Dupont, M. Hoffmann, M. Becker n'est pas libre.",
+      "Correct : toutes les personnes sont libres.",
+      "M. Dupont, M. Becker n'est pas libre.",
+      "M. Dupont, M. Becker n'est pas libre."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
+  },
+  {
+    "id": "planning-salle-203",
+    "version": 1,
+    "category": "planning",
+    "itemFormat": "single_best",
+    "skill": "conflits",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 90,
+    "prompt": "Le mercredi, vous devez organiser une réunion de 13 participants d'une durée d'1 h 30. Quelle salle et quel créneau conviennent ?",
+    "stimulus": {
+      "type": "table",
+      "caption": "Réservations des salles, mercredi",
+      "headers": [
+        "Salle (places)",
+        "8 h 30 – 10 h",
+        "10 h – 11 h 30",
+        "13 h 30 – 15 h",
+        "15 h – 16 h 30"
+      ],
+      "rows": [
+        [
+          "Salle Moselle (8)",
+          "Réservée",
+          "Libre",
+          "Libre",
+          "Réservée"
+        ],
+        [
+          "Salle Sûre (12)",
+          "Libre",
+          "Réservée",
+          "Réservée",
+          "Réservée"
+        ],
+        [
+          "Salle Our (6)",
+          "Réservée",
+          "Libre",
+          "Réservée",
+          "Libre"
+        ],
+        [
+          "Salle Wiltz (30)",
+          "Libre",
+          "Réservée",
+          "Réservée",
+          "Réservée"
+        ]
+      ]
+    },
+    "options": [
+      "Salle Our, 15 h – 16 h 30",
+      "Salle Moselle, 13 h 30 – 15 h",
+      "Salle Wiltz, 8 h 30 – 10 h",
+      "Salle Wiltz, 13 h 30 – 15 h"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il faut au moins 13 places et un créneau libre. Seule la Salle Wiltz (30 places) est libre à 8 h 30 – 10 h parmi les salles assez grandes.",
+    "optionRationales": [
+      "Salle Our n'a que 6 places.",
+      "Salle Moselle n'a que 8 places.",
+      "Correct : salle assez grande et libre sur ce créneau.",
+      "Salle Wiltz est réservée sur ce créneau."
+    ],
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-02T19:01:52.713Z",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-02T23:01:01.852Z"
   }
 ]
