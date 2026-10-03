@@ -11,10 +11,10 @@ const fail = (m) => { console.error(`❌ ${m}`); process.exit(1); };
 
 const ok = [["(1 380 − 1 200) ÷ 1 200 × 100", 15], ["12,5 % × 80", 10], ["-3+4*2", 5], ["2×(3+4)", 14], ["10:4", 2.5], ["0,1+0,2", 0.3]];
 for (const [e, v] of ok) if (Math.abs(EagCalc.evaluate(e) - v) > 1e-9) fail(`calculatrice : ${e} ≠ ${v}`);
-for (const e of ["1/0", "2+", "(3", "alert(1)", "1..2", "", "2**3"]) {
+for (const e of ["1/0", "2+", "(3", "alert(1)", "1..2", "", "2**3", "2x3", "1".repeat(101)]) {
   let threw = false;
   try { EagCalc.evaluate(e); } catch { threw = true; }
-  if (!threw) fail(`calculatrice : « ${e} » aurait dû être refusé`);
+  if (!threw) fail(`calculatrice : « ${e.slice(0, 12)}… » aurait dû être refusé`);
 }
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 const charts = [

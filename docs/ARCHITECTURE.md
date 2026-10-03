@@ -44,6 +44,7 @@ eag-a1-academy/
 ├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité, empreinte de contenu)
 ├── shared/chart.js           # Rendu SVG des graphiques (barres, courbes) pour l'application et l'admin
 ├── shared/calculator.js      # Calculatrice à l'écran des tests numériques (analyseur sans eval)
+├── shared/timer.js           # Chronomètres à échéance murale (immunisés au ralentissement des onglets)
 │
 ├── data/
 │   ├── review-log/           # Journal des décisions de relecture (qui, quoi, quand, empreinte) ; contrôlé en CI
@@ -74,7 +75,10 @@ eag-a1-academy/
 │   └── lib/
 │       ├── ai.mjs            # Client HTTP commun compatible OpenAI
 │       ├── ids.mjs           # Numérotation des identifiants générés (suite des identifiants existants)
-│       └── rules.mjs         # Charge shared/item-rules.js (EagRules) dans Node
+│       ├── rules.mjs         # Charge shared/item-rules.js (EagRules) dans Node
+│       ├── review-rules.mjs  # Règles de la revue IA aveugle et de l'incrément de version
+│       ├── file-transaction.mjs # Écriture atomique et rollback multi-fichiers
+│       └── lockfile.mjs      # Verrou exclusif des écritures de la banque
 │
 ├── prompts/
 │   ├── generate-bank.md      # Consignes système et contraintes de génération
@@ -84,6 +88,7 @@ eag-a1-academy/
 ├── docs/
 │   ├── ARCHITECTURE.md       # Présent document
 │   ├── AI-QUESTION-BANKS.md  # Guide pratique de génération et enrichissement
+│   ├── research/             # Benchmark psychométrique et cadre de référence
 │   └── adr/                  # Architecture Decision Records (ADRs)
 │
 └── .github/workflows/

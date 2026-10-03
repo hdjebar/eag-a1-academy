@@ -5,7 +5,10 @@ import { checkBank } from "./validate-bank.mjs";
 import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { candidateReviewHash } from "./lib/review-rules.mjs";
-import { withFileRollback } from "./lib/file-transaction.mjs";
+import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
+import { withLock } from "./lib/lockfile.mjs";
+
+const ROOT = path.resolve(".");
 
 const USAGE = `Usage :
   node scripts/promote-candidate.mjs <generated/fichier.json> --reviewer "Prénom Nom" --approve id1,id2[,...]
@@ -108,7 +111,9 @@ for (const id of requested) {
   logEntries.push({
     id, decision: isRevision ? "revised" : "approved", version: approved.version, hash: EagRules.contentHash(approved),
     reviewer, at: now, aiDecision: decision?.decision ?? null, aiOverride: Boolean(values["ignore-ai-review"] && (decision?.decision !== "pass" || !reviewCurrent)),
-    file: path.basename(candidateFile),
+    // Binding kept after the .review.json is deleted: the recorded AI decision can be
+    // checked against the candidate's fingerprint that produced it.
+    candidateHash: decision?.candidateHash ?? null, file: path.basename(candidateFile),
   });
   console.log(`${isRevision ? "~" : "+"} ${id} (${item.category}) → ${target}${isRevision ? ` (révision, version ${approved.version})` : ""}`);
 }
@@ -153,17 +158,16 @@ if (values["dry-run"]) {
 const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
 const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
-const { total } = withFileRollback(touched, () => {
-  for (const [target, bank] of byCategory) fs.writeFileSync(target, JSON.stringify(bank, null, 2) + "\n", "utf8");
-  fs.mkdirSync("data/review-log", { recursive: true });
-  fs.writeFileSync(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n", "utf8");
-  if (remaining.length) fs.writeFileSync(candidateFile, JSON.stringify(remaining, null, 2) + "\n", "utf8");
+const { total } = await withLock(ROOT, "promote", () => withFileRollback(touched, () => {
+  for (const [target, bank] of byCategory) writeFileAtomic(target, JSON.stringify(bank, null, 2) + "\n");
+  writeFileAtomic(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n");
+  if (remaining.length) writeFileAtomic(candidateFile, JSON.stringify(remaining, null, 2) + "\n");
   else {
     fs.rmSync(candidateFile);
     if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
   }
   return syncAppJs();
-});
+}));
 console.log(`Journal de relecture : ${logFile}`);
 if (remaining.length) console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
 else console.log(`\nTous les items traités : ${candidateFile} supprimé.`);

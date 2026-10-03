@@ -1,6 +1,15 @@
 {
   "name": "eag-a1-academy",
-  "version": "1.6.0",
+  "version": "1.7.0",
+  "description": "Application statique hors ligne pour s'entraîner aux épreuves EAG A1 de l'État luxembourgeois (non officielle)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdjebar/eag-a1-academy.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "private": true,
   "type": "module",
   "scripts": {

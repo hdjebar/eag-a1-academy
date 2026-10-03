@@ -157,7 +157,7 @@ graph TD
    - Full credit (1.0) for exact match, 0.67 for adjacent ratings, 0.33 for distance 2, 0.0 for polar opposition.
 3. **Local Offline Determinism & 500-Question Calibrated Bank:**
    - Precompiled directly into `app.js` and `admin.js` via `npm run build:bank` with zero runtime network dependencies.
-   - Bank of **500 validated items** (100 per category: RA, RV, RN, PL, JS).
+   - Bank of **591 validated items** (RA 110, RV 110, RN 145, PL 126, JS 100).
    - Dynamic random sampling without replacement (Fisher-Yates) on session launch (10 items for guided practice, 15 for simulation, 5 tests for exam mode) ensuring high replay value and broad coverage.
 
 ---
