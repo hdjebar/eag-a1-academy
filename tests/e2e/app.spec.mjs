@@ -68,6 +68,16 @@ test("shared/ui.js absent : message explicite dans l'application et l'administra
   expect(errors).toEqual([]);
 });
 
+test("shared/session.js absent : message explicite dans l'application", async ({ page }) => {
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.route("**/shared/session.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("/eag-a1-academy.html");
+  await expect(page.getByRole("alert")).toContainText("shared/session.js");
+  await expect(page.locator(".module")).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
 test("des règles de validation absentes affichent une erreur explicite", async ({ page }) => {
   await page.route("**/shared/item-rules.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
   await page.goto("/admin.html");

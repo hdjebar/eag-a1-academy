@@ -63,7 +63,7 @@ Official specifications retrieved and verified live in October 2026 from the [Go
   - *Discrepancy:* Commercial prep site `psychotechnique.lu` asserted that the 2026 test is exclusively an odd-one-out format (*"trouver l'intrus parmi 9 figures"*).
   - *Official Reality:* GovJobs explicitly specifies **series and matrix completion**.
   - *Implementation Decision (ADR-0005):* Standardise on pure geometric series (horizontal/vertical transformations, rotations, symmetry, progressions) and 3×3 matrix completion. Strictly exclude alphanumeric symbols or odd-one-out items.
-  - *Calibrated Bank:* The platform provides **100 validated geometric items** conforming strictly to this official specification.
+  - *Validated Bank:* The platform provides **110 validated geometric items** conforming to project rules and aligned with this specification.
 - **Top Psychometric Analogues:**
   1. **EPSO Abstract Reasoning (AST/AD samples):** Series of 5 geometric frames, 5 choices (A–E). Official European psychometric benchmark.
   2. **SHL Direct Inductive Reasoning:** Progressive transformations with verified explanations.
@@ -155,9 +155,9 @@ graph TD
    - Scored via continuous linear concordance:
      $$\text{score} = \max\left(0, 1 - \frac{|\text{userRating} - \text{targetRating}|}{3}\right)$$
    - Full credit (1.0) for exact match, 0.67 for adjacent ratings, 0.33 for distance 2, 0.0 for polar opposition.
-3. **Local Offline Determinism & 591-Question Calibrated Bank:**
+3. **Local Offline Determinism & 592-Question Validated Bank:**
    - Precompiled into `bank/app-bank.js` and `bank/admin-bank.js` via `npm run build:bank` with zero runtime network dependencies.
-   - Bank of **591 validated items** (RA 110, RV 110, RN 145, PL 126, JS 100).
+   - Bank of **592 validated items** (RA 110, RV 110, RN 146, PL 126, JS 100).
    - Dynamic random sampling without replacement (Fisher-Yates) on session launch (5 items by default for guided practice, 15 for simulation, 5 tests for exam mode) ensuring high replay value and broad coverage.
 
 ---
