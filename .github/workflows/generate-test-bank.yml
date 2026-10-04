@@ -13,12 +13,13 @@ on:
         required: true
         default: "20"
 
+# Generation and review never write to the repository: only the final PR job,
+# which consumes the read-only job's artifact, gets write access.
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
-  generate-review-validate:
+  generate:
     runs-on: ubuntu-latest
     env:
       CATEGORY: ${{ inputs.category }}
@@ -26,14 +27,8 @@ jobs:
       AI_API_URL: ${{ secrets.AI_API_URL }}
       AI_API_KEY: ${{ secrets.AI_API_KEY }}
       AI_MODEL: ${{ vars.AI_MODEL }}
-      # Pull requests opened with the default GITHUB_TOKEN do not trigger other workflows,
-      # so "Validate question banks" would never run on them. Add a BOT_TOKEN secret
-      # (fine-grained PAT: contents + pull requests write) to get CI checks on the PR.
-      PUSH_TOKEN: ${{ secrets.BOT_TOKEN || github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          token: ${{ env.PUSH_TOKEN }}
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "22"
@@ -56,11 +51,36 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: eag-${{ inputs.category }}-candidate-bank
-          path: generated/*.json
+          path: |
+            generated/*.json
+            generated/latest.txt
           retention-days: 30
+
+  # Pull requests opened with the default GITHUB_TOKEN do not trigger other workflows,
+  # so "Validate question banks" would never run on them. Add a BOT_TOKEN secret
+  # (fine-grained PAT: contents + pull requests write) to get CI checks on the PR.
+  open-pr:
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      CATEGORY: ${{ inputs.category }}
+      PUSH_TOKEN: ${{ secrets.BOT_TOKEN || github.token }}
+      GH_TOKEN: ${{ secrets.BOT_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ env.PUSH_TOKEN }}
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: eag-${{ inputs.category }}-candidate-bank
+          path: generated
       - name: Open human-review pull request
-        env:
-          GH_TOKEN: ${{ env.PUSH_TOKEN }}
         run: |
           file="$(cat generated/latest.txt)"
           review="${file%.json}.review.json"

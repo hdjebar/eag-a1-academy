@@ -11,6 +11,11 @@ import path from "node:path";
 const LOCK_DIR = os.tmpdir();
 const STALE_MS = 5 * 60 * 1000;
 const TAKEOVER_STALE_MS = 30 * 1000;
+// Les verrous vivent quelques secondes : un verrou qui prétend être détenu par un
+// processus vivant mais qui a plus de 30 min est presque sûrement le vestige d'un
+// processus mort dont le pid a été recyclé. Un détenteur légitime suspendu est
+// donc repris après ce délai au lieu de bloquer les écrivains pour toujours.
+const PID_REUSE_MS = 30 * 60 * 1000;
 const DEFAULT_ATTEMPTS = 300;
 const DEFAULT_DELAY_MS = 100;
 
@@ -50,7 +55,10 @@ function readLock(lock) {
 
 function canRetire(snapshot, staleMs = STALE_MS) {
   const alive = holderIsAlive(snapshot.holder);
-  return alive === false || (alive === null && Date.now() - snapshot.stat.mtimeMs > staleMs);
+  const age = Date.now() - snapshot.stat.mtimeMs;
+  return alive === false
+    || (alive === null && age > staleMs)
+    || (alive === true && age > PID_REUSE_MS);
 }
 
 function sameLock(a, b) {
