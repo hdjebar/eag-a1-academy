@@ -95,7 +95,8 @@ export function checkReviewLogData(approvedItems, logs) {
         invalid = approvingDecisionErrors(d);
         if (d.decision === "legacy" && path.basename(file) !== LEGACY_BASELINE) invalid.push(`décision legacy autorisée uniquement dans ${LEGACY_BASELINE}`);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
-        const fingerprint = `${d.version}|${d.hash}|${d.at}|${d.reviewer}`;
+        // Equivalent ISO-8601 offsets name the same decision instant.
+        const fingerprint = `${d.version}|${d.hash}|${t}|${d.reviewer}`;
         const prior = seen.get(d.id) || [];
         if (prior.includes(fingerprint)) { errors.push(`${file} décision ${i + 1} (${d.id}) : décision dupliquée`); continue; }
         prior.push(fingerprint);

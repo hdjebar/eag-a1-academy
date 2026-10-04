@@ -156,6 +156,12 @@ const mkDec = (item, over = {}) => ({
   if (!r.errors.some((e) => e.includes("décision dupliquée"))) throw new Error("Une décision d'approbation dupliquée est passée inaperçue");
 }
 {
+  const item = mkItem();
+  const sameInstant = mkDec(item, { at: "2026-10-02T21:00:00+02:00" });
+  const r = checkReviewLogData([item], [{ file: "a.json", log: { decisions: [mkDec(item), sameInstant] } }]);
+  if (!r.errors.some((e) => e.includes("décision dupliquée"))) throw new Error("La même décision avec un autre fuseau a échappé au diagnostic de doublon");
+}
+{
   const v1 = mkItem();
   const v2 = mkItem({ version: 2, reviewedAt: "2026-10-03T12:00:00Z" });
   const r = checkReviewLogData([v2], [{ file: "a.json", log: { decisions: [mkDec(v1), mkDec(v2)] } }]);

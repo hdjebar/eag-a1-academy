@@ -42,6 +42,13 @@ test("ouverture directe du fichier (file://) avec la banque complète", async ({
   expect(errors).toEqual([]);
 });
 
+test("une banque absente affiche une erreur explicite", async ({ page }) => {
+  await page.route("**/bank/app-bank.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("/eag-a1-academy.html");
+  await expect(page.getByRole("alert")).toContainText("banque de questions est indisponible");
+  await expect(page.locator(".module")).toHaveCount(0);
+});
+
 test("entraînement : bonne réponse, erreur avec justification, question passée, bilan", async ({ page }) => {
   await useBank(page, { ...emptyBank, numeric: [item("n1"), item("n2"), item("n3")] });
   const errors = watchErrors(page);

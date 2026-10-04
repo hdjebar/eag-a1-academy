@@ -170,6 +170,10 @@ function renderModules(){
   }).join('');
 }
 function init(){
+  if(!Object.values(q).some(items=>Array.isArray(items)&&items.length)){
+    $('#main').innerHTML='<section class="panel" role="alert"><p class="eyebrow">Chargement impossible</p><h1>La banque de questions est indisponible.</h1><p class="lede">Vérifiez que le fichier <code>bank/app-bank.js</code> est présent, puis rechargez la page.</p></section>';
+    return;
+  }
   document.addEventListener('visibilitychange',()=>state.session?.timerUpdate?.());
   renderModules();
   $('#modules').onclick=e=>{const b=e.target.closest('[data-module]');if(b)start(b.dataset.module)};
