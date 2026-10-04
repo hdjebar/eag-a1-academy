@@ -66,6 +66,13 @@ test("chaque mode tire le bon nombre de questions", () => {
   exam.sections.forEach((s) => { for (let i = s.from; i <= s.to; i++) assert.equal(exam.questions[i].m, s.cat); });
 });
 
+test("la durée des entraînements suit le rythme configuré pour dix questions", () => {
+  assert.equal(S.buildSession(bank, { modules, type: "numeric", count: 5 }, S.seeded(1)).seconds, 300);
+  assert.equal(S.buildSession(bank, { modules, type: "numeric", count: 10 }, S.seeded(1)).seconds, 600);
+  assert.equal(S.buildSession(bank, { modules, type: "abstract", count: 5 }, S.seeded(1)).seconds, 240);
+  assert.equal(S.buildSession(bank, { modules, type: "verbal", count: 1 }, S.seeded(1)).seconds, 180);
+});
+
 test("notation : bonne réponse, erreur, question passée, jugement situationnel", () => {
   const x = { f: "single_best", a: 2 };
   assert.deepEqual(S.scoreAnswer(x, 2), { choice: 2, points: 1, good: true });

@@ -106,7 +106,7 @@ Le projet repose sur une séparation physique stricte entre l'application client
    - Les questions validées de `data/approved/` sont compilées par `npm run build:bank` dans `bank/app-bank.js` (application) et `bank/admin-bank.js` (administration), chargés par des balises `<script>` classiques : l'application fonctionne toujours en ouvrant le fichier HTML directement (`file://`), et le code applicatif (`app.js`, `admin.js`) reste lisible et séparé des données.
 2. **Architecture décisionnelle documentée** :
    - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : description détaillée des modules, de l'état en mémoire et du cycle de vie.
-   - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0009).
+   - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0010).
 
 ---
 

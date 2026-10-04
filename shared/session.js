@@ -90,7 +90,9 @@
     const n = cfg.count === "all" || Number(cfg.count) >= total ? total : Number(cfg.count) || 5;
     const questions = pick(cfg.type, n);
     const minutes = (cfg.modules[cfg.type] && cfg.modules[cfg.type].minutes) || 10;
-    return { questions, seconds: Math.max(180, Math.round(questions.length * ((minutes * 60) / (total || 10)))), guided: true };
+    // Module durations describe the pace for a ten-question practice set. Scale
+    // that pace with the chosen set size; keep a three-minute usability floor.
+    return { questions, seconds: Math.max(180, Math.round(questions.length * ((minutes * 60) / 10))), guided: true };
   }
 
   /** Builds the mock exam: per section, `questionsPerSection` balanced questions (all if null). */

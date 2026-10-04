@@ -78,6 +78,7 @@ eag-a1-academy/
 │   ├── promote-candidate.mjs # Promotion humaine explicite (relecteur nommé, identifiants listés)
 │   ├── review-bank.mjs       # Revue aveugle par LLM, comparée à la clé par le script
 │   ├── validate-bank.mjs     # Schéma (Ajv) + règles complémentaires (HTML interdit, notes, longueurs…)
+│   ├── selftest-*.mjs        # Régressions unitaires, dont le stress multi-processus du verrou
 │   └── lib/
 │       ├── ai.mjs            # Client HTTP commun compatible OpenAI
 │       ├── ids.mjs           # Numérotation des identifiants générés (suite des identifiants existants)
