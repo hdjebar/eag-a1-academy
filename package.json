@@ -1,6 +1,6 @@
 {
   "name": "eag-a1-academy",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Application statique hors ligne pour s'entraîner aux épreuves EAG A1 de l'État luxembourgeois (non officielle)",
   "license": "MIT",
   "repository": {

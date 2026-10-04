@@ -48,6 +48,7 @@ eag-a1-academy/
 ├── shared/item-rules.js      # Règles communes navigateur + Node (schéma, contrôles, similarité, empreinte de contenu)
 ├── shared/chart.js           # Rendu SVG des graphiques (barres, courbes) pour l'application et l'admin
 ├── shared/calculator.js      # Calculatrice à l'écran des tests numériques (analyseur sans eval)
+├── shared/ui.js              # esc() et libellés partagés entre l'application et l'admin (source unique)
 ├── shared/timer.js           # Chronomètres monotones (résistent aux changements d'horloge ; pause pendant la veille système)
 ├── tests/e2e/                # Tests de bout en bout Playwright (application, administration, accessibilité)
 ├── playwright.config.mjs     # Configuration Playwright (bureau et mobile 375 px)
