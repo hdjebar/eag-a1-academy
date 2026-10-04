@@ -49,11 +49,18 @@ test("une banque absente affiche une erreur explicite", async ({ page }) => {
   await expect(page.locator(".module")).toHaveCount(0);
 });
 
-test("les données d'administration absentes affichent une erreur explicite", async ({ page }) => {
+test("des données d'administration présentes mais vides affichent une erreur explicite", async ({ page }) => {
   await page.route("**/bank/admin-bank.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
   await page.goto("/admin.html");
   await expect(page.getByRole("alert")).toContainText("Données d'administration indisponibles");
   await expect(page.getByRole("alert")).toContainText("présent, non vide et à jour");
+});
+
+test("des règles de validation absentes affichent une erreur explicite", async ({ page }) => {
+  await page.route("**/shared/item-rules.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("/admin.html");
+  await expect(page.getByRole("alert")).toContainText("Règles de validation indisponibles");
+  await expect(page.getByRole("alert")).not.toContainText("Données d'administration");
 });
 
 test("entraînement : bonne réponse, erreur avec justification, question passée, bilan", async ({ page }) => {

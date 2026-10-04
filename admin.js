@@ -929,7 +929,12 @@ function setTab(t) {
 }
 async function init() {
   if (!R || !SCHEMA.allOf) {
-    document.body.innerHTML = `<main class="empty" role="alert"><h1>Données d'administration indisponibles</h1><p>Vérifiez que <code>bank/admin-bank.js</code> est présent, non vide et à jour, puis lancez <code>npm run build:bank</code> si nécessaire.</p></main>`;
+    // R comes from shared/item-rules.js, the bank data from bank/admin-bank.js:
+    // name the actual missing piece instead of a generic message.
+    const missing = !R
+      ? { title: "Règles de validation indisponibles", hint: `Vérifiez que <code>shared/item-rules.js</code> est présent, puis rechargez la page.` }
+      : { title: "Données d'administration indisponibles", hint: `Vérifiez que <code>bank/admin-bank.js</code> est présent, non vide et à jour, puis lancez <code>npm run build:bank</code> si nécessaire.` };
+    document.body.innerHTML = `<main class="empty" role="alert"><h1>${missing.title}</h1><p>${missing.hint}</p></main>`;
     return;
   }
   const catOpts = CATS.map((c) => `<option value="${c}">${esc(CAT_LABEL[c])}</option>`).join("");
