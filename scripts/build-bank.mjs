@@ -101,6 +101,28 @@ export function syncAppJs({ check = false } = {}) {
   return { total, inSync, bank };
 }
 
+export function verifyDocCounters(bank) {
+  const errors = [];
+  const total = Object.values(bank).reduce((n, items) => n + items.length, 0);
+  const readmePath = path.join(ROOT, "README.md");
+  if (fs.existsSync(readmePath)) {
+    const readme = fs.readFileSync(readmePath, "utf8");
+    const totalMatch = readme.match(/\|\s*\*\*Total\*\*\s*\|[^|]*\|[^|]*\|[^|]*\|\s*\*\*(\d+)\*\*\s*\|/);
+    if (totalMatch && Number(totalMatch[1]) !== total) {
+      errors.push(`README.md total (${totalMatch[1]}) ne correspond pas à la banque (${total})`);
+    }
+    const catMap = [["abstract", "RA"], ["verbal", "RV"], ["numeric", "RN"], ["planning", "PL"], ["situational", "JS"]];
+    for (const [cat, code] of catMap) {
+      const reg = new RegExp(`\\|\\s*\\*\\*${code}\\*\\*\\s*\\|[^|]*\\|[^|]*\\|[^|]*\\|\\s*(\\d+)\\s*\\|`);
+      const m = readme.match(reg);
+      if (m && Number(m[1]) !== bank[cat].length) {
+        errors.push(`README.md compte ${code} (${m[1]}) ne correspond pas à la banque (${bank[cat].length})`);
+      }
+    }
+  }
+  return errors;
+}
+
 const isDirectRun = Boolean(process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]));
 if (isDirectRun) {
   const check = process.argv.includes("--check");
@@ -110,7 +132,12 @@ if (isDirectRun) {
       console.error("❌ bank/app-bank.js ou bank/admin-bank.js n'est pas à jour (lancez npm run build:bank)");
       process.exit(1);
     }
-    console.log(`✅ Banque vérifiée : ${total} questions synchronisées.`);
+    const docErrors = verifyDocCounters(bank);
+    if (docErrors.length) {
+      console.error("❌ Compteurs documentaires obsolètes dans README.md :\n- " + docErrors.join("\n- "));
+      process.exit(1);
+    }
+    console.log(`✅ Banque vérifiée : ${total} questions synchronisées (documentation à jour).`);
   } else {
     console.log(`✅ Banque compilée dans bank/app-bank.js et bank/admin-bank.js (${total} questions) :`);
     for (const [cat, items] of Object.entries(bank)) console.log(`   - ${cat} : ${items.length}`);

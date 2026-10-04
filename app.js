@@ -15,8 +15,8 @@ const state={route:"accueil",dark:false,session:null,answered:0,points:0,session
 
 /* Tout texte d'item est échappé via shared/ui.js : le contenu des questions est une donnée, jamais du markup. */
 /* Tirage, ordre des options et notation : shared/session.js (fonctions pures, testées dans npm test). */
-const S=globalThis.EagSession;
-function shuffle(a){return S.shuffle(a)}
+const S=globalThis.EagSession||null;
+function shuffle(a){return S?S.shuffle(a):a}
 function skillOf(x){return x.skill?` · ${esc(skillLabels[x.skill]||x.skill)}`:""}
 function stimulusHtml(s){
   if(s==null)return"";
@@ -30,8 +30,8 @@ function stimulusHtml(s){
   if(s.type==="chart")return globalThis.EagChart?`<div class="stimulus">${EagChart.html(s,esc)}</div>`:`<div class="stimulus text">Graphique indisponible (fichier shared/chart.js manquant). Passez cette question.</div>`;
   return`<div class="stimulus text">Stimulus de type inconnu — passez cette question.</div>`;
 }
-function prepare(x,m){return S.prepare(x,m)}
-function scoreRating(user,key){return S.scoreRating(user,key)}
+function prepare(x,m){return S?S.prepare(x,m):x}
+function scoreRating(user,key){return S?S.scoreRating(user,key):0}
 function startTimer(onExpire){
   const s=state.session;clearInterval(s.interval);
   const T=globalThis.EagTimer||{deadline:(sec)=>Date.now()+Math.max(0,Number(sec)||0)*1000,secondsLeft:(end)=>Math.max(0,Math.ceil((Number(end)-Date.now())/1000))};
@@ -174,6 +174,10 @@ function renderModules(){
 function init(){
   if(!UI){
     $('#main').innerHTML='<section class="panel" role="alert"><p class="eyebrow">Chargement impossible</p><h1>Un fichier de l\'application manque.</h1><p class="lede">Vérifiez que le fichier <code>shared/ui.js</code> est présent, puis rechargez la page.</p></section>';
+    return;
+  }
+  if(!S){
+    $('#main').innerHTML='<section class="panel" role="alert"><p class="eyebrow">Chargement impossible</p><h1>Un fichier de l\'application manque.</h1><p class="lede">Vérifiez que le fichier <code>shared/session.js</code> est présent, puis rechargez la page.</p></section>';
     return;
   }
   if(!Object.values(q).some(items=>Array.isArray(items)&&items.length)){

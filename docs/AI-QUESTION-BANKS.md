@@ -92,6 +92,13 @@ npm test
 
 **Contrôle de relecture (CI)** : `npm test` lance `scripts/check-review-log.mjs`. Chaque question de `data/approved/` doit correspondre à une décision humaine de `data/review-log/` (identifiant, version, relecteur et empreinte du contenu approuvé, `EagRules.contentHash`). `promote-candidate.mjs` et la page d'administration écrivent ces décisions. Une question ajoutée par un script ou modifiée à la main fait échouer la CI tant qu'elle n'a pas été relue et approuvée par l'une de ces deux voies. Les questions présentes lors de la mise en place du contrôle sont inventoriées dans `data/review-log/2026-10-02-legacy-baseline.json` (décision `legacy`, sans nouvelle approbation).
 
+### Modèle de menace et limites de confiance
+
+Le mécanisme de promotion humaine (`--reviewer "Prénom Nom"`) et le journal d'audit (`data/review-log/`) fournissent une traçabilité déterministe et une intégrité cryptographique forte :
+1. **Détection d'altération** : chaque décision lie l'identifiant, la version incrémentale, l'horodatage, le relecteur et l'empreinte SHA-256 tronquée (16 caractères hexadécimaux) du contenu complet de la question (`EagRules.contentHash`). Toute modification ultérieure d'un item approuvé sans nouvelle décision fait échouer `scripts/check-review-log.mjs` en CI.
+2. **Limite de confiance (convention vs attestation)** : l'outil CLI et le contrôle de journal vérifient uniquement que le nom du relecteur est une chaîne non vide (au moins 2 caractères). Il s'agit d'une convention de gouvernance interne et d'un journal d'audit, non d'une signature cryptographique ou d'une preuve formelle d'indépendance de tiers.
+3. **Durcissement organisationnel recommandé** : dans un environnement multi-contributeurs exigeant une séparation stricte des tâches, cette traçabilité doit être complétée au niveau GitHub par la protection de branche exigeant une revue de Pull Request indépendante (*« Require a pull request before merging »*) et l'approbation obligatoire des propriétaires via `CODEOWNERS` sur les chemins sensibles (`data/approved/**`, `data/review-log/**`, `schema/**`, `scripts/promote-candidate.mjs`, `scripts/check-review-log.mjs`).
+
 ---
 
 ## Méthode 3 : GitHub Actions

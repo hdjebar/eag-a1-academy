@@ -19,21 +19,21 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 - [Pipeline de Questions Assisté par IA (Zero-Trust)](#pipeline-de-questions-assisté-par-ia-zero-trust)
 - [Commandes Utiles](#commandes-utiles)
 - [Références Officielles & Recherche Psychométrique](#références-officielles--recherche-psychométrique)
-- [Confidentialité](#confidentialité)
 - [Licence](#licence)
 
 ---
 
 ## Fonctionnalités
 
-- **Banque de questions originales relues** : 591 questions approuvées, chacune vérifiée par une résolution à l'aveugle et tracée dans `data/review-log/` ; tirage aléatoire sans remise. Le décompte par catégorie est affiché par `npm run build:bank`.
+- **Banque de questions originales relues** : 592 questions approuvées, chacune vérifiée par une résolution à l'aveugle et tracée dans `data/review-log/` ; tirage aléatoire sans remise. Le décompte par catégorie est affiché par `npm run build:bank`.
 - **Calculatrice à l'écran** pendant les questions numériques, comme la calculatrice de l'ordinateur autorisée le jour de l'épreuve (appareils personnels interdits).
 - **« Le jour de l'épreuve »** (page Ressources) : inscription, durée, langues, calculatrice, notation, résultats, validité, tentatives, aménagements et contact, chaque point relié à sa source officielle (vérifié le 3 octobre 2026).
 - **5 familles de tests A1** : Raisonnement abstrait (*Test géométrique* : matrices 3×3 et séries de figures), verbal, numérique, planification et jugement situationnel.
-- **Formats officiels 2026** :
-  - Matrices et suites géométriques pures pour l'abstrait.
-  - Formats tabulaires structurés et assertions Vrai / Faux / Indéterminé (`tfcs`).
-  - Évaluation de pertinence sur échelle 1 à 4 pour chaque réaction du jugement situationnel (`rating`).
+- **Formats d'entraînement alignés sur les descriptions 2026** :
+  - Matrices et suites géométriques pures pour l'abstrait (stimulus visuel sans texte, chiffres ni lettres).
+  - Formats tabulaires structurés et assertions Vrai / Faux / Indéterminé (`tfcs`, format d'entraînement d'inspiration psychotechnique, non décrit officiellement par GovJobs).
+  - Évaluation de pertinence sur échelle 1 à 4 pour chaque réaction du jugement situationnel (`rating`, choix de conception pédagogique).
+  - *Périmètre officiel vs choix pédagogiques* : GovJobs publie la durée totale de 2 h et la liste des familles A1, mais ni l'échelle à quatre niveaux, ni le format TFCS, ni l'ordre des tests, ni le temps par test, ni le nombre d'items. Ces éléments relèvent de choix pédagogiques transparents du projet.
 - **Retour pédagogique à 100 %** : chaque option (bonne réponse ou distracteur) intègre une justification unitaire (`optionRationales`) expliquant l'erreur cognitive ou la règle appliquée.
 - **Trois modes d'entraînement** :
   - *Entraînement guidé* : correction immédiate après chaque validation avec explication pas à pas. La durée suit le rythme configuré pour 10 questions (minimum 3 minutes) ; choisir « Toutes les questions » conserve ce rythme et augmente donc la durée avec la taille de la banque.
@@ -51,17 +51,17 @@ Application web statique, académique et **non officielle** pour s'entraîner au
 Conformément aux directives officielles GovJobs pour le **Groupe de traitement A1** :
 
 | Code | Famille de test | Compétences couvertes | Format d'item | Questions validées |
-| :---: | :--- | :--- | :--- | :---: |
+| :---: | :--- | :--- | :--- | :--- :|
 | **RA** | **Raisonnement abstrait** *(Test géométrique)* | Suite logique, matrice 3×3, rotation, transformation géométrique | `single_best` (formes pures) | 110 |
 | **RV** | **Raisonnement verbal** | Compréhension, inférence, application de consigne, vrai/faux/indéterminé, synthèse | `single_best`, `tfcs` | 110 |
-| **RN** | **Raisonnement numérique** | Pourcentage, variation, ratio & proportion, moyenne, lecture de tableau et de graphique, opérations simples | `single_best` (tableaux, graphiques ; calculatrice de base) | 145 |
+| **RN** | **Raisonnement numérique** | Pourcentage, variation, ratio & proportion, moyenne, lecture de tableau et de graphique, opérations simples | `single_best` (tableaux, graphiques ; calculatrice de base) | 146 |
 | **PL** | **Planification** | Agenda & contraintes, priorisation, dépendances, disponibilités, conflits | `single_best` (gestion d'agenda, agendas en tableau) | 126 |
 | **JS** | **Jugement situationnel** | Servir le client-usager, Conseiller | `rating` (notes 1 à 4) | 100 |
-| **Total** | *Banque étalonnée complète* | *5 épreuves A1 conformes à la réforme GovJobs 2026* | — | **591** |
+| **Total** | *Banque validée complète* | *5 épreuves d'entraînement alignées sur la réforme GovJobs 2026* | — | **592** |
 
 > **Notes importantes** :
 > - **Audit du 2 octobre 2026** : 90 questions retirées (items abstraits contenant des lettres ou chiffres, clé erronée, ambiguïtés, doublons). 112 questions de remplacement et de correction ont été résolues à l'aveugle par des relecteurs IA indépendants, puis approuvées par hdjebar via `npm run promote:candidate` (500 questions).
-> - **Passe de réalisme (2–3 octobre 2026)** : questions numériques sur tableaux et graphiques, agendas de planification en tableau, textes verbaux et scénarios situationnels allongés, compétences situationnelles rééquilibrées, et 30 questions originales de style EPSO. Même processus : résolution à l'aveugle, puis approbation par hdjebar (591 questions).
+> - **Passe de réalisme (2–3 octobre 2026)** : questions numériques sur tableaux et graphiques, agendas de planification en tableau, textes verbaux et scénarios situationnels allongés, compétences situationnelles rééquilibrées, et 30 questions originales de style EPSO. Même processus : résolution à l'aveugle, puis approbation par hdjebar (592 questions).
 > - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). Les items sont composés uniquement de formes et de flèches (règle vérifiée par le validateur).
 > - **Tirage aléatoire équilibré** : à chaque lancement, les questions sont tirées sans remise dans chaque catégorie, réparties sur toutes les compétences et sur les niveaux de difficulté ; l'ordre des options est mélangé (sauf Vrai / Faux / On ne peut pas savoir). L'application ne garde aucune trace entre deux visites (ADR-0001) : une question vue lors d'une visite précédente peut revenir.
 > - **Test de contrôle/précision** : Ce test ne concerne pas le groupe A1 (réservé aux groupes B1 et C1) et n'est donc pas inclus dans cette application.
@@ -131,7 +131,7 @@ Toute question générée par IA est considérée comme **non fiable par défaut
 
 1. **Revue IA à l'aveugle** : [`scripts/review-bank.mjs`](scripts/review-bank.mjs) soumet l'item sans clé de réponse, sans notes et sans explication. Si le modèle relecteur ne retrouve pas la solution avec une confiance élevée, l'item est bloqué.
 2. **Validation déterministe** : [`scripts/validate-bank.mjs`](scripts/validate-bank.mjs) applique le schéma JSON Schema Draft 2020-12 via Ajv et vérifie l'absence de HTML, l'unicité des options, l'absence de distracteurs fourre-tout et la validité des rationales.
-3. **Promotion humaine nominative obligatoire** : [`scripts/promote-candidate.mjs`](scripts/promote-candidate.mjs) exige `--reviewer "Prénom Nom"` et la liste explicite des identifiants approuvés (`--approve id1,id2`).
+3. **Promotion humaine nominative obligatoire** : [`scripts/promote-candidate.mjs`](scripts/promote-candidate.mjs) exige `--reviewer "Prénom Nom"` et la liste explicite des identifiants approuvés (`--approve id1,id2`). Ce mécanisme garantit une traçabilité d'audit stricte et l'intégrité des contenus validés (hachage SHA-256 tronqué, journal inviolable en CI) ; il constitue une règle de gouvernance interne et non une attestation cryptographique d'indépendance de tiers (voir [docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md#modèle-de-menace-et-limites-de-confiance)).
 
 Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-BANKS.md)**.
 
@@ -169,6 +169,8 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 
 GovJobs publie la durée totale (2 h), la liste des tests A1 et la notation (Stanine, moyenne d'au moins 5), mais ni l'ordre des tests, ni le temps par test, ni le nombre de questions. L'examen blanc utilise une hypothèse de travail (24 minutes par test) réglable dans la constante `EXAM` en tête de `app.js`.
 
+Les seuils d'appréciation proposés dans l'application (ex. ≥ 80 % « Très bonne maîtrise », ≥ 60 % « Base solide ») sont des repères pédagogiques indicatifs pour guider l'entraînement, et non un étalonnage psychométrique (IRT/CTT) ni une conversion officielle en note Stanine.
+
 ## Confidentialité
 
 L'application ne collecte, ne transmet et ne stocke **aucune donnée personnelle**. Aucune requête réseau n'est émise au cours de l'entraînement. L'état d'avancement de la session réside exclusivement dans la mémoire vive de l'onglet actif et est réinitialisé dès la fermeture ou le rechargement de la page.
@@ -177,5 +179,6 @@ L'application ne collecte, ne transmet et ne stocke **aucune donnée personnelle
 
 ## Licence
 
-- Code source sous licence [MIT](LICENSE).
-- Contenu pédagogique original des questions sous licence [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+Le projet est distribué sous double licence :
+- **Code source** (application statique, scripts, suites de test, outillage) : licence [MIT](LICENSE) © 2026 Contributeurs EAG A1 Académie.
+- **Contenu pédagogique original** (banque validée dans `data/approved/`, banques compilées dans `bank/`, journal `data/review-log/`, prompts de rédaction dans `prompts/`) : licence [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-CONTENT).
