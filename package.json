@@ -8,7 +8,7 @@
     "url": "git+https://github.com/hdjebar/eag-a1-academy.git"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22.9"
   },
   "private": true,
   "type": "module",

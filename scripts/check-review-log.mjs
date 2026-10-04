@@ -11,9 +11,10 @@ const REMOVING = new Set(["removed"]);
 const MINOR = new Set(["undone", "rejected"]);
 const ITEM_ID = /^(abstract|verbal|numeric|planning|situational)-[a-z0-9-]+-[0-9]{3,}$/;
 const HASH = /^[0-9a-f]{16}$/;
+const LEGACY_BASELINE = "2026-10-02-legacy-baseline.json";
 // Timestamps are written by the very machine that checks them: allow a small clock skew
-// instead of rejecting a decision made in the same minute.
-const FUTURE_TOLERANCE_MS = 60_000;
+// between a developer workstation and CI, while still rejecting materially future dates.
+const FUTURE_TOLERANCE_MS = 24 * 60 * 60 * 1000;
 
 function timestampErrors(d) {
   if (typeof d.at !== "string" || Number.isNaN(Date.parse(d.at))) return ["horodatage absent ou invalide"];
@@ -92,6 +93,7 @@ export function checkReviewLogData(approvedItems, logs) {
       let invalid = [];
       if (d && APPROVING.has(d.decision)) {
         invalid = approvingDecisionErrors(d);
+        if (d.decision === "legacy" && path.basename(file) !== LEGACY_BASELINE) invalid.push(`décision legacy autorisée uniquement dans ${LEGACY_BASELINE}`);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
         const fingerprint = `${d.version}|${d.hash}|${d.at}|${d.reviewer}`;
         const prior = seen.get(d.id) || [];

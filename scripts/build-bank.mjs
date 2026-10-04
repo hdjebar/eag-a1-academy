@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { checkBank } from "./validate-bank.mjs";
+import { writeFileAtomic } from "./lib/file-transaction.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPROVED_DIR = path.join(ROOT, "data/approved");
@@ -94,7 +95,7 @@ export function syncAppJs({ check = false } = {}) {
     const current = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null;
     if (current !== code) {
       inSync = false;
-      if (!check) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, code, "utf8"); }
+      if (!check) writeFileAtomic(file, code);
     }
   }
   return { total, inSync, bank };

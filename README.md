@@ -85,7 +85,7 @@ python3 -m http.server 8080
 
 ### 2. Outils de développement et tests
 
-Pour contribuer au code ou valider la banque de questions, Node.js 22+ est requis :
+Pour contribuer au code ou valider la banque de questions, Node.js 22.9+ est requis :
 
 ```bash
 # Installation des outils de validation (Ajv 2020-12)

@@ -19,7 +19,7 @@ const S = {
   mode: "offline", token: null, aiConfigured: false, workspaceRevision: null, approvedBaseHash: null,
   approved: {}, approvedOrig: {}, removed: new Set(),
   cands: [], files: {}, log: [], exportedLogCount: 0,
-  sel: { queue: null, bank: null }, bankDraft: null, bankSel: new Set(), tab: "queue", busy: false,
+  sel: { queue: null, bank: null }, bankDraft: null, bankSel: new Set(), tab: "queue", busy: false, refreshing: false,
 };
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -180,6 +180,7 @@ async function mergeFromServer() {
     toast("La banque approuvée a changé sur le disque : rechargez-la avant d'enregistrer.");
     return [];
   }
+  if (serverChanged) setApproved(st.approved);
   S.aiConfigured = st.aiConfigured; S.workspaceRevision = st.workspaceRevision;
   const added = [];
   for (const f of st.candidates) {
@@ -187,6 +188,14 @@ async function mergeFromServer() {
     else if (f.review) attachReview(f.review);
   }
   return added;
+}
+
+async function refreshServerView() {
+  if (S.mode !== "server" || S.busy || S.refreshing) return;
+  S.refreshing = true;
+  try { await mergeFromServer(); renderAll(); }
+  catch (e) { toast(`Actualisation impossible : ${e.message}`); }
+  finally { S.refreshing = false; }
 }
 
 /* ---------- Offline session persistence ---------- */
@@ -951,6 +960,8 @@ async function init() {
   if (await detectServer()) {
     $(".brand small").textContent = "Mode local (npm run admin) · lecture et écriture dans le dépôt";
     $("#drop").innerHTML = `<strong>Candidats chargés depuis <code>generated/</code></strong><span>Utilisez l'onglet Exporter pour générer ou relire de nouveaux lots.</span>`;
+    window.addEventListener("focus", refreshServerView);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshServerView(); });
   } else {
     const saved = load(STORE_KEY);
     if (saved && (saved.cands?.length || saved.log?.length)) {

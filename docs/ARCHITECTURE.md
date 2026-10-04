@@ -25,8 +25,9 @@ flowchart TB
 
     subgraph Runtime ["Application Client (Navigateur Web)"]
         direction TB
-        Build -->|"Compilation / Injection"| AppJS["app.js (Code & Banque intégrée)"]
+        Build -->|"Compilation"| BankJS["bank/app-bank.js"]
         HTML["eag-a1-academy.html"] --> AppJS
+        BankJS --> AppJS["app.js (Logique applicative)"]
         AppJS --> UI["Interface Utilisateur (Vue d'ensemble, Entraînement, Simulation, Revue)"]
     end
 ```
@@ -107,12 +108,7 @@ eag-a1-academy/
 
 ### 3.1. Exécution hors-ligne et compatibilité `file://`
 * **Zéro serveur d'application** : L'utilisateur peut double-cliquer sur `eag-a1-academy.html` depuis son explorateur de fichiers.
-* **Résolution du blocage CORS** : Les navigateurs bloquent souvent les requêtes `fetch()` vers des fichiers locaux sur le protocole `file://`. Pour contourner cette limite sans imposer de serveur web local (`localhost`), les questions validées sont compilées directement dans [`app.js`](../app.js) entre deux balises balisées :
-  ```javascript
-  /* QUESTION_BANK_START */
-  const q = { ... };
-  /* QUESTION_BANK_END */
-  ```
+* **Résolution du blocage CORS** : Les navigateurs bloquent souvent les requêtes `fetch()` vers des fichiers locaux sur le protocole `file://`. Pour contourner cette limite sans imposer de serveur web local (`localhost`), les questions validées sont compilées dans [`bank/app-bank.js`](../bank/app-bank.js) et [`bank/admin-bank.js`](../bank/admin-bank.js). Ces fichiers sont chargés par des balises `<script>` classiques avant la logique de l'application et de l'administration.
 
 ### 3.2. Confidentialité absolue (*Privacy by Design*)
 * **Aucune télémétrie ni traceur** : Zéro cookie, aucun analytics tiers, aucun appel réseau vers des API externes au runtime.
@@ -162,7 +158,7 @@ Les décisions structurantes du projet sont consignées sous forme d'**Architect
 * [ADR-0001 : Application cliente 100% statique et hors-ligne](adr/0001-static-offline-client.md)
 * [ADR-0002 : Séparation physique entre `data/approved/` et le scratchpad `generated/`](adr/0002-generated-scratchpad-separation.md)
 * [ADR-0003 : Pipeline Zero-Trust pour les banques de questions assistées par IA](adr/0003-ai-zero-trust-pipeline.md)
-* [ADR-0004 : Synchronisation des questions par compilation dans app.js](adr/0004-build-bank-compilation.md)
+* [ADR-0004 : Synchronisation des questions par compilation statique](adr/0004-build-bank-compilation.md)
 * [ADR-0005 : Items en texte brut, rendu échappé et formats alignés sur GovJobs](adr/0005-plain-text-items-and-official-formats.md)
 * [ADR-0006 : Interface d'administration à deux modes (hors ligne et serveur local)](adr/0006-admin-ui.md)
 * [ADR-0007 : Régénération par LLM sous forme de révisions relues](adr/0007-llm-revisions.md)

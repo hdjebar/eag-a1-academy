@@ -64,7 +64,14 @@ function readBody(req) {
   return new Promise((resolve, reject) => {
     let size = 0;
     const chunks = [];
-    req.on("data", (c) => { size += c.length; if (size > MAX_BODY) { reject(new Error("Requête trop volumineuse")); req.destroy(); } else chunks.push(c); });
+    let rejected = false;
+    const tooLarge = () => {
+      if (rejected) return;
+      rejected = true; chunks.length = 0;
+      const e = new Error("Requête trop volumineuse (maximum 5 Mo)"); e.status = 413; reject(e);
+    };
+    if (Number(req.headers["content-length"]) > MAX_BODY) tooLarge();
+    req.on("data", (c) => { if (rejected) return; size += c.length; if (size > MAX_BODY) tooLarge(); else chunks.push(c); });
     req.on("end", () => { try { resolve(JSON.parse(Buffer.concat(chunks).toString("utf8") || "{}")); } catch { reject(new Error("JSON invalide")); } });
     req.on("error", reject);
   });
@@ -302,9 +309,14 @@ const server = http.createServer(async (req, res) => {
     }
     if (req.method === "POST" && url.pathname === "/api/run") {
       if (running) return send(res, 409, { error: "Une tâche est déjà en cours" });
-      const body = await readBody(req);
-      running = body.task;
-      try { return send(res, 200, await task(body)); } finally { running = null; }
+      // Reserve synchronously, before reading the body: two requests arriving in
+      // the same event-loop turn cannot both pass the availability check.
+      running = "réception de la requête";
+      try {
+        const body = await readBody(req);
+        running = body.task || "tâche";
+        return send(res, 200, await task(body));
+      } finally { running = null; }
     }
     return send(res, 404, { error: "Introuvable" });
   } catch (e) {
