@@ -65,9 +65,9 @@ export function reviewLogErrors(log) {
  * approving decision for the item's id, compared by parsed instant (logs mix timezone
  * formats, so string order is not chronological). It must carry the item's version, its
  * reviewer, the item's own reviewedAt, and the content fingerprint (EagRules.contentHash)
- * of exactly what was approved. An « undone » decision resets the item's lifecycle:
- * the previous approval no longer counts, and the item may leave the bank without a
- * « removed » decision.
+ * of exactly what was approved. An « undone » decision cancels only the immediately
+ * preceding decision for the same id in chronological order. Cancelling a rejection
+ * therefore leaves an older bank approval intact.
  *
  * @param {object[]} approvedItems items currently in data/approved/
  * @param {{ file: string, log: object }[]} logs parsed review-log files, in processing order
@@ -77,8 +77,9 @@ export function checkReviewLogData(approvedItems, logs) {
   const latest = new Map();
   const lifecycle = new Map();
   const seen = new Map(); // id -> fingerprints already recorded, for exact-duplicate diagnostics
-  const history = new Map(); // id -> [{ d, t, file }] approving decisions, for undone restoration
+  const timeline = new Map(); // id -> all valid decisions, sorted below by real instant
   let entries = 0;
+  let sequence = 0;
   const errors = [];
   for (const { file, log } of logs) {
     const invalidLog = reviewLogErrors(log);
@@ -88,42 +89,49 @@ export function checkReviewLogData(approvedItems, logs) {
       const d = decisions[i];
       entries++;
       const t = d && typeof d.at === "string" ? Date.parse(d.at) : NaN;
+      let invalid = [];
       if (d && APPROVING.has(d.decision)) {
-        const invalid = approvingDecisionErrors(d);
+        invalid = approvingDecisionErrors(d);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
         const fingerprint = `${d.version}|${d.hash}|${d.at}|${d.reviewer}`;
         const prior = seen.get(d.id) || [];
         if (prior.includes(fingerprint)) { errors.push(`${file} décision ${i + 1} (${d.id}) : décision dupliquée`); continue; }
         prior.push(fingerprint);
         seen.set(d.id, prior);
-        const prev = latest.get(d.id);
-        if (!prev || t >= prev.t) latest.set(d.id, { ...d, t, file });
-        const hist = history.get(d.id) || [];
-        hist.push({ ...d, t, file });
-        history.set(d.id, hist);
       } else if (d && REMOVING.has(d.decision)) {
-        const invalid = removalDecisionErrors(d);
+        invalid = removalDecisionErrors(d);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
       } else if (d && MINOR.has(d.decision)) {
-        const invalid = minorDecisionErrors(d);
+        invalid = minorDecisionErrors(d);
         if (invalid.length) { errors.push(`${file} décision ${i + 1} (${d.id || "sans id"}) : ${invalid.join(" ; ")}`); continue; }
-        if (d.decision === "undone") {
-          // The undone cancels the latest approval of the id (e.g. a revision whose
-          // undo restores the previous version) and any earlier one remains in force.
-          const hist = history.get(d.id) || [];
-          let idx = -1;
-          for (let j = hist.length - 1; j >= 0; j--) if (hist[j].t <= t) { idx = j; break; }
-          if (idx !== -1) hist.splice(idx, 1);
-          history.set(d.id, hist);
-          const rest = hist.length ? hist.reduce((a, b) => (b.t >= a.t ? b : a)) : null;
-          if (rest) { latest.set(d.id, rest); lifecycle.set(d.id, rest); }
-          else { latest.delete(d.id); lifecycle.delete(d.id); }
-          continue;
-        }
+      } else {
+        errors.push(`${file} décision ${i + 1} (${d?.id || "sans id"}) : type de décision inconnu`);
+        continue;
       }
-      if (d && (APPROVING.has(d.decision) || REMOVING.has(d.decision))) {
-        const prev = lifecycle.get(d.id);
-        if (!prev || t >= prev.t) lifecycle.set(d.id, { ...d, t, file });
+      const list = timeline.get(d.id) || [];
+      list.push({ ...d, t, file, sequence: sequence++ });
+      timeline.set(d.id, list);
+    }
+  }
+
+  // Logs are separate files and may be serialized out of order. Resolve each item's
+  // history by the parsed instant, using input order only as a deterministic tie-break.
+  // An undo cancels the immediately preceding decision for that id—not the latest
+  // approval. Thus undoing a rejection is a no-op for the bank, while undoing a
+  // re-addition reveals the preceding removal.
+  for (const [id, decisions] of timeline) {
+    decisions.sort((a, b) => a.t - b.t || a.sequence - b.sequence);
+    const cancelled = new Set();
+    for (let i = 0; i < decisions.length; i++) {
+      if (decisions[i].decision === "undone" && i > 0) cancelled.add(decisions[i - 1].sequence);
+    }
+    for (const d of decisions) {
+      if (d.decision === "undone" || cancelled.has(d.sequence)) continue;
+      if (APPROVING.has(d.decision)) {
+        latest.set(id, d);
+        lifecycle.set(id, d);
+      } else if (REMOVING.has(d.decision)) {
+        lifecycle.set(id, d);
       }
     }
   }

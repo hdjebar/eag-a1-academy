@@ -13,6 +13,16 @@ const extract = (name) => {
 const mergeSrc = extract("mergeFromServer");
 const attachSrc = extract("attachReview");
 const reviewCurrentSrc = extract("reviewCurrent");
+const pendingLogSrc = extract("pendingLog");
+
+// The server must run the complete staged review gate before opening its write
+// transaction. This guards against accepting a log that CI rejects afterwards.
+{
+  const serverSource = fs.readFileSync(path.join(ROOT, "scripts/admin-server.mjs"), "utf8");
+  const gateAt = serverSource.indexOf("checkReviewLogData(stagedItems, logs)");
+  const writeAt = serverSource.indexOf("withFileRollback(touched");
+  if (gateAt < 0 || writeAt < 0 || gateAt > writeAt) throw new Error("Le serveur n'exécute pas le contrôle CI complet avant d'écrire");
+}
 
 const CATS = ["abstract", "verbal", "numeric", "planning", "situational"];
 const serverState = {
@@ -85,4 +95,14 @@ const mkContext = (state) => ({
   if (c2.ai !== null || c2.aiStale !== true) throw new Error("attachReview a accepté une revue obsolète");
 }
 
-console.log("Admin self-test passed (fusion serveur, garde de banque modifiée, rattachement des revues)");
+/* 4. A second offline export contains only decisions made since the first one. */
+{
+  const state = { log: [{ id: "a" }, { id: "b" }], exportedLogCount: 2 };
+  const none = vm.runInNewContext(`${pendingLogSrc}\npendingLog();`, { S: state });
+  if (none.length) throw new Error("Le second export hors ligne répète des décisions déjà exportées");
+  state.log.push({ id: "c" });
+  const next = vm.runInNewContext(`${pendingLogSrc}\npendingLog();`, { S: state });
+  if (next.length !== 1 || next[0].id !== "c") throw new Error("L'export hors ligne n'isole pas les nouvelles décisions");
+}
+
+console.log("Admin self-test passed (fusion serveur, garde de banque modifiée, rattachement des revues, export incrémental)");

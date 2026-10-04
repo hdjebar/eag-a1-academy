@@ -86,6 +86,40 @@ const mkDec = (item, over = {}) => ({
   const r = checkReviewLogData([v1], [{ file: "a.json", log: { decisions: [mkDec(v1), mkDec(v2), undone] } }]);
   if (r.errors.length) throw new Error(`annuler une révision doit rétablir l'approbation v1 — ${r.errors.join(" ; ")}`);
 }
+{
+  // Rejecting a revision and then undoing that rejection must not erase the
+  // already-approved bank item with the same id.
+  const item = mkItem();
+  const rejected = { id: item.id, decision: "rejected", reviewer: item.reviewer, at: "2026-10-03T10:00:00Z", reason: "révision à corriger" };
+  const undone = { id: item.id, decision: "undone", reviewer: item.reviewer, at: "2026-10-03T11:00:00Z" };
+  const r = checkReviewLogData([item], [{ file: "a.json", log: { decisions: [mkDec(item), rejected, undone] } }]);
+  if (r.errors.length) throw new Error(`rejeter puis annuler ne doit pas effacer l'approbation existante — ${r.errors.join(" ; ")}`);
+}
+{
+  // Two independent revise/undo cycles must both restore v1.
+  const v1 = mkItem();
+  const v2a = mkItem({ version: 2, reviewedAt: "2026-10-03T09:00:00Z", prompt: "Première révision suffisamment longue pour le test." });
+  const v2b = mkItem({ version: 2, reviewedAt: "2026-10-03T12:00:00Z", prompt: "Deuxième révision suffisamment longue pour le test." });
+  const decisions = [mkDec(v1), mkDec(v2a), { id: v1.id, decision: "undone", reviewer: v1.reviewer, at: "2026-10-03T10:00:00Z" }, mkDec(v2b), { id: v1.id, decision: "undone", reviewer: v1.reviewer, at: "2026-10-03T13:00:00Z" }];
+  const r = checkReviewLogData([v1], [{ file: "a.json", log: { decisions } }]);
+  if (r.errors.length) throw new Error(`réviser puis annuler deux fois doit rétablir v1 — ${r.errors.join(" ; ")}`);
+}
+{
+  // Remove, re-add the same id, then undo the re-add: removal remains effective.
+  const v1 = mkItem();
+  const v2 = mkItem({ version: 2, reviewedAt: "2026-10-03T10:00:00Z" });
+  const decisions = [mkDec(v1), { id: v1.id, decision: "removed", reviewer: v1.reviewer, at: "2026-10-03T09:00:00Z" }, mkDec(v2), { id: v1.id, decision: "undone", reviewer: v1.reviewer, at: "2026-10-03T11:00:00Z" }];
+  const r = checkReviewLogData([], [{ file: "a.json", log: { decisions } }]);
+  if (r.errors.length) throw new Error(`annuler une réintégration doit conserver le retrait précédent — ${r.errors.join(" ; ")}`);
+}
+{
+  // Serialization order is irrelevant: timestamps define reject -> undo.
+  const item = mkItem();
+  const rejected = { id: item.id, decision: "rejected", reviewer: item.reviewer, at: "2026-10-03T10:00:00Z", reason: "révision à corriger" };
+  const undone = { id: item.id, decision: "undone", reviewer: item.reviewer, at: "2026-10-03T11:00:00Z" };
+  const r = checkReviewLogData([item], [{ file: "late.json", log: { decisions: [undone] } }, { file: "early.json", log: { decisions: [rejected, mkDec(item)] } }]);
+  if (r.errors.length) throw new Error(`les journaux hors ordre doivent suivre leurs horodatages — ${r.errors.join(" ; ")}`);
+}
 
 /* The item's reviewedAt must match the decision's timestamp. */
 {

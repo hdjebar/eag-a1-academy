@@ -6,7 +6,7 @@ import { syncAppJs } from "./build-bank.mjs";
 import { EagRules } from "./lib/rules.mjs";
 import { candidateReviewHash } from "./lib/review-rules.mjs";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
-import { withLock } from "./lib/lockfile.mjs";
+import { acquire, release } from "./lib/lockfile.mjs";
 
 const ROOT = path.resolve(".");
 
@@ -41,10 +41,17 @@ if (values.help) {
   process.exit(0);
 }
 const candidateFile = positionals[0];
-if (!candidateFile || !fs.existsSync(candidateFile)) fail("Fichier candidat introuvable.");
 const reviewer = (values.reviewer || "").trim();
 if (reviewer.length < 2) fail("--reviewer est obligatoire : la promotion est une décision humaine.");
 if (!values.approve) fail("--approve est obligatoire : listez les identifiants retenus (ou « all »).");
+
+// The bank and candidates form one mutable snapshot. Lock before reading either,
+// otherwise an admin save between the read and write can be silently overwritten.
+let promotionLock = values["dry-run"] ? null : await acquire(ROOT, "promote");
+const releasePromotionLock = () => { release(promotionLock); promotionLock = null; };
+process.once("exit", releasePromotionLock);
+
+if (!candidateFile || !fs.existsSync(candidateFile)) fail("Fichier candidat introuvable.");
 
 const candidates = JSON.parse(fs.readFileSync(candidateFile, "utf8"));
 if (!Array.isArray(candidates)) fail("Le fichier candidat doit contenir un tableau JSON.");
@@ -158,7 +165,7 @@ if (values["dry-run"]) {
 const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
 const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
-const { total } = await withLock(ROOT, "promote", () => withFileRollback(touched, () => {
+const { total } = withFileRollback(touched, () => {
   for (const [target, bank] of byCategory) writeFileAtomic(target, JSON.stringify(bank, null, 2) + "\n");
   writeFileAtomic(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n");
   if (remaining.length) writeFileAtomic(candidateFile, JSON.stringify(remaining, null, 2) + "\n");
@@ -167,7 +174,9 @@ const { total } = await withLock(ROOT, "promote", () => withFileRollback(touched
     if (fs.existsSync(reviewFile)) fs.rmSync(reviewFile);
   }
   return syncAppJs();
-}));
+});
+releasePromotionLock();
+process.removeListener("exit", releasePromotionLock);
 console.log(`Journal de relecture : ${logFile}`);
 if (remaining.length) console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
 else console.log(`\nTous les items traités : ${candidateFile} supprimé.`);

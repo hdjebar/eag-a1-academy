@@ -14,9 +14,9 @@ export function candidateReviewHash(item) {
 }
 
 /**
- * A content change must increment the version by exactly one: the review log ties
- * each decision to a version, so an in-place rewrite at the same version would
- * keep the trail ambiguous.
+ * A content change must advance the version. Several edits may be accumulated in
+ * the admin UI before one save, so the final version can legitimately skip values;
+ * the review decision still binds the exact final version and content hash.
  * @param {{ version?: number }|null} old previous version of the item (null for additions)
  * @param {{ version?: number }} item proposed version of the item
  * @returns {string[]} empty when the transition is valid
@@ -25,7 +25,7 @@ export function versionBumpErrors(old, item) {
   if (!old) return [];
   const from = old.version || 1;
   const to = item?.version;
-  if (to !== from + 1) return [`la version doit passer de ${from} à ${to} (incrément de 1 attendu)`];
+  if (!Number.isInteger(to) || to <= from) return [`la version doit être supérieure à ${from} (reçu : ${to})`];
   return [];
 }
 

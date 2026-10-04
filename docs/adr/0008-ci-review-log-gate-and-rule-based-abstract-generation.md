@@ -18,6 +18,9 @@ Accepté
    - Toute question présente dans `data/approved/` doit correspondre exactement à une décision humaine dans `data/review-log/` (identifiant, numéro de version, nom du relecteur et empreinte de contenu `EagRules.contentHash`). L'empreinte est un FNV-1a 64 bits, identique dans le navigateur et dans Node : elle détecte une modification accidentelle ou non tracée, pas une falsification délibérée (ce n'est pas un hachage cryptographique).
    - Toute modification manuelle ou ajout direct sans décision tracée change l'empreinte et fait échouer la CI.
    - Les questions préexistantes à l'audit sont inventoriées dans `data/review-log/2026-10-02-legacy-baseline.json` (décision `legacy`) : cet inventaire reprend le relecteur inscrit dans chaque question et ne constitue pas une nouvelle approbation.
+   - Les décisions sont ordonnées par leur instant réel, même lorsque les fichiers de journal ont été enregistrés dans un autre ordre ou utilisent des fuseaux différents.
+   - Une décision `undone` annule uniquement la décision chronologiquement précédente du même identifiant. Annuler un rejet ne retire donc pas l'approbation déjà présente dans la banque ; annuler une réintégration restaure le retrait précédent.
+   - Deux décisions d'approbation strictement identiques sont refusées. En mode hors ligne, chaque export ne contient que les décisions prises depuis l'export précédent.
 
 2. **Générateur déterministe de figures abstraites par règles (`scripts/generate-abstract-figures.mjs`)** :
    - Production d'items candidats pour le test géométrique via un moteur algorithmique déterministe sans LLM pour la logique visuelle.

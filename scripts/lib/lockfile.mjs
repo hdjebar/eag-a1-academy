@@ -14,8 +14,30 @@ const DEFAULT_ATTEMPTS = 300;
 const DEFAULT_DELAY_MS = 100;
 
 export function LOCK_PATH(repoRoot) {
-  const key = crypto.createHash("sha256").update(path.resolve(repoRoot)).digest("hex").slice(0, 12);
+  let canonical = path.resolve(repoRoot);
+  try { canonical = fs.realpathSync.native(canonical); } catch { /* path may not exist yet */ }
+  if (process.platform === "win32") canonical = canonical.toLowerCase();
+  const key = crypto.createHash("sha256").update(canonical).digest("hex").slice(0, 12);
   return path.join(LOCK_DIR, `eag-a1-academy-${key}.lock`);
+}
+
+function holderIsAlive(holder) {
+  if (!holder || !Number.isInteger(holder.pid) || holder.pid <= 0) return null;
+  try { process.kill(holder.pid, 0); return true; }
+  catch (e) { return e.code === "EPERM" ? true : e.code === "ESRCH" ? false : null; }
+}
+
+/** Atomically move the observed stale lock out of the lock pathname. */
+function retireStaleLock(lock, token) {
+  const retired = `${lock}.stale-${token}`;
+  try {
+    fs.renameSync(lock, retired);
+    try { fs.rmSync(retired, { force: true }); } catch { /* harmless residue */ }
+    return true;
+  } catch (e) {
+    if (e.code === "ENOENT" || e.code === "EEXIST" || e.code === "EPERM" || e.code === "EACCES") return false;
+    throw e;
+  }
 }
 
 /**
@@ -38,10 +60,17 @@ export async function acquire(repoRoot, name, opts = {}) {
       return { path: lock, token };
     } catch (e) {
       if (e.code !== "EEXIST") throw e;
-      // Steal a lock whose holder died (or is older than the staleness window).
+      // A dead holder can be replaced immediately. Malformed/legacy locks remain
+      // protected until stale. Rename is the arbitration point: only one contender
+      // can move this exact pathname, unlike check-then-delete.
       try {
         const stat = fs.statSync(lock);
-        if (Date.now() - stat.mtimeMs > STALE_MS) { fs.rmSync(lock, { force: true }); continue; }
+        let holder = null;
+        try { holder = JSON.parse(fs.readFileSync(lock, "utf8")); } catch { /* partial or legacy lock */ }
+        const alive = holderIsAlive(holder);
+        if (alive === false || (alive === null && Date.now() - stat.mtimeMs > STALE_MS)) {
+          if (retireStaleLock(lock, token)) continue;
+        }
       } catch { continue; } // vanished between open and stat: retry immediately
       await new Promise((r) => setTimeout(r, delayMs));
     }
@@ -55,7 +84,7 @@ export function release(handle) {
   try {
     const holder = JSON.parse(fs.readFileSync(handle.path, "utf8"));
     if (holder.token !== handle.token) return;
-  } catch { /* lock gone or unreadable: nothing to release */ }
+  } catch { return; /* lock gone or unreadable: never remove what we cannot identify */ }
   fs.rmSync(handle.path, { force: true });
 }
 

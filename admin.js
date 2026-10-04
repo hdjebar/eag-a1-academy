@@ -21,7 +21,7 @@ const STORE_KEY = "eag-admin-session-v1";
 const S = {
   mode: "offline", token: null, aiConfigured: false, workspaceRevision: null, approvedBaseHash: null,
   approved: {}, approvedOrig: {}, removed: new Set(),
-  cands: [], files: {}, log: [],
+  cands: [], files: {}, log: [], exportedLogCount: 0,
   sel: { queue: null, bank: null }, bankDraft: null, bankSel: new Set(), tab: "queue", busy: false,
 };
 
@@ -195,7 +195,7 @@ async function mergeFromServer() {
 /* ---------- Offline session persistence ---------- */
 function persist() {
   if (S.mode !== "offline") return;
-  store(STORE_KEY, { savedAt: nowIso(), baseHash: S.approvedBaseHash, cands: S.cands, files: S.files, approved: S.approved, removed: [...S.removed], log: S.log });
+  store(STORE_KEY, { savedAt: nowIso(), baseHash: S.approvedBaseHash, cands: S.cands, files: S.files, approved: S.approved, removed: [...S.removed], log: S.log, exportedLogCount: S.exportedLogCount });
 }
 function restore(saved) {
   if (!saved.baseHash || saved.baseHash !== S.approvedBaseHash) {
@@ -203,6 +203,7 @@ function restore(saved) {
     return false;
   }
   S.cands = saved.cands || []; S.files = saved.files || {}; S.log = saved.log || [];
+  S.exportedLogCount = Math.max(0, Math.min(Number.isInteger(saved.exportedLogCount) ? saved.exportedLogCount : 0, S.log.length));
   // Persisted sessions may predate content-bound AI reviews. Never trust the
   // serialized aiStale flag; derive it again from the current item and review.
   for (const c of S.cands) c.aiStale = Boolean(c.ai && !reviewCurrent(c.item, c.ai));
@@ -662,7 +663,10 @@ function changes() {
   }).filter((f) => f.decided || f.isNew || f.name === "(nouvelles questions)" || S.cands.some((c) => c.file === f.name && c.item !== undefined && c.orig !== JSON.stringify(c.item)));
   return { cats, files };
 }
-function stamp() { return new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19); }
+function stamp() { return new Date().toISOString().replace(/[:.]/g, "-").replace(/Z$/, ""); }
+function pendingLog() {
+  return S.log.slice(S.exportedLogCount);
+}
 function exportPlan() {
   const { cats, files } = changes();
   const out = [];
@@ -674,37 +678,46 @@ function exportPlan() {
     } else if (f.remaining.length) out.push({ path: `generated/${f.name}`, content: JSON.stringify(f.remaining, null, 2) + "\n" });
     else if (!f.isNew) { deletes.push(`generated/${f.name}`); if (f.hasReview) deletes.push(`generated/${f.name.replace(/\.json$/, ".review.json")}`); }
   }
-  if (S.log.length) out.push({ path: `data/review-log/${stamp()}.json`, content: JSON.stringify({ reviewer: reviewer(), exportedAt: nowIso(), mode: S.mode, decisions: S.log }, null, 2) + "\n" });
+  const decisions = pendingLog();
+  if (decisions.length) out.push({ path: `data/review-log/${stamp()}.json`, content: JSON.stringify({ reviewer: reviewer(), exportedAt: nowIso(), mode: S.mode, decisions }, null, 2) + "\n" });
   return { cats, files, out, deletes };
 }
 function renderExport() {
   const plan = exportPlan();
   const n = plan.cats.length + plan.deletes.length + plan.files.filter((f) => f.remaining.length).length;
   $("#changecount").textContent = plan.cats.length;
-  const approvedN = S.log.filter((l) => l.decision === "approved").length, rejectedN = S.log.filter((l) => l.decision === "rejected").length;
+  const pending = pendingLog();
+  const approvedN = pending.filter((l) => l.decision === "approved").length, rejectedN = pending.filter((l) => l.decision === "rejected").length;
   const server = S.mode === "server";
   $("#exportpanel").innerHTML = `
     <div class="notice">${server ? "Mode local (<code>npm run admin</code>) : les fichiers sont écrits directement dans le dépôt, puis <code>app.js</code> est resynchronisé. Il ne vous reste qu'à committer." : "Mode hors ligne : téléchargez l'archive, décompressez-la à la racine du dépôt (elle remplace les fichiers concernés), supprimez les fichiers candidats traités, puis lancez <code>npm run build:bank &amp;&amp; npm test</code> et committez."}</div>
     <div class="stats">
       <div class="stat"><strong>${approvedN}</strong><span>item(s) approuvé(s)</span></div>
       <div class="stat"><strong>${rejectedN}</strong><span>item(s) rejeté(s)</span></div>
-      <div class="stat"><strong>${S.log.filter((l) => l.decision === "modified").length}</strong><span>question(s) modifiée(s)</span></div>
+      <div class="stat"><strong>${pending.filter((l) => l.decision === "modified").length}</strong><span>question(s) modifiée(s)</span></div>
       <div class="stat"><strong>${S.removed.size}</strong><span>question(s) retirée(s)</span></div>
     </div>
     <h2 style="margin:var(--s4) 0 var(--s2)">Fichiers concernés</h2>
     <div class="files">${plan.out.map((f) => `<div class="file"><code>${esc(f.path)}</code><span class="actions"><span class="chip info">${f.path.startsWith("data/approved") ? "remplacé" : "écrit"}</span>${server ? "" : `<button class="btn ghost" data-dl="${esc(f.path)}">Télécharger</button>`}</span></div>`).join("")}
       ${plan.deletes.map((p) => `<div class="file"><code>${esc(p)}</code><span class="chip ko">${server ? "supprimé" : "à supprimer"}</span></div>`).join("")}
-      ${n || S.log.length ? "" : `<p class="empty">Aucune modification pour l'instant.</p>`}</div>
+      ${n || pending.length ? "" : `<p class="empty">Aucune modification pour l'instant.</p>`}</div>
     <div class="actions" style="margin-top:var(--s4)">
-      ${server ? `<button class="btn" id="save" ${n || S.log.length ? "" : "disabled"}>Enregistrer dans le dépôt</button><button class="btn secondary" id="reloadsrv">Recharger depuis le disque</button>` : `<button class="btn" id="zip" ${plan.out.length ? "" : "disabled"}>Télécharger l'archive (.zip)</button><button class="btn secondary" id="clearsession">Effacer la session locale</button>`}
+      ${server ? `<button class="btn" id="save" ${n || pending.length ? "" : "disabled"}>Enregistrer dans le dépôt</button><button class="btn secondary" id="reloadsrv">Recharger depuis le disque</button>` : `<button class="btn" id="zip" ${plan.out.length ? "" : "disabled"}>Télécharger l'archive (.zip)</button><button class="btn secondary" id="clearsession">Effacer la session locale</button>`}
     </div>
     ${server ? "" : `<pre class="cmd">${esc([...plan.deletes.map((p) => `git rm -q --ignore-unmatch ${p}`), "npm run build:bank && npm test", 'git add data app.js admin.js && git commit -m "feat: review question bank"'].join("\n"))}</pre>`}
     ${server ? tasksHtml() : ""}`;
   $$("[data-dl]").forEach((b) => (b.onclick = () => { const f = plan.out.find((x) => x.path === b.dataset.dl); download(f.path.split("/").pop(), new Blob([f.content], { type: "application/json" })); }));
-  if ($("#zip")) $("#zip").onclick = () => { download(`eag-banque-${stamp()}.zip`, zip(plan.out)); toast("Archive téléchargée"); };
+  if ($("#zip")) $("#zip").onclick = () => {
+    download(`eag-banque-${stamp()}.zip`, zip(plan.out));
+    // Keep the audit history locally, but subsequent exports include only decisions
+    // made after this archive. Re-exporting changed bank files is harmless because
+    // their earlier decisions already live in the first archive.
+    S.exportedLogCount = S.log.length;
+    persist(); renderAll(); toast("Archive téléchargée");
+  };
   if ($("#clearsession")) $("#clearsession").onclick = () => { if (confirm("Effacer la session locale (candidats chargés et décisions non exportées) ?")) { store(STORE_KEY); location.reload(); } };
   if ($("#save")) $("#save").onclick = () => saveToServer(plan);
-  if ($("#reloadsrv")) $("#reloadsrv").onclick = async () => { await reloadFromServer(); S.log = []; renderAll(); toast("Données rechargées"); };
+  if ($("#reloadsrv")) $("#reloadsrv").onclick = async () => { await reloadFromServer(); S.log = []; S.exportedLogCount = 0; renderAll(); toast("Données rechargées"); };
   if (server) bindTasks();
 }
 function download(name, blob) {
@@ -756,7 +769,7 @@ async function saveToServer(plan) {
     $("#save").disabled = true;
     const res = await api("/api/save", { workspaceRevision: S.workspaceRevision, approved, candidates, manual, log: { reviewer: reviewer(), decisions: S.log } });
     toast(`Enregistré : ${res.written.length} fichier(s) écrit(s), ${res.deleted.length} supprimé(s)`);
-    S.log = [];
+    S.log = []; S.exportedLogCount = 0;
     await reloadFromServer(); renderAll();
     taskOutput(`✅ Enregistré.\nÉcrits : ${res.written.join(", ") || "—"}\nSupprimés : ${res.deleted.join(", ") || "—"}\n${res.build}`);
   } catch (e) { toast("Échec de l'enregistrement"); taskOutput(`❌ ${e.message}`); $("#save").disabled = false; }

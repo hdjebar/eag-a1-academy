@@ -17,7 +17,7 @@ import { syncAppJs } from "./build-bank.mjs";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
 import { withLock } from "./lib/lockfile.mjs";
 import { EagRules } from "./lib/rules.mjs";
-import { approvingDecisionErrors, removalDecisionErrors, minorDecisionErrors } from "./check-review-log.mjs";
+import { approvingDecisionErrors, removalDecisionErrors, minorDecisionErrors, checkReviewLogData } from "./check-review-log.mjs";
 import { versionBumpErrors } from "./lib/review-rules.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -107,6 +107,9 @@ function save(body) {
   const manual = Array.isArray(body.manual) ? body.manual : [];
   const decisions = Array.isArray(body.log?.decisions) ? body.log.decisions : [];
   const reviewer = String(body.log?.reviewer || "").trim();
+  const savedAt = new Date().toISOString();
+  const logName = decisions.length ? `${stamp()}.json` : null;
+  const proposedLog = decisions.length ? { reviewer, savedAt, mode: "server", decisions } : null;
   const currentBank = approvedState();
   const currentCandidates = candidateState();
   if (body.workspaceRevision !== workspaceRevision(currentBank, currentCandidates)) {
@@ -168,6 +171,20 @@ function save(body) {
       errors.push(...versionBumpErrors(old, item).map((e) => `${id} : ${e}`));
     }
   }
+
+  // Apply the same complete review-log gate as CI to the staged bank and staged log.
+  // This catches invalid minor entries, chronological undo mistakes, duplicates and
+  // lifecycle inconsistencies before the transaction touches any file.
+  const logs = [];
+  if (fs.existsSync(LOG_DIR)) {
+    for (const name of fs.readdirSync(LOG_DIR).filter((x) => x.endsWith(".json")).sort()) {
+      try { logs.push({ file: name, log: readJson(path.join(LOG_DIR, name)) }); }
+      catch (e) { errors.push(`${name} : JSON illisible (${e.message})`); }
+    }
+  }
+  if (proposedLog) logs.push({ file: logName, log: proposedLog });
+  const stagedItems = CATEGORIES.flatMap((c) => Array.isArray(finalBank[c]) ? finalBank[c] : []);
+  errors.push(...checkReviewLogData(stagedItems, logs).errors);
   if (errors.length) { const e = new Error(errors.slice(0, 20).join("\n")); e.status = 400; throw e; }
 
   // 2. Write as one recoverable transaction. Candidate deletion happens only inside
@@ -175,7 +192,7 @@ function save(body) {
   const written = [];
   const deleted = [];
   const manualFile = manual.length ? path.join(GENERATED, `manual-${stamp()}.json`) : null;
-  const logFile = decisions.length ? path.join(LOG_DIR, `${stamp()}.json`) : null;
+  const logFile = logName ? path.join(LOG_DIR, logName) : null;
   const touched = [path.join(ROOT, "app.js"), path.join(ROOT, "admin.js"), ...Object.keys(approved).map((c) => path.join(APPROVED, `${c}.json`))];
   for (const name of Object.keys(candidates)) {
     const f = path.join(GENERATED, name);
@@ -195,7 +212,7 @@ function save(body) {
       } else { writeJson(f, items); written.push(rel(f)); }
     }
     if (manualFile) { writeJson(manualFile, manual); written.push(rel(manualFile)); }
-    if (logFile) { writeJson(logFile, { reviewer, savedAt: new Date().toISOString(), mode: "server", decisions }); written.push(rel(logFile)); }
+    if (logFile) { writeJson(logFile, proposedLog); written.push(rel(logFile)); }
     return syncAppJs();
   });
   return { written, deleted, build: `app.js et admin.js resynchronisés (${total} questions).` };
