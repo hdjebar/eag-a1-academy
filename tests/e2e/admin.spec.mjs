@@ -6,6 +6,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { candidateReviewHash } from "../../scripts/lib/review-rules.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let dir, server, adminUrl;
@@ -29,8 +30,13 @@ test.beforeAll(async () => {
     candidate(1, "Quel est le montant après une hausse de 15 % d'un loyer de 820 euros ?", "Un loyer mensuel de 820 euros augmente de 15 % au 1er janvier.", ["943 euros", "835 euros", "963 euros", "923 euros"], 0),
     candidate(2, "Combien de jours ouvrés faut-il pour traiter 96 dossiers à 8 dossiers par jour ?", "Une équipe traite chaque jour ouvré 8 dossiers d'aide au logement ; 96 dossiers sont en attente.", ["10 jours", "12 jours", "14 jours", "8 jours"], 1),
   ];
+  const original = JSON.parse(fs.readFileSync(path.join(dir, "data/approved/numeric.json"), "utf8"))[0];
+  const revision = { ...original, prompt: `${original.prompt} (révision E2E)`, reviewStatus: "candidate", revisionOf: original.id };
+  delete revision.reviewer;
+  delete revision.reviewedAt;
+  items.push(revision);
   fs.writeFileSync(path.join(dir, "generated/e2e.json"), JSON.stringify(items, null, 2));
-  fs.writeFileSync(path.join(dir, "generated/e2e.review.json"), JSON.stringify({ model: "fixture", reviews: items.map((x) => ({ id: x.id, decision: "pass", issues: [], chosenIndex: x.correctIndex })) }, null, 2));
+  fs.writeFileSync(path.join(dir, "generated/e2e.review.json"), JSON.stringify({ model: "fixture", reviews: items.map((x) => ({ id: x.id, decision: "pass", issues: [], chosenIndex: x.correctIndex, candidateHash: candidateReviewHash(x) })) }, null, 2));
 
   server = spawn(process.execPath, ["scripts/admin-server.mjs"], { cwd: dir, env: { ...process.env, ADMIN_PORT: String(4400 + Math.floor(Math.random() * 400)) } });
   adminUrl = await new Promise((resolve, reject) => {
@@ -44,11 +50,11 @@ test.beforeAll(async () => {
 test.afterAll(() => { server?.kill(); if (dir) fs.rmSync(dir, { recursive: true, force: true }); });
 
 test.setTimeout(90_000);
-test("administration : approuver, rejeter, enregistrer, puis contrôle de relecture", async ({ page }) => {
+test("administration : approuver, rejeter, annuler un rejet, enregistrer, puis contrôle de relecture", async ({ page }) => {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto(adminUrl);
-  await expect(page.locator("#queuecount")).toHaveText("2", { timeout: 20000 });
+  await expect(page.locator("#queuecount")).toHaveText("3", { timeout: 20000 });
   await page.fill("#reviewer", "Relecteur E2E");
 
   await page.locator('[data-key*="numeric-e2e-001"]').click();
@@ -60,6 +66,15 @@ test("administration : approuver, rejeter, enregistrer, puis contrôle de relect
   await page.click("#reject");
   await expect(page.locator('[data-key*="numeric-e2e-002"]')).toContainText("Rejeté");
 
+  // Regression: a revision shares its id with the approved bank item. Rejecting
+  // and undoing it must not cancel that older approval when the server runs CI.
+  const revisionId = JSON.parse(fs.readFileSync(path.join(dir, "generated/e2e.json"), "utf8"))[2].id;
+  await page.locator(`[data-key*="${revisionId}"]`).click();
+  await page.fill("#reason", "Révision refusée pour le test");
+  await page.click("#reject");
+  await page.click("#undo");
+  await expect(page.locator(`[data-key*="${revisionId}"]`)).toContainText("À traiter");
+
   await page.click('[data-tab="export"]');
   await page.click("#save");
   await expect(page.locator("body")).toContainText("recompilés", { timeout: 15000 });
@@ -68,6 +83,7 @@ test("administration : approuver, rejeter, enregistrer, puis contrôle de relect
   const approved = numeric.find((x) => x.id === "numeric-e2e-001");
   expect(approved?.reviewer).toBe("Relecteur E2E");
   expect(numeric.some((x) => x.id === "numeric-e2e-002")).toBe(false);
+  expect(numeric.some((x) => x.id === revisionId)).toBe(true);
   expect(fs.readFileSync(path.join(dir, "bank/app-bank.js"), "utf8")).toContain("numeric-e2e-001");
   // The decision written by the admin page satisfies the CI review gate.
   execFileSync(process.execPath, ["scripts/check-review-log.mjs"], { cwd: dir, stdio: "pipe" });
