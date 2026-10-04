@@ -1,0 +1,81 @@
+[
+  {
+    "id": "numeric-chart-222",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "De quel pourcentage le nombre de dossiers clôturés a-t-il augmenté entre janvier et avril ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Dossiers clôturés par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr."
+      ],
+      "series": [
+        {
+          "name": "Dossiers clôturés",
+          "values": [
+            240,
+            300,
+            270,
+            360
+          ]
+        }
+      ]
+    },
+    "options": [
+      "50 %",
+      "33,3 %",
+      "120 %",
+      "150 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : l'augmentation de 120 dossiers représente 50 % des 240 dossiers de janvier.",
+      "Divise l'augmentation par la valeur d'avril au lieu de la valeur initiale de janvier.",
+      "Confond l'augmentation absolue de 120 dossiers avec un pourcentage.",
+      "Calcule la valeur d'avril en pourcentage de janvier, et non le taux d'augmentation."
+    ],
+    "explanation": "Le nombre passe de 240 à 360, soit une hausse de 120 dossiers. Le taux d'augmentation est 120 / 240 × 100 = 50 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-04T05:15:00+02:00"
+  },
+  {
+    "id": "verbal-epso261001-002",
+    "version": 1,
+    "category": "verbal",
+    "itemFormat": "tfcs",
+    "skill": "vrai-faux-indetermine",
+    "difficulty": 1,
+    "language": "fr",
+    "estimatedSeconds": 60,
+    "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure accessible en permanence.",
+    "options": [
+      "Vrai",
+      "Faux",
+      "On ne peut pas savoir"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : les retours sont possibles tous les jours, pour tous.",
+      "La restriction ne concerne que les emprunts à la borne.",
+      "Le texte répond explicitement : « Les retours restent possibles tous les jours »."
+    ],
+    "explanation": "La condition de carte annuelle s'applique aux emprunts du dimanche, pas aux retours : « Les retours restent possibles tous les jours grâce à une boîte extérieure. »",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "candidate",
+    "createdAt": "2026-10-01T23:30:00+02:00",
+    "revisionOf": "verbal-epso261001-002"
+  }
+]
