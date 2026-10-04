@@ -36,7 +36,7 @@ Application web statique, académique et **non officielle** pour s'entraîner au
   - Évaluation de pertinence sur échelle 1 à 4 pour chaque réaction du jugement situationnel (`rating`).
 - **Retour pédagogique à 100 %** : chaque option (bonne réponse ou distracteur) intègre une justification unitaire (`optionRationales`) expliquant l'erreur cognitive ou la règle appliquée.
 - **Trois modes d'entraînement** :
-  - *Entraînement guidé* : correction immédiate après chaque validation avec explication pas à pas.
+  - *Entraînement guidé* : correction immédiate après chaque validation avec explication pas à pas. La durée suit le rythme configuré pour 10 questions (minimum 3 minutes) ; choisir « Toutes les questions » conserve ce rythme et augmente donc la durée avec la taille de la banque.
   - *Simulation chronométrée* : 15 questions en 25 minutes avec correction différée et calcul de concordance.
   - *Examen blanc de 2 h* : les cinq tests A1 l'un après l'autre, écran de consignes et chronomètre par test, bilan par test et moyenne (hypothèse de 24 minutes par test, réglable dans la constante `EXAM` de `app.js` ; GovJobs ne publie ni l'ordre ni le temps par test).
 - **Neutralisation des biais** : brassage aléatoire des options à chaque affichage (algorithme de Fisher-Yates).

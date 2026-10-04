@@ -49,6 +49,13 @@ test("une banque absente affiche une erreur explicite", async ({ page }) => {
   await expect(page.locator(".module")).toHaveCount(0);
 });
 
+test("les données d'administration absentes affichent une erreur explicite", async ({ page }) => {
+  await page.route("**/bank/admin-bank.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("/admin.html");
+  await expect(page.getByRole("alert")).toContainText("Données d'administration indisponibles");
+  await expect(page.getByRole("alert")).toContainText("présent, non vide et à jour");
+});
+
 test("entraînement : bonne réponse, erreur avec justification, question passée, bilan", async ({ page }) => {
   await useBank(page, { ...emptyBank, numeric: [item("n1"), item("n2"), item("n3")] });
   const errors = watchErrors(page);
