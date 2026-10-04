@@ -2,8 +2,10 @@
 const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4 4l2 2M18 18l2 2M1 12h2M21 12h2M4 20l2-2M18 6l2-2"/></svg>',moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg>';
 const modules={abstract:{title:"Raisonnement abstrait",code:"RA",desc:"Compléter des séries et matrices de figures.",minutes:8},verbal:{title:"Raisonnement verbal",code:"RV",desc:"Conclure uniquement à partir du texte.",minutes:9},numeric:{title:"Raisonnement numérique",code:"RN",desc:"Interpréter tableaux, proportions et variations.",minutes:10},planning:{title:"Planification",code:"PL",desc:"Organiser selon délais, disponibilités et priorités.",minutes:10},situational:{title:"Jugement situationnel",code:"JS",desc:"Évaluer chaque réaction : servir l’usager et conseiller.",minutes:12}};
 /* Libellés et échappement partagés : shared/ui.js (une seule définition pour app et admin). */
-const skillLabels=globalThis.EagUI.SKILL_LABEL,ratingLabels=globalThis.EagUI.RATING_LABEL;
-const esc=globalThis.EagUI.esc;
+/* Sans shared/ui.js, init() affiche un message ; esc ne renvoie rien plutôt que du texte non échappé. */
+const UI=globalThis.EagUI||null;
+const skillLabels=UI?.SKILL_LABEL||{},ratingLabels=UI?.RATING_LABEL||{};
+const esc=UI?.esc||(()=>"");
 /* Examen blanc : approximation de travail. GovJobs publie la durée totale (2 h) et la liste des tests A1,
    mais ni l'ordre, ni le temps par test, ni le nombre de questions. Ajustez ces valeurs dès qu'ils sont connus. */
 const EXAM={sections:["abstract","verbal","numeric","planning","situational"],minutesPerSection:24,questionsPerSection:10};
@@ -170,6 +172,10 @@ function renderModules(){
   }).join('');
 }
 function init(){
+  if(!UI){
+    $('#main').innerHTML='<section class="panel" role="alert"><p class="eyebrow">Chargement impossible</p><h1>Un fichier de l\'application manque.</h1><p class="lede">Vérifiez que le fichier <code>shared/ui.js</code> est présent, puis rechargez la page.</p></section>';
+    return;
+  }
   if(!Object.values(q).some(items=>Array.isArray(items)&&items.length)){
     $('#main').innerHTML='<section class="panel" role="alert"><p class="eyebrow">Chargement impossible</p><h1>La banque de questions est indisponible.</h1><p class="lede">Vérifiez que le fichier <code>bank/app-bank.js</code> est présent et non vide, puis rechargez la page.</p></section>';
     return;

@@ -11,11 +11,6 @@ import path from "node:path";
 const LOCK_DIR = os.tmpdir();
 const STALE_MS = 5 * 60 * 1000;
 const TAKEOVER_STALE_MS = 30 * 1000;
-// Les verrous vivent quelques secondes : un verrou qui prétend être détenu par un
-// processus vivant mais qui a plus de 30 min est presque sûrement le vestige d'un
-// processus mort dont le pid a été recyclé. Un détenteur légitime suspendu est
-// donc repris après ce délai au lieu de bloquer les écrivains pour toujours.
-const PID_REUSE_MS = 30 * 60 * 1000;
 const DEFAULT_ATTEMPTS = 300;
 const DEFAULT_DELAY_MS = 100;
 
@@ -27,10 +22,38 @@ export function LOCK_PATH(repoRoot) {
   return path.join(LOCK_DIR, `eag-a1-academy-${key}.lock`);
 }
 
+/**
+ * Start time of a process (clock ticks since boot, Linux /proc), or null where unavailable.
+ * A pid plus its start time identifies one process: a recycled pid has another start time.
+ * @param {number} pid
+ * @returns {string|null}
+ */
+export function processStart(pid) {
+  try {
+    const stat = fs.readFileSync(`/proc/${pid}/stat`, "utf8");
+    // Field 2 (comm) may contain spaces and parentheses: fields resume after the last ")".
+    return stat.slice(stat.lastIndexOf(")") + 2).split(" ")[19] || null;
+  } catch { return null; }
+}
+
+function holderRecord(name, token) {
+  return JSON.stringify({ pid: process.pid, pidStart: processStart(process.pid), name, token, since: new Date().toISOString() });
+}
+
+/**
+ * true: the holder process still runs; false: it is gone (or its pid now names another
+ * process); null: unknown (no pid recorded). Lock age is never used to override a live
+ * holder: a suspended or long-running writer keeps its lock (no lost update).
+ */
 function holderIsAlive(holder) {
   if (!holder || !Number.isInteger(holder.pid) || holder.pid <= 0) return null;
-  try { process.kill(holder.pid, 0); return true; }
+  try { process.kill(holder.pid, 0); }
   catch (e) { return e.code === "EPERM" ? true : e.code === "ESRCH" ? false : null; }
+  if (typeof holder.pidStart === "string") {
+    const now = processStart(holder.pid);
+    if (now !== null && now !== holder.pidStart) return false; // pid recycled by another process
+  }
+  return true;
 }
 
 /** Atomically move the observed stale lock out of the lock pathname. */
@@ -55,10 +78,7 @@ function readLock(lock) {
 
 function canRetire(snapshot, staleMs = STALE_MS) {
   const alive = holderIsAlive(snapshot.holder);
-  const age = Date.now() - snapshot.stat.mtimeMs;
-  return alive === false
-    || (alive === null && age > staleMs)
-    || (alive === true && age > PID_REUSE_MS);
+  return alive === false || (alive === null && Date.now() - snapshot.stat.mtimeMs > staleMs);
 }
 
 function sameLock(a, b) {
@@ -71,7 +91,7 @@ function acquireTakeoverGuard(lock, name, token) {
   const guard = `${lock}.takeover`;
   try {
     const fd = fs.openSync(guard, "wx");
-    try { fs.writeFileSync(fd, JSON.stringify({ pid: process.pid, name, token, since: new Date().toISOString() })); }
+    try { fs.writeFileSync(fd, holderRecord(name, token)); }
     finally { fs.closeSync(fd); }
     return { path: guard, token };
   } catch (e) {
@@ -104,7 +124,7 @@ export async function acquire(repoRoot, name, opts = {}) {
   for (let i = 0; i < attempts; i++) {
     try {
       const fd = fs.openSync(lock, "wx");
-      try { fs.writeFileSync(fd, JSON.stringify({ pid: process.pid, name, token, since: new Date().toISOString() })); }
+      try { fs.writeFileSync(fd, holderRecord(name, token)); }
       finally { fs.closeSync(fd); }
       return { path: lock, token };
     } catch (e) {
@@ -130,7 +150,7 @@ export async function acquire(repoRoot, name, opts = {}) {
       await new Promise((r) => setTimeout(r, delayMs));
     }
   }
-  throw new Error(`Un autre processus modifie la banque (verrou ${lock}). Réessayez.`);
+  throw new Error(`Un autre processus modifie la banque (verrou ${lock}). Réessayez ; si aucune commande npm run admin ou promote-candidate ne tourne, supprimez ce fichier.`);
 }
 
 /** Release our own lock; never delete a lock a stolen/replaced holder now owns. */

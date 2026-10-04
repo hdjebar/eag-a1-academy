@@ -82,10 +82,17 @@ jobs:
           path: generated
       - name: Open human-review pull request
         run: |
-          file="$(cat generated/latest.txt)"
+          # The artifact comes from the job that ran npm ci with the AI secrets: treat it as
+          # untrusted. Accept only the exact name generate-bank.mjs writes, and never paste
+          # it into code — node receives the path as an argument.
+          file="$(head -n 1 generated/latest.txt)"
+          if ! printf '%s' "$file" | grep -Eqx "generated/${CATEGORY}-[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{3}Z-[0-9a-f]{6}\.json"; then
+            echo "::error::Nom de fichier candidat inattendu dans latest.txt"; exit 1
+          fi
           review="${file%.json}.review.json"
+          test -f "$file" && test -f "$review" || { echo "::error::Fichier candidat ou revue absent de l'artefact"; exit 1; }
           branch="ai-bank/${CATEGORY}-${GITHUB_RUN_ID}"
-          summary="$(node -e 'const r=require("./'"$review"'");const t={};for(const x of r.reviews)t[x.decision]=(t[x.decision]||0)+1;console.log(Object.entries(t).map(([k,v])=>k+": "+v).join(", "))')"
+          summary="$(node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const t={};for(const x of r.reviews){const k=String(x.decision).replace(/[^a-z_-]/g,"");t[k]=(t[k]||0)+1}console.log(Object.entries(t).map(([k,v])=>k+": "+v).join(", "))' "$review")"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"

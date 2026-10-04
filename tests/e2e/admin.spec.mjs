@@ -49,6 +49,27 @@ test.beforeAll(async () => {
 
 test.afterAll(() => { server?.kill(); if (dir) fs.rmSync(dir, { recursive: true, force: true }); });
 
+/** Minimal reader for the stored (uncompressed) archives written by shared/ui.js. */
+function readStoredZip(buf) {
+  const eocd = buf.lastIndexOf(Buffer.from([0x50, 0x4b, 0x05, 0x06]));
+  if (eocd < 0) throw new Error("fin de répertoire central introuvable");
+  const count = buf.readUInt16LE(eocd + 10);
+  let p = buf.readUInt32LE(eocd + 16);
+  const out = {};
+  for (let i = 0; i < count; i++) {
+    if (buf.readUInt32LE(p) !== 0x02014b50) throw new Error("en-tête central invalide");
+    const method = buf.readUInt16LE(p + 10), size = buf.readUInt32LE(p + 20);
+    const nameLen = buf.readUInt16LE(p + 28), extraLen = buf.readUInt16LE(p + 30), commentLen = buf.readUInt16LE(p + 32);
+    const local = buf.readUInt32LE(p + 42);
+    const name = buf.subarray(p + 46, p + 46 + nameLen).toString("utf8");
+    if (method !== 0) throw new Error(`méthode de compression inattendue : ${method}`);
+    const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28);
+    out[name] = buf.subarray(start, start + size).toString("utf8");
+    p += 46 + nameLen + extraLen + commentLen;
+  }
+  return out;
+}
+
 test("mode hors ligne : modification approuvée exportée en archive .zip", async ({ page }) => {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -58,7 +79,9 @@ test("mode hors ligne : modification approuvée exportée en archive .zip", asyn
   await page.goto(`${adminUrl.split("#")[0]}`);
   await page.fill("#reviewer", "Relecteur E2E");
   await page.click('[data-tab="bank"]');
-  await page.locator("#bank .row").first().click();
+  const row = page.locator("#bank .row").first();
+  const editedId = (await row.getAttribute("data-bid")) || "";
+  await row.click();
   await page.locator("#bdetail details summary").click();
   await page.fill('#b-editor [data-f="prompt"]', "Question modifiée pour l'export hors ligne E2E.");
   await page.click("#bsave");
@@ -70,7 +93,20 @@ test("mode hors ligne : modification approuvée exportée en archive .zip", asyn
   expect(dl.suggestedFilename()).toMatch(/^eag-banque-.*\.zip$/);
   const target = path.join(dir, "export-e2e.zip");
   await dl.saveAs(target);
-  expect(fs.statSync(target).size).toBeGreaterThan(0);
+  // Open the archive: it must hold the edited bank file (with the new prompt) and a
+  // review-log entry for that item — not merely be a non-empty file.
+  const entries = readStoredZip(fs.readFileSync(target));
+  const names = Object.keys(entries);
+  const bankFile = names.find((n) => /^data\/approved\/[a-z]+\.json$/.test(n));
+  expect(bankFile, `entrées : ${names.join(", ")}`).toBeTruthy();
+  const bank = JSON.parse(entries[bankFile]);
+  const edited = bank.find((x) => x.prompt === "Question modifiée pour l'export hors ligne E2E.");
+  expect(edited).toBeTruthy();
+  if (editedId) expect(edited.id).toBe(editedId);
+  const logFile = names.find((n) => /^data\/review-log\/.+\.json$/.test(n));
+  expect(logFile).toBeTruthy();
+  const decisions = JSON.parse(entries[logFile]).decisions;
+  expect(decisions.some((d) => d.id === edited.id && d.version === edited.version && d.reviewer === "Relecteur E2E")).toBe(true);
   expect(errors).toEqual([]);
 });
 
