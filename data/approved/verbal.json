@@ -3106,7 +3106,7 @@
   },
   {
     "id": "verbal-epso261001-002",
-    "version": 1,
+    "version": 2,
     "category": "verbal",
     "itemFormat": "tfcs",
     "skill": "vrai-faux-indetermine",
@@ -3114,7 +3114,7 @@
     "language": "fr",
     "estimatedSeconds": 60,
     "prompt": "Affirmation : un lecteur sans carte annuelle peut rendre un livre le dimanche.",
-    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure.",
+    "stimulus": "La bibliothèque centrale d'Orvalle ouvre du mardi au samedi. Depuis mars, une borne permet d'emprunter des livres le dimanche, mais uniquement aux lecteurs titulaires d'une carte annuelle. Les retours restent possibles tous les jours grâce à une boîte extérieure accessible en permanence.",
     "options": [
       "Vrai",
       "Faux",
@@ -3131,7 +3131,7 @@
     "reviewStatus": "approved",
     "createdAt": "2026-10-01T23:30:00+02:00",
     "reviewer": "hdjebar",
-    "reviewedAt": "2026-10-02T23:01:32.382Z"
+    "reviewedAt": "2026-10-04T03:25:26.541Z"
   },
   {
     "id": "verbal-epso261001-003",
