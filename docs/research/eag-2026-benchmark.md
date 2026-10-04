@@ -155,10 +155,10 @@ graph TD
    - Scored via continuous linear concordance:
      $$\text{score} = \max\left(0, 1 - \frac{|\text{userRating} - \text{targetRating}|}{3}\right)$$
    - Full credit (1.0) for exact match, 0.67 for adjacent ratings, 0.33 for distance 2, 0.0 for polar opposition.
-3. **Local Offline Determinism & 500-Question Calibrated Bank:**
-   - Precompiled directly into `app.js` and `admin.js` via `npm run build:bank` with zero runtime network dependencies.
+3. **Local Offline Determinism & 591-Question Calibrated Bank:**
+   - Precompiled into `bank/app-bank.js` and `bank/admin-bank.js` via `npm run build:bank` with zero runtime network dependencies.
    - Bank of **591 validated items** (RA 110, RV 110, RN 145, PL 126, JS 100).
-   - Dynamic random sampling without replacement (Fisher-Yates) on session launch (10 items for guided practice, 15 for simulation, 5 tests for exam mode) ensuring high replay value and broad coverage.
+   - Dynamic random sampling without replacement (Fisher-Yates) on session launch (5 items by default for guided practice, 15 for simulation, 5 tests for exam mode) ensuring high replay value and broad coverage.
 
 ---
 

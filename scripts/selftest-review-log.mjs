@@ -130,11 +130,23 @@ const mkDec = (item, over = {}) => ({
   }
 }
 
-/* Future timestamps are refused. */
+/* Small cross-machine clock skew is tolerated; materially future timestamps are refused. */
 {
-  const d = mkDec(mkItem(), { at: new Date(Date.now() + 3_600_000).toISOString() });
+  const near = mkDec(mkItem(), { at: new Date(Date.now() + 5 * 60_000).toISOString() });
+  if (approvingDecisionErrors(near).length) throw new Error("Une faible avance de l'horloge développeur a été refusée");
+  const d = mkDec(mkItem(), { at: new Date(Date.now() + 48 * 3_600_000).toISOString() });
   if (!approvingDecisionErrors(d).length) throw new Error("Un horodatage dans le futur a été accepté");
   if (!removalDecisionErrors({ ...removal, at: d.at }).length) throw new Error("Un retrait daté du futur a été accepté");
+}
+
+/* The legacy backfill is accepted only in its one named baseline file. */
+{
+  const item = mkItem();
+  const legacy = mkDec(item, { decision: "legacy" });
+  const ok = checkReviewLogData([item], [{ file: "2026-10-02-legacy-baseline.json", log: { decisions: [legacy] } }]);
+  if (ok.errors.length) throw new Error(`Le baseline legacy officiel a été refusé — ${ok.errors.join(" ; ")}`);
+  const bad = checkReviewLogData([item], [{ file: "forged.json", log: { decisions: [legacy] } }]);
+  if (!bad.errors.some((e) => e.includes("legacy autorisée uniquement"))) throw new Error("Une décision legacy hors baseline a été acceptée");
 }
 
 /* Exact-duplicate approving decisions are flagged; distinct versions are not. */
@@ -158,7 +170,7 @@ const mkDec = (item, over = {}) => ({
   if (minorDecisionErrors(rejectedOk).length) throw new Error("rejet valide refusé");
   const rejectedNoReason = { id: valid.id, decision: "rejected", reviewer: valid.reviewer, at: valid.at };
   if (!minorDecisionErrors(rejectedNoReason).length) throw new Error("rejet sans motif accepté");
-  const undoneFuture = { id: valid.id, decision: "undone", reviewer: valid.reviewer, at: new Date(Date.now() + 3_600_000).toISOString() };
+  const undoneFuture = { id: valid.id, decision: "undone", reviewer: valid.reviewer, at: new Date(Date.now() + 48 * 3_600_000).toISOString() };
   if (!minorDecisionErrors(undoneFuture).length) throw new Error("undone daté du futur accepté");
 }
 

@@ -2,6 +2,21 @@ import fs from "node:fs";
 import path from "node:path";
 
 let tmpCounter = 0;
+const RENAME_RETRY_CODES = new Set(["EACCES", "EBUSY", "EPERM"]);
+
+function waitSync(ms) {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+}
+
+function renameWithRetry(from, to) {
+  for (let attempt = 0; ; attempt++) {
+    try { fs.renameSync(from, to); return; }
+    catch (e) {
+      if (!RENAME_RETRY_CODES.has(e.code) || attempt >= 5) throw e;
+      waitSync(10 * (attempt + 1));
+    }
+  }
+}
 
 /**
  * Crash-safe single-file write: content goes to a temp file, then a rename.
@@ -12,11 +27,23 @@ let tmpCounter = 0;
  */
 export function writeFileAtomic(file, data) {
   const tmp = `${file}.tmp-${process.pid}-${tmpCounter++}`;
+  let fd;
   try {
     fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(tmp, data);
-    fs.renameSync(tmp, file);
+    fd = fs.openSync(tmp, "w");
+    fs.writeFileSync(fd, data);
+    fs.fsyncSync(fd);
+    fs.closeSync(fd); fd = undefined;
+    renameWithRetry(tmp, file);
+    // Persist the directory entry as well on platforms that allow directory fsync.
+    if (process.platform !== "win32") {
+      let dirFd;
+      try { dirFd = fs.openSync(path.dirname(file), "r"); fs.fsyncSync(dirFd); }
+      catch { /* some filesystems do not support directory fsync */ }
+      finally { if (dirFd !== undefined) fs.closeSync(dirFd); }
+    }
   } catch (e) {
+    if (fd !== undefined) try { fs.closeSync(fd); } catch { /* best effort */ }
     try { fs.rmSync(tmp, { force: true }); } catch { /* best effort */ }
     throw e;
   }

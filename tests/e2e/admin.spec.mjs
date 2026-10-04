@@ -87,5 +87,23 @@ test("administration : approuver, rejeter, annuler un rejet, enregistrer, puis c
   expect(fs.readFileSync(path.join(dir, "bank/app-bank.js"), "utf8")).toContain("numeric-e2e-001");
   // The decision written by the admin page satisfies the CI review gate.
   execFileSync(process.execPath, ["scripts/check-review-log.mjs"], { cwd: dir, stdio: "pipe" });
+
+  const endpoint = new URL(adminUrl);
+  const token = endpoint.hash.match(/token=([\w-]+)/)?.[1];
+  endpoint.hash = ""; endpoint.pathname = "/api/run";
+  const post = (body) => fetch(endpoint, { method: "POST", headers: { "content-type": "application/json", "x-admin-token": token }, body: JSON.stringify(body) });
+
+  // Oversized requests receive a usable JSON error instead of a reset connection.
+  const oversized = await post({ task: "git", padding: "x".repeat(5 * 1024 * 1024) });
+  expect(oversized.status).toBe(413);
+  await expect(oversized.json()).resolves.toMatchObject({ error: expect.stringContaining("trop volumineuse") });
+
+  // The first /api/run reserves the slot before reading its body; a concurrent
+  // request cannot pass the same idle check.
+  const firstRun = post({ task: "test" });
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  const concurrent = await post({ task: "git" });
+  expect(concurrent.status).toBe(409);
+  expect((await firstRun).status).toBe(200);
   expect(errors).toEqual([]);
 });

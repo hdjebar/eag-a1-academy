@@ -53,6 +53,34 @@ if (residue.length) {
   process.exit(1);
 }
 
+/* Atomic write flushes before rename and retries transient Windows-style locks. */
+{
+  const retryFile = path.join(dir, "retry.txt");
+  const renameSync = fs.renameSync;
+  const fsyncSync = fs.fsyncSync;
+  let failures = 0, flushes = 0;
+  fs.renameSync = (from, to) => {
+    if (to === retryFile && failures++ < 2) { const e = new Error("simulated antivirus lock"); e.code = "EPERM"; throw e; }
+    return renameSync(from, to);
+  };
+  fs.fsyncSync = (fd) => { flushes++; return fsyncSync(fd); };
+  try { writeFileAtomic(retryFile, "durable"); }
+  finally { fs.renameSync = renameSync; fs.fsyncSync = fsyncSync; }
+  if (failures !== 3 || flushes < 1 || fs.readFileSync(retryFile, "utf8") !== "durable") {
+    console.error("❌ écriture atomique : flush ou reprise après verrou transitoire incorrect");
+    process.exit(1);
+  }
+}
+
+/* Generated bank scripts must use the same crash-safe writer. */
+{
+  const source = fs.readFileSync(path.join(ROOT, "scripts/build-bank.mjs"), "utf8");
+  if (!source.includes("writeFileAtomic(file, code)")) {
+    console.error("❌ build-bank : écriture directe des scripts générés");
+    process.exit(1);
+  }
+}
+
 /* Rollback restore also leaves no temp residue. */
 let threw2 = false;
 try {
