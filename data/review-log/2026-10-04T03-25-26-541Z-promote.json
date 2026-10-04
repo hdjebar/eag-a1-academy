@@ -1,0 +1,31 @@
+{
+  "reviewer": "hdjebar",
+  "savedAt": "2026-10-04T03:25:26.541Z",
+  "mode": "cli",
+  "decisions": [
+    {
+      "id": "numeric-chart-222",
+      "decision": "approved",
+      "version": 1,
+      "hash": "1091f5e0beb7e299",
+      "reviewer": "hdjebar",
+      "at": "2026-10-04T03:25:26.541Z",
+      "aiDecision": null,
+      "aiOverride": true,
+      "candidateHash": null,
+      "file": "audit-content-candidates-2026-10-04.json"
+    },
+    {
+      "id": "verbal-epso261001-002",
+      "decision": "revised",
+      "version": 2,
+      "hash": "c470dda7e35975c8",
+      "reviewer": "hdjebar",
+      "at": "2026-10-04T03:25:26.541Z",
+      "aiDecision": null,
+      "aiOverride": true,
+      "candidateHash": null,
+      "file": "audit-content-candidates-2026-10-04.json"
+    }
+  ]
+}

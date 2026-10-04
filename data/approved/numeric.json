@@ -6238,5 +6238,58 @@
     "createdAt": "2026-10-01T23:30:00+02:00",
     "reviewer": "hdjebar",
     "reviewedAt": "2026-10-02T23:01:32.382Z"
+  },
+  {
+    "id": "numeric-chart-222",
+    "version": 1,
+    "category": "numeric",
+    "itemFormat": "single_best",
+    "skill": "lecture-graphique",
+    "difficulty": 2,
+    "language": "fr",
+    "estimatedSeconds": 75,
+    "prompt": "De quel pourcentage le nombre de dossiers clôturés a-t-il augmenté entre janvier et avril ?",
+    "stimulus": {
+      "type": "chart",
+      "kind": "line",
+      "caption": "Dossiers clôturés par mois",
+      "unit": "dossiers",
+      "labels": [
+        "Janv.",
+        "Févr.",
+        "Mars",
+        "Avr."
+      ],
+      "series": [
+        {
+          "name": "Dossiers clôturés",
+          "values": [
+            240,
+            300,
+            270,
+            360
+          ]
+        }
+      ]
+    },
+    "options": [
+      "50 %",
+      "33,3 %",
+      "120 %",
+      "150 %"
+    ],
+    "correctIndex": 0,
+    "optionRationales": [
+      "Correct : l'augmentation de 120 dossiers représente 50 % des 240 dossiers de janvier.",
+      "Divise l'augmentation par la valeur d'avril au lieu de la valeur initiale de janvier.",
+      "Confond l'augmentation absolue de 120 dossiers avec un pourcentage.",
+      "Calcule la valeur d'avril en pourcentage de janvier, et non le taux d'augmentation."
+    ],
+    "explanation": "Le nombre passe de 240 à 360, soit une hausse de 120 dossiers. Le taux d'augmentation est 120 / 240 × 100 = 50 %.",
+    "sourceType": "original_ai_assisted",
+    "reviewStatus": "approved",
+    "createdAt": "2026-10-04T05:15:00+02:00",
+    "reviewer": "hdjebar",
+    "reviewedAt": "2026-10-04T03:25:26.541Z"
   }
 ]
