@@ -5,3 +5,5 @@ generated/*.json
 node_modules/
 .playwright-cli/
 .DS_Store
+test-results/
+playwright-report/

@@ -164,7 +164,7 @@ if (values["dry-run"]) {
 
 const logFile = path.join("data/review-log", `${now.replace(/[:.]/g, "-")}-promote.json`);
 const remaining = candidates.filter((c) => !promoted.includes(c.id));
-const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "app.js", "admin.js"];
+const touched = [...byCategory.keys(), logFile, candidateFile, reviewFile, "bank/app-bank.js", "bank/admin-bank.js"];
 const { total } = withFileRollback(touched, () => {
   for (const [target, bank] of byCategory) writeFileAtomic(target, JSON.stringify(bank, null, 2) + "\n");
   writeFileAtomic(logFile, JSON.stringify({ reviewer, savedAt: now, mode: "cli", decisions: logEntries }, null, 2) + "\n");
@@ -180,4 +180,4 @@ process.removeListener("exit", releasePromotionLock);
 console.log(`Journal de relecture : ${logFile}`);
 if (remaining.length) console.log(`\n${remaining.length} item(s) restent dans ${candidateFile}. Supprimez le fichier une fois la relecture terminée.`);
 else console.log(`\nTous les items traités : ${candidateFile} supprimé.`);
-console.log(`🎉 ${promoted.length} item(s) promu(s) par ${reviewer}. app.js resynchronisé (${total} questions).`);
+console.log(`🎉 ${promoted.length} item(s) promu(s) par ${reviewer}. banque recompilée dans bank/ (${total} questions).`);

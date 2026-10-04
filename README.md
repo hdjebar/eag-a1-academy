@@ -63,7 +63,7 @@ Conformément aux directives officielles GovJobs pour le **Groupe de traitement 
 > - **Audit du 2 octobre 2026** : 90 questions retirées (items abstraits contenant des lettres ou chiffres, clé erronée, ambiguïtés, doublons). 112 questions de remplacement et de correction ont été résolues à l'aveugle par des relecteurs IA indépendants, puis approuvées par hdjebar via `npm run promote:candidate` (500 questions).
 > - **Passe de réalisme (2–3 octobre 2026)** : questions numériques sur tableaux et graphiques, agendas de planification en tableau, textes verbaux et scénarios situationnels allongés, compétences situationnelles rééquilibrées, et 30 questions originales de style EPSO. Même processus : résolution à l'aveugle, puis approbation par hdjebar (591 questions).
 > - **Test géométrique** : L'épreuve communément désignée comme « test géométrique » par les candidats correspond officiellement au **Raisonnement abstrait** (matrices géométriques et séries de figures). Les items sont composés uniquement de formes et de flèches (règle vérifiée par le validateur).
-> - **Tirage aléatoire** : À chaque lancement d'un entraînement, d'une simulation ou d'un examen blanc, les questions sont tirées aléatoirement sans remise (via l'algorithme de Fisher-Yates) parmi les questions approuvées de chaque catégorie (10 par épreuve pour l'examen blanc).
+> - **Tirage aléatoire équilibré** : à chaque lancement, les questions sont tirées sans remise dans chaque catégorie, réparties sur toutes les compétences et sur les niveaux de difficulté ; l'ordre des options est mélangé (sauf Vrai / Faux / On ne peut pas savoir). L'application ne garde aucune trace entre deux visites (ADR-0001) : une question vue lors d'une visite précédente peut revenir.
 > - **Test de contrôle/précision** : Ce test ne concerne pas le groupe A1 (réservé aux groupes B1 et C1) et n'est donc pas inclus dans cette application.
 
 ---
@@ -103,7 +103,7 @@ Le projet repose sur une séparation physique stricte entre l'application client
 
 1. **Client statique (`app.js`, `eag-a1-academy.html`)** :
    - Rendu sécurisé : tout texte d'item est formellement échappé via `esc()` pour neutraliser les injections XSS.
-   - Les questions validées de `data/approved/` sont compilées et embarquées dans `app.js` lors du build (`npm run build:bank`), permettant un fonctionnement immédiat même via le protocole `file://`.
+   - Les questions validées de `data/approved/` sont compilées par `npm run build:bank` dans `bank/app-bank.js` (application) et `bank/admin-bank.js` (administration), chargés par des balises `<script>` classiques : l'application fonctionne toujours en ouvrant le fichier HTML directement (`file://`), et le code applicatif (`app.js`, `admin.js`) reste lisible et séparé des données.
 2. **Architecture décisionnelle documentée** :
    - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : description détaillée des modules, de l'état en mémoire et du cycle de vie.
    - [docs/adr/](docs/adr/README.md) : historique des décisions d'architecture (ADR-0001 à ADR-0009).
@@ -141,9 +141,9 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 
 | Commande | Rôle |
 | :--- | :--- |
-| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque, le contrôle de synchronisation de `app.js` et `admin.js`, et le contrôle de relecture (`check:review-log`). |
+| `npm test` | Exécute la vérification syntaxique, les self-tests du validateur (cas invalides, formulations légitimes, concordance navigateur / Ajv), la validation de la banque, le contrôle de synchronisation de `bank/*.js`, et le contrôle de relecture (`check:review-log`). |
 | `npm run admin` | Lance l'interface d'administration locale (127.0.0.1, jeton par session). |
-| `npm run build:bank` | Compile et synchronise `data/approved/*.json` dans `app.js` et `admin.js`. |
+| `npm run build:bank` | Compile `data/approved/*.json` dans `bank/app-bank.js` et `bank/admin-bank.js`. |
 | `npm run validate:bank` | Valide un ou plusieurs fichiers de questions candidats contre le schéma. |
 | `npm run generate:bank` | Génère un lot de questions candidates via API (OpenAI/Ollama). |
 | `npm run generate:abstract` | Génère des candidats de raisonnement abstrait déterministes par règles géométriques (matrices et suites). |
@@ -151,6 +151,7 @@ Consultez le guide détaillé : **[docs/AI-QUESTION-BANKS.md](docs/AI-QUESTION-B
 | `npm run regenerate:bank` | Révise des questions approuvées avec un LLM (`IDS`, `INSTRUCTION`) ; résultat à relire dans `generated/`. |
 | `npm run review:bank` | Lance la revue IA à l'aveugle sur un lot candidat. |
 | `npm run promote:candidate -- <fichier> --reviewer "…" --approve …` | Approuve et promeut des questions candidates vers `data/approved/`. |
+| `npm run test:e2e` | Tests de bout en bout Playwright : modes d'entraînement, examen blanc et chronomètre, calculatrice, stimulus, texte malveillant, mobile 375 px, accessibilité (axe, thèmes clair et sombre), parcours d'administration. Premier lancement : `npx playwright install chromium`. |
 | `npm run check:review-log` | Vérifie que chaque question approuvée correspond à une décision tracée dans `data/review-log/`. |
 
 ---

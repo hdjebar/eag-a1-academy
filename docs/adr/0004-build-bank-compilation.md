@@ -1,7 +1,7 @@
 # ADR-0004 : Compilation statique de la banque de données dans `app.js`
 
 ## Statut
-Accepté
+Accepté, modifié par [ADR-0010](0010-bank-files-session-core-e2e.md) : la banque est désormais compilée dans `bank/app-bank.js` et `bank/admin-bank.js`, et non plus dans `app.js` et `admin.js`.
 
 ## Date
 2026-09-30
