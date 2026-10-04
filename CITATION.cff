@@ -5,7 +5,7 @@ type: software
 authors:
   - name: hdjebar
     email: dhammouche@gmail.com
-version: 1.8.0
+version: 1.8.1
 date-released: 2026-10-04
 license: MIT
 abstract: "Application non officielle de familiarisation aux familles de tests EAG A1 décrites par GovJobs Luxembourg."

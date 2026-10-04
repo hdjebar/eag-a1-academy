@@ -69,6 +69,7 @@ test("chaque mode tire le bon nombre de questions", () => {
 test("la durée des entraînements suit le rythme configuré pour dix questions", () => {
   assert.equal(S.buildSession(bank, { modules, type: "numeric", count: 5 }, S.seeded(1)).seconds, 300);
   assert.equal(S.buildSession(bank, { modules, type: "numeric", count: 10 }, S.seeded(1)).seconds, 600);
+  assert.equal(S.buildSession(bank, { modules, type: "numeric", count: "all" }, S.seeded(1)).seconds, 8_700);
   assert.equal(S.buildSession(bank, { modules, type: "abstract", count: 5 }, S.seeded(1)).seconds, 240);
   assert.equal(S.buildSession(bank, { modules, type: "verbal", count: 1 }, S.seeded(1)).seconds, 180);
 });

@@ -928,7 +928,10 @@ function setTab(t) {
   $$(".view").forEach((v) => v.classList.toggle("active", v.id === `v-${t}`));
 }
 async function init() {
-  if (!R || !SCHEMA.allOf) { document.body.innerHTML = `<p class="empty">Données d'administration absentes : lancez <code>npm run build:bank</code>.</p>`; return; }
+  if (!R || !SCHEMA.allOf) {
+    document.body.innerHTML = `<main class="empty" role="alert"><h1>Données d'administration indisponibles</h1><p>Vérifiez que <code>bank/admin-bank.js</code> est présent, non vide et à jour, puis lancez <code>npm run build:bank</code> si nécessaire.</p></main>`;
+    return;
+  }
   const catOpts = CATS.map((c) => `<option value="${c}">${esc(CAT_LABEL[c])}</option>`).join("");
   $("#qcat").insertAdjacentHTML("beforeend", catOpts); $("#bcat").insertAdjacentHTML("beforeend", catOpts); $("#newcat").innerHTML = catOpts;
   $("#reviewer").value = load("eag-admin-reviewer") || "";
