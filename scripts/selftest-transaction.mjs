@@ -116,6 +116,20 @@ if (!threw2 || fs.readFileSync(nested, "utf8") !== "atomic" || fs.readdirSync(di
   const stolen = await withLock(root, "test", () => "ran");
   if (stolen !== "ran") { console.error("❌ verrou : le verrou d'un processus mort n'a pas été repris"); process.exit(1); }
 
+  // A live holder with a fresh lock is never stolen (guard against over-eager takeover).
+  fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: process.pid, token: "live-fresh", name: "live" }));
+  let liveBlocked = false;
+  try { await withLock(root, "test", () => {}, { attempts: 3, delayMs: 10 }); } catch (e) { liveBlocked = e.message.includes("Un autre processus modifie la banque"); }
+  if (!liveBlocked) { console.error("❌ verrou : le verrou d'un processus vivant et récent a été repris"); process.exit(1); }
+
+  // PID reuse: a lock claiming a live pid but older than the reuse window is a
+  // leftover from a dead process — it must be retired, not wedged forever.
+  fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: process.pid, token: "recycled", name: "reused" }));
+  const old = new Date(Date.now() - 31 * 60 * 1000);
+  fs.utimesSync(LOCK_PATH(root), old, old);
+  const recycled = await withLock(root, "test", () => "ran-after-reuse");
+  if (recycled !== "ran-after-reuse") { console.error("❌ verrou : un verrou au pid recyclé n'a pas été repris"); process.exit(1); }
+
   // Concurrent stale takeovers have one winner: rename, not unlink, arbitrates.
   fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: 99999999, token: "dead-race", name: "crashed" }));
   const racers = await Promise.allSettled(Array.from({ length: 12 }, (_, i) => acquire(root, `race-${i}`, { attempts: 1, delayMs: 1 })));
