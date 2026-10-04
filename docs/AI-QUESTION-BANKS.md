@@ -8,12 +8,13 @@ Ce projet traite toute sortie générée par IA comme du matériel candidat **no
 
 1. **Aucune contrefaçon & vocabulaire réservé** : ne jamais reproduire, mémoriser ou reconstituer des questions de l'épreuve réelle. Les items sont 100 % originaux. Formulations formellement interdites par le validateur : `question officielle`, `item officiel`, `barème officiel`, `confidentiel` (ainsi que toute variante de cette racine lexicale).
 2. **Texte brut uniquement** : aucun HTML, aucune balise, aucune entité (`&nbsp;`) dans les items. Tout texte est échappé par le moteur de rendu.
-3. **Conformité aux descriptions officielles A1** (page GovJobs « Les tests de l'EAG ») :
+3. **Alignement sur les descriptions officielles A1 et choix pédagogiques** (page GovJobs « Les tests de l'EAG ») :
+   - *Périmètre officiel vs choix pédagogiques du projet* : GovJobs définit les 5 familles d'épreuves, les types de stimulus et les compétences A1. Les formats d'interaction (`tfcs` pour le verbal, échelle de notation 1 à 4 pour le situationnel) sont des choix de conception pédagogique propres à ce projet d'entraînement.
    - **abstrait (*Test géométrique*)** : compléter une série ou une matrice 3×3 de **figures géométriques pures** (symboles géométriques uniquement, ni lettres, ni chiffres, ni mots) via un stimulus `{ "type": "shapes", "text": "..." }` ;
-   - **verbal** : répondre ou appliquer une consigne à partir du seul texte (formats `single_best` ou `tfcs` Vrai / Faux / Indéterminé) ;
+   - **verbal** : répondre ou appliquer une consigne à partir du seul texte (formats d'entraînement `single_best` ou `tfcs` Vrai / Faux / Indéterminé) ;
    - **numérique** : tableaux, graphiques, données chiffrées, opérations simples (calculatrice de base autorisée) ;
    - **planification** : gérer un agenda sous contraintes (délais, disponibilités, priorités, dépendances) ;
-   - **jugement situationnel** : **noter chaque réaction** de 1 à 4 (format `rating`), compétences « servir le client-usager » et « conseiller » uniquement.
+   - **jugement situationnel** : **noter chaque réaction** de 1 à 4 (format d'entraînement `rating`), compétences « servir le client-usager » et « conseiller » uniquement.
 4. **Exigences psychométriques du validateur** :
    - **Longueur des options** : avertissement si la bonne réponse dépasse 1,4 fois la plus longue des autres options ; avertissement de banque si elle est l'option la plus longue dans plus de 40 % des items d'une catégorie ;
    - **Position de la bonne réponse** (règle de banque, erreur) : dès 20 items hors `tfcs`, aucune position ne doit porter plus de 40 % des bonnes réponses. L'application mélange aussi les options à l'affichage ;
@@ -94,9 +95,9 @@ npm test
 
 ### Modèle de menace et limites de confiance
 
-Le mécanisme de promotion humaine (`--reviewer "Prénom Nom"`) et le journal d'audit (`data/review-log/`) fournissent une traçabilité déterministe et une intégrité cryptographique forte :
-1. **Détection d'altération** : chaque décision lie l'identifiant, la version incrémentale, l'horodatage, le relecteur et l'empreinte SHA-256 tronquée (16 caractères hexadécimaux) du contenu complet de la question (`EagRules.contentHash`). Toute modification ultérieure d'un item approuvé sans nouvelle décision fait échouer `scripts/check-review-log.mjs` en CI.
-2. **Limite de confiance (convention vs attestation)** : l'outil CLI et le contrôle de journal vérifient uniquement que le nom du relecteur est une chaîne non vide (au moins 2 caractères). Il s'agit d'une convention de gouvernance interne et d'un journal d'audit, non d'une signature cryptographique ou d'une preuve formelle d'indépendance de tiers.
+Le mécanisme de promotion humaine (`--reviewer "Prénom Nom"`) et le journal d'audit (`data/review-log/`) fournissent une traçabilité déterministe et un contrôle de cohérence rigoureux contre les modifications accidentelles ou partielles :
+1. **Détection des modifications non tracées** : chaque décision lie l'identifiant, la version incrémentale, l'horodatage, le relecteur et l'empreinte déterministe FNV-1a 64 bits (16 caractères hexadécimaux, non cryptographique) du contenu complet de la question (`EagRules.contentHash`). Toute modification ultérieure d'un item approuvé sans nouvelle décision fait échouer `scripts/check-review-log.mjs` en CI.
+2. **Limite de confiance (convention vs attestation cryptographique)** : l'outil CLI et le contrôle de journal vérifient uniquement que le nom du relecteur est une chaîne non vide (au moins 2 caractères). Il s'agit d'une convention de gouvernance interne et d'un journal d'audit, non d'une signature cryptographique ou d'une preuve formelle d'indépendance de tiers. De plus, l'empreinte et le journal résidant dans le même dépôt, un acteur autorisé à modifier simultanément la banque et le journal fait partie de la base de confiance (il pourrait recalculer l'empreinte en cohérence).
 3. **Durcissement organisationnel recommandé** : dans un environnement multi-contributeurs exigeant une séparation stricte des tâches, cette traçabilité doit être complétée au niveau GitHub par la protection de branche exigeant une revue de Pull Request indépendante (*« Require a pull request before merging »*) et l'approbation obligatoire des propriétaires via `CODEOWNERS` sur les chemins sensibles (`data/approved/**`, `data/review-log/**`, `schema/**`, `scripts/promote-candidate.mjs`, `scripts/check-review-log.mjs`).
 
 ---
