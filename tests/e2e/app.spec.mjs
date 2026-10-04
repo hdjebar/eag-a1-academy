@@ -56,6 +56,18 @@ test("des données d'administration présentes mais vides affichent une erreur e
   await expect(page.getByRole("alert")).toContainText("présent, non vide et à jour");
 });
 
+test("shared/ui.js absent : message explicite dans l'application et l'administration", async ({ page }) => {
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.route("**/shared/ui.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
+  await page.goto("/eag-a1-academy.html");
+  await expect(page.getByRole("alert")).toContainText("shared/ui.js");
+  await expect(page.locator(".module")).toHaveCount(0);
+  await page.goto("/admin.html");
+  await expect(page.getByRole("alert")).toContainText("Interface indisponible");
+  expect(errors).toEqual([]);
+});
+
 test("des règles de validation absentes affichent une erreur explicite", async ({ page }) => {
   await page.route("**/shared/item-rules.js", (r) => r.fulfill({ contentType: "text/javascript", body: "" }));
   await page.goto("/admin.html");

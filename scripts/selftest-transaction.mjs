@@ -3,7 +3,7 @@ import os from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
-import { acquire, release, withLock, LOCK_PATH } from "./lib/lockfile.mjs";
+import { acquire, release, withLock, LOCK_PATH, processStart } from "./lib/lockfile.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 
@@ -122,13 +122,22 @@ if (!threw2 || fs.readFileSync(nested, "utf8") !== "atomic" || fs.readdirSync(di
   try { await withLock(root, "test", () => {}, { attempts: 3, delayMs: 10 }); } catch (e) { liveBlocked = e.message.includes("Un autre processus modifie la banque"); }
   if (!liveBlocked) { console.error("❌ verrou : le verrou d'un processus vivant et récent a été repris"); process.exit(1); }
 
-  // PID reuse: a lock claiming a live pid but older than the reuse window is a
-  // leftover from a dead process — it must be retired, not wedged forever.
-  fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: process.pid, token: "recycled", name: "reused" }));
-  const old = new Date(Date.now() - 31 * 60 * 1000);
+  // A live holder keeps its lock however old it is (suspended laptop, Ctrl-Z, clock jump):
+  // stealing it would let two writers proceed and lose an update.
+  fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: process.pid, pidStart: processStart(process.pid), token: "live-old", name: "suspended" }));
+  const old = new Date(Date.now() - 6 * 60 * 60 * 1000);
   fs.utimesSync(LOCK_PATH(root), old, old);
-  const recycled = await withLock(root, "test", () => "ran-after-reuse");
-  if (recycled !== "ran-after-reuse") { console.error("❌ verrou : un verrou au pid recyclé n'a pas été repris"); process.exit(1); }
+  let oldLiveBlocked = false;
+  try { await withLock(root, "test", () => {}, { attempts: 3, delayMs: 10 }); } catch (e) { oldLiveBlocked = e.message.includes("Un autre processus modifie la banque"); }
+  if (!oldLiveBlocked) { console.error("❌ verrou : le verrou ancien d'un processus vivant a été repris"); process.exit(1); }
+
+  // PID reuse: the recorded pid is alive but names another process (different start
+  // time). Detectable where /proc exists; elsewhere the lock is kept (safe side).
+  if (processStart(process.pid) !== null) {
+    fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: process.pid, pidStart: "0", token: "recycled", name: "reused" }));
+    const recycled = await withLock(root, "test", () => "ran-after-reuse");
+    if (recycled !== "ran-after-reuse") { console.error("❌ verrou : un verrou au pid recyclé n'a pas été repris"); process.exit(1); }
+  } else fs.rmSync(LOCK_PATH(root), { force: true });
 
   // Concurrent stale takeovers have one winner: rename, not unlink, arbitrates.
   fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: 99999999, token: "dead-race", name: "crashed" }));

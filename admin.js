@@ -10,9 +10,11 @@ const { schema: SCHEMA, approved: APPROVED_EMBEDDED, prompts: PROMPTS } = global
 const R = globalThis.EagRules;
 const CATS = ["abstract", "verbal", "numeric", "planning", "situational"];
 /* Libellés et échappement partagés : shared/ui.js (une seule définition pour app et admin). */
-const CAT_LABEL = globalThis.EagUI.CAT_LABEL;
-const SKILL_LABEL = globalThis.EagUI.SKILL_LABEL;
-const RATING_LABEL = globalThis.EagUI.RATING_LABEL;
+/* Sans shared/ui.js, init() affiche un message ; esc ne renvoie rien plutôt que du texte non échappé. */
+const UI = globalThis.EagUI || null;
+const CAT_LABEL = UI?.CAT_LABEL || {};
+const SKILL_LABEL = UI?.SKILL_LABEL || {};
+const RATING_LABEL = UI?.RATING_LABEL || {};
 const TFCS = { fr: ["Vrai", "Faux", "On ne peut pas savoir"], de: ["Richtig", "Falsch", "Nicht zu entscheiden"] };
 const STORE_KEY = "eag-admin-session-v1";
 
@@ -25,7 +27,7 @@ const S = {
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = globalThis.EagUI.esc;
+const esc = UI?.esc || (() => "");
 const clone = (x) => JSON.parse(JSON.stringify(x));
 const nowIso = () => new Date().toISOString();
 const reviewer = () => $("#reviewer").value.trim();
@@ -734,7 +736,7 @@ function download(name, blob) {
 }
 
 /* ZIP writer : shared/ui.js (format épinglé par selftest-ui). */
-const zip = globalThis.EagUI.zip;
+const zip = (...a) => UI.zip(...a);
 
 /* ---------- Server-only: save and tasks ---------- */
 async function saveToServer(plan) {
@@ -905,10 +907,12 @@ function setTab(t) {
   $$(".view").forEach((v) => v.classList.toggle("active", v.id === `v-${t}`));
 }
 async function init() {
-  if (!R || !SCHEMA.allOf) {
-    // R comes from shared/item-rules.js, the bank data from bank/admin-bank.js:
-    // name the actual missing piece instead of a generic message.
-    const missing = !R
+  if (!UI || !R || !SCHEMA?.allOf) {
+    // UI comes from shared/ui.js, R from shared/item-rules.js, the bank data from
+    // bank/admin-bank.js: name the actual missing piece instead of a generic message.
+    const missing = !UI
+      ? { title: "Interface indisponible", hint: `Vérifiez que <code>shared/ui.js</code> est présent, puis rechargez la page.` }
+      : !R
       ? { title: "Règles de validation indisponibles", hint: `Vérifiez que <code>shared/item-rules.js</code> est présent, puis rechargez la page.` }
       : { title: "Données d'administration indisponibles", hint: `Vérifiez que <code>bank/admin-bank.js</code> est présent, non vide et à jour, puis lancez <code>npm run build:bank</code> si nécessaire.` };
     document.body.innerHTML = `<main class="empty" role="alert"><h1>${missing.title}</h1><p>${missing.hint}</p></main>`;
