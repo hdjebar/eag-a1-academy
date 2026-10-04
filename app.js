@@ -1,8 +1,9 @@
 "use strict";
 const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4 4l2 2M18 18l2 2M1 12h2M21 12h2M4 20l2-2M18 6l2-2"/></svg>',moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg>';
 const modules={abstract:{title:"Raisonnement abstrait",code:"RA",desc:"Compléter des séries et matrices de figures.",minutes:8},verbal:{title:"Raisonnement verbal",code:"RV",desc:"Conclure uniquement à partir du texte.",minutes:9},numeric:{title:"Raisonnement numérique",code:"RN",desc:"Interpréter tableaux, proportions et variations.",minutes:10},planning:{title:"Planification",code:"PL",desc:"Organiser selon délais, disponibilités et priorités.",minutes:10},situational:{title:"Jugement situationnel",code:"JS",desc:"Évaluer chaque réaction : servir l’usager et conseiller.",minutes:12}};
-const skillLabels={"suite-logique":"suite logique",matrice:"matrice",rotation:"rotation",transformation:"transformation",comprehension:"compréhension",inference:"inférence","application-consigne":"application de consigne","vrai-faux-indetermine":"vrai / faux / indéterminé",synthese:"synthèse",pourcentage:"pourcentage",variation:"variation","ratio-proportion":"ratio et proportion",moyenne:"moyenne","lecture-tableau":"lecture de tableau","lecture-graphique":"lecture de graphique","operations-simples":"opérations simples","agenda-contraintes":"agenda et contraintes",priorisation:"priorisation",dependances:"dépendances",disponibilites:"disponibilités",conflits:"conflits d'agenda","servir-client-usager":"servir le client-usager",conseiller:"conseiller"};
-const ratingLabels=["Très inapproprié","Plutôt inapproprié","Plutôt approprié","Très approprié"];
+/* Libellés et échappement partagés : shared/ui.js (une seule définition pour app et admin). */
+const skillLabels=globalThis.EagUI.SKILL_LABEL,ratingLabels=globalThis.EagUI.RATING_LABEL;
+const CAT_LABEL=globalThis.EagUI.CAT_LABEL,esc=globalThis.EagUI.esc;
 /* Examen blanc : approximation de travail. GovJobs publie la durée totale (2 h) et la liste des tests A1,
    mais ni l'ordre, ni le temps par test, ni le nombre de questions. Ajustez ces valeurs dès qu'ils sont connus. */
 const EXAM={sections:["abstract","verbal","numeric","planning","situational"],minutesPerSection:24,questionsPerSection:10};
@@ -10,8 +11,7 @@ const EXAM={sections:["abstract","verbal","numeric","planning","situational"],mi
 const q = globalThis.EAG_BANK || {};
 const state={route:"accueil",dark:false,session:null,answered:0,points:0,sessionCount:5},$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],names={accueil:"Vue d'ensemble",entrainement:"Entraînement",session:"Session",results:"Résultats",simulation:"Simulation",ressources:"Ressources",methode:"Méthode"};
 
-/* All item text is escaped: question content is data, never markup. */
-function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+/* Tout texte d'item est échappé via shared/ui.js : le contenu des questions est une donnée, jamais du markup. */
 /* Tirage, ordre des options et notation : shared/session.js (fonctions pures, testées dans npm test). */
 const S=globalThis.EagSession;
 function shuffle(a){return S.shuffle(a)}
@@ -26,7 +26,7 @@ function stimulusHtml(s){
     return`<div class="stimulus"><table class="data">${s.caption?`<caption>${esc(s.caption)}</caption>`:""}<thead>${head}</thead><tbody>${body}</tbody></table>${s.note?`<p class="note">${esc(s.note)}</p>`:""}</div>`;
   }
   if(s.type==="chart")return globalThis.EagChart?`<div class="stimulus">${EagChart.html(s,esc)}</div>`:`<div class="stimulus text">Graphique indisponible (fichier shared/chart.js manquant). Passez cette question.</div>`;
-  return"";
+  return`<div class="stimulus text">Stimulus de type inconnu — passez cette question.</div>`;
 }
 function prepare(x,m){return S.prepare(x,m)}
 function scoreRating(user,key){return S.scoreRating(user,key)}

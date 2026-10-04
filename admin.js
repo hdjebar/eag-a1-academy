@@ -9,9 +9,10 @@ const { schema: SCHEMA, approved: APPROVED_EMBEDDED, prompts: PROMPTS } = global
 
 const R = globalThis.EagRules;
 const CATS = ["abstract", "verbal", "numeric", "planning", "situational"];
-const CAT_LABEL = { abstract: "Raisonnement abstrait", verbal: "Raisonnement verbal", numeric: "Raisonnement numérique", planning: "Planification", situational: "Jugement situationnel" };
-const SKILL_LABEL = { "suite-logique": "suite logique", matrice: "matrice", rotation: "rotation", transformation: "transformation", comprehension: "compréhension", inference: "inférence", "application-consigne": "application de consigne", "vrai-faux-indetermine": "vrai / faux / indéterminé", synthese: "synthèse", pourcentage: "pourcentage", variation: "variation", "ratio-proportion": "ratio et proportion", moyenne: "moyenne", "lecture-tableau": "lecture de tableau", "lecture-graphique": "lecture de graphique", "operations-simples": "opérations simples", "agenda-contraintes": "agenda et contraintes", priorisation: "priorisation", dependances: "dépendances", disponibilites: "disponibilités", conflits: "conflits d'agenda", "servir-client-usager": "servir le client-usager", conseiller: "conseiller" };
-const RATING_LABEL = ["Très inapproprié", "Plutôt inapproprié", "Plutôt approprié", "Très approprié"];
+/* Libellés et échappement partagés : shared/ui.js (une seule définition pour app et admin). */
+const CAT_LABEL = globalThis.EagUI.CAT_LABEL;
+const SKILL_LABEL = globalThis.EagUI.SKILL_LABEL;
+const RATING_LABEL = globalThis.EagUI.RATING_LABEL;
 const TFCS = { fr: ["Vrai", "Faux", "On ne peut pas savoir"], de: ["Richtig", "Falsch", "Nicht zu entscheiden"] };
 const STORE_KEY = "eag-admin-session-v1";
 
@@ -24,7 +25,7 @@ const S = {
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const esc = globalThis.EagUI.esc;
 const clone = (x) => JSON.parse(JSON.stringify(x));
 const nowIso = () => new Date().toISOString();
 const reviewer = () => $("#reviewer").value.trim();

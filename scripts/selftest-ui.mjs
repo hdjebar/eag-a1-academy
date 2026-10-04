@@ -5,8 +5,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-for (const f of ["shared/calculator.js", "shared/chart.js", "shared/timer.js"]) vm.runInThisContext(fs.readFileSync(path.join(ROOT, f), "utf8"), { filename: f });
-const { EagCalc, EagChart, EagTimer } = globalThis;
+for (const f of ["shared/ui.js", "shared/calculator.js", "shared/chart.js", "shared/timer.js"]) vm.runInThisContext(fs.readFileSync(path.join(ROOT, f), "utf8"), { filename: f });
+const { EagCalc, EagChart, EagTimer, EagUI } = globalThis;
 const fail = (m) => { console.error(`❌ ${m}`); process.exit(1); };
 
 const ok = [["(1 380 − 1 200) ÷ 1 200 × 100", 15], ["12,5 % × 80", 10], ["-3+4*2", 5], ["2×(3+4)", 14], ["10:4", 2.5], ["0,1+0,2", 0.3]];
@@ -33,4 +33,22 @@ for (const c of charts) {
 }
 const end = EagTimer.deadline(25, 1000);
 if (end !== 26000 || EagTimer.secondsLeft(end, 1001) !== 25 || EagTimer.secondsLeft(end, 25501) !== 1 || EagTimer.secondsLeft(end, 27000) !== 0) fail("chronomètre : calcul du temps mural incorrect");
-console.log(`UI self-test passed (calculatrice : ${ok.length} calculs, 7 refus ; graphiques : ${charts.length} cas limites ; chronomètre mural)`);
+
+/* EagUI: shared esc + label maps, single-sourced for app.js and admin.js. */
+if (!EagUI) fail("shared/ui.js : EagUI absent");
+if (EagUI.esc(null) !== "" || EagUI.esc(undefined) !== "") fail("esc : null/undefined doit rendre une chaîne vide");
+if (EagUI.esc(0) !== "0" || EagUI.esc(12.5) !== "12.5") fail("esc : les nombres doivent rester lisibles");
+if (EagUI.esc("<b>&\"'") !== "&lt;b&gt;&amp;&quot;&#39;") fail("esc : entités incorrectes");
+if (EagUI.esc("déjà") !== "déjà") fail("esc : le texte sûr doit rester intact");
+if (Object.keys(EagUI.CAT_LABEL).length !== 5) fail("CAT_LABEL : 5 catégories attendues");
+if (EagUI.RATING_LABEL.length !== 4) fail("RATING_LABEL : 4 niveaux attendus");
+vm.runInThisContext(fs.readFileSync(path.join(ROOT, "bank/app-bank.js"), "utf8"), { filename: "bank/app-bank.js" });
+const bank = globalThis.EAG_BANK || {};
+const items = Object.values(bank).flat();
+if (!items.length) fail("banque compilée : aucun item chargé pour la couverture des libellés");
+const missing = [...new Set(items.filter((x) => !EagUI.SKILL_LABEL[x.skill]).map((x) => x.skill))];
+if (missing.length) fail(`SKILL_LABEL : compétences sans libellé — ${missing.join(", ")}`);
+const unknownCat = Object.keys(bank).filter((c) => !EagUI.CAT_LABEL[c]);
+if (unknownCat.length) fail(`CAT_LABEL : catégories sans libellé — ${unknownCat.join(", ")}`);
+
+console.log(`UI self-test passed (calculatrice : ${ok.length} calculs, 7 refus ; graphiques : ${charts.length} cas limites ; chronomètre mural ; EagUI : ${items.length} items couverts)`);
