@@ -53,4 +53,25 @@ if (missing.length) fail(`SKILL_LABEL : compétences sans libellé — ${missing
 const unknownCat = Object.keys(bank).filter((c) => !EagUI.CAT_LABEL[c]);
 if (unknownCat.length) fail(`CAT_LABEL : catégories sans libellé — ${unknownCat.join(", ")}`);
 
+/* EagUI.zip : écriture ZIP (stockage) au format attendu par les utilitaires unzip. */
+{
+  const enc = new TextEncoder();
+  const files = [{ path: "a/b.json", content: '{"x":1}' }, { path: "c.txt", content: "hello" }];
+  const z = EagUI.zip(files);
+  if (!(z instanceof Uint8Array) || z.length < 100) fail("zip : sortie trop courte ou de mauvais type");
+  const sig = String.fromCharCode(...z.slice(0, 4));
+  if (sig !== "PK\x03\x04") fail("zip : signature de fichier local absente");
+  const sigPos = z.length - 22; // EOCD : 22 octets, commentaire vide
+  const tail = String.fromCharCode(...z.slice(sigPos, sigPos + 4));
+  if (tail !== "PK\x05\x06") fail("zip : signature de fin de répertoire central absente");
+  const text = String.fromCharCode(...z);
+  for (const f of files) if (!text.includes(f.path)) fail(`zip : entrée ${f.path} absente du répertoire central`);
+  if (!text.includes("PK\x01\x02")) fail("zip : en-têtes centraux absents");
+  const crcHello = EagUI.crc32(enc.encode("hello"));
+  const crcBytes = String.fromCharCode(...[0, 1, 2, 3].map((i) => (crcHello >>> (8 * i)) & 0xff));
+  if (!text.includes(crcBytes)) fail("zip : crc32 du contenu introuvable dans l'archive");
+  const count = z[sigPos + 8] | (z[sigPos + 9] << 8);
+  if (count !== 2) fail("zip : nombre d'entrées incorrect dans l'EOCD");
+}
+
 console.log(`UI self-test passed (calculatrice : ${ok.length} calculs, 7 refus ; graphiques : ${charts.length} cas limites ; chronomètre mural ; EagUI : ${items.length} items couverts)`);
