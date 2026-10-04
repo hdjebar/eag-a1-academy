@@ -46,7 +46,9 @@ vm.runInThisContext(fs.readFileSync(path.join(ROOT, "bank/app-bank.js"), "utf8")
 const bank = globalThis.EAG_BANK || {};
 const items = Object.values(bank).flat();
 if (!items.length) fail("banque compilée : aucun item chargé pour la couverture des libellés");
-const missing = [...new Set(items.filter((x) => !EagUI.SKILL_LABEL[x.skill]).map((x) => x.skill))];
+const skillless = [...new Set(items.filter((x) => x.skill == null).map((x) => x.id))];
+if (skillless.length) fail(`banque compilée : items sans compétence — ${skillless.join(", ")}`);
+const missing = [...new Set(items.filter((x) => x.skill != null && !EagUI.SKILL_LABEL[x.skill]).map((x) => x.skill))];
 if (missing.length) fail(`SKILL_LABEL : compétences sans libellé — ${missing.join(", ")}`);
 const unknownCat = Object.keys(bank).filter((c) => !EagUI.CAT_LABEL[c]);
 if (unknownCat.length) fail(`CAT_LABEL : catégories sans libellé — ${unknownCat.join(", ")}`);
