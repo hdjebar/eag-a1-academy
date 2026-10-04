@@ -49,6 +49,31 @@ test.beforeAll(async () => {
 
 test.afterAll(() => { server?.kill(); if (dir) fs.rmSync(dir, { recursive: true, force: true }); });
 
+test("mode hors ligne : modification approuvée exportée en archive .zip", async ({ page }) => {
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  // Aucun appel API ne doit partir en mode hors ligne.
+  await page.route("**/api/**", (r) => r.abort());
+  // Sans #token, la page reste en mode hors ligne (données embarquées).
+  await page.goto(`${adminUrl.split("#")[0]}`);
+  await page.fill("#reviewer", "Relecteur E2E");
+  await page.click('[data-tab="bank"]');
+  await page.locator("#bank .row").first().click();
+  await page.locator("#bdetail details summary").click();
+  await page.fill('#b-editor [data-f="prompt"]', "Question modifiée pour l'export hors ligne E2E.");
+  await page.click("#bsave");
+  await page.click('[data-tab="export"]');
+  await expect(page.locator("#exportpanel")).toContainText("Mode hors ligne");
+  const dlPromise = page.waitForEvent("download");
+  await page.click("#zip");
+  const dl = await dlPromise;
+  expect(dl.suggestedFilename()).toMatch(/^eag-banque-.*\.zip$/);
+  const target = path.join(dir, "export-e2e.zip");
+  await dl.saveAs(target);
+  expect(fs.statSync(target).size).toBeGreaterThan(0);
+  expect(errors).toEqual([]);
+});
+
 test.setTimeout(90_000);
 test("administration : approuver, rejeter, annuler un rejet, enregistrer, puis contrôle de relecture", async ({ page }) => {
   const errors = [];

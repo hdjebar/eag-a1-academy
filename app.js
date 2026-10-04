@@ -3,7 +3,7 @@ const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wid
 const modules={abstract:{title:"Raisonnement abstrait",code:"RA",desc:"Compléter des séries et matrices de figures.",minutes:8},verbal:{title:"Raisonnement verbal",code:"RV",desc:"Conclure uniquement à partir du texte.",minutes:9},numeric:{title:"Raisonnement numérique",code:"RN",desc:"Interpréter tableaux, proportions et variations.",minutes:10},planning:{title:"Planification",code:"PL",desc:"Organiser selon délais, disponibilités et priorités.",minutes:10},situational:{title:"Jugement situationnel",code:"JS",desc:"Évaluer chaque réaction : servir l’usager et conseiller.",minutes:12}};
 /* Libellés et échappement partagés : shared/ui.js (une seule définition pour app et admin). */
 const skillLabels=globalThis.EagUI.SKILL_LABEL,ratingLabels=globalThis.EagUI.RATING_LABEL;
-const CAT_LABEL=globalThis.EagUI.CAT_LABEL,esc=globalThis.EagUI.esc;
+const esc=globalThis.EagUI.esc;
 /* Examen blanc : approximation de travail. GovJobs publie la durée totale (2 h) et la liste des tests A1,
    mais ni l'ordre, ni le temps par test, ni le nombre de questions. Ajustez ces valeurs dès qu'ils sont connus. */
 const EXAM={sections:["abstract","verbal","numeric","planning","situational"],minutesPerSection:24,questionsPerSection:10};
