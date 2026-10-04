@@ -14,7 +14,7 @@ const HASH = /^[0-9a-f]{16}$/;
 const LEGACY_BASELINE = "2026-10-02-legacy-baseline.json";
 // Timestamps are written by the very machine that checks them: allow a small clock skew
 // between a developer workstation and CI, while still rejecting materially future dates.
-const FUTURE_TOLERANCE_MS = 24 * 60 * 60 * 1000;
+const FUTURE_TOLERANCE_MS = 5 * 60 * 1000;
 
 function timestampErrors(d) {
   if (typeof d.at !== "string" || Number.isNaN(Date.parse(d.at))) return ["horodatage absent ou invalide"];

@@ -132,9 +132,9 @@ const mkDec = (item, over = {}) => ({
 
 /* Small cross-machine clock skew is tolerated; materially future timestamps are refused. */
 {
-  const near = mkDec(mkItem(), { at: new Date(Date.now() + 5 * 60_000).toISOString() });
+  const near = mkDec(mkItem(), { at: new Date(Date.now() + 4 * 60_000).toISOString() });
   if (approvingDecisionErrors(near).length) throw new Error("Une faible avance de l'horloge développeur a été refusée");
-  const d = mkDec(mkItem(), { at: new Date(Date.now() + 48 * 3_600_000).toISOString() });
+  const d = mkDec(mkItem(), { at: new Date(Date.now() + 10 * 60_000).toISOString() });
   if (!approvingDecisionErrors(d).length) throw new Error("Un horodatage dans le futur a été accepté");
   if (!removalDecisionErrors({ ...removal, at: d.at }).length) throw new Error("Un retrait daté du futur a été accepté");
 }

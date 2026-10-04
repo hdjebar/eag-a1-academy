@@ -124,4 +124,14 @@ const mkContext = (state) => ({
   if (next.length !== 1 || next[0].id !== "c") throw new Error("L'export hors ligne n'isole pas les nouvelles décisions");
 }
 
-console.log("Admin self-test passed (fusion serveur, actualisation disque, garde de conflit, revues, export incrémental)");
+/* 6. Offline instructions stage the generated bank files, not the old bundles. */
+{
+  if (!source.includes('git add data bank/app-bank.js bank/admin-bank.js')) {
+    throw new Error("La commande de commit hors ligne oublie les banques générées");
+  }
+  if (source.includes('git add data app.js admin.js')) {
+    throw new Error("La commande de commit hors ligne référence encore les anciens bundles");
+  }
+}
+
+console.log("Admin self-test passed (fusion serveur, actualisation disque, garde de conflit, revues, export incrémental, commande de commit)");

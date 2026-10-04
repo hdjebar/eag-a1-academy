@@ -696,7 +696,7 @@ function renderExport() {
   const approvedN = pending.filter((l) => l.decision === "approved").length, rejectedN = pending.filter((l) => l.decision === "rejected").length;
   const server = S.mode === "server";
   $("#exportpanel").innerHTML = `
-    <div class="notice">${server ? "Mode local (<code>npm run admin</code>) : les fichiers sont écrits directement dans le dépôt, puis <code>app.js</code> est resynchronisé. Il ne vous reste qu'à committer." : "Mode hors ligne : téléchargez l'archive, décompressez-la à la racine du dépôt (elle remplace les fichiers concernés), supprimez les fichiers candidats traités, puis lancez <code>npm run build:bank &amp;&amp; npm test</code> et committez."}</div>
+    <div class="notice">${server ? "Mode local (<code>npm run admin</code>) : les fichiers sont écrits directement dans le dépôt, puis les banques générées sont resynchronisées. Il ne vous reste qu'à committer." : "Mode hors ligne : téléchargez l'archive, décompressez-la à la racine du dépôt (elle remplace les fichiers concernés), supprimez les fichiers candidats traités, puis lancez <code>npm run build:bank &amp;&amp; npm test</code> et committez."}</div>
     <div class="stats">
       <div class="stat"><strong>${approvedN}</strong><span>item(s) approuvé(s)</span></div>
       <div class="stat"><strong>${rejectedN}</strong><span>item(s) rejeté(s)</span></div>
@@ -710,7 +710,7 @@ function renderExport() {
     <div class="actions" style="margin-top:var(--s4)">
       ${server ? `<button class="btn" id="save" ${n || pending.length ? "" : "disabled"}>Enregistrer dans le dépôt</button><button class="btn secondary" id="reloadsrv">Recharger depuis le disque</button>` : `<button class="btn" id="zip" ${plan.out.length ? "" : "disabled"}>Télécharger l'archive (.zip)</button><button class="btn secondary" id="clearsession">Effacer la session locale</button>`}
     </div>
-    ${server ? "" : `<pre class="cmd">${esc([...plan.deletes.map((p) => `git rm -q --ignore-unmatch ${p}`), "npm run build:bank && npm test", 'git add data app.js admin.js && git commit -m "feat: review question bank"'].join("\n"))}</pre>`}
+    ${server ? "" : `<pre class="cmd">${esc([...plan.deletes.map((p) => `git rm -q --ignore-unmatch ${p}`), "npm run build:bank && npm test", 'git add data bank/app-bank.js bank/admin-bank.js && git commit -m "feat: review question bank"'].join("\n"))}</pre>`}
     ${server ? tasksHtml() : ""}`;
   $$("[data-dl]").forEach((b) => (b.onclick = () => { const f = plan.out.find((x) => x.path === b.dataset.dl); download(f.path.split("/").pop(), new Blob([f.content], { type: "application/json" })); }));
   if ($("#zip")) $("#zip").onclick = () => {
