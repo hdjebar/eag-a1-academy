@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { spawn } from "node:child_process";
 import { withFileRollback, writeFileAtomic } from "./lib/file-transaction.mjs";
 import { acquire, release, withLock, LOCK_PATH } from "./lib/lockfile.mjs";
 
@@ -121,6 +122,22 @@ if (!threw2 || fs.readFileSync(nested, "utf8") !== "atomic" || fs.readdirSync(di
   const winners = racers.filter((x) => x.status === "fulfilled");
   if (winners.length !== 1) { console.error(`❌ verrou : ${winners.length} processus ont gagné la reprise simultanée`); process.exit(1); }
   release(winners[0].value);
+
+  // Exercise the real cross-process takeover race repeatedly. Every contender
+  // eventually enters the critical section; an exclusive marker detects overlap.
+  const worker = path.join(ROOT, "scripts/selftest-lock-worker.mjs");
+  const active = path.join(dir, "lock-active");
+  const failure = path.join(dir, "lock-overlap");
+  const runWorker = () => new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, [worker, root, active, failure], { stdio: "ignore" });
+    child.once("error", reject);
+    child.once("exit", (code) => code === 0 ? resolve() : reject(new Error(`worker terminé avec le code ${code}`)));
+  });
+  for (let round = 0; round < 10; round++) {
+    fs.writeFileSync(LOCK_PATH(root), JSON.stringify({ pid: 99999999, token: `dead-stress-${round}`, name: "crashed" }));
+    await Promise.all(Array.from({ length: 16 }, runWorker));
+    if (fs.existsSync(failure)) { console.error("❌ verrou : sections critiques simultanées pendant le stress multi-processus"); process.exit(1); }
+  }
 
   // acquire/release pair: release only removes our own token.
   const h = await acquire(root, "test2");

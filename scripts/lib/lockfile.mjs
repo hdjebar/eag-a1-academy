@@ -10,6 +10,7 @@ import path from "node:path";
  */
 const LOCK_DIR = os.tmpdir();
 const STALE_MS = 5 * 60 * 1000;
+const TAKEOVER_STALE_MS = 30 * 1000;
 const DEFAULT_ATTEMPTS = 300;
 const DEFAULT_DELAY_MS = 100;
 
@@ -40,6 +41,46 @@ function retireStaleLock(lock, token) {
   }
 }
 
+function readLock(lock) {
+  const stat = fs.statSync(lock);
+  let holder = null;
+  try { holder = JSON.parse(fs.readFileSync(lock, "utf8")); } catch { /* partial or legacy lock */ }
+  return { stat, holder };
+}
+
+function canRetire(snapshot, staleMs = STALE_MS) {
+  const alive = holderIsAlive(snapshot.holder);
+  return alive === false || (alive === null && Date.now() - snapshot.stat.mtimeMs > staleMs);
+}
+
+function sameLock(a, b) {
+  if (a.stat.dev !== b.stat.dev || a.stat.ino !== b.stat.ino) return false;
+  if (a.holder?.token || b.holder?.token) return a.holder?.token === b.holder?.token;
+  return a.stat.mtimeMs === b.stat.mtimeMs && a.stat.size === b.stat.size;
+}
+
+function acquireTakeoverGuard(lock, name, token) {
+  const guard = `${lock}.takeover`;
+  try {
+    const fd = fs.openSync(guard, "wx");
+    try { fs.writeFileSync(fd, JSON.stringify({ pid: process.pid, name, token, since: new Date().toISOString() })); }
+    finally { fs.closeSync(fd); }
+    return { path: guard, token };
+  } catch (e) {
+    if (e.code !== "EEXIST") throw e;
+    // The guard normally lives for only a few synchronous operations. Recover it
+    // if its owner crashed, but never retire a live contender's guard.
+    try {
+      const observed = readLock(guard);
+      if (canRetire(observed, TAKEOVER_STALE_MS)) {
+        const current = readLock(guard);
+        if (sameLock(observed, current)) retireStaleLock(guard, token);
+      }
+    } catch { /* another contender changed or removed the guard */ }
+    return null;
+  }
+}
+
 /**
  * Acquire the lock, waiting for a live holder and stealing a stale one.
  * @param {string} repoRoot
@@ -60,16 +101,22 @@ export async function acquire(repoRoot, name, opts = {}) {
       return { path: lock, token };
     } catch (e) {
       if (e.code !== "EEXIST") throw e;
-      // A dead holder can be replaced immediately. Malformed/legacy locks remain
-      // protected until stale. Rename is the arbitration point: only one contender
-      // can move this exact pathname, unlike check-then-delete.
+      // A dead holder can be replaced immediately. A separate takeover guard
+      // serializes stale-lock retirement. Once the guard is held, re-check that
+      // the pathname still names the owner we observed before moving anything.
       try {
-        const stat = fs.statSync(lock);
-        let holder = null;
-        try { holder = JSON.parse(fs.readFileSync(lock, "utf8")); } catch { /* partial or legacy lock */ }
-        const alive = holderIsAlive(holder);
-        if (alive === false || (alive === null && Date.now() - stat.mtimeMs > STALE_MS)) {
-          if (retireStaleLock(lock, token)) continue;
+        const observed = readLock(lock);
+        if (canRetire(observed)) {
+          const guard = acquireTakeoverGuard(lock, name, token);
+          if (guard) {
+            let retired = false;
+            try {
+              const current = readLock(lock);
+              if (sameLock(observed, current) && canRetire(current)) retired = retireStaleLock(lock, token);
+            } catch { /* lock vanished while the guard was acquired */ }
+            finally { release(guard); }
+            if (retired) continue;
+          }
         }
       } catch { continue; } // vanished between open and stat: retry immediately
       await new Promise((r) => setTimeout(r, delayMs));
